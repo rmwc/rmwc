@@ -12,96 +12,33 @@
 
 #### 6.0.0 (2020-03-28)
 
-#### 6.0.0-rc.5 (2020-03-28)
-
-#### 6.0.0-rc.4 (2020-03-28)
-
-#### 6.0.0-rc.3 (2020-03-28)
-
-#### 6.0.0-rc.2 (2020-03-28)
-
-##### Breaking Changes
-
-* **List:**  changing event detail to {index: number} instead of raw number #432 (3807a9b3)
 
 ##### Bug Fixes
-
-* **ThemeProvider:**  Allow setting theme prop directly on ThemeProvider #567 (ca797461)
-* **Snackbar:**  Corrects layout issue with ripple #560 (da2952de)
-
-#### 6.0.0-rc.1 (2020-03-27)
-
-##### Breaking Changes
-
-* **Grid:**  The GridInner has been renamed to GridRow (28c6c263)
-
-##### Bug Fixes
-
-* **Drawer:**  Fixing issue where Drawer was uncontrolled (25d469b0)
-* **List:**  Allow up to 5 levels of indentation for collapsible lists. (821c4bfc)
-
-#### 6.0.0-rc.0 (2020-03-24)
-
-##### Breaking Changes
-
-* **Menu:**  Replacing `hoistToBody` with `renderToPortal` functionality (05129ad5)
-
-##### Chores
-
-*  linting issues with long lines (410cc6f8)
-
-##### New Features
-
-* **Dialog:**  Adding renderToPortal functionality (31532dd7)
-* **list:**
-  *  adds vertical property (7e3d6252)
-  *  add wrapFocus prop which proxies  the foundation's setWrapFocus() method. (b29cc52d)
-  *  implement isRootFocused (33502010)
-
-##### Bug Fixes
-
-* **list:**  use new  useEffect() per prop (79b17062)
-* **menu:**  focusOnOpen defaults to true (54ed96af)
-* **Ripple:**  Corrects issue with disabled ripple selection #515 (4463d1a3)
-* **Slider:**  Fixes issue with slider interactivity in dialog on open #538 (be5347e1)
-
-#### 6.0.0-alpha.16 (2020-03-21)
-
-##### Breaking Changes
-
-* **Dialog:**  removal of onStateChange (34d129e1)
-
-##### Documentation Changes
-
-* **dialog:**  update to include onOpened and onClosed (30458c85)
-
-##### New Features
-
-* **list:**  list Icons should be aria-hidden (1b165c87)
-* **dialog:**  add onClosed and onOpened (b4c69477)
-* **Chip:**  Allow modifying trailing icon behavior #500 (68b54b87)
-* **Dialog:**  Add escape key handling to preventOutsideDismiss #499 (41427b81)
-* **Tabs:**  Adding minWidth option #532 (2178b1fb)
-
-##### Bug Fixes
-
-* **list:**  use semantic tags (cc1592af)
-* **Icon:**  Adds proper disabled styles for images and components #556 (5a95a47b)
-
-##### Other Changes
-
-* **dialog:**  update to include onOpened and onClosed (f9462c02)
-
-#### 6.0.0-alpha.15 (2020-03-17)
-
-##### Bug Fixes
-
+* **TopAppBar:**
+  *  Correcting double ripple on action buttons (680b1b5c)
+  *  Corrects issue with persisted events around Navigation and Action icons #536 (3f473180)
+  *  Implements broken onNav prop (1f17d0d0)
+* **Grid:**  Fix incorrect className for grid align property #526 (302ea95d)
+* **FormField:**  Correct broken link in doc #529 (41409aa7)
+* **Select:**  Fix placeholder disappearing when value or defaultValue prop is set #533 (991885ec)
+* **Slider:**  Sync min/max props before value to avoid warnings. (34d36798)
+* **Menu:**  fixed "isMenuItems" check to not break on Symbol and string element types. (d707c3d1)
 * **SnackbarQueue:**  Correcting type signature of component #494 (1b3ed2d0)
 * **List:**  Adding missing className to collapsible list #543 (3d63f571)
 * **IconButton:**  Remove aria-hidden attribute #549 (e19795ae)
 * **DataTable:**  Correct sort icon direction based on Material Spec #551 (028da5b1)
-
-#### 6.0.0-alpha.14 (2020-03-16)
+* **list:**  use semantic tags (cc1592af)
+* **Icon:**  Adds proper disabled styles for images and components #556 (5a95a47b)
+* **Base:**  Declaring CSS as sideEffect across all components #545 (9dcd6197)
+* **TopAppBar:**  Implementing broken `onNav` prop (dab4cce3)
+* **list:**  use new  useEffect() per prop (79b17062)
+* **menu:**  focusOnOpen defaults to true (54ed96af)
+* **Ripple:**  Corrects issue with disabled ripple selection #515 (4463d1a3)
+* **Slider:**  Fixes issue with slider interactivity in dialog on open #538 (be5347e1)
+* **Drawer:**  Fixing issue where Drawer was uncontrolled (25d469b0)
+* **List:**  Allow up to 5 levels of indentation for collapsible lists. (821c4bfc)
+* **ThemeProvider:**  Allow setting theme prop directly on ThemeProvider #567 (ca797461)
+* **Snackbar:**  Corrects layout issue with ripple #560 (da2952de)
 
 ##### Chores
 
@@ -115,61 +52,9 @@
   *  Changing root element to label (a3ae935d)
   *  Add separate classes for leading / trailing icons (ecb0bd8b)
 * **Dialog:**  Adding aria attributes to dialog surface (9ea0df0c)
-
-##### New Features
-
-* **TextField:**  Adding align option (786305f8)
-* **Switch:**  Adding aria attributes (45517837)
-* **LinearProgress:**  Adding aria attributes (fab4cacb)
-
-#### 6.0.0-alpha.13 (2020-03-14)
-
-##### Documentation Changes
-
-* **Icon:**  Improving documentation on setting up icons. (d2e5927a)
-* **Base:**  Improving style import documentation for all components (a484d61c)
-
-##### New Features
-
-* **Base:**  Adding foundationRef to all components (4027a3c5)
-
-##### Bug Fixes
-
-* **Base:**  Declaring CSS as sideEffect across all components #545 (9dcd6197)
-
-#### 6.0.0-alpha.12 (2020-03-06)
-
-##### Chores
-
 * **Base:**
   *  Audit all todos (67a3b3b4)
   *  Fixing all linting issues (e8964499)
-
-##### New Features
-
-* **DataTables:**   Refactoring to use the official material table styles (5699f236)
-* **Base:**  Simplified syntax for importing styles when using CSS loaders (71ab1c58)
-
-##### Bug Fixes
-
-* **TopAppBar:**  Implementing broken `onNav` prop (dab4cce3)
-
-#### 6.0.0-alpha.11 (2020-01-18)
-
-##### New Features
-
-* **Snackbar:**  Adding api features to clearAll pending notifications, and invidually remove Snackbars. (a6e14635)
-
-#### 6.0.0-alpha.10 (2019-12-21)
-
-#### 6.0.0-alpha.9 (2019-12-21)
-
-#### 6.0.0-alpha.8 (2019-12-21)
-
-#### 6.0.0-alpha.7 (2019-12-18)
-
-##### Chores
-
 * **Select:**  Upgrade to MDC 4.x.x (b7aaeca9)
 * **Base:**  Upgrading unchanged packages to MDC 4.x.x (ff77a31b)
 * **Menu:**  Upgrading to MDC 4.x.x (2b41310c)
@@ -184,24 +69,45 @@
 * **Ripple:**  Updating ripple to mdc 4.x.x (90f348c7)
 * **LinearProgress:**  Update to mdc 4.x.x (18664e29)
 
+
+##### Documentation Changes
+
+* **Icon:**  Improving documentation on setting up icons. (d2e5927a)
+* **Base:**  Improving style import documentation for all components (a484d61c)
+
+
 ##### New Features
 
+* **Snackbar:**  Adding api features to clearAll pending notifications, and invidually remove Snackbars. (a6e14635)
 * **Snackbar:**  Adding indefinite timeout. Pass a timeout of -1 (341eec2d)
 * **Badge:**
   *  Adding exited prop option (500d5516)
   *  New badge component #411 (46888630)
+* **DataTables:**   Refactoring to use the official material table styles (5699f236)
+* **Base:**  Simplified syntax for importing styles when using CSS loaders (71ab1c58)
+* **Base:**  Adding foundationRef to all components (4027a3c5)
+* **TextField:**  Adding align option (786305f8)
+* **Switch:**  Adding aria attributes (45517837)
+* **LinearProgress:**  Adding aria attributes (fab4cacb)
+* **list:**  list Icons should be aria-hidden (1b165c87)
+* **dialog:**  add onClosed and onOpened (b4c69477)
+* **Chip:**  Allow modifying trailing icon behavior #500 (68b54b87)
+* **Dialog:**  Add escape key handling to preventOutsideDismiss #499 (41427b81)
+* **Tabs:**  Adding minWidth option #532 (2178b1fb)
+* **Dialog:**  Adding renderToPortal functionality (31532dd7)
+* **list:**
+  *  adds vertical property (7e3d6252)
+  *  add wrapFocus prop which proxies  the foundation's setWrapFocus() method. (b29cc52d)
+  *  implement isRootFocused (33502010)
+* **dialog:**  update to include onOpened and onClosed (f9462c02)
 
-##### Bug Fixes
+##### Breaking Changes
 
-* **TopAppBar:**
-  *  Correcting double ripple on action buttons (680b1b5c)
-  *  Corrects issue with persisted events around Navigation and Action icons #536 (3f473180)
-  *  Implements broken onNav prop (1f17d0d0)
-* **Grid:**  Fix incorrect className for grid align property #526 (302ea95d)
-* **FormField:**  Correct broken link in doc #529 (41409aa7)
-* **Select:**  Fix placeholder disappearing when value or defaultValue prop is set #533 (991885ec)
-* **Slider:**  Sync min/max props before value to avoid warnings. (34d36798)
-* **Menu:**  fixed "isMenuItems" check to not break on Symbol and string element types. (d707c3d1)
+* **List:**  changing event detail to {index: number} instead of raw number #432 (3807a9b3)
+* **Grid:**  The GridInner has been renamed to GridRow (28c6c263)
+* **Menu:**  Replacing `hoistToBody` with `renderToPortal` functionality (05129ad5)
+* **Dialog:**  removal of onStateChange (34d129e1)
+
 
 #### 5.7.1 (2019-09-13)
 
