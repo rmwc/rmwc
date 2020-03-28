@@ -5,7 +5,7 @@
 - Module **@rmwc/select**
 - Import styles:
   - Using CSS Loader
-    - import '@rmwc/select/dist/styles';
+    - import '@rmwc/select/styles';
   - Or include stylesheets
     - **'@rmwc/select/select.css'**
     - **'@material/select/dist/mdc.select.css'**

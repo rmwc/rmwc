@@ -5,7 +5,7 @@
 - Module **@rmwc/typography**
 - Import styles:
   - Using CSS Loader
-    - import '@rmwc/typography/dist/styles';
+    - import '@rmwc/typography/styles';
   - Or include stylesheets
     - **'@material/typography/dist/mdc.typography.css'**
 - MDC Docs: [https://material.io/develop/web/components/typography/](https://material.io/develop/web/components/typography/)

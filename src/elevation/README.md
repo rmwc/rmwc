@@ -5,7 +5,7 @@
 - Module **@rmwc/elevation**
 - Import styles:
   - Using CSS Loader
-    - import '@rmwc/elevation/dist/styles';
+    - import '@rmwc/elevation/styles';
   - Or include stylesheets
     - **'@material/elevation/dist/mdc.elevation.css'**
 - MDC Docs: [https://material.io/develop/web/components/elevation/](https://material.io/develop/web/components/elevation/)

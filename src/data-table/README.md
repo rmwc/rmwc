@@ -5,7 +5,7 @@
 - Module **@rmwc/data-table**
 - Import styles:
   - Using CSS Loader
-    - import '@rmwc/data-table/dist/styles';
+    - import '@rmwc/data-table/styles';
   - Or include stylesheets
     - **'@material/data-table/dist/mdc.data-table.css'**
     - **'@rmwc/data-table/data-table.css'**

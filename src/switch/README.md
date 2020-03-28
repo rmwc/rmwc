@@ -5,7 +5,7 @@
 - Module **@rmwc/switch**
 - Import styles:
   - Using CSS Loader
-    - import '@rmwc/switch/dist/styles';
+    - import '@rmwc/switch/styles';
   - Or include stylesheets
     - **'@material/switch/dist/mdc.switch.css'**
     - **'@material/form-field/dist/mdc.form-field.css'**

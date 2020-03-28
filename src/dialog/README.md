@@ -5,7 +5,7 @@
 - Module **@rmwc/dialog**
 - Import styles:
   - Using CSS Loader
-    - import '@rmwc/dialog/dist/styles';
+    - import '@rmwc/dialog/styles';
   - Or include stylesheets
     - **'@material/dialog/dist/mdc.dialog.css'**
     - **'@material/button/dist/mdc.button.css'**

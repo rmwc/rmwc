@@ -5,7 +5,7 @@
 - Module **@rmwc/image-list**
 - Import styles:
   - Using CSS Loader
-    - import '@rmwc/image-list/dist/styles';
+    - import '@rmwc/image-list/styles';
   - Or include stylesheets
     - **'@material/image-list/dist/mdc.image-list.css'**
 - MDC Docs: [https://material.io/develop/web/components/image-lists/](https://material.io/develop/web/components/image-lists/)

@@ -5,7 +5,7 @@
 - Module **@rmwc/snackbar**
 - Import styles:
   - Using CSS Loader
-    - import '@rmwc/snackbar/dist/styles';
+    - import '@rmwc/snackbar/styles';
   - Or include stylesheets
     - **'@material/snackbar/dist/mdc.snackbar.css'**
     - **'@material/button/dist/mdc.button.css'**

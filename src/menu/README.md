@@ -5,7 +5,7 @@
 - Module **@rmwc/menu**
 - Import styles:
   - Using CSS Loader
-    - import '@rmwc/menu/dist/styles';
+    - import '@rmwc/menu/styles';
   - Or include stylesheets
     - **'@material/menu/dist/mdc.menu.css'**
     - **'@material/menu-surface/dist/mdc.menu-surface.css'**

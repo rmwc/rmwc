@@ -5,7 +5,7 @@
 - Module **@rmwc/icon**
 - Import styles:
   - Using CSS Loader
-    - import '@rmwc/icon/dist/styles';
+    - import '@rmwc/icon/styles';
   - Or include stylesheets
     - **'@rmwc/icon/icon.css'**
 - MDC Docs: [https://material.io/icons](https://material.io/icons)

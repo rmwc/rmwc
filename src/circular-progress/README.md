@@ -5,7 +5,7 @@
 - Module **@rmwc/circular-progress**
 - Import styles:
   - Using CSS Loader
-    - import '@rmwc/circular-progress/dist/styles';
+    - import '@rmwc/circular-progress/styles';
   - Or include stylesheets
     - **'@rmwc/circular-progress/circular-progress.css'**
 

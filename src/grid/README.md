@@ -5,7 +5,7 @@
 - Module **@rmwc/grid**
 - Import styles:
   - Using CSS Loader
-    - import '@rmwc/grid/dist/styles';
+    - import '@rmwc/grid/styles';
   - Or include stylesheets
     - **'@material/layout-grid/dist/mdc.layout-grid.css'**
 - MDC Docs: [https://material.io/develop/web/components/layout-grid/](https://material.io/develop/web/components/layout-grid/)

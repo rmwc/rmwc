@@ -5,7 +5,7 @@
 - Module **@rmwc/formfield**
 - Import styles:
   - Using CSS Loader
-    - import '@rmwc/formfield/dist/styles';
+    - import '@rmwc/formfield/styles';
   - Or include stylesheets
     - **'@material/form-field/dist/mdc.form-field.css'**
 - MDC Docs: [https://material.io/develop/web/components/input-controls/form-fields/](https://material.io/develop/web/components/input-controls/form-fields/)

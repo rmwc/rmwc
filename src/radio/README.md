@@ -5,7 +5,7 @@
 - Module **@rmwc/radio**
 - Import styles:
   - Using CSS Loader
-    - import '@rmwc/radio/dist/styles';
+    - import '@rmwc/radio/styles';
   - Or include stylesheets
     - **'@material/radio/dist/mdc.radio.css'**
     - **'@material/form-field/dist/mdc.form-field.css'**

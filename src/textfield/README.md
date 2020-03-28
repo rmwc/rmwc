@@ -5,7 +5,7 @@
 - Module **@rmwc/textfield**
 - Import styles:
   - Using CSS Loader
-    - import '@rmwc/textfield/dist/styles';
+    - import '@rmwc/textfield/styles';
   - Or include stylesheets
     - **'@material/textfield/dist/mdc.textfield.css'**
     - **'@material/floating-label/dist/mdc.floating-label.css'**
