@@ -16,7 +16,7 @@ import { galleryContent } from '../../common/menu-content';
 const checklist = [
   "Uses Google's official material-components-web library",
   'Includes additional addon components not offered by Google.',
-  'Works in React from 16.3.x and up',
+  'Works in React from 16.8.x and up',
   'First class Typescript Support',
   'Server side rendering support',
   'Individually packaged and released components'
