@@ -1,3 +1,9 @@
+#### 6.0.2 (2020-03-28)
+
+##### Bug Fixes
+
+* **Icon:**  Corrects issue with rendering of nested icons (9c7f1810)
+
 #### 6.0.1 (2020-03-28)
 
 ##### Bug Fixes
