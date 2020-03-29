@@ -1,3 +1,13 @@
+#### 6.0.3 (2020-03-29)
+
+##### Bug Fixes
+
+* **Icon:**  Resolves build-time `TypeError: Cannot read property "name" of undefined` (fcf51f3e)
+
+##### Other Changes
+
+* //github.com/jamesmfriedman/rmwc (0a434810)
+
 #### 6.0.2 (2020-03-28)
 
 ##### Bug Fixes
