@@ -90,7 +90,7 @@ export function createComponent<
   // Interestingly enough, we only need this declaration
   // for a generic placeholder for typescript inference,
   // we don't actually have to pay the penalty for using it at runtime :)
-  const WrappedComponent = <Tag extends React.ElementType>(
+  const WrappedComponent = <Tag extends React.ElementType = 'div'>(
     props: ComponentProps<P, ElementP, Tag>,
     ref: any
   ) => {
