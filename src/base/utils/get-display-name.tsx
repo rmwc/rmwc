@@ -5,7 +5,7 @@ export const getDisplayName = (childInput: any): string => {
     child?.constructor?.displayName ||
     child?.displayName ||
     child?.name ||
-    child?.constructor.name ||
+    child?.constructor?.name ||
     'Unknown';
 
   return displayName;
