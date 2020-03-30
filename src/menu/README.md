@@ -201,20 +201,85 @@ function Example() {
 ```
 
 ## Menu
+A menu component for displaying lists items.
+
+### Props
+
+| Name | Type | Description |
+|------|------|-------------|
+| `apiRef` | `undefined \| (api: MenuApi) => void` | Internal api reference for cross component communication. |
+| `focusOnOpen` | `undefined \| false \| true` | Whether or not to focus the first list item on open. Defaults to true. |
+| `foundationRef` | `React.Ref<MDCMenuFoundation>` | Advanced: A reference to the MDCFoundation. |
+| `onSelect` | `undefined \| (evt: MenuOnSelectEventT) => void` | Callback that fires when a Menu item is selected. evt.detail = { index: number; item: HTMLElement; } |
 
 
 ## MenuItem
+This is just the ListItem component exported from the Menu module for convenience. You can use `ListItem` or `SimpleListItem` components from the List section as long as you add `role="menuitem"` and `tabIndex="0"` to the components for accessibility.
+
+### Props
+
+| Name | Type | Description |
+|------|------|-------------|
+| `activated` | `undefined \| false \| true` | A modifier for an active state. |
+| `disabled` | `undefined \| false \| true` | A modifier for a disabled state. |
+| `ripple` | `RipplePropT` | Adds a ripple effect to the component |
+| `selected` | `undefined \| false \| true` | A modifier for a selected state. |
 
 
 ## MenuSurface
+### Props
+
+| Name | Type | Description |
+|------|------|-------------|
+| `anchorCorner` | `AnchorT` | Manually position the menu to one of the corners. |
+| `apiRef` | `undefined \| (api: MenuSurfaceApi) => void` | An internal api for cross component communication. |
+| `children` | `React.ReactNode` | Children to render. |
+| `fixed` | `undefined \| false \| true` | Make the menu position fixed. |
+| `foundationRef` | `React.Ref<MDCMenuSurfaceFoundation>` | Advanced: A reference to the MDCFoundation. |
+| `onClose` | `undefined \| (evt: MenuSurfaceOnCloseEventT) => void` | Callback for when the menu is closed. |
+| `onOpen` | `undefined \| (evt: MenuSurfaceOnOpenEventT) => void` | Callback for when the menu is opened. |
+| `open` | `undefined \| false \| true` | Opens the menu. |
+| `renderToPortal` | `PortalPropT` | Renders the menu to a portal. Useful for situations where the content might be cutoff by an overflow: hidden container. You can pass "true" to render to the default RMWC portal. |
 
 
 ## MenuSurfaceAnchor
+MenuSurfaceAnchor
+
 
 
 ## SimpleMenu
+A Simplified menu component that allows you to pass a handle element and will automatically control the open state and add a MenuSurfaceAnchor
+
+### Props
+
+| Name | Type | Description |
+|------|------|-------------|
+| `apiRef` | `undefined \| (api: MenuApi) => void` | Internal api reference for cross component communication. |
+| `children` | `React.ReactNode` | Children to render |
+| `focusOnOpen` | `undefined \| false \| true` | Whether or not to focus the first list item on open. Defaults to true. |
+| `foundationRef` | `React.Ref<MDCMenuFoundation>` | Advanced: A reference to the MDCFoundation. |
+| `handle` | `ReactElement<any>` | An element that will open the menu when clicked |
+| `onSelect` | `undefined \| (evt: MenuOnSelectEventT) => void` | Callback that fires when a Menu item is selected. evt.detail = { index: number; item: HTMLElement; } |
+| `rootProps` | `Object` | By default, props spread to the Menu component. These will spread to the MenuSurfaceAnchor which is useful for things like overall positioning of the anchor. |
 
 
 ## SimpleMenuSurface
+The same as SimpleMenu, but a generic surface.
+
+### Props
+
+| Name | Type | Description |
+|------|------|-------------|
+| `anchorCorner` | `AnchorT` | Manually position the menu to one of the corners. |
+| `apiRef` | `undefined \| (api: MenuSurfaceApi) => void` | An internal api for cross component communication. |
+| `children` | `React.ReactNode` | Children to render |
+| `fixed` | `undefined \| false \| true` | Make the menu position fixed. |
+| `foundationRef` | `React.Ref<MDCMenuSurfaceFoundation>` | Advanced: A reference to the MDCFoundation. |
+| `handle` | `ReactElement<any>` | An element that will open the menu when clicked |
+| `onClose` | `undefined \| (evt: MenuSurfaceOnCloseEventT) => void` | Callback for when the menu is closed. |
+| `onOpen` | `undefined \| (evt: MenuSurfaceOnOpenEventT) => void` | Callback for when the menu is opened. |
+| `open` | `undefined \| false \| true` | Opens the menu. |
+| `renderToPortal` | `PortalPropT` | Renders the menu to a portal. Useful for situations where the content might be cutoff by an overflow: hidden container. You can pass "true" to render to the default RMWC portal. |
+| `rootProps` | `Object` | By default, props spread to the Menu component. These will spread to the MenuSurfaceAnchor which is useful for things like overall positioning of the anchor. |
 
 

@@ -2031,7 +2031,7 @@
             "contentsRaw": "Adds a ripple effect to the component",
             "metadata": {}
           },
-          "fileName": "src/list/node_modules/@rmwc/types/dist/index.d.ts",
+          "fileName": "src/list/node_modules/@rmwc/types/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -2183,7 +2183,7 @@
             "contentsRaw": "The icon to use. This can be a string for a font icon, a url, or whatever the selected strategy needs.",
             "metadata": {}
           },
-          "fileName": "src/list/node_modules/@rmwc/icon/dist/index.d.ts",
+          "fileName": "src/list/node_modules/@rmwc/icon/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -2236,7 +2236,7 @@
             "contentsRaw": "The icon to use. This can be a string for a font icon, a url, or whatever the selected strategy needs.",
             "metadata": {}
           },
-          "fileName": "src/list/node_modules/@rmwc/icon/dist/index.d.ts",
+          "fileName": "src/list/node_modules/@rmwc/icon/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -2510,7 +2510,7 @@
             "contentsRaw": "Adds a ripple effect to the component",
             "metadata": {}
           },
-          "fileName": "src/list/node_modules/@rmwc/types/dist/index.d.ts",
+          "fileName": "src/list/node_modules/@rmwc/types/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,

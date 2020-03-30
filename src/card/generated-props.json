@@ -310,7 +310,7 @@
             "contentsRaw": "Controls the on / off state of the a toggleable button.",
             "metadata": {}
           },
-          "fileName": "src/card/node_modules/@rmwc/icon-button/dist/index.d.ts",
+          "fileName": "src/card/node_modules/@rmwc/icon-button/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -334,7 +334,7 @@
             "contentsRaw": "Makes the button disabled",
             "metadata": {}
           },
-          "fileName": "src/card/node_modules/@rmwc/icon-button/dist/index.d.ts",
+          "fileName": "src/card/node_modules/@rmwc/icon-button/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -358,7 +358,7 @@
             "contentsRaw": "Advanced: A reference to the MDCFoundation. Only for Toggleable buttons.",
             "metadata": {}
           },
-          "fileName": "src/card/node_modules/@rmwc/icon-button/dist/index.d.ts",
+          "fileName": "src/card/node_modules/@rmwc/icon-button/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -382,7 +382,7 @@
             "contentsRaw": "Icon for the button",
             "metadata": {}
           },
-          "fileName": "src/card/node_modules/@rmwc/icon-button/dist/index.d.ts",
+          "fileName": "src/card/node_modules/@rmwc/icon-button/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -406,7 +406,7 @@
             "contentsRaw": "Apply an aria label.",
             "metadata": {}
           },
-          "fileName": "src/card/node_modules/@rmwc/icon-button/dist/index.d.ts",
+          "fileName": "src/card/node_modules/@rmwc/icon-button/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -430,7 +430,7 @@
             "contentsRaw": "An onChange callback that receives a custom event. evt.detail = { isOn: boolean }",
             "metadata": {}
           },
-          "fileName": "src/card/node_modules/@rmwc/icon-button/dist/index.d.ts",
+          "fileName": "src/card/node_modules/@rmwc/icon-button/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -454,7 +454,7 @@
             "contentsRaw": "If specified, renders a toggle with this icon as the on state.",
             "metadata": {}
           },
-          "fileName": "src/card/node_modules/@rmwc/icon-button/dist/index.d.ts",
+          "fileName": "src/card/node_modules/@rmwc/icon-button/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -478,7 +478,7 @@
             "contentsRaw": "Adds a ripple effect to the component",
             "metadata": {}
           },
-          "fileName": "src/card/node_modules/@rmwc/types/dist/index.d.ts",
+          "fileName": "src/card/node_modules/@rmwc/types/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -531,7 +531,7 @@
             "contentsRaw": "Content specified as children.",
             "metadata": {}
           },
-          "fileName": "src/card/node_modules/@rmwc/button/dist/index.d.ts",
+          "fileName": "src/card/node_modules/@rmwc/button/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -555,7 +555,7 @@
             "contentsRaw": "Used to indicate a dangerous action.",
             "metadata": {}
           },
-          "fileName": "src/card/node_modules/@rmwc/button/dist/index.d.ts",
+          "fileName": "src/card/node_modules/@rmwc/button/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -579,7 +579,7 @@
             "contentsRaw": "Make the Button dense.",
             "metadata": {}
           },
-          "fileName": "src/card/node_modules/@rmwc/button/dist/index.d.ts",
+          "fileName": "src/card/node_modules/@rmwc/button/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -603,7 +603,7 @@
             "contentsRaw": "Make the button disabled",
             "metadata": {}
           },
-          "fileName": "src/card/node_modules/@rmwc/button/dist/index.d.ts",
+          "fileName": "src/card/node_modules/@rmwc/button/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -627,7 +627,7 @@
             "contentsRaw": "An Icon for the Button",
             "metadata": {}
           },
-          "fileName": "src/card/node_modules/@rmwc/button/dist/index.d.ts",
+          "fileName": "src/card/node_modules/@rmwc/button/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -651,7 +651,7 @@
             "contentsRaw": "Content specified as a label prop.",
             "metadata": {}
           },
-          "fileName": "src/card/node_modules/@rmwc/button/dist/index.d.ts",
+          "fileName": "src/card/node_modules/@rmwc/button/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -675,7 +675,7 @@
             "contentsRaw": "Make the button outlined.",
             "metadata": {}
           },
-          "fileName": "src/card/node_modules/@rmwc/button/dist/index.d.ts",
+          "fileName": "src/card/node_modules/@rmwc/button/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -699,7 +699,7 @@
             "contentsRaw": "Make the Button raised.",
             "metadata": {}
           },
-          "fileName": "src/card/node_modules/@rmwc/button/dist/index.d.ts",
+          "fileName": "src/card/node_modules/@rmwc/button/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -723,7 +723,7 @@
             "contentsRaw": "Adds a ripple effect to the component",
             "metadata": {}
           },
-          "fileName": "src/card/node_modules/@rmwc/types/dist/index.d.ts",
+          "fileName": "src/card/node_modules/@rmwc/types/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -747,7 +747,7 @@
             "contentsRaw": "A trailing icon for the Button",
             "metadata": {}
           },
-          "fileName": "src/card/node_modules/@rmwc/button/dist/index.d.ts",
+          "fileName": "src/card/node_modules/@rmwc/button/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -771,7 +771,7 @@
             "contentsRaw": "Make the button unelevated.",
             "metadata": {}
           },
-          "fileName": "src/card/node_modules/@rmwc/button/dist/index.d.ts",
+          "fileName": "src/card/node_modules/@rmwc/button/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,

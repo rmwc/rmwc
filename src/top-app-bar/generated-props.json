@@ -702,7 +702,7 @@
             "contentsRaw": "Controls the on / off state of the a toggleable button.",
             "metadata": {}
           },
-          "fileName": "src/top-app-bar/node_modules/@rmwc/icon-button/dist/index.d.ts",
+          "fileName": "src/top-app-bar/node_modules/@rmwc/icon-button/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -726,7 +726,7 @@
             "contentsRaw": "Makes the button disabled",
             "metadata": {}
           },
-          "fileName": "src/top-app-bar/node_modules/@rmwc/icon-button/dist/index.d.ts",
+          "fileName": "src/top-app-bar/node_modules/@rmwc/icon-button/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -750,7 +750,7 @@
             "contentsRaw": "Advanced: A reference to the MDCFoundation. Only for Toggleable buttons.",
             "metadata": {}
           },
-          "fileName": "src/top-app-bar/node_modules/@rmwc/icon-button/dist/index.d.ts",
+          "fileName": "src/top-app-bar/node_modules/@rmwc/icon-button/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -774,7 +774,7 @@
             "contentsRaw": "Icon for the button",
             "metadata": {}
           },
-          "fileName": "src/top-app-bar/node_modules/@rmwc/icon-button/dist/index.d.ts",
+          "fileName": "src/top-app-bar/node_modules/@rmwc/icon-button/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -798,7 +798,7 @@
             "contentsRaw": "Apply an aria label.",
             "metadata": {}
           },
-          "fileName": "src/top-app-bar/node_modules/@rmwc/icon-button/dist/index.d.ts",
+          "fileName": "src/top-app-bar/node_modules/@rmwc/icon-button/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -822,7 +822,7 @@
             "contentsRaw": "An onChange callback that receives a custom event. evt.detail = { isOn: boolean }",
             "metadata": {}
           },
-          "fileName": "src/top-app-bar/node_modules/@rmwc/icon-button/dist/index.d.ts",
+          "fileName": "src/top-app-bar/node_modules/@rmwc/icon-button/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -846,7 +846,7 @@
             "contentsRaw": "If specified, renders a toggle with this icon as the on state.",
             "metadata": {}
           },
-          "fileName": "src/top-app-bar/node_modules/@rmwc/icon-button/dist/index.d.ts",
+          "fileName": "src/top-app-bar/node_modules/@rmwc/icon-button/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -870,7 +870,7 @@
             "contentsRaw": "Adds a ripple effect to the component",
             "metadata": {}
           },
-          "fileName": "src/top-app-bar/node_modules/@rmwc/types/dist/index.d.ts",
+          "fileName": "src/top-app-bar/node_modules/@rmwc/types/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -923,7 +923,7 @@
             "contentsRaw": "Controls the on / off state of the a toggleable button.",
             "metadata": {}
           },
-          "fileName": "src/top-app-bar/node_modules/@rmwc/icon-button/dist/index.d.ts",
+          "fileName": "src/top-app-bar/node_modules/@rmwc/icon-button/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -947,7 +947,7 @@
             "contentsRaw": "Makes the button disabled",
             "metadata": {}
           },
-          "fileName": "src/top-app-bar/node_modules/@rmwc/icon-button/dist/index.d.ts",
+          "fileName": "src/top-app-bar/node_modules/@rmwc/icon-button/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -971,7 +971,7 @@
             "contentsRaw": "Advanced: A reference to the MDCFoundation. Only for Toggleable buttons.",
             "metadata": {}
           },
-          "fileName": "src/top-app-bar/node_modules/@rmwc/icon-button/dist/index.d.ts",
+          "fileName": "src/top-app-bar/node_modules/@rmwc/icon-button/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -995,7 +995,7 @@
             "contentsRaw": "Icon for the button",
             "metadata": {}
           },
-          "fileName": "src/top-app-bar/node_modules/@rmwc/icon-button/dist/index.d.ts",
+          "fileName": "src/top-app-bar/node_modules/@rmwc/icon-button/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1019,7 +1019,7 @@
             "contentsRaw": "Apply an aria label.",
             "metadata": {}
           },
-          "fileName": "src/top-app-bar/node_modules/@rmwc/icon-button/dist/index.d.ts",
+          "fileName": "src/top-app-bar/node_modules/@rmwc/icon-button/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1043,7 +1043,7 @@
             "contentsRaw": "An onChange callback that receives a custom event. evt.detail = { isOn: boolean }",
             "metadata": {}
           },
-          "fileName": "src/top-app-bar/node_modules/@rmwc/icon-button/dist/index.d.ts",
+          "fileName": "src/top-app-bar/node_modules/@rmwc/icon-button/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1067,7 +1067,7 @@
             "contentsRaw": "If specified, renders a toggle with this icon as the on state.",
             "metadata": {}
           },
-          "fileName": "src/top-app-bar/node_modules/@rmwc/icon-button/dist/index.d.ts",
+          "fileName": "src/top-app-bar/node_modules/@rmwc/icon-button/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1091,7 +1091,7 @@
             "contentsRaw": "Adds a ripple effect to the component",
             "metadata": {}
           },
-          "fileName": "src/top-app-bar/node_modules/@rmwc/types/dist/index.d.ts",
+          "fileName": "src/top-app-bar/node_modules/@rmwc/types/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,

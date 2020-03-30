@@ -360,7 +360,7 @@
             "contentsRaw": "Content specified as children.",
             "metadata": {}
           },
-          "fileName": "src/snackbar/node_modules/@rmwc/button/dist/index.d.ts",
+          "fileName": "src/snackbar/node_modules/@rmwc/button/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -384,7 +384,7 @@
             "contentsRaw": "Used to indicate a dangerous action.",
             "metadata": {}
           },
-          "fileName": "src/snackbar/node_modules/@rmwc/button/dist/index.d.ts",
+          "fileName": "src/snackbar/node_modules/@rmwc/button/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -408,7 +408,7 @@
             "contentsRaw": "Make the Button dense.",
             "metadata": {}
           },
-          "fileName": "src/snackbar/node_modules/@rmwc/button/dist/index.d.ts",
+          "fileName": "src/snackbar/node_modules/@rmwc/button/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -432,7 +432,7 @@
             "contentsRaw": "Make the button disabled",
             "metadata": {}
           },
-          "fileName": "src/snackbar/node_modules/@rmwc/button/dist/index.d.ts",
+          "fileName": "src/snackbar/node_modules/@rmwc/button/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -456,7 +456,7 @@
             "contentsRaw": "An Icon for the Button",
             "metadata": {}
           },
-          "fileName": "src/snackbar/node_modules/@rmwc/button/dist/index.d.ts",
+          "fileName": "src/snackbar/node_modules/@rmwc/button/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -480,7 +480,7 @@
             "contentsRaw": "Content specified as a label prop.",
             "metadata": {}
           },
-          "fileName": "src/snackbar/node_modules/@rmwc/button/dist/index.d.ts",
+          "fileName": "src/snackbar/node_modules/@rmwc/button/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -504,7 +504,7 @@
             "contentsRaw": "Make the button outlined.",
             "metadata": {}
           },
-          "fileName": "src/snackbar/node_modules/@rmwc/button/dist/index.d.ts",
+          "fileName": "src/snackbar/node_modules/@rmwc/button/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -528,7 +528,7 @@
             "contentsRaw": "Make the Button raised.",
             "metadata": {}
           },
-          "fileName": "src/snackbar/node_modules/@rmwc/button/dist/index.d.ts",
+          "fileName": "src/snackbar/node_modules/@rmwc/button/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -552,7 +552,7 @@
             "contentsRaw": "Adds a ripple effect to the component",
             "metadata": {}
           },
-          "fileName": "src/snackbar/node_modules/@rmwc/types/dist/index.d.ts",
+          "fileName": "src/snackbar/node_modules/@rmwc/types/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -576,7 +576,7 @@
             "contentsRaw": "A trailing icon for the Button",
             "metadata": {}
           },
-          "fileName": "src/snackbar/node_modules/@rmwc/button/dist/index.d.ts",
+          "fileName": "src/snackbar/node_modules/@rmwc/button/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -600,7 +600,7 @@
             "contentsRaw": "Make the button unelevated.",
             "metadata": {}
           },
-          "fileName": "src/snackbar/node_modules/@rmwc/button/dist/index.d.ts",
+          "fileName": "src/snackbar/node_modules/@rmwc/button/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,

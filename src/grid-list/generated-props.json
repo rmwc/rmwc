@@ -282,7 +282,7 @@
             "contentsRaw": "The icon to use. This can be a string for a font icon, a url, or whatever the selected strategy needs.",
             "metadata": {}
           },
-          "fileName": "src/grid-list/node_modules/@rmwc/icon/dist/index.d.ts",
+          "fileName": "src/grid-list/node_modules/@rmwc/icon/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
