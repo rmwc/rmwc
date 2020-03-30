@@ -106,5 +106,5 @@ export type HTMLProps<T = HTMLElement, A = React.AllHTMLAttributes<T>> = A &
   React.ClassAttributes<T> & {
     tag?: TagT;
     theme?: ThemePropT;
-    ref?: React.Ref<any>;
+    ref?: React.HTMLProps<T>['ref'];
   };

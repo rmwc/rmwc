@@ -19,7 +19,7 @@ export function TabScroller(props: TabScrollerProps & RMWC.HTMLProps) {
   const { children, apiRef, ...rest } = props;
   const { rootEl, areaEl, contentEl } = useTabScrollerFoundation(props);
   return (
-    <Tag element={rootEl} {...rest} className="mdc-tab-scroller">
+    <Tag {...rest} ref={null} element={rootEl} className="mdc-tab-scroller">
       <Tag element={areaEl} className="mdc-tab-scroller__scroll-area">
         <Tag element={contentEl} className="mdc-tab-scroller__scroll-content">
           {children}

@@ -79,7 +79,7 @@ const RadioRoot = withRipple({
         'mdc-radio--disabled': disabled
       }
     ]);
-    return <Tag {...rest} className={className} />;
+    return <Tag {...rest} className={className} ref={ref} />;
   })
 );
 

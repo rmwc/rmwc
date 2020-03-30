@@ -75,8 +75,7 @@ type ComponentProps<
 > = Props & {
   tag?: Tag;
   theme?: RMWC.ThemePropT;
-} & Props &
-  (ElementProps | React.ComponentPropsWithRef<Tag>);
+} & (ElementProps | React.ComponentPropsWithRef<Tag>);
 
 export function createComponent<
   P extends {},
