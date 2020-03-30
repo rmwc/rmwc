@@ -1,3 +1,9 @@
+#### 6.0.5 (2020-03-30)
+
+##### Bug Fixes
+
+* **Typescript:**  Fixes declaration flattening for certain components that Omit attributes from base props (889fd298)
+
 #### 6.0.4 (2020-03-30)
 
 ##### Chores
