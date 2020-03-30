@@ -18,6 +18,7 @@ export const useListFoundation = (props: ListProps & React.HTMLProps<any>) => {
 
   const [ listItemClasses, setListItemClasses ] =
     useState<ListItemClassesState>({});
+  const [ role,setRole ] = useState<string|undefined>(undefined)
 
   const { foundation, ...elements } = useFoundation({
     props,
@@ -261,11 +262,47 @@ export const useListFoundation = (props: ListProps & React.HTMLProps<any>) => {
   rootEl.setProp('onKeyDown', handleKeydown, true);
   rootEl.setProp('onFocus', handleFocusIn, true);
   rootEl.setProp('onBlur', handleFocusOut, true);
+  
+  const initializeListRole = useCallback((): void=>  {
+      // regular list implicitly has role='list' and is not necessary to set
+      // checkbox list should be role='group'
+      // radio list should be role='radiogroup'
+      // else, role='listbox' if selectedIndex
+
+    if (props.role) { return setRole(props.role);  }
+    
+    if (!rootEl.ref) { return; }
+
+    const hasSelectedIndex_: boolean  = !!props.selectedIndex || 
+      !!rootEl.ref.querySelector(`
+        .${MDCListFoundation.cssClasses.LIST_ITEM_ACTIVATED_CLASS},
+        .${MDCListFoundation.cssClasses.LIST_ITEM_SELECTED_CLASS}
+      `);
+
+    const isCheckboxList_: boolean =  !!rootEl.ref.querySelector(
+      MDCListFoundation.strings.CHECKBOX_SELECTOR
+    );
+    const isRadioList_ : boolean = !!rootEl.ref.querySelector(
+      MDCListFoundation.strings.RADIO_SELECTOR
+    );
+
+    if (isCheckboxList_) {
+      return setRole('group');
+    }
+    if (isRadioList_) {
+      return setRole('radiogroup')
+    }
+
+    if (hasSelectedIndex_) {
+      return setRole('listbox');
+    }
+  },[props.role, props.selectedIndex, rootEl.ref])
 
   // layout on mount
   useEffect(() => {
     foundation.layout();
-  }, [foundation]);
+    initializeListRole()
+  }, [foundation, initializeListRole]);
   
   useEffect(() => {
     foundation.setWrapFocus((props.wrapFocus || props.wrapFocus === undefined));
@@ -278,20 +315,23 @@ export const useListFoundation = (props: ListProps & React.HTMLProps<any>) => {
   }, [foundation, props.vertical]);
 
   useEffect(() => {
-    const isSingleSelection = props.singleSelection || false;
-    foundation.setSingleSelection(isSingleSelection);
-  }, [foundation, props.singleSelection]);
-
-  useEffect(() => {
-    if (props.selectedIndex) {
+    if (props.selectedIndex !== undefined && props.selectedIndex > -1) { 
       foundation.setSelectedIndex(props.selectedIndex)
     }
   }, [foundation, props.selectedIndex]);
 
 
+  useEffect((): void =>  {
+    if (role) {
+      foundation.setSingleSelection(role === 'listbox')
+    }
+  }, [foundation, role])
+
   const setEnabled = (index: number, isEnabled: boolean) => {
     foundation.setEnabled(index,isEnabled);
   }
 
-  return { ...elements, listItemClasses, setEnabled};
+
+
+  return { ...elements, listItemClasses, setEnabled, role};
 };
