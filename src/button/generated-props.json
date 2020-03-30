@@ -293,6 +293,23 @@
           "type": "undefined | false | true"
         }
       ]
+    },
+    "ButtonHTMLProps": {
+      "fileName": "src/button/index.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "type alias",
+      "name": "ButtonHTMLProps",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/button/index.tsx#L43",
+      "type": "RMWC.HTMLProps<HTMLButtonElement>"
     }
   }
 }

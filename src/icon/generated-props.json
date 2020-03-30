@@ -50,6 +50,23 @@
           "type": "RMWC.IconPropT"
         }
       ]
+    },
+    "IconHTMLProps": {
+      "fileName": "src/icon/index.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "type alias",
+      "name": "IconHTMLProps",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/icon/index.tsx#L12",
+      "type": "RMWC.HTMLProps<HTMLElement>"
     }
   }
 }

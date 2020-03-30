@@ -7088,7 +7088,7 @@
       },
       "kind": "interface",
       "name": "SelectHelperTextProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/select/select/index.tsx#L432",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/select/select/index.tsx#L429",
       "methods": [],
       "properties": [
         {
@@ -7112,7 +7112,7 @@
           },
           "kind": "property",
           "name": "persistent",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/select/select/index.tsx#L434",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/select/select/index.tsx#L431",
           "type": "undefined | false | true"
         },
         {
@@ -7136,7 +7136,7 @@
           },
           "kind": "property",
           "name": "validationMsg",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/select/select/index.tsx#L436",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/select/select/index.tsx#L433",
           "type": "undefined | false | true"
         }
       ]

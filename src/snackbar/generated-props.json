@@ -322,7 +322,7 @@
       },
       "kind": "interface",
       "name": "SnackbarActionProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/snackbar/snackbar.tsx#L157",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/snackbar/snackbar.tsx#L162",
       "extends": [
         "ButtonProps"
       ],
@@ -349,7 +349,7 @@
           },
           "kind": "property",
           "name": "action",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/snackbar/snackbar.tsx#L159",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/snackbar/snackbar.tsx#L164",
           "type": "undefined | string"
         },
         {

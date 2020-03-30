@@ -316,7 +316,7 @@
       "kind": "type alias",
       "name": "SliderHTMLProps",
       "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/slider/index.tsx#L39",
-      "type": "RMWC.HTMLProps<HTMLDivElement, Omit<AllHTMLAttributes<HTMLDivElement>, \"onChange\" | \"onInput\">>"
+      "type": "RMWC.HTMLProps<HTMLDivElement, Omit<AllHTMLAttributes<HTMLInputElement>, \"onChange\" | \"onInput\">>"
     }
   }
 }

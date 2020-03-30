@@ -67,6 +67,23 @@
       "name": "TypographyT",
       "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/typography/index.tsx#L7",
       "type": "\"headline1\" | \"headline2\" | \"headline3\" | \"headline4\" | \"headline5\" | \"headline6\" | \"subtitle1\" | \"subtitle2\" | \"body1\" | \"body2\" | \"caption\" | \"button\" | \"overline\""
+    },
+    "TypographyHTMLProps": {
+      "fileName": "src/typography/index.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "type alias",
+      "name": "TypographyHTMLProps",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/typography/index.tsx#L28",
+      "type": "RMWC.HTMLProps<HTMLElement>"
     }
   }
 }
