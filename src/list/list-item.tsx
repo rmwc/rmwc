@@ -66,6 +66,8 @@ export const ListItem = withRipple({ surface: false })(
   })
 );
 
+ListItem.displayName = 'ListItem';
+
 /** Text Wrapper for the ListItem */
 export interface ListItemTextProps {}
 
