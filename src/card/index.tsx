@@ -140,6 +140,6 @@ export const CardActionButton = createComponent<CardActionButtonProps>(
       'mdc-card__action',
       'mdc-card__action--button'
     ]);
-    return <Button ref={ref} {...props} className={className} />;
+    return <Button {...props} ref={ref} className={className} />;
   }
 );

@@ -25,25 +25,26 @@ export interface TypographyProps {
   use: TypographyT;
 }
 
+export type TypographyHTMLProps = RMWC.HTMLProps<HTMLElement>;
+
 /** The Typography Component */
-export const Typography = createComponent<TypographyProps>(function Typography(
-  props,
-  ref
-) {
-  const { use, ...rest } = props;
+export const Typography = createComponent<TypographyProps, TypographyHTMLProps>(
+  function Typography(props, ref) {
+    const { use, ...rest } = props;
 
-  const providerContext = useProviderContext();
+    const providerContext = useProviderContext();
 
-  const typographyOptions = providerContext.typography;
+    const typographyOptions = providerContext.typography;
 
-  const tag =
-    typographyOptions?.[use] || typographyOptions?.defaultTag || 'span';
+    const tag =
+      typographyOptions?.[use] || typographyOptions?.defaultTag || 'span';
 
-  const className = useClassNames(props, [
-    {
-      [`mdc-typography--${props.use}`]: props.use
-    }
-  ]);
+    const className = useClassNames(props, [
+      {
+        [`mdc-typography--${props.use}`]: props.use
+      }
+    ]);
 
-  return <Tag tag={tag} {...rest} ref={ref} className={className} />;
-});
+    return <Tag tag={tag} {...rest} ref={ref} className={className} />;
+  }
+);

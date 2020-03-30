@@ -77,16 +77,17 @@ const isMenuItems = (child: React.ReactNode) =>
   getDisplayName(child) === 'MenuItems';
 
 /** A menu component for displaying lists items. */
-export const Menu = createComponent<MenuProps, MenuHTMLProps>(function Menu(
-  props,
-  ref
-) {
+export const Menu: RMWC.ComponentType<
+  MenuProps,
+  MenuHTMLProps,
+  'div'
+> = createComponent<MenuProps, MenuHTMLProps>(function Menu(props, ref) {
   const { children, focusOnOpen, onSelect, foundationRef, ...rest } = props;
   const { rootEl, setListApi, setMenuSurfaceApi } = useMenuFoundation(props);
 
   const needsMenuItemsWrapper = (
     React.Children.map(children, isMenuItems) || []
-  ).every(val => val === false);
+  ).every((val) => val === false);
 
   const menuItemsProps = {
     apiRef: setListApi
@@ -103,7 +104,7 @@ export const Menu = createComponent<MenuProps, MenuHTMLProps>(function Menu(
       {needsMenuItemsWrapper ? (
         <MenuItems {...menuItemsProps}>{children}</MenuItems>
       ) : (
-        React.Children.map(children, child => {
+        React.Children.map(children, (child) => {
           if (isMenuItems(child)) {
             return React.cloneElement(child as React.ReactElement<any>, {
               ...(React.isValidElement(child) ? (child.props as Object) : {}),
@@ -150,7 +151,7 @@ const simpleMenuFactory = <
 >(
   MenuComponent: typeof Menu | typeof MenuSurface
 ): React.ComponentType<Props> =>
-  function(props: Props) {
+  function (props: Props) {
     const [stateOpen, setStateOpen] = useState(!!props.open);
 
     useEffect(() => {

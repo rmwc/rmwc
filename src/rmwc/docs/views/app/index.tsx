@@ -89,7 +89,7 @@ function AppBar({
               }
             >
               <MenuItem>{version}</MenuItem>
-              {DOC_VERSIONS.map(v => (
+              {DOC_VERSIONS.map((v) => (
                 <MenuItem key={v} tag="a" href={`/version/${v}`}>
                   {v}
                 </MenuItem>
@@ -182,14 +182,14 @@ export function App() {
       id={pageId}
     >
       <AppBar
-        onNavClick={evt => {
+        onNavClick={(evt) => {
           setMenuIsOpen(!menuIsOpen);
         }}
       >
         {!isMobile && (
           <ThemePicker
             selectedThemeName={theme}
-            onThemeClick={themeName => {
+            onThemeClick={(themeName) => {
               window.localStorage.setItem('rmwcTheme', themeName);
               setTheme(themeName);
             }}
@@ -220,7 +220,7 @@ export function App() {
 function NavItems({ options }: { options: MenuItemT[] }) {
   return (
     <>
-      {options.map(m => {
+      {options.map((m) => {
         if (m.options) {
           return (
             <CollapsibleList
@@ -228,7 +228,7 @@ function NavItems({ options }: { options: MenuItemT[] }) {
               defaultOpen={
                 m.label === 'Components' ||
                 m.options?.some(
-                  o =>
+                  (o) =>
                     o.url &&
                     window.location.pathname.split('/').pop() ===
                       o.url?.split('/').pop()

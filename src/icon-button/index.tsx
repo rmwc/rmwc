@@ -40,15 +40,20 @@ export type IconButtonHTMLProps = RMWC.HTMLProps<
 >;
 
 /** An IconButton component that can also be used as a toggle. */
-export const IconButton = createComponent<IconButtonProps, IconButtonHTMLProps>(
-  function IconButton({ ...rest }, ref) {
-    if (rest.onIcon) {
-      return <IconButtonToggle {...rest} ref={ref} />;
-    }
-
-    return <IconButtonRoot tag="button" {...rest} ref={ref} />;
+export const IconButton: RMWC.ComponentType<
+  IconButtonProps,
+  IconButtonHTMLProps,
+  'button'
+> = createComponent<IconButtonProps, IconButtonHTMLProps>(function IconButton(
+  { ...rest },
+  ref
+) {
+  if (rest.onIcon) {
+    return <IconButtonToggle {...rest} ref={ref} />;
   }
-);
+
+  return <IconButtonRoot tag="button" {...rest} ref={ref} />;
+});
 
 const IconButtonToggle = createComponent<IconButtonProps>(
   function IconButtonToggle(props, ref) {

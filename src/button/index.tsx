@@ -40,11 +40,19 @@ export interface ButtonProps extends RMWC.WithRippleProps {
   trailingIcon?: RMWC.IconPropT;
 }
 
+export type ButtonHTMLProps = RMWC.HTMLProps<HTMLButtonElement>;
+
 /**
  * The Button component.
  */
-export const Button = withRipple({ surface: false })(
-  createComponent<ButtonProps>(function Button(props, ref) {
+export const Button: RMWC.ComponentType<
+  ButtonProps,
+  ButtonHTMLProps,
+  'button'
+> = withRipple({
+  surface: false
+})(
+  createComponent<ButtonProps, ButtonHTMLProps>(function Button(props, ref) {
     const {
       dense,
       raised,

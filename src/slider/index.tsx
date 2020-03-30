@@ -38,7 +38,7 @@ export interface SliderProps {
 
 export type SliderHTMLProps = RMWC.HTMLProps<
   HTMLDivElement,
-  Omit<React.AllHTMLAttributes<HTMLDivElement>, 'onChange' | 'onInput'>
+  Omit<React.AllHTMLAttributes<HTMLInputElement>, 'onChange' | 'onInput'>
 >;
 
 const SliderTrack = React.memo(
@@ -76,76 +76,78 @@ const SliderFocusRing = React.memo(function SliderFocusRing() {
   return <div className="mdc-slider__focus-ring" />;
 });
 
-export const Slider = createComponent<SliderProps, SliderHTMLProps>(
-  function Slider(props, ref) {
-    const {
-      rootEl,
-      thumbContainerEl,
-      sliderPinEl,
-      setTrackRef,
-      setTrackMarkerContainerRef
-    } = useSliderFoundation(props);
+export const Slider: RMWC.ComponentType<
+  SliderProps,
+  SliderHTMLProps,
+  'input'
+> = createComponent<SliderProps, SliderHTMLProps>(function Slider(props, ref) {
+  const {
+    rootEl,
+    thumbContainerEl,
+    sliderPinEl,
+    setTrackRef,
+    setTrackMarkerContainerRef
+  } = useSliderFoundation(props);
 
-    const {
-      value,
-      min,
-      max,
-      discrete,
-      displayMarkers,
-      step,
-      disabled,
-      onChange,
-      onInput,
-      children,
-      foundationRef,
-      ...rest
-    } = props;
+  const {
+    value,
+    min,
+    max,
+    discrete,
+    displayMarkers,
+    step,
+    disabled,
+    onChange,
+    onInput,
+    children,
+    foundationRef,
+    ...rest
+  } = props;
 
-    const className = useClassNames(props, [
-      'mdc-slider',
-      {
-        'mdc-slider--discrete': discrete,
-        'mdc-slider--display-markers': displayMarkers && discrete
-      }
-    ]);
-
-    const dataStep = step ? { 'data-step': step } : {};
-
-    if (displayMarkers && !discrete) {
-      console.warn(
-        `The 'displayMarkers' prop on rmwc Slider will
-        only work in conjunction with the 'discrete' prop`
-      );
+  const className = useClassNames(props, [
+    'mdc-slider',
+    {
+      'mdc-slider--discrete': discrete,
+      'mdc-slider--display-markers': displayMarkers && discrete
     }
+  ]);
 
-    return (
-      <Tag
-        tabIndex={0}
-        //eslint-disable-next-line jsx-a11y/role-has-required-aria-props
-        role="slider"
-        aria-valuemax={max as any}
-        aria-valuenow={value as any}
-        aria-label="Select Value"
-        {...(disabled ? { 'aria-disabled': disabled } : {})}
-        {...dataStep}
-        {...rest}
-        ref={ref}
-        element={rootEl}
-        className={className}
-      >
-        <div className="mdc-slider__track-container">
-          <SliderTrack ref={setTrackRef} />
-          {displayMarkers && (
-            <SliderTrackMarkerContainer ref={setTrackMarkerContainerRef} />
-          )}
-        </div>
-        <Tag element={thumbContainerEl} className="mdc-slider__thumb-container">
-          {discrete && <SliderPin value={sliderPinEl.getProp('value')} />}
-          <SliderThumb />
-          <SliderFocusRing />
-        </Tag>
-        {children}
-      </Tag>
+  const dataStep = step ? { 'data-step': step } : {};
+
+  if (displayMarkers && !discrete) {
+    console.warn(
+      `The 'displayMarkers' prop on rmwc Slider will
+        only work in conjunction with the 'discrete' prop`
     );
   }
-);
+
+  return (
+    <Tag
+      tabIndex={0}
+      //eslint-disable-next-line jsx-a11y/role-has-required-aria-props
+      role="slider"
+      aria-valuemax={max as any}
+      aria-valuenow={value as any}
+      aria-label="Select Value"
+      {...(disabled ? { 'aria-disabled': disabled } : {})}
+      {...dataStep}
+      {...rest}
+      ref={ref}
+      element={rootEl}
+      className={className}
+    >
+      <div className="mdc-slider__track-container">
+        <SliderTrack ref={setTrackRef} />
+        {displayMarkers && (
+          <SliderTrackMarkerContainer ref={setTrackMarkerContainerRef} />
+        )}
+      </div>
+      <Tag element={thumbContainerEl} className="mdc-slider__thumb-container">
+        {discrete && <SliderPin value={sliderPinEl.getProp('value')} />}
+        <SliderThumb />
+        <SliderFocusRing />
+      </Tag>
+      {children}
+    </Tag>
+  );
+});

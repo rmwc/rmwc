@@ -92,19 +92,19 @@ const MyComp = () => <TextField
 
 ## Restricting the component props surface
 
-In the event you want to lock down the component interface, its as easy as importing the props for the component you want and wrapping the component. In the following example, `ButtonProps` doesn't include `React.HTMLProps`. Instead the definition internally is `Button: React.ComponentType<ButtonProps & RMWC.ComponentProps>`. This means that `ButtonProps` only contains the things explicitly unique to the button component.
+In the event you want to lock down the component interface, its as easy as importing the props for the component you want and wrapping the component. In the following example, `ButtonProps` doesn't include `React.HTMLProps`. Instead the definition internally is the equivalent of `Button: React.ComponentType<ButtonProps & RMWC.HTMLProps>`. This means that `ButtonProps` only contains the things explicitly unique to the button component.
 
 
 ```jsx
 import { Button, ButtonProps } from '@rmwc/button';
-import { ComponentProps } from '@rmwc/types';
+import { HTMLProps } from '@rmwc/types';
 
 // Extend the ButtonProps interface
 interface RestrictiveButtonProps extends ButtonProps {}
 
 const RestrictiveButton = (props: RestrictiveButtonProps) => <Button
   label="Hello World" // Works!
-  onClick={() => {}} // ERROR! Not included in ButtonProps 
+  onClick={props.onClick} // ERROR! Not included in ButtonProps 
 />
 
 // Extend the ButtonProps interface and add our own items
@@ -114,17 +114,17 @@ interface FancyButtonProps extends ButtonProps {
 
 const FancyButton = (props: FancyButtonProps) => <Button
   label="Hello World" // Works!
-  onClick={() => {}} // Works!
-  onMousedown={() => {}} // ERROR!
+  onClick={props.onClick} // Works!
+  onMousedown={props.onMouseDown} // ERROR!
 />
 
 // Extend the ButtonProps and ComponentProps (which includes everything)
-interface EverythingButtonProps extends ButtonProps, ComponentProps {}
+interface EverythingButtonProps extends ButtonProps, HTMLProps {}
 
 const EverythingButton = (props: EverythingButtonProps) => <Button
   label="Hello World" // Works!
-  onClick={() => {}} // Works!
-  onMousedown={() => {}} // Works!
+  onClick={props.onClick} // Works!
+  onMousedown={props.onMouseDown} // Works!
   aria-role="button" // Works!
   data-testid="foo" // Works!
 />

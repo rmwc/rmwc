@@ -18,10 +18,11 @@ export interface RadioProps
 export type RadioHTMLProps = ToggleHTMLProps;
 
 /** A Radio button component. */
-export const Radio = createComponent<RadioProps, RadioHTMLProps>(function Radio(
-  props,
-  ref
-) {
+export const Radio: RMWC.ComponentType<
+  RadioProps,
+  RadioHTMLProps,
+  'input'
+> = createComponent<RadioProps, RadioHTMLProps>(function Radio(props, ref) {
   const { renderToggle, id, toggleRootProps, rootEl } = useRadioFoundation(
     props
   );
