@@ -1,4 +1,41 @@
 {
   "npm": {},
-  "typescript": {}
+  "typescript": {
+    "NotchedOutlineProps": {
+      "fileName": "src/notched-outline/index.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "interface",
+      "name": "NotchedOutlineProps",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/notched-outline/index.tsx#L7",
+      "methods": [],
+      "properties": [
+        {
+          "fileName": "src/notched-outline/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "notch",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/notched-outline/index.tsx#L8",
+          "type": "undefined | number"
+        }
+      ]
+    }
+  }
 }

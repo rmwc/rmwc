@@ -1,4 +1,151 @@
 {
   "npm": {},
-  "typescript": {}
+  "typescript": {
+    "RMWCProviderProps": {
+      "documentation": {
+        "contents": [
+          "<p>A provider for setting global options in RMWC.</p>\n"
+        ],
+        "contentsRaw": "A provider for setting global options in RMWC.",
+        "metadata": {}
+      },
+      "fileName": "src/provider/index.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "interface",
+      "name": "RMWCProviderProps",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/provider/index.tsx#L51",
+      "methods": [],
+      "properties": [
+        {
+          "documentation": {
+            "contents": [
+              "<p>Children to render</p>\n"
+            ],
+            "contentsRaw": "Children to render",
+            "metadata": {}
+          },
+          "fileName": "src/provider/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "children",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/provider/index.tsx#L61",
+          "type": "React.ReactNode"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Global options for icons</p>\n"
+            ],
+            "contentsRaw": "Global options for icons",
+            "metadata": {}
+          },
+          "fileName": "src/provider/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "icon",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/provider/index.tsx#L55",
+          "type": "Partial<IconOptions>"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Enable / Disable interaction ripples globally</p>\n"
+            ],
+            "contentsRaw": "Enable / Disable interaction ripples globally",
+            "metadata": {}
+          },
+          "fileName": "src/provider/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "ripple",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/provider/index.tsx#L53",
+          "type": "undefined | false | true"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Global tooltip options</p>\n"
+            ],
+            "contentsRaw": "Global tooltip options",
+            "metadata": {}
+          },
+          "fileName": "src/provider/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "tooltip",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/provider/index.tsx#L57",
+          "type": "Partial<TooltipOptions>"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Global typography options</p>\n"
+            ],
+            "contentsRaw": "Global typography options",
+            "metadata": {}
+          },
+          "fileName": "src/provider/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "typography",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/provider/index.tsx#L59",
+          "type": "Partial<TypographyOptions>"
+        }
+      ]
+    }
+  }
 }

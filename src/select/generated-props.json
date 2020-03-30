@@ -89,7 +89,7 @@
             "contentsRaw": "The icon to use. This can be a string for a font icon, a url, or whatever the selected strategy needs.",
             "metadata": {}
           },
-          "fileName": "src/select/node_modules/@rmwc/icon/index.tsx",
+          "fileName": "src/select/node_modules/@rmwc/menu/node_modules/@rmwc/list/node_modules/@rmwc/icon/dist/index.d.ts",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1971,6 +1971,23 @@
           "name": "crossOrigin",
           "inheritedFrom": "AllHTMLAttributes.crossOrigin",
           "type": "undefined | string"
+        },
+        {
+          "fileName": "node_modules/@emotion/core/types/index.d.ts",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "css",
+          "inheritedFrom": "DOMAttributes.css",
+          "type": "InterpolationWithTheme<any>"
         },
         {
           "fileName": "node_modules/@types/react/index.d.ts",

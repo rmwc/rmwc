@@ -1,4 +1,127 @@
 {
   "npm": {},
-  "typescript": {}
+  "typescript": {
+    "CircularProgressProps": {
+      "documentation": {
+        "contents": [
+          "<p>A Circular Progress indicator.</p>\n"
+        ],
+        "contentsRaw": "A Circular Progress indicator.",
+        "metadata": {}
+      },
+      "fileName": "src/circular-progress/index.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "interface",
+      "name": "CircularProgressProps",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/circular-progress/index.tsx#L15",
+      "methods": [],
+      "properties": [
+        {
+          "documentation": {
+            "contents": [
+              "<p>Max value for determinate progress bars.</p>\n"
+            ],
+            "contentsRaw": "Max value for determinate progress bars.",
+            "metadata": {}
+          },
+          "fileName": "src/circular-progress/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "max",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/circular-progress/index.tsx#L17",
+          "type": "undefined | number"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Min value for determinate progress bars.</p>\n"
+            ],
+            "contentsRaw": "Min value for determinate progress bars.",
+            "metadata": {}
+          },
+          "fileName": "src/circular-progress/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "min",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/circular-progress/index.tsx#L19",
+          "type": "undefined | number"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Value for determinate progress bars.</p>\n"
+            ],
+            "contentsRaw": "Value for determinate progress bars.",
+            "metadata": {}
+          },
+          "fileName": "src/circular-progress/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "progress",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/circular-progress/index.tsx#L21",
+          "type": "undefined | number"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>The size of the loader you would like to render.</p>\n"
+            ],
+            "contentsRaw": "The size of the loader you would like to render.",
+            "metadata": {}
+          },
+          "fileName": "src/circular-progress/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "size",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/circular-progress/index.tsx#L23",
+          "type": "\"xsmall\" | \"small\" | \"medium\" | \"large\" | \"xlarge\" | number"
+        }
+      ]
+    }
+  }
 }

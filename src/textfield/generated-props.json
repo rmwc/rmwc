@@ -1,4 +1,817 @@
 {
   "npm": {},
-  "typescript": {}
+  "typescript": {
+    "TextFieldProps": {
+      "documentation": {
+        "contents": [
+          "<p>A TextField component for accepting text input from a user.</p>\n"
+        ],
+        "contentsRaw": "A TextField component for accepting text input from a user.",
+        "metadata": {}
+      },
+      "fileName": "src/textfield/index.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "interface",
+      "name": "TextFieldProps",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L26",
+      "extends": [
+        "WithRippleProps"
+      ],
+      "methods": [],
+      "properties": [
+        {
+          "documentation": {
+            "contents": [
+              "<p>How to align the text inside the TextField. Defaults to &#39;start&#39;.</p>\n"
+            ],
+            "contentsRaw": "How to align the text inside the TextField. Defaults to 'start'.",
+            "metadata": {}
+          },
+          "fileName": "src/textfield/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "align",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L42",
+          "type": "\"start\" | \"end\""
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Shows the character count, must be used in conjunction with maxLength.</p>\n"
+            ],
+            "contentsRaw": "Shows the character count, must be used in conjunction with maxLength.",
+            "metadata": {}
+          },
+          "fileName": "src/textfield/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "characterCount",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L32",
+          "type": "undefined | false | true"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Makes the Textfield disabled.</p>\n"
+            ],
+            "contentsRaw": "Makes the Textfield disabled.",
+            "metadata": {}
+          },
+          "fileName": "src/textfield/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "disabled",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L36",
+          "type": "undefined | false | true"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Advanced: A reference to the MDCFoundation.</p>\n"
+            ],
+            "contentsRaw": "Advanced: A reference to the MDCFoundation.",
+            "metadata": {}
+          },
+          "fileName": "src/textfield/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "foundationRef",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L60",
+          "type": "React.Ref<MDCTextFieldFoundation | null>"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Makes the TextField fullwidth.</p>\n"
+            ],
+            "contentsRaw": "Makes the TextField fullwidth.",
+            "metadata": {}
+          },
+          "fileName": "src/textfield/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "fullwidth",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L48",
+          "type": "undefined | false | true"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Adds help text to the field</p>\n"
+            ],
+            "contentsRaw": "Adds help text to the field",
+            "metadata": {}
+          },
+          "fileName": "src/textfield/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "helpText",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L30",
+          "type": "React.ReactNode | TextFieldHelperTextProps"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Add a leading icon.</p>\n"
+            ],
+            "contentsRaw": "Add a leading icon.",
+            "metadata": {}
+          },
+          "fileName": "src/textfield/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "icon",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L50",
+          "type": "RMWC.IconPropT"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>A reference to the native input or textarea.</p>\n"
+            ],
+            "contentsRaw": "A reference to the native input or textarea.",
+            "metadata": {}
+          },
+          "fileName": "src/textfield/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "inputRef",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L56",
+          "type": "React.Ref<HTMLInputElement | HTMLTextAreaElement | null>"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Makes the TextField visually invalid. This is sometimes automatically applied in cases where required or pattern is used.</p>\n"
+            ],
+            "contentsRaw": "Makes the TextField visually invalid. This is sometimes automatically applied in cases where required or pattern is used.",
+            "metadata": {}
+          },
+          "fileName": "src/textfield/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "invalid",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L34",
+          "type": "undefined | false | true"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>A label for the input.</p>\n"
+            ],
+            "contentsRaw": "A label for the input.",
+            "metadata": {}
+          },
+          "fileName": "src/textfield/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "label",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L44",
+          "type": "React.ReactNode"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Outline the TextField.</p>\n"
+            ],
+            "contentsRaw": "Outline the TextField.",
+            "metadata": {}
+          },
+          "fileName": "src/textfield/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "outlined",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L40",
+          "type": "undefined | false | true"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Makes the Textfield required.</p>\n"
+            ],
+            "contentsRaw": "Makes the Textfield required.",
+            "metadata": {}
+          },
+          "fileName": "src/textfield/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "required",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L38",
+          "type": "undefined | false | true"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Adds a ripple effect to the component</p>\n"
+            ],
+            "contentsRaw": "Adds a ripple effect to the component",
+            "metadata": {}
+          },
+          "fileName": "src/textfield/node_modules/@rmwc/types/dist/index.d.ts",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "ripple",
+          "inheritedFrom": "WithRippleProps.ripple",
+          "type": "RipplePropT"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>By default, props spread to the input. These props are for the component&#39;s root container.</p>\n"
+            ],
+            "contentsRaw": "By default, props spread to the input. These props are for the component's root container.",
+            "metadata": {}
+          },
+          "fileName": "src/textfield/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "rootProps",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L54",
+          "type": "Object"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Makes a multiline TextField.</p>\n"
+            ],
+            "contentsRaw": "Makes a multiline TextField.",
+            "metadata": {}
+          },
+          "fileName": "src/textfield/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "textarea",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L46",
+          "type": "undefined | false | true"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Add a trailing icon.</p>\n"
+            ],
+            "contentsRaw": "Add a trailing icon.",
+            "metadata": {}
+          },
+          "fileName": "src/textfield/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "trailingIcon",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L52",
+          "type": "RMWC.IconPropT"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>The type of input field to render, search, number, etc</p>\n"
+            ],
+            "contentsRaw": "The type of input field to render, search, number, etc",
+            "metadata": {}
+          },
+          "fileName": "src/textfield/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "type",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L58",
+          "type": "undefined | string"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Sets the value for controlled TextFields.</p>\n"
+            ],
+            "contentsRaw": "Sets the value for controlled TextFields.",
+            "metadata": {}
+          },
+          "fileName": "src/textfield/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "value",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L28",
+          "type": "string | number"
+        }
+      ]
+    },
+    "TextFieldCharacterCountApi": {
+      "documentation": {
+        "contents": [
+          "<p>Character Count</p>\n"
+        ],
+        "contentsRaw": "Character Count",
+        "metadata": {}
+      },
+      "fileName": "src/textfield/index.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "interface",
+      "name": "TextFieldCharacterCountApi",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L238",
+      "methods": [],
+      "properties": [
+        {
+          "fileName": "src/textfield/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "getFoundation",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L239",
+          "type": "() => MDCTextFieldCharacterCounterFoundation"
+        }
+      ]
+    },
+    "TextFieldCharacterCountProps": {
+      "fileName": "src/textfield/index.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "interface",
+      "name": "TextFieldCharacterCountProps",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L242",
+      "extends": [
+        "IconProps"
+      ],
+      "methods": [],
+      "properties": [
+        {
+          "fileName": "src/textfield/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "apiRef",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L243",
+          "type": "undefined | (api: TextFieldCharacterCountApi | null) => void"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>The icon to use. This can be a string for a font icon, a url, or whatever the selected strategy needs.</p>\n"
+            ],
+            "contentsRaw": "The icon to use. This can be a string for a font icon, a url, or whatever the selected strategy needs.",
+            "metadata": {}
+          },
+          "fileName": "src/textfield/node_modules/@rmwc/icon/dist/index.d.ts",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "icon",
+          "inheritedFrom": "IconProps.icon",
+          "type": "RMWC.IconPropT"
+        }
+      ]
+    },
+    "TextFieldHelperTextProps": {
+      "documentation": {
+        "contents": [
+          "<p>Helper Text</p>\n"
+        ],
+        "contentsRaw": "Helper Text",
+        "metadata": {}
+      },
+      "fileName": "src/textfield/index.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "interface",
+      "name": "TextFieldHelperTextProps",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L257",
+      "methods": [],
+      "properties": [
+        {
+          "documentation": {
+            "contents": [
+              "<p>Content for the help text</p>\n"
+            ],
+            "contentsRaw": "Content for the help text",
+            "metadata": {}
+          },
+          "fileName": "src/textfield/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "children",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L263",
+          "type": "React.ReactNode"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Make the help text always visible</p>\n"
+            ],
+            "contentsRaw": "Make the help text always visible",
+            "metadata": {}
+          },
+          "fileName": "src/textfield/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "persistent",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L259",
+          "type": "undefined | false | true"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Make the help a validation message style</p>\n"
+            ],
+            "contentsRaw": "Make the help a validation message style",
+            "metadata": {}
+          },
+          "fileName": "src/textfield/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "validationMsg",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L261",
+          "type": "undefined | false | true"
+        }
+      ]
+    },
+    "TextFieldIconApi": {
+      "documentation": {
+        "contents": [
+          "<p>Icon</p>\n"
+        ],
+        "contentsRaw": "Icon",
+        "metadata": {}
+      },
+      "fileName": "src/textfield/index.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "interface",
+      "name": "TextFieldIconApi",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L286",
+      "methods": [],
+      "properties": [
+        {
+          "fileName": "src/textfield/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "getFoundation",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L287",
+          "type": "() => MDCTextFieldIconFoundation"
+        }
+      ]
+    },
+    "TextFieldIconProps": {
+      "documentation": {
+        "contents": [
+          "<p>An Icon in a TextField</p>\n"
+        ],
+        "contentsRaw": "An Icon in a TextField",
+        "metadata": {}
+      },
+      "fileName": "src/textfield/index.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "interface",
+      "name": "TextFieldIconProps",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L291",
+      "extends": [
+        "IconProps"
+      ],
+      "methods": [],
+      "properties": [
+        {
+          "fileName": "src/textfield/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "apiRef",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L292",
+          "type": "undefined | (api: TextFieldIconApi) => void"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>The icon to use. This can be a string for a font icon, a url, or whatever the selected strategy needs.</p>\n"
+            ],
+            "contentsRaw": "The icon to use. This can be a string for a font icon, a url, or whatever the selected strategy needs.",
+            "metadata": {}
+          },
+          "fileName": "src/textfield/node_modules/@rmwc/icon/dist/index.d.ts",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "icon",
+          "inheritedFrom": "IconProps.icon",
+          "type": "RMWC.IconPropT"
+        },
+        {
+          "fileName": "src/textfield/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "position",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L293",
+          "type": "\"leading\" | \"trailing\""
+        }
+      ]
+    },
+    "TextFieldHTMLProps": {
+      "fileName": "src/textfield/index.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "type alias",
+      "name": "TextFieldHTMLProps",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L63",
+      "type": "RMWC.HTMLProps<HTMLInputElement, Omit<AllHTMLAttributes<HTMLInputElement>, \"label\">>"
+    }
+  }
 }

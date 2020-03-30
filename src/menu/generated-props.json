@@ -387,7 +387,7 @@
       "methods": [],
       "properties": [
         {
-          "fileName": "src/menu/node_modules/@rmwc/list/list.tsx",
+          "fileName": "src/menu/node_modules/@rmwc/list/dist/list.d.ts",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -404,7 +404,7 @@
           "type": "(index: number, className: string) => void"
         },
         {
-          "fileName": "src/menu/node_modules/@rmwc/list/list.tsx",
+          "fileName": "src/menu/node_modules/@rmwc/list/dist/list.d.ts",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -421,7 +421,7 @@
           "type": "(index: number) => void"
         },
         {
-          "fileName": "src/menu/node_modules/@rmwc/list/list.tsx",
+          "fileName": "src/menu/node_modules/@rmwc/list/dist/list.d.ts",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -438,7 +438,7 @@
           "type": "() => void"
         },
         {
-          "fileName": "src/menu/node_modules/@rmwc/list/list.tsx",
+          "fileName": "src/menu/node_modules/@rmwc/list/dist/list.d.ts",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -455,7 +455,7 @@
           "type": "() => string"
         },
         {
-          "fileName": "src/menu/node_modules/@rmwc/list/list.tsx",
+          "fileName": "src/menu/node_modules/@rmwc/list/dist/list.d.ts",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -525,7 +525,7 @@
           "type": "() => HTMLLIElement[]"
         },
         {
-          "fileName": "src/menu/node_modules/@rmwc/list/list.tsx",
+          "fileName": "src/menu/node_modules/@rmwc/list/dist/list.d.ts",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -542,7 +542,7 @@
           "type": "() => HTMLLIElement[]"
         },
         {
-          "fileName": "src/menu/node_modules/@rmwc/list/list.tsx",
+          "fileName": "src/menu/node_modules/@rmwc/list/dist/list.d.ts",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -595,7 +595,7 @@
           "type": "(element: HTMLElement) => void"
         },
         {
-          "fileName": "src/menu/node_modules/@rmwc/list/list.tsx",
+          "fileName": "src/menu/node_modules/@rmwc/list/dist/list.d.ts",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -791,7 +791,7 @@
             "contentsRaw": "An internal api used for cross component communication",
             "metadata": {}
           },
-          "fileName": "src/menu/node_modules/@rmwc/list/list.tsx",
+          "fileName": "src/menu/node_modules/@rmwc/list/dist/list.d.ts",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -815,7 +815,7 @@
             "contentsRaw": "Makes the list start detail circular for avatars.",
             "metadata": {}
           },
-          "fileName": "src/menu/node_modules/@rmwc/list/list.tsx",
+          "fileName": "src/menu/node_modules/@rmwc/list/dist/list.d.ts",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -839,7 +839,7 @@
             "contentsRaw": "Reduces the padding on List items.",
             "metadata": {}
           },
-          "fileName": "src/menu/node_modules/@rmwc/list/list.tsx",
+          "fileName": "src/menu/node_modules/@rmwc/list/dist/list.d.ts",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -863,7 +863,7 @@
             "contentsRaw": "Advanced: A reference to the MDCFoundation.",
             "metadata": {}
           },
-          "fileName": "src/menu/node_modules/@rmwc/list/list.tsx",
+          "fileName": "src/menu/node_modules/@rmwc/list/dist/list.d.ts",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -887,7 +887,7 @@
             "contentsRaw": "Makes the list non interactive. In addition, you'll have to set `ripple={false}` on the individual ListItems.",
             "metadata": {}
           },
-          "fileName": "src/menu/node_modules/@rmwc/list/list.tsx",
+          "fileName": "src/menu/node_modules/@rmwc/list/dist/list.d.ts",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -911,7 +911,7 @@
             "contentsRaw": "A callback for when a list item is interacted with. evt.detail = number",
             "metadata": {}
           },
-          "fileName": "src/menu/node_modules/@rmwc/list/list.tsx",
+          "fileName": "src/menu/node_modules/@rmwc/list/dist/list.d.ts",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -935,7 +935,7 @@
             "contentsRaw": "Gives more space for dual lined list items.",
             "metadata": {}
           },
-          "fileName": "src/menu/node_modules/@rmwc/list/list.tsx",
+          "fileName": "src/menu/node_modules/@rmwc/list/dist/list.d.ts",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -959,7 +959,7 @@
             "contentsRaw": "Sets the lists vertical orientation. Defaults to true",
             "metadata": {}
           },
-          "fileName": "src/menu/node_modules/@rmwc/list/list.tsx",
+          "fileName": "src/menu/node_modules/@rmwc/list/dist/list.d.ts",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -983,7 +983,7 @@
             "contentsRaw": "Sets the list to allow the up arrow on the first element to focus the\nlast element of the list and vice versa. Defaults to true",
             "metadata": {}
           },
-          "fileName": "src/menu/node_modules/@rmwc/list/list.tsx",
+          "fileName": "src/menu/node_modules/@rmwc/list/dist/list.d.ts",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1036,7 +1036,7 @@
             "contentsRaw": "A modifier for an active state.",
             "metadata": {}
           },
-          "fileName": "src/menu/node_modules/@rmwc/list/list-item.tsx",
+          "fileName": "src/menu/node_modules/@rmwc/list/dist/list-item.d.ts",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1060,7 +1060,7 @@
             "contentsRaw": "A modifier for a disabled state.",
             "metadata": {}
           },
-          "fileName": "src/menu/node_modules/@rmwc/list/list-item.tsx",
+          "fileName": "src/menu/node_modules/@rmwc/list/dist/list-item.d.ts",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1084,7 +1084,7 @@
             "contentsRaw": "Adds a ripple effect to the component",
             "metadata": {}
           },
-          "fileName": "src/menu/node_modules/@rmwc/base/node_modules/@rmwc/types/index.tsx",
+          "fileName": "src/menu/node_modules/@rmwc/types/dist/index.d.ts",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1108,7 +1108,7 @@
             "contentsRaw": "A modifier for a selected state.",
             "metadata": {}
           },
-          "fileName": "src/menu/node_modules/@rmwc/list/list-item.tsx",
+          "fileName": "src/menu/node_modules/@rmwc/list/dist/list-item.d.ts",
           "flags": {
             "isExported": true,
             "isExternal": false,

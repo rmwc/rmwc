@@ -1,4 +1,398 @@
 {
   "npm": {},
-  "typescript": {}
+  "typescript": {
+    "AvatarProps": {
+      "documentation": {
+        "contents": [
+          "<p>An Avatar component for displaying users in a system.</p>\n"
+        ],
+        "contentsRaw": "An Avatar component for displaying users in a system.",
+        "metadata": {}
+      },
+      "fileName": "src/avatar/index.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "interface",
+      "name": "AvatarProps",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/avatar/index.tsx#L13",
+      "extends": [
+        "WithRippleProps"
+      ],
+      "methods": [],
+      "properties": [
+        {
+          "documentation": {
+            "contents": [
+              "<p>Contain the avatar image instead of covering.</p>\n"
+            ],
+            "contentsRaw": "Contain the avatar image instead of covering.",
+            "metadata": {}
+          },
+          "fileName": "src/avatar/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "contain",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/avatar/index.tsx#L25",
+          "type": "undefined | false | true"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Make the avatar interactive.</p>\n"
+            ],
+            "contentsRaw": "Make the avatar interactive.",
+            "metadata": {}
+          },
+          "fileName": "src/avatar/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "interactive",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/avatar/index.tsx#L23",
+          "type": "undefined | false | true"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>The name of the user. This will get converted to initials and set the hover title.</p>\n"
+            ],
+            "contentsRaw": "The name of the user. This will get converted to initials and set the hover title.",
+            "metadata": {}
+          },
+          "fileName": "src/avatar/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "name",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/avatar/index.tsx#L19",
+          "type": "undefined | string"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Adds a ripple effect to the component</p>\n"
+            ],
+            "contentsRaw": "Adds a ripple effect to the component",
+            "metadata": {}
+          },
+          "fileName": "src/avatar/node_modules/@rmwc/types/dist/index.d.ts",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "ripple",
+          "inheritedFrom": "WithRippleProps.ripple",
+          "type": "RipplePropT"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>The size of the avatar</p>\n"
+            ],
+            "contentsRaw": "The size of the avatar",
+            "metadata": {}
+          },
+          "fileName": "src/avatar/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "size",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/avatar/index.tsx#L17",
+          "type": "RMWC.IconSizeT"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Make the avatar square.</p>\n"
+            ],
+            "contentsRaw": "Make the avatar square.",
+            "metadata": {}
+          },
+          "fileName": "src/avatar/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "square",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/avatar/index.tsx#L21",
+          "type": "undefined | false | true"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>The url for the image. This gets passed to the Icon component.</p>\n"
+            ],
+            "contentsRaw": "The url for the image. This gets passed to the Icon component.",
+            "metadata": {}
+          },
+          "fileName": "src/avatar/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "src",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/avatar/index.tsx#L15",
+          "type": "undefined | string"
+        }
+      ]
+    },
+    "AvatarGroupProps": {
+      "documentation": {
+        "contents": [
+          "<p>A container for groups of Avatars</p>\n"
+        ],
+        "contentsRaw": "A container for groups of Avatars",
+        "metadata": {}
+      },
+      "fileName": "src/avatar/index.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "interface",
+      "name": "AvatarGroupProps",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/avatar/index.tsx#L86",
+      "methods": [],
+      "properties": [
+        {
+          "documentation": {
+            "contents": [
+              "<p>Makes the list dense</p>\n"
+            ],
+            "contentsRaw": "Makes the list dense",
+            "metadata": {}
+          },
+          "fileName": "src/avatar/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "dense",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/avatar/index.tsx#L88",
+          "type": "undefined | false | true"
+        }
+      ]
+    },
+    "AvatarCountProps": {
+      "documentation": {
+        "contents": [
+          "<p>An Avatar count for displaying list overflow.</p>\n"
+        ],
+        "contentsRaw": "An Avatar count for displaying list overflow.",
+        "metadata": {}
+      },
+      "fileName": "src/avatar/index.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "interface",
+      "name": "AvatarCountProps",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/avatar/index.tsx#L146",
+      "methods": [],
+      "properties": [
+        {
+          "documentation": {
+            "contents": [
+              "<p>Make the avatar interactive.</p>\n"
+            ],
+            "contentsRaw": "Make the avatar interactive.",
+            "metadata": {}
+          },
+          "fileName": "src/avatar/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "interactive",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/avatar/index.tsx#L156",
+          "type": "undefined | false | true"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Optionally renders a &quot;+&quot; to indicate overlow.</p>\n"
+            ],
+            "contentsRaw": "Optionally renders a \"+\" to indicate overlow.",
+            "metadata": {}
+          },
+          "fileName": "src/avatar/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "overflow",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/avatar/index.tsx#L150",
+          "type": "undefined | false | true"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>The size of the avatar</p>\n"
+            ],
+            "contentsRaw": "The size of the avatar",
+            "metadata": {}
+          },
+          "fileName": "src/avatar/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "size",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/avatar/index.tsx#L152",
+          "type": "RMWC.IconSizeT"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Make the avatar square.</p>\n"
+            ],
+            "contentsRaw": "Make the avatar square.",
+            "metadata": {}
+          },
+          "fileName": "src/avatar/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "square",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/avatar/index.tsx#L154",
+          "type": "undefined | false | true"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>The number of users.</p>\n"
+            ],
+            "contentsRaw": "The number of users.",
+            "metadata": {}
+          },
+          "fileName": "src/avatar/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "value",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/avatar/index.tsx#L148",
+          "type": "number"
+        }
+      ]
+    }
+  }
 }
