@@ -92,7 +92,7 @@ const MyComp = () => <TextField
 
 ## Restricting the component props surface
 
-In the event you want to lock down the component interface, its as easy as importing the props for the component you want and wrapping the component. In the following example, `ButtonProps` doesn't include `React.HTMLProps`. Instead the definition internally is `Button: React.ComponentType<ButtonProps & RMWC.ComponentProps>`. This means that `ButtonProps` only contains the things explicitly unique to the button component.
+In the event you want to lock down the component interface, its as easy as importing the props for the component you want and wrapping the component. In the following example, `ButtonProps` doesn't include `React.HTMLProps`. Instead the definition internally is `Button: React.ComponentType<ButtonProps & RMWC.ComponentTypeProps>`. This means that `ButtonProps` only contains the things explicitly unique to the button component.
 
 
 ```jsx
