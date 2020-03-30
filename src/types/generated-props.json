@@ -389,23 +389,6 @@
       "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/types/index.tsx#L101",
       "type": "IconElementT | IconOptions"
     },
-    "ComponentElementType": {
-      "fileName": "src/types/index.tsx",
-      "flags": {
-        "isExported": true,
-        "isExternal": false,
-        "isOptional": false,
-        "isPrivate": false,
-        "isProtected": false,
-        "isPublic": false,
-        "isRest": false,
-        "isStatic": false
-      },
-      "kind": "type alias",
-      "name": "ComponentElementType",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/types/index.tsx#L103",
-      "type": "React.ElementType | undefined"
-    },
     "HTMLProps": {
       "fileName": "src/types/index.tsx",
       "flags": {
@@ -420,8 +403,42 @@
       },
       "kind": "type alias",
       "name": "HTMLProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/types/index.tsx#L105",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/types/index.tsx#L103",
       "type": "A & ClassAttributes<T> & "
+    },
+    "ComponentProps": {
+      "fileName": "src/types/index.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "type alias",
+      "name": "ComponentProps",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/types/index.tsx#L110",
+      "type": "Props & ElementProps | ComponentPropsWithRef<Tag> & "
+    },
+    "ComponentType": {
+      "fileName": "src/types/index.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "type alias",
+      "name": "ComponentType",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/types/index.tsx#L123",
+      "type": "(props: ComponentProps<Props, ElementProps, Tag>, ref: any) => Element"
     }
   }
 }

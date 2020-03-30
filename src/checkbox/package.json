@@ -1,11 +1,13 @@
 {
   "name": "@rmwc/checkbox",
-  "version": "6.0.0-rc.0",
+  "version": "6.0.5",
   "description": "RMWC Checkbox component",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "module": "next/index.js",
   "sideEffects": [
+    "./styles.tsx",
+    "./styles.js",
     "*.css"
   ],
   "publishConfig": {
@@ -36,11 +38,11 @@
   "dependencies": {
     "@material/checkbox": "^5.1.0",
     "@material/form-field": "^5.1.0",
-    "@rmwc/base": "^6.0.0-rc.0",
-    "@rmwc/formfield": "^6.0.0-rc.0",
-    "@rmwc/ripple": "^6.0.0-rc.0",
-    "@rmwc/toggleable": "^6.0.0-rc.0",
-    "@rmwc/types": "^6.0.0-alpha.13"
+    "@rmwc/base": "^6.0.5",
+    "@rmwc/formfield": "^6.0.5",
+    "@rmwc/ripple": "^6.0.5",
+    "@rmwc/toggleable": "^6.0.5",
+    "@rmwc/types": "^6.0.5"
   },
   "gitHead": "73b3362a34fdef68139263efe17b3544bc05a452"
 }

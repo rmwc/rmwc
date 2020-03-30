@@ -5,7 +5,7 @@
 - Module **@rmwc/button**
 - Import styles:
   - Using CSS Loader
-    - import '@rmwc/button/dist/styles';
+    - import '@rmwc/button/styles';
   - Or include stylesheets
     - **'@material/button/dist/mdc.button.css'**
     - **'@rmwc/@rmwc/icon/icon.css'**

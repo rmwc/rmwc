@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { mount } from 'enzyme';
-import { Grid, GridCell, GridInner } from './';
+import { Grid, GridCell, GridRow } from './';
 
 describe('Grid', () => {
   it('renders', () => {
@@ -19,10 +19,10 @@ describe('Grid', () => {
     expect(el.html().includes('mdc-layout-grid__inner')).toBe(true);
   });
 
-  it('can have a custom GridInner component', () => {
+  it('can have a custom GridRow component', () => {
     const el = mount(
       <Grid>
-        <GridInner />
+        <GridRow />
       </Grid>
     );
     expect((el.html().match(/mdc-layout-grid__inner/g) || []).length).toBe(1);

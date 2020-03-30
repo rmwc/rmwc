@@ -1,5 +1,5 @@
 import * as RMWC from '@rmwc/types';
-import * as React from 'react';
+import React from 'react';
 import { useProviderContext } from '@rmwc/provider';
 import { classNames, Tag, createComponent, getDisplayName } from '@rmwc/base';
 
@@ -8,6 +8,8 @@ export interface IconProps {
   /** The icon to use. This can be a string for a font icon, a url, or whatever the selected strategy needs. */
   icon?: RMWC.IconPropT;
 }
+
+export type IconHTMLProps = RMWC.HTMLProps<HTMLElement>;
 
 /**
  * Given content, tries to figure out an appropriate strategy for it
@@ -110,7 +112,10 @@ const IconRoot = React.forwardRef(function IconRoot(
 });
 
 /** An Icon component. Most of these options can be set once globally, read the documentation on Provider for more info. */
-export const Icon = createComponent<IconProps>(({ icon, ...rest }, ref) => {
+export const Icon = createComponent<IconProps, IconHTMLProps>(function (
+  { icon, ...rest },
+  ref
+) {
   const providerContext = useProviderContext();
 
   // Build icon options object
@@ -181,13 +186,11 @@ export const Icon = createComponent<IconProps>(({ icon, ...rest }, ref) => {
     )
   });
 
-  // Unwrap double layered icons...
+  const childDisplayName = getDisplayName(rendered.props.children);
+
   if (
-    rendered.props.children &&
-    rendered.props.children.type &&
-    ['Avatar', 'AvatarRoot', 'Icon'].includes(
-      getDisplayName(rendered.props.children)
-    )
+    childDisplayName.includes('Avatar') ||
+    childDisplayName.includes('Icon')
   ) {
     return React.cloneElement(rendered.props.children, {
       ...rendered.props.children.props,

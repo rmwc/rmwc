@@ -9,7 +9,7 @@ export interface CollapsibleListProps {
   /** Show the collapsible list as open. */
   open?: boolean;
   /** Starts the collapsible list as open. */
-  startOpen?: boolean;
+  defaultOpen?: boolean;
   /** Callback for when the collapsible list opens. */
   onOpen?: () => void;
   /** Callback for when the collapsible list closes. */
@@ -71,9 +71,10 @@ export class CollapsibleList extends React.Component<
   childContainer: HTMLDivElement | null = null;
   root: HTMLDivElement | null = null;
   rafId: number | null = null;
+  timerId: number | null = null;
 
   state: CollapsibleState = {
-    open: !!this.props.startOpen || !!this.props.open,
+    open: !!this.props.defaultOpen || !!this.props.open,
     childrenStyle: {}
   };
 
@@ -99,6 +100,7 @@ export class CollapsibleList extends React.Component<
 
   componentWillUnmount() {
     this.rafId && window.cancelAnimationFrame(this.rafId);
+    this.timerId && window.clearTimeout(this.timerId);
   }
 
   syncOpenState() {
@@ -112,7 +114,7 @@ export class CollapsibleList extends React.Component<
     this.setState({ childrenStyle }, () => {
       if (this.state.open) {
         onOpen && onOpen();
-        setTimeout(() => {
+        this.timerId = window.setTimeout(() => {
           if (this.state.open) {
             this.setState({
               childrenStyle: {
@@ -215,7 +217,7 @@ export class CollapsibleList extends React.Component<
       onOpen,
       onClose,
       open: openProp,
-      startOpen,
+      defaultOpen,
       className,
       ...rest
     } = this.props;

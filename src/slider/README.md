@@ -5,7 +5,7 @@
 - Module **@rmwc/slider**
 - Import styles:
   - Using CSS Loader
-    - import '@rmwc/slider/dist/styles';
+    - import '@rmwc/slider/styles';
   - Or include stylesheets
     - **'@material/slider/dist/mdc.slider.css'**
 - MDC Docs: [https://material.io/develop/web/components/input-controls/sliders/](https://material.io/develop/web/components/input-controls/sliders/)

@@ -5,7 +5,7 @@
 - Module **@rmwc/list**
 - Import styles:
   - Using CSS Loader
-    - import '@rmwc/list/dist/styles';
+    - import '@rmwc/list/styles';
   - Or include stylesheets
     - **'@material/list/dist/mdc.list.css'**
     - **'@rmwc/list/collapsible-list.css'**
@@ -124,10 +124,10 @@ A collapsible list component.
 
 | Name | Type | Description |
 |------|------|-------------|
+| `defaultOpen` | `undefined \| false \| true` | Starts the collapsible list as open. |
 | `handle` | `ReactElement<any>` | The handle that opens and closes the collapsible section. Usually a ListItem. |
 | `onClose` | `undefined \| () => void` | Callback for when the collapsible list closes. |
 | `onOpen` | `undefined \| () => void` | Callback for when the collapsible list opens. |
 | `open` | `undefined \| false \| true` | Show the collapsible list as open. |
-| `startOpen` | `undefined \| false \| true` | Starts the collapsible list as open. |
 
 

@@ -31,7 +31,9 @@ import {
   Theme,
   ThemeProvider,
   Radio,
-  DialogTitle
+  DialogTitle,
+  createSnackbarQueue,
+  SnackbarQueue
 } from '../rmwc';
 
 function Bug538() {
@@ -89,6 +91,33 @@ function Bug515() {
   );
 }
 
+const queue = createSnackbarQueue();
+function Bug560() {
+  return (
+    <React.Fragment>
+      <Button
+        raised
+        onClick={() => queue.notify({ title: 'Hi there', dismissIcon: true })}
+      >
+        Notify
+      </Button>
+      <SnackbarQueue messages={queue.messages} />
+    </React.Fragment>
+  );
+}
+
+function Bug567() {
+  return (
+    <React.Fragment>
+      <ThemeProvider options={{ primary: 'red' }} theme="primary">
+        Expected: red text here. Actual: black.
+      </ThemeProvider>
+    </React.Fragment>
+  );
+}
+
 storiesOf('Bugs', module)
   .add('#538', Bug538)
-  .add('#515', Bug515);
+  .add('#515', Bug515)
+  .add('#560', Bug560)
+  .add('#567', Bug567);

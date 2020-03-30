@@ -1,5 +1,5 @@
 import '@rmwc/theme/styles';
-
+import '@rmwc/icon/styles';
 import '@rmwc/button/styles';
 import '@rmwc/avatar/styles';
 import '@rmwc/badge/styles';
@@ -14,7 +14,6 @@ import '@rmwc/elevation/styles';
 import '@rmwc/fab/styles';
 import '@rmwc/grid/styles';
 import '@rmwc/grid-list/styles';
-import '@rmwc/icon/styles';
 import '@rmwc/icon-button/styles';
 import '@rmwc/image-list/styles';
 import '@rmwc/linear-progress/styles';

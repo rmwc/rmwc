@@ -5,7 +5,7 @@
 - Module **@rmwc/top-app-bar**
 - Import styles:
   - Using CSS Loader
-    - import '@rmwc/top-app-bar/dist/styles';
+    - import '@rmwc/top-app-bar/styles';
   - Or include stylesheets
     - **'@material/top-app-bar/dist/mdc.top-app-bar.css'**
     - **'@material/icon-button/dist/mdc.icon-button.css'**

@@ -5,7 +5,7 @@
 - Module **@rmwc/card**
 - Import styles:
   - Using CSS Loader
-    - import '@rmwc/card/dist/styles';
+    - import '@rmwc/card/styles';
   - Or include stylesheets
     - **'@material/card/dist/mdc.card.css'**
     - **'@material/button/dist/mdc.button.css'**

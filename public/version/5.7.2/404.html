@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script type="text/javascript">
+      var parts = window.location.pathname.split('/');
+      var page = parts.pop();
+      var leading = parts.join('/') || '/';
+      window.location.replace(
+        leading +
+          '?p=' +
+          page +
+          (window.location.search ? '&' + window.location.search.slice(1) : '')
+      );
+    </script>
+  </head>
+
+  <body></body>
+</html>

@@ -100,11 +100,34 @@ export interface IconOptions {
 
 export type IconPropT = IconElementT | IconOptions;
 
-export type ComponentElementType = React.ElementType | undefined;
-
 export type HTMLProps<T = HTMLElement, A = React.AllHTMLAttributes<T>> = A &
   React.ClassAttributes<T> & {
     tag?: TagT;
     theme?: ThemePropT;
-    ref?: React.Ref<any>;
+    ref?: React.HTMLProps<T>['ref'];
   };
+
+export type ComponentProps<
+  Props extends {},
+  ElementProps extends {},
+  Tag extends React.ElementType
+> = Props &
+  (
+    | ElementProps
+    | (React.ComponentPropsWithRef<Tag> & {
+        tag?: Tag;
+        theme?: ThemePropT;
+      })
+  );
+
+export type ComponentType<
+  Props,
+  ElementProps,
+  Element extends React.ElementType<any>
+> = {
+  <Tag extends React.ElementType<any> = Element>(
+    props: ComponentProps<Props, ElementProps, Tag>,
+    ref: any
+  ): JSX.Element;
+  displayName?: string;
+};

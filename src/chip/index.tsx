@@ -56,7 +56,11 @@ export type ChipHTMLProps = RMWC.HTMLProps<
 >;
 
 /** A Chip component. */
-export const Chip = withRipple()(
+export const Chip: RMWC.ComponentType<
+  ChipProps,
+  ChipHTMLProps,
+  'div'
+> = withRipple()(
   createComponent<ChipProps, ChipHTMLProps>(function Chip(props, ref) {
     const {
       onInteraction,
@@ -166,7 +170,7 @@ const ChipIcon = React.memo(function ChipIcon(
       'mdc-chip__icon--trailing': trailing
     }
   ]);
-  const hasInteractionHandler = Object.keys(props).some(p =>
+  const hasInteractionHandler = Object.keys(props).some((p) =>
     p.startsWith('on')
   );
   const trailingProps =

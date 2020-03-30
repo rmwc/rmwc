@@ -5,7 +5,7 @@
 - Module **@rmwc/theme**
 - Import styles:
   - Using CSS Loader
-    - import '@rmwc/theme/dist/styles';
+    - import '@rmwc/theme/styles';
   - Or include stylesheets
     - **'@material/theme/dist/mdc.theme.css'**
     - **'@rmwc/theme/theme.css'**

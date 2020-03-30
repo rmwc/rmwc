@@ -24,54 +24,56 @@ export interface SwitchProps
 export type SwitchHTMLProps = ToggleHTMLProps;
 
 /** A Switch component. */
-export const Switch = createComponent<SwitchProps, SwitchHTMLProps>(
-  function Switch(props, ref) {
-    const {
-      renderToggle,
-      id,
-      toggleRootProps,
-      rootEl,
-      checkboxEl
-    } = useSwitchFoundation(props);
+export const Switch: RMWC.ComponentType<
+  SwitchProps,
+  SwitchHTMLProps,
+  'input'
+> = createComponent<SwitchProps, SwitchHTMLProps>(function Switch(props, ref) {
+  const {
+    renderToggle,
+    id,
+    toggleRootProps,
+    rootEl,
+    checkboxEl
+  } = useSwitchFoundation(props);
 
-    const rootClassName = useClassNames(toggleRootProps, ['mdc-switch']);
-    const {
-      children,
-      className,
-      label,
-      style,
-      inputRef,
-      foundationRef,
-      ...rest
-    } = props;
+  const rootClassName = useClassNames(toggleRootProps, ['mdc-switch']);
+  const {
+    children,
+    className,
+    label,
+    style,
+    inputRef,
+    foundationRef,
+    ...rest
+  } = props;
 
-    const renderedSwitch = (
-      <Tag
-        {...rootEl.props({ ...toggleRootProps, className: rootClassName })}
-        ref={ref}
-      >
-        <SwitchTrack />
-        <SwitchThumbUnderlay>
-          <SwitchThumb />
-          <input
-            {...checkboxEl.props({
-              ...rest,
-              className: 'mdc-switch__native-control'
-            })}
-            type="checkbox"
-            id={id}
-            ref={mergeRefs(checkboxEl.setRef, inputRef)}
-            role="switch"
-            aria-checked={rest.checked ?? rest['aria-checked']}
-          />
-        </SwitchThumbUnderlay>
-        <SwitchKnob />
-      </Tag>
-    );
+  const renderedSwitch = (
+    <Tag
+      {...rootEl.props({ ...toggleRootProps, className: rootClassName })}
+      ref={ref}
+    >
+      <SwitchTrack />
+      <SwitchThumbUnderlay>
+        <SwitchThumb />
+        <input
+          {...checkboxEl.props({
+            ...rest,
+            className: 'mdc-switch__native-control'
+          })}
+          type="checkbox"
+          id={id}
+          ref={mergeRefs(checkboxEl.setRef, inputRef)}
+          role="switch"
+          aria-checked={rest.checked ?? rest['aria-checked']}
+        />
+      </SwitchThumbUnderlay>
+      <SwitchKnob />
+    </Tag>
+  );
 
-    return renderToggle(renderedSwitch);
-  }
-);
+  return renderToggle(renderedSwitch);
+});
 
 /*********************************************************************
  * Bits

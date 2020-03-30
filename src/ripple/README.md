@@ -5,7 +5,7 @@
 - Module **@rmwc/ripple**
 - Import styles:
   - Using CSS Loader
-    - import '@rmwc/ripple/dist/styles';
+    - import '@rmwc/ripple/styles';
   - Or include stylesheets
     - **'@material/ripple/dist/mdc.ripple.css'**
 - MDC Docs: [https://material.io/develop/web/components/ripples/](https://material.io/develop/web/components/ripples/)

@@ -70,6 +70,12 @@ export const ThemeProvider = createComponent<ThemeProviderProps>(
     }, [parsed]);
 
     const { options, style = {}, wrap, ...rest } = props;
+    const className = useClassNames(props, [
+      wrap &&
+        typeof rest.children === 'object' &&
+        // @ts-ignore
+        rest.children?.props?.className
+    ]);
 
     const themeStyles = {
       ...style,
@@ -80,6 +86,8 @@ export const ThemeProvider = createComponent<ThemeProviderProps>(
       return wrapChild({ ...rest, style: themeStyles, ref });
     }
 
-    return <Tag {...rest} style={themeStyles} ref={ref} />;
+    return (
+      <Tag {...rest} style={themeStyles} className={className} ref={ref} />
+    );
   }
 );

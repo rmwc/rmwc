@@ -5,7 +5,7 @@
 - Module **@rmwc/badge**
 - Import styles:
   - Using CSS Loader
-    - import '@rmwc/badge/dist/styles';
+    - import '@rmwc/badge/styles';
   - Or include stylesheets
     - **'@rmwc/badge/badge.css'**
 

@@ -329,4 +329,26 @@ storiesOf('Select', module)
         console.log('onChange', evt.currentTarget.value);
       }}
     />
-  ));
+  ))
+  .add('Changing', function() {
+    const [value, setValue] = React.useState('');
+
+    React.useEffect(() => {
+      setInterval(() => {
+        setValue(val => (val === '' ? 'one' : ''));
+      }, 2000);
+    }, []);
+
+    return (
+      <Select
+        label="Controlled"
+        value={value}
+        outlined
+        enhanced
+        options={['one', 'two', 'three']}
+        onChange={evt => {
+          console.log('onChange', evt.currentTarget.value);
+        }}
+      />
+    );
+  });

@@ -2,7 +2,7 @@
   "npm": {},
   "typescript": {
     "MenuSurfaceApi": {
-      "fileName": "src/menu/menu-surface.tsx",
+      "fileName": "src/menu/menu-surface/index.tsx",
       "flags": {
         "isExported": true,
         "isExternal": false,
@@ -15,11 +15,11 @@
       },
       "kind": "interface",
       "name": "MenuSurfaceApi",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu-surface.tsx#L21",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu-surface/index.tsx#L21",
       "methods": [],
       "properties": [
         {
-          "fileName": "src/menu/menu-surface.tsx",
+          "fileName": "src/menu/menu-surface/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -32,11 +32,11 @@
           },
           "kind": "property",
           "name": "getSurfaceElement",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu-surface.tsx#L26",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu-surface/index.tsx#L26",
           "type": "() => HTMLElement | null"
         },
         {
-          "fileName": "src/menu/menu-surface.tsx",
+          "fileName": "src/menu/menu-surface/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -49,11 +49,11 @@
           },
           "kind": "property",
           "name": "hoistMenuToBody",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu-surface.tsx#L22",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu-surface/index.tsx#L22",
           "type": "() => void"
         },
         {
-          "fileName": "src/menu/menu-surface.tsx",
+          "fileName": "src/menu/menu-surface/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -66,11 +66,11 @@
           },
           "kind": "property",
           "name": "setAnchorCorner",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu-surface.tsx#L23",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu-surface/index.tsx#L23",
           "type": "(corner: Corner) => void"
         },
         {
-          "fileName": "src/menu/menu-surface.tsx",
+          "fileName": "src/menu/menu-surface/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -83,11 +83,11 @@
           },
           "kind": "property",
           "name": "setAnchorElement",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu-surface.tsx#L24",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu-surface/index.tsx#L24",
           "type": "(element: HTMLElement) => void"
         },
         {
-          "fileName": "src/menu/menu-surface.tsx",
+          "fileName": "src/menu/menu-surface/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -100,13 +100,13 @@
           },
           "kind": "property",
           "name": "setOpen",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu-surface.tsx#L25",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu-surface/index.tsx#L25",
           "type": "(open: boolean) => void"
         }
       ]
     },
     "MenuSurfaceProps": {
-      "fileName": "src/menu/menu-surface.tsx",
+      "fileName": "src/menu/menu-surface/index.tsx",
       "flags": {
         "isExported": true,
         "isExternal": false,
@@ -119,7 +119,7 @@
       },
       "kind": "interface",
       "name": "MenuSurfaceProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu-surface.tsx#L29",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu-surface/index.tsx#L29",
       "methods": [],
       "properties": [
         {
@@ -130,7 +130,7 @@
             "contentsRaw": "Manually position the menu to one of the corners.",
             "metadata": {}
           },
-          "fileName": "src/menu/menu-surface.tsx",
+          "fileName": "src/menu/menu-surface/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -143,7 +143,7 @@
           },
           "kind": "property",
           "name": "anchorCorner",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu-surface.tsx#L37",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu-surface/index.tsx#L37",
           "type": "AnchorT"
         },
         {
@@ -154,7 +154,7 @@
             "contentsRaw": "An internal api for cross component communication.",
             "metadata": {}
           },
-          "fileName": "src/menu/menu-surface.tsx",
+          "fileName": "src/menu/menu-surface/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -167,7 +167,7 @@
           },
           "kind": "property",
           "name": "apiRef",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu-surface.tsx#L45",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu-surface/index.tsx#L45",
           "type": "undefined | (api: MenuSurfaceApi) => void"
         },
         {
@@ -178,7 +178,7 @@
             "contentsRaw": "Children to render.",
             "metadata": {}
           },
-          "fileName": "src/menu/menu-surface.tsx",
+          "fileName": "src/menu/menu-surface/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -191,7 +191,7 @@
           },
           "kind": "property",
           "name": "children",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu-surface.tsx#L43",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu-surface/index.tsx#L43",
           "type": "React.ReactNode"
         },
         {
@@ -202,7 +202,7 @@
             "contentsRaw": "Make the menu position fixed.",
             "metadata": {}
           },
-          "fileName": "src/menu/menu-surface.tsx",
+          "fileName": "src/menu/menu-surface/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -215,7 +215,7 @@
           },
           "kind": "property",
           "name": "fixed",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu-surface.tsx#L33",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu-surface/index.tsx#L33",
           "type": "undefined | false | true"
         },
         {
@@ -226,7 +226,7 @@
             "contentsRaw": "Advanced: A reference to the MDCFoundation.",
             "metadata": {}
           },
-          "fileName": "src/menu/menu-surface.tsx",
+          "fileName": "src/menu/menu-surface/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -239,7 +239,7 @@
           },
           "kind": "property",
           "name": "foundationRef",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu-surface.tsx#L47",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu-surface/index.tsx#L47",
           "type": "React.Ref<MDCMenuSurfaceFoundation>"
         },
         {
@@ -250,7 +250,7 @@
             "contentsRaw": "Callback for when the menu is closed.",
             "metadata": {}
           },
-          "fileName": "src/menu/menu-surface.tsx",
+          "fileName": "src/menu/menu-surface/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -263,7 +263,7 @@
           },
           "kind": "property",
           "name": "onClose",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu-surface.tsx#L41",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu-surface/index.tsx#L41",
           "type": "undefined | (evt: MenuSurfaceOnCloseEventT) => void"
         },
         {
@@ -274,7 +274,7 @@
             "contentsRaw": "Callback for when the menu is opened.",
             "metadata": {}
           },
-          "fileName": "src/menu/menu-surface.tsx",
+          "fileName": "src/menu/menu-surface/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -287,7 +287,7 @@
           },
           "kind": "property",
           "name": "onOpen",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu-surface.tsx#L39",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu-surface/index.tsx#L39",
           "type": "undefined | (evt: MenuSurfaceOnOpenEventT) => void"
         },
         {
@@ -298,7 +298,7 @@
             "contentsRaw": "Opens the menu.",
             "metadata": {}
           },
-          "fileName": "src/menu/menu-surface.tsx",
+          "fileName": "src/menu/menu-surface/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -311,7 +311,7 @@
           },
           "kind": "property",
           "name": "open",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu-surface.tsx#L31",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu-surface/index.tsx#L31",
           "type": "undefined | false | true"
         },
         {
@@ -322,7 +322,7 @@
             "contentsRaw": "Renders the menu to a portal. Useful for situations where the content might be cutoff by an overflow: hidden container. You can pass \"true\" to render to the default RMWC portal.",
             "metadata": {}
           },
-          "fileName": "src/menu/menu-surface.tsx",
+          "fileName": "src/menu/menu-surface/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -335,7 +335,7 @@
           },
           "kind": "property",
           "name": "renderToPortal",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu-surface.tsx#L35",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu-surface/index.tsx#L35",
           "type": "PortalPropT"
         }
       ]
@@ -348,7 +348,7 @@
         "contentsRaw": "MenuSurfaceAnchor",
         "metadata": {}
       },
-      "fileName": "src/menu/menu-surface.tsx",
+      "fileName": "src/menu/menu-surface/index.tsx",
       "flags": {
         "isExported": true,
         "isExternal": false,
@@ -361,12 +361,12 @@
       },
       "kind": "interface",
       "name": "MenuSurfaceAnchorProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu-surface.tsx#L92",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu-surface/index.tsx#L92",
       "methods": [],
       "properties": []
     },
     "MenuApi": {
-      "fileName": "src/menu/menu.tsx",
+      "fileName": "src/menu/menu/index.tsx",
       "flags": {
         "isExported": true,
         "isExternal": false,
@@ -379,7 +379,7 @@
       },
       "kind": "interface",
       "name": "MenuApi",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L30",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu/index.tsx#L30",
       "extends": [
         "ListApi",
         "MenuSurfaceApi"
@@ -472,7 +472,7 @@
           "type": "() => number"
         },
         {
-          "fileName": "src/menu/menu-surface.tsx",
+          "fileName": "src/menu/menu-surface/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -485,12 +485,12 @@
           },
           "kind": "property",
           "name": "getSurfaceElement",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu-surface.tsx#L26",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu-surface/index.tsx#L26",
           "inheritedFrom": "MenuSurfaceApi.getSurfaceElement",
           "type": "() => HTMLElement | null"
         },
         {
-          "fileName": "src/menu/menu-surface.tsx",
+          "fileName": "src/menu/menu-surface/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -503,12 +503,12 @@
           },
           "kind": "property",
           "name": "hoistMenuToBody",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu-surface.tsx#L22",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu-surface/index.tsx#L22",
           "inheritedFrom": "MenuSurfaceApi.hoistMenuToBody",
           "type": "() => void"
         },
         {
-          "fileName": "src/menu/menu.tsx",
+          "fileName": "src/menu/menu/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -521,7 +521,7 @@
           },
           "kind": "property",
           "name": "items",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L31",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu/index.tsx#L31",
           "type": "() => HTMLLIElement[]"
         },
         {
@@ -559,7 +559,7 @@
           "type": "(index: number, className: string) => void"
         },
         {
-          "fileName": "src/menu/menu-surface.tsx",
+          "fileName": "src/menu/menu-surface/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -572,12 +572,12 @@
           },
           "kind": "property",
           "name": "setAnchorCorner",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu-surface.tsx#L23",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu-surface/index.tsx#L23",
           "inheritedFrom": "MenuSurfaceApi.setAnchorCorner",
           "type": "(corner: Corner) => void"
         },
         {
-          "fileName": "src/menu/menu-surface.tsx",
+          "fileName": "src/menu/menu-surface/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -590,7 +590,7 @@
           },
           "kind": "property",
           "name": "setAnchorElement",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu-surface.tsx#L24",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu-surface/index.tsx#L24",
           "inheritedFrom": "MenuSurfaceApi.setAnchorElement",
           "type": "(element: HTMLElement) => void"
         },
@@ -612,7 +612,7 @@
           "type": "(index: number, attr: string, value: any) => void"
         },
         {
-          "fileName": "src/menu/menu-surface.tsx",
+          "fileName": "src/menu/menu-surface/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -625,7 +625,7 @@
           },
           "kind": "property",
           "name": "setOpen",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu-surface.tsx#L25",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu-surface/index.tsx#L25",
           "inheritedFrom": "MenuSurfaceApi.setOpen",
           "type": "(open: boolean) => void"
         }
@@ -639,7 +639,7 @@
         "contentsRaw": "A menu component for displaying lists items.",
         "metadata": {}
       },
-      "fileName": "src/menu/menu.tsx",
+      "fileName": "src/menu/menu/index.tsx",
       "flags": {
         "isExported": true,
         "isExternal": false,
@@ -652,7 +652,7 @@
       },
       "kind": "interface",
       "name": "MenuProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L35",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu/index.tsx#L35",
       "extends": [
         "any"
       ],
@@ -666,7 +666,7 @@
             "contentsRaw": "Internal api reference for cross component communication.",
             "metadata": {}
           },
-          "fileName": "src/menu/menu.tsx",
+          "fileName": "src/menu/menu/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -679,7 +679,7 @@
           },
           "kind": "property",
           "name": "apiRef",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L42",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu/index.tsx#L42",
           "type": "undefined | (api: MenuApi) => void"
         },
         {
@@ -690,7 +690,7 @@
             "contentsRaw": "Whether or not to focus the first list item on open. Defaults to true.",
             "metadata": {}
           },
-          "fileName": "src/menu/menu.tsx",
+          "fileName": "src/menu/menu/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -703,7 +703,7 @@
           },
           "kind": "property",
           "name": "focusOnOpen",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L40",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu/index.tsx#L40",
           "type": "undefined | false | true"
         },
         {
@@ -714,7 +714,7 @@
             "contentsRaw": "Advanced: A reference to the MDCFoundation.",
             "metadata": {}
           },
-          "fileName": "src/menu/menu.tsx",
+          "fileName": "src/menu/menu/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -727,7 +727,7 @@
           },
           "kind": "property",
           "name": "foundationRef",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L44",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu/index.tsx#L44",
           "type": "React.Ref<MDCMenuFoundation>"
         },
         {
@@ -738,7 +738,7 @@
             "contentsRaw": "Callback that fires when a Menu item is selected. evt.detail = { index: number; item: HTMLElement; }",
             "metadata": {}
           },
-          "fileName": "src/menu/menu.tsx",
+          "fileName": "src/menu/menu/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -751,7 +751,7 @@
           },
           "kind": "property",
           "name": "onSelect",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L38",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu/index.tsx#L38",
           "type": "undefined | (evt: MenuOnSelectEventT) => void"
         }
       ]
@@ -764,7 +764,7 @@
         "contentsRaw": "A wrapper for menu items",
         "metadata": {}
       },
-      "fileName": "src/menu/menu.tsx",
+      "fileName": "src/menu/menu/index.tsx",
       "flags": {
         "isExported": true,
         "isExternal": false,
@@ -777,7 +777,7 @@
       },
       "kind": "interface",
       "name": "MenuItemsProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L53",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu/index.tsx#L53",
       "extends": [
         "ListProps"
       ],
@@ -1009,7 +1009,7 @@
         "contentsRaw": "This is just the ListItem component exported from the Menu module for convenience. You can use `ListItem` or `SimpleListItem` components from the List section as long as you add `role=\"menuitem\"` and `tabIndex=\"0\"` to the components for accessibility.",
         "metadata": {}
       },
-      "fileName": "src/menu/menu.tsx",
+      "fileName": "src/menu/menu/index.tsx",
       "flags": {
         "isExported": true,
         "isExternal": false,
@@ -1022,7 +1022,7 @@
       },
       "kind": "interface",
       "name": "MenuItemProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L66",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu/index.tsx#L66",
       "extends": [
         "ListItemProps"
       ],
@@ -1134,7 +1134,7 @@
         "contentsRaw": "A Simplified menu component that allows you to pass a handle element and will automatically control the open state and add a MenuSurfaceAnchor",
         "metadata": {}
       },
-      "fileName": "src/menu/menu.tsx",
+      "fileName": "src/menu/menu/index.tsx",
       "flags": {
         "isExported": true,
         "isExternal": false,
@@ -1147,7 +1147,7 @@
       },
       "kind": "interface",
       "name": "SimpleMenuProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L125",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu/index.tsx#L126",
       "extends": [
         "MenuProps"
       ],
@@ -1161,7 +1161,7 @@
             "contentsRaw": "Internal api reference for cross component communication.",
             "metadata": {}
           },
-          "fileName": "src/menu/menu.tsx",
+          "fileName": "src/menu/menu/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1174,7 +1174,7 @@
           },
           "kind": "property",
           "name": "apiRef",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L42",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu/index.tsx#L42",
           "inheritedFrom": "MenuProps.apiRef",
           "type": "undefined | (api: MenuApi) => void"
         },
@@ -1186,7 +1186,7 @@
             "contentsRaw": "Children to render",
             "metadata": {}
           },
-          "fileName": "src/menu/menu.tsx",
+          "fileName": "src/menu/menu/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1199,7 +1199,7 @@
           },
           "kind": "property",
           "name": "children",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L131",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu/index.tsx#L132",
           "type": "React.ReactNode"
         },
         {
@@ -1210,7 +1210,7 @@
             "contentsRaw": "Whether or not to focus the first list item on open. Defaults to true.",
             "metadata": {}
           },
-          "fileName": "src/menu/menu.tsx",
+          "fileName": "src/menu/menu/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1223,7 +1223,7 @@
           },
           "kind": "property",
           "name": "focusOnOpen",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L40",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu/index.tsx#L40",
           "inheritedFrom": "MenuProps.focusOnOpen",
           "type": "undefined | false | true"
         },
@@ -1235,7 +1235,7 @@
             "contentsRaw": "Advanced: A reference to the MDCFoundation.",
             "metadata": {}
           },
-          "fileName": "src/menu/menu.tsx",
+          "fileName": "src/menu/menu/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1248,7 +1248,7 @@
           },
           "kind": "property",
           "name": "foundationRef",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L44",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu/index.tsx#L44",
           "inheritedFrom": "MenuProps.foundationRef",
           "type": "React.Ref<MDCMenuFoundation>"
         },
@@ -1260,7 +1260,7 @@
             "contentsRaw": "An element that will open the menu when clicked",
             "metadata": {}
           },
-          "fileName": "src/menu/menu.tsx",
+          "fileName": "src/menu/menu/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1273,7 +1273,7 @@
           },
           "kind": "property",
           "name": "handle",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L127",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu/index.tsx#L128",
           "type": "ReactElement<any>"
         },
         {
@@ -1284,7 +1284,7 @@
             "contentsRaw": "Callback that fires when a Menu item is selected. evt.detail = { index: number; item: HTMLElement; }",
             "metadata": {}
           },
-          "fileName": "src/menu/menu.tsx",
+          "fileName": "src/menu/menu/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1297,7 +1297,7 @@
           },
           "kind": "property",
           "name": "onSelect",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L38",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu/index.tsx#L38",
           "inheritedFrom": "MenuProps.onSelect",
           "type": "undefined | (evt: MenuOnSelectEventT) => void"
         },
@@ -1309,7 +1309,7 @@
             "contentsRaw": "By default, props spread to the Menu component. These will spread to the MenuSurfaceAnchor which is useful for things like overall positioning of the anchor.",
             "metadata": {}
           },
-          "fileName": "src/menu/menu.tsx",
+          "fileName": "src/menu/menu/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1322,7 +1322,7 @@
           },
           "kind": "property",
           "name": "rootProps",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L129",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu/index.tsx#L130",
           "type": "Object"
         }
       ]
@@ -1335,7 +1335,7 @@
         "contentsRaw": "The same as SimpleMenu, but a generic surface.",
         "metadata": {}
       },
-      "fileName": "src/menu/menu.tsx",
+      "fileName": "src/menu/menu/index.tsx",
       "flags": {
         "isExported": true,
         "isExternal": false,
@@ -1348,7 +1348,7 @@
       },
       "kind": "interface",
       "name": "SimpleMenuSurfaceProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L135",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu/index.tsx#L136",
       "extends": [
         "MenuSurfaceProps"
       ],
@@ -1362,7 +1362,7 @@
             "contentsRaw": "Manually position the menu to one of the corners.",
             "metadata": {}
           },
-          "fileName": "src/menu/menu-surface.tsx",
+          "fileName": "src/menu/menu-surface/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1375,7 +1375,7 @@
           },
           "kind": "property",
           "name": "anchorCorner",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu-surface.tsx#L37",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu-surface/index.tsx#L37",
           "inheritedFrom": "MenuSurfaceProps.anchorCorner",
           "type": "AnchorT"
         },
@@ -1387,7 +1387,7 @@
             "contentsRaw": "An internal api for cross component communication.",
             "metadata": {}
           },
-          "fileName": "src/menu/menu-surface.tsx",
+          "fileName": "src/menu/menu-surface/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1400,7 +1400,7 @@
           },
           "kind": "property",
           "name": "apiRef",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu-surface.tsx#L45",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu-surface/index.tsx#L45",
           "inheritedFrom": "MenuSurfaceProps.apiRef",
           "type": "undefined | (api: MenuSurfaceApi) => void"
         },
@@ -1412,7 +1412,7 @@
             "contentsRaw": "Children to render",
             "metadata": {}
           },
-          "fileName": "src/menu/menu.tsx",
+          "fileName": "src/menu/menu/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1425,7 +1425,7 @@
           },
           "kind": "property",
           "name": "children",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L141",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu/index.tsx#L142",
           "type": "React.ReactNode"
         },
         {
@@ -1436,7 +1436,7 @@
             "contentsRaw": "Make the menu position fixed.",
             "metadata": {}
           },
-          "fileName": "src/menu/menu-surface.tsx",
+          "fileName": "src/menu/menu-surface/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1449,7 +1449,7 @@
           },
           "kind": "property",
           "name": "fixed",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu-surface.tsx#L33",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu-surface/index.tsx#L33",
           "inheritedFrom": "MenuSurfaceProps.fixed",
           "type": "undefined | false | true"
         },
@@ -1461,7 +1461,7 @@
             "contentsRaw": "Advanced: A reference to the MDCFoundation.",
             "metadata": {}
           },
-          "fileName": "src/menu/menu-surface.tsx",
+          "fileName": "src/menu/menu-surface/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1474,7 +1474,7 @@
           },
           "kind": "property",
           "name": "foundationRef",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu-surface.tsx#L47",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu-surface/index.tsx#L47",
           "inheritedFrom": "MenuSurfaceProps.foundationRef",
           "type": "React.Ref<MDCMenuSurfaceFoundation>"
         },
@@ -1486,7 +1486,7 @@
             "contentsRaw": "An element that will open the menu when clicked",
             "metadata": {}
           },
-          "fileName": "src/menu/menu.tsx",
+          "fileName": "src/menu/menu/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1499,7 +1499,7 @@
           },
           "kind": "property",
           "name": "handle",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L137",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu/index.tsx#L138",
           "type": "ReactElement<any>"
         },
         {
@@ -1510,7 +1510,7 @@
             "contentsRaw": "Callback for when the menu is closed.",
             "metadata": {}
           },
-          "fileName": "src/menu/menu-surface.tsx",
+          "fileName": "src/menu/menu-surface/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1523,7 +1523,7 @@
           },
           "kind": "property",
           "name": "onClose",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu-surface.tsx#L41",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu-surface/index.tsx#L41",
           "inheritedFrom": "MenuSurfaceProps.onClose",
           "type": "undefined | (evt: MenuSurfaceOnCloseEventT) => void"
         },
@@ -1535,7 +1535,7 @@
             "contentsRaw": "Callback for when the menu is opened.",
             "metadata": {}
           },
-          "fileName": "src/menu/menu-surface.tsx",
+          "fileName": "src/menu/menu-surface/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1548,7 +1548,7 @@
           },
           "kind": "property",
           "name": "onOpen",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu-surface.tsx#L39",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu-surface/index.tsx#L39",
           "inheritedFrom": "MenuSurfaceProps.onOpen",
           "type": "undefined | (evt: MenuSurfaceOnOpenEventT) => void"
         },
@@ -1560,7 +1560,7 @@
             "contentsRaw": "Opens the menu.",
             "metadata": {}
           },
-          "fileName": "src/menu/menu-surface.tsx",
+          "fileName": "src/menu/menu-surface/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1573,7 +1573,7 @@
           },
           "kind": "property",
           "name": "open",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu-surface.tsx#L31",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu-surface/index.tsx#L31",
           "inheritedFrom": "MenuSurfaceProps.open",
           "type": "undefined | false | true"
         },
@@ -1585,7 +1585,7 @@
             "contentsRaw": "Renders the menu to a portal. Useful for situations where the content might be cutoff by an overflow: hidden container. You can pass \"true\" to render to the default RMWC portal.",
             "metadata": {}
           },
-          "fileName": "src/menu/menu-surface.tsx",
+          "fileName": "src/menu/menu-surface/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1598,7 +1598,7 @@
           },
           "kind": "property",
           "name": "renderToPortal",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu-surface.tsx#L35",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu-surface/index.tsx#L35",
           "inheritedFrom": "MenuSurfaceProps.renderToPortal",
           "type": "PortalPropT"
         },
@@ -1610,7 +1610,7 @@
             "contentsRaw": "By default, props spread to the Menu component. These will spread to the MenuSurfaceAnchor which is useful for things like overall positioning of the anchor.",
             "metadata": {}
           },
-          "fileName": "src/menu/menu.tsx",
+          "fileName": "src/menu/menu/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1623,13 +1623,13 @@
           },
           "kind": "property",
           "name": "rootProps",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L139",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu/index.tsx#L140",
           "type": "Object"
         }
       ]
     },
     "SimpleMenuState": {
-      "fileName": "src/menu/menu.tsx",
+      "fileName": "src/menu/menu/index.tsx",
       "flags": {
         "isExported": true,
         "isExternal": false,
@@ -1642,11 +1642,11 @@
       },
       "kind": "interface",
       "name": "SimpleMenuState",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L144",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu/index.tsx#L145",
       "methods": [],
       "properties": [
         {
-          "fileName": "src/menu/menu.tsx",
+          "fileName": "src/menu/menu/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1659,13 +1659,13 @@
           },
           "kind": "property",
           "name": "open",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L145",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu/index.tsx#L146",
           "type": "boolean"
         }
       ]
     },
     "AnchorT": {
-      "fileName": "src/menu/menu-surface.tsx",
+      "fileName": "src/menu/menu-surface/index.tsx",
       "flags": {
         "isExported": true,
         "isExternal": false,
@@ -1678,11 +1678,11 @@
       },
       "kind": "type alias",
       "name": "AnchorT",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu-surface.tsx#L8",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu-surface/index.tsx#L8",
       "type": "\"bottomEnd\" | \"bottomLeft\" | \"bottomRight\" | \"bottomStart\" | \"topEnd\" | \"topLeft\" | \"topRight\" | \"topStart\""
     },
     "MenuSurfaceOnOpenEventT": {
-      "fileName": "src/menu/menu-surface.tsx",
+      "fileName": "src/menu/menu-surface/index.tsx",
       "flags": {
         "isExported": true,
         "isExternal": false,
@@ -1695,11 +1695,11 @@
       },
       "kind": "type alias",
       "name": "MenuSurfaceOnOpenEventT",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu-surface.tsx#L18",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu-surface/index.tsx#L18",
       "type": "RMWC.CustomEventT<{}>"
     },
     "MenuSurfaceOnCloseEventT": {
-      "fileName": "src/menu/menu-surface.tsx",
+      "fileName": "src/menu/menu-surface/index.tsx",
       "flags": {
         "isExported": true,
         "isExternal": false,
@@ -1712,7 +1712,7 @@
       },
       "kind": "type alias",
       "name": "MenuSurfaceOnCloseEventT",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu-surface.tsx#L19",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu-surface/index.tsx#L19",
       "type": "RMWC.CustomEventT<{}>"
     },
     "MenuOnSelectEventT": {
@@ -1723,7 +1723,7 @@
         "contentsRaw": "Menu",
         "metadata": {}
       },
-      "fileName": "src/menu/menu.tsx",
+      "fileName": "src/menu/menu/index.tsx",
       "flags": {
         "isExported": true,
         "isExternal": false,
@@ -1736,11 +1736,11 @@
       },
       "kind": "type alias",
       "name": "MenuOnSelectEventT",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L25",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu/index.tsx#L25",
       "type": "RMWC.CustomEventT<>"
     },
     "MenuHTMLProps": {
-      "fileName": "src/menu/menu.tsx",
+      "fileName": "src/menu/menu/index.tsx",
       "flags": {
         "isExported": true,
         "isExternal": false,
@@ -1753,7 +1753,7 @@
       },
       "kind": "type alias",
       "name": "MenuHTMLProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L47",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu/index.tsx#L47",
       "type": "RMWC.HTMLProps<HTMLInputElement, Omit<AllHTMLAttributes<HTMLInputElement>, \"onSelect\">>"
     }
   }

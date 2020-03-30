@@ -5,7 +5,7 @@
 - Module **@rmwc/tabs**
 - Import styles:
   - Using CSS Loader
-    - import '@rmwc/tabs/dist/styles';
+    - import '@rmwc/tabs/styles';
   - Or include stylesheets
     - **'@material/tab-bar/dist/mdc.tab-bar.css'**
     - **'@material/tab/dist/mdc.tab.css'**

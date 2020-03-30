@@ -4,6 +4,7 @@
   vertical-align: middle;
   position: relative;
   font-size: 1.5rem;
+  height: 1em;
   font-family: inherit;
   border-radius: 50%;
   background: var(--mdc-theme-surface, white);

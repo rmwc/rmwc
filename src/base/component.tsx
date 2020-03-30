@@ -68,36 +68,27 @@ export const handleRef = <T extends any>(
   }
 };
 
-type ComponentProps<
-  Props extends {},
-  ElementProps extends {},
-  Tag extends React.ElementType
-> = Props & {
-  tag?: Tag;
-  theme?: RMWC.ThemePropT;
-} & Props &
-  (ElementProps | React.ComponentPropsWithRef<Tag>);
-
 export function createComponent<
   P extends {},
-  ElementP extends {} = React.HTMLProps<HTMLDivElement>
+  ElementP extends {} = React.HTMLProps<HTMLElement>
 >(Component: React.RefForwardingComponent<any, P & ElementP>) {
   const ForwardComponent = React.forwardRef<
     any,
-    ComponentProps<P, ElementP, any>
+    RMWC.ComponentProps<P, ElementP, any>
   >(Component);
 
   // Interestingly enough, we only need this declaration
   // for a generic placeholder for typescript inference,
   // we don't actually have to pay the penalty for using it at runtime :)
   const WrappedComponent = <Tag extends React.ElementType = 'div'>(
-    props: ComponentProps<P, ElementP, Tag>,
+    props: RMWC.ComponentProps<P, ElementP, Tag>,
     ref: any
   ) => {
     return <></>;
   };
 
   WrappedComponent.displayName = Component.constructor.name || 'RMWCComponent';
+  ForwardComponent.displayName = WrappedComponent.displayName;
 
   return ForwardComponent as typeof WrappedComponent;
 }

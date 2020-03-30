@@ -5,7 +5,7 @@
 - Module **@rmwc/checkbox**
 - Import styles:
   - Using CSS Loader
-    - import '@rmwc/checkbox/dist/styles';
+    - import '@rmwc/checkbox/styles';
   - Or include stylesheets
     - **'@material/checkbox/dist/mdc.checkbox.css'**
     - **'@material/form-field/dist/mdc.form-field.css'**

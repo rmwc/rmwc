@@ -5,7 +5,7 @@
 - Module **@rmwc/chip**
 - Import styles:
   - Using CSS Loader
-    - import '@rmwc/chip/dist/styles';
+    - import '@rmwc/chip/styles';
   - Or include stylesheets
     - **'@material/chips/dist/mdc.chips.css'**
     - **'@rmwc/icon/icon.css'**

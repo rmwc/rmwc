@@ -269,12 +269,12 @@
         }
       ]
     },
-    "GridInnerProps": {
+    "GridRowProps": {
       "documentation": {
         "contents": [
-          "<p>By default, an inner grid component is included inside of <Grid>. Use GridInner when doing nested Grids.</p>\n"
+          "<p>By default, an inner grid component is included inside of <Grid>. Use GridRow when doing nested Grids.</p>\n"
         ],
-        "contentsRaw": "By default, an inner grid component is included inside of <Grid>. Use GridInner when doing nested Grids.",
+        "contentsRaw": "By default, an inner grid component is included inside of <Grid>. Use GridRow when doing nested Grids.",
         "metadata": {}
       },
       "fileName": "src/grid/index.tsx",
@@ -289,7 +289,7 @@
         "isStatic": false
       },
       "kind": "interface",
-      "name": "GridInnerProps",
+      "name": "GridRowProps",
       "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/grid/index.tsx#L79",
       "methods": [],
       "properties": []

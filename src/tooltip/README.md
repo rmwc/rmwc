@@ -5,7 +5,7 @@
 - Module **@rmwc/tooltip**
 - Import styles:
   - Using CSS Loader
-    - import '@rmwc/tooltip/dist/styles';
+    - import '@rmwc/tooltip/styles';
   - Or include stylesheets
     - **'@rmwc/tooltip/tooltip.css'**
 

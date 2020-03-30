@@ -5,7 +5,7 @@
 - Module **@rmwc/avatar**
 - Import styles:
   - Using CSS Loader
-    - import '@rmwc/avatar/dist/styles';
+    - import '@rmwc/avatar/styles';
   - Or include stylesheets
     - **'@rmwc/avatar/avatar.css'**
     - **'@rmwc/icon/icon.css'**

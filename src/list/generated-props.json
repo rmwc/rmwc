@@ -363,13 +363,13 @@
           },
           "kind": "method",
           "name": "componentDidMount",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L87",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L88",
           "signatures": [
             {
               "fileName": "src/list/collapsible-list.tsx",
               "kind": "signature",
               "name": "componentDidMount",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L87",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L88",
               "parameters": [],
               "returnType": "void",
               "type": "() => void"
@@ -390,13 +390,13 @@
           },
           "kind": "method",
           "name": "componentDidUpdate",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L91",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L92",
           "signatures": [
             {
               "fileName": "src/list/collapsible-list.tsx",
               "kind": "signature",
               "name": "componentDidUpdate",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L91",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L92",
               "parameters": [
                 {
                   "flags": {
@@ -561,13 +561,13 @@
           },
           "kind": "method",
           "name": "componentWillUnmount",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L100",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L101",
           "signatures": [
             {
               "fileName": "src/list/collapsible-list.tsx",
               "kind": "signature",
               "name": "componentWillUnmount",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L100",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L101",
               "parameters": [],
               "returnType": "void",
               "type": "() => void"
@@ -675,13 +675,13 @@
           },
           "kind": "method",
           "name": "correctFocus",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L135",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L137",
           "signatures": [
             {
               "fileName": "src/list/collapsible-list.tsx",
               "kind": "signature",
               "name": "correctFocus",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L135",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L137",
               "parameters": [
                 {
                   "flags": {
@@ -824,13 +824,13 @@
           },
           "kind": "method",
           "name": "handleClick",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L163",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L165",
           "signatures": [
             {
               "fileName": "src/list/collapsible-list.tsx",
               "kind": "signature",
               "name": "handleClick",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L163",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L165",
               "parameters": [
                 {
                   "flags": {
@@ -867,13 +867,13 @@
           },
           "kind": "method",
           "name": "handleFocus",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L197",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L199",
           "signatures": [
             {
               "fileName": "src/list/collapsible-list.tsx",
               "kind": "signature",
               "name": "handleFocus",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L197",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L199",
               "parameters": [
                 {
                   "flags": {
@@ -910,13 +910,13 @@
           },
           "kind": "method",
           "name": "handleKeydown",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L171",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L173",
           "signatures": [
             {
               "fileName": "src/list/collapsible-list.tsx",
               "kind": "signature",
               "name": "handleKeydown",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L171",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L173",
               "parameters": [
                 {
                   "flags": {
@@ -953,13 +953,13 @@
           },
           "kind": "method",
           "name": "render",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L211",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L213",
           "signatures": [
             {
               "fileName": "src/list/collapsible-list.tsx",
               "kind": "signature",
               "name": "render",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L211",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L213",
               "parameters": [],
               "returnType": "Element",
               "type": "() => Element"
@@ -1116,13 +1116,13 @@
           },
           "kind": "method",
           "name": "syncOpenState",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L104",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L106",
           "signatures": [
             {
               "fileName": "src/list/collapsible-list.tsx",
               "kind": "signature",
               "name": "syncOpenState",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L104",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L106",
               "parameters": [],
               "returnType": "void",
               "type": "() => void"
@@ -1143,13 +1143,13 @@
           },
           "kind": "method",
           "name": "toggleOpen",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L159",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L161",
           "signatures": [
             {
               "fileName": "src/list/collapsible-list.tsx",
               "kind": "signature",
               "name": "toggleOpen",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L159",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L161",
               "parameters": [
                 {
                   "flags": {
@@ -1341,6 +1341,24 @@
           "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L72",
           "defaultValue": " null",
           "type": "HTMLDivElement | null"
+        },
+        {
+          "fileName": "src/list/collapsible-list.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "timerId",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L74",
+          "defaultValue": " null",
+          "type": "number | null"
         }
       ],
       "constructorType": {
@@ -1357,13 +1375,13 @@
         },
         "kind": "constructor",
         "name": "constructor",
-        "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L78",
+        "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L79",
         "signatures": [
           {
             "fileName": "src/list/collapsible-list.tsx",
             "kind": "signature",
             "name": "new CollapsibleList",
-            "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L78",
+            "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L79",
             "parameters": [
               {
                 "flags": {
@@ -1411,6 +1429,30 @@
       "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L6",
       "methods": [],
       "properties": [
+        {
+          "documentation": {
+            "contents": [
+              "<p>Starts the collapsible list as open.</p>\n"
+            ],
+            "contentsRaw": "Starts the collapsible list as open.",
+            "metadata": {}
+          },
+          "fileName": "src/list/collapsible-list.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "defaultOpen",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L12",
+          "type": "undefined | false | true"
+        },
         {
           "documentation": {
             "contents": [
@@ -1505,30 +1547,6 @@
           "kind": "property",
           "name": "open",
           "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L10",
-          "type": "undefined | false | true"
-        },
-        {
-          "documentation": {
-            "contents": [
-              "<p>Starts the collapsible list as open.</p>\n"
-            ],
-            "contentsRaw": "Starts the collapsible list as open.",
-            "metadata": {}
-          },
-          "fileName": "src/list/collapsible-list.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "startOpen",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L12",
           "type": "undefined | false | true"
         }
       ]
@@ -1746,7 +1764,7 @@
           },
           "kind": "property",
           "name": "vertical",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L29",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L30",
           "type": "undefined | false | true"
         },
         {
@@ -1770,7 +1788,7 @@
           },
           "kind": "property",
           "name": "wrapFocus",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L27",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L28",
           "type": "undefined | false | true"
         }
       ]
@@ -1789,7 +1807,7 @@
       },
       "kind": "interface",
       "name": "ListApi",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L32",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L33",
       "methods": [],
       "properties": [
         {
@@ -1806,108 +1824,6 @@
           },
           "kind": "property",
           "name": "addClassToElementIndex",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L36",
-          "type": "(index: number, className: string) => void"
-        },
-        {
-          "fileName": "src/list/list.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": false,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "focusItemAtIndex",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L44",
-          "type": "(index: number) => void"
-        },
-        {
-          "fileName": "src/list/list.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": false,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "focusRoot",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L34",
-          "type": "() => void"
-        },
-        {
-          "fileName": "src/list/list.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": false,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "getClasses",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L35",
-          "type": "() => string"
-        },
-        {
-          "fileName": "src/list/list.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": false,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "getListItemCount",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L43",
-          "type": "() => number"
-        },
-        {
-          "fileName": "src/list/list.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": false,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "listElements",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L33",
-          "type": "() => HTMLLIElement[]"
-        },
-        {
-          "fileName": "src/list/list.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": false,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "removeClassFromElementAtIndex",
           "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L37",
           "type": "(index: number, className: string) => void"
         },
@@ -1924,8 +1840,110 @@
             "isStatic": false
           },
           "kind": "property",
-          "name": "setAttributeForElementIndex",
+          "name": "focusItemAtIndex",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L45",
+          "type": "(index: number) => void"
+        },
+        {
+          "fileName": "src/list/list.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "focusRoot",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L35",
+          "type": "() => void"
+        },
+        {
+          "fileName": "src/list/list.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "getClasses",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L36",
+          "type": "() => string"
+        },
+        {
+          "fileName": "src/list/list.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "getListItemCount",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L44",
+          "type": "() => number"
+        },
+        {
+          "fileName": "src/list/list.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "listElements",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L34",
+          "type": "() => HTMLLIElement[]"
+        },
+        {
+          "fileName": "src/list/list.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "removeClassFromElementAtIndex",
           "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L38",
+          "type": "(index: number, className: string) => void"
+        },
+        {
+          "fileName": "src/list/list.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "setAttributeForElementIndex",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L39",
           "type": "(index: number, attr: string, value: any) => void"
         }
       ]
@@ -2598,7 +2616,7 @@
       "kind": "type alias",
       "name": "ListOnActionEventT",
       "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L7",
-      "type": "RMWC.CustomEventT<number>"
+      "type": "RMWC.CustomEventT<>"
     }
   }
 }

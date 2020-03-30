@@ -215,7 +215,7 @@ function DocsSetup({
               Using CSS Loader
               <ul>
                 <li>
-                  import <strong>'{module}/dist/styles';</strong>
+                  import <strong>'{module}/styles';</strong>
                 </li>
               </ul>
             </li>

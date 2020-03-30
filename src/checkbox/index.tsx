@@ -41,53 +41,58 @@ export interface CheckboxProps
 export type CheckboxHTMLProps = ToggleHTMLProps;
 
 /** A Checkbox component. */
-export const Checkbox = createComponent<CheckboxProps, CheckboxHTMLProps>(
-  function Checkbox(props, ref) {
-    const {
-      renderToggle,
-      id,
-      toggleRootProps,
-      rootEl,
-      checkboxEl
-    } = useCheckboxFoundation(props);
+export const Checkbox: RMWC.ComponentType<
+  CheckboxProps,
+  CheckboxHTMLProps,
+  'input'
+> = createComponent<CheckboxProps, CheckboxHTMLProps>(function Checkbox(
+  props,
+  ref
+) {
+  const {
+    renderToggle,
+    id,
+    toggleRootProps,
+    rootEl,
+    checkboxEl
+  } = useCheckboxFoundation(props);
 
-    const {
-      children,
-      className,
-      label,
-      style,
-      indeterminate,
-      inputRef,
-      foundationRef,
-      ...rest
-    } = props;
+  const {
+    children,
+    className,
+    label,
+    style,
+    indeterminate,
+    inputRef,
+    foundationRef,
+    ...rest
+  } = props;
 
-    const checkbox = (
-      <CheckboxRoot
-        {...rootEl.props({
-          checked: rest.checked,
-          indeterminate,
-          ...toggleRootProps
+  const checkbox = (
+    <CheckboxRoot
+      {...rootEl.props({
+        checked: rest.checked,
+        indeterminate,
+        ...toggleRootProps
+      })}
+      ref={mergeRefs(rootEl.setRef, ref)}
+    >
+      <input
+        {...checkboxEl.props({
+          ...rest,
+          className: 'mdc-checkbox__native-control'
         })}
-        ref={mergeRefs(rootEl.setRef, ref)}
-      >
-        <input
-          {...checkboxEl.props({
-            ...rest,
-            className: 'mdc-checkbox__native-control'
-          })}
-          type="checkbox"
-          ref={mergeRefs(checkboxEl.setRef, inputRef)}
-          id={id}
-        />
-        <CheckboxBackground />
-        <CheckboxRipple />
-      </CheckboxRoot>
-    );
+        type="checkbox"
+        ref={mergeRefs(checkboxEl.setRef, inputRef)}
+        id={id}
+      />
+      <CheckboxBackground />
+      <CheckboxRipple />
+    </CheckboxRoot>
+  );
 
-    return renderToggle(checkbox);
-  }
-);
+  return renderToggle(checkbox);
+});
 
 /*********************************************************************
  * Bits

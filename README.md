@@ -9,64 +9,33 @@
 
 # RMWC - React Material Web Components
 
-RMWC is a React UI Kit built on Google's official Material Components Web library v4.x.x
+RMWC is a React UI Kit built on Google's official Material Components Web library v5.x.x
 [https://rmwc.io/](https://rmwc.io/)
 
 Features:
 
 * [x] Uses Google's official material-components-web library
 * [x] Includes Addon components for ones missing from the official spec
-* [x] Works in React 16.3.x and up
+* [x] Works in React 16.8.x and up
 * [x] First class Typescript Support
 * [x] Server side rendering support
 * [x] Individually packaged and released components
 
 ## Try it in the Code Sandbox
-> - Javascript Sandbox https://codesandbox.io/s/kpy13vqnr
-> - Typescript Sandbox https://codesandbox.io/s/kl0w4xp95
+> - Javascript Sandbox https://codesandbox.io/s/rmwc-sandbox-o0s0d
+> - Typescript Sandbox https://codesandbox.io/s/rmwc-typescript-sandbox-y7516
 
 ## Like this project? Try out some of my others 😎
 - A library for simplified Redux development: https://github.com/jamesmfriedman/redux-state-branch
 - Feature Flagging made Easy: https://github.com/jamesmfriedman/flagg
 
 ## Recent updates
-v6.0.0 is coming!
+v6.0.0 is here! Check out the migration guide https://opencollective.com/rmwc/updates/6-0-0-the-hooks-edition
 
 TL;DR
-- `npm i rmwc@next` or `npm i @rmwc/button@next`.
-- Release is close. Will be switching from alpha to RC within the next week.
-
-Since the creation of RMWC, React and Javascript have continued their blazing pace of change. For context, this project was initially written in FlowTyped with a bunch of classes, and Google's part was plain old JS. Fast forward 2.5 years and React has undergone a paradigm shift with hooks while Typescript continues to expand... Also, a while back, Google released their own React wrapper that was very similar to this project. It was recently declared abandonware which has lead to an increase in interest in RMWC since it should be a relatively simple migration. Needless to say, RMWC needs some love! It's time for some spring cleaning.
-
-The goals of V6 are simple.
-
-- A full internal API rewrite to hooks
-- A full internal conversion of components to idiomatic functional React components. Currently there is an abstraction called 'componentFactory' which is a barrier to entry for 3rd party contributors. With this change, anyone wanting to contribute should be able to jump in and get going.
-- Removal of all existing deprecations.
-- Smaller bundle size
-- Better performance
-- Some new components :)
-- More exhaustive testing
-
-Will it be hard to migrate?
-
-- No, breaking changes will still be kept to a minimum and documented in the migration guide / changelog
-- The removal of previously deprecated features will always be considered a breaking change.
-- While unit test coverage is fairly high, the change in paradigm from classes to hooks does open up the possibility for unexpected bugs.
-- Anyone who relies on snapshot testing will see a lot of snapshots change since internally there or structural DOM changes.
-- Some of the more enterprising folks that have hacked around the internals of this library to fix or subvert behaviors, so those hacks can't be guaranteed to continue working.
-
-Feel free to kick the tires and get in any feature requests or bugs in the meantime. 5.7.x will continue to receive minor patches and bugfixes until the v6 release.
-
-v5.7.2 is a maintenance release fixing a few non critical bugs
-
-v5.7.0 is out with some great new features and fixes!
-- A new Tooltip component has been added
-- The Typography component can now use semantic tags defined by RMWCProvider
-- Added a fading tab transition as well as tab indicators
-- Bugfixes for Selects, Sliders, Lists, and Chips
-- Updated all dependencies
-- See the changelog for more details.
+- `npm i rmwc@latest` or `npm i @rmwc/button@latest`.
+- Embracing React Hooks
+- New components, and latest updates from Google.
 
 *View all release notes* 👉 https://opencollective.com/rmwc/updates
 

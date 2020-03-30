@@ -5,7 +5,7 @@
 - Module **@rmwc/fab**
 - Import styles:
   - Using CSS Loader
-    - import '@rmwc/fab/dist/styles';
+    - import '@rmwc/fab/styles';
   - Or include stylesheets
     - **'@material/fab/dist/mdc.fab.css'**
     - **'@rmwc/icon/icon.css'**
