@@ -1,3 +1,13 @@
+#### 6.0.4 (2020-03-30)
+
+##### Chores
+
+* **Base:**  Improving component typings #587 (b65507ab)
+
+##### Bug Fixes
+
+* **#588:**  Adds css var support for top-app-bar color (bb023697)
+
 #### 6.0.3 (2020-03-29)
 
 ##### Bug Fixes
