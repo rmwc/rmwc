@@ -1,3 +1,9 @@
+#### 6.0.7 (2020-04-01)
+
+##### Bug Fixes
+
+* **Select:**  corrects a regression with defaultValue (8bf2f52f)
+
 #### 6.0.6 (2020-04-01)
 
 ##### Bug Fixes
