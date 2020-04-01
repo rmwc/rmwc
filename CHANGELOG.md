@@ -1,3 +1,9 @@
+#### 6.0.6 (2020-04-01)
+
+##### Bug Fixes
+
+* **Select:**  Corrects a regression in select behavior preventing label from being properly set (313d56da)
+
 #### 6.0.5 (2020-03-30)
 
 ##### Bug Fixes
