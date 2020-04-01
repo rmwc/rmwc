@@ -344,7 +344,9 @@ export const useSelectFoundation = (
   // value in our foundation
   const stringifiedOptions = JSON.stringify(props.options);
   const foundationValue = foundation.getValue();
-  const value = (props.value ?? props.defaultValue) as string;
+  const value = (props.value ?? selectedIndex.current === -1
+    ? props.defaultValue
+    : undefined) as string;
 
   // MDC Select is a bit of a mess here...
   // - We have to set our value
