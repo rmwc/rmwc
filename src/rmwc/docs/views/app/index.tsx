@@ -5,8 +5,7 @@ import { Route, Link, Switch as RouterSwitch } from 'react-router-dom';
 
 import { menuContent, MenuItemT } from '../../common/menu-content';
 
-// @ts-ignore
-import { version } from 'rmwc/rmwc';
+import { version } from '../../../package.json';
 
 import {
   TopAppBar,
