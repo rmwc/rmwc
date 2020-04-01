@@ -53,7 +53,7 @@ body .mdc-list-divider {
  ****************************************************************/
 /** Correct color of focused label */
 body
-  .mdc-select:not(.mdc-select--disabled).mdc-select--focused
+  .mdc-select:not(.mdc-select--disabled):not(.mdc-select--invalid).mdc-select--focused
   .mdc-floating-label {
   color: var(--mdc-theme-primary);
 }

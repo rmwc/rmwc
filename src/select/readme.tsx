@@ -6,7 +6,7 @@ import examples from './generated-examples.json';
 
 import { Select } from '.';
 
-export default function() {
+export default function () {
   return (
     <Docs
       title="Select Menus"
@@ -81,6 +81,33 @@ export default function() {
           label="Disabled"
           disabled
           options={['Cookies', 'Pizza', 'Icecream']}
+        />
+      </DocsExample>
+
+      <DocsSubtitle>Controlled / Uncontrolled</DocsSubtitle>
+      <DocsP>
+        The Select component has the same behaviors as a native HTML select and
+        be both controlled and uncontrolled.
+      </DocsP>
+      <DocsExample label="Controlled">
+        {function () {
+          const [value, setValue] = React.useState('Cookies');
+          return (
+            <Select
+              label="Controlled"
+              options={['Cookies', 'Pizza', 'Icecream']}
+              value={value}
+              onChange={(evt) => setValue(evt.currentTarget.value)}
+            />
+          );
+        }}
+      </DocsExample>
+      <DocsExample label="Uncontrolled">
+        <Select
+          label="Uncontrolled"
+          options={['Cookies', 'Pizza', 'Icecream']}
+          defaultValue="Cookies"
+          onChange={(evt) => console.log(evt.currentTarget.value)}
         />
       </DocsExample>
 
