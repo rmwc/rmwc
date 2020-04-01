@@ -78,6 +78,33 @@ Selects come in three different styles: standard,outlined, and enhanced.
 />
 ```
 
+## Controlled / Uncontrolled
+
+The Select component has the same behaviors as a native HTML select and be both controlled and uncontrolled.
+
+```jsx
+function () {
+  const [value, setValue] = React.useState('Cookies');
+  return (
+    <Select
+      label="Controlled"
+      options={['Cookies', 'Pizza', 'Icecream']}
+      value={value}
+      onChange={(evt) => setValue(evt.currentTarget.value)}
+    />
+  );
+}
+```
+
+```jsx
+<Select
+  label="Uncontrolled"
+  options={['Cookies', 'Pizza', 'Icecream']}
+  defaultValue="Cookies"
+  onChange={(evt) => console.log(evt.currentTarget.value)}
+/>
+```
+
 ## Data Driven Selects
 
 To fit common use cases, RMWC Select provides a data driven method for rendering select menus. There are multiple formats you can pass data in, use the one that best fits your requirements. To make your label not float by default and to have an unselected blank value, set the `placeholder` prop to a blank string.
