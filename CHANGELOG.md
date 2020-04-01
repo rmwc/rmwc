@@ -1,3 +1,9 @@
+#### 6.0.8 (2020-04-01)
+
+##### Bug Fixes
+
+* **Base:**  Updating main material-components-web dep (24ae55d3)
+
 #### 6.0.7 (2020-04-01)
 
 ##### Bug Fixes
