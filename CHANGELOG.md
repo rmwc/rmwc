@@ -1,3 +1,9 @@
+#### 6.0.9 (2020-04-03)
+
+##### Bug Fixes
+
+* **Select:**  Corrects issue with setting controlled value outside of select, adds supporting tests #594 (37971c7d)
+
 #### 6.0.8 (2020-04-01)
 
 ##### Bug Fixes
