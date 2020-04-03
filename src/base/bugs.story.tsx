@@ -116,8 +116,20 @@ function Bug567() {
   );
 }
 
+function Bug594() {
+  const [value, setValue] = React.useState('');
+
+  return (
+    <div>
+      <Button onClick={() => setValue('C')}>Click</Button>
+      <Select options={['A', 'B', 'C']} value={value} />
+    </div>
+  );
+}
+
 storiesOf('Bugs', module)
   .add('#538', Bug538)
   .add('#515', Bug515)
   .add('#560', Bug560)
-  .add('#567', Bug567);
+  .add('#567', Bug567)
+  .add('#594', Bug594);

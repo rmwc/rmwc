@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { mount } from 'enzyme';
+import { mount, ReactWrapper } from 'enzyme';
 import { Select } from './';
 
 describe('Select', () => {
@@ -102,7 +102,7 @@ describe('Select', () => {
     mount(<Select rootProps={{ name: 'test' }} />);
   });
 
-  it('can be disabled', async done => {
+  it('can be disabled', async (done) => {
     const el = mount(<Select disabled={false} options={['1', '2', '3']} />);
 
     expect(el.html().includes('mdc-select--disabled')).toBe(false);
@@ -121,15 +121,110 @@ describe('Select', () => {
     );
 
     expect(
-      el
-        .find('.mdc-select')
-        .first()
-        .hasClass('my-custom-classname')
+      el.find('.mdc-select').first().hasClass('my-custom-classname')
     ).toEqual(true);
   });
 
   it('can autofocus', () => {
     const el = mount(<Select options={['one', 'two', 'three']} autoFocus />);
     expect(document.activeElement).toBe(el.find('select').getDOMNode());
+  });
+});
+
+describe('Select: Lifecycle', () => {
+  const getLabel = (el: ReactWrapper) =>
+    el.find('.mdc-select__selected-text').first().text().trim();
+
+  it('SelectedText is blank with no value', () => {
+    const el = mount(<Select options={['Cookies', 'Pizza', 'Icecream']} />);
+    expect(getLabel(el)).toBe('');
+  });
+
+  it('SelectedText is blank with no value, enhanced', () => {
+    const el = mount(
+      <Select enhanced options={['Cookies', 'Pizza', 'Icecream']} />
+    );
+    expect(getLabel(el)).toBe('');
+  });
+
+  it('SelectedText is blank with incorrect defaultValue', () => {
+    const el = mount(
+      <Select options={['Cookies', 'Pizza', 'Icecream']} defaultValue="Foo" />
+    );
+    expect(getLabel(el)).toBe('');
+  });
+
+  it('SelectedText is blank with incorrect defaultValue, enhanced', () => {
+    const el = mount(
+      <Select
+        enhanced
+        options={['Cookies', 'Pizza', 'Icecream']}
+        defaultValue="Foo"
+      />
+    );
+    expect(getLabel(el)).toBe('');
+  });
+
+  it('SelectedText is set to value', () => {
+    const el = mount(
+      <Select options={['Cookies', 'Pizza', 'Icecream']} value="Cookies" />
+    );
+    expect(getLabel(el)).toBe('Cookies');
+  });
+
+  it('SelectedText is set to value, enhanced', () => {
+    const el = mount(
+      <Select
+        enhanced
+        options={['Cookies', 'Pizza', 'Icecream']}
+        value="Cookies"
+      />
+    );
+    expect(getLabel(el)).toBe('Cookies');
+  });
+
+  it('SelectedText is set to default value', () => {
+    const el = mount(
+      <Select
+        options={['Cookies', 'Pizza', 'Icecream']}
+        defaultValue="Cookies"
+      />
+    );
+    expect(getLabel(el)).toBe('Cookies');
+  });
+
+  it('SelectedText is set to default value, enhanced', () => {
+    const el = mount(
+      <Select
+        enhanced
+        options={['Cookies', 'Pizza', 'Icecream']}
+        defaultValue="Cookies"
+      />
+    );
+    expect(getLabel(el)).toBe('Cookies');
+  });
+
+  it('SelectedText is set with async value', (done) => {
+    const el = mount(
+      <Select options={['Cookies', 'Pizza', 'Icecream']} value="" />
+    );
+
+    setTimeout(() => {
+      el.setProps({ value: 'Cookies' });
+      expect(getLabel(el)).toBe('Cookies');
+      done();
+    }, 100);
+  });
+
+  it('SelectedText is set with async value, enhanced', (done) => {
+    const el = mount(
+      <Select enhanced options={['Cookies', 'Pizza', 'Icecream']} value="" />
+    );
+
+    setTimeout(() => {
+      el.setProps({ value: 'Cookies' });
+      expect(getLabel(el)).toBe('Cookies');
+      done();
+    }, 100);
   });
 });
