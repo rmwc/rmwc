@@ -1,6 +1,22 @@
 import * as React from 'react';
 import { mount, ReactWrapper } from 'enzyme';
 import { Select } from './';
+import { render, act, fireEvent } from '@testing-library/react';
+
+test('renders learn react link', (done) => {
+  const onChange = jest.fn();
+  const { container } = render(<Select onChange={onChange} />);
+
+  const select = container.children[0].querySelector('select');
+
+  act(() => {
+    window.requestAnimationFrame(() => {
+      fireEvent.change(select!);
+      expect(onChange).toHaveBeenCalled();
+      done();
+    });
+  });
+});
 
 describe('Select', () => {
   it('renders', () => {

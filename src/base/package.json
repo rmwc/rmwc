@@ -38,7 +38,7 @@
   "dependencies": {
     "@rmwc/types": "^6.0.5",
     "classnames": "^2.2.6",
-    "hyperform": "^0.9.9",
+    "hyperform": "^0.11.0",
     "mutation-observer": "^1.0.3",
     "tslib": "^1.10.0"
   },
