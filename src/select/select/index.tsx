@@ -370,6 +370,8 @@ export const Select: RMWC.ComponentType<
             onBlur={handleBlur}
             onClick={handleClick}
             onKeyDown={handleKeydown}
+            /** In the case of native selects, we don't want this to be be focusable */
+            tabIndex={enhanced ? undefined : -1}
           >
             {selectedTextContent || <>&nbsp;</>}
           </SelectedTextEl>
@@ -392,7 +394,6 @@ export const Select: RMWC.ComponentType<
               elementRef={setNativeControl}
               onFocus={handleFocus}
               onBlur={handleBlur}
-              onKeyDown={handleKeydown}
               onChange={(evt: React.ChangeEvent<HTMLSelectElement>) =>
                 handleMenuSelected(evt.currentTarget.selectedIndex)
               }

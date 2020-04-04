@@ -104,7 +104,12 @@ export const useSelectFoundation = (
             ),
           getSelectedTextAttr: (attr: any) => selectedTextEl.getProp(attr),
           setSelectedTextAttr: (attr: any, value: string) => {
-            attr = attr === 'tabindex' ? 'tabIndex' : attr;
+            if (attr === 'tabindex') {
+              // Fixes bug 595 https://github.com/jamesmfriedman/rmwc/issues/595.
+              // Native selects don't need tabIndexes on the root element
+              if (isNative()) return;
+              attr = 'tabIndex';
+            }
             selectedTextEl.setProp(attr, value);
           },
           openMenu: () => {
