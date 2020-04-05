@@ -1,3 +1,9 @@
+#### 6.0.11 (2020-04-05)
+
+##### Bug Fixes
+
+* **Base:**  Adding missing dependency dependency on @material/dom to package.json (80bb6b0f)
+
 #### 6.0.10 (2020-04-05)
 
 ##### Chores
