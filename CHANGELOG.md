@@ -1,3 +1,20 @@
+#### 6.0.10 (2020-04-05)
+
+##### Chores
+
+* **Base:**  Updating test polyfill deps relates to #596 (bebd9530)
+
+##### New Features
+
+* **Select:**  Add ability to pass JSX as label options for enhanced selects (a9ef9803)
+
+##### Bug Fixes
+
+* **Theme:**
+  *  Corrects MDC issue with text-align and linear progress #590 (f4be0eb7)
+  *  Corrects theme ripple issue on fab and button (2dc5a7bb)
+* **Select:**  Corrects issue with native selects requiring multiple tab focus #595 (fb699aff)
+
 #### 6.0.9 (2020-04-03)
 
 ##### Bug Fixes
