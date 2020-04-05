@@ -20,8 +20,9 @@ import { withRipple } from '@rmwc/ripple';
 import { useSelectFoundation } from './foundation';
 import { SelectIcon } from '../select-icon';
 
-export interface FormattedOption extends React.AllHTMLAttributes<any> {
-  label: string;
+export interface FormattedOption
+  extends Omit<React.AllHTMLAttributes<any>, 'label'> {
+  label: React.ReactNode;
   value?: string;
   options?: FormattedOption[];
 }
@@ -118,13 +119,15 @@ function NativeMenu(
 
   const renderOption = ({
     label,
-    option
+    option,
+    index
   }: {
-    label: string;
+    label: React.ReactNode;
     option: FormattedOption;
+    index: number;
   }) => {
     return (
-      <option key={`${label}-${option.value}`} {...option} value={option.value}>
+      <option key={index} {...(option as any)} value={option.value}>
         {label}
       </option>
     );
@@ -146,18 +149,26 @@ function NativeMenu(
       )}
       {!!selectOptions &&
         selectOptions.map(
-          ({ label, options, ...option }: FormattedOption, i: number) => {
+          ({ label, options, ...option }: FormattedOption, index: number) => {
             if (options) {
               return (
-                <optgroup label={label} key={label}>
-                  {options.map(({ label, ...option }, i) =>
-                    renderOption({ label, option: option as FormattedOption })
+                <optgroup label={label as string} key={index}>
+                  {options.map(({ label, ...option }, index) =>
+                    renderOption({
+                      label,
+                      option: option as FormattedOption,
+                      index
+                    })
                   )}
                 </optgroup>
               );
             }
 
-            return renderOption({ label, option: option as FormattedOption });
+            return renderOption({
+              label,
+              option: option as FormattedOption,
+              index
+            });
           }
         )}
       {children}
@@ -196,7 +207,7 @@ function EnhancedMenu(props: EnhancedMenuProps & SelectHTMLProps) {
     label,
     option
   }: {
-    label: string;
+    label: React.ReactNode;
     option: FormattedOption;
   }) => {
     currentIndex += 1;
@@ -238,12 +249,12 @@ function EnhancedMenu(props: EnhancedMenuProps & SelectHTMLProps) {
         ({ label, options, ...option }: FormattedOption, i: number) => {
           if (options) {
             return (
-              <ListGroup key={label}>
+              <ListGroup key={i}>
                 <ListGroupSubheader theme="textDisabledOnBackground">
                   {label}
                 </ListGroupSubheader>
                 <MenuItems>
-                  {options.map(({ label, ...option }, i) =>
+                  {options.map(({ label, ...option }) =>
                     renderOption({ label, option: option as FormattedOption })
                   )}
                 </MenuItems>

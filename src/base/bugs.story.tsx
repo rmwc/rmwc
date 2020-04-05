@@ -127,9 +127,54 @@ function Bug594() {
   );
 }
 
+function Hz8pr() {
+  return (
+    <React.Fragment>
+      <Typography use="headline4">RMWC Sandbox</Typography>
+      <Typography use="subtitle1" tag="p">
+        If you are reproducing an issue...
+      </Typography>
+      <Typography use="body1">
+        <ul>
+          <li>
+            On the left hand panel, go to dependencies and select exact versions
+            of components and React that you are using.
+          </li>
+          <li>
+            Please reproduce your issue as clearly and concisely as possible
+          </li>
+          <li>Leave comments 🤓</li>
+        </ul>
+      </Typography>
+      <Button raised icon="favorite">
+        Button
+      </Button>
+      <Select
+        label="Enhanced"
+        enhanced
+        options={[
+          {
+            label: <b>Cookies</b>,
+            value: 'Cookies'
+          },
+          {
+            label: <i>Span</i>,
+            value: 'Pizza'
+          },
+          {
+            label: <i>Icecream</i>,
+            value: 'Icecream'
+          }
+        ]}
+      />
+    </React.Fragment>
+  );
+}
+
 storiesOf('Bugs', module)
   .add('#538', Bug538)
   .add('#515', Bug515)
   .add('#560', Bug560)
   .add('#567', Bug567)
-  .add('#594', Bug594);
+  .add('#594', Bug594)
+  .add('Hz8pr', Hz8pr);
