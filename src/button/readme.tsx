@@ -7,7 +7,7 @@ import examples from './generated-examples.json';
 import { Button } from '.';
 import { CircularProgress } from '../circular-progress';
 
-export default function() {
+export default function () {
   return (
     <Docs
       title="Buttons"
@@ -58,11 +58,7 @@ export default function() {
             This example uses "accent" to control the color of the Ripple.
             See the documentation on Ripples.
           */}
-          <Button
-            label="With Theme"
-            theme="secondary"
-            ripple={{ accent: true }}
-          />
+          <Button label="With Theme" theme="secondary" />
         </>
       </DocsExample>
       <DocsExample>

@@ -3,6 +3,19 @@
  ****************************************************************/
 
 /****************************************************************
+ * Ripples
+ ****************************************************************/
+body .mdc-button .mdc-button__ripple:before,
+body .mdc-button .mdc-button__ripple:after {
+  background-color: currentColor;
+}
+
+body .mdc-fab .mdc-fab__ripple:before,
+body .mdc-fab .mdc-fab__ripple:after {
+  background-color: currentColor;
+}
+
+/****************************************************************
  * Top App Bar
  ****************************************************************/
 body .mdc-top-app-bar {
