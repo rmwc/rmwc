@@ -5,11 +5,13 @@
 /****************************************************************
  * Ripples
  ****************************************************************/
+/** Corrects issue with ripple surface color on buttons */
 body .mdc-button .mdc-button__ripple:before,
 body .mdc-button .mdc-button__ripple:after {
   background-color: currentColor;
 }
 
+/** Corrects issue with ripple surface color on fabs */
 body .mdc-fab .mdc-fab__ripple:before,
 body .mdc-fab .mdc-fab__ripple:after {
   background-color: currentColor;
@@ -87,4 +89,15 @@ body
 /** Corrects focus outline */
 body .mdc-chip__text__primary-action:focus {
   outline: none;
+}
+
+/****************************************************************
+ * Linear Progress
+ ****************************************************************/
+/**
+  * Corrects an issue where anything other than text-align left breaks layout
+  * https://github.com/jamesmfriedman/rmwc/issues/590
+  */
+.mdc-linear-progress {
+  text-align: left;
 }
