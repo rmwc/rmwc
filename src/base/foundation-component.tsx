@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import * as RMWC from '@rmwc/types';
 import { SpecificEventListener } from '@material/base/types';
 import { useEffect, useState, useRef, useMemo } from 'react';
 import classNames from 'classnames';
@@ -262,7 +264,7 @@ export const useFoundation = <
         }
       >((acc, key: keyof Elements) => {
         acc[key] = new FoundationElement<Props, HTMLElement>(() => {
-          setIteration(val => val + 1);
+          setIteration((val) => val + 1);
         });
         return acc;
       }, {} as any),
@@ -294,7 +296,7 @@ export const useFoundation = <
       f.destroy();
       handleRef(props.current.apiRef, null);
       handleRef(props.current.foundationRef, null);
-      Object.values(elements).map(element => element.destroy());
+      Object.values(elements).map((element) => element.destroy());
       // @ts-ignore
       props.current = {};
     };
