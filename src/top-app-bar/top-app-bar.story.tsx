@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
@@ -50,7 +50,7 @@ function NestedTopAppBar() {
 
   return (
     <div
-      ref={el => setEl(el)}
+      ref={(el) => setEl(el)}
       style={{
         padding: '4rem',
         height: '300px',

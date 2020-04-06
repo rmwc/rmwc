@@ -1,6 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import * as RMWC from '@rmwc/types';
-import * as React from 'react';
+import React from 'react';
 import { useClassNames, Tag, createComponent } from '@rmwc/base';
 
 const SIZE_MAP: { [key: string]: number } = {

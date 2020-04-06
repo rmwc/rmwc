@@ -1,3 +1,4 @@
+import React, { useCallback, useEffect, useState, useRef } from 'react';
 import {
   useFoundation,
   closest,
@@ -5,16 +6,14 @@ import {
   FoundationElement,
   raf
 } from '@rmwc/base';
-import { MenuSurfaceProps, MenuSurfaceApi } from '.';
-
 import {
   MDCMenuSurfaceFoundation,
   util,
   MDCMenuDimensions,
-  Corner
+  Corner,
+  MDCMenuDistance
 } from '@material/menu-surface';
-import { MDCMenuDistance } from '@material/menu-surface';
-import { useCallback, useEffect, useState, useRef } from 'react';
+import { MenuSurfaceProps, MenuSurfaceApi } from '.';
 
 const ANCHOR_CORNER_MAP: {
   [key: string]: keyof typeof MDCMenuSurfaceFoundation.Corner;

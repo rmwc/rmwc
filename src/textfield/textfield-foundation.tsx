@@ -1,3 +1,4 @@
+import { useState, useRef, useEffect } from 'react';
 import { useFoundation } from '@rmwc/base';
 import { EventType, SpecificEventListener } from '@material/base/types';
 import { MDCTextFieldFoundation } from '@material/textfield';
@@ -6,7 +7,6 @@ import {
   TextFieldCharacterCountApi,
   TextFieldIconApi
 } from '.';
-import { useState, useRef, useEffect } from 'react';
 import { FloatingLabelApi } from '@rmwc/floating-label';
 
 export const useTextFieldFoundation = (props: TextFieldProps) => {
@@ -122,9 +122,9 @@ export const useTextFieldFoundation = (props: TextFieldProps) => {
             handler: (attributeNames: string[]) => void
           ): MutationObserver => {
             const getAttributesList = (mutationsList: MutationRecord[]) =>
-              mutationsList.map(mutation => mutation.attributeName);
+              mutationsList.map((mutation) => mutation.attributeName);
             if (inputEl.ref) {
-              const observer = new MutationObserver(mutationsList =>
+              const observer = new MutationObserver((mutationsList) =>
                 handler(getAttributesList(mutationsList) as string[])
               );
               const targetNode = inputEl.ref;

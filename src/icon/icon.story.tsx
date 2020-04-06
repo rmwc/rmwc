@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 import { Icon } from './';
@@ -80,7 +80,7 @@ storiesOf('Icons', module).add('Icon', () => (
       <Icon
         icon={{
           strategy: 'custom',
-          render: props => <div>Customized-{props.content}</div>,
+          render: (props) => <div>Customized-{props.content}</div>,
           content: 'CUSTOM'
         }}
       />
@@ -90,7 +90,7 @@ storiesOf('Icons', module).add('Icon', () => (
       <RMWCProvider
         icon={{
           strategy: 'custom',
-          render: props => <div>Custom + {props.content}</div>
+          render: (props) => <div>Custom + {props.content}</div>
         }}
       >
         <Icon icon="test" />

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
@@ -18,8 +18,8 @@ function CheckboxStory() {
       checked={checked}
       indeterminate={indeterminate}
       value={value}
-      foundationRef={ref => console.log(ref)}
-      onChange={evt => {
+      foundationRef={(ref) => console.log(ref)}
+      onChange={(evt) => {
         setChecked(evt.currentTarget.checked);
         action(
           `onChange: ${evt.currentTarget.value} ${evt.currentTarget.checked}`

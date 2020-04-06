@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 
 import { Link, BrowserRouter as Router } from 'react-router-dom';
 import { storiesOf } from '@storybook/react';
@@ -80,7 +80,7 @@ class TabBarStory extends React.Component {
           onActivate={(evt: any) => this.onChange(evt)}
           foundationRef={console.log}
         >
-          {this.state.tabs.map(label => (
+          {this.state.tabs.map((label) => (
             <Tab key={label}>{label}</Tab>
           ))}
         </TabBar>
@@ -115,7 +115,7 @@ class TabBarStory extends React.Component {
         <br />
         Always 1
         <TabBar activeTabIndex={1}>
-          {this.state.tabs.map(label => (
+          {this.state.tabs.map((label) => (
             <Tab key={label}>{label}</Tab>
           ))}
         </TabBar>
@@ -134,7 +134,7 @@ storiesOf('Tabs', module)
     return (
       <TabBar
         activeTabIndex={tabIndex}
-        onActivate={evt => setTabIndex(evt.detail.index)}
+        onActivate={(evt) => setTabIndex(evt.detail.index)}
       >
         {/* Tabs automatically scroll with lots of content. */}
         <Tab>Cookies</Tab>

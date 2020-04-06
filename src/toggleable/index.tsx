@@ -1,5 +1,5 @@
 import * as RMWC from '@rmwc/types';
-import * as React from 'react';
+import React from 'react';
 import { useId } from '@rmwc/base';
 import { FormField } from '@rmwc/formfield';
 
@@ -54,7 +54,7 @@ export function useToggleFoundation<Foundation>(
     }
   };
 
-  const toggleRootProps = hasLabel
+  const toggleRootProps: ToggleableProps<Foundation>['rootProps'] = hasLabel
     ? { disabled }
     : {
         className,

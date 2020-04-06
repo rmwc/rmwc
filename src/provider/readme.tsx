@@ -6,7 +6,7 @@ import examples from './generated-examples.json';
 
 import { RMWCProvider } from '.';
 
-export default function() {
+export default function () {
   return (
     <Docs
       title="Provider"
@@ -21,8 +21,9 @@ export default function() {
       </DocsP>
 
       <DocsExample codeOnly>
-        {/* jsx */ `
-          import * as React from 'react';
+        {
+          /* jsx */ `
+          import React from 'react';
           import * as ReactDOM from 'react-dom';
           import App from './App'; // your main app component
           import { RMWCProvider } from '@rmwc/provider';
@@ -55,7 +56,8 @@ export default function() {
             </RMWCProvider>,
             document.getElementById('root'),
           );
-        `}
+        `
+        }
       </DocsExample>
 
       <DocProps

@@ -1,4 +1,4 @@
-import { useEffect, useCallback } from 'react';
+import React, { useEffect, useCallback } from 'react';
 import { MDCListFoundation, MDCListAdapter } from '@material/list';
 import { matches, FoundationElement } from '@rmwc/base';
 import { useFoundation } from '@rmwc/base';
@@ -95,7 +95,7 @@ export const useListFoundation = (props: ListProps & React.HTMLProps<any>) => {
               MDCListFoundation.strings.CHILD_ELEMENTS_TO_TOGGLE_TABINDEX
             )
           );
-          listItemChildren.forEach(ele =>
+          listItemChildren.forEach((ele) =>
             ele.setAttribute('tabindex', String(tabIndexValue))
           );
         },

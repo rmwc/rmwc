@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 import { boolean, text, number } from '@storybook/addon-knobs';
@@ -16,7 +16,7 @@ function TextFieldStory() {
       required={boolean('required', false)}
       outlined={boolean('outlined', false)}
       invalid={boolean('invalid', false)}
-      onChange={evt => setValue(evt.currentTarget.value)}
+      onChange={(evt) => setValue(evt.currentTarget.value)}
       rows={number('rows', 8)}
       cols={number('cols', 0)}
       icon={text('withLeadingIcon', '')}
@@ -49,12 +49,12 @@ storiesOf('TextField', module)
   .add('TextField (Controlled)', () => <TextFieldStory />)
   .add('TextField (Uncontrolled)', () => <TextFieldUncontrolledStory />)
   .add('autoFocus', () => <TextField label="Hello" autoFocus />)
-  .add('Changing', function() {
+  .add('Changing', function () {
     const [value, setValue] = React.useState('');
 
     React.useEffect(() => {
       setInterval(() => {
-        setValue(val => (val === '' ? 'Hello World' : ''));
+        setValue((val) => (val === '' ? 'Hello World' : ''));
       }, 2000);
     }, []);
 

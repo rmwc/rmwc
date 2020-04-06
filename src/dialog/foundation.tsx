@@ -8,7 +8,7 @@ import {
   triggerWindowResize
 } from '@rmwc/base';
 import { DialogProps } from '.';
-import { useRef, useEffect, useMemo } from 'react';
+import React, { useRef, useEffect, useMemo } from 'react';
 
 const isScrollable = (el: HTMLElement) => {
   return el.scrollHeight > el.offsetHeight;
@@ -76,7 +76,7 @@ export const useDialogFoundation = (
           buttons.current?.reverse();
 
           buttons.current?.forEach(
-            button =>
+            (button) =>
               button.parentElement && button.parentElement.appendChild(button)
           );
         },

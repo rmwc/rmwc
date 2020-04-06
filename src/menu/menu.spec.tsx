@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { mount } from 'enzyme';
 import {
   MenuSurfaceAnchor,
@@ -62,7 +62,7 @@ describe('Menu', () => {
     );
   });
 
-  it('SimpleMenu renders', done => {
+  it('SimpleMenu renders', (done) => {
     let val = 0;
 
     const el = mount(
@@ -88,7 +88,7 @@ describe('Menu', () => {
       <SimpleMenu
         handle={<button>Test</button>}
         open
-        onSelect={evt => (val = evt.detail.index)}
+        onSelect={(evt) => (val = evt.detail.index)}
       >
         <MenuItem>
           <span>Cookies</span>
@@ -107,7 +107,7 @@ describe('Menu', () => {
     expect(val).toBe(val);
   });
 
-  it('SimpleMenuSurface renders', done => {
+  it('SimpleMenuSurface renders', (done) => {
     let val = 0;
 
     const el = mount(

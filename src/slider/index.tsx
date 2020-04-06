@@ -1,5 +1,5 @@
 import * as RMWC from '@rmwc/types';
-import * as React from 'react';
+import React from 'react';
 import { MDCSliderFoundation } from '@material/slider';
 import { useClassNames, Tag, createComponent } from '@rmwc/base';
 import { useSliderFoundation } from './foundation';

@@ -1,5 +1,5 @@
 import * as RMWC from '@rmwc/types';
-import * as React from 'react';
+import React from 'react';
 import { MDCSwitchFoundation } from '@material/switch';
 import {
   classNames,

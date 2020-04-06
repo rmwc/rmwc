@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { mount } from 'enzyme';
 import { Typography } from './';
 import { RMWCProvider } from '../provider';
@@ -20,7 +20,7 @@ describe('Typography', () => {
     mount(
       <Typography
         use="body1"
-        ref={el => {
+        ref={(el) => {
           myRef = el;
         }}
       >

@@ -1,5 +1,5 @@
 import * as RMWC from '@rmwc/types';
-import * as React from 'react';
+import React from 'react';
 import { IconProps } from '@rmwc/icon';
 import {
   MDCTextFieldCharacterCounterFoundation,

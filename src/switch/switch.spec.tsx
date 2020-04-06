@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { mount } from 'enzyme';
 import { Switch } from './';
 
@@ -35,13 +35,10 @@ describe('Switch', () => {
     expect(switchEl.text().trim()).toEqual('hello world');
   });
 
-  test('can be dynamically changed with a dynamic label #361', done => {
+  test('can be dynamically changed with a dynamic label #361', (done) => {
     const el = mount(<Switch label="no" onChange={() => {}} checked={false} />);
     expect(
-      (el
-        .find('input')
-        .first()
-        .getDOMNode() as HTMLInputElement).checked
+      (el.find('input').first().getDOMNode() as HTMLInputElement).checked
     ).toBe(false);
 
     el.setProps({ label: 'yes', checked: true }, () => {

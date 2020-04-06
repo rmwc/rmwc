@@ -1,3 +1,4 @@
+import React from 'react';
 import { useFoundation } from '@rmwc/base';
 import { IconProps } from '@rmwc/icon';
 import { EventType, SpecificEventListener } from '@material/base/types';

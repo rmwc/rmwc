@@ -1,9 +1,10 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import * as RMWC from '@rmwc/types';
+import React, { useEffect } from 'react';
 import { SwitchProps, SwitchHTMLProps } from '.';
 import { useToggleFoundation } from '@rmwc/toggleable';
 import { useFoundation } from '@rmwc/base';
-import { useEffect } from 'react';
+
 import { MDCSwitchFoundation, MDCSwitchAdapter } from '@material/switch';
 
 export const useSwitchFoundation = (props: SwitchProps & SwitchHTMLProps) => {

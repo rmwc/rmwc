@@ -1,6 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import * as RMWC from '@rmwc/types';
-import * as React from 'react';
+import React from 'react';
 import { wrapChild, createComponent } from '@rmwc/base';
 import { Tag, useClassNames } from '@rmwc/base';
 

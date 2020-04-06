@@ -1,10 +1,10 @@
+import React, { useCallback, useState, useRef, useEffect } from 'react';
 import { useFoundation, raf } from '@rmwc/base';
 import {
   MDCSelectFoundation,
   MDCSelectAdapter,
   cssClasses
 } from '@material/select';
-import { useCallback, useState, useRef, useEffect } from 'react';
 import { FloatingLabelApi } from '@rmwc/floating-label';
 import { MenuApi } from '@rmwc/menu';
 import { Corner } from '@material/menu-surface';

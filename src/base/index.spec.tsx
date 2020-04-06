@@ -1,5 +1,5 @@
 import * as RMWC from '@rmwc/types';
-import * as React from 'react';
+import React from 'react';
 import { mount } from 'enzyme';
 import {
   withTheme,
@@ -101,7 +101,7 @@ describe('FoundationElement', () => {
     expect(inst.root.getProp('title')).toBe(undefined);
   });
 
-  it('FoundationElement: handles prop merging', async done => {
+  it('FoundationElement: handles prop merging', async (done) => {
     let blueChangeCalled = false;
     let redChangeCalled = false;
     const el = mount(
@@ -140,7 +140,7 @@ describe('Utils', () => {
     process.env.NODE_ENV = 'test';
   });
 
-  it('debounce', done => {
+  it('debounce', (done) => {
     let val = 0;
     const foo = () => val++;
     const debouncedFoo = debounce(foo, 100);

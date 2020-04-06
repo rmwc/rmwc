@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
@@ -16,14 +16,14 @@ import {
 import { useKnob } from '@rmwc/base/utils/use-knob';
 import { Button } from '@rmwc/button';
 
-const DialogStory = function() {
+const DialogStory = function () {
   let [open, setOpen] = useKnob('boolean', 'open', true);
 
   return (
     <Dialog
       open={open}
       foundationRef={console.log}
-      onClose={evt => {
+      onClose={(evt) => {
         console.log(evt.detail.action);
         setOpen(false);
       }}
@@ -56,7 +56,7 @@ function SimpleDialogStory() {
       title={title}
       body={body}
       open={open}
-      onClose={evt => {
+      onClose={(evt) => {
         setOpen(false);
         action('onClose')();
       }}
@@ -72,10 +72,12 @@ storiesOf('Dialogs', module)
   .add('Dialog', () => <DialogStory />)
   .add('SimpleDialog', () => <SimpleDialogStory />)
   .add('DialogQueue', () => {
-    const fireAlert = () => alert({}).then(res => console.log(res));
-    const fireConfirm = () => confirm({}).then(res => console.log(res));
+    const fireAlert = () => alert({}).then((res) => console.log(res));
+    const fireConfirm = () => confirm({}).then((res) => console.log(res));
     const firePrompt = () =>
-      prompt({ inputProps: { outlined: true } }).then(res => console.log(res));
+      prompt({ inputProps: { outlined: true } }).then((res) =>
+        console.log(res)
+      );
 
     return (
       <>

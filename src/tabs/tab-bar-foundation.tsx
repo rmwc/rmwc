@@ -1,7 +1,7 @@
+import React, { useRef, useEffect, useCallback, useState } from 'react';
 import { TabBarProps } from './tab-bar';
 import { useFoundation } from '@rmwc/base';
 import { MDCTabBarFoundation } from '@material/tab-bar';
-import { useRef, useEffect, useCallback, useState } from 'react';
 import { TabScrollerApi } from './tab-scroller';
 import { MDCTabInteractionEvent } from '@material/tab';
 import { TabApi } from './tab';

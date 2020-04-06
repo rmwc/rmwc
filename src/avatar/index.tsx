@@ -1,5 +1,5 @@
-import * as React from 'react';
 import * as RMWC from '@rmwc/types';
+import React from 'react';
 import { Icon, IconProps } from '@rmwc/icon';
 import { withRipple } from '@rmwc/ripple';
 import {

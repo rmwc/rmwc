@@ -1,7 +1,7 @@
 /**
  * @jest-environment node
  */
-import * as React from 'react';
+import React from 'react';
 import { renderToString as mount } from 'react-dom/server';
 import {
   Dialog,
@@ -20,14 +20,14 @@ describe('Dialog', () => {
         header="Foo"
         body="You can pass the body prop, or anything you want as children."
         open
-        onClose={evt => {}}
+        onClose={(evt) => {}}
       />
     );
   });
 
   it('standard Dialog renders', () => {
     mount(
-      <Dialog open onClose={evt => {}}>
+      <Dialog open onClose={(evt) => {}}>
         <DialogTitle>Dialog Title</DialogTitle>
         <DialogContent>This is a custom dialog.</DialogContent>
         <DialogActions>

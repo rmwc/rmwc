@@ -1,5 +1,5 @@
 import * as RMWC from '@rmwc/types';
-import * as React from 'react';
+import React from 'react';
 
 import { classNames, Tag } from '@rmwc/base';
 import { Icon } from '@rmwc/icon';

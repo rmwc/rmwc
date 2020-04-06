@@ -1,7 +1,7 @@
-import { IconButtonProps } from '.';
+import React, { useEffect } from 'react';
 import { useFoundation } from '@rmwc/base';
 import { MDCIconButtonToggleFoundation } from '@material/icon-button';
-import { useEffect } from 'react';
+import { IconButtonProps } from '.';
 
 export const useIconButtonFoundation = (
   props: IconButtonProps & React.HTMLProps<any>

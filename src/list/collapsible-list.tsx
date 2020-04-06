@@ -1,5 +1,5 @@
 import * as RMWC from '@rmwc/types';
-import * as React from 'react';
+import React from 'react';
 import { classNames, Tag } from '@rmwc/base';
 
 /** A collapsible list component. */
@@ -242,7 +242,7 @@ export class CollapsibleList extends React.Component<
         <div className="rmwc-collapsible-list__children" style={childrenStyle}>
           <div
             className="rmwc-collapsible-list__children-inner"
-            ref={el => (this.childContainer = el)}
+            ref={(el) => (this.childContainer = el)}
           >
             {children}
           </div>

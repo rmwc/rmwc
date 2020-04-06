@@ -215,7 +215,7 @@ A more relevant example involves an app that has a custom / existing icon compon
 
   // 3) Instead, you should set the custom strategy to be your default
   // and add your own handling with RMWCProvider
-  import * as React from 'react';
+  import React from 'react';
   import * as ReactDOM from 'react-dom';
   import App from './App'; // your main app component
   import { RMWCProvider } from '@rmwc/provider';

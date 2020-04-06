@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { mount } from 'enzyme';
 import { TabBar, Tab } from './';
 
@@ -11,7 +11,7 @@ describe('Tabs', () => {
 
   it('TabBar renders', () => {
     mount(
-      <TabBar activeTabIndex={0} onActivate={evt => {}}>
+      <TabBar activeTabIndex={0} onActivate={(evt) => {}}>
         <Tab>Test</Tab>
       </TabBar>
     );
@@ -41,7 +41,7 @@ describe('Tabs', () => {
       render() {
         return (
           <TabBar>
-            {this.state.tabs.map(label => (
+            {this.state.tabs.map((label) => (
               <Tab key={label} label={label} />
             ))}
           </TabBar>
@@ -86,7 +86,7 @@ describe('Tabs', () => {
     });
   });
 
-  it('sets initial active tab', done => {
+  it('sets initial active tab', (done) => {
     const el1 = mount(
       <TabBar activeTabIndex={0}>
         <Tab>1</Tab>

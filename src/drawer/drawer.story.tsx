@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
@@ -31,7 +31,7 @@ const ListItems = (props: any) => (
   </>
 );
 
-storiesOf('Drawers', module).add('Drawer', function() {
+storiesOf('Drawers', module).add('Drawer', function () {
   const [open, setOpen] = useKnob('boolean', 'open', true);
   return (
     <div style={{ margin: '-24px' }}>

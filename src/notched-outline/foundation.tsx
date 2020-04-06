@@ -1,7 +1,7 @@
+import React, { useEffect, useRef } from 'react';
 import { NotchedOutlineProps } from '.';
 import { useFoundation } from '@rmwc/base';
 import { MDCNotchedOutlineFoundation } from '@material/notched-outline';
-import { useEffect, useRef } from 'react';
 
 export const useNotchedOutlineFoundation = (
   props: NotchedOutlineProps & React.HTMLProps<any>

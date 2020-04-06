@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { mount } from 'enzyme';
 import { Icon } from './';
 
@@ -115,7 +115,7 @@ describe('Icon', () => {
         icon={{
           icon: 'CUSTOM',
           strategy: 'custom',
-          render: props => (
+          render: (props) => (
             <div>
               Customized-
               {props.content}
