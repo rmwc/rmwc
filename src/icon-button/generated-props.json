@@ -204,7 +204,7 @@
             "contentsRaw": "Adds a ripple effect to the component",
             "metadata": {}
           },
-          "fileName": "src/icon-button/node_modules/@rmwc/types/index.tsx",
+          "fileName": "src/icon-button/node_modules/@rmwc/base/node_modules/@rmwc/types/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,

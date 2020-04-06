@@ -202,6 +202,7 @@ A more relevant example involves an app that has a custom / existing icon compon
 
 ```jsx
 
+  `
   // 1) Your app has an icon component you use
   import { MyIconComponent } from '@rmwc/icon';
   <MyIconComponent name="search" />
@@ -243,6 +244,7 @@ A more relevant example involves an app that has a custom / existing icon compon
   // delegated to your handler and render your custom component
   import { TextFieldIcon } from '@rmwc/textfield';
   <TextFieldIcon icon="search" />
+`
 
 ```
 
