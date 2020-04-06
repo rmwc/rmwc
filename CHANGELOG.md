@@ -1,3 +1,9 @@
+#### 6.0.12 (2020-04-06)
+
+##### Bug Fixes
+
+* **Typescript:**  Cleaning up flattened delclarations for Dialog and base (4d7a4a1e)
+
 #### 6.0.11 (2020-04-05)
 
 ##### Bug Fixes
