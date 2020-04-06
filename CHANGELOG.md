@@ -1,3 +1,9 @@
+#### 6.0.14 (2020-04-06)
+
+##### Bug Fixes
+
+* **Typescript:**  Correcting cryptic issue where storybook is causing incorrect type declarations to be emitted. (cf1ca2da)
+
 #### 6.0.13 (2020-04-06)
 
 ##### Bug Fixes
