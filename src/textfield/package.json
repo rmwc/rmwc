@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/textfield",
-  "version": "6.0.12",
+  "version": "6.0.13",
   "description": "RMWC TextField component",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -37,12 +37,12 @@
   },
   "dependencies": {
     "@material/textfield": "^5.1.0",
-    "@rmwc/base": "^6.0.12",
-    "@rmwc/floating-label": "^6.0.12",
-    "@rmwc/icon": "^6.0.12",
-    "@rmwc/line-ripple": "^6.0.12",
-    "@rmwc/notched-outline": "^6.0.12",
-    "@rmwc/ripple": "^6.0.12",
+    "@rmwc/base": "^6.0.13",
+    "@rmwc/floating-label": "^6.0.13",
+    "@rmwc/icon": "^6.0.13",
+    "@rmwc/line-ripple": "^6.0.13",
+    "@rmwc/notched-outline": "^6.0.13",
+    "@rmwc/ripple": "^6.0.13",
     "@rmwc/types": "^6.0.5"
   },
   "gitHead": "bf098adc2571ee1641ef20d79f38fb64e9ff186e"

@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/base",
-  "version": "6.0.12",
+  "version": "6.0.13",
   "description": "RMWC base module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -44,6 +44,5 @@
     "mutation-observer": "^1.0.3",
     "tslib": "^1.10.0"
   },
-  "devDependencies": {},
   "gitHead": "bf098adc2571ee1641ef20d79f38fb64e9ff186e"
 }
