@@ -1,3 +1,11 @@
+#### 6.0.13 (2020-04-06)
+
+##### Bug Fixes
+
+* **Typescript:**
+  *  moving classnames from devDependency to dependency (3a40031f)
+  *  Corrects typescript bug randomly pulling in unused type reference. (87e8ee7b)
+
 #### 6.0.12 (2020-04-06)
 
 ##### Bug Fixes
