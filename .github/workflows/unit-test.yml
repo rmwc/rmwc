@@ -7,7 +7,7 @@ on:
     branches: [master]
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
 
     strategy:
@@ -20,7 +20,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - run: npm i react react-dom && npm i
+      - run: npm i react react-dom && npm ci
       - run: npm test
       - run: bash <(curl -s https://codecov.io/bash)
         env:
