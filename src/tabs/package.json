@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/tabs",
-  "version": "6.0.13",
+  "version": "6.0.14",
   "description": "RMWC Tabs component",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -40,9 +40,9 @@
     "@material/tab-bar": "^5.1.0",
     "@material/tab-indicator": "^5.1.0",
     "@material/tab-scroller": "^5.1.0",
-    "@rmwc/base": "^6.0.13",
-    "@rmwc/icon": "^6.0.13",
-    "@rmwc/ripple": "^6.0.13",
+    "@rmwc/base": "^6.0.14",
+    "@rmwc/icon": "^6.0.14",
+    "@rmwc/ripple": "^6.0.14",
     "@rmwc/types": "^6.0.5"
   },
   "gitHead": "bf098adc2571ee1641ef20d79f38fb64e9ff186e"
