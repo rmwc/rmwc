@@ -1,3 +1,20 @@
+#### 6.1.0 (2020-04-22)
+
+##### New Features
+
+* **TextField:**  Add ability to manually float label (457a7c79)
+
+##### Bug Fixes
+
+* **Select:**  Don't render ListGroupSubheader when passing empty string or null as label (73fc81c5)
+
+##### Other Changes
+
+* //github.com/jamesmfriedman/rmwc (29f2c26a)
+* //github.com/jamesmfriedman/rmwc (2e7592a0)
+* //github.com/jamesmfriedman/rmwc (c8b83f53)
+* //github.com/jamesmfriedman/rmwc (61946e8f)
+
 #### 6.0.14 (2020-04-06)
 
 ##### Bug Fixes
