@@ -120,6 +120,7 @@ A TextField component for accepting text input from a user.
 | `align` | `"start" \| "end"` | How to align the text inside the TextField. Defaults to 'start'. |
 | `characterCount` | `undefined \| false \| true` | Shows the character count, must be used in conjunction with maxLength. |
 | `disabled` | `undefined \| false \| true` | Makes the Textfield disabled. |
+| `floatLabel` | `undefined \| false \| true` | The label floats automatically based on value, but you can use this prop for manual control. |
 | `foundationRef` | `React.Ref<MDCTextFieldFoundation \| null>` | Advanced: A reference to the MDCFoundation. |
 | `fullwidth` | `undefined \| false \| true` | Makes the TextField fullwidth. |
 | `helpText` | `React.ReactNode \| TextFieldHelperTextProps` | Adds help text to the field |
