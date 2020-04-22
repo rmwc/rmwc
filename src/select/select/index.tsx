@@ -250,9 +250,11 @@ function EnhancedMenu(props: EnhancedMenuProps & SelectHTMLProps) {
           if (options) {
             return (
               <ListGroup key={i}>
-                <ListGroupSubheader theme="textDisabledOnBackground">
-                  {label}
-                </ListGroupSubheader>
+                {label && (
+                  <ListGroupSubheader theme="textDisabledOnBackground">
+                    {label}
+                  </ListGroupSubheader>
+                )}
                 <MenuItems>
                   {options.map(({ label, ...option }) =>
                     renderOption({ label, option: option as FormattedOption })
