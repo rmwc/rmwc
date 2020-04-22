@@ -58,6 +58,11 @@ body .mdc-drawer .mdc-list-item:not(.mdc-list-item--activated) {
   color: var(--mdc-theme-on-surface);
 }
 
+/** Fixes list item graphic activated color in drawers */
+body .mdc-drawer .mdc-list-item--activated .mdc-list-item__graphic{
+  color: var(--mdc-theme-primary);
+}
+
 /** Fixes an issue where dividers on cards had bullet points */
 body .mdc-list-divider {
   list-style: none;
