@@ -39,7 +39,7 @@ export const useTextFieldFoundation = (props: TextFieldProps) => {
         return {
           shakeLabel: (shouldShake: boolean) => setShakeLabel(shouldShake),
           floatLabel: (shouldFloat: boolean) => {
-            setFloatlabel(shouldFloat);
+            setFloatlabel(getProps().floatLabel ?? shouldFloat);
           },
           hasLabel: () => {
             return !!getProps().label;
@@ -68,7 +68,7 @@ export const useTextFieldFoundation = (props: TextFieldProps) => {
             setNotchWidth(labelWidth);
           },
           closeOutline: () => {
-            setNotchWidth(undefined);
+            getProps().floatLabel ?? setNotchWidth(undefined);
           },
           hasOutline: () => {
             return !!getProps().outlined;
@@ -164,6 +164,15 @@ export const useTextFieldFoundation = (props: TextFieldProps) => {
       foundation.setValue(String(props.value));
     }
   }, [props.value, foundation, foundationValue]);
+
+  // Allow the user to float the label themselves
+  useEffect(() => {
+    if (props.floatLabel !== undefined) {
+      foundation.notchOutline(props.floatLabel);
+      // @ts-ignore unsafe adapter access
+      foundation.adapter_.floatLabel(props.floatLabel);
+    }
+  }, [foundation, props.floatLabel]);
 
   return {
     shakeLabel,
