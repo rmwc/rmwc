@@ -227,15 +227,24 @@ export interface TopAppBarFixedAdjustProps {
 export const TopAppBarFixedAdjust = createComponent<TopAppBarFixedAdjustProps>(
   function TopAppBarFixedAdjust(props, ref) {
     const { dense, denseProminent, prominent, short, ...rest } = props;
-    const className = useClassNames(props, [
-      'mdc-top-app-bar--fixed-adjust',
-      {
-        'mdc-top-app-bar--dense-fixed-adjust': props.dense,
-        'mdc-top-app-bar--prominent-fixed-adjust': props.prominent,
-        'mdc-top-app-bar--dense-prominent-fixed-adjust': props.denseProminent,
-        'mdc-top-app-bar--short-fixed-adjust': props.short
-      }
-    ]);
+    const classNames: string[] = [];
+    if (dense) {
+      classNames.push('mdc-top-app-bar--dense-fixed-adjust')
+    }
+    if (denseProminent) {
+      classNames.push('mdc-top-app-bar--dense-prominent-fixed-adjust')
+    }
+    if (prominent) {
+      classNames.push('mdc-top-app-bar--prominent-fixed-adjust')
+    }
+    if (short) {
+      classNames.push('mdc-top-app-bar--short-fixed-adjust')
+    }
+    // Use the default class
+    if (classNames.length === 0) {
+      classNames.push('mdc-top-app-bar--fixed-adjust')
+    }
+    const className = useClassNames(props, classNames);
     return <Tag {...rest} ref={ref} className={className} />;
   }
 );
