@@ -336,6 +336,8 @@ export const Select: RMWC.ComponentType<
     }
   ]);
 
+  const enhancedMenuProps = typeof enhanced === 'object' ? enhanced : {};
+
   const defaultValue =
     value !== undefined ? undefined : props.defaultValue || '';
 
@@ -417,6 +419,7 @@ export const Select: RMWC.ComponentType<
         {enhanced && (
           <EnhancedMenu
             {...rest}
+            {...enhancedMenuProps}
             anchorCorner="bottomStart"
             defaultValue={defaultValue}
             placeholder={placeholder}
