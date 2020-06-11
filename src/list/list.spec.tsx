@@ -40,7 +40,7 @@ describe('List', () => {
     let clickedIndex;
 
     const el = mount(
-      <List onAction={evt => (clickedIndex = evt.detail.index)}>
+      <List onAction={evt => (clickedIndex = evt.detail)}>
         <ListItem>
           <ListItemPrimaryText>Cookies</ListItemPrimaryText>
         </ListItem>
