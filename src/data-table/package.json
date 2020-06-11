@@ -39,7 +39,10 @@
     "@material/data-table": "^5.1.0",
     "@rmwc/base": "^6.0.14",
     "@rmwc/icon": "^6.0.14",
-    "@rmwc/types": "^6.0.5"
+    "@rmwc/types": "^6.0.5",
+    "@rmwc/switch": "^6.0.14",
+    "@rmwc/checkbox": "^6.0.14",
+    "@rmwc/select": "^6.0.14"
   },
   "gitHead": "bf098adc2571ee1641ef20d79f38fb64e9ff186e"
 }

@@ -175,7 +175,7 @@ export const DataTableHeadCell = createComponent<DataTableHeadCellProps>(
     ]);
 
     const onClickProp =
-      onSortChange && sort !== undefined
+      sort !== undefined
         ? {
             onClick: (evt: any) => {
               onSortChange &&
