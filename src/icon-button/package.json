@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/icon-button",
-  "version": "6.1.1",
+  "version": "6.1.2",
   "description": "RMWC IconButton component",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -39,7 +39,7 @@
     "@material/icon-button": "^5.1.0",
     "@rmwc/base": "^6.0.14",
     "@rmwc/icon": "^6.0.14",
-    "@rmwc/ripple": "^6.1.1",
+    "@rmwc/ripple": "^6.1.2",
     "@rmwc/types": "^6.0.5"
   },
   "gitHead": "d9befec0e3b258864b71686eecd16c16feb43cf1"

@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/data-table",
-  "version": "6.1.1",
+  "version": "6.1.2",
   "description": "RMWC Data Table Component",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -38,10 +38,10 @@
   "dependencies": {
     "@material/data-table": "^5.1.0",
     "@rmwc/base": "^6.0.14",
-    "@rmwc/checkbox": "^6.1.1",
+    "@rmwc/checkbox": "^6.1.2",
     "@rmwc/icon": "^6.0.14",
-    "@rmwc/select": "^6.1.1",
-    "@rmwc/switch": "^6.1.1",
+    "@rmwc/select": "^6.1.2",
+    "@rmwc/switch": "^6.1.2",
     "@rmwc/types": "^6.0.5"
   },
   "gitHead": "d9befec0e3b258864b71686eecd16c16feb43cf1"
