@@ -77,7 +77,7 @@ class DocumentComponent extends React.Component<DocumentComponentProps> {
               <Br />
               <>|------|------|-------------|</>
               <Br />
-              {def.props.map(prop => (
+              {def.props.map((prop) => (
                 <>
                   | `{prop.name}` | `{prop.type.replace(/\|/g, '\\|')}` |{' '}
                   {prop.description} |
@@ -108,7 +108,7 @@ export class DocProps extends React.Component<DocPropsI> {
 
   render() {
     const { components } = this.props;
-    return components.map(c => {
+    return components.map((c) => {
       let name = c.displayName || '';
       name = name.includes('(') ? name.replace(/.+?\((.+?)\)/g, '$1') : name;
       return (
@@ -154,7 +154,7 @@ export function Docs({
       </DocsTitle>
       <DocsLead>{lead}</DocsLead>
       <DocsSetup module={module} styles={styles} docsLink={docsLink} />
-      {React.Children.map(children, child => {
+      {React.Children.map(children, (child) => {
         if (
           React.isValidElement(child) &&
           // @ts-ignore
@@ -200,7 +200,7 @@ function DocsSetup({
           <Br />
           {'  '}- Or include stylesheets
           <Br />
-          {styles.map(s => (
+          {styles.map((s) => (
             <React.Fragment key={s}>
               {'    '}- **'{s}'**
               <Br />
@@ -246,7 +246,7 @@ export function DocsSubtitle({ children }: { children: React.ReactNode }) {
 function DocsLead({ children }: { children: React.ReactNode }) {
   return (
     <>
-      > {children}
+      {children}
       <Br />
       <Br />
     </>

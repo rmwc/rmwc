@@ -295,7 +295,7 @@ export interface TextFieldIconApi {
 
 /** An Icon in a TextField */
 export interface TextFieldIconProps extends IconProps {
-  apiRef?: (api: TextFieldIconApi) => void;
+  apiRef?: (api: TextFieldIconApi | null) => void;
   position: 'leading' | 'trailing';
 }
 

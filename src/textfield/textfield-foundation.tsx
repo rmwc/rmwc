@@ -20,15 +20,16 @@ export const useTextFieldFoundation = (props: TextFieldProps) => {
   const setCharacterCounter = (api: TextFieldCharacterCountApi | null) =>
     (characterCounter.current = api);
 
-  const leadingIcon = useRef<TextFieldIconApi>();
-  const setLeadingIcon = (api: TextFieldIconApi) => (leadingIcon.current = api);
+  const leadingIcon = useRef<TextFieldIconApi | null>();
+  const setLeadingIcon = (api: TextFieldIconApi | null) =>
+    (leadingIcon.current = api);
 
-  const trailingIcon = useRef<TextFieldIconApi>();
-  const setTrailingIcon = (api: TextFieldIconApi) =>
+  const trailingIcon = useRef<TextFieldIconApi | null>();
+  const setTrailingIcon = (api: TextFieldIconApi | null) =>
     (trailingIcon.current = api);
 
-  const floatingLabel = useRef<FloatingLabelApi>();
-  const setFloatingLabel = (api: FloatingLabelApi) =>
+  const floatingLabel = useRef<FloatingLabelApi | null>();
+  const setFloatingLabel = (api: FloatingLabelApi | null) =>
     (floatingLabel.current = api);
 
   const { foundation, ...elements } = useFoundation({

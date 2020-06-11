@@ -16,7 +16,9 @@ import {
 } from '.';
 
 function FormControllsDataTaTable() {
-  const [checked, setChecked] = React.useState({});
+  const [checked, setChecked] = React.useState<{ [index: number]: boolean }>(
+    {}
+  );
   const sampleRows = new Array(5).fill(undefined);
 
   return (

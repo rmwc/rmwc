@@ -14,7 +14,7 @@ export interface FloatingLabelApi {
 }
 
 export const FloatingLabel = createComponent<
-  FloatingLabelProps & { apiRef?: (api: FloatingLabelApi) => void }
+  FloatingLabelProps & { apiRef?: (api: FloatingLabelApi | null) => void }
 >(function FloatingLabel(props, ref) {
   const { rootEl } = useFloatingLabelFoundation(props);
   const { shake, float, apiRef, ...rest } = props;

@@ -84,7 +84,7 @@ class DocumentComponent extends React.Component<DocumentComponentProps> {
                 </tr>
               </thead>
               <tbody>
-                {this.def.props.map(prop => (
+                {this.def.props.map((prop) => (
                   <tr key={prop.name}>
                     <td>
                       <code>{prop.name}</code>
@@ -122,7 +122,7 @@ export class DocProps extends React.Component<DocPropsI> {
 
   render() {
     const { components } = this.props;
-    return components.map(c => {
+    return components.map((c) => {
       let name = c.displayName || '';
       name = name.includes('(') ? name.replace(/.+?\((.+?)\)/g, '$1') : name;
       return (
@@ -169,7 +169,7 @@ export function Docs({
         </DocsTitle>
         <DocsLead>{lead}</DocsLead>
         <DocsSetup module={module} styles={styles} docsLink={docsLink} />
-        {React.Children.map(children, child => {
+        {React.Children.map(children, (child) => {
           if (
             React.isValidElement(child) &&
             // @ts-ignore
@@ -222,7 +222,7 @@ function DocsSetup({
             <li>
               Or include stylesheets
               <ul>
-                {styles.map(s => (
+                {styles.map((s) => (
                   <li key={s}>
                     <strong>'{s}'</strong>;
                   </li>
@@ -256,7 +256,7 @@ function DocsLead({ children }: { children: React.ReactNode }) {
 const createTextLinks = (text: string) => {
   return (text || '').replace(
     /([^\S]|^)(((https?:\/\/)|(www\.))(\S+))/gi,
-    function(match, space, url) {
+    function (match, space, url) {
       var hyperlink = url;
       if (!hyperlink.match('^https?://')) {
         hyperlink = 'http://' + hyperlink;
@@ -300,10 +300,12 @@ const IFrame = ({
       const nodes: Element[] = [];
       document.body
         .querySelectorAll('link[rel="stylesheet"]')
-        .forEach(n => nodes.push(n));
+        .forEach((n) => nodes.push(n));
 
-      document.body.querySelectorAll('script[src]').forEach(n => nodes.push(n));
-      nodes.forEach(n => headNode.appendChild(n.cloneNode()));
+      document.body
+        .querySelectorAll('script[src]')
+        .forEach((n) => nodes.push(n));
+      nodes.forEach((n) => headNode.appendChild(n.cloneNode()));
     }
 
     if (mountNode) {
@@ -340,7 +342,14 @@ export function DocsExample({
   center?: boolean;
 }) {
   const { examples } = useContext(DocsContext);
-  const [code] = useState(examples[index]);
+  const [code] = useState(() => {
+    const cleaned = examples[index].trim();
+    if (cleaned.startsWith('`') && cleaned.endsWith('`')) {
+      return cleaned.slice(1, cleaned.length - 1);
+    }
+
+    return cleaned;
+  });
 
   return <DocsExampleBase code={code} {...rest} />;
 }
@@ -409,8 +418,8 @@ export function DocsMarkdown({ fileSrc }: { fileSrc: string }) {
   const [src, setSrc] = useState<string | null>(null);
   useEffect(() => {
     fetch(fileSrc)
-      .then(src => src.text())
-      .then(src => setSrc(src));
+      .then((src) => src.text())
+      .then((src) => setSrc(src));
   }, [fileSrc]);
 
   return src ? (

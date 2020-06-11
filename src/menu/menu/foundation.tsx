@@ -9,9 +9,9 @@ import { MenuProps } from './';
 
 export const useMenuFoundation = (props: MenuProps & React.HTMLProps<any>) => {
   const menuSurfaceApi = useRef<MenuSurfaceApi>();
-  const listApi = useRef<ListApi>();
+  const listApi = useRef<ListApi | null>();
 
-  const setListApi = (api: ListApi) => {
+  const setListApi = (api: ListApi | null) => {
     listApi.current = api;
   };
 

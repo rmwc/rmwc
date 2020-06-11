@@ -23,8 +23,8 @@ export const useSelectFoundation = (
 
   const selectedIndex = useRef(-1);
 
-  const floatingLabel = useRef<FloatingLabelApi>();
-  const setFloatingLabel = (api: FloatingLabelApi) => {
+  const floatingLabel = useRef<FloatingLabelApi | null>();
+  const setFloatingLabel = (api: FloatingLabelApi | null) => {
     floatingLabel.current = api;
   };
 
@@ -38,8 +38,8 @@ export const useSelectFoundation = (
     anchor.current = el;
   };
 
-  const leadingIcon = useRef<SelectIconApi>();
-  const setLeadingIcon = (api: SelectIconApi) => {
+  const leadingIcon = useRef<SelectIconApi | null>();
+  const setLeadingIcon = (api: SelectIconApi | null) => {
     leadingIcon.current = api;
   };
 

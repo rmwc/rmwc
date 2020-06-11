@@ -42,7 +42,7 @@ export interface MenuSurfaceProps {
   /** Children to render. */
   children?: React.ReactNode;
   /** An internal api for cross component communication. */
-  apiRef?: (api: MenuSurfaceApi) => void;
+  apiRef?: (api: MenuSurfaceApi | null) => void;
   /** Advanced: A reference to the MDCFoundation. */
   foundationRef?: React.Ref<MDCMenuSurfaceFoundation>;
 }

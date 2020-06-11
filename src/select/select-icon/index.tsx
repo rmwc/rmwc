@@ -11,7 +11,7 @@ export interface SelectIconApi {
 
 /** An Icon in a Select */
 export interface SelectIconProps extends IconProps {
-  apiRef?: (api: SelectIconApi) => void;
+  apiRef?: (api: SelectIconApi | null) => void;
 }
 
 export const SelectIcon = function SelectIcon(

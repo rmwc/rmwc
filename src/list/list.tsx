@@ -19,7 +19,7 @@ export interface ListProps {
   /** A callback for when a list item is interacted with. evt.detail = number */
   onAction?: (evt: ListOnActionEventT) => void;
   /** An internal api used for cross component communication */
-  apiRef?: (api: ListApi) => void;
+  apiRef?: (api: ListApi | null) => void;
   /** Advanced: A reference to the MDCFoundation. */
   foundationRef?: React.Ref<MDCListFoundation | null>;
   /** Sets the list to allow the up arrow on the first element to focus the

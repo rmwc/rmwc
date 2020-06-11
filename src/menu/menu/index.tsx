@@ -39,7 +39,7 @@ export interface MenuProps
   /** Whether or not to focus the first list item on open. Defaults to true. */
   focusOnOpen?: boolean;
   /** Internal api reference for cross component communication. */
-  apiRef?: (api: MenuApi) => void;
+  apiRef?: (api: MenuApi | null) => void;
   /** Advanced: A reference to the MDCFoundation. */
   foundationRef?: React.Ref<MDCMenuFoundation>;
 }
