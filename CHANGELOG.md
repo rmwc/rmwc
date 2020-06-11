@@ -1,3 +1,17 @@
+#### 6.1.1 (2020-06-11)
+
+##### Bug Fixes
+
+* **Select:**  fixed menu props not frowarding for enhanced select (4a3e57d9)
+* **TopAppBar:**
+  *  Fix TopAppBarFixedAdjust to pass broken tests (905f9c8e)
+  *  Add classname tests for TopAppBarFixedAdjust component (fd6a73b6)
+* **top-app-bar:**  Fix wrong className for TopAppBarAdjust (c4ff7664)
+
+##### Other Changes
+
+*  should fix (a54056d4)
+
 #### 6.1.0 (2020-04-22)
 
 ##### New Features
