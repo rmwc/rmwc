@@ -775,7 +775,7 @@
           "kind": "property",
           "name": "apiRef",
           "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L298",
-          "type": "undefined | (api: TextFieldIconApi) => void"
+          "type": "undefined | (api: TextFieldIconApi | null) => void"
         },
         {
           "documentation": {

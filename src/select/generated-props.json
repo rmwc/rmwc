@@ -79,7 +79,7 @@
           "kind": "property",
           "name": "apiRef",
           "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/select/select-icon/index.tsx#L14",
-          "type": "undefined | (api: SelectIconApi) => void"
+          "type": "undefined | (api: SelectIconApi | null) => void"
         },
         {
           "documentation": {
@@ -563,7 +563,7 @@
       },
       "kind": "interface",
       "name": "SelectHelperTextProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/select/select/index.tsx#L443",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/select/select/index.tsx#L446",
       "methods": [],
       "properties": [
         {
@@ -587,7 +587,7 @@
           },
           "kind": "property",
           "name": "persistent",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/select/select/index.tsx#L445",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/select/select/index.tsx#L448",
           "type": "undefined | false | true"
         },
         {
@@ -611,7 +611,7 @@
           },
           "kind": "property",
           "name": "validationMsg",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/select/select/index.tsx#L447",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/select/select/index.tsx#L450",
           "type": "undefined | false | true"
         }
       ]

@@ -1,6 +1,6 @@
 # Dialogs
 
-> Dialogs inform users about a specific task and may contain critical information, require decisions, or involve multiple tasks.
+Dialogs inform users about a specific task and may contain critical information, require decisions, or involve multiple tasks.
 
 - Module **@rmwc/dialog**
 - Import styles:

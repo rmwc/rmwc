@@ -1,6 +1,6 @@
 # Chips
 
-> Chips represent complex entities in small blocks, such as a contact.
+Chips represent complex entities in small blocks, such as a contact.
 
 - Module **@rmwc/chip**
 - Import styles:

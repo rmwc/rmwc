@@ -1,6 +1,6 @@
 # Lists
 
-> Lists are continuous, vertical indexes of text or images.
+Lists are continuous, vertical indexes of text or images.
 
 - Module **@rmwc/list**
 - Import styles:
@@ -199,7 +199,7 @@ A List Component
 
 | Name | Type | Description |
 |------|------|-------------|
-| `apiRef` | `undefined \| (api: ListApi) => void` | An internal api used for cross component communication |
+| `apiRef` | `undefined \| (api: ListApi \| null) => void` | An internal api used for cross component communication |
 | `avatarList` | `undefined \| false \| true` | Makes the list start detail circular for avatars. |
 | `dense` | `undefined \| false \| true` | Reduces the padding on List items. |
 | `foundationRef` | `React.Ref<MDCListFoundation \| null>` | Advanced: A reference to the MDCFoundation. |

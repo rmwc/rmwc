@@ -1597,7 +1597,7 @@
           "kind": "property",
           "name": "apiRef",
           "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L22",
-          "type": "undefined | (api: ListApi) => void"
+          "type": "undefined | (api: ListApi | null) => void"
         },
         {
           "documentation": {

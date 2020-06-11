@@ -168,7 +168,7 @@
           "kind": "property",
           "name": "apiRef",
           "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu-surface/index.tsx#L45",
-          "type": "undefined | (api: MenuSurfaceApi) => void"
+          "type": "undefined | (api: MenuSurfaceApi | null) => void"
         },
         {
           "documentation": {
@@ -680,7 +680,7 @@
           "kind": "property",
           "name": "apiRef",
           "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu/index.tsx#L42",
-          "type": "undefined | (api: MenuApi) => void"
+          "type": "undefined | (api: MenuApi | null) => void"
         },
         {
           "documentation": {
@@ -805,7 +805,7 @@
           "kind": "property",
           "name": "apiRef",
           "inheritedFrom": "ListProps.apiRef",
-          "type": "undefined | (api: ListApi) => void"
+          "type": "undefined | (api: ListApi | null) => void"
         },
         {
           "documentation": {
@@ -1176,7 +1176,7 @@
           "name": "apiRef",
           "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu/index.tsx#L42",
           "inheritedFrom": "MenuProps.apiRef",
-          "type": "undefined | (api: MenuApi) => void"
+          "type": "undefined | (api: MenuApi | null) => void"
         },
         {
           "documentation": {
@@ -1402,7 +1402,7 @@
           "name": "apiRef",
           "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu-surface/index.tsx#L45",
           "inheritedFrom": "MenuSurfaceProps.apiRef",
-          "type": "undefined | (api: MenuSurfaceApi) => void"
+          "type": "undefined | (api: MenuSurfaceApi | null) => void"
         },
         {
           "documentation": {

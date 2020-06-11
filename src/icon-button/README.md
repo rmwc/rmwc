@@ -1,6 +1,6 @@
 # Icon Buttons
 
-> Icon buttons allow users to take actions, and make choices, with a single tap.
+Icon buttons allow users to take actions, and make choices, with a single tap.
 
 - Module **@rmwc/icon-button**
 - Import styles:

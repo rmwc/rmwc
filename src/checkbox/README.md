@@ -1,6 +1,6 @@
 # Checkboxes
 
-> Checkboxes allow the user to select multiple options from a set.
+Checkboxes allow the user to select multiple options from a set.
 
 - Module **@rmwc/checkbox**
 - Import styles:

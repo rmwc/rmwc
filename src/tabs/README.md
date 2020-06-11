@@ -1,6 +1,6 @@
 # Tabs
 
-> Tabs make it easy to explore and switch between different views.
+Tabs make it easy to explore and switch between different views.
 
 - Module **@rmwc/tabs**
 - Import styles:

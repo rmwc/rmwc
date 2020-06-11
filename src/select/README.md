@@ -1,6 +1,6 @@
 # Select Menus
 
-> Menus display a list of choices on a transient sheet of material.
+Menus display a list of choices on a transient sheet of material.
 
 - Module **@rmwc/select**
 - Import styles:

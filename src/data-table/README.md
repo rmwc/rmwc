@@ -1,6 +1,6 @@
 # Data Tables
 
-> Data tables display sets of data.
+Data tables display sets of data.
 
 - Module **@rmwc/data-table**
 - Import styles:

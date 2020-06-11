@@ -1,6 +1,6 @@
 # Fabs
 
-> A floating action button (FAB) represents the primary action of a screen.
+A floating action button (FAB) represents the primary action of a screen.
 
 - Module **@rmwc/fab**
 - Import styles:

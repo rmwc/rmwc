@@ -1,6 +1,6 @@
 # Snackbars
 
-> Snackbars provide brief feedback about an operation through a message at the bottom of the screen.
+Snackbars provide brief feedback about an operation through a message at the bottom of the screen.
 
 - Module **@rmwc/snackbar**
 - Import styles:

@@ -1,6 +1,6 @@
 # Menus
 
-> Menus display a list of choices on a transient sheet of material.
+Menus display a list of choices on a transient sheet of material.
 
 - Module **@rmwc/menu**
 - Import styles:
@@ -207,7 +207,7 @@ A menu component for displaying lists items.
 
 | Name | Type | Description |
 |------|------|-------------|
-| `apiRef` | `undefined \| (api: MenuApi) => void` | Internal api reference for cross component communication. |
+| `apiRef` | `undefined \| (api: MenuApi \| null) => void` | Internal api reference for cross component communication. |
 | `focusOnOpen` | `undefined \| false \| true` | Whether or not to focus the first list item on open. Defaults to true. |
 | `foundationRef` | `React.Ref<MDCMenuFoundation>` | Advanced: A reference to the MDCFoundation. |
 | `onSelect` | `undefined \| (evt: MenuOnSelectEventT) => void` | Callback that fires when a Menu item is selected. evt.detail = { index: number; item: HTMLElement; } |
@@ -232,7 +232,7 @@ This is just the ListItem component exported from the Menu module for convenienc
 | Name | Type | Description |
 |------|------|-------------|
 | `anchorCorner` | `AnchorT` | Manually position the menu to one of the corners. |
-| `apiRef` | `undefined \| (api: MenuSurfaceApi) => void` | An internal api for cross component communication. |
+| `apiRef` | `undefined \| (api: MenuSurfaceApi \| null) => void` | An internal api for cross component communication. |
 | `children` | `React.ReactNode` | Children to render. |
 | `fixed` | `undefined \| false \| true` | Make the menu position fixed. |
 | `foundationRef` | `React.Ref<MDCMenuSurfaceFoundation>` | Advanced: A reference to the MDCFoundation. |
@@ -254,7 +254,7 @@ A Simplified menu component that allows you to pass a handle element and will au
 
 | Name | Type | Description |
 |------|------|-------------|
-| `apiRef` | `undefined \| (api: MenuApi) => void` | Internal api reference for cross component communication. |
+| `apiRef` | `undefined \| (api: MenuApi \| null) => void` | Internal api reference for cross component communication. |
 | `children` | `React.ReactNode` | Children to render |
 | `focusOnOpen` | `undefined \| false \| true` | Whether or not to focus the first list item on open. Defaults to true. |
 | `foundationRef` | `React.Ref<MDCMenuFoundation>` | Advanced: A reference to the MDCFoundation. |
@@ -271,7 +271,7 @@ The same as SimpleMenu, but a generic surface.
 | Name | Type | Description |
 |------|------|-------------|
 | `anchorCorner` | `AnchorT` | Manually position the menu to one of the corners. |
-| `apiRef` | `undefined \| (api: MenuSurfaceApi) => void` | An internal api for cross component communication. |
+| `apiRef` | `undefined \| (api: MenuSurfaceApi \| null) => void` | An internal api for cross component communication. |
 | `children` | `React.ReactNode` | Children to render |
 | `fixed` | `undefined \| false \| true` | Make the menu position fixed. |
 | `foundationRef` | `React.Ref<MDCMenuSurfaceFoundation>` | Advanced: A reference to the MDCFoundation. |

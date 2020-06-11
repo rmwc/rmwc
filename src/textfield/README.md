@@ -1,6 +1,6 @@
 # Text Fields
 
-> Text fields allow users to input, edit, and select text.
+Text fields allow users to input, edit, and select text.
 
 - Module **@rmwc/textfield**
 - Import styles:

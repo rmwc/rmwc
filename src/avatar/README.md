@@ -1,6 +1,6 @@
 # Avatars `RMWC ADDON`
 
-> Avatars are virtual representations of users in a system.
+Avatars are virtual representations of users in a system.
 
 - Module **@rmwc/avatar**
 - Import styles:

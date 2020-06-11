@@ -1,6 +1,6 @@
 # Cards
 
-> Cards contain content and actions about a single subject.
+Cards contain content and actions about a single subject.
 
 - Module **@rmwc/card**
 - Import styles:
