@@ -416,7 +416,7 @@ export const Select: RMWC.ComponentType<
 
         {enhanced && (
           <EnhancedMenu
-            {...rest}
+            {...enhanced}
             anchorCorner="bottomStart"
             defaultValue={defaultValue}
             placeholder={placeholder}
