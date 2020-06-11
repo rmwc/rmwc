@@ -9,7 +9,7 @@ import {
   focusTrapFactory,
   triggerWindowResize
 } from '@rmwc/base';
-import { useRef, useEffect, useCallback } from 'react';
+import React, { useRef, useEffect, useCallback } from 'react';
 
 const useDrawerFoundationFactory = (
   MDCConstructor:

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
@@ -50,7 +50,7 @@ const { messages, notify, clearAll } = createSnackbarQueue();
 
 storiesOf('Snackbar', module)
   .add('Snackbar', () => <SnackbarStory />)
-  .add('SnackbarQueue', function() {
+  .add('SnackbarQueue', function () {
     return (
       <>
         <SnackbarQueue messages={messages} />
@@ -83,7 +83,7 @@ storiesOf('Snackbar', module)
       </>
     );
   })
-  .add('SnackbarQueue API Close', function() {
+  .add('SnackbarQueue API Close', function () {
     return (
       <>
         <SnackbarQueue messages={messages} />
@@ -120,7 +120,7 @@ storiesOf('Snackbar', module)
       </>
     );
   })
-  .add('SnackbarQueue API Clear All', function() {
+  .add('SnackbarQueue API Clear All', function () {
     React.useEffect(() => {
       new Array(40).fill(undefined).forEach(() => {
         notify({

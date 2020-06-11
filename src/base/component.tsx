@@ -24,7 +24,9 @@ type ClassNamesInputT<Props> =
 
 export const Tag = React.forwardRef<
   any,
-  RMWC.HTMLProps & { element?: FoundationElement<any, any> }
+  {
+    element?: FoundationElement<any, any>;
+  } & RMWC.HTMLProps<any, any>
 >(function Tag({ tag: TagEl = 'div', theme, element, ...rest }, ref) {
   const finalProps = element ? element.props(rest) : rest;
   const finalRef = element ? mergeRefs(ref, element.setRef) : ref;

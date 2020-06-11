@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/base",
-  "version": "6.0.5",
+  "version": "6.0.14",
   "description": "RMWC base module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -36,14 +36,13 @@
     "react-dom": "^16.3.x"
   },
   "dependencies": {
+    "@material/dom": "^5.1.0",
     "@rmwc/types": "^6.0.5",
+    "@types/classnames": "^2.2.7",
     "classnames": "^2.2.6",
-    "hyperform": "^0.9.9",
+    "hyperform": "^0.11.0",
     "mutation-observer": "^1.0.3",
     "tslib": "^1.10.0"
-  },
-  "devDependencies": {
-    "@types/classnames": "^2.2.7"
   },
   "gitHead": "bf098adc2571ee1641ef20d79f38fb64e9ff186e"
 }

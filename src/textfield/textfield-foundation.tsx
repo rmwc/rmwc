@@ -1,3 +1,4 @@
+import { useState, useRef, useEffect } from 'react';
 import { useFoundation } from '@rmwc/base';
 import { EventType, SpecificEventListener } from '@material/base/types';
 import { MDCTextFieldFoundation } from '@material/textfield';
@@ -6,7 +7,6 @@ import {
   TextFieldCharacterCountApi,
   TextFieldIconApi
 } from '.';
-import { useState, useRef, useEffect } from 'react';
 import { FloatingLabelApi } from '@rmwc/floating-label';
 
 export const useTextFieldFoundation = (props: TextFieldProps) => {
@@ -39,7 +39,7 @@ export const useTextFieldFoundation = (props: TextFieldProps) => {
         return {
           shakeLabel: (shouldShake: boolean) => setShakeLabel(shouldShake),
           floatLabel: (shouldFloat: boolean) => {
-            setFloatlabel(shouldFloat);
+            setFloatlabel(getProps().floatLabel ?? shouldFloat);
           },
           hasLabel: () => {
             return !!getProps().label;
@@ -68,7 +68,7 @@ export const useTextFieldFoundation = (props: TextFieldProps) => {
             setNotchWidth(labelWidth);
           },
           closeOutline: () => {
-            setNotchWidth(undefined);
+            getProps().floatLabel ?? setNotchWidth(undefined);
           },
           hasOutline: () => {
             return !!getProps().outlined;
@@ -122,9 +122,9 @@ export const useTextFieldFoundation = (props: TextFieldProps) => {
             handler: (attributeNames: string[]) => void
           ): MutationObserver => {
             const getAttributesList = (mutationsList: MutationRecord[]) =>
-              mutationsList.map(mutation => mutation.attributeName);
+              mutationsList.map((mutation) => mutation.attributeName);
             if (inputEl.ref) {
-              const observer = new MutationObserver(mutationsList =>
+              const observer = new MutationObserver((mutationsList) =>
                 handler(getAttributesList(mutationsList) as string[])
               );
               const targetNode = inputEl.ref;
@@ -164,6 +164,15 @@ export const useTextFieldFoundation = (props: TextFieldProps) => {
       foundation.setValue(String(props.value));
     }
   }, [props.value, foundation, foundationValue]);
+
+  // Allow the user to float the label themselves
+  useEffect(() => {
+    if (props.floatLabel !== undefined) {
+      foundation.notchOutline(props.floatLabel);
+      // @ts-ignore unsafe adapter access
+      foundation.adapter_.floatLabel(props.floatLabel);
+    }
+  }, [foundation, props.floatLabel]);
 
   return {
     shakeLabel,

@@ -228,8 +228,8 @@ export const TopAppBarFixedAdjust = createComponent<TopAppBarFixedAdjustProps>(
   function TopAppBarFixedAdjust(props, ref) {
     const { dense, denseProminent, prominent, short, ...rest } = props;
     const className = useClassNames(props, [
-      'mdc-top-app-bar--fixed-adjust',
       {
+        'mdc-top-app-bar--fixed-adjust': !props.dense && !props.denseProminent && !props.prominent && !props.short,
         'mdc-top-app-bar--dense-fixed-adjust': props.dense,
         'mdc-top-app-bar--prominent-fixed-adjust': props.prominent,
         'mdc-top-app-bar--dense-prominent-fixed-adjust': props.denseProminent,

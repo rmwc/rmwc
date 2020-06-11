@@ -202,6 +202,7 @@ A more relevant example involves an app that has a custom / existing icon compon
 
 ```jsx
 
+  `
   // 1) Your app has an icon component you use
   import { MyIconComponent } from '@rmwc/icon';
   <MyIconComponent name="search" />
@@ -215,7 +216,7 @@ A more relevant example involves an app that has a custom / existing icon compon
 
   // 3) Instead, you should set the custom strategy to be your default
   // and add your own handling with RMWCProvider
-  import * as React from 'react';
+  import React from 'react';
   import * as ReactDOM from 'react-dom';
   import App from './App'; // your main app component
   import { RMWCProvider } from '@rmwc/provider';
@@ -243,6 +244,7 @@ A more relevant example involves an app that has a custom / existing icon compon
   // delegated to your handler and render your custom component
   import { TextFieldIcon } from '@rmwc/textfield';
   <TextFieldIcon icon="search" />
+`
 
 ```
 

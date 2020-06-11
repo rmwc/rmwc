@@ -5,10 +5,12 @@ import {
   toDashCase,
   parseThemeOptions,
   wrapChild,
-  createComponent
+  createComponent,
+  Tag,
+  useClassNames
 } from '@rmwc/base';
+
 import { getAutoColorsForTheme } from './utils';
-import { Tag, useClassNames } from '@rmwc/base';
 
 /** A Theme Component. */
 export interface ThemeProps {

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { mount } from 'enzyme';
 import {
   ImageList,
@@ -31,7 +31,7 @@ describe('ImageList', () => {
   test('renders', () => {
     mount(
       <ImageList>
-        {images.map(src => (
+        {images.map((src) => (
           <ImageListItem
             key={src}
             style={{ margin: '2px', width: 'calc(100% / 5 - 4.2px)' }}

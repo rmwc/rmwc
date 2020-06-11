@@ -1,6 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import * as RMWC from '@rmwc/types';
-import * as React from 'react';
+import React from 'react';
 import { MDCFormFieldFoundation } from '@material/form-field';
 import { Tag, useClassNames, createComponent } from '@rmwc/base';
 import { useFormfieldFoundation } from './foundation';

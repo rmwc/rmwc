@@ -637,7 +637,7 @@
       },
       "kind": "interface",
       "name": "DialogTitleProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L181",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L184",
       "methods": [],
       "properties": []
     },
@@ -662,7 +662,7 @@
       },
       "kind": "interface",
       "name": "DialogContentProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L192",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L195",
       "methods": [],
       "properties": []
     },
@@ -687,7 +687,7 @@
       },
       "kind": "interface",
       "name": "DialogActionsProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L203",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L206",
       "methods": [],
       "properties": []
     },
@@ -712,7 +712,7 @@
       },
       "kind": "interface",
       "name": "DialogButtonProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L214",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L217",
       "extends": [
         "ButtonProps"
       ],
@@ -739,7 +739,7 @@
           },
           "kind": "property",
           "name": "action",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L216",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L219",
           "type": "undefined | string"
         },
         {
@@ -883,7 +883,7 @@
           },
           "kind": "property",
           "name": "isDefaultAction",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L218",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L221",
           "type": "undefined | false | true"
         },
         {

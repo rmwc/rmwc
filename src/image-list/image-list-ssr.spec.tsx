@@ -1,7 +1,7 @@
 /**
  * @jest-environment node
  */
-import * as React from 'react';
+import React from 'react';
 import { renderToString as mount } from 'react-dom/server';
 
 import {
@@ -35,7 +35,7 @@ describe('ImageList SSR', () => {
   test('renders', () => {
     mount(
       <ImageList>
-        {images.map(src => (
+        {images.map((src) => (
           <ImageListItem
             key={src}
             style={{ margin: '2px', width: 'calc(100% / 5 - 4.2px)' }}

@@ -1,5 +1,5 @@
 import * as RMWC from '@rmwc/types';
-import * as React from 'react';
+import React from 'react';
 import { IconProps } from '@rmwc/icon';
 import {
   MDCTextFieldCharacterCounterFoundation,
@@ -42,6 +42,8 @@ export interface TextFieldProps extends RMWC.WithRippleProps {
   align?: 'start' | 'end';
   /** A label for the input. */
   label?: React.ReactNode;
+  /** The label floats automatically based on value, but you can use this prop for manual control. */
+  floatLabel?: boolean;
   /** Makes a multiline TextField. */
   textarea?: boolean;
   /** Makes the TextField fullwidth. */
@@ -92,6 +94,7 @@ export const TextField: RMWC.ComponentType<
     rootProps = {},
     foundationRef,
     ripple,
+    floatLabel: userFloatLabel,
     ...rest
   } = props;
 

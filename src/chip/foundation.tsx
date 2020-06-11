@@ -5,7 +5,7 @@ import { useId, emptyClientRect } from '@rmwc/base';
 import { useFoundation } from '@rmwc/base';
 import { MDCChipFoundation, MDCChipAdapter } from '@material/chips';
 import { EventSource } from '@material/chips/chip/constants';
-import { useEffect, useCallback } from 'react';
+import React, { useEffect, useCallback } from 'react';
 
 export const useChipFoundation = (props: ChipProps & ChipHTMLProps) => {
   const chipId = useId('chip', props);
@@ -19,15 +19,15 @@ export const useChipFoundation = (props: ChipProps & ChipHTMLProps) => {
     },
     foundation: ({ rootEl, checkmarkEl, emit, getProps }) =>
       new MDCChipFoundation({
-        addClass: className => {
+        addClass: (className) => {
           rootEl.addClass(className);
         },
-        removeClass: className => rootEl.removeClass(className),
-        hasClass: className => rootEl.hasClass(className),
-        addClassToLeadingIcon: className => {
+        removeClass: (className) => rootEl.removeClass(className),
+        hasClass: (className) => rootEl.hasClass(className),
+        addClassToLeadingIcon: (className) => {
           // handled by props
         },
-        removeClassFromLeadingIcon: className => {
+        removeClassFromLeadingIcon: (className) => {
           // handled by props
         },
         eventTargetHasClass: (target: HTMLElement, className) => {
@@ -37,7 +37,7 @@ export const useChipFoundation = (props: ChipProps & ChipHTMLProps) => {
         },
         notifyInteraction: () =>
           emit('onInteraction', { chipId }, true /* shouldBubble */),
-        notifySelection: selected =>
+        notifySelection: (selected) =>
           emit(
             'onSelect',
             { chipId, selected: selected },
@@ -58,14 +58,14 @@ export const useChipFoundation = (props: ChipProps & ChipHTMLProps) => {
         notifyNavigation: (key: string, source: EventSource) => {
           //TODO, but probably not needed in case of React
         },
-        getComputedStyleValue: propertyName =>
+        getComputedStyleValue: (propertyName) =>
           rootEl.ref
             ? window.getComputedStyle(rootEl.ref).getPropertyValue(propertyName)
             : '',
         setStyleProperty: (propertyName, value) => {
           rootEl.setStyle(propertyName, value);
         },
-        getAttribute: attrName => rootEl.ref?.getAttribute(attrName),
+        getAttribute: (attrName) => rootEl.ref?.getAttribute(attrName),
         hasLeadingIcon: () => !!props.icon,
         getRootBoundingClientRect: () =>
           rootEl.ref?.getBoundingClientRect() || emptyClientRect,

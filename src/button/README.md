@@ -53,11 +53,7 @@
     This example uses "accent" to control the color of the Ripple.
     See the documentation on Ripples.
   */}
-  <Button
-    label="With Theme"
-    theme="secondary"
-    ripple={{ accent: true }}
-  />
+  <Button label="With Theme" theme="secondary" />
 </>
 ```
 

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { mount } from 'enzyme';
 import { TextField, TextFieldHelperText } from './';
 import { wait } from '@rmwc/base/utils/test-utils';
@@ -64,7 +64,11 @@ describe('TextField', () => {
 
   it('can be bound', () => {
     const el = mount(
-      <TextField placeholder="test" value="hello world" onChange={evt => {}} />
+      <TextField
+        placeholder="test"
+        value="hello world"
+        onChange={(evt) => {}}
+      />
     );
     expect((el.find('input').getDOMNode() as HTMLInputElement).value).toBe(
       'hello world'
@@ -77,7 +81,7 @@ describe('TextField', () => {
         placeholder="test"
         value="hello world"
         textarea
-        onChange={evt => {}}
+        onChange={(evt) => {}}
       />
     );
     expect(
@@ -102,7 +106,7 @@ describe('TextField', () => {
     mount(<TextField disabled />);
   });
 
-  it('can be required', async done => {
+  it('can be required', async (done) => {
     const el = mount(<TextField value="" onChange={() => {}} required />);
     const getValid = () =>
       el.html().includes('mdc-text-field--invalid') === false;
@@ -110,13 +114,9 @@ describe('TextField', () => {
     // should render valid to start
     expect(getValid()).toBe(true);
 
-    el.find('input')
-      .first()
-      .simulate('focus');
+    el.find('input').first().simulate('focus');
     await wait(20);
-    el.find('input')
-      .first()
-      .simulate('blur');
+    el.find('input').first().simulate('blur');
     await wait(20);
 
     expect(getValid()).toBe(false);
@@ -150,7 +150,7 @@ describe('TextField', () => {
     expect(inputObjectRef instanceof HTMLInputElement).toBeTruthy();
   });
 
-  it('label floats on dynamic change', async done => {
+  it('label floats on dynamic change', async (done) => {
     const el = mount(<TextField label="test" value="" onChange={() => {}} />);
     expect(el.html().includes('mdc-floating-label--float-above')).toBe(false);
     el.setProps({ value: 'foo' });

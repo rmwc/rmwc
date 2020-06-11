@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { mount } from 'enzyme';
 
 import {
@@ -112,22 +112,37 @@ describe('TopAppBar', () => {
 
 describe('TopAppBarFixedAdjust', () => {
   it('renders', () => {
-    mount(<TopAppBarFixedAdjust />);
+    const el = mount(<TopAppBarFixedAdjust />);
+    const div = el.find('div');
+    const classNames = new Set((div.props().className ?? "").split(" "));
+    expect(classNames).toEqual(new Set(['mdc-top-app-bar--fixed-adjust']));
   });
 
   it('can be short', () => {
-    mount(<TopAppBarFixedAdjust short />);
+    const el = mount(<TopAppBarFixedAdjust short />);
+    const div = el.find('div');
+    const classNames = new Set((div.props().className ?? "").split(" "));
+    expect(classNames).toEqual(new Set(['mdc-top-app-bar--short-fixed-adjust']));
   });
 
   it('can be dense', () => {
-    mount(<TopAppBarFixedAdjust dense />);
+    const el = mount(<TopAppBarFixedAdjust dense />);
+    const div = el.find('div');
+    const classNames = new Set((div.props().className ?? "").split(" "));
+    expect(classNames).toEqual(new Set(['mdc-top-app-bar--dense-fixed-adjust']));
   });
 
   it('can be prominent', () => {
-    mount(<TopAppBarFixedAdjust prominent />);
+    const el = mount(<TopAppBarFixedAdjust prominent />);
+    const div = el.find('div');
+    const classNames = new Set((div.props().className ?? "").split(" "));
+    expect(classNames).toEqual(new Set(['mdc-top-app-bar--prominent-fixed-adjust']));
   });
 
   it('can be denseProminent', () => {
-    mount(<TopAppBarFixedAdjust denseProminent />);
+    const el = mount(<TopAppBarFixedAdjust denseProminent />);
+    const div = el.find('div');
+    const classNames = new Set((div.props().className ?? "").split(" "));
+    expect(classNames).toEqual(new Set(['mdc-top-app-bar--dense-prominent-fixed-adjust']));
   });
 });

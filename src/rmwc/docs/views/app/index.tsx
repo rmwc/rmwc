@@ -5,8 +5,7 @@ import { Route, Link, Switch as RouterSwitch } from 'react-router-dom';
 
 import { menuContent, MenuItemT } from '../../common/menu-content';
 
-// @ts-ignore
-import { version } from 'rmwc/rmwc';
+import { version } from '../../../package.json';
 
 import {
   TopAppBar,
@@ -56,7 +55,7 @@ const MainMenuItem = ({ url, label }: { url?: string; label: string }) => {
   );
 };
 
-const GithubIcon = () => (
+const GithubSvg = () => (
   <svg viewBox="0 0 24 24" width="24" height="24">
     <path
       fill="currentColor"
@@ -103,7 +102,7 @@ function AppBar({
             <TopAppBarActionItem
               tag="a"
               href="https://github.com/jamesmfriedman/rmwc"
-              icon={<GithubIcon />}
+              icon={<GithubSvg />}
             />
           </TopAppBarSection>
         </TopAppBarRow>

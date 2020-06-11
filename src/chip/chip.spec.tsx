@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { mount } from 'enzyme';
 import { Chip, ChipSet } from './';
 import { useChipFoundation } from './foundation';
@@ -61,9 +61,7 @@ describe('Chip', () => {
         onRemove={() => onRemove++}
       />
     );
-    el.find('.mdc-chip__icon--trailing')
-      .first()
-      .simulate('click');
+    el.find('.mdc-chip__icon--trailing').first().simulate('click');
 
     expect(onInteraction).toEqual(1);
     el.simulate('transitionend');

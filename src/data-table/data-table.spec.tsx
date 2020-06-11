@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { mount } from 'enzyme';
 import {
   DataTable,
@@ -166,7 +166,7 @@ describe('DataTable', () => {
             <DataTableHead>
               <DataTableRow>
                 <DataTableHeadCell>Item</DataTableHeadCell>
-                <DataTableHeadCell sort={dir} onSortChange={d => (dir = d)}>
+                <DataTableHeadCell sort={dir} onSortChange={(d) => (dir = d)}>
                   Quantity (Click Me)
                 </DataTableHeadCell>
                 <DataTableHeadCell>Unit price</DataTableHeadCell>
@@ -219,8 +219,8 @@ it('Sorted columns can have an onClick', () => {
             <DataTableHeadCell>Item</DataTableHeadCell>
             <DataTableHeadCell
               sort={null}
-              onClick={evt => (value = 1)}
-              onSortChange={d => {}}
+              onClick={(evt) => (value = 1)}
+              onSortChange={(d) => {}}
             >
               Quantity (Click Me)
             </DataTableHeadCell>
@@ -234,6 +234,29 @@ it('Sorted columns can have an onClick', () => {
   const cell = el.find('.rmwc-data-table__head-cell--sortable').first();
   cell.simulate('click');
   expect(value).toBe(1);
+});
+
+it('Sorted columns can be sorted by only providing sort and onClick prop', () => {
+  let dir: number | null = null;
+
+  const el = mount(
+    <DataTable>
+      <DataTableContent>
+        <DataTableHead>
+          <DataTableRow>
+            <DataTableHeadCell>Item</DataTableHeadCell>
+            <DataTableHeadCell sort={dir} onClick={() => (dir = 1)}>
+              Quantity (Click Me)
+            </DataTableHeadCell>
+            <DataTableHeadCell>Unit price</DataTableHeadCell>
+          </DataTableRow>
+        </DataTableHead>
+      </DataTableContent>
+    </DataTable>
+  );
+  const cell = el.find('.rmwc-data-table__head-cell--sortable').first();
+  cell.simulate('click');
+  expect(dir).toBe(1);
 });
 
 describe('SimpleDataTable', () => {
@@ -255,7 +278,7 @@ describe('SimpleDataTable', () => {
   it('renders with options', () => {
     mount(
       <SimpleDataTable
-        getRowProps={row => {
+        getRowProps={(row) => {
           return row[1] > 100 ? { activated: true } : {};
         }}
         getCellProps={(cell, index, isHead) => {

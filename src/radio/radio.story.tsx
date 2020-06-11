@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
@@ -17,7 +17,7 @@ function RadioStory() {
       checked={checked}
       value={value}
       foundationRef={console.log}
-      onChange={evt => {
+      onChange={(evt) => {
         setChecked(evt.currentTarget.checked);
         action(
           `onChange: ${evt.currentTarget.value} ${evt.currentTarget.checked}`

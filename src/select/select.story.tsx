@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
@@ -31,7 +31,7 @@ function MutatingSelect(props: any) {
       onClick={action('onClick')}
       onKeyDown={action('onKeyDown')}
       onFocus={action('onFocus')}
-      onChange={evt => {
+      onChange={(evt) => {
         setValue(evt.currentTarget.value);
         action('onChange: ' + evt.currentTarget.value)();
       }}
@@ -61,7 +61,7 @@ function EnhancedSelect() {
           enhanced
           options={['Cookies', 'Pizza', 'Icecream']}
           value={value}
-          onChange={evt => {
+          onChange={(evt) => {
             console.log('onChange', evt.currentTarget.value);
             setValue(String(evt.currentTarget.value));
           }}
@@ -74,7 +74,7 @@ function EnhancedSelect() {
           enhanced
           options={['Cookies', 'Pizza', 'Icecream']}
           value={'Cookies'}
-          onChange={evt => {
+          onChange={(evt) => {
             console.log('onChange', evt.currentTarget.value);
           }}
         />
@@ -85,7 +85,7 @@ function EnhancedSelect() {
           enhanced={{
             anchorCorner: 'bottomStart'
           }}
-          onChange={evt => {
+          onChange={(evt) => {
             console.log('onChange', evt.currentTarget.value);
             setValue(String(evt.currentTarget.value));
           }}
@@ -104,7 +104,7 @@ function EnhancedSelect() {
         label={'Controlled'}
         options={['Cookies', 'Pizza', 'Icecream']}
         value={value}
-        onChange={evt => {
+        onChange={(evt) => {
           console.log('onChange', evt.currentTarget.value);
           setValue(String(evt.currentTarget.value));
         }}
@@ -116,7 +116,7 @@ function EnhancedSelect() {
         enhanced
         options={['Cookies', 'Pizza', 'Icecream']}
         value={value}
-        onChange={evt => {
+        onChange={(evt) => {
           console.log('onChange', evt.currentTarget.value);
           setValue(String(evt.currentTarget.value));
         }}
@@ -188,7 +188,7 @@ function ControlledSelect() {
     <>
       <Select
         value={value}
-        onChange={evt => {
+        onChange={(evt) => {
           console.log('RMWC Change', evt);
           setValue(String(evt.currentTarget.value));
         }}
@@ -197,7 +197,7 @@ function ControlledSelect() {
       />
       <Select
         value={value}
-        onChange={evt => {
+        onChange={(evt) => {
           console.log('Enhanced Change', evt);
           setValue(String(evt.currentTarget.value));
         }}
@@ -207,12 +207,12 @@ function ControlledSelect() {
       />
       <select
         value={value}
-        onChange={evt => {
+        onChange={(evt) => {
           console.log('Native Change');
           setValue(evt.currentTarget.value);
         }}
       >
-        {opts2.map(o => (
+        {opts2.map((o) => (
           <option key={o} value={o}>
             {o}
           </option>
@@ -223,7 +223,7 @@ function ControlledSelect() {
 
       <Select
         value="Cookies"
-        onChange={evt => {}}
+        onChange={(evt) => {}}
         label="Array"
         options={opts2}
       />
@@ -257,7 +257,7 @@ storiesOf('Select', module)
         enhanced={{
           anchorCorner: 'bottomStart'
         }}
-        onChange={evt => {
+        onChange={(evt) => {
           console.log('onChange', evt.currentTarget.value);
         }}
       >
@@ -280,7 +280,7 @@ storiesOf('Select', module)
       label={text('label', 'Foods')}
       value={text('value', 'Cookies')}
       options={array('options', ['Cookies', 'Pizza', 'Icecream'])}
-      onChange={evt => action('onChange: ' + evt.currentTarget.value)()}
+      onChange={(evt) => action('onChange: ' + evt.currentTarget.value)()}
     />
   ))
   .add('Select with many values', () => (
@@ -325,17 +325,17 @@ storiesOf('Select', module)
       outlined
       enhanced
       options={['one', 'two', 'three']}
-      onChange={evt => {
+      onChange={(evt) => {
         console.log('onChange', evt.currentTarget.value);
       }}
     />
   ))
-  .add('Changing', function() {
+  .add('Changing', function () {
     const [value, setValue] = React.useState('');
 
     React.useEffect(() => {
       setInterval(() => {
-        setValue(val => (val === '' ? 'one' : ''));
+        setValue((val) => (val === '' ? 'one' : ''));
       }, 2000);
     }, []);
 
@@ -346,7 +346,7 @@ storiesOf('Select', module)
         outlined
         enhanced
         options={['one', 'two', 'three']}
-        onChange={evt => {
+        onChange={(evt) => {
           console.log('onChange', evt.currentTarget.value);
         }}
       />

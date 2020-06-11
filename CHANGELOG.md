@@ -1,3 +1,87 @@
+#### 6.1.0 (2020-04-22)
+
+##### New Features
+
+* **TextField:**  Add ability to manually float label (457a7c79)
+
+##### Bug Fixes
+
+* **Select:**  Don't render ListGroupSubheader when passing empty string or null as label (73fc81c5)
+
+##### Other Changes
+
+* //github.com/jamesmfriedman/rmwc (29f2c26a)
+* //github.com/jamesmfriedman/rmwc (2e7592a0)
+* //github.com/jamesmfriedman/rmwc (c8b83f53)
+* //github.com/jamesmfriedman/rmwc (61946e8f)
+
+#### 6.0.14 (2020-04-06)
+
+##### Bug Fixes
+
+* **Typescript:**  Correcting cryptic issue where storybook is causing incorrect type declarations to be emitted. (cf1ca2da)
+
+#### 6.0.13 (2020-04-06)
+
+##### Bug Fixes
+
+* **Typescript:**
+  *  moving classnames from devDependency to dependency (3a40031f)
+  *  Corrects typescript bug randomly pulling in unused type reference. (87e8ee7b)
+
+#### 6.0.12 (2020-04-06)
+
+##### Bug Fixes
+
+* **Typescript:**  Cleaning up flattened delclarations for Dialog and base (4d7a4a1e)
+
+#### 6.0.11 (2020-04-05)
+
+##### Bug Fixes
+
+* **Base:**  Adding missing dependency dependency on @material/dom to package.json (80bb6b0f)
+
+#### 6.0.10 (2020-04-05)
+
+##### Chores
+
+* **Base:**  Updating test polyfill deps relates to #596 (bebd9530)
+
+##### New Features
+
+* **Select:**  Add ability to pass JSX as label options for enhanced selects (a9ef9803)
+
+##### Bug Fixes
+
+* **Theme:**
+  *  Corrects MDC issue with text-align and linear progress #590 (f4be0eb7)
+  *  Corrects theme ripple issue on fab and button (2dc5a7bb)
+* **Select:**  Corrects issue with native selects requiring multiple tab focus #595 (fb699aff)
+
+#### 6.0.9 (2020-04-03)
+
+##### Bug Fixes
+
+* **Select:**  Corrects issue with setting controlled value outside of select, adds supporting tests #594 (37971c7d)
+
+#### 6.0.8 (2020-04-01)
+
+##### Bug Fixes
+
+* **Base:**  Updating main material-components-web dep (24ae55d3)
+
+#### 6.0.7 (2020-04-01)
+
+##### Bug Fixes
+
+* **Select:**  corrects a regression with defaultValue (8bf2f52f)
+
+#### 6.0.6 (2020-04-01)
+
+##### Bug Fixes
+
+* **Select:**  Corrects a regression in select behavior preventing label from being properly set (313d56da)
+
 #### 6.0.5 (2020-03-30)
 
 ##### Bug Fixes

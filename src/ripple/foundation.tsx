@@ -1,10 +1,10 @@
+import React, { useCallback, useRef, useEffect } from 'react';
 import { RippleProps } from './';
 import { useFoundation, emptyClientRect } from '@rmwc/base';
 import { matches, applyPassive } from '@rmwc/base';
 import { EventType, SpecificEventListener } from '@material/base/types';
 
 import { MDCRippleFoundation, util } from '@material/ripple';
-import { useCallback, useRef, useEffect } from 'react';
 
 type ActivateEventTypes<S> =
   | React.MouseEvent<S>

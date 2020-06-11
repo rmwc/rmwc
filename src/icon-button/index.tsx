@@ -1,5 +1,5 @@
 import * as RMWC from '@rmwc/types';
-import * as React from 'react';
+import React from 'react';
 import { MDCIconButtonToggleFoundation } from '@material/icon-button';
 import { Tag, useClassNames, createComponent } from '@rmwc/base';
 import { Icon, IconProps } from '@rmwc/icon';

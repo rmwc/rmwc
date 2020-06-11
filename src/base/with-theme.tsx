@@ -1,5 +1,5 @@
 import * as RMWC from '@rmwc/types';
-import * as React from 'react';
+import React from 'react';
 
 import classNames from 'classnames';
 import { toDashCase } from './utils/strings';
@@ -16,7 +16,9 @@ export const parseThemeOptions = (
   theme: undefined | string | Array<string | undefined>
 ): string[] => {
   const themeItems = Array.isArray(theme) ? theme : [theme];
-  return themeItems.filter(v => !!v).map(v => `mdc-theme--${toDashCase(v!)}`);
+  return themeItems
+    .filter((v) => !!v)
+    .map((v) => `mdc-theme--${toDashCase(v!)}`);
 };
 
 /**

@@ -115,7 +115,7 @@ export const useListFoundation = (props: ListProps & React.HTMLProps<any>) => {
               MDCListFoundation.strings.CHILD_ELEMENTS_TO_TOGGLE_TABINDEX
             )
           );
-          listItemChildren.forEach(ele =>
+          listItemChildren.forEach((ele) =>
             ele.setAttribute('tabindex', String(tabIndexValue))
           );
         },

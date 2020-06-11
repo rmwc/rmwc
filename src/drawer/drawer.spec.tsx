@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { mount } from 'enzyme';
 import {
   Drawer,
@@ -51,7 +51,7 @@ describe('Drawer', () => {
     );
   });
 
-  it('can open', done => {
+  it('can open', (done) => {
     const el = mount(
       <Drawer dismissible>
         <DrawerHeader>

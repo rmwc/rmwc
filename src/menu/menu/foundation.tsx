@@ -1,9 +1,11 @@
-import { MenuProps } from './';
-import { useFoundation, closest } from '@rmwc/base';
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import * as RMWC from '@rmwc/types';
+import React, { useCallback, useRef, useEffect } from 'react';
 import { MDCMenuFoundation } from '@material/menu';
-import { useCallback, useRef, useEffect } from 'react';
-import { MenuSurfaceOnOpenEventT, MenuSurfaceApi } from '../menu-surface';
+import { useFoundation, closest } from '@rmwc/base';
 import { ListApi } from '@rmwc/list';
+import { MenuSurfaceOnOpenEventT, MenuSurfaceApi } from '../menu-surface';
+import { MenuProps } from './';
 
 export const useMenuFoundation = (props: MenuProps & React.HTMLProps<any>) => {
   const menuSurfaceApi = useRef<MenuSurfaceApi>();
@@ -103,7 +105,7 @@ export const useMenuFoundation = (props: MenuProps & React.HTMLProps<any>) => {
       if (
         (props.focusOnOpen || props.focusOnOpen === undefined) &&
         list.length > 0 &&
-        !list.some(el => el === document.activeElement)
+        !list.some((el) => el === document.activeElement)
       ) {
         list[0].focus();
       }

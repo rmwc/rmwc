@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { mount } from 'enzyme';
 import {
   List,
@@ -50,9 +50,7 @@ describe('List', () => {
       </List>
     );
 
-    el.find(ListItem)
-      .last()
-      .simulate('click');
+    el.find(ListItem).last().simulate('click');
     expect(clickedIndex).toEqual({ index: 1 });
   });
 
@@ -171,9 +169,7 @@ describe('List', () => {
     );
 
     el.simulate('focus');
-    el.find(SimpleListItem)
-      .first()
-      .simulate('keydown');
+    el.find(SimpleListItem).first().simulate('keydown');
     el.simulate('click');
     el.simulate('blur');
   });
@@ -191,7 +187,7 @@ describe('Collapsible List', () => {
     );
   });
 
-  it('handles lifecycle', done => {
+  it('handles lifecycle', (done) => {
     const el = mount(
       <List>
         <ListItem>One</ListItem>
@@ -209,15 +205,13 @@ describe('Collapsible List', () => {
       el.setProps({ open: false });
       el.update();
 
-      el.find('.handle')
-        .first()
-        .simulate('click');
+      el.find('.handle').first().simulate('click');
 
       done();
     }, 300);
   });
 
-  it('handles events', done => {
+  it('handles events', (done) => {
     const el = mount(
       <List>
         <ListItem>One</ListItem>

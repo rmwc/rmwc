@@ -8,7 +8,7 @@ import { Icon } from '.';
 import { Button } from '../button';
 import { RMWCProvider } from '../provider';
 
-export default function() {
+export default function () {
   return (
     <Docs
       title="Icons"
@@ -244,7 +244,8 @@ export default function() {
         problem you need to solve.
       </DocsP>
       <DocsExample codeOnly>
-        {/* jsx */ `
+        {
+          /* jsx */ `
           // 1) Your app has an icon component you use
           import { MyIconComponent } from '@rmwc/icon';
           <MyIconComponent name="search" />
@@ -258,7 +259,7 @@ export default function() {
 
           // 3) Instead, you should set the custom strategy to be your default
           // and add your own handling with RMWCProvider
-          import * as React from 'react';
+          import React from 'react';
           import * as ReactDOM from 'react-dom';
           import App from './App'; // your main app component
           import { RMWCProvider } from '@rmwc/provider';
@@ -286,7 +287,8 @@ export default function() {
           // delegated to your handler and render your custom component
           import { TextFieldIcon } from '@rmwc/textfield';
           <TextFieldIcon icon="search" />
-        `}
+        `
+        }
       </DocsExample>
 
       <DocProps

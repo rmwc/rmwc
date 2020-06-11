@@ -4,7 +4,7 @@ import { CheckboxProps, CheckboxHTMLProps } from '.';
 import { useToggleFoundation } from '@rmwc/toggleable';
 import { useFoundation } from '@rmwc/base';
 import { MDCCheckboxFoundation } from '@material/checkbox';
-import { useEffect, useCallback } from 'react';
+import React, { useEffect, useCallback } from 'react';
 
 export const useCheckboxFoundation = (
   props: CheckboxProps & CheckboxHTMLProps

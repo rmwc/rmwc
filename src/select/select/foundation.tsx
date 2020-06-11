@@ -1,10 +1,10 @@
+import React, { useCallback, useState, useRef, useEffect } from 'react';
 import { useFoundation, raf } from '@rmwc/base';
 import {
   MDCSelectFoundation,
   MDCSelectAdapter,
   cssClasses
 } from '@material/select';
-import { useCallback, useState, useRef, useEffect } from 'react';
 import { FloatingLabelApi } from '@rmwc/floating-label';
 import { MenuApi } from '@rmwc/menu';
 import { Corner } from '@material/menu-surface';
@@ -104,7 +104,12 @@ export const useSelectFoundation = (
             ),
           getSelectedTextAttr: (attr: any) => selectedTextEl.getProp(attr),
           setSelectedTextAttr: (attr: any, value: string) => {
-            attr = attr === 'tabindex' ? 'tabIndex' : attr;
+            if (attr === 'tabindex') {
+              // Fixes bug 595 https://github.com/jamesmfriedman/rmwc/issues/595.
+              // Native selects don't need tabIndexes on the root element
+              if (isNative()) return;
+              attr = 'tabIndex';
+            }
             selectedTextEl.setProp(attr, value);
           },
           openMenu: () => {
@@ -342,9 +347,19 @@ export const useSelectFoundation = (
   // For controlled selects that are enhanced
   // we need to jump through some checks to see if we need to update the
   // value in our foundation
-  const stringifiedOptions = JSON.stringify(props.options);
   const foundationValue = foundation.getValue();
-  const value = (props.value || props.defaultValue) as string;
+
+  // Use the value OR the default value if there is no index selected
+  const value =
+    props.value ??
+    ((selectedIndex.current === -1 ? props.defaultValue : undefined) as string);
+
+  // Use the length of the options as an indication we need to re-render and
+  // check if our value is accurate. This is for situations where people populate the select
+  // async. We can't rely on object identity since lots of people pass options inline.
+  const optionsLength = Array.isArray(props.options)
+    ? props.options.length
+    : Object.values(props.options || {}).length;
 
   // MDC Select is a bit of a mess here...
   // - We have to set our value
@@ -353,7 +368,7 @@ export const useSelectFoundation = (
   useEffect(() => {
     silenceChange.current = true;
 
-    if (value !== foundationValue) {
+    if (value !== undefined && value !== foundationValue) {
       // @ts-ignore unsafe private variable access
       const index = foundation.menuItemValues_.indexOf(value);
       selectedIndex.current = index;
@@ -362,7 +377,7 @@ export const useSelectFoundation = (
     raf(() => {
       silenceChange.current = false;
     });
-  }, [value, foundationValue, stringifiedOptions, foundation]);
+  }, [value, foundationValue, optionsLength, foundation]);
 
   // Disabled
   useEffect(() => {

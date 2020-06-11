@@ -6,7 +6,7 @@ import {
   MDCFloatingLabelAdapter
 } from '@material/floating-label';
 import { EventType, SpecificEventListener } from '@material/base/types';
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 
 export const useFloatingLabelFoundation = (
   props: FloatingLabelProps & React.HTMLProps<any>

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { mount } from 'enzyme';
 
 import {
@@ -22,26 +22,30 @@ describe('Dialog', () => {
         header="Foo"
         body="You can pass the body prop, or anything you want as children."
         open
-        onClose={evt => {}}
+        onClose={(evt) => {}}
       />
     );
   });
 
   it('simple Dialog renders with no children', () => {
     mount(
-      <SimpleDialog title="This is a simple dialog" open onClose={evt => {}} />
+      <SimpleDialog
+        title="This is a simple dialog"
+        open
+        onClose={(evt) => {}}
+      />
     );
   });
 
   it('simple Dialog renders with children', () => {
     mount(
-      <SimpleDialog title="This is a simple dialog" open onClose={evt => {}}>
+      <SimpleDialog title="This is a simple dialog" open onClose={(evt) => {}}>
         Hello
       </SimpleDialog>
     );
   });
 
-  it('Dialog lifecycle', async done => {
+  it('Dialog lifecycle', async (done) => {
     let open = 0;
     let opened = 0;
     let close = 0;
@@ -88,7 +92,7 @@ describe('Dialog', () => {
 
   it('standard Dialog renders', () => {
     const el = mount(
-      <Dialog open onClose={evt => {}}>
+      <Dialog open onClose={(evt) => {}}>
         <DialogTitle>Dialog Title</DialogTitle>
 
         <DialogContent>This is a custom dialog.</DialogContent>
@@ -110,11 +114,11 @@ describe('DialogQueue', () => {
     el.unmount();
   });
 
-  it('alerts and accepts', async done => {
+  it('alerts and accepts', async (done) => {
     const queue = createDialogQueue();
     const el = mount(<DialogQueue dialogs={queue.dialogs} />);
 
-    queue.alert({ title: 'myAlert' }).then(async resp => {
+    queue.alert({ title: 'myAlert' }).then(async (resp) => {
       expect(resp).toBe('accept');
 
       // wait for cleanup
@@ -128,15 +132,13 @@ describe('DialogQueue', () => {
     expect(el.html().includes('myAlert')).toBe(true);
     await wait(100);
 
-    el.find('.mdc-dialog__button')
-      .first()
-      .simulate('click');
+    el.find('.mdc-dialog__button').first().simulate('click');
   });
 
-  it('alerts and closes', done => {
+  it('alerts and closes', (done) => {
     const queue = createDialogQueue();
     const el = mount(<DialogQueue dialogs={queue.dialogs} />);
-    queue.alert({ title: 'myAlert' }).then(resp => {
+    queue.alert({ title: 'myAlert' }).then((resp) => {
       expect(resp).toBe('close');
       done();
     });
@@ -144,16 +146,14 @@ describe('DialogQueue', () => {
     setTimeout(() => {
       el.update();
 
-      el.find('.mdc-dialog__scrim')
-        .first()
-        .simulate('click');
+      el.find('.mdc-dialog__scrim').first().simulate('click');
     });
   });
 
-  it('confirms and returns true', async done => {
+  it('confirms and returns true', async (done) => {
     const queue = createDialogQueue();
     const el = mount(<DialogQueue dialogs={queue.dialogs} />);
-    queue.confirm({ title: 'myConfirm' }).then(resp => {
+    queue.confirm({ title: 'myConfirm' }).then((resp) => {
       expect(resp).toBe(true);
       done();
     });
@@ -162,15 +162,13 @@ describe('DialogQueue', () => {
     el.update();
     expect(el.html().includes('myConfirm')).toBe(true);
 
-    el.find('[action="accept"]')
-      .first()
-      .simulate('click');
+    el.find('[action="accept"]').first().simulate('click');
   });
 
-  it('confirms and returns false', async done => {
+  it('confirms and returns false', async (done) => {
     const queue = createDialogQueue();
     const el = mount(<DialogQueue dialogs={queue.dialogs} />);
-    queue.confirm({ title: 'myConfirm' }).then(resp => {
+    queue.confirm({ title: 'myConfirm' }).then((resp) => {
       expect(resp).toBe(false);
       done();
     });
@@ -178,16 +176,14 @@ describe('DialogQueue', () => {
     await wait();
     el.update();
 
-    el.find('[action="close"]')
-      .first()
-      .simulate('click');
+    el.find('[action="close"]').first().simulate('click');
   });
 
-  it('prompts and returns value', async done => {
+  it('prompts and returns value', async (done) => {
     const queue = createDialogQueue();
     const el = mount(<DialogQueue dialogs={queue.dialogs} />);
 
-    queue.prompt({ title: 'myPrompt' }).then(resp => {
+    queue.prompt({ title: 'myPrompt' }).then((resp) => {
       expect(resp).toBe('WORKING');
       done();
     });
@@ -202,15 +198,13 @@ describe('DialogQueue', () => {
     el.update();
     await wait();
 
-    el.find('[action="accept"]')
-      .first()
-      .simulate('click');
+    el.find('[action="accept"]').first().simulate('click');
   });
 
-  it('prompts and returns null', done => {
+  it('prompts and returns null', (done) => {
     const queue = createDialogQueue();
     const el = mount(<DialogQueue dialogs={queue.dialogs} />);
-    queue.prompt({ title: 'myPrompt', body: 'CUSTOM BODY' }).then(resp => {
+    queue.prompt({ title: 'myPrompt', body: 'CUSTOM BODY' }).then((resp) => {
       expect(resp).toBe(null);
       done();
     });
@@ -219,12 +213,10 @@ describe('DialogQueue', () => {
 
     expect(el.html().includes('CUSTOM BODY')).toBe(true);
 
-    el.find('[action="close"]')
-      .first()
-      .simulate('click');
+    el.find('[action="close"]').first().simulate('click');
   });
 
-  it('supports onClose', done => {
+  it('supports onClose', (done) => {
     const queue = createDialogQueue();
     const el = mount(<DialogQueue dialogs={queue.dialogs} />);
     const onClose = jest.fn();
@@ -233,9 +225,7 @@ describe('DialogQueue', () => {
     el.update();
 
     setTimeout(() => {
-      el.find('.mdc-dialog__button')
-        .first()
-        .simulate('click');
+      el.find('.mdc-dialog__button').first().simulate('click');
 
       expect(onClose).toHaveBeenCalled();
       done();

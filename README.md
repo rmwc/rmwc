@@ -1,4 +1,4 @@
-[![CircleCI](https://circleci.com/gh/jamesmfriedman/rmwc/tree/master.svg?style=shield)](https://circleci.com/gh/jamesmfriedman/rmwc/tree/master)
+[![tests](https://img.shields.io/github/workflow/status/jamesmfriedman/rmwc/RMWC%20Unit%20Tests)](https://github.com/jamesmfriedman/rmwc/)
 [![codecov](https://codecov.io/gh/jamesmfriedman/rmwc/branch/master/graph/badge.svg)](https://codecov.io/gh/jamesmfriedman/rmwc)
 [![npm](https://img.shields.io/npm/v/rmwc.svg)](https://www.npmjs.com/package/rmwc)
 [![npm](https://img.shields.io/npm/dm/@rmwc/base.svg)](https://www.npmjs.com/package/rmwc)
@@ -7,7 +7,10 @@
 [![Backers on Open Collective](https://opencollective.com/rmwc/backers/badge.svg)](#backers) 
 [![Sponsors on Open Collective](https://opencollective.com/rmwc/sponsors/badge.svg)](#sponsors) 
 
+
 # RMWC - React Material Web Components
+
+💥 Attention: Due to an increase in interest, this project is looking for additional maintainers and contributors! Message on Discord for more details.
 
 RMWC is a React UI Kit built on Google's official Material Components Web library v5.x.x
 [https://rmwc.io/](https://rmwc.io/)

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
@@ -16,8 +16,8 @@ function SwitchStory() {
       disabled={disabled}
       checked={checked}
       value={value}
-      foundationRef={inst => console.log(inst)}
-      onChange={evt => {
+      foundationRef={(inst) => console.log(inst)}
+      onChange={(evt) => {
         setChecked(evt.currentTarget.checked);
         action(
           `onChange: ${evt.currentTarget.value} ${evt.currentTarget.checked}`

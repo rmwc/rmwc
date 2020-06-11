@@ -1,6 +1,6 @@
-import * as React from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { version } from '../../..';
+import { version } from '../../../package.json';
 import { Typography } from '@rmwc/typography';
 
 import { Card, CardMedia } from '@rmwc/card';
@@ -72,7 +72,7 @@ export const Home = () => {
               </Typography>
 
               <div className={styles.checklist}>
-                {checklist.map(c => (
+                {checklist.map((c) => (
                   <div key={c}>
                     <Icon theme="secondary" icon="check" /> <div>{c}</div>
                   </div>
@@ -162,7 +162,7 @@ export const Home = () => {
       </header>
 
       <div className={styles.examples}>
-        {galleryContent.map(ex => {
+        {galleryContent.map((ex) => {
           return (
             <Example
               key={ex.label}

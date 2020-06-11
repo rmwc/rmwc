@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 import { select } from '@storybook/addon-knobs';
@@ -17,7 +17,7 @@ class MenuStory extends React.Component {
       >
         <Button
           raised
-          onClick={evt => {
+          onClick={(evt) => {
             this.setState({ open: !this.state.open });
           }}
         >
@@ -43,7 +43,7 @@ class MenuStory extends React.Component {
               'topStart'
             ) as any
           }
-          onClose={evt => {
+          onClose={(evt) => {
             this.setState({ open: false });
           }}
         >
@@ -65,7 +65,7 @@ class MenuSurfaceStory extends React.Component {
       <MenuSurfaceAnchor>
         <Button
           raised
-          onClick={evt => {
+          onClick={(evt) => {
             this.setState({ open: !this.state.open });
           }}
         >
@@ -91,8 +91,8 @@ class MenuSurfaceStory extends React.Component {
               'topStart'
             ) as any
           }
-          onOpen={evt => {}}
-          onClose={evt => {
+          onOpen={(evt) => {}}
+          onClose={(evt) => {
             this.setState({ open: false });
           }}
         >
@@ -116,7 +116,7 @@ function MenuHoist() {
       <MenuSurfaceAnchor>
         <Button
           raised
-          onClick={evt => {
+          onClick={(evt) => {
             setOpen(true);
           }}
         >

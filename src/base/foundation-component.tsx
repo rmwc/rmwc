@@ -1,5 +1,7 @@
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import * as RMWC from '@rmwc/types';
 import { SpecificEventListener } from '@material/base/types';
-import { useEffect, useState, useRef, useMemo } from 'react';
+import React, { useEffect, useState, useRef, useMemo } from 'react';
 import classNames from 'classnames';
 import { eventsMap } from './utils/events-map';
 import { toCamel } from './utils/strings';
@@ -258,11 +260,11 @@ export const useFoundation = <
     () =>
       Object.keys(elementsInput).reduce<
         {
-          [key in keyof Elements]: FoundationElement<Props, HTMLElement>;
+          [key in keyof Elements]: FoundationElement<any, HTMLElement>;
         }
       >((acc, key: keyof Elements) => {
         acc[key] = new FoundationElement<Props, HTMLElement>(() => {
-          setIteration(val => val + 1);
+          setIteration((val) => val + 1);
         });
         return acc;
       }, {} as any),
@@ -294,7 +296,7 @@ export const useFoundation = <
       f.destroy();
       handleRef(props.current.apiRef, null);
       handleRef(props.current.foundationRef, null);
-      Object.values(elements).map(element => element.destroy());
+      Object.values(elements).map((element) => element.destroy());
       // @ts-ignore
       props.current = {};
     };

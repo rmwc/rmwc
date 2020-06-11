@@ -9,7 +9,8 @@ You can wrap your top level App component with RMWC provider to set global confi
 
 ```jsx
 
-  import * as React from 'react';
+  `
+  import React from 'react';
   import * as ReactDOM from 'react-dom';
   import App from './App'; // your main app component
   import { RMWCProvider } from '@rmwc/provider';
@@ -42,6 +43,7 @@ You can wrap your top level App component with RMWC provider to set global confi
     </RMWCProvider>,
     document.getElementById('root'),
   );
+`
 
 ```
 

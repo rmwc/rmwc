@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { classNames } from '@rmwc/base';
 import ReactTooltip from 'rc-tooltip';
 import { useProviderContext } from '@rmwc/provider';

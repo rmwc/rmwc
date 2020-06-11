@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { mount } from 'enzyme';
 import { Slider } from './';
 
@@ -9,7 +9,7 @@ describe('Slider', () => {
     mount(<Slider />);
   });
 
-  it('handles prop changes', done => {
+  it('handles prop changes', (done) => {
     const el = mount(<Slider />);
     el.setProps({ discrete: true });
 

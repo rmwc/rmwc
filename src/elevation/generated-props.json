@@ -85,7 +85,7 @@
           "flags": {
             "isExported": true,
             "isExternal": false,
-            "isOptional": false,
+            "isOptional": true,
             "isPrivate": false,
             "isProtected": false,
             "isPublic": false,

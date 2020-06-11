@@ -20,8 +20,9 @@ import { withRipple } from '@rmwc/ripple';
 import { useSelectFoundation } from './foundation';
 import { SelectIcon } from '../select-icon';
 
-export interface FormattedOption extends React.AllHTMLAttributes<any> {
-  label: string;
+export interface FormattedOption
+  extends Omit<React.AllHTMLAttributes<any>, 'label'> {
+  label: React.ReactNode;
   value?: string;
   options?: FormattedOption[];
 }
@@ -118,13 +119,15 @@ function NativeMenu(
 
   const renderOption = ({
     label,
-    option
+    option,
+    index
   }: {
-    label: string;
+    label: React.ReactNode;
     option: FormattedOption;
+    index: number;
   }) => {
     return (
-      <option key={`${label}-${option.value}`} {...option} value={option.value}>
+      <option key={index} {...(option as any)} value={option.value}>
         {label}
       </option>
     );
@@ -146,18 +149,26 @@ function NativeMenu(
       )}
       {!!selectOptions &&
         selectOptions.map(
-          ({ label, options, ...option }: FormattedOption, i: number) => {
+          ({ label, options, ...option }: FormattedOption, index: number) => {
             if (options) {
               return (
-                <optgroup label={label} key={label}>
-                  {options.map(({ label, ...option }, i) =>
-                    renderOption({ label, option: option as FormattedOption })
+                <optgroup label={label as string} key={index}>
+                  {options.map(({ label, ...option }, index) =>
+                    renderOption({
+                      label,
+                      option: option as FormattedOption,
+                      index
+                    })
                   )}
                 </optgroup>
               );
             }
 
-            return renderOption({ label, option: option as FormattedOption });
+            return renderOption({
+              label,
+              option: option as FormattedOption,
+              index
+            });
           }
         )}
       {children}
@@ -196,7 +207,7 @@ function EnhancedMenu(props: EnhancedMenuProps & SelectHTMLProps) {
     label,
     option
   }: {
-    label: string;
+    label: React.ReactNode;
     option: FormattedOption;
   }) => {
     currentIndex += 1;
@@ -238,12 +249,14 @@ function EnhancedMenu(props: EnhancedMenuProps & SelectHTMLProps) {
         ({ label, options, ...option }: FormattedOption, i: number) => {
           if (options) {
             return (
-              <ListGroup key={label}>
-                <ListGroupSubheader theme="textDisabledOnBackground">
-                  {label}
-                </ListGroupSubheader>
+              <ListGroup key={i}>
+                {label && (
+                  <ListGroupSubheader theme="textDisabledOnBackground">
+                    {label}
+                  </ListGroupSubheader>
+                )}
                 <MenuItems>
-                  {options.map(({ label, ...option }, i) =>
+                  {options.map(({ label, ...option }) =>
                     renderOption({ label, option: option as FormattedOption })
                   )}
                 </MenuItems>
@@ -323,6 +336,8 @@ export const Select: RMWC.ComponentType<
     }
   ]);
 
+  const enhancedMenuProps = typeof enhanced === 'object' ? enhanced : {};
+
   const defaultValue =
     value !== undefined ? undefined : props.defaultValue || '';
 
@@ -370,6 +385,8 @@ export const Select: RMWC.ComponentType<
             onBlur={handleBlur}
             onClick={handleClick}
             onKeyDown={handleKeydown}
+            /** In the case of native selects, we don't want this to be be focusable */
+            tabIndex={enhanced ? undefined : -1}
           >
             {selectedTextContent || <>&nbsp;</>}
           </SelectedTextEl>
@@ -392,7 +409,6 @@ export const Select: RMWC.ComponentType<
               elementRef={setNativeControl}
               onFocus={handleFocus}
               onBlur={handleBlur}
-              onKeyDown={handleKeydown}
               onChange={(evt: React.ChangeEvent<HTMLSelectElement>) =>
                 handleMenuSelected(evt.currentTarget.selectedIndex)
               }
@@ -403,6 +419,7 @@ export const Select: RMWC.ComponentType<
         {enhanced && (
           <EnhancedMenu
             {...rest}
+            {...enhancedMenuProps}
             anchorCorner="bottomStart"
             defaultValue={defaultValue}
             placeholder={placeholder}

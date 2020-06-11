@@ -1,5 +1,5 @@
 import * as RMWC from '@rmwc/types';
-import * as React from 'react';
+import React from 'react';
 import { MDCRadioFoundation } from '@material/radio';
 import { Tag, useClassNames, mergeRefs, createComponent } from '@rmwc/base';
 import { withRipple } from '@rmwc/ripple';

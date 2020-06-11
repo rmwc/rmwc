@@ -1,5 +1,5 @@
 import * as RMWC from '@rmwc/types';
-import * as React from 'react';
+import React from 'react';
 
 import { MDCDialogFoundation } from '@material/dialog';
 
@@ -111,54 +111,57 @@ export type SimpleDialogHTMLProps = RMWC.HTMLProps<
 >;
 
 /** A SimpleDialog component for ease of use. */
-export const SimpleDialog = createComponent<
+export const SimpleDialog: RMWC.ComponentType<
   SimpleDialogProps,
-  SimpleDialogHTMLProps
->(function SimpleDialog(
-  {
-    title,
-    header,
-    body,
-    footer,
-    acceptLabel = 'Accept',
-    cancelLabel = 'Cancel',
-    children,
-    open,
-    ...rest
-  },
-  ref
-) {
-  return (
-    <Dialog open={open} {...rest} ref={ref}>
-      {(!!title || !!header) && (
-        <DialogTitle>
-          {!!title && title}
-          {!!header && header}
-        </DialogTitle>
-      )}
-      {(!!body || children) && (
-        <DialogContent>
-          {body}
-          {children}
-        </DialogContent>
-      )}
+  SimpleDialogHTMLProps,
+  'div'
+> = createComponent<SimpleDialogProps, SimpleDialogHTMLProps>(
+  function SimpleDialog(
+    {
+      title,
+      header,
+      body,
+      footer,
+      acceptLabel = 'Accept',
+      cancelLabel = 'Cancel',
+      children,
+      open,
+      ...rest
+    },
+    ref
+  ) {
+    return (
+      <Dialog open={open} {...rest} ref={ref}>
+        {(!!title || !!header) && (
+          <DialogTitle>
+            {!!title && title}
+            {!!header && header}
+          </DialogTitle>
+        )}
+        {(!!body || children) && (
+          <DialogContent>
+            {body}
+            {children}
+          </DialogContent>
+        )}
 
-      {(!!cancelLabel || !!acceptLabel || !!footer) && (
-        <DialogActions>
-          {!!footer && footer}
-          {!!cancelLabel && (
-            <DialogButton action="close">{cancelLabel}</DialogButton>
-          )}
-          {!!acceptLabel && (
-            <DialogButton action="accept" isDefaultAction>
-              {acceptLabel}
-            </DialogButton>
-          )}
-        </DialogActions>
-      )}
-    </Dialog>
-  );
-});
+        {(!!cancelLabel || !!acceptLabel || !!footer) && (
+          <DialogActions>
+            {!!footer && footer}
+            {!!cancelLabel && (
+              <DialogButton action="close">{cancelLabel}</DialogButton>
+            )}
+            {!!acceptLabel && (
+              <DialogButton action="accept" isDefaultAction>
+                {acceptLabel}
+              </DialogButton>
+            )}
+          </DialogActions>
+        )}
+      </Dialog>
+    );
+  }
+);
 
 /*********************************************************************
  * Bits

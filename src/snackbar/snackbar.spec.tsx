@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { mount } from 'enzyme';
 import {
   Snackbar,
@@ -9,7 +9,7 @@ import {
 import { wait } from '@rmwc/base/utils/test-utils';
 
 describe('Snackbar', () => {
-  it('renders', done => {
+  it('renders', (done) => {
     const el = mount(
       <Snackbar
         open
@@ -91,7 +91,7 @@ describe('SnackbarQueue', () => {
     el.unmount();
   });
 
-  it('notifies', async done => {
+  it('notifies', async (done) => {
     const queue = createSnackbarQueue();
     const el = mount(<SnackbarQueue messages={queue.messages} />);
     // check multiple notifications

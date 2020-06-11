@@ -1,7 +1,7 @@
 /**
  * @jest-environment node
  */
-import * as React from 'react';
+import React from 'react';
 import { renderToString as mount } from 'react-dom/server';
 import { Snackbar } from './snackbar';
 
@@ -10,7 +10,7 @@ describe('Snackbar', () => {
     mount(
       <Snackbar
         open
-        onClose={evt => {}}
+        onClose={(evt) => {}}
         message="This is a new message"
         action={<div />}
       />

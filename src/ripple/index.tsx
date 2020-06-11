@@ -1,5 +1,5 @@
 import * as RMWC from '@rmwc/types';
-import * as React from 'react';
+import React from 'react';
 import * as ReactDOM from 'react-dom';
 import { MDCRippleFoundation } from '@material/ripple';
 import { classNames } from '@rmwc/base';
