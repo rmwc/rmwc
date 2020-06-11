@@ -13,6 +13,9 @@
   * Otherwise, manually include the CSS
     * Include styles from `node_modules/material-components-web/dist/material-components-web.min.css` in your project via your method of choice (using es6 imports, a link tag, a css-loader, etc.). [material-components-web](https://github.com/material-components/material-components-web) should already be installed automatically as a peer dependency.
     * Navigate to the individual components documentation and include any additional RMWC specific stylesheets .
+* If IE11 support is required:
+  * Add CustomEvent ployfill ([MDN](https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent#Polyfill), [npm](https://www.npmjs.com/package/custom-event-polyfill))
+  * Add classList ployfill ([MDN](https://developer.mozilla.org/en-US/docs/Web/API/Element/classList#Polyfill), [npm](https://www.npmjs.com/package/classlist-polyfill))
 
 
 **Optional steps**
