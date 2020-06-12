@@ -1,6 +1,6 @@
 # Icons
 
-> Material icons use geometric shapes to visually represent core ideas, capabilities, or topics.
+Material icons use geometric shapes to visually represent core ideas, capabilities, or topics.
 
 - Module **@rmwc/icon**
 - Import styles:

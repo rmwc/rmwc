@@ -1,6 +1,6 @@
 # Tooltips `RMWC ADDON`
 
-> Tooltips display informative text when users hover over, focus on, or tap an element.
+Tooltips display informative text when users hover over, focus on, or tap an element.
 
 - Module **@rmwc/tooltip**
 - Import styles:

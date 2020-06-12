@@ -1,6 +1,6 @@
 # Grid Lists
 
-> Grid lists are an alternative to standard list views.
+Grid lists are an alternative to standard list views.
 
 - Module **@rmwc/grid-list**
 - Import styles:
