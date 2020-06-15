@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/switch",
-  "version": "6.1.2",
+  "version": "6.1.3",
   "description": "RMWC Switch component",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -39,7 +39,7 @@
     "@material/switch": "^5.1.0",
     "@rmwc/base": "^6.0.14",
     "@rmwc/formfield": "^6.0.14",
-    "@rmwc/ripple": "^6.1.2",
+    "@rmwc/ripple": "^6.1.3",
     "@rmwc/toggleable": "^6.0.14",
     "@rmwc/types": "^6.0.5"
   },
