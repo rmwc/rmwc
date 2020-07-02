@@ -38,17 +38,7 @@ export const useTabBarFoundation = (
           !!rootEl.ref &&
           window.getComputedStyle(rootEl.ref).getPropertyValue('direction') ===
             'rtl',
-        setActiveTab: (index: number) => {
-          if (props.activeTabIndex === index ||
-          props.activeTabIndex === undefined) {
-            setActiveTabIndex(index)
-          } else {
-            // ignore clicks when using controlled tabs, but we still need to notify
-            // to trigger the callback
-            // @ts-ignore ignoring unsafe protected access
-            foundation.adapter_.notifyTabActivated(index);
-          }
-        },
+        setActiveTab: (index: number) => setActiveTabIndex(index),
         activateTabAtIndex: (index: number, clientRect: ClientRect) => {
           tabListRef.current[index] &&
             tabListRef.current[index].activate(clientRect);

@@ -106,22 +106,4 @@ describe('Tabs', () => {
       done();
     });
   });
-
-  it('can be used as a controlled element', (done) => {
-    const el = mount(
-      <TabBar activeTabIndex={1}>
-        <Tab>1</Tab>
-        <Tab>2</Tab>
-      </TabBar>
-    );
-
-    el.find(Tab).first().simulate('click');
-    
-    // expect(el.find(Tab).last().hasClass('mdc-tab--active')).toEqual(true);
-    window.requestAnimationFrame(() => {
-      // expect(el.find(Tab).last().html()).toEqual(""); // ('mdc-tab--active')).toEqual(true);
-      expect(el.find(Tab).last().html().includes('mdc-tab--active')).toEqual(true);
-      done();
-    });
-  });
 });
