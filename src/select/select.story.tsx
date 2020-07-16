@@ -6,6 +6,7 @@ import { text, object, array } from '@storybook/addon-knobs';
 import { Select } from './';
 import { useKnob } from '@rmwc/base/utils/use-knob';
 import { MenuItems, MenuItem } from '@rmwc/menu';
+import { Portal } from '@rmwc/base';
 
 function MutatingSelect(props: any) {
   const [value, setValue] = useKnob('text', 'value', 'Cookies');
@@ -233,6 +234,34 @@ function ControlledSelect() {
   );
 }
 
+
+function EnhancedSelectWithPortal(props: any) {
+  const [value, setValue] = useKnob('text', 'value', "Cookies");
+
+  return (
+    <>
+      <Portal/>
+      <Select
+        label={'Enhanced with Portal'}
+        enhanced={{
+          renderToPortal: true
+        }}
+        value={value}
+        onChange={(evt) => {
+          const value = evt.currentTarget.value;
+          console.log('onChange', value);
+          setValue(value === undefined ? "undefined" : value);
+        }}
+        options={[
+          'Cookies',
+          'Pizza',
+          'Icecream'
+        ]}
+      />
+    </>
+  );
+}
+
 storiesOf('Select', module)
   .add('Select with object', () => (
     <Select
@@ -269,6 +298,7 @@ storiesOf('Select', module)
       </Select>
     </div>
   ))
+  .add('Select Enhanced with Portal', () => <EnhancedSelectWithPortal/>)
   .add('Select without placeholder', () => (
     <Select
       label={text('label', 'Foods')}
