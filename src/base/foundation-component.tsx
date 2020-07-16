@@ -290,6 +290,7 @@ export const useFoundation = <
   useEffect(() => {
     const f = foundation;
     f.init();
+    api && handleRef(props.current.apiRef, api({ foundation, ...elements }));
     handleRef(props.current.foundationRef, f);
 
     return () => {
