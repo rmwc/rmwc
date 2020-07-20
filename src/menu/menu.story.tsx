@@ -104,6 +104,7 @@ class MenuSurfaceStory extends React.Component {
 }
 
 function MenuHoist() {
+  const [selected, setSelected] = useKnob('number', 'Last selected index', -1);
   const [hoisted] = useKnob('boolean', 'hoisted', true);
   const [open, setOpen] = React.useState(true);
   const [options] = useKnob('array', 'options', [
@@ -111,6 +112,7 @@ function MenuHoist() {
     'Pizza',
     'Icecream'
   ]);
+
   return (
     <div style={{ margin: '200px', height: '56px', overflow: 'hidden' }}>
       <MenuSurfaceAnchor>
@@ -125,10 +127,16 @@ function MenuHoist() {
         <Menu
           open={open}
           renderToPortal={hoisted}
+          onSelect={evt => setSelected(evt.detail.index)}
           onClose={() => setOpen(false)}
         >
-          {options.map((o: string) => (
-            <MenuItem key={o}>{o}</MenuItem>
+          {options.map((o: string, index: number) => (
+            <MenuItem
+              key={o}
+              activated={selected === index}
+            >
+              {o}
+            </MenuItem>
           ))}
         </Menu>
       </MenuSurfaceAnchor>
