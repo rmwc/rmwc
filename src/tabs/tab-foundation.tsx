@@ -77,6 +77,11 @@ export const useTabFoundation = (props: TabProps & React.HTMLProps<any>) => {
     };
   }, [contextApi, tabApi]);
 
+  useEffect(() => {
+    props.focusOnActivate !== undefined &&
+      foundation.setFocusOnActivate(props.focusOnActivate);
+  }, [foundation, props.focusOnActivate]);
+
   return {
     ...elements,
     setTabIndicatorApi

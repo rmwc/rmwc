@@ -103,6 +103,8 @@ describe('Tabs', () => {
     window.requestAnimationFrame(() => {
       expect(el1.html().includes('mdc-tab--active')).toEqual(true);
       expect(el2.html().includes('mdc-tab--active')).toEqual(true);
+      el1.unmount();
+      el2.unmount();
       done();
     });
   });
@@ -117,10 +119,33 @@ describe('Tabs', () => {
 
     el.find(Tab).first().simulate('click');
     
-    // expect(el.find(Tab).last().hasClass('mdc-tab--active')).toEqual(true);
     window.requestAnimationFrame(() => {
-      // expect(el.find(Tab).last().html()).toEqual(""); // ('mdc-tab--active')).toEqual(true);
       expect(el.find(Tab).last().html().includes('mdc-tab--active')).toEqual(true);
+      el.unmount();
+      done();
+    });
+  });
+  
+  it('focuses active tab on mount', (done) => {
+    const el = mount(<TabBar>
+        <Tab focusOnActivate>Test</Tab>
+      </TabBar>);
+    
+    window.requestAnimationFrame(() => {
+      expect(document.activeElement).toBe(el.find('button').getDOMNode());
+      el.unmount();
+      done();
+    });
+  });
+  
+  it('does not focus active tab on mount', (done) => {
+    const el = mount(<TabBar>
+      <Tab focusOnActivate={false}>Test</Tab>
+    </TabBar>);
+  
+    window.requestAnimationFrame(() => {
+      expect(document.activeElement).not.toBe(el.find('button').getDOMNode());
+      el.unmount();
       done();
     });
   });
