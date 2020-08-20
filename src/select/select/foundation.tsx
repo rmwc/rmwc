@@ -129,7 +129,7 @@ export const useSelectFoundation = (
           setAttributeAtIndex: (...args) =>
             menu.current?.setAttributeForElementIndex(...args),
           removeAttributeAtIndex: (index: number, attributeName: string) =>
-            menu.current?.items()[index].removeAttribute(attributeName),
+            menu.current?.items()[index]?.removeAttribute(attributeName),
           focusMenuItemAtIndex: (...args) =>
             menu.current?.focusItemAtIndex(...args),
           getMenuItemCount: () => {
