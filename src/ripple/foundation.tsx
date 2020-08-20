@@ -1,7 +1,7 @@
 import React, { useCallback, useRef, useEffect } from 'react';
 import { RippleProps } from './';
 import { useFoundation, emptyClientRect } from '@rmwc/base';
-import { matches, applyPassive } from '@rmwc/base';
+import { matches } from '@rmwc/base';
 import { EventType, SpecificEventListener } from '@material/base/types';
 
 import { MDCRippleFoundation, util } from '@material/ripple';
@@ -57,7 +57,7 @@ export const useRippleFoundation = (
           document.documentElement.addEventListener(
             evtType,
             handler,
-            applyPassive()
+            { passive: true }
           ),
         deregisterDocumentInteractionHandler: <K extends EventType>(
           evtType: K,
@@ -65,8 +65,7 @@ export const useRippleFoundation = (
         ) =>
           document.documentElement.removeEventListener(
             evtType,
-            handler,
-            applyPassive() as any
+            handler
           ),
         registerResizeHandler: (
           handler: SpecificEventListener<'resize'>
