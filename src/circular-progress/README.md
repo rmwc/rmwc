@@ -1,6 +1,6 @@
 # Circular Progress `RMWC ADDON`
 
-> Circular progress indicators display progress by animating an indicator along an invisible circular track in a clockwise direction. They can be applied directly to a surface, such as a button or card.
+Circular progress indicators display progress by animating an indicator along an invisible circular track in a clockwise direction. They can be applied directly to a surface, such as a button or card.
 
 - Module **@rmwc/circular-progress**
 - Import styles:

@@ -181,6 +181,7 @@ A Tab component
 | Name | Type | Description |
 |------|------|-------------|
 | `children` | `React.ReactNode` | The label for the tab, passed as children. |
+| `focusOnActivate` | `undefined \| false \| true` | Focuses the tab when activated. Defaults to true. |
 | `foundationRef` | `React.Ref<MDCTabFoundation \| null>` | Advanced: A reference to the MDCFoundation. |
 | `icon` | `RMWC.IconPropT` | The icon to use for the tab. |
 | `iconIndicator` | `RMWC.IconPropT` | Optionally use a custom icon for the active indicator, instead of the underline. |

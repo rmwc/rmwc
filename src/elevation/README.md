@@ -1,6 +1,6 @@
 # Elevation
 
-> Elevation is the relative distance between two surfaces along the z-axis.
+Elevation is the relative distance between two surfaces along the z-axis.
 
 - Module **@rmwc/elevation**
 - Import styles:

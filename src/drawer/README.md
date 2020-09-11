@@ -1,6 +1,6 @@
 # Drawers
 
-> A navigation drawer slides in from the left and contains the navigation destinations for your app.
+A navigation drawer slides in from the left and contains the navigation destinations for your app.
 
 - Module **@rmwc/drawer**
 - Import styles:

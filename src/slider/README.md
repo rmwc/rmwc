@@ -1,6 +1,6 @@
 # Sliders
 
-> Sliders let users select from a range of values by moving the slider thumb.
+Sliders let users select from a range of values by moving the slider thumb.
 
 - Module **@rmwc/slider**
 - Import styles:
