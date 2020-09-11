@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/list",
-  "version": "6.1.3",
+  "version": "6.1.4",
   "description": "RMWC List component",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -37,10 +37,10 @@
   },
   "dependencies": {
     "@material/list": "^5.1.0",
-    "@rmwc/base": "^6.0.14",
-    "@rmwc/icon": "^6.1.3",
-    "@rmwc/provider": "^6.1.3",
-    "@rmwc/ripple": "^6.1.3",
+    "@rmwc/base": "^6.1.4",
+    "@rmwc/icon": "^6.1.4",
+    "@rmwc/provider": "^6.1.4",
+    "@rmwc/ripple": "^6.1.4",
     "@rmwc/types": "^6.0.5"
   },
   "gitHead": "d9befec0e3b258864b71686eecd16c16feb43cf1"
