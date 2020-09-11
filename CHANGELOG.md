@@ -1,3 +1,33 @@
+#### 6.1.4 (2020-09-11)
+
+##### Build System / Dependencies
+
+* **deps:**  bump elliptic from 6.5.2 to 6.5.3 (0e5d097b)
+
+##### New Features
+
+* **Tab:**  Add ability to set focusOnActivate (ab155a96)
+
+##### Bug Fixes
+
+* **Select:**
+  *  added the "sudden removal" story (616ee47f)
+  *  fixed unhandled error on "sudden" item removal (b34c0b47)
+* **base:**
+  *  Properly pass foundation in useFoundation effect (cd556bc3)
+  *  Use local foundation reference in useFoundation effect (b9fdc94c)
+  *  Re-set apiRef in useFoundation after nulling it (748bdf35)
+* **Tab:**  activeTabIndex always updating automatically (ed0f0091)
+
+##### Other Changes
+
+*  remove not use deps from externals (e03ed26a)
+
+##### Tests
+
+* **Select:**  Story for enhanced Select with Portal (e882c13a)
+* **Menu:**  Show index in hoistToBody story (b0600e28)
+
 #### 6.1.3 (2020-06-15)
 
 #### 6.1.2 (2020-06-11)
