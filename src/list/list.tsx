@@ -54,9 +54,13 @@ export const List = createComponent<ListProps>(function List(props, ref) {
     nonInteractive,
     onAction,
     foundationRef,
+    wrapFocus,
     ...rest
   } = props;
-  const { rootEl } = useListFoundation(props);
+  const { rootEl } = useListFoundation({
+    ...props,
+    wrapFocus
+  });
   const className = useClassNames(props, [
     'mdc-list',
     {
