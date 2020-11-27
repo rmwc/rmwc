@@ -128,4 +128,17 @@ describe('Icon', () => {
       `<div>Customized-CUSTOM</div>`
     );
   });
+
+  it('does not crash when custom render returns a string', () => {
+    const el = mount(
+      <Icon
+        icon={{
+          icon: 'CUSTOM',
+          strategy: 'custom',
+          render: () => 'custom',
+        }}
+      />
+    );
+    expect(el.html()).toBe(null);
+  });
 });
