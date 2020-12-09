@@ -10,7 +10,7 @@
 
 # RMWC - React Material Web Components
 
-💥 Attention: Due to an increase in interest, this project is looking for additional maintainers and contributors! Message on Discord for more details.
+💥 Attention: This project is currently receiving limited support. Issues may not be responded too. If you're interested in helping with maintenance and becoming a contributor or maintainer, please message me.
 
 RMWC is a React UI Kit built on Google's official Material Components Web library v5.x.x
 [https://rmwc.io/](https://rmwc.io/)
