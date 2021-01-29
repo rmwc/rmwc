@@ -73,7 +73,7 @@
     "generate-changelog": "^1.8.0",
     "lerna": "^3.20.2",
     "module-alias": "^2.2.2",
-    "prettier": "github:prettier/prettier#master",
+    "prettier": "github:prettier/prettier#main",
     "react": "^16.13.1",
     "react-app-rewire-hot-loader": "^2.0.1",
     "react-app-rewired": "^2.1.5",
