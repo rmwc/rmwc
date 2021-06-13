@@ -21,7 +21,8 @@
     "no-unused-expressions": "off",
     "@typescript-eslint/no-unused-expressions": "off",
     "babel/no-unused-expressions": "off",
-    "prefer-reflect": "off"
+    "prefer-reflect": "off",
+    "react-hooks/rules-of-hooks": "off"
   },
   "overrides": [
     {

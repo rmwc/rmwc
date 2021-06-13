@@ -15,18 +15,21 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "downlevelIteration": true,
     "lib": [
       "es2015",
       "es2017",
       "dom"
-    ]
+    ],
+    "noFallthroughCasesInSwitch": true
   },
   "include": [
     "src"
   ],
   "exclude": [
+    "**/*.story.tsx",
+    "src/base/utils/use-knob.tsx",
     "public/version"
   ]
 }
