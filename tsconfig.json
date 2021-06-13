@@ -8,6 +8,7 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
+    "importHelpers": true,
     "forceConsistentCasingInFileNames": true,
     "preserveWatchOutput": true,
     "module": "esnext",
