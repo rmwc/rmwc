@@ -86,7 +86,7 @@ const renderComponent = ({
 };
 
 const iconRenderMap: {
-  [key: string]: ((content: any, ...rest: any) => React.ReactNode) | undefined;
+  [key: string]: ((content: any, ...rest: any) => Exclude<React.ReactNode, "ReactText">) | undefined;
 } = {
   ligature: renderLigature,
   className: renderClassName,
@@ -155,11 +155,11 @@ export const Icon = createComponent<IconProps, IconHTMLProps>(function (
 
   const rendererFromMap = !!strategyToUse && iconRenderMap[strategyToUse];
 
-  // For some reason TS thinks the render method will return undefined...
-  const renderToUse: any =
-    strategyToUse === 'custom'
-      ? render || providerRender
-      : rendererFromMap || null;
+  let renderToUse = rendererFromMap || null;
+
+  if (strategyToUse === 'custom') {
+    renderToUse = render || providerRender;
+  }
 
   if (!renderToUse) {
     console.error(
@@ -185,6 +185,10 @@ export const Icon = createComponent<IconProps, IconHTMLProps>(function (
       }
     )
   });
+
+  if (!React.isValidElement<any>(rendered)) {
+    return null;
+  }
 
   const childDisplayName = getDisplayName(rendered.props.children);
 
