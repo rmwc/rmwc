@@ -132,6 +132,9 @@ Finally, it helps to make sure that your branch/fork is up to date with what's c
 
 > **NOTE**: Please do _not merge_ master into your branch. _Always_ `pull --rebase` instead. This ensures a linear history by always putting the work you've done after the work that's already on master, regardless of the date in which those commits were made.
 
+### Other considerations
+- After you install a dependency you need to rerun `npm install`. It’s a quirk of using Lerna. It needs to rebootstrap anytime the dependencies change.
+
 ### Archiving older versions of the docs
 This is mainly a cheat sheet for the maintainers. Its a manual process, but only happens on major releases.
 - Pull a fresh copy or rmwc/master
