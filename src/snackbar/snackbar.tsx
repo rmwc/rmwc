@@ -37,7 +37,7 @@ export interface SnackbarProps {
   /* Aligns the Snackbar to the start of the screen. */
   leading?: boolean;
   /* Shows a dismiss icon, */
-  dismissIcon?: boolean | string;
+  dismissIcon?: boolean | RMWC.IconPropT;
   /** Whether or not your want clicking an action to close the Snackbar. */
   dismissesOnAction?: boolean;
   /** An icon for the snackbar */
