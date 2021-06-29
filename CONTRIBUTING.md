@@ -25,7 +25,7 @@ cd rmwc && npm i
 As of V5, RMWC has been rebuilt in Typescript which makes the developer experience much easier to navigate. `material-components-web` converted to Typescript as well which allows for a very robust and tight integration.
 
 - Storybook is used for developing components in isolation, but the docs can be used for development as well
-- The README.md in the docs are automatically generated at release time from the Typescript readme.tsx files. DO NOT UPDATE a generated-*.json, or a README.md file fro a component manually
+- The README.md in the docs are automatically generated at release time from the Typescript readme.tsx files. DO NOT UPDATE a generated-*.json, or a README.md file from a component manually
 
 ```jsx
 class DocsExample {
