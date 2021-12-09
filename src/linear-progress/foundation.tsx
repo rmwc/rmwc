@@ -10,26 +10,22 @@ export const useLinearProgressFoundation = (props: LinearProgressProps) => {
     foundation: ({ rootEl }) => {
       return new MDCLinearProgressFoundation({
         addClass: (className: string) => rootEl.addClass(className),
-        getPrimaryBar: () => {
-          return (
-            rootEl.ref?.querySelector(
-              MDCLinearProgressFoundation.strings.PRIMARY_BAR_SELECTOR
-            ) || null
-          );
-        },
         forceLayout: () => rootEl.ref?.offsetWidth,
-        getBuffer: () =>
-          rootEl.ref?.querySelector(
-            MDCLinearProgressFoundation.strings.BUFFER_SELECTOR
-          ) || null,
         hasClass: (className: string) => rootEl.hasClass(className),
         removeClass: (className: string) => rootEl.removeClass(className),
-        setStyle: (
-          el: HTMLElement,
-          styleProperty: string,
-          value: string | null
-        ) => {
-          (el.style as any)[styleProperty] = value;
+        setBufferBarStyle: (styleProperty: string, value: string | null) => {
+          let el =
+            rootEl.ref?.querySelector(
+              MDCLinearProgressFoundation.strings.BUFFER_BAR_SELECTOR
+            ) ?? null;
+          el && ((el as any).style[styleProperty] = value);
+        },
+        setPrimaryBarStyle: (styleProperty: string, value: string | null) => {
+          let el =
+            rootEl.ref?.querySelector(
+              MDCLinearProgressFoundation.strings.PRIMARY_BAR_SELECTOR
+            ) ?? null;
+          el && ((el as any).style[styleProperty] = value);
         }
       });
     }

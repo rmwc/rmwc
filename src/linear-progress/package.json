@@ -36,7 +36,7 @@
     "react-dom": "^16.3.x"
   },
   "dependencies": {
-    "@material/linear-progress": "5.1.0",
+    "@material/linear-progress": "6.0.0",
     "@rmwc/base": "^6.1.4",
     "@rmwc/types": "^6.0.5"
   },

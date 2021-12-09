@@ -77,7 +77,7 @@
     "@rmwc/top-app-bar": "^6.1.4",
     "@rmwc/types": "^6.0.5",
     "@rmwc/typography": "^6.1.4",
-    "material-components-web": "^5.1.0"
+    "material-components-web": "^6.0.0"
   },
   "gitHead": "d9befec0e3b258864b71686eecd16c16feb43cf1"
 }

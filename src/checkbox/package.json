@@ -36,8 +36,8 @@
     "react-dom": "^16.3.x"
   },
   "dependencies": {
-    "@material/checkbox": "^5.1.0",
-    "@material/form-field": "^5.1.0",
+    "@material/checkbox": "^6.0.0",
+    "@material/form-field": "^6.0.0",
     "@rmwc/base": "^6.1.4",
     "@rmwc/formfield": "^6.1.4",
     "@rmwc/ripple": "^6.1.4",

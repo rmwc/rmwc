@@ -36,7 +36,7 @@
     "react-dom": "^16.3.x"
   },
   "dependencies": {
-    "@material/typography": "^5.1.0",
+    "@material/typography": "^6.0.0",
     "@rmwc/base": "^6.1.4",
     "@rmwc/provider": "^6.1.4",
     "@rmwc/types": "^6.0.5"
