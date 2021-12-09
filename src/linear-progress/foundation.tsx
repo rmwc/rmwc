@@ -26,7 +26,11 @@ export const useLinearProgressFoundation = (props: LinearProgressProps) => {
               MDCLinearProgressFoundation.strings.PRIMARY_BAR_SELECTOR
             ) ?? null;
           el && ((el as any).style[styleProperty] = value);
-        }
+        },
+        setAttribute: (name: string, value: string) => {
+          rootEl.setProp(name as any, value);
+        },
+        removeAttribute: (name: string) => rootEl.removeProp(name as any)
       });
     }
   });
