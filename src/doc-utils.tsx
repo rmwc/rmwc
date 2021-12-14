@@ -467,12 +467,21 @@ export function DocsMarkdown({ fileSrc }: { fileSrc: string }) {
                 </Tag>
               );
             },
-            paragraph: ({ children }: { children: any }) => (
+            p: ({ children }: { children: any }) => (
               <p className="docs-p">{children}</p>
             ),
-            code: ({ value }: { value: string }) => (
-              <DocsExampleBase code={value} codeOnly />
-            )
+            code: ({
+              children,
+              inline
+            }: {
+              children: any;
+              inline: boolean;
+            }) => {
+              if (inline) {
+                return <code>{children}</code>;
+              }
+              return <DocsExampleBase code={children[0]} codeOnly />;
+            }
           } as any
         }
       />
