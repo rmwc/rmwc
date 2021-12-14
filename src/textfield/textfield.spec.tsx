@@ -2,15 +2,18 @@ import React from 'react';
 import { mount } from 'enzyme';
 import { TextField, TextFieldHelperText } from './';
 import { wait } from '@rmwc/base/utils/test-utils';
+import { render } from '@testing-library/react';
 
 describe('TextField', () => {
   it('renders', () => {
     mount(<TextField label="test" placeholder="test" />);
   });
 
-  it.skip('can autoFocus', () => {
-    const el = mount(<TextField label="test" placeholder="test" autoFocus />);
-    expect(document.activeElement).toBe(el.find('input').getDOMNode());
+  it('can autoFocus', () => {
+    const { container } = render(
+      <TextField label="test" placeholder="test" autoFocus />
+    );
+    expect(document.activeElement).toBe(container.querySelector('input'));
   });
 
   it('can have children', () => {

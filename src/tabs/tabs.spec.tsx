@@ -1,6 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { TabBar, Tab } from './';
+import { render } from '@testing-library/react';
 
 describe('Tabs', () => {
   beforeAll(() => {
@@ -128,16 +129,15 @@ describe('Tabs', () => {
     });
   });
 
-  it.skip('focuses active tab on mount', (done) => {
-    const el = mount(
+  it('focuses active tab on mount', (done) => {
+    const { container } = render(
       <TabBar>
         <Tab focusOnActivate>Test</Tab>
       </TabBar>
     );
 
     window.requestAnimationFrame(() => {
-      expect(document.activeElement).toBe(el.find('button').getDOMNode());
-      el.unmount();
+      expect(document.activeElement).toBe(container.querySelector('button'));
       done();
     });
   });
