@@ -52,8 +52,8 @@ export const useSelectFoundation = (
 
   const { foundation, ...elements } = useFoundation({
     props,
-    elements: { rootEl: true, selectedTextEl: true },
-    foundation: ({ rootEl, selectedTextEl, getProps, emit }) => {
+    elements: { rootEl: true, selectedTextEl: true, anchorEl: true },
+    foundation: ({ rootEl, selectedTextEl, anchorEl, getProps, emit }) => {
       const isNative = () => !getProps().enhanced;
 
       const getSelectAdapterMethods = (): Partial<MDCSelectAdapter> => {
@@ -128,7 +128,14 @@ export const useSelectFoundation = (
           addClassAtIndex: (...args) =>
             menu.current?.addClassToElementIndex(...args),
           removeClassAtIndex: (...args) =>
-            menu.current?.removeClassFromElementAtIndex(...args)
+            menu.current?.removeClassFromElementAtIndex(...args),
+          isSelectAnchorFocused: () => {
+            return document.activeElement === anchorEl.ref;
+          },
+          getSelectAnchorAttr: (attr: string) =>
+            anchorEl.getProp(attr as any) as string | null,
+          setSelectAnchorAttr: (attr: string, value: string) =>
+            anchorEl.setProp(attr as any, value)
         };
       };
 
@@ -355,7 +362,7 @@ export const useSelectFoundation = (
 
     if (value !== undefined && value !== foundationValue) {
       // @ts-ignore unsafe private variable access
-      const index = foundation.menuItemValues_.indexOf(value);
+      const index = foundation.menuItemValues_.indexOf(foundationValue);
       selectedIndex.current = index;
       foundation.setValue(value || '');
     }

@@ -114,6 +114,7 @@ function NativeMenu(
     placeholder = '',
     children,
     elementRef,
+    open,
     ...rest
   } = props;
 
@@ -177,6 +178,10 @@ function NativeMenu(
 }
 
 const SelectedTextEl = withRipple({ surface: false })(function (props: any) {
+  return <Tag {...props} />;
+});
+
+const AnchorEl = withRipple({ surface: false })(function (props: any) {
   return <Tag {...props} />;
 });
 
@@ -303,6 +308,7 @@ export const Select: RMWC.ComponentType<
   const {
     rootEl,
     selectedTextEl,
+    anchorEl,
     notchWidth,
     menuOpen,
     selectedTextContent,
@@ -373,23 +379,29 @@ export const Select: RMWC.ComponentType<
         ref={ref}
         className={className}
       >
-        <div className="mdc-select__anchor">
+        <AnchorEl
+          className="mdc-select__anchor"
+          role="button"
+          aria-haspopup="listbox"
+          element={anchorEl}
+          onFocus={handleFocus}
+          onBlur={handleBlur}
+          onClick={handleClick}
+          onKeyDown={handleKeydown}
+          /** In the case of native selects, we don't want this to be be focusable */
+          tabIndex={enhanced ? undefined : -1}
+        >
           {!!icon && <SelectIcon apiRef={setLeadingIcon} icon={icon} />}
-          <SelectDropdownArrow />
           <SelectedTextEl
             className="mdc-select__selected-text"
-            role="button"
-            aria-haspopup="listbox"
             element={selectedTextEl}
-            onFocus={handleFocus}
-            onBlur={handleBlur}
-            onClick={handleClick}
-            onKeyDown={handleKeydown}
-            /** In the case of native selects, we don't want this to be be focusable */
-            tabIndex={enhanced ? undefined : -1}
-          >
-            {selectedTextContent || <>&nbsp;</>}
-          </SelectedTextEl>
+            tag="input"
+            type="text"
+            value={selectedTextContent}
+            disabled
+            readonly
+          />
+          <SelectDropdownArrow />
           {outlined ? (
             <NotchedOutline notch={notchWidth}>{renderedLabel}</NotchedOutline>
           ) : (
@@ -414,7 +426,7 @@ export const Select: RMWC.ComponentType<
               }
             />
           )}
-        </div>
+        </AnchorEl>
 
         {enhanced && (
           <EnhancedMenu
