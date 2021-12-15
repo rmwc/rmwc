@@ -258,6 +258,7 @@ export const useSelectFoundation = (
 
         const placeholder = String(getProps().placeholder || '');
         if (!f.getValue() && placeholder) {
+          adapter.setSelectedText(placeholder);
           setSelectedTextContent(placeholder);
           setFloatLabel(true);
         }
