@@ -129,9 +129,7 @@ export const useSelectFoundation = (
             menu.current?.addClassToElementIndex(...args),
           removeClassAtIndex: (...args) =>
             menu.current?.removeClassFromElementAtIndex(...args),
-          isSelectAnchorFocused: () => {
-            return document.activeElement === anchorEl.ref;
-          },
+          isSelectAnchorFocused: () => document.activeElement === anchorEl.ref,
           getSelectAnchorAttr: (attr: string) =>
             anchorEl.getProp(attr as any) as string | null,
           setSelectAnchorAttr: (attr: string, value: string) =>
@@ -260,7 +258,8 @@ export const useSelectFoundation = (
 
         const placeholder = String(getProps().placeholder || '');
         if (!f.getValue() && placeholder) {
-          adapter.setSelectedText(placeholder);
+          setSelectedTextContent(placeholder);
+          setFloatLabel(true);
         }
         silenceChange.current = false;
       };
@@ -365,6 +364,8 @@ export const useSelectFoundation = (
       const index = foundation.menuItemValues_.indexOf(foundationValue);
       selectedIndex.current = index;
       foundation.setValue(value || '');
+      // We need to call setSelectedTextContent to set the default value/the controlled value.
+      setSelectedTextContent(value);
     }
     raf(() => {
       silenceChange.current = false;
