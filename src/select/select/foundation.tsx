@@ -129,9 +129,9 @@ export const useSelectFoundation = (
             menu.current?.addClassToElementIndex(...args),
           removeClassAtIndex: (...args) =>
             menu.current?.removeClassFromElementAtIndex(...args),
-          isSelectAnchorFocused: () => document.activeElement === anchorEl.ref,
-          getSelectAnchorAttr: (attr: string) =>
-            anchorEl.getProp(attr as any) as string | null,
+          isSelectAnchorFocused: () =>
+            !!(anchorEl.ref && anchorEl.ref === document.activeElement),
+          getSelectAnchorAttr: (attr: any) => anchorEl.getProp(attr),
           setSelectAnchorAttr: (attr: string, value: string) =>
             anchorEl.setProp(attr as any, value)
         };

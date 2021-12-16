@@ -372,13 +372,7 @@ export const Select: RMWC.ComponentType<
 
   return (
     <>
-      <Tag
-        role="listbox"
-        {...rootProps}
-        element={rootEl}
-        ref={ref}
-        className={className}
-      >
+      <Tag {...rootProps} element={rootEl} ref={ref} className={className}>
         <AnchorEl
           className="mdc-select__anchor"
           role="button"
@@ -392,6 +386,7 @@ export const Select: RMWC.ComponentType<
           tabIndex={enhanced ? undefined : -1}
         >
           {!!icon && <SelectIcon apiRef={setLeadingIcon} icon={icon} />}
+          {!outlined && <span className="mdc-select__ripple"></span>}
           <SelectedTextEl
             className="mdc-select__selected-text"
             element={selectedTextEl}
@@ -420,7 +415,7 @@ export const Select: RMWC.ComponentType<
               selectOptions={selectOptions}
               elementRef={setNativeControl}
               onFocus={handleFocus}
-              onBlur={handleBlur}
+              onBlur={handleMenuClosed}
               onChange={(evt: React.ChangeEvent<HTMLSelectElement>) =>
                 handleMenuSelected(evt.currentTarget.selectedIndex)
               }
