@@ -123,9 +123,8 @@ export const TextField: RMWC.ComponentType<
 
   const className = useClassNames(props, [
     'mdc-text-field',
-    'mdc-text-field--upgraded',
-    'mdc-text-field--filled',
     {
+      'mdc-text-field--filled': !outlined,
       'mdc-text-field--textarea': textarea,
       'mdc-text-field--fullwidth': fullwidth,
       'mdc-text-field--outlined': outlined,
@@ -135,9 +134,6 @@ export const TextField: RMWC.ComponentType<
       'mdc-text-field--with-trailing-icon': !!trailingIcon,
       'mdc-text-field--no-label': !label,
       'mdc-text-field--end-aligned': align === 'end'
-      // 'mdc-text-field__affix': !!prefix || !!suffix,
-      // 'mdc-text-field__affix--prefix': !!prefix,
-      // 'mdc-text-field__affix--suffix': !!suffix
     }
   ]);
 
@@ -209,7 +205,8 @@ export const TextField: RMWC.ComponentType<
         {children}
         {/** Render character counter in different place for textarea */}
         {!!textarea && renderedCharacterCounter}
-        <TextFieldRipple />
+        {/* Ripple should not be applied when outlined variant */}
+        {!outlined && <TextFieldRipple />}
         {!!prefix && <TextFieldPrefix prefix={prefix} />}
         <Tag
           {...rest}
@@ -220,7 +217,6 @@ export const TextField: RMWC.ComponentType<
           ref={inputRef}
         />
         {!!suffix && <TextFieldSuffix suffix={suffix} />}
-
         {!!outlined ? (
           <>
             <NotchedOutline notch={notchWidth}>{renderedLabel}</NotchedOutline>
