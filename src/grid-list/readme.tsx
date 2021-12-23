@@ -18,11 +18,11 @@ import {
 import { Checkbox } from '../checkbox';
 import { Select } from '../select';
 
-export default function() {
+export default function () {
   return (
     <Docs
       title="Grid Lists"
-      lead="Grid lists are an alternative to standard list views."
+      lead="Grid lists are an alternative to standard list views. Note that as of Material Components Web 6.0.0, this component is deprecated."
       module="@rmwc/grid-list"
       styles={['@material/grid-list/dist/mdc.grid-list.css']}
       docsLink="https://material.io/components/web/catalog/grid-lists/"
@@ -71,11 +71,11 @@ export default function() {
                 'headerCaption',
                 'twoLineCaption',
                 'withIconAlignStart'
-              ].map(key => (
+              ].map((key) => (
                 <Checkbox
                   key={key}
                   label={key}
-                  onChange={evt =>
+                  onChange={(evt) =>
                     setState({ ...state, [key]: evt.currentTarget.checked })
                   }
                 />
@@ -83,7 +83,7 @@ export default function() {
 
               <Select
                 value={state.tileAspect}
-                onChange={evt =>
+                onChange={(evt) =>
                   setState({
                     ...state,
                     tileAspect: String(evt.currentTarget.value)
