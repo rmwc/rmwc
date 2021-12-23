@@ -365,8 +365,12 @@ export const useSelectFoundation = (
       const index = foundation.menuItemValues_.indexOf(foundationValue);
       selectedIndex.current = index;
       foundation.setValue(value || '');
+
       // We need to call setSelectedTextContent to set the default value/the controlled value.
-      setSelectedTextContent(value);
+      // @ts-ignore unsafe private variable access
+      if (foundation.menuItemValues_.includes(value)) {
+        setSelectedTextContent(value);
+      }
     }
     raf(() => {
       silenceChange.current = false;
