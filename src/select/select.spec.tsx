@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount, ReactWrapper } from 'enzyme';
+import { mount } from 'enzyme';
 import { Select } from './';
 import { render, act, fireEvent } from '@testing-library/react';
 
