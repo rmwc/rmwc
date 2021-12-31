@@ -13,7 +13,7 @@ type ActivateEventTypes<S> =
   | React.FocusEvent<S>;
 
 export const useRippleFoundation = (
-  props: RippleProps & React.HTMLProps<any> & { domNode?: Element }
+  props: RippleProps & React.HTMLProps<any>
 ) => {
   const isTouched = useRef(false);
 
@@ -45,11 +45,11 @@ export const useRippleFoundation = (
         registerInteractionHandler: <K extends EventType>(
           evtType: K,
           handler: SpecificEventListener<K>
-        ): void => {},
+        ): void => { },
         deregisterInteractionHandler: <K extends EventType>(
           evtType: K,
           handler: SpecificEventListener<K>
-        ): void => {},
+        ): void => { },
         registerDocumentInteractionHandler: <K extends EventType>(
           evtType: K,
           handler: SpecificEventListener<K>
@@ -182,10 +182,6 @@ export const useRippleFoundation = (
   rootEl.setProp('onTouchEnd', handleTouchEnd, true);
   rootEl.setProp('onKeyDown', handleKeyDown, true);
   rootEl.setProp('onKeyUp', handleKeyUp, true);
-
-  useEffect(() => {
-    rootEl.setRef(props.domNode);
-  }, [rootEl, props.domNode]);
 
   useEffect(() => {
     foundation.setUnbounded(!!props.unbounded);

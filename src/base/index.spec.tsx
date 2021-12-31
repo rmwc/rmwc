@@ -41,7 +41,7 @@ describe('FoundationElement', () => {
       root: new FoundationElement(() => {})
     };
 
-    mount(<div ref={inst.root.setRef} />);
+    mount(<div ref={inst.root.reactRef} />);
 
     expect(inst.root.ref instanceof HTMLDivElement).toBe(true);
   });
