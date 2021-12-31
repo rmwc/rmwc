@@ -66,7 +66,7 @@ const slidableDrawerFactory = (
     return (
       <>
         <DrawerRoot
-          ref={mergeRefs(rootEl.setRef, ref)}
+          ref={mergeRefs(rootEl.reactRef, ref)}
           {...rootEl.props(rest)}
         />
         {rest.modal && <DrawerScrim {...scrimEl.props({})} />}

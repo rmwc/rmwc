@@ -19,7 +19,7 @@ import { useSwitchFoundation } from './foundation';
 /** A Switch component. */
 export interface SwitchProps
   extends RMWC.WithRippleProps,
-    ToggleableProps<MDCSwitchFoundation> {}
+  ToggleableProps<MDCSwitchFoundation> { }
 
 export type SwitchHTMLProps = ToggleHTMLProps;
 
@@ -63,7 +63,7 @@ export const Switch: RMWC.ComponentType<
           })}
           type="checkbox"
           id={id}
-          ref={mergeRefs(checkboxEl.setRef, inputRef)}
+          ref={mergeRefs(checkboxEl.reactRef, inputRef)}
           role="switch"
           aria-checked={rest.checked ?? rest['aria-checked']}
         />
@@ -94,17 +94,15 @@ const SwitchThumb = React.memo(function SwitchThumb() {
 const SwitchThumbUnderlay = withRipple({
   unbounded: true,
   surface: false
-})(function SwitchThumbUnderlay({
-  className,
-  ...rest
-}: {
-  className?: string;
-  children: React.ReactNode;
-}) {
+})(React.forwardRef<
+  any, RMWC.HTMLProps<any, any>
+>((props, ref) => {
+  const { className, ...rest } = props;
   return (
     <div
       className={classNames(className, 'mdc-switch__thumb-underlay')}
       {...rest}
+      ref={ref}
     />
   );
-});
+}));

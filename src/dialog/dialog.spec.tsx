@@ -11,8 +11,7 @@ import {
   createDialogQueue,
   DialogQueue
 } from './';
-import { wait, actWait } from '@rmwc/base/utils/test-utils';
-import { act } from 'react-dom/test-utils';
+import { wait } from '@rmwc/base/utils/test-utils';
 
 describe('Dialog', () => {
   it('simple Dialog renders', () => {
@@ -22,7 +21,7 @@ describe('Dialog', () => {
         header="Foo"
         body="You can pass the body prop, or anything you want as children."
         open
-        onClose={(evt) => {}}
+        onClose={(evt) => { }}
       />
     );
   });
@@ -32,14 +31,14 @@ describe('Dialog', () => {
       <SimpleDialog
         title="This is a simple dialog"
         open
-        onClose={(evt) => {}}
+        onClose={(evt) => { }}
       />
     );
   });
 
   it('simple Dialog renders with children', () => {
     mount(
-      <SimpleDialog title="This is a simple dialog" open onClose={(evt) => {}}>
+      <SimpleDialog title="This is a simple dialog" open onClose={(evt) => { }}>
         Hello
       </SimpleDialog>
     );
@@ -92,7 +91,7 @@ describe('Dialog', () => {
 
   it('standard Dialog renders', () => {
     const el = mount(
-      <Dialog open onClose={(evt) => {}}>
+      <Dialog open onClose={(evt) => { }}>
         <DialogTitle>Dialog Title</DialogTitle>
 
         <DialogContent>This is a custom dialog.</DialogContent>
@@ -201,7 +200,7 @@ describe('DialogQueue', () => {
     el.find('[action="accept"]').first().simulate('click');
   });
 
-  it('prompts and returns null', (done) => {
+  it('prompts and returns null', async (done) => {
     const queue = createDialogQueue();
     const el = mount(<DialogQueue dialogs={queue.dialogs} />);
     queue.prompt({ title: 'myPrompt', body: 'CUSTOM BODY' }).then((resp) => {
@@ -210,9 +209,9 @@ describe('DialogQueue', () => {
     });
 
     el.update();
+    await wait();
 
     expect(el.html().includes('CUSTOM BODY')).toBe(true);
-
     el.find('[action="close"]').first().simulate('click');
   });
 

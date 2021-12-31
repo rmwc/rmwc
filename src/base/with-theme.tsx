@@ -1,6 +1,6 @@
 import * as RMWC from '@rmwc/types';
 import React from 'react';
-
+//@ts-ignore
 import classNames from 'classnames';
 import { toDashCase } from './utils/strings';
 

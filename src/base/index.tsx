@@ -1,5 +1,6 @@
 import { WithThemeProps as _WithThemeProps } from './with-theme';
 
+//@ts-ignore
 export { default as classNames } from 'classnames';
 export * from './with-theme';
 export * from './utils';

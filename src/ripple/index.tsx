@@ -1,6 +1,5 @@
 import * as RMWC from '@rmwc/types';
 import React from 'react';
-import * as ReactDOM from 'react-dom';
 import { MDCRippleFoundation } from '@material/ripple';
 import { classNames } from '@rmwc/base';
 import { useProviderContext } from '@rmwc/provider';
@@ -30,35 +29,9 @@ export interface RippleProps {
 const RippleSurfaceContext = React.createContext({});
 
 /** A component for adding Ripples to other components. */
-const withDomNode = () => <P extends any>(
-  Component: React.ComponentType<P>
-): React.ComponentType<P & { domNode?: Element }> => {
-  // @ts-ignore
-  return class extends React.Component<
-    { children: React.ReactNode } & P & { domNode?: Element }
-  > {
-    state = { domNode: null };
 
-    componentDidMount() {
-      this.setState({ domNode: ReactDOM.findDOMNode(this) as Element });
-    }
-
-    componentDidUpdate() {
-      const rootRippleElement = ReactDOM.findDOMNode(this) as Element;
-
-      if (rootRippleElement !== this.state.domNode) {
-        this.setState({ rootRippleElement });
-      }
-    }
-
-    render() {
-      return <Component {...this.props} domNode={this.state.domNode} />;
-    }
-  };
-};
-
-export const Ripple = withDomNode()(function Ripple(
-  props: RippleProps & RMWC.HTMLProps & { domNode?: Element }
+export function Ripple(
+  props: RippleProps & RMWC.HTMLProps
 ) {
   const {
     children,
@@ -67,7 +40,6 @@ export const Ripple = withDomNode()(function Ripple(
     accent,
     unbounded,
     surface,
-    domNode,
     foundationRef,
     ...rest
   } = props;
@@ -118,6 +90,7 @@ export const Ripple = withDomNode()(function Ripple(
 
   // do some crazy props merging...
   const content = React.cloneElement(child, {
+    ref: rootEl.reactRef,
     ...child.props,
     ...unboundedProp,
     ...rootEl.props({
@@ -125,7 +98,7 @@ export const Ripple = withDomNode()(function Ripple(
       style: child.props.style,
       ...rippleSurfaceProps,
       className: finalClassNames
-    })
+    }),
   });
 
   return (
@@ -135,7 +108,7 @@ export const Ripple = withDomNode()(function Ripple(
       {content}
     </RippleSurfaceContext.Provider>
   );
-});
+};
 
 export const RippleSurface = ({
   className,
@@ -168,32 +141,30 @@ export const withRipple = ({
 }: WithRippleOpts = {}) => <P extends any, C extends React.ComponentType<P>>(
   Component: C
 ): C => {
-  const WithRippleComponent = React.forwardRef<any, P & RMWC.WithRippleProps>(
-    ({ ripple, ...rest }: any, ref) => {
-      const providerContext = useProviderContext();
-      ripple = ripple ?? providerContext.ripple;
-      const rippleOptions = typeof ripple !== 'object' ? {} : ripple;
+    const WithRippleComponent = React.forwardRef<any, P & RMWC.WithRippleProps>(
+      ({ ripple, ...rest }: any, ref) => {
+        const providerContext = useProviderContext();
+        ripple = ripple ?? providerContext.ripple;
+        const rippleOptions = typeof ripple !== 'object' ? {} : ripple;
 
-      if (ripple) {
-        return (
-          <Ripple
-            {...rest}
-            accent={rippleOptions.accent || defaultAccent}
-            unbounded={rippleOptions.unbounded || defaultUnbounded}
-            surface={rippleOptions.surface || defaultSurface}
-          >
-            <Component {...(rest as any)} ref={ref} />
-          </Ripple>
-        );
+        if (ripple) {
+          return (
+            <Ripple
+              {...rest}
+              accent={rippleOptions.accent || defaultAccent}
+              unbounded={rippleOptions.unbounded || defaultUnbounded}
+              surface={rippleOptions.surface || defaultSurface}
+            >
+              <Component {...(rest as any)} ref={ref} />
+            </Ripple>
+          );
+        }
+
+        return <Component {...(rest as any)} ref={ref} />;
       }
+    );
 
-      return <Component {...(rest as any)} ref={ref} />;
-    }
-  );
+    WithRippleComponent.displayName = `withRipple(${Component.displayName || Component.constructor.name || 'Unknown'})`;
 
-  WithRippleComponent.displayName = `withRipple(${
-    Component.displayName || Component.constructor.name || 'Unknown'
-  })`;
-
-  return WithRippleComponent as any;
-};
+    return WithRippleComponent as any;
+  };
