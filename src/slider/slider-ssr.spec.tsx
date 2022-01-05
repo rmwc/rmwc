@@ -12,15 +12,14 @@ See https://github.com/material-components/material-components-web/commit/95c735
 So when we bump MWC from v6 to v7, we can reintroduce these tests.
 What to do when bumped to v7:
 - Change jest-environemnt to 'node' on line 2: @jest-environemnt node
-- Remove .skip flags from the tests.
 */
 
 describe('Slider SSR', () => {
-  it.skip('renders uncontrolled', () => {
+  it('renders uncontrolled', () => {
     mount(<Slider />);
   });
 
-  it.skip('renders with all props', () => {
+  it('renders with all props', () => {
     mount(
       <Slider
         value={50}
