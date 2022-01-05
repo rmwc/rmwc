@@ -13,7 +13,6 @@
     "react": "^16.8.x",
     "react-dom": "^16.8.x"
   },
-  "dependencies": {},
   "scripts": {
     "install": "lerna bootstrap --force-local --hoist",
     "start": "export NODE_OPTIONS='--max-old-space-size=4096' && react-app-rewired start",
@@ -74,10 +73,10 @@
     "lerna": "^3.20.2",
     "module-alias": "^2.2.2",
     "prettier": "github:prettier/prettier#master",
-    "react": "^16.13.1",
+    "react": "^16.14.0",
     "react-app-rewire-hot-loader": "^2.0.1",
     "react-app-rewired": "^2.1.5",
-    "react-dom": "^16.13.1",
+    "react-dom": "^16.14.0",
     "react-ga": "^2.7.0",
     "react-hot-loader": "^4.12.20",
     "react-live": "^2.2.1",
