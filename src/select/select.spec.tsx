@@ -182,7 +182,7 @@ describe('Select: Lifecycle', () => {
     const el = mount(
       <Select options={['Cookies', 'Pizza', 'Icecream']} value="Cookies" />
     );
-    expect(el.html().trim()).toContain('value="Cookies');
+    expect(el.html().trim()).toContain('value="Cookies"');
   });
 
   it('SelectedText is set to value, enhanced', () => {
