@@ -36,7 +36,7 @@
     "react-dom": "^16.3.x"
   },
   "dependencies": {
-    "@material/textfield": "^6.0.0",
+    "@material/textfield": "^7.0.0",
     "@rmwc/base": "^6.1.4",
     "@rmwc/floating-label": "^6.1.4",
     "@rmwc/icon": "^6.1.4",

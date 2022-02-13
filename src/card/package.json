@@ -36,7 +36,7 @@
     "react-dom": "^16.3.x"
   },
   "dependencies": {
-    "@material/card": "^6.0.0",
+    "@material/card": "^7.0.0",
     "@rmwc/base": "^6.1.4",
     "@rmwc/button": "^6.1.4",
     "@rmwc/icon-button": "^6.1.4",
