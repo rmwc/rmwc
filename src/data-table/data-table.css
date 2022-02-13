@@ -111,10 +111,10 @@
   opacity: 1;
 }
 
-.rmwc-data-table__head-cell--sorted-descending .rmwc-data-table__sort-icon {
+.rmwc-data-table__head-cell--sorted-ascending .rmwc-data-table__sort-icon {
 }
 
-.rmwc-data-table__head-cell--sorted-ascending .rmwc-data-table__sort-icon {
+.rmwc-data-table__head-cell--sorted-descending .rmwc-data-table__sort-icon {
   /** Do stuff with sorted icons */
   transform: scaleY(-1);
 }
