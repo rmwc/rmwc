@@ -113,8 +113,6 @@ export const useSelectFoundation = (
 
           setAttributeAtIndex: (...args) =>
             menu.current?.setAttributeForElementIndex(...args),
-          removeAttributeAtIndex: (index: number, attributeName: string) =>
-            menu.current?.items()[index]?.removeAttribute(attributeName),
           focusMenuItemAtIndex: (...args) =>
             menu.current?.focusItemAtIndex(...args),
           getMenuItemCount: () => {
@@ -217,7 +215,7 @@ export const useSelectFoundation = (
 
       // This foundation requires a bit of monkey patching
       // in order to get placeholders working correctly
-      const adapter = (f as any).adapter_ as MDCSelectAdapter;
+      const adapter = (f as any).adapter as MDCSelectAdapter;
 
       // @ts-ignore private override
       f.updateLabel_ = () => {
