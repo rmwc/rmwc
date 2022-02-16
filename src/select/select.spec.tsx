@@ -118,14 +118,20 @@ describe('Select', () => {
     mount(<Select rootProps={{ name: 'test' }} />);
   });
 
-  it.skip('can be disabled', async (done) => {
-    const el = mount(<Select disabled={false} options={['1', '2', '3']} />);
+  it('can be disabled', () => {
+    const selectInput = render(
+      <Select disabled={false} options={['1', '2', '3']} />
+    );
 
-    expect(el.html().includes('mdc-select--disabled')).toBe(false);
-    el.setProps({ disabled: true });
+    expect(
+      selectInput.container.getElementsByClassName('mdc-select--disabled')
+    ).toHaveLength(0);
 
-    expect(el.html().includes('mdc-select--disabled')).toBe(true);
-    done();
+    selectInput.rerender(<Select disabled={true} options={['1', '2', '3']} />);
+
+    expect(
+      selectInput.container.getElementsByClassName('mdc-select--disabled')
+    ).toHaveLength(1);
   });
 
   it('can have custom classnames', () => {
@@ -141,9 +147,11 @@ describe('Select', () => {
     ).toEqual(true);
   });
 
-  it.skip('can autofocus', () => {
-    const el = mount(<Select options={['one', 'two', 'three']} autoFocus />);
-    expect(document.activeElement).toBe(el.find('select').getDOMNode());
+  it('can autofocus', () => {
+    const { container } = render(
+      <Select options={['one', 'two', 'three']} autoFocus />
+    );
+    expect(document.activeElement).toBe(container.querySelector('select'));
   });
 });
 
