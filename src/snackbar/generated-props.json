@@ -206,7 +206,7 @@
           "kind": "property",
           "name": "dismissIcon",
           "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/snackbar/snackbar.tsx#L40",
-          "type": "boolean | string"
+          "type": "boolean | RMWC.IconPropT"
         },
         {
           "documentation": {
