@@ -15,9 +15,10 @@ export const useChipFoundation = (props: ChipProps & ChipHTMLProps) => {
     elements: {
       rootEl: true,
       trailingIconEl: true,
-      checkmarkEl: true
+      checkmarkEl: true,
+      trailingActionEl: true
     },
-    foundation: ({ rootEl, checkmarkEl, emit, getProps }) =>
+    foundation: ({ rootEl, checkmarkEl, emit, getProps, trailingActionEl }) =>
       new MDCChipFoundation({
         addClass: (className) => {
           rootEl.addClass(className);
@@ -82,11 +83,11 @@ export const useChipFoundation = (props: ChipProps & ChipHTMLProps) => {
         },
         setTrailingActionAttr: (attr: string, value: string) => {
           const safeAttr = attr === 'tabindex' ? 'tabIndex' : attr;
-          trailingIconEl.setProp(safeAttr as any, value);
+          trailingActionEl.setProp(safeAttr as any, value);
         },
 
         focusTrailingAction: () => {
-          trailingIconEl.ref?.focus();
+          trailingActionEl.ref?.focus();
         },
         isRTL: () => {
           return rootEl.ref
@@ -94,6 +95,18 @@ export const useChipFoundation = (props: ChipProps & ChipHTMLProps) => {
                 .getComputedStyle(rootEl.ref)
                 .getPropertyValue('direction') === 'rtl'
             : false;
+        },
+        notifyEditFinish: () => {
+          // NOT IMPLEMENTED IN MATERIAL 7
+        },
+        notifyEditStart: () => {
+          // NOT IMPLEMENTED IN MATERIAL 7
+        },
+        removeTrailingActionFocus: () => {
+          // TODO
+        },
+        isTrailingActionNavigable: () => {
+          return false; // TODO
         }
       } as MDCChipAdapter)
   });
@@ -106,7 +119,7 @@ export const useChipFoundation = (props: ChipProps & ChipHTMLProps) => {
     ) => {
       evt.type === 'click' && props.onClick?.(evt as any);
       evt.type === 'keydown' && props.onKeyDown?.(evt as any);
-      return foundation.handleInteraction(evt);
+      return foundation.handleClick();
     },
     [foundation, props.onClick, props.onKeyDown]
   );
@@ -120,7 +133,7 @@ export const useChipFoundation = (props: ChipProps & ChipHTMLProps) => {
 
   const handleTrailingIconInteraction = useCallback(
     (evt: any) => {
-      return foundation.handleTrailingIconInteraction(evt);
+      return foundation.handleTrailingActionInteraction;
     },
     [foundation]
   );
