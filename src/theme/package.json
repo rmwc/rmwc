@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/theme",
-  "version": "6.1.4",
+  "version": "7.0.0",
   "description": "RMWC Theme component",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -32,13 +32,13 @@
   },
   "homepage": "https://github.com/jamesmfriedman/rmwc/tree/master/src/theme#readme",
   "peerDependencies": {
-    "react": "^16.3.x",
-    "react-dom": "^16.3.x"
+    "react": ">=16.8.x",
+    "react-dom": ">=16.8.x"
   },
   "dependencies": {
     "@material/theme": "^6.0.0",
-    "@rmwc/base": "^6.1.4",
-    "@rmwc/types": "^6.0.5"
+    "@rmwc/base": "^7.0.0",
+    "@rmwc/types": "^7.0.0"
   },
   "gitHead": "d9befec0e3b258864b71686eecd16c16feb43cf1"
 }

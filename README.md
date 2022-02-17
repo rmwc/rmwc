@@ -9,7 +9,7 @@
 
 # RMWC - React Material Web Components
 
-💥 Attention: This project is currently receiving limited support. Issues may not be responded too. If you're interested in helping with maintenance and becoming a contributor or maintainer, please message me.
+⚡️ Attention: This project is currently being brought back to life. If you're interested in helping with maintenance and becoming a contributor or maintainer, please message on Discord.
 
 RMWC is a React UI Kit built on Google's official Material Components Web library v6.x.x
 [https://rmwc.io/](https://rmwc.io/)
@@ -34,14 +34,11 @@ Features:
 - Feature Flagging made Easy: https://github.com/jamesmfriedman/flagg
 
 ## Recent updates
-
-v6.0.0 is here! Check out the migration guide https://opencollective.com/rmwc/updates/6-0-0-the-hooks-edition
-
-TL;DR
+v7.0.0 is here! This is primarily a maintenance release to revive the project and unblock using React 17.
 
 - `npm i rmwc@latest` or `npm i @rmwc/button@latest`.
-- Embracing React Hooks
-- New components, and latest updates from Google.
+- React 17 now usable as a peer dep
+- Updated dependencies
 
 _View all release notes_ 👉 https://opencollective.com/rmwc/updates
 
