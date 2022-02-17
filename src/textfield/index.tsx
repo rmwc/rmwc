@@ -64,6 +64,8 @@ export interface TextFieldProps extends RMWC.WithRippleProps {
   suffix?: string;
   /** Advanced: A reference to the MDCFoundation. */
   foundationRef?: React.Ref<MDCTextFieldFoundation | null>;
+  /** Make textarea resizeable */
+  resizeable?: boolean;
 }
 
 export type TextFieldHTMLProps = RMWC.HTMLProps<
@@ -100,6 +102,7 @@ export const TextField: RMWC.ComponentType<
     ripple,
     prefix,
     suffix,
+    resizeable,
     floatLabel: userFloatLabel,
     ...rest
   } = props;
@@ -124,8 +127,8 @@ export const TextField: RMWC.ComponentType<
   const className = useClassNames(props, [
     'mdc-text-field',
     'mdc-text-field--upgraded',
-    'mdc-text-field--filled',
     {
+      'mdc-text-field--filled': !outlined,
       'mdc-text-field--textarea': textarea,
       'mdc-text-field--fullwidth': fullwidth,
       'mdc-text-field--outlined': outlined,
@@ -135,9 +138,6 @@ export const TextField: RMWC.ComponentType<
       'mdc-text-field--with-trailing-icon': !!trailingIcon,
       'mdc-text-field--no-label': !label,
       'mdc-text-field--end-aligned': align === 'end'
-      // 'mdc-text-field__affix': !!prefix || !!suffix,
-      // 'mdc-text-field__affix--prefix': !!prefix,
-      // 'mdc-text-field__affix--suffix': !!suffix
     }
   ]);
 
@@ -195,6 +195,32 @@ export const TextField: RMWC.ComponentType<
     <TextFieldCharacterCount apiRef={setCharacterCounter} />
   ) : null;
 
+  const renderTextarea = resizeable ? (
+    <span className="mdc-text-field__resizer">
+      <Tag
+        {...rest}
+        element={inputEl}
+        className="mdc-text-field__input"
+        disabled={disabled}
+        tag="textarea"
+        ref={inputRef}
+      />
+      {renderedCharacterCounter}
+    </span>
+  ) : (
+    <>
+      <Tag
+        {...rest}
+        element={inputEl}
+        className="mdc-text-field__input"
+        disabled={disabled}
+        tag="textarea"
+        ref={inputRef}
+      />
+      {renderedCharacterCounter}
+    </>
+  );
+
   return (
     <>
       <TextFieldRoot
@@ -207,20 +233,21 @@ export const TextField: RMWC.ComponentType<
       >
         {!!icon && renderIcon(icon, 'leading')}
         {children}
-        {/** Render character counter in different place for textarea */}
-        {!!textarea && renderedCharacterCounter}
         <TextFieldRipple />
-        {!!prefix && <TextFieldPrefix prefix={prefix} />}
-        <Tag
-          {...rest}
-          element={inputEl}
-          className="mdc-text-field__input"
-          disabled={disabled}
-          tag={textarea ? 'textarea' : 'input'}
-          ref={inputRef}
-        />
-        {!!suffix && <TextFieldSuffix suffix={suffix} />}
-
+        {!!prefix && !textarea && <TextFieldPrefix prefix={prefix} />}
+        {textarea ? (
+          renderTextarea
+        ) : (
+          <Tag
+            {...rest}
+            element={inputEl}
+            className="mdc-text-field__input"
+            disabled={disabled}
+            tag="input"
+            ref={inputRef}
+          />
+        )}
+        {!!suffix && !textarea && <TextFieldSuffix suffix={suffix} />}
         {!!outlined ? (
           <>
             <NotchedOutline notch={notchWidth}>{renderedLabel}</NotchedOutline>
@@ -260,6 +287,7 @@ const TextFieldPrefix = React.memo(function TextFieldPrefix({
     </span>
   );
 });
+
 const TextFieldSuffix = React.memo(function TextFieldSuffix({
   suffix
 }: {
