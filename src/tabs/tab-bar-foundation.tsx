@@ -48,7 +48,7 @@ export const useTabBarFoundation = (
             // ignore clicks when using controlled tabs, but we still need to notify
             // to trigger the callback
             // @ts-ignore ignoring unsafe protected access
-            foundation.adapter_.notifyTabActivated(index);
+            foundation.adapter.notifyTabActivated(index);
           }
         },
         activateTabAtIndex: (index: number, clientRect: ClientRect) => {
