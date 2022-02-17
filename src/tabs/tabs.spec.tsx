@@ -1,6 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { TabBar, Tab } from './';
+import { render } from '@testing-library/react';
 
 describe('Tabs', () => {
   beforeAll(() => {
@@ -118,31 +119,36 @@ describe('Tabs', () => {
     );
 
     el.find(Tab).first().simulate('click');
-    
+
     window.requestAnimationFrame(() => {
-      expect(el.find(Tab).last().html().includes('mdc-tab--active')).toEqual(true);
+      expect(el.find(Tab).last().html().includes('mdc-tab--active')).toEqual(
+        true
+      );
       el.unmount();
       done();
     });
   });
-  
+
   it('focuses active tab on mount', (done) => {
-    const el = mount(<TabBar>
+    const { container } = render(
+      <TabBar>
         <Tab focusOnActivate>Test</Tab>
-      </TabBar>);
-    
+      </TabBar>
+    );
+
     window.requestAnimationFrame(() => {
-      expect(document.activeElement).toBe(el.find('button').getDOMNode());
-      el.unmount();
+      expect(document.activeElement).toBe(container.querySelector('button'));
       done();
     });
   });
-  
+
   it('does not focus active tab on mount', (done) => {
-    const el = mount(<TabBar>
-      <Tab focusOnActivate={false}>Test</Tab>
-    </TabBar>);
-  
+    const el = mount(
+      <TabBar>
+        <Tab focusOnActivate={false}>Test</Tab>
+      </TabBar>
+    );
+
     window.requestAnimationFrame(() => {
       expect(document.activeElement).not.toBe(el.find('button').getDOMNode());
       el.unmount();
