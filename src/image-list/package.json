@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/image-list",
-  "version": "6.1.4",
+  "version": "7.0.0",
   "description": "RMWC ImageList component",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -37,8 +37,8 @@
   },
   "dependencies": {
     "@material/image-list": "^5.1.0",
-    "@rmwc/base": "^6.1.4",
-    "@rmwc/types": "^6.0.5"
+    "@rmwc/base": "^7.0.0",
+    "@rmwc/types": "^7.0.0"
   },
   "gitHead": "bf098adc2571ee1641ef20d79f38fb64e9ff186e"
 }
