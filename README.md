@@ -33,12 +33,11 @@ Features:
 - Feature Flagging made Easy: https://github.com/jamesmfriedman/flagg
 
 ## Recent updates
-v6.0.0 is here! Check out the migration guide https://opencollective.com/rmwc/updates/6-0-0-the-hooks-edition
+v7.0.0 is here! This is primarily a maintenance release to revive the project and unblock using React 17.
 
-TL;DR
 - `npm i rmwc@latest` or `npm i @rmwc/button@latest`.
-- Embracing React Hooks
-- New components, and latest updates from Google.
+- React 17 now usable as a peer dep
+- Updated dependencies
 
 *View all release notes* 👉 https://opencollective.com/rmwc/updates
 
