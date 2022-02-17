@@ -263,7 +263,7 @@ export const useMenuSurfaceFoundation = (
       try {
         // silence this, it blows up loudly occasionally
         // @ts-ignore unsafe private variable access
-        foundation.autoPosition_();
+        foundation.autoposition();
       } catch (err) {}
     };
 
@@ -272,7 +272,7 @@ export const useMenuSurfaceFoundation = (
     const handler = props.renderToPortal ? autoPosition : () => {};
 
     raf(() => {
-      foundation.isOpen() && autoPosition();
+      foundation.isOpen();
     });
 
     // fix positioning on window resize when renderToPortal is true
@@ -290,9 +290,13 @@ export const useMenuSurfaceFoundation = (
     if (anchorCorner !== undefined) {
       foundation.setAnchorCorner(anchorCorner);
       // @ts-ignore unsafe private variable reference
-      foundation.dimensions_ = foundation.adapter_.getInnerDimensions();
+      foundation.dimensions_ = foundation.adapter.getInnerDimensions();
       // @ts-ignore unsafe private variable reference
-      foundation.autoPosition_();
+      try {
+        // silence this, it blows up loudly occasionally
+        // @ts-ignore unsafe private variable access
+        foundation.autoposition();
+      } catch (err) {}
     }
   }, [props.anchorCorner, foundation]);
 
