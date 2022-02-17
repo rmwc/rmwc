@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/ripple",
-  "version": "6.1.4",
+  "version": "7.0.0",
   "description": "RMWC Ripple component",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -32,14 +32,14 @@
   },
   "homepage": "https://github.com/jamesmfriedman/rmwc/tree/master/src/ripple#readme",
   "peerDependencies": {
-    "react": "^16.3.x",
-    "react-dom": "^16.3.x"
+    "react": ">=16.8.x",
+    "react-dom": ">=16.8.x"
   },
   "dependencies": {
     "@material/ripple": "^5.1.0",
-    "@rmwc/base": "^6.1.4",
-    "@rmwc/provider": "^6.1.4",
-    "@rmwc/types": "^6.0.5"
+    "@rmwc/base": "^7.0.0",
+    "@rmwc/provider": "^7.0.0",
+    "@rmwc/types": "^7.0.0"
   },
   "gitHead": "d9befec0e3b258864b71686eecd16c16feb43cf1"
 }

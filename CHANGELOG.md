@@ -1,3 +1,24 @@
+#### 7.0.0 (2022-02-17)
+
+##### Chores
+
+* **Dependencies:**  Update to React 17, update all dep versions (7e22a0e2)
+* **Icon:**
+  *  Add unit test to cover crash when custom render returns a string (9350f1e5)
+  *  Improve typings of icon render method (25aa225e)
+
+##### Bug Fixes
+
+* **Github Actions:**  Fixed Github Actions for running test and uploading code coverage to Codecov (5e022170)
+* **docs:**  Display proper markdown for code (3ee72fce)
+* **test:**  Fixed failing tests (bd59dba6)
+* **snackbar:**  support SVGs as dismiss icon (261a7311)
+* **list:**  Do not pass wrapFocus to Tag (d963fc42)
+
+##### Other Changes
+
+*  remove unneeded markdown (dd22bdd9)
+
 #### 6.1.4 (2020-09-11)
 
 ##### Build System / Dependencies
