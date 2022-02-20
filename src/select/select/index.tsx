@@ -418,7 +418,7 @@ export const Select: RMWC.ComponentType<
             type="text"
             value={selectedTextContent}
             disabled
-            readonly
+            readOnly
           />
           <SelectDropdownArrow />
           {!enhanced && (

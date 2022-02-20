@@ -129,11 +129,9 @@ export const useSelectFoundation = (
             menu.current?.addClassToElementIndex(...args),
           removeClassAtIndex: (...args) =>
             menu.current?.removeClassFromElementAtIndex(...args),
-          isSelectAnchorFocused: () => {
-            return document.activeElement === anchorEl.ref;
-          },
-          getSelectAnchorAttr: (attr: string) =>
-            anchorEl.getProp(attr as any) as string | null,
+          isSelectAnchorFocused: () =>
+            !!(anchorEl.ref && anchorEl.ref === document.activeElement),
+          getSelectAnchorAttr: (attr: any) => anchorEl.getProp(attr),
           setSelectAnchorAttr: (attr: string, value: string) =>
             anchorEl.setProp(attr as any, value),
           removeSelectAnchorAttr: (attr: string) => {
@@ -277,6 +275,8 @@ export const useSelectFoundation = (
         const placeholder = String(getProps().placeholder || '');
         if (!f.getValue() && placeholder) {
           adapter.setSelectedText(placeholder);
+          setSelectedTextContent(placeholder);
+          setFloatLabel(true);
         }
         silenceChange.current = false;
       };
@@ -287,20 +287,22 @@ export const useSelectFoundation = (
 
   const { selectedTextEl, rootEl } = elements;
 
+  const { onFocus } = props;
   const handleFocus = useCallback(
     (evt: any) => {
-      props.onFocus?.(evt);
+      onFocus?.(evt);
       foundation.handleFocus();
     },
-    [props.onFocus, foundation]
+    [onFocus, foundation]
   );
 
+  const { onBlur } = props;
   const handleBlur = useCallback(
     (evt: any) => {
-      props.onBlur?.(evt);
+      onBlur?.(evt);
       foundation.handleBlur();
     },
-    [props.onBlur, foundation]
+    [onBlur, foundation]
   );
 
   const handleClick = useCallback(
@@ -332,12 +334,13 @@ export const useSelectFoundation = (
     [foundation, selectedTextEl.ref, rootEl.ref]
   );
 
+  const { onKeyDown } = props;
   const handleKeydown = useCallback(
     (evt: any) => {
-      props.onKeyDown?.(evt);
+      onKeyDown?.(evt);
       foundation.handleKeydown(evt);
     },
-    [foundation, props.onKeyDown]
+    [foundation, onKeyDown]
   );
 
   const handleMenuSelected = useCallback(
@@ -386,6 +389,12 @@ export const useSelectFoundation = (
       const index = foundation.menuItemValues_.indexOf(foundationValue);
       selectedIndex.current = index;
       foundation.setValue(value || '');
+
+      // We need to call setSelectedTextContent to set the default value/the controlled value.
+      // @ts-ignore unsafe private variable access
+      if (foundation.menuItemValues_.includes(value)) {
+        setSelectedTextContent(value);
+      }
     }
     raf(() => {
       silenceChange.current = false;
