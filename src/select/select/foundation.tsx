@@ -237,15 +237,13 @@ export const useSelectFoundation = (
       // in order to get placeholders working correctly
       const adapter = (f as any).adapter as MDCSelectAdapter;
 
-      // @ts-ignore private override
-      f.updateLabel_ = () => {
+      f.layout = () => {
         const doWork = () => {
           const value = f.getValue();
 
           // This is the line we have to override to work with placeholders
           // we need to consider haveing a placeholder as a valid value
           const optionHasValue = !!getProps().placeholder || value.length > 0;
-
           if (adapter.hasLabel()) {
             f.notchOutline(optionHasValue);
 
