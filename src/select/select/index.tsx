@@ -19,6 +19,7 @@ import { withRipple } from '@rmwc/ripple';
 
 import { useSelectFoundation } from './foundation';
 import { SelectIcon } from '../select-icon';
+import { Icon } from '@rmwc/icon';
 
 export interface FormattedOption
   extends Omit<React.AllHTMLAttributes<any>, 'label'> {
@@ -57,6 +58,8 @@ export interface SelectProps {
   icon?: RMWC.IconPropT;
   /** Advanced: A reference to the MDCFoundation. */
   foundationRef?: React.Ref<MDCSelectFoundation>;
+  /** Makes Select fullwidth */
+  fullwidth?: boolean;
 }
 
 export type SelectHTMLProps = RMWC.HTMLProps<
@@ -95,9 +98,17 @@ const createSelectOptions = (options: any): FormattedOption[] => {
   return options;
 };
 
-const SelectDropdownArrow = React.memo(function SelectDropdownArrow() {
-  return <i className="mdc-select__dropdown-icon" />;
-});
+const SelectDropdownArrow = () => {
+  return (
+    <span className="mdc-select__dropdown-icon">
+      <Icon
+        className="mdc-select__dropdown-icon-inactive"
+        icon="arrow_drop_down"
+      />
+      <Icon className="mdc-select__dropdown-icon-active" icon="arrow_drop_up" />
+    </span>
+  );
+};
 
 function NativeMenu(
   props: {
@@ -193,6 +204,7 @@ interface EnhancedMenuProps extends MenuProps {
   value?: string;
   defaultValue?: any;
   children?: React.ReactNode;
+  fullwidth?: boolean;
 }
 
 function EnhancedMenu(props: EnhancedMenuProps & SelectHTMLProps) {
@@ -207,6 +219,13 @@ function EnhancedMenu(props: EnhancedMenuProps & SelectHTMLProps) {
   } = props;
 
   let currentIndex = 0;
+
+  const className = useClassNames(props, [
+    'mdc-select__menu',
+    {
+      'mdc-menu-surface--fullwidth': !!props.fullwidth
+    }
+  ]);
 
   const renderOption = ({
     label,
@@ -228,25 +247,20 @@ function EnhancedMenu(props: EnhancedMenuProps & SelectHTMLProps) {
         {...option}
         data-value={option.value}
       >
-        {label}
+        <span className="mdc-list-item__text">{label}</span>
       </MenuItem>
     );
   };
 
   return (
-    <Menu
-      {...rest}
-      apiRef={menuApiRef}
-      className="mdc-select__menu"
-      focusOnOpen
-    >
+    <Menu {...rest} apiRef={menuApiRef} className={className} focusOnOpen>
       {!!props.placeholder && (
         <MenuItem
           selected={currentIndex - 1 === selectedIndex}
           data-value=""
           theme="textDisabledOnBackground"
         >
-          {placeholder}
+          <span className="mdc-list-item__text">{placeholder}</span>
         </MenuItem>
       )}
 
@@ -301,6 +315,7 @@ export const Select: RMWC.ComponentType<
     inputRef,
     helpText,
     foundationRef,
+    fullwidth,
     ...rest
   } = props;
 
@@ -335,10 +350,12 @@ export const Select: RMWC.ComponentType<
     'mdc-select',
     {
       'mdc-select--outlined': !!outlined,
+      'mdc-select--filled': !outlined,
       'mdc-select--required': !!props.required,
       'mdc-select--invalid': !!invalid,
       'mdc-select--with-leading-icon': !!icon,
-      'mdc-select--no-label': !label
+      'mdc-select--no-label': !label,
+      'mdc-select--fullwidth': !!fullwidth
     }
   ]);
 
@@ -372,13 +389,7 @@ export const Select: RMWC.ComponentType<
 
   return (
     <>
-      <Tag
-        role="listbox"
-        {...rootProps}
-        element={rootEl}
-        ref={ref}
-        className={className}
-      >
+      <Tag {...rootProps} element={rootEl} ref={ref} className={className}>
         <AnchorEl
           className="mdc-select__anchor"
           role="button"
@@ -392,6 +403,14 @@ export const Select: RMWC.ComponentType<
           tabIndex={enhanced ? undefined : -1}
         >
           {!!icon && <SelectIcon apiRef={setLeadingIcon} icon={icon} />}
+          {outlined ? (
+            <NotchedOutline notch={notchWidth}>{renderedLabel}</NotchedOutline>
+          ) : (
+            <>
+              {renderedLabel}
+              <LineRipple active={lineRippleActive} center={lineRippleCenter} />
+            </>
+          )}
           <SelectedTextEl
             className="mdc-select__selected-text"
             element={selectedTextEl}
@@ -402,14 +421,6 @@ export const Select: RMWC.ComponentType<
             readonly
           />
           <SelectDropdownArrow />
-          {outlined ? (
-            <NotchedOutline notch={notchWidth}>{renderedLabel}</NotchedOutline>
-          ) : (
-            <>
-              {renderedLabel}
-              <LineRipple active={lineRippleActive} center={lineRippleCenter} />
-            </>
-          )}
           {!enhanced && (
             <NativeMenu
               {...rest}
@@ -420,7 +431,13 @@ export const Select: RMWC.ComponentType<
               selectOptions={selectOptions}
               elementRef={setNativeControl}
               onFocus={handleFocus}
-              onBlur={handleBlur}
+              onBlur={(evt) => {
+                handleBlur(evt);
+                // As of material 7, there is a bug where classnames mdc-select--activated and mdc-select--focused
+                // isn't being removed on blur. Therefore we need to manually call handleMenuClosed onBlur, which
+                // takes care of removing the classnames.
+                handleMenuClosed();
+              }}
               onChange={(evt: React.ChangeEvent<HTMLSelectElement>) =>
                 handleMenuSelected(evt.currentTarget.selectedIndex)
               }
@@ -446,6 +463,7 @@ export const Select: RMWC.ComponentType<
             selectedIndex={selectedIndex}
             menuApiRef={setMenu}
             children={children}
+            fullwidth={fullwidth}
           />
         )}
       </Tag>
