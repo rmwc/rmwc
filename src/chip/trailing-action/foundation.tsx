@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import { useFoundation } from '@rmwc/base';
 import { MDCChipTrailingActionFoundation } from '@material/chips';
 import { TrailingActionProps } from '.';
@@ -10,7 +10,7 @@ export const useTrailingActionFoundation = (props: TrailingActionProps) => {
     elements: { rootEl: true },
     foundation: ({ rootEl, emit }) => {
       return new MDCChipTrailingActionFoundation({
-        focus: () => rootEl.ref && rootEl.ref.focus(),
+        focus: () => rootEl.ref?.focus(),
         getAttribute: (attr: string) =>
           rootEl.ref && rootEl.ref.getAttribute(attr),
         notifyInteraction: (trigger: InteractionTrigger) => {
@@ -24,23 +24,6 @@ export const useTrailingActionFoundation = (props: TrailingActionProps) => {
       });
     }
   });
-
-  const { rootEl, foundation } = foundationWithElements;
-
-  const handleInteraction = useCallback(
-    (
-      evt: React.MouseEvent & React.KeyboardEvent & MouseEvent & KeyboardEvent
-    ) => {
-      evt.type === 'click';
-      evt.type === 'keydown';
-      console.log(evt);
-      return foundation.handleClick(evt);
-    },
-    [foundation]
-  );
-
-  rootEl.setProp('onClick', handleInteraction, true);
-  rootEl.setProp('onKeyDown', handleInteraction, true);
 
   return foundationWithElements;
 };

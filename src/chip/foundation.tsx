@@ -5,10 +5,16 @@ import { useId, emptyClientRect } from '@rmwc/base';
 import { useFoundation } from '@rmwc/base';
 import { MDCChipFoundation, MDCChipAdapter } from '@material/chips';
 import { EventSource } from '@material/chips/chip/constants';
-import React, { useEffect, useCallback } from 'react';
+import React, { useEffect, useCallback, useRef } from 'react';
+import { TrailingActionApi } from './trailing-action';
 
 export const useChipFoundation = (props: ChipProps & ChipHTMLProps) => {
   const chipId = useId('chip', props);
+
+  const trailingAction = useRef<TrailingActionApi | null>();
+  const setTrailingAction = (api: TrailingActionApi | null) => {
+    trailingAction.current = api;
+  };
 
   const foundationWithElements = useFoundation({
     props,
@@ -78,16 +84,19 @@ export const useChipFoundation = (props: ChipProps & ChipHTMLProps) => {
         focusPrimaryAction: () => {
           // Not clear in documentation what this should be used for
         },
-        hasTrailingAction: () => {
-          return !!getProps().trailingIcon;
-        },
         setTrailingActionAttr: (attr: string, value: string) => {
           const safeAttr = attr === 'tabindex' ? 'tabIndex' : attr;
-          trailingActionEl.setProp(safeAttr as any, value);
+          return trailingActionEl.setProp(safeAttr as any, value);
         },
 
         focusTrailingAction: () => {
-          trailingActionEl.ref?.focus();
+          return trailingActionEl.ref?.focus();
+        },
+        removeTrailingActionFocus: () => {
+          return trailingAction.current?.getFoundation().removeFocus();
+        },
+        isTrailingActionNavigable: () => {
+          return trailingAction.current?.getFoundation().isNavigable();
         },
         isRTL: () => {
           return rootEl.ref
@@ -101,12 +110,6 @@ export const useChipFoundation = (props: ChipProps & ChipHTMLProps) => {
         },
         notifyEditStart: () => {
           // NOT IMPLEMENTED IN MATERIAL 7
-        },
-        removeTrailingActionFocus: () => {
-          // TODO
-        },
-        isTrailingActionNavigable: () => {
-          return false; // TODO
         }
       } as MDCChipAdapter)
   });
@@ -131,12 +134,9 @@ export const useChipFoundation = (props: ChipProps & ChipHTMLProps) => {
     [foundation]
   );
 
-  const handleTrailingIconInteraction = useCallback(
-    (evt: any) => {
-      return foundation.handleTrailingActionInteraction;
-    },
-    [foundation]
-  );
+  const handleTrailingActionInteraction = useCallback(() => {
+    return foundation.handleTrailingActionInteraction();
+  }, [foundation]);
 
   // Allow customizing the behavior of the trailing icon
   useEffect(() => {
@@ -148,8 +148,8 @@ export const useChipFoundation = (props: ChipProps & ChipHTMLProps) => {
   rootEl.setProp('onClick', handleInteraction, true);
   rootEl.setProp('onKeyDown', handleInteraction, true);
   rootEl.setProp('onTransitionEnd', handleTransitionEnd, true);
-  trailingIconEl.setProp('onClick', handleTrailingIconInteraction, true);
-  trailingIconEl.setProp('onKeyDown', handleTrailingIconInteraction, true);
+  trailingIconEl.setProp('onClick', handleTrailingActionInteraction, true);
+  trailingIconEl.setProp('onKeyDown', handleTrailingActionInteraction, true);
 
-  return foundationWithElements;
+  return { setTrailingAction, ...foundationWithElements };
 };
