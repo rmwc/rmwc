@@ -29,3 +29,6 @@ Remember to remove the to-do once a feature or components has been implemented.
 - **progress-indicator:** Add common interface for progress indicators: https://github.com/material-components/material-components-web/commit/ea863cb918b9c096e36a7bc653d6661757e71b64
 - **textfield:** Add end-alignment: https://github.com/material-components/material-components-web/commit/847dd1ada08bb0fd905adac7b7836540a0dd7e9c
 - **textfield:** Add forced LTR input: https://github.com/material-components/material-components-web/commit/490fbdc092c5c59d63f83407b83b37fb524ed0e5
+
+## MWC 7
+- See features list at: https://github.com/material-components/material-components-web/blob/v7.0.0/CHANGELOG.md
