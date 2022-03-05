@@ -11,9 +11,25 @@ jobs:
       - run: echo ${{ github.head_ref }}
   alpha:
     runs-on: ubuntu-latest
-    if: contains(github.head_ref, 'release/alpha')
+
+    strategy:
+      matrix:
+        node-version: [14.x]
+    if: contains(github.head_ref, 'release/') && github.event.pull_request.opened == true
     steps:
-      - run: echo "Do alpha"
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm i react react-dom
+      - run: npm ci
+      - run: npm run alpha:patch
+        if: contains(github.head_ref, 'alpha')
+        env:
+          CI: true
+      - run: git commit --message 'Version Bump'
+
   # patch:
   #   runs-on: ubuntu-latest
   #   if: contains(github.ref, 'release/patch')
