@@ -7,21 +7,25 @@ on:
 jobs:
   alpha:
     runs-on: ubuntu-latest
+    steps:
+      - run: echo github.ref
+  alpha:
+    runs-on: ubuntu-latest
     if: contains(github.ref, 'release/alpha')
     steps:
       - run: echo "Do alpha"
-  patch:
-    runs-on: ubuntu-latest
-    if: contains(github.ref, 'release/patch')
-    steps:
-      - run: echo "Do patch"
-  minor:
-    runs-on: ubuntu-latest
-    if: contains(github.ref, 'release/minor')
-    steps:
-      - run: echo "Do minor"
-  major:
-    runs-on: ubuntu-latest
-    if: contains(github.ref, 'release/major')
-    steps:
-      - run: echo "Do major"
+  # patch:
+  #   runs-on: ubuntu-latest
+  #   if: contains(github.ref, 'release/patch')
+  #   steps:
+  #     - run: echo "Do patch"
+  # minor:
+  #   runs-on: ubuntu-latest
+  #   if: contains(github.ref, 'release/minor')
+  #   steps:
+  #     - run: echo "Do minor"
+  # major:
+  #   runs-on: ubuntu-latest
+  #   if: contains(github.ref, 'release/major')
+  #   steps:
+  #     - run: echo "Do major"
