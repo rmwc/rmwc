@@ -23,7 +23,6 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - run: npm i react react-dom
       - run: npm ci
       - run: git checkout ${{github.head_ref}}
       - run: npm run alpha:patch
