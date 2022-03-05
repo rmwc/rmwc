@@ -2,8 +2,7 @@ name: RMWC Release
 
 on:
   pull_request:
-    branches:
-      - 'release/**'
+    branches: [release/**]
 
 jobs:
   alpha:
@@ -26,9 +25,3 @@ jobs:
     if: contains(github.ref, "release/major")
     steps:
       - run: echo "Do major"
-  test:
-    runs-on: ubuntu-latest
-    if: ${{ always() }}
-    needs: [alpha, patch, minor, major]
-    steps:
-      - run: echo "Do Test"
