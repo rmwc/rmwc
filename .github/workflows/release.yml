@@ -5,7 +5,7 @@ on:
     branches: [master]
 
 jobs:
-  alpha:
+  name:
     runs-on: ubuntu-latest
     steps:
       - run: echo github.ref
