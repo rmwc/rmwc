@@ -1,8 +1,8 @@
 name: RMWC Release
 
 on:
-  pull_request_target:
-    branches: [release/**]
+  pull_request:
+    branches: [master]
 
 jobs:
   alpha:
