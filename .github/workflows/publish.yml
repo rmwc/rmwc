@@ -3,8 +3,7 @@ name: RMWC Publish
 # only trigger on pull request closed events
 on:
   pull_request:
-    branches:
-      - 'release/**'
+    branches: [release/**]
     types: [closed]
 
 jobs:

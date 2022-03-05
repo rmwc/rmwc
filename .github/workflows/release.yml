@@ -2,8 +2,7 @@ name: RMWC Release
 
 on:
   pull_request:
-    branches:
-      - 'release/**'
+    branches: [release/**]
 
 jobs:
   alpha:
