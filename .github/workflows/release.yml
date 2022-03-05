@@ -2,6 +2,7 @@ name: RMWC Release
 
 on:
   pull_request:
+    types: [opened, reopened]
     branches: [master]
 
 jobs:
@@ -15,7 +16,7 @@ jobs:
     strategy:
       matrix:
         node-version: [14.x]
-    if: contains(github.head_ref, 'release/') && github.event.pull_request.opened == true
+    if: contains(github.head_ref, 'release/')
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js ${{ matrix.node-version }}
