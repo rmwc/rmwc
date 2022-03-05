@@ -1,29 +1,27 @@
 name: RMWC Release
 
 on:
-  push:
-    branches: [master]
-  pull_request:
-    branches: [master]
+  pull_request_target:
+    branches: [release/**]
 
 jobs:
   alpha:
     runs-on: ubuntu-latest
-    if: contains(github.ref, "release/alpha")
+    if: contains(github.ref, 'release/alpha')
     steps:
       - run: echo "Do alpha"
   patch:
     runs-on: ubuntu-latest
-    if: contains(github.ref, "release/patch")
+    if: contains(github.ref, 'release/patch')
     steps:
       - run: echo "Do patch"
   minor:
     runs-on: ubuntu-latest
-    if: contains(github.ref, "release/minor")
+    if: contains(github.ref, 'release/minor')
     steps:
       - run: echo "Do minor"
   major:
     runs-on: ubuntu-latest
-    if: contains(github.ref, "release/major")
+    if: contains(github.ref, 'release/major')
     steps:
       - run: echo "Do major"
