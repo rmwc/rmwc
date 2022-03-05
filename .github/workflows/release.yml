@@ -24,7 +24,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: npm ci
-      - run: git checkout ${{github.head_ref}}
+      - run: git checkout origin/${{github.head_ref}}
       - run: npm run alpha:patch
         if: contains(github.head_ref, 'alpha')
         env:
