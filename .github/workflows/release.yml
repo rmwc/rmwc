@@ -8,7 +8,7 @@ jobs:
   name:
     runs-on: ubuntu-latest
     steps:
-      - run: echo ${{ github.base_ref }}
+      - run: echo ${{ github.head_ref }}
   alpha:
     runs-on: ubuntu-latest
     if: contains(github.ref, 'release/alpha')
