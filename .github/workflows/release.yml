@@ -11,7 +11,7 @@ jobs:
       - run: echo ${{ github.head_ref }}
   alpha:
     runs-on: ubuntu-latest
-    if: contains(github.ref, 'release/alpha')
+    if: contains(github.head_ref, 'release/alpha')
     steps:
       - run: echo "Do alpha"
   # patch:
