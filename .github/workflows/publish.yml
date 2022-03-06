@@ -10,7 +10,17 @@ jobs:
   merge_job:
     # this job will only run if the PR has been merged
     if: contains(github.head_ref, 'testpublish') && github.event.pull_request.merged == true
-    runs-on: ubuntu-latest
     steps:
-      - run: |
-          echo PR #${{ github.event.number }} will be published
+      - uses: actions/checkout@v2
+      - name: Setup Git
+        run: git fetch origin ${{ github.head_ref }} && git checkout ${{ github.head_ref }}
+      - run: git config --global user.email "ci@rmwc.io"
+      - run: git config --global user.name "RMWC CI"
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm ci
+      - run: npx lerna exec -- npm publish --tag latest
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
