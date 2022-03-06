@@ -2,14 +2,14 @@ name: RMWC Publish
 
 # only trigger on pull request closed events
 on:
-  pull_request_target:
-    branches: [release/**]
+  pull_request:
+    branches: [master]
     types: [closed]
 
 jobs:
   merge_job:
     # this job will only run if the PR has been merged
-    if: github.event.pull_request.merged == true
+    if: contains(github.head_ref, 'testpublish/') && github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
       - run: |
