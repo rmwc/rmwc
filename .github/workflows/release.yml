@@ -19,12 +19,13 @@ jobs:
     if: contains(github.head_ref, 'release/')
     steps:
       - uses: actions/checkout@v2
-        with:
-          ref: github.head_ref
+      - name: Prepare repository
+        run: git checkout "${GITHUB_REF:11}"
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
+      - run: git checkout ${{github.head_ref}}
       - run: npm ci
       - run: npm run alpha:patch
         if: contains(github.head_ref, 'alpha')
