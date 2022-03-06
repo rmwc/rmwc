@@ -1,14 +1,14 @@
-name: RMWC Unit Tests
+name: RMWC Publish
 
 on:
-  push:
-    branches: [master]
   pull_request:
     branches: [master]
+    types: [closed]
 
 jobs:
-  test:
+  publish:
     runs-on: ubuntu-latest
+    if: contains(github.head_ref, 'release/') && github.event.pull_request.merged == true
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js
@@ -16,10 +16,7 @@ jobs:
         with:
           node-version: 14.x
           registry-url: 'https://registry.npmjs.org'
-      - run: npm i react react-dom
       - run: npm ci
-      - run: npm test
+      - run: npx lerna exec -- npm publish --tag latest
         env:
-          CI: true
-      - name: Codecov
-        uses: codecov/codecov-action@v2
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
