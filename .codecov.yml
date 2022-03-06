@@ -1,3 +1,10 @@
+coverage:
+  status:
+    project:
+      default:
+        # basic
+        target: auto
+        threshold: 5%
 ignore:
   - 'node_modules/'
   - 'src/base/utils/document-component.tsx'

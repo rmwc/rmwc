@@ -7,7 +7,7 @@
 [![Backers on Open Collective](https://opencollective.com/rmwc/backers/badge.svg)](#backers)
 [![Sponsors on Open Collective](https://opencollective.com/rmwc/sponsors/badge.svg)](#sponsors)
 
-# RMWC - React Material Web Components 
+# RMWC - React Material Web Components
 
 ⚡️ Attention: This project is currently being brought back to life. If you're interested in helping with maintenance and becoming a contributor or maintainer, please message on Discord.
 
