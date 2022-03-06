@@ -1,3 +1,9 @@
+#### 7.0.1 (2022-03-06)
+
+##### Other Changes
+
+* jamesmfriedman/rmwc (210bca62)
+
 #### 7.0.0 (2022-02-17)
 
 ##### Chores
