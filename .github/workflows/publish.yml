@@ -20,11 +20,11 @@ jobs:
         run: npm ci
       - name: 'Publish'
         run: npx lerna exec -- npm publish --tag latest
-        if: github.base_ref === 'master'
+        if: github.base_ref == 'master'
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: 'Prerelease Publish'
         run: npx lerna exec -- npm publish --tag next
-        if: github.base_ref === 'next'
+        if: github.base_ref == 'next'
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
