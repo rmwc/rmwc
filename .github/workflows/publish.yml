@@ -5,22 +5,6 @@ on:
     branches: [master]
     types: [closed]
 
-# jobs:
-#   test:
-#     runs-on: ubuntu-latest
-#     if: contains(github.head_ref, 'testpublish') && github.event.pull_request.merged == true
-#     steps:
-#       - uses: actions/checkout@v2
-#       - name: Use Node.js
-#         uses: actions/setup-node@v2
-#         with:
-#           node-version: 14.x
-#           registry-url: 'https://registry.npmjs.org'
-#       - run: npm ci
-#       - run: npx lerna exec -- npm publish --tag latest
-#         env:
-#           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
 jobs:
   test:
     runs-on: ubuntu-latest
