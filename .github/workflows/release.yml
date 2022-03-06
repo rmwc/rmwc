@@ -2,8 +2,8 @@ name: RMWC Release
 
 on:
   pull_request:
-    types: [opened, reopened]
     branches: [master]
+    types: [opened, reopened]
 
 jobs:
   release:
