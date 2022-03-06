@@ -8,7 +8,7 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    if: contains(github.head_ref, 'testpublish') && github.event.pull_request.merged == true
+    if: contains(github.head_ref, 'release/') && github.event.pull_request.merged == true
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js
