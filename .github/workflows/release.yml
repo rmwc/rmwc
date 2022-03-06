@@ -5,42 +5,26 @@ on:
     branches: [master]
 
 jobs:
-  name:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo ${{ github.head_ref }}
   release:
     runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version: [14.x]
-    if: contains(github.head_ref, 'release/') && github.event.pull_request.opened == true
+    if: contains(github.head_ref, 'release/')
     steps:
       - uses: actions/checkout@v2
+      - name: Setup Git
+        run: git fetch origin ${{ github.head_ref }} && git checkout ${{ github.head_ref }}
+      - run: git config --global user.email "ci@rmwc.io"
+      - run: git config --global user.name "RMWC CI"
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
       - run: npm ci
       - run: npm run release:patch
-        if: contains(github.head_ref, 'patch')
+        if: contains(github.head_ref, '/patch')
       - run: npm run release:minor
-        if: contains(github.head_ref, 'minor')
+        if: contains(github.head_ref, '/minor')
       - run: npm run release:major
-        if: contains(github.head_ref, 'major')
-
-  # patch:
-  #   runs-on: ubuntu-latest
-  #   if: contains(github.ref, 'release/patch')
-  #   steps:
-  #     - run: echo "Do patch"
-  # minor:
-  #   runs-on: ubuntu-latest
-  #   if: contains(github.ref, 'release/minor')
-  #   steps:
-  #     - run: echo "Do minor"
-  # major:
-  #   runs-on: ubuntu-latest
-  #   if: contains(github.ref, 'release/major')
-  #   steps:
-  #     - run: echo "Do major"
+        if: contains(github.head_ref, '/major')
