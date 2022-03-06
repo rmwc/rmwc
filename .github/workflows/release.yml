@@ -5,10 +5,6 @@ on:
     branches: [master]
 
 jobs:
-  name:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo ${{ github.head_ref }}
   release:
     runs-on: ubuntu-latest
     strategy:
@@ -23,11 +19,11 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: npm ci
       - run: npm run release:patch
-        if: contains(github.head_ref, 'patch')
+        if: contains(github.head_ref, '/patch')
       - run: npm run release:minor
-        if: contains(github.head_ref, 'minor')
+        if: contains(github.head_ref, '/minor')
       - run: npm run release:major
-        if: contains(github.head_ref, 'major')
+        if: contains(github.head_ref, '/major')
 
   # patch:
   #   runs-on: ubuntu-latest
