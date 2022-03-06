@@ -13,6 +13,10 @@ jobs:
     if: contains(github.head_ref, 'release/')
     steps:
       - uses: actions/checkout@v2
+      - name: Setup Git
+        run: git fetch origin ${{ github.head_ref }} && git checkout ${{ github.head_ref }}
+      - run: git config --global user.email "ci@rmwc.io"
+      - run: git config --global user.name "RMWC CI"
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
