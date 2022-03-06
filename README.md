@@ -7,7 +7,7 @@
 [![Backers on Open Collective](https://opencollective.com/rmwc/backers/badge.svg)](#backers)
 [![Sponsors on Open Collective](https://opencollective.com/rmwc/sponsors/badge.svg)](#sponsors)
 
-# RMWC - React Material Web Components
+# RMWC - React Material Web Components 
 
 ⚡️ Attention: This project is currently being brought back to life. If you're interested in helping with maintenance and becoming a contributor or maintainer, please message on Discord.
 
@@ -34,6 +34,7 @@ Features:
 - Feature Flagging made Easy: https://github.com/jamesmfriedman/flagg
 
 ## Recent updates
+
 v7.0.0 is here! This is primarily a maintenance release to revive the project and unblock using React 17.
 
 - `npm i rmwc@latest` or `npm i @rmwc/button@latest`.
