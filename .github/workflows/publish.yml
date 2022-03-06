@@ -13,10 +13,6 @@ jobs:
     if: contains(github.head_ref, 'testpublish') && github.event.pull_request.merged == true
     steps:
       - uses: actions/checkout@v2
-      - name: Setup Git
-        run: git fetch origin ${{ github.head_ref }} && git checkout ${{ github.head_ref }}
-      - run: git config --global user.email "ci@rmwc.io"
-      - run: git config --global user.name "RMWC CI"
       - uses: actions/setup-node@v2
         with:
           node-version: '14.x'
