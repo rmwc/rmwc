@@ -9,9 +9,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo ${{ github.head_ref }}
-  alpha:
+  release:
     runs-on: ubuntu-latest
-
     strategy:
       matrix:
         node-version: [14.x]
@@ -22,13 +21,13 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - run: npm i react react-dom
       - run: npm ci
-      - run: npm run alpha:patch
-        if: contains(github.head_ref, 'alpha')
-        env:
-          CI: true
-      - run: git commit --message 'Version Bump'
+      - run: npm run release:patch
+        if: contains(github.head_ref, 'patch')
+      - run: npm run release:minor
+        if: contains(github.head_ref, 'minor')
+      - run: npm run release:major
+        if: contains(github.head_ref, 'major')
 
   # patch:
   #   runs-on: ubuntu-latest
