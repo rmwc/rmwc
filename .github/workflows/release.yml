@@ -24,12 +24,11 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: npm ci
-      - run: git checkout origin/${{github.head_ref}}
+      - run: git branch ${{github.head_ref}}
       - run: npm run alpha:patch
         if: contains(github.head_ref, 'alpha')
         env:
           CI: true
-      - run: git commit --message 'Version Bump'
 
   # patch:
   #   runs-on: ubuntu-latest

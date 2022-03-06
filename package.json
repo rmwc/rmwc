@@ -31,7 +31,7 @@
     "_alpha": "lerna publish --dist-tag next",
     "alpha": "lerna publish",
     "_alpha:patch": "lerna publish prepatch --dist-tag next",
-    "alpha:patch": "lerna version prepatch --force-publish --yes",
+    "alpha:patch": "lerna version prepatch --force-publish --yes --no-push",
     "alpha:minor": "lerna publish preminor --dist-tag next",
     "alpha:major": "lerna publish premajor --dist-tag next",
     "clean": "node scripts/clean.js",
