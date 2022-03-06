@@ -1,3 +1,10 @@
+#### 7.0.2 (2022-03-06)
+
+##### Other Changes
+
+* jamesmfriedman/rmwc (bea038b7)
+* jamesmfriedman/rmwc (210bca62)
+
 #### 7.0.1 (2022-03-06)
 
 ##### Other Changes
