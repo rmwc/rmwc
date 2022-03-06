@@ -7,9 +7,6 @@ on:
 jobs:
   release:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [14.x]
     if: contains(github.head_ref, 'release/')
     steps:
       - uses: actions/checkout@v2
@@ -18,9 +15,10 @@ jobs:
       - run: git config --global user.email "ci@rmwc.io"
       - run: git config --global user.name "RMWC CI"
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+      - uses: actions/setup-node@v2
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: '14.x'
+          registry-url: 'https://registry.npmjs.org'
       - run: npm ci
       - run: npm run release:patch
         if: contains(github.head_ref, '/patch')
