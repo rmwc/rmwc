@@ -6,7 +6,7 @@ on:
     types: [opened, reopened]
 
 jobs:
-  rlease:
+  release:
     runs-on: ubuntu-latest
     if: contains(github.head_ref, 'release/')
     steps:
