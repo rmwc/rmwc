@@ -2,7 +2,7 @@ name: RMWC Release
 
 on:
   pull_request:
-    branches: [master]
+    branches: [master, next]
     types: [opened, reopened]
 
 jobs:
@@ -21,9 +21,21 @@ jobs:
           node-version: '14.x'
           registry-url: 'https://registry.npmjs.org'
       - run: npm ci
-      - run: npm run release:patch
-        if: contains(github.head_ref, '/patch')
-      - run: npm run release:minor
-        if: contains(github.head_ref, '/minor')
-      - run: npm run release:major
-        if: contains(github.head_ref, '/major')
+      - name: 'Patch Release'
+        run: npm run release:patch
+        if: contains(github.head_ref, '/patch') && github.base_ref == 'master'
+      - name: 'Minor Release'
+        run: npm run release:minor
+        if: contains(github.head_ref, '/minor') && github.base_ref == 'master'
+      - name: 'Major Release'
+        run: npm run release:major
+        if: contains(github.head_ref, '/major') && github.base_ref == 'master'
+      - name: 'Alpha Patch Release'
+        run: npm run alpha:patch
+        if: contains(github.head_ref, '/patch') && github.base_ref == 'next'
+      - name: 'Alpha Minor Release'
+        run: npm run alpha:minor
+        if: contains(github.head_ref, '/minor') && github.base_ref == 'next'
+      - name: 'Alpha Major Release'
+        run: npm run alpha:major
+        if: contains(github.head_ref, '/major') && github.base_ref == 'next'
