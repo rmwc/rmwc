@@ -10,7 +10,7 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     # this job will only run if the PR has been merged
-    if: contains(github.head_ref, 'testpublish') && github.event.pull_request.merged == true
+    #if: contains(github.head_ref, 'testpublish') && github.event.pull_request.merged == true
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
