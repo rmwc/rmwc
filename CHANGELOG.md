@@ -1,3 +1,9 @@
+#### 7.0.1-alpha.0 (2022-03-06)
+
+##### Other Changes
+
+* jamesmfriedman/rmwc into release/alpha-1 (d9cbe06b)
+
 #### 7.0.0 (2022-02-17)
 
 ##### Chores
