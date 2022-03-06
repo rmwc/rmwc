@@ -36,7 +36,7 @@
     "react-dom": ">=16.8.x"
   },
   "dependencies": {
-    "@material/form-field": "^5.1.0",
+    "@material/form-field": "^6.0.0",
     "@rmwc/base": "^7.0.1",
     "@rmwc/types": "^7.0.1"
   },

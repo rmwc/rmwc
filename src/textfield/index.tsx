@@ -58,6 +58,10 @@ export interface TextFieldProps extends RMWC.WithRippleProps {
   inputRef?: React.Ref<HTMLInputElement | HTMLTextAreaElement | null>;
   /** The type of input field to render, search, number, etc */
   type?: string;
+  /** Add prefix. */
+  prefix?: string;
+  /** Add suffix. */
+  suffix?: string;
   /** Advanced: A reference to the MDCFoundation. */
   foundationRef?: React.Ref<MDCTextFieldFoundation | null>;
 }
@@ -94,6 +98,8 @@ export const TextField: RMWC.ComponentType<
     rootProps = {},
     foundationRef,
     ripple,
+    prefix,
+    suffix,
     floatLabel: userFloatLabel,
     ...rest
   } = props;
@@ -117,8 +123,8 @@ export const TextField: RMWC.ComponentType<
 
   const className = useClassNames(props, [
     'mdc-text-field',
-    'mdc-text-field--upgraded',
     {
+      'mdc-text-field--filled': !outlined,
       'mdc-text-field--textarea': textarea,
       'mdc-text-field--fullwidth': fullwidth,
       'mdc-text-field--outlined': outlined,
@@ -199,7 +205,9 @@ export const TextField: RMWC.ComponentType<
         {children}
         {/** Render character counter in different place for textarea */}
         {!!textarea && renderedCharacterCounter}
-        <TextFieldRipple />
+        {/* Ripple should not be applied when outlined variant */}
+        {!outlined && <TextFieldRipple />}
+        {!!prefix && <TextFieldPrefix prefix={prefix} />}
         <Tag
           {...rest}
           element={inputEl}
@@ -208,7 +216,7 @@ export const TextField: RMWC.ComponentType<
           tag={textarea ? 'textarea' : 'input'}
           ref={inputRef}
         />
-
+        {!!suffix && <TextFieldSuffix suffix={suffix} />}
         {!!outlined ? (
           <>
             <NotchedOutline notch={notchWidth}>{renderedLabel}</NotchedOutline>
@@ -236,6 +244,29 @@ const TextFieldRoot = withRipple({ surface: false })(
     return <Tag {...props} tag="label" ref={ref} />;
   })
 );
+
+const TextFieldPrefix = React.memo(function TextFieldPrefix({
+  prefix
+}: {
+  prefix: string;
+}) {
+  return (
+    <span className="mdc-text-field__affix mdc-text-field__affix--prefix">
+      {prefix}
+    </span>
+  );
+});
+const TextFieldSuffix = React.memo(function TextFieldSuffix({
+  suffix
+}: {
+  suffix: string;
+}) {
+  return (
+    <span className="mdc-text-field__affix mdc-text-field__affix--suffix">
+      {suffix}
+    </span>
+  );
+});
 
 /*********************************************************************
  * Character Count

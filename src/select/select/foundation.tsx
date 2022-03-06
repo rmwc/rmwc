@@ -52,8 +52,8 @@ export const useSelectFoundation = (
 
   const { foundation, ...elements } = useFoundation({
     props,
-    elements: { rootEl: true, selectedTextEl: true },
-    foundation: ({ rootEl, selectedTextEl, getProps, emit }) => {
+    elements: { rootEl: true, selectedTextEl: true, anchorEl: true },
+    foundation: ({ rootEl, selectedTextEl, anchorEl, getProps, emit }) => {
       const isNative = () => !getProps().enhanced;
 
       const getSelectAdapterMethods = (): Partial<MDCSelectAdapter> => {
@@ -97,21 +97,6 @@ export const useSelectFoundation = (
           setSelectedText: (text: string) => {
             setSelectedTextContent(text);
           },
-          isSelectedTextFocused: () =>
-            !!(
-              selectedTextEl.ref &&
-              selectedTextEl.ref === document.activeElement
-            ),
-          getSelectedTextAttr: (attr: any) => selectedTextEl.getProp(attr),
-          setSelectedTextAttr: (attr: any, value: string) => {
-            if (attr === 'tabindex') {
-              // Fixes bug 595 https://github.com/jamesmfriedman/rmwc/issues/595.
-              // Native selects don't need tabIndexes on the root element
-              if (isNative()) return;
-              attr = 'tabIndex';
-            }
-            selectedTextEl.setProp(attr, value);
-          },
           openMenu: () => {
             setMenuOpen(true);
           },
@@ -143,7 +128,12 @@ export const useSelectFoundation = (
           addClassAtIndex: (...args) =>
             menu.current?.addClassToElementIndex(...args),
           removeClassAtIndex: (...args) =>
-            menu.current?.removeClassFromElementAtIndex(...args)
+            menu.current?.removeClassFromElementAtIndex(...args),
+          isSelectAnchorFocused: () =>
+            !!(anchorEl.ref && anchorEl.ref === document.activeElement),
+          getSelectAnchorAttr: (attr: any) => anchorEl.getProp(attr),
+          setSelectAnchorAttr: (attr: string, value: string) =>
+            anchorEl.setProp(attr as any, value)
         };
       };
 
@@ -269,6 +259,8 @@ export const useSelectFoundation = (
         const placeholder = String(getProps().placeholder || '');
         if (!f.getValue() && placeholder) {
           adapter.setSelectedText(placeholder);
+          setSelectedTextContent(placeholder);
+          setFloatLabel(true);
         }
         silenceChange.current = false;
       };
@@ -373,9 +365,15 @@ export const useSelectFoundation = (
 
     if (value !== undefined && value !== foundationValue) {
       // @ts-ignore unsafe private variable access
-      const index = foundation.menuItemValues_.indexOf(value);
+      const index = foundation.menuItemValues_.indexOf(foundationValue);
       selectedIndex.current = index;
       foundation.setValue(value || '');
+
+      // We need to call setSelectedTextContent to set the default value/the controlled value.
+      // @ts-ignore unsafe private variable access
+      if (foundation.menuItemValues_.includes(value)) {
+        setSelectedTextContent(value);
+      }
     }
     raf(() => {
       silenceChange.current = false;

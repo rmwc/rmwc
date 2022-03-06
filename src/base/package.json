@@ -36,7 +36,7 @@
     "react-dom": ">=16.8.x"
   },
   "dependencies": {
-    "@material/dom": "^5.1.0",
+    "@material/dom": "^6.0.0",
     "@rmwc/types": "^7.0.1",
     "@types/classnames": "^2.3.1",
     "classnames": "^2.3.1",

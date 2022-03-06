@@ -4,33 +4,45 @@ import { useFoundation } from '@rmwc/base';
 import { LinearProgressProps } from '.';
 
 export const useLinearProgressFoundation = (props: LinearProgressProps) => {
+  const setStyleWithSelector = (
+    ref: HTMLElement | null,
+    selector: string,
+    styleProperty: string,
+    value: string | null
+  ) => {
+    const el: HTMLElement | null = ref?.querySelector(selector) ?? null;
+    el && ((el.style as any)[styleProperty] = value);
+  };
+
   const { foundation, ...elements } = useFoundation({
     props,
     elements: { rootEl: true },
     foundation: ({ rootEl }) => {
       return new MDCLinearProgressFoundation({
         addClass: (className: string) => rootEl.addClass(className),
-        getPrimaryBar: () => {
-          return (
-            rootEl.ref?.querySelector(
-              MDCLinearProgressFoundation.strings.PRIMARY_BAR_SELECTOR
-            ) || null
-          );
-        },
         forceLayout: () => rootEl.ref?.offsetWidth,
-        getBuffer: () =>
-          rootEl.ref?.querySelector(
-            MDCLinearProgressFoundation.strings.BUFFER_SELECTOR
-          ) || null,
         hasClass: (className: string) => rootEl.hasClass(className),
         removeClass: (className: string) => rootEl.removeClass(className),
-        setStyle: (
-          el: HTMLElement,
-          styleProperty: string,
-          value: string | null
-        ) => {
-          (el.style as any)[styleProperty] = value;
-        }
+        setBufferBarStyle: (styleProperty: string, value: string | null) => {
+          setStyleWithSelector(
+            rootEl.ref,
+            MDCLinearProgressFoundation.strings.BUFFER_BAR_SELECTOR,
+            styleProperty,
+            value
+          );
+        },
+        setPrimaryBarStyle: (styleProperty: string, value: string | null) => {
+          setStyleWithSelector(
+            rootEl.ref,
+            MDCLinearProgressFoundation.strings.PRIMARY_BAR_SELECTOR,
+            styleProperty,
+            value
+          );
+        },
+        setAttribute: (name: string, value: string) => {
+          rootEl.setProp(name as any, value);
+        },
+        removeAttribute: (name: string) => rootEl.removeProp(name as any)
       });
     }
   });
