@@ -37,8 +37,8 @@
   },
   "dependencies": {
     "@material/layout-grid": "^7.0.0",
-    "@rmwc/base": "^7.0.3",
-    "@rmwc/types": "^7.0.3"
+    "@rmwc/base": "^7.0.1",
+    "@rmwc/types": "^7.0.1"
   },
   "gitHead": "bf098adc2571ee1641ef20d79f38fb64e9ff186e"
 }

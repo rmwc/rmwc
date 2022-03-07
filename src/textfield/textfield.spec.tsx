@@ -160,6 +160,16 @@ describe('TextField', () => {
     await wait(100);
     expect(el.html().includes('mdc-floating-label--float-above')).toBe(true);
   });
+
+  it('can have a prefix', () => {
+    const el = mount(<TextField prefix="USD" />);
+    expect(el.html().includes('mdc-text-field__affix--prefix')).toBe(true);
+  });
+
+  it('can have a suffix', () => {
+    const el = mount(<TextField suffix="USD" />);
+    expect(el.html().includes('mdc-text-field__affix--suffix')).toBe(true);
+  });
 });
 
 describe('TextFieldHelperText', () => {

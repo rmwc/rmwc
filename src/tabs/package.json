@@ -40,10 +40,10 @@
     "@material/tab-bar": "^7.0.0",
     "@material/tab-indicator": "^7.0.0",
     "@material/tab-scroller": "^7.0.0",
-    "@rmwc/base": "^7.0.3",
-    "@rmwc/icon": "^7.0.3",
-    "@rmwc/ripple": "^7.0.3",
-    "@rmwc/types": "^7.0.3"
+    "@rmwc/base": "^7.0.1",
+    "@rmwc/icon": "^7.0.1",
+    "@rmwc/ripple": "^7.0.1",
+    "@rmwc/types": "^7.0.1"
   },
   "gitHead": "d9befec0e3b258864b71686eecd16c16feb43cf1"
 }
