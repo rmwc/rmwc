@@ -36,7 +36,7 @@
     "react-dom": ">=16.8.x"
   },
   "dependencies": {
-    "@material/data-table": "^7.0.0",
+    "@material/data-table": "^8.0.0",
     "@rmwc/base": "^7.0.1",
     "@rmwc/checkbox": "^7.0.1",
     "@rmwc/icon": "^7.0.1",
