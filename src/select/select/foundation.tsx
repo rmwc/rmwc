@@ -76,28 +76,6 @@ export const useSelectFoundation = (
         };
 
         return {
-          getSelectedMenuItem: () => {
-            if (isNative()) {
-              return nativeControl.current?.selectedOptions[0] || null;
-            }
-
-            if (selectedIndex.current === -1) {
-              return (
-                menu.current
-                  ?.getSurfaceElement()
-                  ?.querySelector('.mdc-list-item--activated') || null
-              );
-            } else {
-              return items()[selectedIndex.current];
-            }
-          },
-          getMenuItemAttr: (menuItem: Element, attr: string) => {
-            if (attr === 'data-value') {
-              return getValue(menuItem);
-            }
-
-            return menuItem.getAttribute(attr);
-          },
           setSelectedText: (text: string) => {
             setSelectedTextContent(text);
           },
@@ -114,8 +92,6 @@ export const useSelectFoundation = (
           setMenuWrapFocus: (wrapFocus: boolean) => {
             //(this.menu_.wrapFocus = wrapFocus)
           },
-          setAttributeAtIndex: (...args) =>
-            menu.current?.setAttributeForElementIndex(...args),
           focusMenuItemAtIndex: (index: number) =>
             menu.current?.focusItemAtIndex(index),
           getMenuItemCount: () => {
@@ -125,10 +101,6 @@ export const useSelectFoundation = (
           getMenuItemTextAtIndex: (index: number) => {
             return items()[index].textContent as string;
           },
-          addClassAtIndex: (...args) =>
-            menu.current?.addClassToElementIndex(...args),
-          removeClassAtIndex: (...args) =>
-            menu.current?.removeClassFromElementAtIndex(...args),
           isSelectAnchorFocused: () =>
             !!(anchorEl.ref && anchorEl.ref === document.activeElement),
           getSelectAnchorAttr: (attr: any) => anchorEl.getProp(attr),
@@ -148,6 +120,22 @@ export const useSelectFoundation = (
               ?.getSurfaceElement()
               ?.querySelector('.mdc-list-item--activated')
               ?.classList.remove(className);
+          },
+          getSelectedIndex: () => {
+            if (isNative() && nativeControl.current !== undefined) {
+              return nativeControl.current.selectedOptions[0].index;
+            }
+            if (menu.current === undefined) {
+              return -1;
+            }
+            const index = menu.current.selectedIndex();
+            return index instanceof Array ? index[0] : index;
+          },
+          setSelectedIndex: (index: number) => {
+            if (index >= 1) {
+              setFloatLabel(true);
+            }
+            return menu.current?.setSelectedIndex(index);
           }
         };
       };
