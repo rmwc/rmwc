@@ -12,7 +12,7 @@ The to-do list are based on the CHANGELOG.md file from the material-components-w
 
 Remember to remove the to-do once a feature or components has been implemented.
 
-## MWC 6
+## MCW 6
 
 - Create announce utility: https://github.com/material-components/material-components-web/commit/32c1df133f07679b44ce34ed9d11e22035f8d3d9
 - **chips:** Announce when chips are removed: https://github.com/material-components/material-components-web/commit/b3f70ebded85240e75c6d1553cc9d0382b22c31d (utilizing the announce utility)
@@ -30,5 +30,12 @@ Remember to remove the to-do once a feature or components has been implemented.
 - **textfield:** Add end-alignment: https://github.com/material-components/material-components-web/commit/847dd1ada08bb0fd905adac7b7836540a0dd7e9c
 - **textfield:** Add forced LTR input: https://github.com/material-components/material-components-web/commit/490fbdc092c5c59d63f83407b83b37fb524ed0e5
 
-## MWC 7
+## MCW 7
+
 - See features list at: https://github.com/material-components/material-components-web/blob/v7.0.0/CHANGELOG.md
+
+## MCW 8
+
+- See features list at: https://github.com/material-components/material-components-web/blob/v8.0.0/CHANGELOG.md
+- **banner:** New component
+- **segmented-button:** New component
