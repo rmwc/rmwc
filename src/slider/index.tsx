@@ -43,7 +43,14 @@ export type SliderHTMLProps = RMWC.HTMLProps<
 
 const SliderTrack = React.memo(
   React.forwardRef(function SliderTrack(props: any, ref: React.Ref<any>) {
-    return <div ref={ref} className="mdc-slider__track" />;
+    return (
+      <div ref={ref} className="mdc-slider__track">
+        <div className="mdc-slider__track--inactive"></div>
+        <div className="mdc-slider__track--active">
+          <div className="mdc-slider__track--active_fill"></div>
+        </div>
+      </div>
+    );
   })
 );
 
@@ -56,98 +63,84 @@ const SliderTrackMarkerContainer = React.memo(
   })
 );
 
-const SliderPin = React.memo(function SliderPin({ value }: { value: number }) {
-  return (
-    <div className="mdc-slider__pin">
-      <span className="mdc-slider__pin-value-marker">{value}</span>
-    </div>
-  );
-});
-
 const SliderThumb = React.memo(function SliderThumb() {
-  return (
-    <svg className="mdc-slider__thumb" width="21" height="21">
-      <circle cx="10.5" cy="10.5" r="7.875" />
-    </svg>
-  );
+  return <div className="mdc-slider__thumb-knob"></div>;
 });
 
-const SliderFocusRing = React.memo(function SliderFocusRing() {
-  return <div className="mdc-slider__focus-ring" />;
-});
+export const Slider: RMWC.ComponentType<SliderProps, SliderHTMLProps, 'input'> =
+  createComponent<SliderProps, SliderHTMLProps>(function Slider(props, ref) {
+    const {
+      rootEl,
+      setThumbsRef,
+      setTracActivekRef,
+      setTrackMarkerContainerRef
+    } = useSliderFoundation(props);
 
-export const Slider: RMWC.ComponentType<
-  SliderProps,
-  SliderHTMLProps,
-  'input'
-> = createComponent<SliderProps, SliderHTMLProps>(function Slider(props, ref) {
-  const {
-    rootEl,
-    thumbContainerEl,
-    sliderPinEl,
-    setTrackRef,
-    setTrackMarkerContainerRef
-  } = useSliderFoundation(props);
+    const {
+      value,
+      min,
+      max,
+      discrete,
+      displayMarkers,
+      step,
+      disabled,
+      onChange,
+      onInput,
+      children,
+      foundationRef,
+      ...rest
+    } = props;
 
-  const {
-    value,
-    min,
-    max,
-    discrete,
-    displayMarkers,
-    step,
-    disabled,
-    onChange,
-    onInput,
-    children,
-    foundationRef,
-    ...rest
-  } = props;
+    const className = useClassNames(props, [
+      'mdc-slider',
+      {
+        'mdc-slider--discrete': discrete,
+        'mdc-slider--display-markers': displayMarkers && discrete
+      }
+    ]);
 
-  const className = useClassNames(props, [
-    'mdc-slider',
-    {
-      'mdc-slider--discrete': discrete,
-      'mdc-slider--display-markers': displayMarkers && discrete
-    }
-  ]);
+    const dataStep = step ? { 'data-step': step } : {};
 
-  const dataStep = step ? { 'data-step': step } : {};
-
-  if (displayMarkers && !discrete) {
-    console.warn(
-      `The 'displayMarkers' prop on rmwc Slider will
+    if (displayMarkers && !discrete) {
+      console.warn(
+        `The 'displayMarkers' prop on rmwc Slider will
         only work in conjunction with the 'discrete' prop`
-    );
-  }
+      );
+    }
 
-  return (
-    <Tag
-      tabIndex={0}
-      //eslint-disable-next-line jsx-a11y/role-has-required-aria-props
-      role="slider"
-      aria-valuemax={max as any}
-      aria-valuenow={value as any}
-      aria-label="Select Value"
-      {...(disabled ? { 'aria-disabled': disabled } : {})}
-      {...dataStep}
-      {...rest}
-      ref={ref}
-      element={rootEl}
-      className={className}
-    >
-      <div className="mdc-slider__track-container">
-        <SliderTrack ref={setTrackRef} />
-        {displayMarkers && (
+    return (
+      <Tag
+        // tabIndex={0}
+        //eslint-disable-next-line jsx-a11y/role-has-required-aria-props
+        // role="slider"
+        // aria-valuemin={min as any}
+        // aria-valuemax={max as any}
+        // aria-valuenow={value as any}
+        // aria-label="Select Value"
+        // {...(disabled ? { 'aria-disabled': disabled } : {})}
+        // {...dataStep}
+        // {...rest}
+        tag="div"
+        ref={ref}
+        element={rootEl}
+        className={className}
+      >
+        <SliderTrack ref={setTracActivekRef} />
+        {/* {displayMarkers && (
           <SliderTrackMarkerContainer ref={setTrackMarkerContainerRef} />
-        )}
-      </div>
-      <Tag element={thumbContainerEl} className="mdc-slider__thumb-container">
-        {discrete && <SliderPin value={sliderPinEl.getProp('value')} />}
-        <SliderThumb />
-        <SliderFocusRing />
+        )} */}
+        <Tag
+          tabIndex={0}
+          ref={setThumbsRef}
+          className="mdc-slider__thumb"
+          role="slider"
+          aria-valuemin={min as any}
+          aria-valuemax={max as any}
+          aria-valuenow={value as any}
+        >
+          <SliderThumb />
+        </Tag>
+        {children}
       </Tag>
-      {children}
-    </Tag>
-  );
-});
+    );
+  });
