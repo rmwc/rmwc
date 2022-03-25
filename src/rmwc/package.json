@@ -1,6 +1,6 @@
 {
   "name": "rmwc",
-  "version": "7.0.1",
+  "version": "7.0.3",
   "description": "RMWC is a React UI Kit built on Google's official Material Components Web library.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -77,7 +77,7 @@
     "@rmwc/top-app-bar": "^7.0.1",
     "@rmwc/types": "^7.0.1",
     "@rmwc/typography": "^7.0.1",
-    "material-components-web": "^6.0.0"
+    "material-components-web": "^7.0.0"
   },
   "gitHead": "d9befec0e3b258864b71686eecd16c16feb43cf1"
 }

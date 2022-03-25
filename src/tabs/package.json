@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/tabs",
-  "version": "7.0.1",
+  "version": "7.0.3",
   "description": "RMWC Tabs component",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -36,10 +36,10 @@
     "react-dom": ">=16.8.x"
   },
   "dependencies": {
-    "@material/tab": "^6.0.0",
-    "@material/tab-bar": "^6.0.0",
-    "@material/tab-indicator": "^6.0.0",
-    "@material/tab-scroller": "^6.0.0",
+    "@material/tab": "^7.0.0",
+    "@material/tab-bar": "^7.0.0",
+    "@material/tab-indicator": "^7.0.0",
+    "@material/tab-scroller": "^7.0.0",
     "@rmwc/base": "^7.0.1",
     "@rmwc/icon": "^7.0.1",
     "@rmwc/ripple": "^7.0.1",

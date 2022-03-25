@@ -48,7 +48,9 @@ export const DataTable = createComponent<DataTableProps>(function DataTable(
   ]);
   return (
     <DataTableContext.Provider value={true}>
-      <Tag {...rest} ref={ref} className={className} />
+      <Tag {...rest} ref={ref} className={className}>
+        <div className="mdc-data-table__table-container">{rest.children}</div>
+      </Tag>
     </DataTableContext.Provider>
   );
 });

@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/radio",
-  "version": "7.0.1",
+  "version": "7.0.3",
   "description": "RMWC Radio component",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -36,7 +36,7 @@
     "react-dom": ">=16.8.x"
   },
   "dependencies": {
-    "@material/radio": "^6.0.0",
+    "@material/radio": "^7.0.0",
     "@rmwc/base": "^7.0.1",
     "@rmwc/formfield": "^7.0.1",
     "@rmwc/ripple": "^7.0.1",

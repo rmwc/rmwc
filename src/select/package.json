@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/select",
-  "version": "7.0.1",
+  "version": "7.0.3",
   "description": "RMWC Select component",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -36,7 +36,7 @@
     "react-dom": ">=16.8.x"
   },
   "dependencies": {
-    "@material/select": "^6.0.0",
+    "@material/select": "^7.0.0",
     "@rmwc/base": "^7.0.1",
     "@rmwc/floating-label": "^7.0.1",
     "@rmwc/icon": "^7.0.1",
