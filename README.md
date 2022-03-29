@@ -93,7 +93,7 @@ This project exists thanks to all the people who contribute. [[Contribute](CONTR
 
 ### Backers
 
-Thank you to all our backers! 🙏 [[Become a backer](https://opencollective.com/rmwc#backer)]
+Thank you to all our backers! 🙏 We are no longer accepting financial contributions, and the remaining balance in our Open Collective will go to help efforts in the Ukraine. Thank you to all of our previous backers!
 
 <a href="https://opencollective.com/rmwc#backers" target="_blank"><img src="https://opencollective.com/rmwc/backers.svg?width=890"></a>
 
