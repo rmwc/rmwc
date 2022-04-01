@@ -16,29 +16,28 @@ import {
 export const useSliderFoundation = (
   props: SliderProps & React.HTMLProps<any>
 ) => {
-  const trackActiveRef = useRef<HTMLElement>();
-  const setTracActivekRef = (element: HTMLElement) =>
-    (trackActiveRef.current = element);
-
-  const trackmarkerContainerRef = useRef<HTMLElement>();
-  const setTrackMarkerContainerRef = (element: HTMLElement) =>
+  const trackmarkerContainerRef = useRef<HTMLElement | null>();
+  const setTrackMarkerContainerRef = (element: HTMLElement | null) =>
     (trackmarkerContainerRef.current = element);
 
-  const thumbsRef = useRef<HTMLElement[]>();
-  const setThumbsRef = (element: HTMLElement[]) =>
-    (thumbsRef.current = element);
+  const thumbsRef = useRef<Array<HTMLElement | undefined>>([]);
+  const setThumbRef = (index: number, element: HTMLElement | null) => {
+    thumbsRef.current[index] = element || undefined;
+  };
 
   const valueToAriaValueTextFn: ((value: number) => string) | null = null;
 
   const { foundation, ...elements } = useFoundation({
     props,
     elements: {
-      rootEl: true
+      rootEl: true,
+      trackActiveEl: true
       // thumbContainerEl: true,
       // sliderPinEl: true
     },
     foundation: ({
       rootEl,
+      trackActiveEl,
       // thumbContainerEl,
       // sliderPinEl,
       emit
@@ -115,10 +114,10 @@ export const useSliderFoundation = (
           getThumbEl(thumb)?.style.removeProperty(propertyName);
         },
         setTrackActiveStyleProperty: (propertyName: string, value: string) => {
-          trackActiveRef.current?.style.setProperty(propertyName, value);
+          trackActiveEl.setStyle(propertyName, value);
         },
         removeTrackActiveStyleProperty: (propertyName: string) => {
-          trackActiveRef.current?.style.removeProperty(propertyName);
+          trackActiveEl.setStyle(propertyName, null);
         },
         setValueIndicatorText: (value: number, thumb: Thumb) => {
           const valueIndicatorEl = getThumbEl(thumb)?.querySelector(
@@ -387,9 +386,8 @@ export const useSliderFoundation = (
   // }, [foundation]);
 
   return {
-    setTracActivekRef,
     setTrackMarkerContainerRef,
-    setThumbsRef,
+    setThumbRef,
     ...elements
   };
 };
