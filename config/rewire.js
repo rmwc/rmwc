@@ -2,12 +2,10 @@ process.env.REACT_EDITOR = 'vscode';
 
 const path = require('path');
 const colors = require('colors/safe');
-const fs = require('fs');
 
 /***********************************
  * Utils
  ***********************************/
-const publicPath = process.env.PUBLIC_PATH || '/';
 const root = path.resolve(__dirname, '..');
 
 // a simple utility to chain all of our config overrides together
@@ -15,26 +13,6 @@ const pipe =
   (...fns) =>
   (x) =>
     fns.reduce((v, f) => f(v), x);
-
-const getLoaderRoot = (config) => {
-  const oneOf = config.module.rules.find((rule) => rule.oneOf);
-  if (oneOf) {
-    return oneOf.oneOf;
-  } else {
-    return config.module.rules;
-  }
-};
-
-const addLoader = (config, rule) => {
-  getLoaderRoot(config).unshift(rule);
-  return config;
-};
-
-const addPlugin = (config, ...plugins) => {
-  plugins.forEach((p) => {
-    config.plugins.push(p);
-  });
-};
 
 const getPlugin = (config, pluginName) =>
   config.plugins.find((p) => p.constructor.name === pluginName);
@@ -54,6 +32,26 @@ const addAliases = (config) => {
     '@doc-utils': path.resolve(root, 'src', 'doc-utils')
   };
 
+  return config;
+};
+
+/**
+ * Set webpack to ignore fullyspecified see https://github.com/webpack/webpack/issues/11467#issuecomment-691873586
+ */
+const ignoreFullySpecified = (config) => {
+  const cjs = config.module.rules.find((rule) => rule.enforce);
+  cjs.resolve = {
+    fullySpecified: false
+  };
+  return config;
+};
+
+/**
+ * Ignores all the missing sourceMaps warnings.
+ * @Material dependencies are missing them at present. Remove this when @Material adds the sourcemap.
+ */
+const ignoreMissingSourceMaps = (config) => {
+  config.ignoreWarnings = [/Failed to parse source map/];
   return config;
 };
 
@@ -99,15 +97,26 @@ const jestCoverage = (config) => {
   return config;
 };
 
+// Define the RMWC_VERSION for the project
+const defineVersion = (config) => {
+  const definePlugin = getPlugin(config, 'DefinePlugin');
+  const version = require('../lerna.json').version;
+  definePlugin.definitions['process.env'].RMWC_VERSION = `"${version}"`;
+  return config;
+};
+
 // Build the webpack config
 module.exports = {
-  webpack: (config, env) => {
+  webpack: (config) => {
     console.log(colors.magenta('Starting RMWC ❤️'));
-    return pipe(addAliases, (config) => {
-      return config;
-    })(config);
+    return pipe(
+      addAliases,
+      ignoreFullySpecified,
+      ignoreMissingSourceMaps,
+      defineVersion
+    )(config);
   },
-  storybook: (config, env) => pipe(addAliases)(config),
+  storybook: (config) => pipe(addAliases)(config),
   jest: (config) => {
     return pipe(
       jestModuleNameMapper,

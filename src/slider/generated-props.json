@@ -22,7 +22,6 @@
       },
       "kind": "interface",
       "name": "SliderProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/slider/index.tsx#L16",
       "methods": [],
       "properties": [
         {
@@ -46,7 +45,6 @@
           },
           "kind": "property",
           "name": "disabled",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/slider/index.tsx#L34",
           "type": "undefined | false | true"
         },
         {
@@ -70,7 +68,6 @@
           },
           "kind": "property",
           "name": "discrete",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/slider/index.tsx#L30",
           "type": "undefined | false | true"
         },
         {
@@ -94,7 +91,6 @@
           },
           "kind": "property",
           "name": "displayMarkers",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/slider/index.tsx#L32",
           "type": "undefined | false | true"
         },
         {
@@ -118,7 +114,6 @@
           },
           "kind": "property",
           "name": "foundationRef",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/slider/index.tsx#L36",
           "type": "React.Ref<MDCSliderFoundation>"
         },
         {
@@ -142,7 +137,6 @@
           },
           "kind": "property",
           "name": "max",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/slider/index.tsx#L26",
           "type": "number | string"
         },
         {
@@ -166,7 +160,6 @@
           },
           "kind": "property",
           "name": "min",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/slider/index.tsx#L24",
           "type": "number | string"
         },
         {
@@ -190,7 +183,6 @@
           },
           "kind": "property",
           "name": "onChange",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/slider/index.tsx#L18",
           "type": "undefined | (evt: SliderOnChangeEventT) => void"
         },
         {
@@ -214,7 +206,6 @@
           },
           "kind": "property",
           "name": "onInput",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/slider/index.tsx#L20",
           "type": "undefined | (evt: SliderOnInputEventT) => void"
         },
         {
@@ -238,7 +229,6 @@
           },
           "kind": "property",
           "name": "step",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/slider/index.tsx#L28",
           "type": "number | string"
         },
         {
@@ -262,7 +252,6 @@
           },
           "kind": "property",
           "name": "value",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/slider/index.tsx#L22",
           "type": "number | string"
         }
       ]
@@ -281,7 +270,6 @@
       },
       "kind": "type alias",
       "name": "SliderOnChangeEventT",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/slider/index.tsx#L7",
       "type": "RMWC.CustomEventT<>"
     },
     "SliderOnInputEventT": {
@@ -298,7 +286,6 @@
       },
       "kind": "type alias",
       "name": "SliderOnInputEventT",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/slider/index.tsx#L11",
       "type": "RMWC.CustomEventT<>"
     },
     "SliderHTMLProps": {
@@ -315,7 +302,6 @@
       },
       "kind": "type alias",
       "name": "SliderHTMLProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/slider/index.tsx#L39",
       "type": "RMWC.HTMLProps<HTMLDivElement, Omit<AllHTMLAttributes<HTMLInputElement>, \"onChange\" | \"onInput\">>"
     }
   }

@@ -18,16 +18,10 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "downlevelIteration": true,
-    "lib": [
-      "es2015",
-      "es2017",
-      "dom"
-    ],
+    "lib": ["es2015", "es2017", "es2019", "dom"],
     "noFallthroughCasesInSwitch": true
   },
-  "include": [
-    "src"
-  ],
+  "include": ["src"],
   "exclude": [
     "node_modules",
     "**/*.story.tsx",

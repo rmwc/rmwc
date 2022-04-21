@@ -5,7 +5,7 @@ module.exports = (moduleName, options) => {
   const resolvedPath = resolver(moduleName, options);
   if (
     ReactTestVersion &&
-    ['react', 'react-dom', 'react-test-renderer'].some(p =>
+    ['react', 'react-dom', 'react-test-renderer'].some((p) =>
       resolvedPath.includes('node_modules/${}/')
     ) &&
     !resolvedPath.includes('react-versions/react')
