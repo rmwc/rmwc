@@ -74,7 +74,8 @@ const safeNum = (num: string | number | undefined) => {
 
 export const Slider: RMWC.ComponentType<SliderProps, SliderHTMLProps, 'input'> =
   createComponent<SliderProps, SliderHTMLProps>(function Slider(props, ref) {
-    const { rootEl, setThumbRef, trackActiveEl } = useSliderFoundation(props);
+    const { rootEl, setThumbRef, trackActiveEl, sliderValue, stepValue } =
+      useSliderFoundation(props);
 
     const {
       value,
@@ -91,8 +92,6 @@ export const Slider: RMWC.ComponentType<SliderProps, SliderHTMLProps, 'input'> =
       ...rest
     } = props;
 
-    console.log({ value, min, max });
-
     const className = useClassNames(props, [
       'mdc-slider',
       {
@@ -101,7 +100,7 @@ export const Slider: RMWC.ComponentType<SliderProps, SliderHTMLProps, 'input'> =
       }
     ]);
 
-    const dataStep = step ? { 'data-step': step } : {};
+    const dataStep = step ? { 'data-step': step } : { 'data-step': stepValue };
 
     if (displayMarkers && !discrete) {
       console.warn(
@@ -111,7 +110,14 @@ export const Slider: RMWC.ComponentType<SliderProps, SliderHTMLProps, 'input'> =
     }
 
     return (
-      <Tag tag="div" {...rest} ref={ref} element={rootEl} className={className}>
+      <Tag
+        tag="div"
+        {...rest}
+        ref={ref}
+        element={rootEl}
+        className={className}
+        {...dataStep}
+      >
         <div className="mdc-slider__track">
           <div className="mdc-slider__track--inactive"></div>
           <div className="mdc-slider__track--active">
@@ -122,7 +128,8 @@ export const Slider: RMWC.ComponentType<SliderProps, SliderHTMLProps, 'input'> =
             ></div>
           </div>
         </div>
-        <div
+        <Tag
+          tag="div"
           ref={(el) => setThumbRef(0, el)}
           className="mdc-slider__thumb"
           role="slider"
@@ -130,10 +137,19 @@ export const Slider: RMWC.ComponentType<SliderProps, SliderHTMLProps, 'input'> =
           aria-label="Continuous slider demo"
           aria-valuemin={safeNum(min)}
           aria-valuemax={safeNum(max)}
-          aria-valuenow={50}
+          aria-valuenow={Math.floor(sliderValue)}
         >
+          {discrete && (
+            <div className="mdc-slider__value-indicator-container">
+              <div className="mdc-slider__value-indicator">
+                <span className="mdc-slider__value-indicator-text">
+                  {stepValue}
+                </span>
+              </div>
+            </div>
+          )}
           <div className="mdc-slider__thumb-knob"></div>
-        </div>
+        </Tag>
         {children}
       </Tag>
     );

@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, createElement, useState } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { SliderProps } from '.';
 import { useFoundation } from '@rmwc/base';
 
@@ -27,21 +27,17 @@ export const useSliderFoundation = (
 
   const valueToAriaValueTextFn: ((value: number) => string) | null = null;
 
+  const [sliderValue, setSliderValue] = useState<number>(50);
+
+  const [stepValue, setStepValue] = useState<number | undefined>();
+
   const { foundation, ...elements } = useFoundation({
     props,
     elements: {
       rootEl: true,
       trackActiveEl: true
-      // thumbContainerEl: true,
-      // sliderPinEl: true
     },
-    foundation: ({
-      rootEl,
-      trackActiveEl,
-      // thumbContainerEl,
-      // sliderPinEl,
-      emit
-    }) => {
+    foundation: ({ rootEl, trackActiveEl, emit }) => {
       return new MDCSliderFoundation({
         hasClass: (className: string) => rootEl.hasClass(className),
         addClass: (className: string) => rootEl.addClass(className),
@@ -225,7 +221,7 @@ export const useSliderFoundation = (
   };
 
   // Based on pair programming w. James
-  const [tickMarks, setTickMarks] = useState<Array<{ className: string }>>([]);
+  // const [tickMarks, setTickMarks] = useState<Array<{ className: string }>>([]);
 
   const addTickMarks = (
     tickMarkContainer: HTMLElement,
@@ -286,54 +282,32 @@ export const useSliderFoundation = (
   //   props.min !== undefined && foundation.setMin(+props.min);
   // }, [props.min, foundation]);
 
-  console.log(
-    // @ts-ignore
-    foundation.adapter.getThumbAttribute(attributes.ARIA_VALUEMIN, Thumb.END)
-  );
-  console.log(
-    // @ts-ignore
-    foundation.adapter.getThumbAttribute(attributes.ARIA_VALUEMAX, Thumb.END)
-  );
-
-  // Attempt at fixing aria-valuemin issue
-  useEffect(() => {
-    // props.min = 1;
-    // // @ts-ignore
-    // foundation.convertAttributeValueToNumber(
-    //   // @ts-ignore
-    //   foundation.adapter.getThumbAttribute(
-    //     attributes.ARIA_VALUEMIN,
-    //     Thumb.END
-    //   ),
-    //   attributes.ARIA_VALUEMIN
-    // );
-    // props.max = 2;
-  }, [props, foundation]);
+  const foundationValue = foundation.getValue();
 
   // value
-  // useEffect(() => {
-  //   let value =
-  //     props.value !== undefined ? Number(props.value) : foundation.getValue();
+  useEffect(() => {
+    let value =
+      props.value !== undefined ? Number(props.value) : foundationValue;
 
-  //   const min = foundation.getMin();
-  //   const max = foundation.getMax();
-  //   // make value in bounds
-  //   if (value < min) {
-  //     console.warn(
-  //       `Attempted to set slider to ${value} which is less than min: ${min}`
-  //     );
-  //     value = min;
-  //   }
+    const min = foundation.getMin();
+    const max = foundation.getMax();
+    // make value in bounds
+    if (value < min) {
+      console.warn(
+        `Attempted to set slider to ${value} which is less than min: ${min}`
+      );
+      value = min;
+    }
 
-  //   if (value > max) {
-  //     console.warn(
-  //       `Attempted to set slider to ${value} which is greater than max: ${max}`
-  //     );
-  //     value = max;
-  //   }
+    if (value > max) {
+      console.warn(
+        `Attempted to set slider to ${value} which is greater than max: ${max}`
+      );
+      value = max;
+    }
 
-  //   foundation.setValue(value);
-  // }, [props.value, foundation]);
+    setSliderValue(foundation.getValue());
+  }, [props.value, foundation, foundationValue]);
 
   // step
   // useEffect(() => {
@@ -388,6 +362,8 @@ export const useSliderFoundation = (
   return {
     setTrackMarkerContainerRef,
     setThumbRef,
+    sliderValue,
+    stepValue,
     ...elements
   };
 };
