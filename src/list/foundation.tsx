@@ -32,7 +32,11 @@ export const useListFoundation = (props: ListProps & React.HTMLProps<any>) => {
         removeClassFromElementAtIndex: adapter.removeClassForElementIndex,
         setAttributeForElementIndex: adapter.setAttributeForElementIndex,
         getListItemCount: adapter.getListItemCount,
-        focusItemAtIndex: adapter.focusItemAtIndex
+        focusItemAtIndex: adapter.focusItemAtIndex,
+        selectedIndex: MDCListFoundation.numbers.UNSET_INDEX,
+        setSelectedIndex: (index: number) => {
+          foundation.setSelectedIndex(index);
+        }
       };
     },
     elements: { rootEl: true },

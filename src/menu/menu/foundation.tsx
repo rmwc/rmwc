@@ -13,6 +13,10 @@ export const useMenuFoundation = (props: MenuProps & React.HTMLProps<any>) => {
   const listApi = useRef<ListApi | null>();
   const menuApi = useRef<MenuApi | null>();
 
+  const setMenuApi = (api: MenuApi | null) => {
+    menuApi.current = api;
+  };
+
   const setListApi = (api: ListApi | null) => {
     listApi.current = api;
   };
@@ -141,5 +145,5 @@ export const useMenuFoundation = (props: MenuProps & React.HTMLProps<any>) => {
     // eslint-disable-next-line
   }, [canSetApi, items]);
 
-  return { setListApi, setMenuSurfaceApi, ...elements };
+  return { setListApi, setMenuSurfaceApi, setMenuApi, ...elements };
 };

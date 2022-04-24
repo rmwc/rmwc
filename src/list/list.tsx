@@ -43,6 +43,8 @@ export interface ListApi {
   ) => void;
   getListItemCount: () => number;
   focusItemAtIndex: (index: number) => void;
+  selectedIndex: number | number[];
+  setSelectedIndex: (index: number) => void;
 }
 
 export const List = createComponent<ListProps>(function List(props, ref) {
