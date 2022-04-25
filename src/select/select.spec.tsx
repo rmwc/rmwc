@@ -1,13 +1,17 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { mount, ReactWrapper } from 'enzyme';
 import { Select } from './';
 import { render, act, fireEvent } from '@testing-library/react';
 
 test('renders learn react link', (done) => {
   const onChange = jest.fn();
-  const { container } = render(<Select onChange={onChange} />);
+  const { container } = render(
+    <Select label="myLabel" onChange={onChange} options={['cookie', 'pizza']} />
+  );
 
   const select = container.children[0].querySelector('select');
+
+  fireEvent.change(container);
 
   act(() => {
     window.requestAnimationFrame(() => {
@@ -156,6 +160,9 @@ describe('Select', () => {
 });
 
 describe('Select: Lifecycle', () => {
+  const getLabel = (el: ReactWrapper) =>
+    el.find('.mdc-select__selected-text').first().text().trim();
+
   it('SelectedText is blank with no value', () => {
     const el = mount(<Select options={['Cookies', 'Pizza', 'Icecream']} />);
     expect(el.html().trim()).toContain('value=""');
@@ -165,14 +172,14 @@ describe('Select: Lifecycle', () => {
     const el = mount(
       <Select enhanced options={['Cookies', 'Pizza', 'Icecream']} />
     );
-    expect(el.html().trim()).toContain('value=""');
+    expect(getLabel(el)).toBe('');
   });
 
   it('SelectedText is blank with incorrect defaultValue', () => {
     const el = mount(
       <Select options={['Cookies', 'Pizza', 'Icecream']} defaultValue="Foo" />
     );
-    expect(el.html().trim()).toContain('value=""');
+    expect(getLabel(el)).toBe('');
   });
 
   it('SelectedText is blank with incorrect defaultValue, enhanced', () => {
@@ -183,7 +190,7 @@ describe('Select: Lifecycle', () => {
         defaultValue="Foo"
       />
     );
-    expect(el.html().trim()).toContain('value=""');
+    expect(getLabel(el)).toBe('');
   });
 
   it('SelectedText is set to value', () => {

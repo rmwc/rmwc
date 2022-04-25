@@ -128,13 +128,10 @@ export const useSelectFoundation = (
             if (menu.current === undefined) {
               return -1;
             }
-            const index = menu.current.selectedIndex();
+            const index = menu.current.selectedIndex;
             return index instanceof Array ? index[0] : index;
           },
           setSelectedIndex: (index: number) => {
-            if (index >= 1) {
-              setFloatLabel(true);
-            }
             return menu.current?.setSelectedIndex(index);
           }
         };
@@ -245,7 +242,7 @@ export const useSelectFoundation = (
       // This is only set one time in the constructor which
       // is before React even has a chance to render...
       // Make it a dynamic getter
-      Object.defineProperty(f, 'menuItemValues_', {
+      Object.defineProperty(f, 'menuItemValues', {
         get: () => {
           return adapter.getMenuItemValues();
         }
@@ -291,6 +288,15 @@ export const useSelectFoundation = (
       foundation.handleBlur();
     },
     [onBlur, foundation]
+  );
+
+  const { onChange } = props;
+  const handleChange = useCallback(
+    (evt: any) => {
+      onChange?.(evt);
+      foundation.handleChange();
+    },
+    [onChange, foundation]
   );
 
   const handleClick = useCallback(
@@ -374,13 +380,13 @@ export const useSelectFoundation = (
 
     if (value !== undefined && value !== foundationValue) {
       // @ts-ignore unsafe private variable access
-      const index = foundation.menuItemValues_.indexOf(foundationValue);
+      const index = foundation.menuItemValues.indexOf(value);
       selectedIndex.current = index;
       foundation.setValue(value || '');
 
       // We need to call setSelectedTextContent to set the default value/the controlled value.
       // @ts-ignore unsafe private variable access
-      if (foundation.menuItemValues_.includes(value)) {
+      if (foundation.menuItemValues.includes(value)) {
         setSelectedTextContent(value);
       }
     }
@@ -414,6 +420,7 @@ export const useSelectFoundation = (
     handleFocus,
     handleBlur,
     handleClick,
+    handleChange,
     handleKeydown,
     handleMenuClosed,
     handleMenuOpened,

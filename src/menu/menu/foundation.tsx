@@ -6,16 +6,10 @@ import { useFoundation, closest } from '@rmwc/base';
 import { ListApi } from '@rmwc/list';
 import { MenuSurfaceOnOpenEventT, MenuSurfaceApi } from '../menu-surface';
 import { MenuProps } from './';
-import { MenuApi } from '../menu';
 
 export const useMenuFoundation = (props: MenuProps & React.HTMLProps<any>) => {
   const menuSurfaceApi = useRef<MenuSurfaceApi>();
   const listApi = useRef<ListApi | null>();
-  const menuApi = useRef<MenuApi | null>();
-
-  const setMenuApi = (api: MenuApi | null) => {
-    menuApi.current = api;
-  };
 
   const setListApi = (api: ListApi | null) => {
     listApi.current = api;
@@ -129,14 +123,8 @@ export const useMenuFoundation = (props: MenuProps & React.HTMLProps<any>) => {
 
   const canSetApi = listApi.current && menuSurfaceApi.current && props.apiRef;
   useEffect(() => {
-    if (
-      menuApi.current &&
-      listApi.current &&
-      menuSurfaceApi.current &&
-      props.apiRef
-    ) {
+    if (listApi.current && menuSurfaceApi.current && props.apiRef) {
       props.apiRef({
-        ...menuApi.current,
         ...listApi.current,
         ...menuSurfaceApi.current,
         items
@@ -145,5 +133,5 @@ export const useMenuFoundation = (props: MenuProps & React.HTMLProps<any>) => {
     // eslint-disable-next-line
   }, [canSetApi, items]);
 
-  return { setListApi, setMenuSurfaceApi, setMenuApi, ...elements };
+  return { setListApi, setMenuSurfaceApi, ...elements };
 };
