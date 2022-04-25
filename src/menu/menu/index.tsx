@@ -80,8 +80,7 @@ const isMenuItems = (child: React.ReactNode) =>
 export const Menu: RMWC.ComponentType<MenuProps, MenuHTMLProps, 'div'> =
   createComponent<MenuProps, MenuHTMLProps>(function Menu(props, ref) {
     const { children, focusOnOpen, onSelect, foundationRef, ...rest } = props;
-    const { rootEl, setListApi, setMenuSurfaceApi, setMenuApi } =
-      useMenuFoundation(props);
+    const { rootEl, setListApi, setMenuSurfaceApi } = useMenuFoundation(props);
 
     const needsMenuItemsWrapper = (
       React.Children.map(children, isMenuItems) || []
