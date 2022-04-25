@@ -333,6 +333,7 @@ export const Select: RMWC.ComponentType<
     handleFocus,
     handleBlur,
     handleClick,
+    handleChange,
     handleKeydown,
     handleMenuClosed,
     handleMenuOpened,
@@ -394,6 +395,7 @@ export const Select: RMWC.ComponentType<
           onBlur={handleBlur}
           onClick={handleClick}
           onKeyDown={handleKeydown}
+          onChange={handleChange}
           /** In the case of native selects, we don't want this to be be focusable */
           tabIndex={enhanced ? undefined : -1}
         >
@@ -429,9 +431,9 @@ export const Select: RMWC.ComponentType<
                 // takes care of removing the classnames.
                 handleMenuClosed();
               }}
-              onChange={(evt: React.ChangeEvent<HTMLSelectElement>) =>
-                handleMenuSelected(evt.currentTarget.selectedIndex)
-              }
+              onChange={(evt: React.ChangeEvent<HTMLSelectElement>) => {
+                handleMenuSelected(evt.currentTarget.selectedIndex);
+              }}
             />
           )}
         </AnchorEl>

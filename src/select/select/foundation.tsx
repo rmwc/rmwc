@@ -54,10 +54,9 @@ export const useSelectFoundation = (
     props,
     elements: {
       rootEl: true,
-      selectedTextEl: true,
       anchorEl: true
     },
-    foundation: ({ rootEl, selectedTextEl, anchorEl, getProps, emit }) => {
+    foundation: ({ rootEl, anchorEl, getProps, emit }) => {
       const isNative = () => !getProps().enhanced;
 
       const getSelectAdapterMethods = (): Partial<MDCSelectAdapter> => {
@@ -224,15 +223,21 @@ export const useSelectFoundation = (
         const doWork = () => {
           const value = f.getValue();
 
-          // This is the line we have to override to work with placeholders
-          // we need to consider haveing a placeholder as a valid value
-          const optionHasValue = !!getProps().placeholder || value.length > 0;
           if (adapter.hasLabel()) {
-            f.notchOutline(optionHasValue);
+            // This is the line we have to override to work with placeholders
+            // we need to consider haveing a placeholder as a valid value
+            const optionHasValue =
+              !!getProps().placeholder ||
+              value.length > 0 ||
+              // As of MCW 8, we need to check for selectedIndex, else the label won't float when unfocused
+              selectedIndex.current > -1;
+            const isFocused = adapter.hasClass(cssClasses.FOCUSED);
+            const shouldFloatAndNotch = optionHasValue || isFocused;
+            const isRequired = adapter.hasClass(cssClasses.REQUIRED);
 
-            if (!adapter.hasClass(cssClasses.FOCUSED)) {
-              adapter.floatLabel(optionHasValue);
-            }
+            f.notchOutline(shouldFloatAndNotch);
+            adapter.floatLabel(shouldFloatAndNotch);
+            adapter.setLabelRequired(isRequired);
           }
         };
 
@@ -260,8 +265,6 @@ export const useSelectFoundation = (
         const placeholder = String(getProps().placeholder || '');
         if (!f.getValue() && placeholder) {
           adapter.setSelectedText(placeholder);
-          setSelectedTextContent(placeholder);
-          setFloatLabel(true);
         }
         silenceChange.current = false;
       };
@@ -270,7 +273,7 @@ export const useSelectFoundation = (
     }
   });
 
-  const { selectedTextEl, rootEl } = elements;
+  const { rootEl } = elements;
 
   const { onFocus } = props;
   const handleFocus = useCallback(
@@ -322,10 +325,10 @@ export const useSelectFoundation = (
       };
 
       const coord = getNormalizedXCoordinate(evt);
-      selectedTextEl.ref && selectedTextEl.ref.focus();
+      rootEl.ref && rootEl.ref.focus();
       foundation.handleClick(coord);
     },
-    [foundation, selectedTextEl.ref, rootEl.ref]
+    [foundation, rootEl.ref]
   );
 
   const { onKeyDown } = props;
