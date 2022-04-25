@@ -36,7 +36,7 @@
     "react-dom": ">=16.8.x"
   },
   "dependencies": {
-    "@material/slider": "^8.0.0",
+    "@material/slider": "^7.0.0",
     "@rmwc/base": "^7.0.1",
     "@rmwc/types": "^7.0.1"
   },
