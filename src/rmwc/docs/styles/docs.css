@@ -592,9 +592,12 @@ ul li {
   margin-left: 0.5rem;
 }
 
-#page-data-tables .doc-controls > * {
-  max-width: 10rem;
+#page-data-tables .doc-controls > * > * {
+  min-width: 10rem;
   flex: 1;
+}
+
+#page-data-tables .doc-controls > * {
   margin: 1rem 0.5rem;
 }
 

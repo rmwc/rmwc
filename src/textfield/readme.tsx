@@ -6,7 +6,7 @@ import examples from './generated-examples.json';
 
 import { TextField } from '.';
 
-export default function() {
+export default function Readme() {
   return (
     <Docs
       title="Text Fields"
@@ -64,7 +64,6 @@ export default function() {
       <DocsExample>
         <TextField
           textarea
-          outlined
           fullwidth
           label="textarea..."
           rows={8}

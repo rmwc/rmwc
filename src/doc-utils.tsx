@@ -425,54 +425,24 @@ export function DocsMarkdown({ fileSrc }: { fileSrc: string }) {
   return src ? (
     <div>
       <ReactMarkdown
-        source={src}
-        renderers={
+        children={src}
+        components={
           {
-            heading: ({
-              level,
-              children
-            }: {
-              level: number;
-              children: any;
-            }) => {
-              let Tag: any = 'h1';
-              switch (level) {
-                case 1:
-                  Tag = 'h1';
-                  break;
-                case 2:
-                  Tag = 'h2';
-                  break;
-                case 3:
-                  Tag = 'h3';
-                  break;
-                case 4:
-                  Tag = 'h4';
-                  break;
-                case 5:
-                  Tag = 'h5';
-                  break;
-                default:
-                  break;
-              }
-
-              return (
-                <Tag
-                  id={children[0].props.children
-                    .toLowerCase()
-                    .split(' ')
-                    .join('-')}
-                >
-                  {children}
-                </Tag>
-              );
-            },
-            paragraph: ({ children }: { children: any }) => (
+            p: ({ children }: { children: any }) => (
               <p className="docs-p">{children}</p>
             ),
-            code: ({ value }: { value: string }) => (
-              <DocsExampleBase code={value} codeOnly />
-            )
+            code: ({
+              children,
+              inline
+            }: {
+              children: any;
+              inline: boolean;
+            }) => {
+              if (inline) {
+                return <code>{children}</code>;
+              }
+              return <DocsExampleBase code={children[0]} codeOnly />;
+            }
           } as any
         }
       />

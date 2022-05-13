@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount, ReactWrapper } from 'enzyme';
+import { mount } from 'enzyme';
 import { Select } from './';
 import { render, act, fireEvent } from '@testing-library/react';
 
@@ -118,14 +118,20 @@ describe('Select', () => {
     mount(<Select rootProps={{ name: 'test' }} />);
   });
 
-  it('can be disabled', async (done) => {
-    const el = mount(<Select disabled={false} options={['1', '2', '3']} />);
+  it('can be disabled', () => {
+    const selectInput = render(
+      <Select disabled={false} options={['1', '2', '3']} />
+    );
 
-    expect(el.html().includes('mdc-select--disabled')).toBe(false);
-    el.setProps({ disabled: true });
+    expect(
+      selectInput.container.getElementsByClassName('mdc-select--disabled')
+    ).toHaveLength(0);
 
-    expect(el.html().includes('mdc-select--disabled')).toBe(true);
-    done();
+    selectInput.rerender(<Select disabled={true} options={['1', '2', '3']} />);
+
+    expect(
+      selectInput.container.getElementsByClassName('mdc-select--disabled')
+    ).toHaveLength(1);
   });
 
   it('can have custom classnames', () => {
@@ -142,32 +148,31 @@ describe('Select', () => {
   });
 
   it('can autofocus', () => {
-    const el = mount(<Select options={['one', 'two', 'three']} autoFocus />);
-    expect(document.activeElement).toBe(el.find('select').getDOMNode());
+    const { container } = render(
+      <Select options={['one', 'two', 'three']} autoFocus />
+    );
+    expect(document.activeElement).toBe(container.querySelector('select'));
   });
 });
 
 describe('Select: Lifecycle', () => {
-  const getLabel = (el: ReactWrapper) =>
-    el.find('.mdc-select__selected-text').first().text().trim();
-
   it('SelectedText is blank with no value', () => {
     const el = mount(<Select options={['Cookies', 'Pizza', 'Icecream']} />);
-    expect(getLabel(el)).toBe('');
+    expect(el.html().trim()).toContain('value=""');
   });
 
   it('SelectedText is blank with no value, enhanced', () => {
     const el = mount(
       <Select enhanced options={['Cookies', 'Pizza', 'Icecream']} />
     );
-    expect(getLabel(el)).toBe('');
+    expect(el.html().trim()).toContain('value=""');
   });
 
   it('SelectedText is blank with incorrect defaultValue', () => {
     const el = mount(
       <Select options={['Cookies', 'Pizza', 'Icecream']} defaultValue="Foo" />
     );
-    expect(getLabel(el)).toBe('');
+    expect(el.html().trim()).toContain('value=""');
   });
 
   it('SelectedText is blank with incorrect defaultValue, enhanced', () => {
@@ -178,14 +183,14 @@ describe('Select: Lifecycle', () => {
         defaultValue="Foo"
       />
     );
-    expect(getLabel(el)).toBe('');
+    expect(el.html().trim()).toContain('value=""');
   });
 
   it('SelectedText is set to value', () => {
     const el = mount(
       <Select options={['Cookies', 'Pizza', 'Icecream']} value="Cookies" />
     );
-    expect(getLabel(el)).toBe('Cookies');
+    expect(el.html().trim()).toContain('value="Cookies"');
   });
 
   it('SelectedText is set to value, enhanced', () => {
@@ -196,7 +201,7 @@ describe('Select: Lifecycle', () => {
         value="Cookies"
       />
     );
-    expect(getLabel(el)).toBe('Cookies');
+    expect(el.html().trim()).toContain('value="Cookies"');
   });
 
   it('SelectedText is set to default value', () => {
@@ -206,7 +211,7 @@ describe('Select: Lifecycle', () => {
         defaultValue="Cookies"
       />
     );
-    expect(getLabel(el)).toBe('Cookies');
+    expect(el.html().trim()).toContain('value="Cookies"');
   });
 
   it('SelectedText is set to default value, enhanced', () => {
@@ -217,7 +222,7 @@ describe('Select: Lifecycle', () => {
         defaultValue="Cookies"
       />
     );
-    expect(getLabel(el)).toBe('Cookies');
+    expect(el.html().trim()).toContain('value="Cookies"');
   });
 
   it('SelectedText is set with async value', (done) => {
@@ -227,7 +232,7 @@ describe('Select: Lifecycle', () => {
 
     setTimeout(() => {
       el.setProps({ value: 'Cookies' });
-      expect(getLabel(el)).toBe('Cookies');
+      expect(el.html().trim()).toContain('value="Cookies"');
       done();
     }, 100);
   });
@@ -239,7 +244,7 @@ describe('Select: Lifecycle', () => {
 
     setTimeout(() => {
       el.setProps({ value: 'Cookies' });
-      expect(getLabel(el)).toBe('Cookies');
+      expect(el.html().trim()).toContain('value="Cookies"');
       done();
     }, 100);
   });

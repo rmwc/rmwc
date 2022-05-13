@@ -90,9 +90,9 @@ export const useTopAppBarFoundation = (
   // Reinit them after mount
   useEffect(() => {
     // @ts-ignore
-    foundation.lastScrollPosition_ = foundation.adapter_.getViewportScrollY();
+    foundation.lastScrollPosition_ = foundation.adapter.getViewportScrollY();
     // @ts-ignore
-    foundation.topAppBarHeight_ = foundation.adapter_.getTopAppBarHeight();
+    foundation.topAppBarHeight_ = foundation.adapter.getTopAppBarHeight();
   }, [foundation]);
 
   return { foundation, ...elements };

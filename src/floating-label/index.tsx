@@ -11,6 +11,7 @@ export interface FloatingLabelProps {
 
 export interface FloatingLabelApi {
   getWidth: () => number;
+  setRequired: (isRequired: boolean) => void;
 }
 
 export const FloatingLabel = createComponent<

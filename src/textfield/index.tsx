@@ -58,8 +58,14 @@ export interface TextFieldProps extends RMWC.WithRippleProps {
   inputRef?: React.Ref<HTMLInputElement | HTMLTextAreaElement | null>;
   /** The type of input field to render, search, number, etc */
   type?: string;
+  /** Add prefix. */
+  prefix?: string;
+  /** Add suffix. */
+  suffix?: string;
   /** Advanced: A reference to the MDCFoundation. */
   foundationRef?: React.Ref<MDCTextFieldFoundation | null>;
+  /** Make textarea resizeable */
+  resizeable?: boolean;
 }
 
 export type TextFieldHTMLProps = RMWC.HTMLProps<
@@ -94,6 +100,9 @@ export const TextField: RMWC.ComponentType<
     rootProps = {},
     foundationRef,
     ripple,
+    prefix,
+    suffix,
+    resizeable,
     floatLabel: userFloatLabel,
     ...rest
   } = props;
@@ -119,6 +128,7 @@ export const TextField: RMWC.ComponentType<
     'mdc-text-field',
     'mdc-text-field--upgraded',
     {
+      'mdc-text-field--filled': !outlined,
       'mdc-text-field--textarea': textarea,
       'mdc-text-field--fullwidth': fullwidth,
       'mdc-text-field--outlined': outlined,
@@ -185,6 +195,32 @@ export const TextField: RMWC.ComponentType<
     <TextFieldCharacterCount apiRef={setCharacterCounter} />
   ) : null;
 
+  const renderTextarea = resizeable ? (
+    <span className="mdc-text-field__resizer">
+      <Tag
+        {...rest}
+        element={inputEl}
+        className="mdc-text-field__input"
+        disabled={disabled}
+        tag="textarea"
+        ref={inputRef}
+      />
+      {renderedCharacterCounter}
+    </span>
+  ) : (
+    <>
+      <Tag
+        {...rest}
+        element={inputEl}
+        className="mdc-text-field__input"
+        disabled={disabled}
+        tag="textarea"
+        ref={inputRef}
+      />
+      {renderedCharacterCounter}
+    </>
+  );
+
   return (
     <>
       <TextFieldRoot
@@ -197,18 +233,21 @@ export const TextField: RMWC.ComponentType<
       >
         {!!icon && renderIcon(icon, 'leading')}
         {children}
-        {/** Render character counter in different place for textarea */}
-        {!!textarea && renderedCharacterCounter}
         <TextFieldRipple />
-        <Tag
-          {...rest}
-          element={inputEl}
-          className="mdc-text-field__input"
-          disabled={disabled}
-          tag={textarea ? 'textarea' : 'input'}
-          ref={inputRef}
-        />
-
+        {!!prefix && !textarea && <TextFieldPrefix prefix={prefix} />}
+        {textarea ? (
+          renderTextarea
+        ) : (
+          <Tag
+            {...rest}
+            element={inputEl}
+            className="mdc-text-field__input"
+            disabled={disabled}
+            tag="input"
+            ref={inputRef}
+          />
+        )}
+        {!!suffix && !textarea && <TextFieldSuffix suffix={suffix} />}
         {!!outlined ? (
           <>
             <NotchedOutline notch={notchWidth}>{renderedLabel}</NotchedOutline>
@@ -236,6 +275,30 @@ const TextFieldRoot = withRipple({ surface: false })(
     return <Tag {...props} tag="label" ref={ref} />;
   })
 );
+
+const TextFieldPrefix = React.memo(function TextFieldPrefix({
+  prefix
+}: {
+  prefix: string;
+}) {
+  return (
+    <span className="mdc-text-field__affix mdc-text-field__affix--prefix">
+      {prefix}
+    </span>
+  );
+});
+
+const TextFieldSuffix = React.memo(function TextFieldSuffix({
+  suffix
+}: {
+  suffix: string;
+}) {
+  return (
+    <span className="mdc-text-field__affix mdc-text-field__affix--suffix">
+      {suffix}
+    </span>
+  );
+});
 
 /*********************************************************************
  * Character Count

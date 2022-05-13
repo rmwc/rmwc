@@ -121,13 +121,14 @@ function Nav(props: DrawerProps) {
             <NavItems options={menuContent} />
           </List>
         </DrawerContent>
-        <Ripple
-          tag="a"
-          href="https://opencollective.com/rmwc"
-          className="made-by"
-        >
+        <Ripple className="made-by">
           <Typography use="caption">
-            <Icon icon="https://s.gravatar.com/avatar/0b38f1a5ae97a182822f4bca53a2368f?s=80" />
+            <Icon
+              icon={{
+                icon: 'android-chrome-192x192.png',
+                strategy: 'url'
+              }}
+            />
             <div>
               <div>
                 Made with{' '}
@@ -136,7 +137,6 @@ function Nav(props: DrawerProps) {
                 </span>{' '}
                 in Sunny FL.
               </div>
-              <div className="made-by__link">Donate on Open Collective</div>
             </div>
           </Typography>
         </Ripple>
