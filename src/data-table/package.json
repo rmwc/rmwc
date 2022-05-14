@@ -36,13 +36,13 @@
     "react-dom": ">=16.8.x"
   },
   "dependencies": {
-    "@material/data-table": "^5.1.0",
-    "@rmwc/base": "^7.0.3",
-    "@rmwc/checkbox": "^7.0.3",
-    "@rmwc/icon": "^7.0.3",
-    "@rmwc/select": "^7.0.3",
-    "@rmwc/switch": "^7.0.3",
-    "@rmwc/types": "^7.0.3"
+    "@material/data-table": "^8.0.0",
+    "@rmwc/base": "^7.0.1",
+    "@rmwc/checkbox": "^7.0.1",
+    "@rmwc/icon": "^7.0.1",
+    "@rmwc/select": "^7.0.1",
+    "@rmwc/switch": "^7.0.1",
+    "@rmwc/types": "^7.0.1"
   },
   "gitHead": "d9befec0e3b258864b71686eecd16c16feb43cf1"
 }

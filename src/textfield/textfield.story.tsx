@@ -22,6 +22,8 @@ function TextFieldStory() {
       icon={text('withLeadingIcon', '')}
       trailingIcon={text('withTrailingIcon', '')}
       textarea={boolean('textarea', false)}
+      prefix={text('prefix', '')}
+      suffix={text('suffix', '')}
       foundationRef={console.log}
     />
   );
