@@ -54,10 +54,9 @@ export const useSelectFoundation = (
     props,
     elements: {
       rootEl: true,
-      selectedTextEl: true,
       anchorEl: true
     },
-    foundation: ({ rootEl, selectedTextEl, anchorEl, getProps, emit }) => {
+    foundation: ({ rootEl, anchorEl, getProps, emit }) => {
       const isNative = () => !getProps().enhanced;
 
       const getSelectAdapterMethods = (): Partial<MDCSelectAdapter> => {
@@ -76,28 +75,6 @@ export const useSelectFoundation = (
         };
 
         return {
-          getSelectedMenuItem: () => {
-            if (isNative()) {
-              return nativeControl.current?.selectedOptions[0] || null;
-            }
-
-            if (selectedIndex.current === -1) {
-              return (
-                menu.current
-                  ?.getSurfaceElement()
-                  ?.querySelector('.mdc-list-item--activated') || null
-              );
-            } else {
-              return items()[selectedIndex.current];
-            }
-          },
-          getMenuItemAttr: (menuItem: Element, attr: string) => {
-            if (attr === 'data-value') {
-              return getValue(menuItem);
-            }
-
-            return menuItem.getAttribute(attr);
-          },
           setSelectedText: (text: string) => {
             setSelectedTextContent(text);
           },
@@ -114,8 +91,6 @@ export const useSelectFoundation = (
           setMenuWrapFocus: (wrapFocus: boolean) => {
             //(this.menu_.wrapFocus = wrapFocus)
           },
-          setAttributeAtIndex: (...args) =>
-            menu.current?.setAttributeForElementIndex(...args),
           focusMenuItemAtIndex: (index: number) =>
             menu.current?.focusItemAtIndex(index),
           getMenuItemCount: () => {
@@ -125,10 +100,6 @@ export const useSelectFoundation = (
           getMenuItemTextAtIndex: (index: number) => {
             return items()[index].textContent as string;
           },
-          addClassAtIndex: (...args) =>
-            menu.current?.addClassToElementIndex(...args),
-          removeClassAtIndex: (...args) =>
-            menu.current?.removeClassFromElementAtIndex(...args),
           isSelectAnchorFocused: () =>
             !!(anchorEl.ref && anchorEl.ref === document.activeElement),
           getSelectAnchorAttr: (attr: any) => anchorEl.getProp(attr),
@@ -148,6 +119,19 @@ export const useSelectFoundation = (
               ?.getSurfaceElement()
               ?.querySelector('.mdc-list-item--activated')
               ?.classList.remove(className);
+          },
+          getSelectedIndex: () => {
+            if (isNative() && nativeControl.current !== undefined) {
+              return nativeControl.current.selectedOptions[0].index;
+            }
+            if (menu.current === undefined) {
+              return -1;
+            }
+            const index = menu.current.selectedIndex;
+            return index instanceof Array ? index[0] : index;
+          },
+          setSelectedIndex: (index: number) => {
+            return menu.current?.setSelectedIndex(index);
           }
         };
       };
@@ -239,15 +223,21 @@ export const useSelectFoundation = (
         const doWork = () => {
           const value = f.getValue();
 
-          // This is the line we have to override to work with placeholders
-          // we need to consider haveing a placeholder as a valid value
-          const optionHasValue = !!getProps().placeholder || value.length > 0;
           if (adapter.hasLabel()) {
-            f.notchOutline(optionHasValue);
+            // This is the line we have to override to work with placeholders
+            // we need to consider haveing a placeholder as a valid value
+            const optionHasValue =
+              !!getProps().placeholder ||
+              value.length > 0 ||
+              // As of MCW 8, we need to check for selectedIndex, else the label won't float when unfocused
+              selectedIndex.current > -1;
+            const isFocused = adapter.hasClass(cssClasses.FOCUSED);
+            const shouldFloatAndNotch = optionHasValue || isFocused;
+            const isRequired = adapter.hasClass(cssClasses.REQUIRED);
 
-            if (!adapter.hasClass(cssClasses.FOCUSED)) {
-              adapter.floatLabel(optionHasValue);
-            }
+            f.notchOutline(shouldFloatAndNotch);
+            adapter.floatLabel(shouldFloatAndNotch);
+            adapter.setLabelRequired(isRequired);
           }
         };
 
@@ -257,7 +247,7 @@ export const useSelectFoundation = (
       // This is only set one time in the constructor which
       // is before React even has a chance to render...
       // Make it a dynamic getter
-      Object.defineProperty(f, 'menuItemValues_', {
+      Object.defineProperty(f, 'menuItemValues', {
         get: () => {
           return adapter.getMenuItemValues();
         }
@@ -275,8 +265,6 @@ export const useSelectFoundation = (
         const placeholder = String(getProps().placeholder || '');
         if (!f.getValue() && placeholder) {
           adapter.setSelectedText(placeholder);
-          setSelectedTextContent(placeholder);
-          setFloatLabel(true);
         }
         silenceChange.current = false;
       };
@@ -285,7 +273,7 @@ export const useSelectFoundation = (
     }
   });
 
-  const { selectedTextEl, rootEl } = elements;
+  const { rootEl } = elements;
 
   const { onFocus } = props;
   const handleFocus = useCallback(
@@ -303,6 +291,15 @@ export const useSelectFoundation = (
       foundation.handleBlur();
     },
     [onBlur, foundation]
+  );
+
+  const { onChange } = props;
+  const handleChange = useCallback(
+    (evt: any) => {
+      onChange?.(evt);
+      foundation.handleChange();
+    },
+    [onChange, foundation]
   );
 
   const handleClick = useCallback(
@@ -328,10 +325,10 @@ export const useSelectFoundation = (
       };
 
       const coord = getNormalizedXCoordinate(evt);
-      selectedTextEl.ref && selectedTextEl.ref.focus();
+      rootEl.ref && rootEl.ref.focus();
       foundation.handleClick(coord);
     },
-    [foundation, selectedTextEl.ref, rootEl.ref]
+    [foundation, rootEl.ref]
   );
 
   const { onKeyDown } = props;
@@ -386,13 +383,13 @@ export const useSelectFoundation = (
 
     if (value !== undefined && value !== foundationValue) {
       // @ts-ignore unsafe private variable access
-      const index = foundation.menuItemValues_.indexOf(foundationValue);
+      const index = foundation.menuItemValues.indexOf(value);
       selectedIndex.current = index;
       foundation.setValue(value || '');
 
       // We need to call setSelectedTextContent to set the default value/the controlled value.
       // @ts-ignore unsafe private variable access
-      if (foundation.menuItemValues_.includes(value)) {
+      if (foundation.menuItemValues.includes(value)) {
         setSelectedTextContent(value);
       }
     }
@@ -426,6 +423,7 @@ export const useSelectFoundation = (
     handleFocus,
     handleBlur,
     handleClick,
+    handleChange,
     handleKeydown,
     handleMenuClosed,
     handleMenuOpened,

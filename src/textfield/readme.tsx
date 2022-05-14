@@ -69,6 +69,7 @@ export default function Readme() {
           rows={8}
           maxLength={20}
           characterCount
+          resizeable
           helpText={{
             persistent: true,
             validationMsg: true,

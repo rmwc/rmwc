@@ -188,10 +188,6 @@ function NativeMenu(
   );
 }
 
-const SelectedTextEl = withRipple({ surface: false })(function (props: any) {
-  return <Tag {...props} />;
-});
-
 const AnchorEl = withRipple({ surface: false })(function (props: any) {
   return <Tag {...props} />;
 });
@@ -322,7 +318,6 @@ export const Select: RMWC.ComponentType<
   const selectOptions = createSelectOptions(options);
   const {
     rootEl,
-    selectedTextEl,
     anchorEl,
     notchWidth,
     menuOpen,
@@ -338,6 +333,7 @@ export const Select: RMWC.ComponentType<
     handleFocus,
     handleBlur,
     handleClick,
+    handleChange,
     handleKeydown,
     handleMenuClosed,
     handleMenuOpened,
@@ -399,6 +395,7 @@ export const Select: RMWC.ComponentType<
           onBlur={handleBlur}
           onClick={handleClick}
           onKeyDown={handleKeydown}
+          onChange={handleChange}
           /** In the case of native selects, we don't want this to be be focusable */
           tabIndex={enhanced ? undefined : -1}
         >
@@ -407,19 +404,15 @@ export const Select: RMWC.ComponentType<
             <NotchedOutline notch={notchWidth}>{renderedLabel}</NotchedOutline>
           ) : (
             <>
-              {renderedLabel}
               <LineRipple active={lineRippleActive} center={lineRippleCenter} />
+              {renderedLabel}
             </>
           )}
-          <SelectedTextEl
-            className="mdc-select__selected-text"
-            element={selectedTextEl}
-            tag="input"
-            type="text"
-            value={selectedTextContent}
-            disabled
-            readOnly
-          />
+          <span className="mdc-select__selected-text-container">
+            <span className="mdc-select__selected-text">
+              {selectedTextContent}
+            </span>
+          </span>
           <SelectDropdownArrow />
           {!enhanced && (
             <NativeMenu
@@ -438,9 +431,9 @@ export const Select: RMWC.ComponentType<
                 // takes care of removing the classnames.
                 handleMenuClosed();
               }}
-              onChange={(evt: React.ChangeEvent<HTMLSelectElement>) =>
-                handleMenuSelected(evt.currentTarget.selectedIndex)
-              }
+              onChange={(evt: React.ChangeEvent<HTMLSelectElement>) => {
+                handleMenuSelected(evt.currentTarget.selectedIndex);
+              }}
             />
           )}
         </AnchorEl>

@@ -344,7 +344,7 @@ export const TextFieldHelperText = createComponent<TextFieldHelperTextProps>(
       }
     ]);
 
-    return <Tag tag="p" {...rest} className={className} ref={ref} />;
+    return <Tag tag="div" {...rest} className={className} ref={ref} />;
   }
 );
 
