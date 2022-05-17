@@ -25,7 +25,7 @@ cd rmwc && npm i
 As of V5, RMWC has been rebuilt in Typescript which makes the developer experience much easier to navigate. `material-components-web` converted to Typescript as well which allows for a very robust and tight integration.
 
 - Storybook is used for developing components in isolation, but the docs can be used for development as well
-- The README.md in the docs are automatically generated at release time from the Typescript readme.tsx files. DO NOT UPDATE a generated-*.json, or a README.md file from a component manually
+- The README.md in the docs are automatically generated at release time from the Typescript readme.tsx files. DO NOT UPDATE a generated-\*.json, or a README.md file from a component manually
 
 ```jsx
 class DocsExample {
@@ -58,20 +58,19 @@ class DocsExample {
 - V4 and below supported Flow. Some remnants may remain in the codebase, but they are no longer used.
 - We still want to support Flow! If you know a way forward, please comment on this issue https://github.com/jamesmfriedman/rmwc/issues/407
 
-
 ### Building New Components
 
 Each component requires the following items in order to be complete:
 
-* A **index.tsx** file containing the bulk of the component code. This makes importing easier.
-* A **story.tsx** file using Storybook. This is where the component can be developed in isolation.
-* A **test.spec.tsx** file using enzyme
-* A **test-ssr.spec.tsx** file using enzyme testing server side rendering
-* A **readme.tsx** file. 
-* A **package.json** file with the appropriate dependencies listed
-* It needs to be added to the src/rmwc/package.json
-* It needs to be re-exported from rmwc/index for people using the RMWC global
-* Its css exports should be added to src/rmwc/styles.tsx
+- A **index.tsx** file containing the bulk of the component code. This makes importing easier.
+- A **story.tsx** file using Storybook. This is where the component can be developed in isolation.
+- A **test.spec.tsx** file using enzyme
+- A **test-ssr.spec.tsx** file using enzyme testing server side rendering
+- A **readme.tsx** file.
+- A **package.json** file with the appropriate dependencies listed
+- It needs to be added to the src/rmwc/package.json
+- It needs to be re-exported from rmwc/index for people using the RMWC global
+- Its css exports should be added to src/rmwc/styles.tsx
 
 ### Running development server
 
@@ -133,10 +132,13 @@ Finally, it helps to make sure that your branch/fork is up to date with what's c
 > **NOTE**: Please do _not merge_ master into your branch. _Always_ `pull --rebase` instead. This ensures a linear history by always putting the work you've done after the work that's already on master, regardless of the date in which those commits were made.
 
 ### Other considerations
+
 - After you install a dependency you need to rerun `npm install`. It’s a quirk of using Lerna. It needs to rebootstrap anytime the dependencies change.
 
 ### Archiving older versions of the docs
+
 This is mainly a cheat sheet for the maintainers. Its a manual process, but only happens on major releases.
+
 - Pull a fresh copy or rmwc/master
 - open the root package.json file
 - change homepage to the version you are archiving "https://rmwc.io" to "homepage": "https://rmwc.io/version/x.x.x",
@@ -145,3 +147,17 @@ This is mainly a cheat sheet for the maintainers. Its a manual process, but only
 - edit docs/common/doc-versions to add the version x.x.x
 - Do NOT commit the updates to package.json, discard it
 - Commit the updated docs
+
+## Releases
+
+Releases are handled by Github Actions based on PR conventions and pull request targets. You can do a release without ever leaving the Github Web UI.
+
+- Create a new branch from `master` or `next` with the convention of `release/patch-YYYY-MM-DD`, `release/minor-YYYY-MM-DD`, or `release/major-YYYY-MM-DD`. There isn't any auto-magic looking at the changelog, so determine what category this release falls in. If there are any breaking changes, it's a major release.
+  - Patch release example `release/patch-2022-03-05`
+  - Minor release example `release/minor-2022-03-05`
+  - Major release example `release/major-2022-03-05`
+- You can't open a PR without at least one change, so this is actually a good time to go update the Readme with the changes you're making. If you need to force a build, the hacky way around this is to just add a space somewhere in the Readme. Make your changes and commit the file.
+- Create your PR to either `master` or `next`. Depending on what branch you choose, it will either be a standard npm release `@latest` or a pre-release `@next`.
+- On open of your PR, CI will run tests across all React Versions, and run a version script for either patch, minor, or major. When the script is done, it will commit the changes back to the PR branch.
+- When the checks pass and the PR is approved, merge your branch.
+- A final publishing action will now be triggered to handle the final builds and publish to npm!
