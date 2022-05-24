@@ -124,7 +124,11 @@ export const useMenuFoundation = (props: MenuProps & React.HTMLProps<any>) => {
   const canSetApi = listApi.current && menuSurfaceApi.current && props.apiRef;
   useEffect(() => {
     if (listApi.current && menuSurfaceApi.current && props.apiRef) {
-      props.apiRef({ ...listApi.current, ...menuSurfaceApi.current, items });
+      props.apiRef({
+        ...listApi.current,
+        ...menuSurfaceApi.current,
+        items
+      });
     }
     // eslint-disable-next-line
   }, [canSetApi, items]);
