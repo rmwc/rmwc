@@ -79,11 +79,13 @@ const jestResolver = (config) => {
 
 const jestIgnore = (config) => {
   config.transformIgnorePatterns = ['<rootDir>/node_modules/'];
+  config.modulePathIgnorePatterns = ['dist/*'];
   return config;
 };
 
 const jestCoverage = (config) => {
   config.collectCoverageFrom = config.collectCoverageFrom.concat([
+    '!src/**/dist',
     '!src/base/utils/document-component.tsx',
     '!src/base/test-polyfill.js',
     '!src/index.tsx',
