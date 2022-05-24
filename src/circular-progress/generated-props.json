@@ -22,7 +22,6 @@
       },
       "kind": "interface",
       "name": "CircularProgressProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/circular-progress/index.tsx#L15",
       "methods": [],
       "properties": [
         {
@@ -46,7 +45,6 @@
           },
           "kind": "property",
           "name": "max",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/circular-progress/index.tsx#L17",
           "type": "undefined | number"
         },
         {
@@ -70,7 +68,6 @@
           },
           "kind": "property",
           "name": "min",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/circular-progress/index.tsx#L19",
           "type": "undefined | number"
         },
         {
@@ -94,7 +91,6 @@
           },
           "kind": "property",
           "name": "progress",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/circular-progress/index.tsx#L21",
           "type": "undefined | number"
         },
         {
@@ -118,7 +114,6 @@
           },
           "kind": "property",
           "name": "size",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/circular-progress/index.tsx#L23",
           "type": "\"xsmall\" | \"small\" | \"medium\" | \"large\" | \"xlarge\" | number"
         }
       ]

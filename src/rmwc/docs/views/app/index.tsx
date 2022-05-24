@@ -1,12 +1,11 @@
-// eslint-disable-next-line  @typescript-eslint/no-unused-vars
+// eslint-disable-next-line
 import * as RMWC from '@rmwc/types';
 import React, { useEffect, useState } from 'react';
-import { Route, Link, Switch as RouterSwitch } from 'react-router-dom';
+import { Route, Link, Routes } from 'react-router-dom';
+import { useLocation } from 'react-router';
+import '../../styles';
 
-import { menuContent, MenuItemT } from '../../common/menu-content';
-
-import { version } from '../../../package.json';
-
+import { RMWC_VERSION } from '@rmwc/base';
 import {
   TopAppBar,
   TopAppBarRow,
@@ -16,12 +15,10 @@ import {
   TopAppBarActionItem,
   TopAppBarFixedAdjust
 } from '@rmwc/top-app-bar';
-
 import { Icon } from '@rmwc/icon';
 import { ThemeProvider } from '@rmwc/theme';
 import { Typography } from '@rmwc/typography';
 import { Ripple } from '@rmwc/ripple';
-
 import {
   Drawer,
   DrawerContent,
@@ -30,25 +27,23 @@ import {
 } from '@rmwc/drawer';
 
 import { ListItem, CollapsibleList, SimpleListItem, List } from '@rmwc/list';
-
 import { SimpleMenu, MenuItem } from '@rmwc/menu';
 import { Portal } from '@rmwc/base';
 
 import Home from '../home';
 import { SiteSearch } from '../site-search';
 import { DOC_VERSIONS } from '../../common/doc-versions';
+import { menuContent, MenuItemT } from '../../common/menu-content';
 import { ThemePicker, getTheme } from './theme-picker';
-import { history } from '../../common/history';
 
 const MainMenuItem = ({ url, label }: { url?: string; label: string }) => {
+  const location = useLocation();
   return (
     <ListItem
       tag={Link}
       to={url}
       onClick={() => window.scrollTo(0, 0)}
-      activated={
-        window.location.pathname.split('/').pop() === url?.split('/').pop()
-      }
+      activated={location.pathname === url}
     >
       <span>{label}</span>
     </ListItem>
@@ -83,11 +78,11 @@ function AppBar({
             <SimpleMenu
               handle={
                 <span className="app__version">
-                  <span>{version}</span> <Icon icon="arrow_drop_down" />
+                  <span>{RMWC_VERSION}</span> <Icon icon="arrow_drop_down" />
                 </span>
               }
             >
-              <MenuItem>{version}</MenuItem>
+              <MenuItem>{RMWC_VERSION}</MenuItem>
               {DOC_VERSIONS.map((v) => (
                 <MenuItem key={v} tag="a" href={`/version/${v}`}>
                   {v}
@@ -146,10 +141,12 @@ function Nav(props: DrawerProps) {
 }
 
 export function App() {
+  const location = useLocation();
   const isMobile = window.innerWidth < 640;
   const [menuIsOpen, setMenuIsOpen] = useState(!isMobile);
+
   const [pageId, setPageId] = useState(
-    `page-${window.location.pathname.split('/').pop() || 'home'}`
+    `page-${location.pathname.split('/').pop() || 'home'}`
   );
   const [theme, setTheme] = useState(
     window.localStorage.getItem('rmwcTheme') || 'Baseline'
@@ -168,10 +165,8 @@ export function App() {
   }, [isMobile]);
 
   useEffect(() => {
-    history.listen(() => {
-      setPageId(`page-${window.location.pathname.split('/').pop() || 'home'}`);
-    });
-  }, []);
+    setPageId(`page-${location.pathname.split('/').pop() || 'home'}`);
+  }, [location]);
 
   return (
     <ThemeProvider
@@ -205,10 +200,10 @@ export function App() {
         />
 
         <DrawerAppContent tag="main" className="app__content">
-          <RouterSwitch>
-            <Route path="/" exact component={Home} />
-            <DocRoutes options={menuContent} />
-          </RouterSwitch>
+          <Routes>
+            <Route key={'home'} path="/" element={<Home />} />
+            {getDocRoutes({ options: menuContent })}
+          </Routes>
         </DrawerAppContent>
       </div>
       <Portal />
@@ -217,6 +212,7 @@ export function App() {
 }
 
 function NavItems({ options }: { options: MenuItemT[] }) {
+  const location = useLocation();
   return (
     <>
       {options.map((m) => {
@@ -226,12 +222,7 @@ function NavItems({ options }: { options: MenuItemT[] }) {
               key={m.label}
               defaultOpen={
                 m.label === 'Components' ||
-                m.options?.some(
-                  (o) =>
-                    o.url &&
-                    window.location.pathname.split('/').pop() ===
-                      o.url?.split('/').pop()
-                )
+                m.options?.some((o) => o.url && location.pathname === o.url)
               }
               handle={
                 <SimpleListItem text={m.label} metaIcon="chevron_right" />
@@ -247,30 +238,26 @@ function NavItems({ options }: { options: MenuItemT[] }) {
   );
 }
 
-function DocRoutes({ options }: { options: MenuItemT[] }) {
-  return (
-    <>
-      {options.map((m, index) => {
-        if (m.options) {
-          return <DocRoutes key={index} options={m.options} />;
-        }
+function getDocRoutes({
+  options
+}: {
+  options: MenuItemT[];
+}): React.ReactElement[] {
+  return options.flatMap((value) => {
+    if (value.options) {
+      return getDocRoutes({ options: value.options });
+    }
 
-        return (
-          <Route
-            path={m.url}
-            exact
-            key={index}
-            render={() => {
-              document.title = `RMWC | React Material Web Components | ${m.label}`;
-              const Component = m.component || <></>;
-              // @ts-ignore
-              return <Component />;
-            }}
-          />
-        );
-      })}
-    </>
-  );
+    const Component = () => {
+      const Inner = value.component!;
+      document.title = `RMWC | React Material Web Components | ${value.label}`;
+      return <Inner />;
+    };
+
+    return [
+      <Route path={value.url!} key={value.label} element={<Component />} />
+    ];
+  });
 }
 
 export default App;

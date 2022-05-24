@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { version } from '../../../package.json';
+import { RMWC_VERSION } from '@rmwc/base';
 import { Typography } from '@rmwc/typography';
 
 import { Card, CardMedia } from '@rmwc/card';
@@ -68,7 +68,7 @@ export const Home = () => {
                 </Button>
               </Link>
               <Typography tag="h3" use="caption">
-                v{version}
+                v{RMWC_VERSION}
               </Typography>
 
               <div className={styles.checklist}>

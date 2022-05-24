@@ -15,7 +15,6 @@
       },
       "kind": "interface",
       "name": "LineRippleProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/line-ripple/index.tsx#L7",
       "methods": [],
       "properties": [
         {
@@ -32,7 +31,6 @@
           },
           "kind": "property",
           "name": "active",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/line-ripple/index.tsx#L8",
           "type": "undefined | false | true"
         },
         {
@@ -49,7 +47,6 @@
           },
           "kind": "property",
           "name": "center",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/line-ripple/index.tsx#L9",
           "type": "undefined | number"
         }
       ]

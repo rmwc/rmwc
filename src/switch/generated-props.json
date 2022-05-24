@@ -22,7 +22,6 @@
       },
       "kind": "interface",
       "name": "SwitchProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/switch/index.tsx#L20",
       "extends": [
         "any",
         "any"
@@ -44,7 +43,6 @@
       },
       "kind": "type alias",
       "name": "SwitchHTMLProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/switch/index.tsx#L24",
       "type": "ToggleHTMLProps"
     }
   }
