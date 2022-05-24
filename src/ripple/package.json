@@ -36,10 +36,10 @@
     "react-dom": ">=16.8.x"
   },
   "dependencies": {
-    "@material/ripple": "^5.1.0",
-    "@rmwc/base": "^7.0.3",
-    "@rmwc/provider": "^7.0.3",
-    "@rmwc/types": "^7.0.3"
+    "@material/ripple": "^7.0.0",
+    "@rmwc/base": "^7.0.1",
+    "@rmwc/provider": "^7.0.1",
+    "@rmwc/types": "^7.0.1"
   },
   "gitHead": "d9befec0e3b258864b71686eecd16c16feb43cf1"
 }

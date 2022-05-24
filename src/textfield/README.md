@@ -81,12 +81,7 @@ You can make the TextField a textarea. Make sure to include `outlined` for prope
 ```
 
 ```jsx
-<TextField
-  invalid
-  label="Invalid..."
-  value="#@!$"
-  onChange={() => {}}
-/>
+<TextField invalid label="Invalid..." value="#@!$" onChange={() => {}} />
 ```
 
 ```jsx
@@ -111,6 +106,7 @@ A preview of how `material-components-web` handles styling input types for your 
 ```
 
 ## TextField
+
 A TextField component for accepting text input from a user.
 
 ### Props
@@ -135,5 +131,7 @@ A TextField component for accepting text input from a user.
 | `trailingIcon` | `RMWC.IconPropT` | Add a trailing icon. |
 | `type` | `undefined \| string` | The type of input field to render, search, number, etc |
 | `value` | `string \| number` | Sets the value for controlled TextFields. |
+| `suffix` | `string` | Inserts a suffix to Textfield |
+| `prefix` | `string` | Inserts a prefix to Textfield |
 
 

@@ -64,7 +64,6 @@ export default function Readme() {
       <DocsExample>
         <TextField
           textarea
-          outlined
           fullwidth
           label="textarea..."
           rows={8}

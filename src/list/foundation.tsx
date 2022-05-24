@@ -23,7 +23,7 @@ export const useListFoundation = (props: ListProps & React.HTMLProps<any>) => {
       rootEl: FoundationElement<any, any>;
       foundation: MDCListFoundation;
     }): ListApi => {
-      const adapter = (foundation as any).adapter_ as MDCListAdapter;
+      const adapter = (foundation as any).adapter as MDCListAdapter;
       return {
         listElements: () => listElements(rootEl.ref),
         focusRoot: () => rootEl.ref && rootEl.ref.focus(),

@@ -61,8 +61,10 @@ export const LinearProgress = createComponent<LinearProgressProps>(
 const LinearProgressBody = React.memo(function LinearProgressBody() {
   return (
     <>
-      <div className="mdc-linear-progress__buffering-dots" />
-      <div className="mdc-linear-progress__buffer" />
+      <div className="mdc-linear-progress__buffer">
+        <div className="mdc-linear-progress__buffer-bar"></div>
+        <div className="mdc-linear-progress__buffer-dots"></div>
+      </div>
       <div className="mdc-linear-progress__bar mdc-linear-progress__primary-bar">
         <div className="mdc-linear-progress__bar-inner" />
       </div>
