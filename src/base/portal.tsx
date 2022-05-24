@@ -1,4 +1,4 @@
-import React, { useRef, useMemo, useState } from 'react';
+import React, { useRef, useMemo } from 'react';
 import ReactDOM from 'react-dom';
 
 const PORTAL_ID = 'rmwcPortal';

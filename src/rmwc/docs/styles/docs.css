@@ -573,9 +573,7 @@ ul li {
 
 /** Page textfields */
 #page-text-fields .live-preview .mdc-text-field {
-  margin-top: 1.5rem;
-  float: left;
-  clear: left;
+  margin-top: 1rem;
 }
 
 #page-text-fields .live-preview > div {

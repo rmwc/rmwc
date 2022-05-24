@@ -62,20 +62,22 @@ export default function Readme() {
         maxLength property.
       </DocsP>
       <DocsExample>
-        <TextField
-          textarea
-          fullwidth
-          label="textarea..."
-          rows={8}
-          maxLength={20}
-          characterCount
-          resizeable
-          helpText={{
-            persistent: true,
-            validationMsg: true,
-            children: 'The field is required'
-          }}
-        />
+        <div>
+          <TextField
+            textarea
+            fullwidth
+            label="textarea..."
+            rows={8}
+            maxLength={20}
+            characterCount
+            resizeable
+            helpText={{
+              persistent: true,
+              validationMsg: true,
+              children: 'The field is required'
+            }}
+          />
+        </div>
       </DocsExample>
 
       <DocsSubtitle>Validation</DocsSubtitle>
