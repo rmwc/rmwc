@@ -31,9 +31,6 @@ export default function Readme() {
       <DocsExample label="Outlined">
         <TextField outlined label="outlined..." />
       </DocsExample>
-      <DocsExample label="Full Width">
-        <TextField fullwidth placeholder="fullWidth..." />
-      </DocsExample>
       <DocsExample label="No Label">
         <TextField placeholder="No label" />
       </DocsExample>
@@ -65,7 +62,6 @@ export default function Readme() {
         <div>
           <TextField
             textarea
-            fullwidth
             label="textarea..."
             rows={8}
             maxLength={20}

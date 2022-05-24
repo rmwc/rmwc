@@ -26,10 +26,6 @@ Text fields allow users to input, edit, and select text.
 ```
 
 ```jsx
-<TextField fullwidth placeholder="fullWidth..." />
-```
-
-```jsx
 <TextField placeholder="No label" />
 ```
 
@@ -57,7 +53,6 @@ You can make the TextField a textarea. Make sure to include `outlined` for prope
 <TextField
   textarea
   outlined
-  fullwidth
   label="textarea..."
   rows={8}
   maxLength={20}

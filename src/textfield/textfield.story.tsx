@@ -55,7 +55,6 @@ storiesOf('TextField', module)
     <>
       <TextField
         textarea
-        fullwidth
         label="textarea..."
         rows={8}
         maxLength={20}

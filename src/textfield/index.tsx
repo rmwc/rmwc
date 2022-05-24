@@ -44,8 +44,6 @@ export interface TextFieldProps extends RMWC.WithRippleProps {
   floatLabel?: boolean;
   /** Makes a multiline TextField. */
   textarea?: boolean;
-  /** Makes the TextField fullwidth. */
-  fullwidth?: boolean;
   /** Add a leading icon. */
   icon?: RMWC.IconPropT;
   /** Add a trailing icon. */
@@ -85,7 +83,6 @@ export const TextField: RMWC.ComponentType<
     style,
     outlined,
     align,
-    fullwidth,
     invalid,
     disabled,
     helpText,
@@ -128,7 +125,6 @@ export const TextField: RMWC.ComponentType<
     {
       'mdc-text-field--filled': !outlined,
       'mdc-text-field--textarea': textarea,
-      'mdc-text-field--fullwidth': fullwidth,
       'mdc-text-field--outlined': outlined,
       'mdc-text-field--invalid': invalid,
       'mdc-text-field--disabled': disabled,
