@@ -25,7 +25,7 @@ execSync(
   }
 );
 
-const promises = getPackageDirs().map(d => {
+const promises = getPackageDirs().map((d) => {
   return new Promise((resolve, reject) => {
     copyFile(
       path.resolve(root, 'build', 'dist', d),

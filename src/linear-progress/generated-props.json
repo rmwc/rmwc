@@ -22,7 +22,6 @@
       },
       "kind": "interface",
       "name": "LinearProgressProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/linear-progress/index.tsx#L9",
       "methods": [],
       "properties": [
         {
@@ -46,7 +45,6 @@
           },
           "kind": "property",
           "name": "buffer",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/linear-progress/index.tsx#L13",
           "type": "undefined | number"
         },
         {
@@ -70,7 +68,6 @@
           },
           "kind": "property",
           "name": "closed",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/linear-progress/index.tsx#L17",
           "type": "undefined | false | true"
         },
         {
@@ -94,7 +91,6 @@
           },
           "kind": "property",
           "name": "foundationRef",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/linear-progress/index.tsx#L19",
           "type": "React.Ref<MDCLinearProgressFoundation>"
         },
         {
@@ -118,7 +114,6 @@
           },
           "kind": "property",
           "name": "progress",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/linear-progress/index.tsx#L11",
           "type": "undefined | number"
         },
         {
@@ -142,7 +137,6 @@
           },
           "kind": "property",
           "name": "reversed",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/linear-progress/index.tsx#L15",
           "type": "undefined | false | true"
         }
       ]

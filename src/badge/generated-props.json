@@ -22,7 +22,6 @@
       },
       "kind": "interface",
       "name": "BadgeProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/badge/index.tsx#L7",
       "methods": [],
       "properties": [
         {
@@ -46,7 +45,6 @@
           },
           "kind": "property",
           "name": "align",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/badge/index.tsx#L9",
           "type": "\"end\" | \"start\" | \"inline\""
         },
         {
@@ -70,7 +68,6 @@
           },
           "kind": "property",
           "name": "exited",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/badge/index.tsx#L15",
           "type": "undefined | false | true"
         },
         {
@@ -94,7 +91,6 @@
           },
           "kind": "property",
           "name": "inset",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/badge/index.tsx#L13",
           "type": "string | number"
         },
         {
@@ -118,7 +114,6 @@
           },
           "kind": "property",
           "name": "label",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/badge/index.tsx#L11",
           "type": "React.ReactNode | number"
         }
       ]
@@ -144,7 +139,6 @@
       },
       "kind": "interface",
       "name": "BadgeAnchorProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/badge/index.tsx#L47",
       "methods": [],
       "properties": []
     }
