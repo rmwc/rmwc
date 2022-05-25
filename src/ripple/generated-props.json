@@ -15,6 +15,7 @@
       },
       "kind": "interface",
       "name": "RippleSurfaceProps",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/ripple/index.tsx#L9",
       "methods": [],
       "properties": [
         {
@@ -31,6 +32,7 @@
           },
           "kind": "property",
           "name": "className",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/ripple/index.tsx#L10",
           "type": "string"
         },
         {
@@ -47,6 +49,7 @@
           },
           "kind": "property",
           "name": "style",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/ripple/index.tsx#L11",
           "type": "CSSProperties"
         }
       ]
@@ -72,6 +75,7 @@
       },
       "kind": "interface",
       "name": "RippleProps",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/ripple/index.tsx#L15",
       "methods": [],
       "properties": [
         {
@@ -95,6 +99,7 @@
           },
           "kind": "property",
           "name": "accent",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/ripple/index.tsx#L21",
           "type": "undefined | false | true"
         },
         {
@@ -118,6 +123,7 @@
           },
           "kind": "property",
           "name": "disabled",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/ripple/index.tsx#L23",
           "type": "undefined | false | true"
         },
         {
@@ -141,6 +147,7 @@
           },
           "kind": "property",
           "name": "foundationRef",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/ripple/index.tsx#L27",
           "type": "React.Ref<MDCRippleFoundation>"
         },
         {
@@ -164,6 +171,7 @@
           },
           "kind": "property",
           "name": "primary",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/ripple/index.tsx#L19",
           "type": "undefined | false | true"
         },
         {
@@ -187,6 +195,7 @@
           },
           "kind": "property",
           "name": "surface",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/ripple/index.tsx#L25",
           "type": "undefined | false | true"
         },
         {
@@ -210,6 +219,7 @@
           },
           "kind": "property",
           "name": "unbounded",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/ripple/index.tsx#L17",
           "type": "undefined | false | true"
         }
       ]

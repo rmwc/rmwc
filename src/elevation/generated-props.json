@@ -22,6 +22,7 @@
       },
       "kind": "interface",
       "name": "ElevationProps",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/elevation/index.tsx#L8",
       "methods": [],
       "properties": [
         {
@@ -45,6 +46,7 @@
           },
           "kind": "property",
           "name": "transition",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/elevation/index.tsx#L12",
           "type": "undefined | false | true"
         },
         {
@@ -68,6 +70,7 @@
           },
           "kind": "property",
           "name": "wrap",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/elevation/index.tsx#L14",
           "type": "undefined | false | true"
         },
         {
@@ -91,6 +94,7 @@
           },
           "kind": "property",
           "name": "z",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/elevation/index.tsx#L10",
           "type": "number | string"
         }
       ]

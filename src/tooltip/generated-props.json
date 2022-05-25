@@ -22,6 +22,7 @@
       },
       "kind": "interface",
       "name": "TooltipProps",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/tooltip/index.tsx#L19",
       "methods": [],
       "properties": [
         {
@@ -45,6 +46,7 @@
           },
           "kind": "property",
           "name": "activateOn",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/tooltip/index.tsx#L25",
           "type": "TooltipActivationT | TooltipActivationT[]"
         },
         {
@@ -68,6 +70,7 @@
           },
           "kind": "property",
           "name": "align",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/tooltip/index.tsx#L35",
           "type": "TooltipAlignT"
         },
         {
@@ -91,6 +94,7 @@
           },
           "kind": "property",
           "name": "children",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/tooltip/index.tsx#L23",
           "type": "React.ReactChild"
         },
         {
@@ -114,6 +118,7 @@
           },
           "kind": "property",
           "name": "className",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/tooltip/index.tsx#L29",
           "type": "undefined | string"
         },
         {
@@ -137,6 +142,7 @@
           },
           "kind": "property",
           "name": "content",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/tooltip/index.tsx#L21",
           "type": "React.ReactNode"
         },
         {
@@ -160,6 +166,7 @@
           },
           "kind": "property",
           "name": "enterDelay",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/tooltip/index.tsx#L31",
           "type": "undefined | number"
         },
         {
@@ -183,6 +190,7 @@
           },
           "kind": "property",
           "name": "leaveDelay",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/tooltip/index.tsx#L33",
           "type": "undefined | number"
         },
         {
@@ -206,6 +214,7 @@
           },
           "kind": "property",
           "name": "open",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/tooltip/index.tsx#L37",
           "type": "undefined | false | true"
         },
         {
@@ -229,6 +238,7 @@
           },
           "kind": "property",
           "name": "showArrow",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/tooltip/index.tsx#L27",
           "type": "undefined | false | true"
         }
       ]
@@ -247,6 +257,7 @@
       },
       "kind": "type alias",
       "name": "TooltipActivationT",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/tooltip/index.tsx#L6",
       "type": "\"hover\" | \"click\" | \"focus\""
     },
     "TooltipAlignT": {
@@ -263,6 +274,7 @@
       },
       "kind": "type alias",
       "name": "TooltipAlignT",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/tooltip/index.tsx#L8",
       "type": "\"left\" | \"right\" | \"top\" | \"bottom\" | \"topLeft\" | \"topRight\" | \"bottomLeft\" | \"bottomRight\""
     }
   }

@@ -22,6 +22,7 @@
       },
       "kind": "interface",
       "name": "RadioProps",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/radio/index.tsx#L14",
       "extends": [
         "any",
         "any"
@@ -43,6 +44,7 @@
       },
       "kind": "type alias",
       "name": "RadioHTMLProps",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/radio/index.tsx#L18",
       "type": "ToggleHTMLProps"
     }
   }
