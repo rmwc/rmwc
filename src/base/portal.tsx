@@ -6,7 +6,7 @@ const PORTAL_ID = 'rmwcPortal';
 export type PortalPropT = Element | string | boolean | undefined | null;
 
 export function Portal() {
-  const el = useRef(document.createElement('div'));
+  const el = useRef<HTMLDivElement | null>(null);
 
   return <div ref={el} id={PORTAL_ID} />;
 }
