@@ -4,6 +4,7 @@ import { Portal } from './';
 
 describe('Base SSR', () => {
   it('renders', () => {
-    mount(<Portal />);
+    const portal = mount(<Portal />);
+    expect(portal).toMatchSnapshot();
   });
 });
