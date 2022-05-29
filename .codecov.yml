@@ -3,6 +3,9 @@ coverage:
     project:
       default:
         target: 80%
+    patch:
+      default:
+        target: 70%
   range: 70..80
   round: down
   precision: 2
