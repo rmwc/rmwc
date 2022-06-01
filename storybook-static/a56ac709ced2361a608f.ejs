@@ -1,0 +1,55 @@
+var _ = __non_webpack_require__("/home/haestrup/projects/rmwc/node_modules/lodash/lodash.js");module.exports = function (templateParams) { with(templateParams) {return (function(data) {
+var __t, __p = '', __j = Array.prototype.join;
+function print() { __p += __j.call(arguments, '') }
+__p += '<!DOCTYPE html>\n<html lang="en">\n  <head>\n    <meta charset="utf-8" />\n    <title>' +
+((__t = ( htmlWebpackPlugin.options.title || 'Storybook')) == null ? '' : __t) +
+'</title>\n\n    ';
+ if (htmlWebpackPlugin.files.favicon) { ;
+__p += '\n    <link rel="shortcut icon" href="' +
+((__t = ( htmlWebpackPlugin.files.favicon)) == null ? '' : __t) +
+'" />\n    ';
+ } ;
+__p += '\n\n    <meta name="viewport" content="width=device-width, initial-scale=1" />\n\n    ';
+ if (typeof headHtmlSnippet !== 'undefined') { ;
+__p += ' ' +
+((__t = ( headHtmlSnippet )) == null ? '' : __t) +
+' ';
+ } ;
+__p += ' ';
+
+    htmlWebpackPlugin.files.css.forEach(file => { ;
+__p += '\n    <link href="' +
+((__t = ( file )) == null ? '' : __t) +
+'" rel="stylesheet" />\n    ';
+ }); ;
+__p += '\n\n    <style>\n      #root[hidden],\n      #docs-root[hidden] {\n        display: none !important;\n      }\n    </style>\n  </head>\n  <body>\n    ';
+ if (typeof bodyHtmlSnippet !== 'undefined') { ;
+__p += ' ' +
+((__t = ( bodyHtmlSnippet )) == null ? '' : __t) +
+' ';
+ } ;
+__p += '\n\n    <div id="root"></div>\n    <div id="docs-root"></div>\n\n    ';
+ if (typeof globals !== 'undefined' && Object.keys(globals).length) { ;
+__p += '\n    <script>\n      ';
+ for (var varName in globals) { ;
+__p += '\n          ';
+ if (globals[varName] != undefined) { ;
+__p += '\n            window[\'' +
+((__t = (varName)) == null ? '' : __t) +
+'\'] = ' +
+((__t = ( JSON.stringify(globals[varName]) )) == null ? '' : __t) +
+';\n          ';
+ } ;
+__p += '\n      ';
+ } ;
+__p += '\n    </script>\n    ';
+ } ;
+__p += ' ';
+ htmlWebpackPlugin.files.js.forEach(file => { ;
+__p += '\n    <script src="' +
+((__t = ( file )) == null ? '' : __t) +
+'"></script>\n    ';
+ }); ;
+__p += '\n  </body>\n</html>\n';
+return __p
+})();}}

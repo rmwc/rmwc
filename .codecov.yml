@@ -2,9 +2,14 @@ coverage:
   status:
     project:
       default:
-        # basic
-        target: auto
-        threshold: 5%
+        target: 80%
+    patch:
+      default:
+        target: 70%
+  range: 70..80
+  round: down
+  precision: 2
+
 ignore:
   - 'node_modules/'
   - 'src/base/utils/document-component.tsx'

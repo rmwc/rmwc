@@ -2,7 +2,6 @@ import * as RMWC from '@rmwc/types';
 import React from 'react';
 import { IconProps } from '@rmwc/icon';
 import {
-  MDCTextFieldCharacterCounterFoundation,
   MDCTextFieldIconFoundation,
   MDCTextFieldFoundation
 } from '@material/textfield';
@@ -15,7 +14,6 @@ import { NotchedOutline } from '@rmwc/notched-outline';
 import { withRipple } from '@rmwc/ripple';
 
 import { useTextFieldIconFoundation } from './textfield-icon-foundation';
-import { useTextFieldCharacterCountFoundation } from './textfield-character-count-foundation';
 import { useTextFieldFoundation } from './textfield-foundation';
 
 /*********************************************************************
@@ -46,8 +44,6 @@ export interface TextFieldProps extends RMWC.WithRippleProps {
   floatLabel?: boolean;
   /** Makes a multiline TextField. */
   textarea?: boolean;
-  /** Makes the TextField fullwidth. */
-  fullwidth?: boolean;
   /** Add a leading icon. */
   icon?: RMWC.IconPropT;
   /** Add a trailing icon. */
@@ -87,7 +83,6 @@ export const TextField: RMWC.ComponentType<
     style,
     outlined,
     align,
-    fullwidth,
     invalid,
     disabled,
     helpText,
@@ -118,7 +113,7 @@ export const TextField: RMWC.ComponentType<
     setLeadingIcon,
     setTrailingIcon,
     setFloatingLabel,
-    setCharacterCounter
+    characterCountContent
   } = useTextFieldFoundation(props);
 
   const id = useId('textfield', props);
@@ -130,14 +125,14 @@ export const TextField: RMWC.ComponentType<
     {
       'mdc-text-field--filled': !outlined,
       'mdc-text-field--textarea': textarea,
-      'mdc-text-field--fullwidth': fullwidth,
       'mdc-text-field--outlined': outlined,
       'mdc-text-field--invalid': invalid,
       'mdc-text-field--disabled': disabled,
       'mdc-text-field--with-leading-icon': !!icon,
       'mdc-text-field--with-trailing-icon': !!trailingIcon,
       'mdc-text-field--no-label': !label,
-      'mdc-text-field--end-aligned': align === 'end'
+      'mdc-text-field--end-aligned': align === 'end',
+      'mdc-text-field--with-internal-counter': textarea && characterCount
     }
   ]);
 
@@ -192,7 +187,9 @@ export const TextField: RMWC.ComponentType<
   ) : null;
 
   const renderedCharacterCounter = characterCount ? (
-    <TextFieldCharacterCount apiRef={setCharacterCounter} />
+    <div className="mdc-text-field-character-counter">
+      {characterCountContent}
+    </div>
   ) : null;
 
   const renderTextarea = resizeable ? (
@@ -298,25 +295,6 @@ const TextFieldSuffix = React.memo(function TextFieldSuffix({
       {suffix}
     </span>
   );
-});
-
-/*********************************************************************
- * Character Count
- *********************************************************************/
-
-export interface TextFieldCharacterCountApi {
-  getFoundation: () => MDCTextFieldCharacterCounterFoundation;
-}
-
-export interface TextFieldCharacterCountProps extends IconProps {
-  apiRef?: (api: TextFieldCharacterCountApi | null) => void;
-}
-
-const TextFieldCharacterCount = React.memo(function TextFieldCharacterCount(
-  props: TextFieldCharacterCountProps
-) {
-  const { content } = useTextFieldCharacterCountFoundation(props);
-  return <div className="mdc-text-field-character-counter">{content}</div>;
 });
 
 /*********************************************************************

@@ -1,8 +1,6 @@
 # Grid Lists
 
-Grid lists are an alternative to standard list views.
-
-IMPORTANT: As of Material Components Web 6.0.0, this component is deprecated.
+Grid lists are an alternative to standard list views. Note that as of Material Components Web 6.0.0, this component is deprecated.
 
 - Module **@rmwc/grid-list**
 - Import styles:
@@ -81,40 +79,46 @@ function Example() {
 ```
 
 ## GridList
-
 Grid List Component
 
 ### Props
 
-| Name                 | Type                                                  | Description                                                 |
-| -------------------- | ----------------------------------------------------- | ----------------------------------------------------------- |
-| `headerCaption`      | `undefined \| false \| true`                          | Move the caption to the top of the card.                    |
-| `tileAspect`         | `"1x1" \| "16x9" \| "2x3" \| "3x2" \| "4x3" \| "3x4"` | One of the following values: 1x1, 16x9, 2x3, 3x2, 4x3, 3x4. |
-| `tileGutter1`        | `undefined \| false \| true`                          | Use a 1px gutter.                                           |
-| `twolineCaption`     | `undefined \| false \| true`                          | Make the caption two lines.                                 |
-| `withIconAlignStart` | `undefined \| false \| true`                          | Leaves space for a start aligned icon.                      |
+| Name | Type | Description |
+|------|------|-------------|
+| `headerCaption` | `undefined \| false \| true` | Move the caption to the top of the card. |
+| `tileAspect` | `"1x1" \| "16x9" \| "2x3" \| "3x2" \| "4x3" \| "3x4"` | One of the following values: 1x1, 16x9, 2x3, 3x2, 4x3, 3x4. |
+| `tileGutter1` | `undefined \| false \| true` | Use a 1px gutter. |
+| `twolineCaption` | `undefined \| false \| true` | Make the caption two lines. |
+| `withIconAlignStart` | `undefined \| false \| true` | Leaves space for a start aligned icon. |
+
 
 ## GridTile
-
 A grid tile
 
-## GridTileIcon
 
+
+## GridTileIcon
 The icon for a Grid tile. This is an instance of Icon component.
 
 
-## GridTilePrimary
 
+## GridTilePrimary
 The primary content for a Grid tile
 
-## GridTileSecondary
 
+
+## GridTileSecondary
 The secondary content for a Grid tile
 
-## GridTileTitleSupportText
 
+
+## GridTileTitleSupportText
 Supporting Text for the Grid Tile
 
-## GridTileTitle
 
+
+## GridTileTitle
 The title for a Grid tile
+
+
+
