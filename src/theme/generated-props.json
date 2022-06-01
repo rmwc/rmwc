@@ -22,6 +22,7 @@
       },
       "kind": "interface",
       "name": "ThemeProps",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/theme/index.tsx#L16",
       "methods": [],
       "properties": [
         {
@@ -45,6 +46,7 @@
           },
           "kind": "property",
           "name": "use",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/theme/index.tsx#L18",
           "type": "RMWC.ThemePropT"
         },
         {
@@ -68,6 +70,7 @@
           },
           "kind": "property",
           "name": "wrap",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/theme/index.tsx#L20",
           "type": "undefined | false | true"
         }
       ]
@@ -93,6 +96,7 @@
       },
       "kind": "interface",
       "name": "ThemeProviderProps",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/theme/index.tsx#L43",
       "methods": [],
       "properties": [
         {
@@ -116,6 +120,7 @@
           },
           "kind": "property",
           "name": "children",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/theme/index.tsx#L51",
           "type": "React.ReactNode"
         },
         {
@@ -139,6 +144,7 @@
           },
           "kind": "property",
           "name": "options",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/theme/index.tsx#L45",
           "type": "{ [key: string]: string }"
         },
         {
@@ -162,6 +168,7 @@
           },
           "kind": "property",
           "name": "style",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/theme/index.tsx#L47",
           "type": "Object"
         },
         {
@@ -185,6 +192,7 @@
           },
           "kind": "property",
           "name": "wrap",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/theme/index.tsx#L49",
           "type": "undefined | false | true"
         }
       ]

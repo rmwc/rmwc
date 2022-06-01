@@ -1,7 +1,15 @@
 import { useState } from 'react';
 import { useFoundation } from '@rmwc/base';
-import { TextFieldCharacterCountProps, TextFieldCharacterCountApi } from '.';
+
 import { MDCTextFieldCharacterCounterFoundation } from '@material/textfield';
+
+export interface TextFieldCharacterCountApi {
+  getFoundation: () => MDCTextFieldCharacterCounterFoundation;
+}
+
+export interface TextFieldCharacterCountProps {
+  apiRef?: (api: TextFieldCharacterCountApi | null) => void;
+}
 
 export const useTextFieldCharacterCountFoundation = (
   props: TextFieldCharacterCountProps

@@ -51,6 +51,25 @@ storiesOf('TextField', module)
   .add('TextField (Controlled)', () => <TextFieldStory />)
   .add('TextField (Uncontrolled)', () => <TextFieldUncontrolledStory />)
   .add('autoFocus', () => <TextField label="Hello" autoFocus />)
+  .add('Character Count', () => (
+    <>
+      <TextField
+        textarea
+        label="textarea..."
+        rows={8}
+        maxLength={20}
+        characterCount
+        resizeable
+        helpText={{
+          persistent: true,
+          validationMsg: true,
+          children: 'The field is required'
+        }}
+      />
+
+      <TextField label="Textfield" rows={8} maxLength={20} characterCount />
+    </>
+  ))
   .add('Changing', function () {
     const [value, setValue] = React.useState('');
 

@@ -22,6 +22,7 @@
       },
       "kind": "interface",
       "name": "CardProps",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/card/index.tsx#L11",
       "methods": [],
       "properties": [
         {
@@ -45,6 +46,7 @@
           },
           "kind": "property",
           "name": "outlined",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/card/index.tsx#L13",
           "type": "undefined | false | true"
         }
       ]
@@ -70,6 +72,7 @@
       },
       "kind": "interface",
       "name": "CardMediaProps",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/card/index.tsx#L29",
       "methods": [],
       "properties": [
         {
@@ -93,6 +96,7 @@
           },
           "kind": "property",
           "name": "sixteenByNine",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/card/index.tsx#L33",
           "type": "undefined | false | true"
         },
         {
@@ -116,6 +120,7 @@
           },
           "kind": "property",
           "name": "square",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/card/index.tsx#L31",
           "type": "undefined | false | true"
         }
       ]
@@ -141,6 +146,7 @@
       },
       "kind": "interface",
       "name": "CardMediaContentProps",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/card/index.tsx#L53",
       "methods": [],
       "properties": []
     },
@@ -165,6 +171,7 @@
       },
       "kind": "interface",
       "name": "CardPrimaryActionProps",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/card/index.tsx#L64",
       "methods": [],
       "properties": []
     },
@@ -189,6 +196,7 @@
       },
       "kind": "interface",
       "name": "CardActionsProps",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/card/index.tsx#L80",
       "methods": [],
       "properties": [
         {
@@ -212,6 +220,7 @@
           },
           "kind": "property",
           "name": "fullBleed",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/card/index.tsx#L82",
           "type": "undefined | false | true"
         }
       ]
@@ -237,6 +246,7 @@
       },
       "kind": "interface",
       "name": "CardActionButtonsProps",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/card/index.tsx#L98",
       "methods": [],
       "properties": []
     },
@@ -261,6 +271,7 @@
       },
       "kind": "interface",
       "name": "CardActionIconsProps",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/card/index.tsx#L109",
       "methods": [],
       "properties": []
     },
@@ -285,6 +296,7 @@
       },
       "kind": "interface",
       "name": "CardActionIconProps",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/card/index.tsx#L120",
       "extends": [
         "any"
       ],
@@ -312,6 +324,7 @@
       },
       "kind": "interface",
       "name": "CardActionButtonProps",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/card/index.tsx#L134",
       "extends": [
         "any"
       ],

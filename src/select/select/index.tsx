@@ -58,8 +58,6 @@ export interface SelectProps {
   icon?: RMWC.IconPropT;
   /** Advanced: A reference to the MDCFoundation. */
   foundationRef?: React.Ref<MDCSelectFoundation>;
-  /** Makes Select fullwidth */
-  fullwidth?: boolean;
 }
 
 export type SelectHTMLProps = RMWC.HTMLProps<
@@ -200,7 +198,6 @@ interface EnhancedMenuProps extends MenuProps {
   value?: string;
   defaultValue?: any;
   children?: React.ReactNode;
-  fullwidth?: boolean;
 }
 
 function EnhancedMenu(props: EnhancedMenuProps & SelectHTMLProps) {
@@ -216,12 +213,7 @@ function EnhancedMenu(props: EnhancedMenuProps & SelectHTMLProps) {
 
   let currentIndex = 0;
 
-  const className = useClassNames(props, [
-    'mdc-select__menu',
-    {
-      'mdc-menu-surface--fullwidth': !!props.fullwidth
-    }
-  ]);
+  const className = useClassNames(props, ['mdc-select__menu']);
 
   const renderOption = ({
     label,
@@ -311,7 +303,6 @@ export const Select: RMWC.ComponentType<
     inputRef,
     helpText,
     foundationRef,
-    fullwidth,
     ...rest
   } = props;
 
@@ -350,8 +341,7 @@ export const Select: RMWC.ComponentType<
       'mdc-select--required': !!props.required,
       'mdc-select--invalid': !!invalid,
       'mdc-select--with-leading-icon': !!icon,
-      'mdc-select--no-label': !label,
-      'mdc-select--fullwidth': !!fullwidth
+      'mdc-select--no-label': !label
     }
   ]);
 
@@ -456,7 +446,6 @@ export const Select: RMWC.ComponentType<
             selectedIndex={selectedIndex}
             menuApiRef={setMenu}
             children={children}
-            fullwidth={fullwidth}
           />
         )}
       </Tag>
