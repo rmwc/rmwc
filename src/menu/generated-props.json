@@ -607,7 +607,7 @@
       },
       "kind": "interface",
       "name": "SimpleMenuProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu/index.tsx#L126",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu/index.tsx#L123",
       "extends": [
         "MenuProps"
       ],
@@ -659,7 +659,7 @@
           },
           "kind": "property",
           "name": "children",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu/index.tsx#L132",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu/index.tsx#L129",
           "type": "React.ReactNode"
         },
         {
@@ -733,7 +733,7 @@
           },
           "kind": "property",
           "name": "handle",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu/index.tsx#L128",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu/index.tsx#L125",
           "type": "ReactElement<any>"
         },
         {
@@ -782,7 +782,7 @@
           },
           "kind": "property",
           "name": "rootProps",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu/index.tsx#L130",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu/index.tsx#L127",
           "type": "Object"
         }
       ]
@@ -808,7 +808,7 @@
       },
       "kind": "interface",
       "name": "SimpleMenuSurfaceProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu/index.tsx#L136",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu/index.tsx#L133",
       "extends": [
         "any"
       ],
@@ -835,7 +835,7 @@
           },
           "kind": "property",
           "name": "children",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu/index.tsx#L142",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu/index.tsx#L139",
           "type": "React.ReactNode"
         },
         {
@@ -859,7 +859,7 @@
           },
           "kind": "property",
           "name": "handle",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu/index.tsx#L138",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu/index.tsx#L135",
           "type": "ReactElement<any>"
         },
         {
@@ -883,7 +883,7 @@
           },
           "kind": "property",
           "name": "rootProps",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu/index.tsx#L140",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu/index.tsx#L137",
           "type": "Object"
         }
       ]
@@ -902,7 +902,7 @@
       },
       "kind": "interface",
       "name": "SimpleMenuState",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu/index.tsx#L145",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu/index.tsx#L142",
       "methods": [],
       "properties": [
         {
@@ -919,7 +919,7 @@
           },
           "kind": "property",
           "name": "open",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu/index.tsx#L146",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu/index.tsx#L143",
           "type": "boolean"
         }
       ]

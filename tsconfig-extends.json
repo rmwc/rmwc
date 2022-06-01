@@ -3,7 +3,8 @@
     "typeRoots": ["node_modules/@types", "src/types"],
     "baseUrl": ".",
     "paths": {
-      "@doc-utils": ["src/doc-utils"]
+      "@doc-utils": ["src/doc-utils"],
+      "@rmwc/*": ["src/*"]
     }
   }
 }

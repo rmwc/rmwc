@@ -16,7 +16,7 @@
     "noEmit": false,
     "jsx": "react",
     "downlevelIteration": true,
-    "lib": ["es2015", "es2017", "dom"],
+    "lib": ["es2015", "es2017", "ES2019", "dom"],
     "outDir": "build/dist",
     "declaration": true,
     "stripInternal": true

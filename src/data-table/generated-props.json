@@ -96,7 +96,7 @@
       },
       "kind": "interface",
       "name": "DataTableContentProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L57",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L59",
       "methods": [],
       "properties": []
     },
@@ -121,7 +121,7 @@
       },
       "kind": "interface",
       "name": "DataTableHeadProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L68",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L70",
       "methods": [],
       "properties": []
     },
@@ -146,7 +146,7 @@
       },
       "kind": "interface",
       "name": "DataTableBodyProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L83",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L85",
       "methods": [],
       "properties": []
     },
@@ -171,7 +171,7 @@
       },
       "kind": "interface",
       "name": "DataTableRowProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L94",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L96",
       "methods": [],
       "properties": [
         {
@@ -195,7 +195,7 @@
           },
           "kind": "property",
           "name": "activated",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L98",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L100",
           "type": "undefined | false | true"
         },
         {
@@ -219,7 +219,7 @@
           },
           "kind": "property",
           "name": "selected",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L96",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L98",
           "type": "undefined | false | true"
         }
       ]
@@ -245,7 +245,7 @@
       },
       "kind": "interface",
       "name": "DataTableHeadCellProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L136",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L138",
       "extends": [
         "SharedDataTableCellProps"
       ],
@@ -347,7 +347,7 @@
           },
           "kind": "property",
           "name": "children",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L142",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L144",
           "type": "React.ReactNode"
         },
         {
@@ -421,7 +421,7 @@
           },
           "kind": "property",
           "name": "onSortChange",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L140",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L142",
           "type": "undefined | (dir: null | number) => void"
         },
         {
@@ -445,7 +445,7 @@
           },
           "kind": "property",
           "name": "sort",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L138",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L140",
           "type": "null | number"
         }
       ]
@@ -471,7 +471,7 @@
       },
       "kind": "interface",
       "name": "DataTableCellProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L207",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L209",
       "extends": [
         "SharedDataTableCellProps"
       ],
@@ -625,7 +625,7 @@
       },
       "kind": "interface",
       "name": "SimpleDataTableProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L236",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L238",
       "extends": [
         "DataTableProps"
       ],
@@ -652,7 +652,7 @@
           },
           "kind": "property",
           "name": "data",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L238",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L240",
           "type": "Array<any[]>"
         },
         {
@@ -676,7 +676,7 @@
           },
           "kind": "property",
           "name": "getCellProps",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L244",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L246",
           "type": "undefined | (cell: any[], index: number, isHead: boolean) => Object"
         },
         {
@@ -700,7 +700,7 @@
           },
           "kind": "property",
           "name": "getRowProps",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L242",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L244",
           "type": "undefined | (row: any[], index: number, isHead: boolean) => Object"
         },
         {
@@ -724,7 +724,7 @@
           },
           "kind": "property",
           "name": "headers",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L240",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L242",
           "type": "Array<any[]>"
         },
         {

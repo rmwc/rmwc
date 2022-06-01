@@ -389,6 +389,119 @@
         }
       ]
     },
+    "TrailingActionApi": {
+      "documentation": {
+        "contents": [
+          "<p>Trailing Action</p>\n"
+        ],
+        "contentsRaw": "Trailing Action",
+        "metadata": {}
+      },
+      "fileName": "src/chip/trailing-action/index.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "interface",
+      "name": "TrailingActionApi",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/chip/trailing-action/index.tsx#L9",
+      "methods": [],
+      "properties": [
+        {
+          "fileName": "src/chip/trailing-action/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "getFoundation",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/chip/trailing-action/index.tsx#L10",
+          "type": "() => MDCChipTrailingActionFoundation"
+        }
+      ]
+    },
+    "TrailingActionProps": {
+      "fileName": "src/chip/trailing-action/index.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "interface",
+      "name": "TrailingActionProps",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/chip/trailing-action/index.tsx#L13",
+      "methods": [],
+      "properties": [
+        {
+          "fileName": "src/chip/trailing-action/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "apiRef",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/chip/trailing-action/index.tsx#L14",
+          "type": "undefined | (api: TrailingActionApi | null) => void"
+        },
+        {
+          "fileName": "src/chip/trailing-action/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "icon",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/chip/trailing-action/index.tsx#L16",
+          "type": "string"
+        },
+        {
+          "fileName": "src/chip/trailing-action/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "isNavigable",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/chip/trailing-action/index.tsx#L15",
+          "type": "undefined | false | true"
+        }
+      ]
+    },
     "ChipOnInteractionEventT": {
       "documentation": {
         "contents": [

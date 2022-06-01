@@ -87,6 +87,23 @@
           "name": "getWidth",
           "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/floating-label/index.tsx#L13",
           "type": "() => number"
+        },
+        {
+          "fileName": "src/floating-label/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "setRequired",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/floating-label/index.tsx#L14",
+          "type": "(isRequired: boolean) => void"
         }
       ]
     }
