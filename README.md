@@ -38,7 +38,7 @@ Features:
 
 ## Recent updates
 
-v8.0.0 is here! This release includes dependency updates and support of material-component-web version 8.0.0. 🔥
+v8.0.1 is here! This release includes dependency updates and support of material-component-web version 8.0.0. 🔥
 
 - `npm i rmwc@latest` or `npm i @rmwc/button@latest`.
 - React 17 now usable as a peer dep
