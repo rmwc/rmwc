@@ -24,6 +24,9 @@ export const useFloatingLabelFoundation = (
       return {
         getWidth() {
           return foundation.getWidth();
+        },
+        setRequired(isRequired: boolean) {
+          return foundation.setRequired(isRequired);
         }
       };
     },

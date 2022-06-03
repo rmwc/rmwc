@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/card",
-  "version": "7.0.3",
+  "version": "8.0.0",
   "description": "RMWC Card component",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -36,12 +36,12 @@
     "react-dom": ">=16.8.x"
   },
   "dependencies": {
-    "@material/card": "^5.1.0",
-    "@rmwc/base": "^7.0.3",
-    "@rmwc/button": "^7.0.3",
-    "@rmwc/icon-button": "^7.0.3",
-    "@rmwc/ripple": "^7.0.3",
-    "@rmwc/types": "^7.0.3"
+    "@material/card": "^8.0.0",
+    "@rmwc/base": "^8.0.0",
+    "@rmwc/button": "^8.0.0",
+    "@rmwc/icon-button": "^8.0.0",
+    "@rmwc/ripple": "^8.0.0",
+    "@rmwc/types": "^8.0.0"
   },
   "gitHead": "d9befec0e3b258864b71686eecd16c16feb43cf1"
 }

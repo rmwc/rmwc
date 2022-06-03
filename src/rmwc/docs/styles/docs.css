@@ -573,9 +573,7 @@ ul li {
 
 /** Page textfields */
 #page-text-fields .live-preview .mdc-text-field {
-  margin-top: 1.5rem;
-  float: left;
-  clear: left;
+  margin-top: 1rem;
 }
 
 #page-text-fields .live-preview > div {
@@ -592,9 +590,12 @@ ul li {
   margin-left: 0.5rem;
 }
 
-#page-data-tables .doc-controls > * {
-  max-width: 10rem;
+#page-data-tables .doc-controls > * > * {
+  min-width: 10rem;
   flex: 1;
+}
+
+#page-data-tables .doc-controls > * {
   margin: 1rem 0.5rem;
 }
 

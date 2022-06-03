@@ -14,7 +14,7 @@
 - https://github.com/jamesmfriedman/rmwc/issues/758
 - We recently closed all issues for a full reset as we get back to the most recent Google version. If any still apply, please reopen.
 
-RMWC is a React UI Kit built on Google's official Material Components Web library v5.x.x
+RMWC is a React UI Kit built on Google's official Material Components Web library v8.x.x
 [https://rmwc.io/](https://rmwc.io/)
 
 Features:
@@ -38,7 +38,7 @@ Features:
 
 ## Recent updates
 
-v7.0.0 is here! This is primarily a maintenance release to revive the project and unblock using React 17.
+v8.0.0 is here! This release includes dependency updates and support of material-component-web version 8.0.0.
 
 - `npm i rmwc@latest` or `npm i @rmwc/button@latest`.
 - React 17 now usable as a peer dep
@@ -96,7 +96,7 @@ This project exists thanks to all the people who contribute. [[Contribute](CONTR
 
 ### Backers
 
-Thank you to all our backers! 🙏 [[Become a backer](https://opencollective.com/rmwc#backer)]
+Thank you to all our backers! 🙏 We are no longer accepting financial contributions, and the remaining balance in our Open Collective will go to help efforts in the Ukraine. Thank you to all of our previous backers!
 
 <a href="https://opencollective.com/rmwc#backers" target="_blank"><img src="https://opencollective.com/rmwc/backers.svg?width=890"></a>
 

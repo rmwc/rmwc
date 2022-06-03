@@ -54,9 +54,9 @@ export default function Readme() {
           );
         }}
       </DocsExample>
-      <DocsExample label="With Markers">
+      {/* <DocsExample label="With Markers">
         <Slider discrete displayMarkers min={100} max={200} step={5} />
-      </DocsExample>
+      </DocsExample> */}
 
       <DocProps
         src={propsSrc}

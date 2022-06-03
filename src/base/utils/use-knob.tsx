@@ -3,7 +3,7 @@ import { useState } from 'react';
 import * as knobTypes from '@storybook/addon-knobs';
 
 // @ts-ignore
-import { manager } from '@storybook/addon-knobs/dist/esm/registerKnobs';
+import { manager } from '@storybook/addon-knobs/dist/registerKnobs';
 
 export const useKnob = (
   knobType: keyof typeof knobTypes,

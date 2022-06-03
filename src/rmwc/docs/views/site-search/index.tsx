@@ -1,15 +1,16 @@
-import React, { useState, useRef } from 'react';
-import { menuContent, MenuItemT } from '../../common/menu-content';
-import { Menu, MenuItems, MenuSurfaceAnchor } from '@rmwc/menu';
+import React, { useRef, useState } from 'react';
 
-import { SimpleListItem } from '@rmwc/list';
-import { TextField } from '@rmwc/textfield';
+import { useNavigate } from 'react-router';
 import { Link } from 'react-router-dom';
-import { CircularProgress } from '@rmwc/circular-progress';
 
-import { history } from '../../common/history';
-import styles from './site-search.module.css';
+import { CircularProgress } from '@rmwc/circular-progress';
+import { SimpleListItem } from '@rmwc/list';
+import { Menu, MenuItems, MenuSurfaceAnchor } from '@rmwc/menu';
+import { TextField } from '@rmwc/textfield';
 import { IconPropT } from '@rmwc/types';
+
+import { menuContent, MenuItemT } from '../../common/menu-content';
+import styles from './site-search.module.css';
 
 type SiteSearchItemT = {
   cacheId: string; //"-uBq3tnNfuMJ"
@@ -40,10 +41,10 @@ const componentsList = (() => {
 
 const searchComponents = (val: string) =>
   componentsList
-    .filter(c => {
+    .filter((c) => {
       return c.label.toLowerCase().includes(val.toLowerCase());
     })
-    .map(c => ({
+    .map((c) => ({
       id: c.label,
       icon: {
         icon: 'code',
@@ -55,18 +56,16 @@ const searchComponents = (val: string) =>
     }));
 
 const searchGoogle = async (val: string, abortController: AbortController) => {
-  const {
-    items = []
-  } = await fetch(
+  const { items = [] } = await fetch(
     `https://www.googleapis.com/customsearch/v1/siterestrict?key=${process.env.REACT_APP_CUSTOM_SEARCH_KEY}&cx=${process.env.REACT_APP_CUSTOM_SEARCH_ID}&q=${val}`,
     { signal: abortController.signal }
-  ).then<{ items?: SiteSearchItemT[] }>(res => res.json());
+  ).then<{ items?: SiteSearchItemT[] }>((res) => res.json());
 
   return (
     items
       // shitty hack to ignore things in the index that just reference them homepage
-      .filter(r => !r.snippet.startsWith('RMWC is a React wrapper'))
-      .map(r => ({
+      .filter((r) => !r.snippet.startsWith('RMWC is a React wrapper'))
+      .map((r) => ({
         id: r.cacheId,
         icon: {
           icon: 'notes',
@@ -78,7 +77,7 @@ const searchGoogle = async (val: string, abortController: AbortController) => {
         url: (
           (r.formattedUrl.split('?').pop() || '')
             .split('&')
-            .find(p => p.startsWith('p=')) || ''
+            .find((p) => p.startsWith('p=')) || ''
         ).slice(2)
       }))
   );
@@ -98,6 +97,7 @@ export function SiteSearch() {
       url: string;
     }>
   >([]);
+  const navigate = useNavigate();
 
   const doSearch = (val: string) => {
     if (abortControllerRef.current) {
@@ -150,9 +150,9 @@ export function SiteSearch() {
         outlined
         className={styles.siteSearch}
         value={searchVal}
-        onChange={evt => setSearchVal(evt.currentTarget.value)}
+        onChange={(evt) => setSearchVal(evt.currentTarget.value)}
         onFocus={() => setIsSearching(true)}
-        onKeyDown={evt => {
+        onKeyDown={(evt) => {
           if (evt.which === 40) {
             const listItem = document.querySelector<HTMLAnchorElement>(
               `.${styles.siteSearchMenu} a`
@@ -173,9 +173,9 @@ export function SiteSearch() {
         onClose={() => {
           setIsSearching(false);
         }}
-        onSelect={evt => {
+        onSelect={(evt) => {
           window.scrollTo(0, 0);
-          history.replace(
+          navigate(
             (evt.detail.item as HTMLAnchorElement).href.split('/').pop() || '/'
           );
           document.activeElement &&
@@ -183,7 +183,7 @@ export function SiteSearch() {
         }}
       >
         <MenuItems twoLine>
-          {results.map(r => (
+          {results.map((r) => (
             <SimpleListItem
               tag={Link}
               to={r.url}

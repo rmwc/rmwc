@@ -1,6 +1,6 @@
 # Grid Lists
 
-Grid lists are an alternative to standard list views.
+Grid lists are an alternative to standard list views. Note that as of Material Components Web 6.0.0, this component is deprecated.
 
 - Module **@rmwc/grid-list**
 - Import styles:
