@@ -19,7 +19,7 @@ jobs:
       - name: 'Install Dependencies'
         run: npm ci
       - name: 'Build'
-        run: npm run build:code
+        run: npm run build
       - name: 'Publish'
         run: npx lerna exec -- npm publish --tag latest
         if: github.base_ref == 'master'
