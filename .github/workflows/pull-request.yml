@@ -1,0 +1,13 @@
+name: Pull Request
+
+on:
+  pull_request:
+    branches: [master, next]
+
+jobs:
+  test:
+    uses: ./.github/workflows/unit-test.yml
+  automerge:
+    needs: 
+      - test
+    uses: ./.github/workflows/automerge.yml
