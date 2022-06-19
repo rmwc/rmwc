@@ -1,0 +1,72 @@
+{
+  "npm": {},
+  "typescript": {
+    "TouchTargetWrapperProps": {
+      "documentation": {
+        "contents": [
+          "<p>The ButTouchTargetWrapperon component.</p>\n"
+        ],
+        "contentsRaw": "The ButTouchTargetWrapperon component.",
+        "metadata": {}
+      },
+      "fileName": "src/touch-target/index.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "interface",
+      "name": "TouchTargetWrapperProps",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/touch-target/index.tsx#L14",
+      "methods": [],
+      "properties": [
+        {
+          "documentation": {
+            "contents": [
+              "<p>Content specified as children.</p>\n"
+            ],
+            "contentsRaw": "Content specified as children.",
+            "metadata": {}
+          },
+          "fileName": "src/touch-target/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "children",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/touch-target/index.tsx#L16",
+          "type": "React.ReactNode"
+        }
+      ]
+    },
+    "TouchTargetWrapperHTMLProps": {
+      "fileName": "src/touch-target/index.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "type alias",
+      "name": "TouchTargetWrapperHTMLProps",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/touch-target/index.tsx#L19",
+      "type": "RMWC.HTMLProps<HTMLDivElement>"
+    }
+  }
+}

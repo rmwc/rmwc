@@ -1,0 +1,1607 @@
+{
+  "npm": {},
+  "typescript": {
+    "FoundationElement": {
+      "fileName": "src/base/foundation-component.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "class",
+      "name": "FoundationElement",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/base/foundation-component.tsx#L14",
+      "methods": [
+        {
+          "fileName": "src/base/foundation-component.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "method",
+          "name": "addClass",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/base/foundation-component.tsx#L56",
+          "signatures": [
+            {
+              "documentation": {
+                "contents": [
+                  "<p>Classes</p>\n"
+                ],
+                "contentsRaw": "Classes",
+                "metadata": {}
+              },
+              "fileName": "src/base/foundation-component.tsx",
+              "kind": "signature",
+              "name": "addClass",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/base/foundation-component.tsx#L56",
+              "parameters": [
+                {
+                  "flags": {
+                    "isExported": false,
+                    "isExternal": false,
+                    "isOptional": false,
+                    "isPrivate": false,
+                    "isProtected": false,
+                    "isPublic": false,
+                    "isRest": false,
+                    "isStatic": false
+                  },
+                  "kind": "parameter",
+                  "name": "className",
+                  "type": "string"
+                }
+              ],
+              "returnType": "void",
+              "type": "(className: string) => void"
+            }
+          ]
+        },
+        {
+          "fileName": "src/base/foundation-component.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "method",
+          "name": "addEventListener",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/base/foundation-component.tsx#L155",
+          "signatures": [
+            {
+              "documentation": {
+                "contents": [
+                  "<p>Events</p>\n"
+                ],
+                "contentsRaw": "Events",
+                "metadata": {}
+              },
+              "fileName": "src/base/foundation-component.tsx",
+              "kind": "signature",
+              "name": "addEventListener",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/base/foundation-component.tsx#L155",
+              "parameters": [
+                {
+                  "flags": {
+                    "isExported": false,
+                    "isExternal": false,
+                    "isOptional": false,
+                    "isPrivate": false,
+                    "isProtected": false,
+                    "isPublic": false,
+                    "isRest": false,
+                    "isStatic": false
+                  },
+                  "kind": "parameter",
+                  "name": "evtName",
+                  "type": "string"
+                },
+                {
+                  "flags": {
+                    "isExported": false,
+                    "isExternal": false,
+                    "isOptional": false,
+                    "isPrivate": false,
+                    "isProtected": false,
+                    "isPublic": false,
+                    "isRest": false,
+                    "isStatic": false
+                  },
+                  "kind": "parameter",
+                  "name": "callback",
+                  "type": "SpecificEventListener<any>"
+                }
+              ],
+              "returnType": "void",
+              "type": "(evtName: string, callback: SpecificEventListener<any>) => void"
+            }
+          ]
+        },
+        {
+          "fileName": "src/base/foundation-component.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "method",
+          "name": "destroy",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/base/foundation-component.tsx#L41",
+          "signatures": [
+            {
+              "fileName": "src/base/foundation-component.tsx",
+              "kind": "signature",
+              "name": "destroy",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/base/foundation-component.tsx#L41",
+              "parameters": [],
+              "returnType": "void",
+              "type": "() => void"
+            }
+          ]
+        },
+        {
+          "fileName": "src/base/foundation-component.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "method",
+          "name": "getProp",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/base/foundation-component.tsx#L84",
+          "signatures": [
+            {
+              "fileName": "src/base/foundation-component.tsx",
+              "kind": "signature",
+              "name": "getProp",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/base/foundation-component.tsx#L84",
+              "parameters": [
+                {
+                  "flags": {
+                    "isExported": false,
+                    "isExternal": false,
+                    "isOptional": false,
+                    "isPrivate": false,
+                    "isProtected": false,
+                    "isPublic": false,
+                    "isRest": false,
+                    "isStatic": false
+                  },
+                  "kind": "parameter",
+                  "name": "propName",
+                  "type": "keyof Props"
+                }
+              ],
+              "returnType": "Partial<Props>[keyof Props]",
+              "type": "(propName: keyof Props) => Partial<Props>[keyof Props]"
+            }
+          ]
+        },
+        {
+          "fileName": "src/base/foundation-component.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "method",
+          "name": "hasClass",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/base/foundation-component.tsx#L70",
+          "signatures": [
+            {
+              "fileName": "src/base/foundation-component.tsx",
+              "kind": "signature",
+              "name": "hasClass",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/base/foundation-component.tsx#L70",
+              "parameters": [
+                {
+                  "flags": {
+                    "isExported": false,
+                    "isExternal": false,
+                    "isOptional": false,
+                    "isPrivate": false,
+                    "isProtected": false,
+                    "isPublic": false,
+                    "isRest": false,
+                    "isStatic": false
+                  },
+                  "kind": "parameter",
+                  "name": "className",
+                  "type": "string"
+                }
+              ],
+              "returnType": "boolean",
+              "type": "(className: string) => boolean"
+            }
+          ]
+        },
+        {
+          "fileName": "src/base/foundation-component.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "method",
+          "name": "onChange",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/base/foundation-component.tsx#L37",
+          "signatures": [
+            {
+              "fileName": "src/base/foundation-component.tsx",
+              "kind": "signature",
+              "name": "onChange",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/base/foundation-component.tsx#L37",
+              "parameters": [],
+              "returnType": "void",
+              "type": "() => void"
+            }
+          ]
+        },
+        {
+          "fileName": "src/base/foundation-component.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "method",
+          "name": "props",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/base/foundation-component.tsx#L95",
+          "signatures": [
+            {
+              "fileName": "src/base/foundation-component.tsx",
+              "kind": "signature",
+              "name": "props",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/base/foundation-component.tsx#L95",
+              "parameters": [
+                {
+                  "flags": {
+                    "isExported": false,
+                    "isExternal": false,
+                    "isOptional": false,
+                    "isPrivate": false,
+                    "isProtected": false,
+                    "isPublic": false,
+                    "isRest": false,
+                    "isStatic": false
+                  },
+                  "kind": "parameter",
+                  "name": "propsToMerge",
+                  "type": "{ [key: string]: any }"
+                }
+              ],
+              "returnType": "any",
+              "type": "(propsToMerge: { [key: string]: any }) => any"
+            }
+          ]
+        },
+        {
+          "fileName": "src/base/foundation-component.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "method",
+          "name": "removeClass",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/base/foundation-component.tsx#L63",
+          "signatures": [
+            {
+              "fileName": "src/base/foundation-component.tsx",
+              "kind": "signature",
+              "name": "removeClass",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/base/foundation-component.tsx#L63",
+              "parameters": [
+                {
+                  "flags": {
+                    "isExported": false,
+                    "isExternal": false,
+                    "isOptional": false,
+                    "isPrivate": false,
+                    "isProtected": false,
+                    "isPublic": false,
+                    "isRest": false,
+                    "isStatic": false
+                  },
+                  "kind": "parameter",
+                  "name": "className",
+                  "type": "string"
+                }
+              ],
+              "returnType": "void",
+              "type": "(className: string) => void"
+            }
+          ]
+        },
+        {
+          "fileName": "src/base/foundation-component.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "method",
+          "name": "removeEventListener",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/base/foundation-component.tsx#L163",
+          "signatures": [
+            {
+              "fileName": "src/base/foundation-component.tsx",
+              "kind": "signature",
+              "name": "removeEventListener",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/base/foundation-component.tsx#L163",
+              "parameters": [
+                {
+                  "flags": {
+                    "isExported": false,
+                    "isExternal": false,
+                    "isOptional": false,
+                    "isPrivate": false,
+                    "isProtected": false,
+                    "isPublic": false,
+                    "isRest": false,
+                    "isStatic": false
+                  },
+                  "kind": "parameter",
+                  "name": "evtName",
+                  "type": "string"
+                },
+                {
+                  "flags": {
+                    "isExported": false,
+                    "isExternal": false,
+                    "isOptional": false,
+                    "isPrivate": false,
+                    "isProtected": false,
+                    "isPublic": false,
+                    "isRest": false,
+                    "isStatic": false
+                  },
+                  "kind": "parameter",
+                  "name": "callback",
+                  "type": "SpecificEventListener<any>"
+                }
+              ],
+              "returnType": "void",
+              "type": "(evtName: string, callback: SpecificEventListener<any>) => void"
+            }
+          ]
+        },
+        {
+          "fileName": "src/base/foundation-component.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "method",
+          "name": "removeProp",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/base/foundation-component.tsx#L88",
+          "signatures": [
+            {
+              "fileName": "src/base/foundation-component.tsx",
+              "kind": "signature",
+              "name": "removeProp",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/base/foundation-component.tsx#L88",
+              "parameters": [
+                {
+                  "flags": {
+                    "isExported": false,
+                    "isExternal": false,
+                    "isOptional": false,
+                    "isPrivate": false,
+                    "isProtected": false,
+                    "isPublic": false,
+                    "isRest": false,
+                    "isStatic": false
+                  },
+                  "kind": "parameter",
+                  "name": "propName",
+                  "type": "keyof Props"
+                }
+              ],
+              "returnType": "void",
+              "type": "(propName: keyof Props) => void"
+            }
+          ]
+        },
+        {
+          "fileName": "src/base/foundation-component.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "method",
+          "name": "setProp",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/base/foundation-component.tsx#L77",
+          "signatures": [
+            {
+              "documentation": {
+                "contents": [
+                  "<p>Props</p>\n"
+                ],
+                "contentsRaw": "Props",
+                "metadata": {}
+              },
+              "fileName": "src/base/foundation-component.tsx",
+              "kind": "signature",
+              "name": "setProp",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/base/foundation-component.tsx#L77",
+              "parameters": [
+                {
+                  "flags": {
+                    "isExported": false,
+                    "isExternal": false,
+                    "isOptional": false,
+                    "isPrivate": false,
+                    "isProtected": false,
+                    "isPublic": false,
+                    "isRest": false,
+                    "isStatic": false
+                  },
+                  "kind": "parameter",
+                  "name": "propName",
+                  "type": "keyof Props"
+                },
+                {
+                  "flags": {
+                    "isExported": false,
+                    "isExternal": false,
+                    "isOptional": false,
+                    "isPrivate": false,
+                    "isProtected": false,
+                    "isPublic": false,
+                    "isRest": false,
+                    "isStatic": false
+                  },
+                  "kind": "parameter",
+                  "name": "value",
+                  "type": "any"
+                },
+                {
+                  "flags": {
+                    "isExported": false,
+                    "isExternal": false,
+                    "isOptional": false,
+                    "isPrivate": false,
+                    "isProtected": false,
+                    "isPublic": false,
+                    "isRest": false,
+                    "isStatic": false
+                  },
+                  "kind": "parameter",
+                  "name": "silent",
+                  "defaultValue": "false",
+                  "type": "boolean"
+                }
+              ],
+              "returnType": "void",
+              "type": "(propName: keyof Props, value: any, silent?: boolean) => void"
+            }
+          ]
+        },
+        {
+          "fileName": "src/base/foundation-component.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "method",
+          "name": "setRef",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/base/foundation-component.tsx#L174",
+          "signatures": [
+            {
+              "documentation": {
+                "contents": [
+                  "<p>Refs</p>\n"
+                ],
+                "contentsRaw": "Refs",
+                "metadata": {}
+              },
+              "fileName": "src/base/foundation-component.tsx",
+              "kind": "signature",
+              "name": "setRef",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/base/foundation-component.tsx#L174",
+              "parameters": [
+                {
+                  "flags": {
+                    "isExported": false,
+                    "isExternal": false,
+                    "isOptional": false,
+                    "isPrivate": false,
+                    "isProtected": false,
+                    "isPublic": false,
+                    "isRest": false,
+                    "isStatic": false
+                  },
+                  "kind": "parameter",
+                  "name": "el",
+                  "type": "any"
+                }
+              ],
+              "returnType": "void",
+              "type": "(el: any) => void"
+            }
+          ]
+        },
+        {
+          "fileName": "src/base/foundation-component.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "method",
+          "name": "setStyle",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/base/foundation-component.tsx#L141",
+          "signatures": [
+            {
+              "documentation": {
+                "contents": [
+                  "<p>Styles</p>\n"
+                ],
+                "contentsRaw": "Styles",
+                "metadata": {}
+              },
+              "fileName": "src/base/foundation-component.tsx",
+              "kind": "signature",
+              "name": "setStyle",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/base/foundation-component.tsx#L141",
+              "parameters": [
+                {
+                  "flags": {
+                    "isExported": false,
+                    "isExternal": false,
+                    "isOptional": false,
+                    "isPrivate": false,
+                    "isProtected": false,
+                    "isPublic": false,
+                    "isRest": false,
+                    "isStatic": false
+                  },
+                  "kind": "parameter",
+                  "name": "propertyName",
+                  "type": "string"
+                },
+                {
+                  "flags": {
+                    "isExported": false,
+                    "isExternal": false,
+                    "isOptional": false,
+                    "isPrivate": false,
+                    "isProtected": false,
+                    "isPublic": false,
+                    "isRest": false,
+                    "isStatic": false
+                  },
+                  "kind": "parameter",
+                  "name": "value",
+                  "type": "number | string | null"
+                }
+              ],
+              "returnType": "void",
+              "type": "(propertyName: string, value: number | string | null) => void"
+            }
+          ]
+        }
+      ],
+      "properties": [
+        {
+          "fileName": "src/base/foundation-component.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "_onChange",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/base/foundation-component.tsx#L20",
+          "defaultValue": " null",
+          "type": "() => void | null"
+        }
+      ],
+      "constructorType": {
+        "fileName": "src/base/foundation-component.tsx",
+        "flags": {
+          "isExported": true,
+          "isExternal": false,
+          "isOptional": false,
+          "isPrivate": false,
+          "isProtected": false,
+          "isPublic": false,
+          "isRest": false,
+          "isStatic": false
+        },
+        "kind": "constructor",
+        "name": "constructor",
+        "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/base/foundation-component.tsx#L20",
+        "signatures": [
+          {
+            "fileName": "src/base/foundation-component.tsx",
+            "kind": "signature",
+            "name": "new FoundationElement",
+            "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/base/foundation-component.tsx#L20",
+            "parameters": [
+              {
+                "flags": {
+                  "isExported": false,
+                  "isExternal": false,
+                  "isOptional": false,
+                  "isPrivate": false,
+                  "isProtected": false,
+                  "isPublic": false,
+                  "isRest": false,
+                  "isStatic": false
+                },
+                "kind": "parameter",
+                "name": "onChange",
+                "type": "() => void"
+              }
+            ],
+            "returnType": "FoundationElement",
+            "type": "(onChange: () => void) => FoundationElement"
+          }
+        ]
+      }
+    },
+    "EventEmitter": {
+      "fileName": "src/base/utils/emitter.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "class",
+      "name": "EventEmitter",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/base/utils/emitter.tsx#L1",
+      "methods": [
+        {
+          "fileName": "src/base/utils/emitter.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "method",
+          "name": "off",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/base/utils/emitter.tsx#L8",
+          "signatures": [
+            {
+              "fileName": "src/base/utils/emitter.tsx",
+              "kind": "signature",
+              "name": "off",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/base/utils/emitter.tsx#L8",
+              "parameters": [
+                {
+                  "flags": {
+                    "isExported": false,
+                    "isExternal": false,
+                    "isOptional": false,
+                    "isPrivate": false,
+                    "isProtected": false,
+                    "isPublic": false,
+                    "isRest": false,
+                    "isStatic": false
+                  },
+                  "kind": "parameter",
+                  "name": "event",
+                  "type": "string"
+                },
+                {
+                  "flags": {
+                    "isExported": false,
+                    "isExternal": false,
+                    "isOptional": false,
+                    "isPrivate": false,
+                    "isProtected": false,
+                    "isPublic": false,
+                    "isRest": false,
+                    "isStatic": false
+                  },
+                  "kind": "parameter",
+                  "name": "cb",
+                  "type": "Function"
+                }
+              ],
+              "returnType": "void",
+              "type": "(event: string, cb: Function) => void"
+            }
+          ]
+        },
+        {
+          "fileName": "src/base/utils/emitter.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "method",
+          "name": "on",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/base/utils/emitter.tsx#L3",
+          "signatures": [
+            {
+              "fileName": "src/base/utils/emitter.tsx",
+              "kind": "signature",
+              "name": "on",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/base/utils/emitter.tsx#L3",
+              "parameters": [
+                {
+                  "flags": {
+                    "isExported": false,
+                    "isExternal": false,
+                    "isOptional": false,
+                    "isPrivate": false,
+                    "isProtected": false,
+                    "isPublic": false,
+                    "isRest": false,
+                    "isStatic": false
+                  },
+                  "kind": "parameter",
+                  "name": "event",
+                  "type": "string"
+                },
+                {
+                  "flags": {
+                    "isExported": false,
+                    "isExternal": false,
+                    "isOptional": false,
+                    "isPrivate": false,
+                    "isProtected": false,
+                    "isPublic": false,
+                    "isRest": false,
+                    "isStatic": false
+                  },
+                  "kind": "parameter",
+                  "name": "cb",
+                  "type": "Function"
+                }
+              ],
+              "returnType": "void",
+              "type": "(event: string, cb: Function) => void"
+            }
+          ]
+        },
+        {
+          "fileName": "src/base/utils/emitter.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "method",
+          "name": "trigger",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/base/utils/emitter.tsx#L13",
+          "signatures": [
+            {
+              "fileName": "src/base/utils/emitter.tsx",
+              "kind": "signature",
+              "name": "trigger",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/base/utils/emitter.tsx#L13",
+              "parameters": [
+                {
+                  "flags": {
+                    "isExported": false,
+                    "isExternal": false,
+                    "isOptional": false,
+                    "isPrivate": false,
+                    "isProtected": false,
+                    "isPublic": false,
+                    "isRest": false,
+                    "isStatic": false
+                  },
+                  "kind": "parameter",
+                  "name": "event",
+                  "type": "string"
+                },
+                {
+                  "flags": {
+                    "isExported": false,
+                    "isExternal": false,
+                    "isOptional": false,
+                    "isPrivate": false,
+                    "isProtected": false,
+                    "isPublic": false,
+                    "isRest": true,
+                    "isStatic": false
+                  },
+                  "kind": "parameter",
+                  "name": "args",
+                  "type": "any"
+                }
+              ],
+              "returnType": "void",
+              "type": "(event: string, ...args: any) => void"
+            }
+          ]
+        }
+      ],
+      "properties": [
+        {
+          "fileName": "src/base/utils/emitter.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "events_",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/base/utils/emitter.tsx#L2",
+          "type": "{ [evtName: string]: Array<Function> }"
+        }
+      ]
+    },
+    "ArrayEmitter": {
+      "fileName": "src/base/utils/emitter.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "class",
+      "name": "ArrayEmitter",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/base/utils/emitter.tsx#L25",
+      "extends": [
+        "EventEmitter"
+      ],
+      "methods": [
+        {
+          "fileName": "src/base/utils/emitter.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "method",
+          "name": "empty",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/base/utils/emitter.tsx#L32",
+          "signatures": [
+            {
+              "fileName": "src/base/utils/emitter.tsx",
+              "kind": "signature",
+              "name": "empty",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/base/utils/emitter.tsx#L32",
+              "parameters": [],
+              "returnType": "void",
+              "type": "() => void"
+            }
+          ]
+        },
+        {
+          "fileName": "src/base/utils/emitter.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "method",
+          "name": "off",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/base/utils/emitter.tsx#L8",
+          "inheritedFrom": "EventEmitter.off",
+          "signatures": [
+            {
+              "fileName": "src/base/utils/emitter.tsx",
+              "kind": "signature",
+              "name": "off",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/base/utils/emitter.tsx#L8",
+              "parameters": [
+                {
+                  "flags": {
+                    "isExported": false,
+                    "isExternal": false,
+                    "isOptional": false,
+                    "isPrivate": false,
+                    "isProtected": false,
+                    "isPublic": false,
+                    "isRest": false,
+                    "isStatic": false
+                  },
+                  "kind": "parameter",
+                  "name": "event",
+                  "type": "string"
+                },
+                {
+                  "flags": {
+                    "isExported": false,
+                    "isExternal": false,
+                    "isOptional": false,
+                    "isPrivate": false,
+                    "isProtected": false,
+                    "isPublic": false,
+                    "isRest": false,
+                    "isStatic": false
+                  },
+                  "kind": "parameter",
+                  "name": "cb",
+                  "type": "Function"
+                }
+              ],
+              "returnType": "void",
+              "type": "(event: string, cb: Function) => void"
+            }
+          ]
+        },
+        {
+          "fileName": "src/base/utils/emitter.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "method",
+          "name": "on",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/base/utils/emitter.tsx#L3",
+          "inheritedFrom": "EventEmitter.on",
+          "signatures": [
+            {
+              "fileName": "src/base/utils/emitter.tsx",
+              "kind": "signature",
+              "name": "on",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/base/utils/emitter.tsx#L3",
+              "parameters": [
+                {
+                  "flags": {
+                    "isExported": false,
+                    "isExternal": false,
+                    "isOptional": false,
+                    "isPrivate": false,
+                    "isProtected": false,
+                    "isPublic": false,
+                    "isRest": false,
+                    "isStatic": false
+                  },
+                  "kind": "parameter",
+                  "name": "event",
+                  "type": "string"
+                },
+                {
+                  "flags": {
+                    "isExported": false,
+                    "isExternal": false,
+                    "isOptional": false,
+                    "isPrivate": false,
+                    "isProtected": false,
+                    "isPublic": false,
+                    "isRest": false,
+                    "isStatic": false
+                  },
+                  "kind": "parameter",
+                  "name": "cb",
+                  "type": "Function"
+                }
+              ],
+              "returnType": "void",
+              "type": "(event: string, cb: Function) => void"
+            }
+          ]
+        },
+        {
+          "fileName": "src/base/utils/emitter.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "method",
+          "name": "push",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/base/utils/emitter.tsx#L27",
+          "signatures": [
+            {
+              "fileName": "src/base/utils/emitter.tsx",
+              "kind": "signature",
+              "name": "push",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/base/utils/emitter.tsx#L27",
+              "parameters": [
+                {
+                  "flags": {
+                    "isExported": false,
+                    "isExternal": false,
+                    "isOptional": false,
+                    "isPrivate": false,
+                    "isProtected": false,
+                    "isPublic": false,
+                    "isRest": true,
+                    "isStatic": false
+                  },
+                  "kind": "parameter",
+                  "name": "items",
+                  "type": "T[]"
+                }
+              ],
+              "returnType": "number",
+              "type": "(...items: T[]) => number"
+            }
+          ]
+        },
+        {
+          "fileName": "src/base/utils/emitter.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "method",
+          "name": "remove",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/base/utils/emitter.tsx#L36",
+          "signatures": [
+            {
+              "fileName": "src/base/utils/emitter.tsx",
+              "kind": "signature",
+              "name": "remove",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/base/utils/emitter.tsx#L36",
+              "parameters": [
+                {
+                  "flags": {
+                    "isExported": false,
+                    "isExternal": false,
+                    "isOptional": false,
+                    "isPrivate": false,
+                    "isProtected": false,
+                    "isPublic": false,
+                    "isRest": false,
+                    "isStatic": false
+                  },
+                  "kind": "parameter",
+                  "name": "item",
+                  "type": "T"
+                }
+              ],
+              "returnType": "boolean",
+              "type": "(item: T) => boolean"
+            }
+          ]
+        },
+        {
+          "fileName": "src/base/utils/emitter.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "method",
+          "name": "trigger",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/base/utils/emitter.tsx#L13",
+          "inheritedFrom": "EventEmitter.trigger",
+          "signatures": [
+            {
+              "fileName": "src/base/utils/emitter.tsx",
+              "kind": "signature",
+              "name": "trigger",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/base/utils/emitter.tsx#L13",
+              "parameters": [
+                {
+                  "flags": {
+                    "isExported": false,
+                    "isExternal": false,
+                    "isOptional": false,
+                    "isPrivate": false,
+                    "isProtected": false,
+                    "isPublic": false,
+                    "isRest": false,
+                    "isStatic": false
+                  },
+                  "kind": "parameter",
+                  "name": "event",
+                  "type": "string"
+                },
+                {
+                  "flags": {
+                    "isExported": false,
+                    "isExternal": false,
+                    "isOptional": false,
+                    "isPrivate": false,
+                    "isProtected": false,
+                    "isPublic": false,
+                    "isRest": true,
+                    "isStatic": false
+                  },
+                  "kind": "parameter",
+                  "name": "args",
+                  "type": "any"
+                }
+              ],
+              "returnType": "void",
+              "type": "(event: string, ...args: any) => void"
+            }
+          ]
+        }
+      ],
+      "properties": [
+        {
+          "fileName": "src/base/utils/emitter.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "array",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/base/utils/emitter.tsx#L26",
+          "defaultValue": " []",
+          "type": "T[]"
+        },
+        {
+          "fileName": "src/base/utils/emitter.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "events_",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/base/utils/emitter.tsx#L2",
+          "inheritedFrom": "EventEmitter.events_",
+          "type": "{ [evtName: string]: Array<Function> }"
+        }
+      ]
+    },
+    "FocusTrap": {
+      "fileName": "src/base/utils/focus-trap.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "class",
+      "name": "FocusTrap",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/base/utils/focus-trap.tsx#L9",
+      "methods": [
+        {
+          "fileName": "src/base/utils/focus-trap.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "method",
+          "name": "releaseFocus",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/base/utils/focus-trap.tsx#L23",
+          "signatures": [
+            {
+              "documentation": {
+                "contents": [
+                  "<p>Releases focus from <code>root</code>. Also restores focus to the previously focused\nelement.</p>\n"
+                ],
+                "contentsRaw": "Releases focus from `root`. Also restores focus to the previously focused\nelement.",
+                "metadata": {}
+              },
+              "fileName": "src/base/utils/focus-trap.tsx",
+              "kind": "signature",
+              "name": "releaseFocus",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/base/utils/focus-trap.tsx#L23",
+              "parameters": [],
+              "returnType": "void",
+              "type": "() => void"
+            }
+          ]
+        },
+        {
+          "fileName": "src/base/utils/focus-trap.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "method",
+          "name": "trapFocus",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/base/utils/focus-trap.tsx#L18",
+          "signatures": [
+            {
+              "documentation": {
+                "contents": [
+                  "<p>Traps focus in <code>root</code>. Also focuses on either <code>initialFocusEl</code> if set;\notherwises sets initial focus to the first focusable child element.</p>\n"
+                ],
+                "contentsRaw": "Traps focus in `root`. Also focuses on either `initialFocusEl` if set;\notherwises sets initial focus to the first focusable child element.",
+                "metadata": {}
+              },
+              "fileName": "src/base/utils/focus-trap.tsx",
+              "kind": "signature",
+              "name": "trapFocus",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/base/utils/focus-trap.tsx#L18",
+              "parameters": [],
+              "returnType": "void",
+              "type": "() => void"
+            }
+          ]
+        }
+      ],
+      "properties": [],
+      "constructorType": {
+        "fileName": "src/base/utils/focus-trap.tsx",
+        "flags": {
+          "isExported": true,
+          "isExternal": false,
+          "isOptional": false,
+          "isPrivate": false,
+          "isProtected": false,
+          "isPublic": false,
+          "isRest": false,
+          "isStatic": false
+        },
+        "kind": "constructor",
+        "name": "constructor",
+        "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/base/utils/focus-trap.tsx#L12",
+        "signatures": [
+          {
+            "fileName": "src/base/utils/focus-trap.tsx",
+            "kind": "signature",
+            "name": "new FocusTrap",
+            "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/base/utils/focus-trap.tsx#L12",
+            "parameters": [
+              {
+                "flags": {
+                  "isExported": false,
+                  "isExternal": false,
+                  "isOptional": false,
+                  "isPrivate": false,
+                  "isProtected": false,
+                  "isPublic": false,
+                  "isRest": false,
+                  "isStatic": false
+                },
+                "kind": "parameter",
+                "name": "root",
+                "type": "HTMLElement"
+              },
+              {
+                "flags": {
+                  "isExported": false,
+                  "isExternal": false,
+                  "isOptional": true,
+                  "isPrivate": false,
+                  "isProtected": false,
+                  "isPublic": false,
+                  "isRest": false,
+                  "isStatic": false
+                },
+                "kind": "parameter",
+                "name": "options",
+                "type": "FocusOptions"
+              }
+            ],
+            "returnType": "FocusTrap",
+            "type": "(root: HTMLElement, options?: FocusOptions) => FocusTrap"
+          }
+        ]
+      }
+    },
+    "PortalProps": {
+      "fileName": "src/base/portal.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "interface",
+      "name": "PortalProps",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/base/portal.tsx#L16",
+      "extends": [
+        "any"
+      ],
+      "methods": [],
+      "properties": []
+    },
+    "PortalContextData": {
+      "fileName": "src/base/PortalContext.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "interface",
+      "name": "PortalContextData",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/base/PortalContext.tsx#L3",
+      "methods": [],
+      "properties": [
+        {
+          "fileName": "src/base/PortalContext.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "portalElement",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/base/PortalContext.tsx#L4",
+          "type": "HTMLDivElement | null"
+        },
+        {
+          "fileName": "src/base/PortalContext.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "setPortalElement",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/base/PortalContext.tsx#L5",
+          "type": "(element: HTMLDivElement) => void | null"
+        }
+      ]
+    },
+    "FocusOptions": {
+      "fileName": "src/base/utils/focus-trap.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "interface",
+      "name": "FocusOptions",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/base/utils/focus-trap.tsx#L4",
+      "methods": [],
+      "properties": [
+        {
+          "fileName": "src/base/utils/focus-trap.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "initialFocusEl",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/base/utils/focus-trap.tsx#L5",
+          "type": "HTMLElement"
+        },
+        {
+          "fileName": "src/base/utils/focus-trap.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "skipInitialFocus",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/base/utils/focus-trap.tsx#L6",
+          "type": "undefined | false | true"
+        }
+      ]
+    },
+    "WithThemeProps": {
+      "fileName": "src/base/index.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "type alias",
+      "name": "WithThemeProps",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/base/index.tsx#L12",
+      "type": "_WithThemeProps"
+    },
+    "PortalPropT": {
+      "fileName": "src/base/portal.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "type alias",
+      "name": "PortalPropT",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/base/portal.tsx#L14",
+      "type": "Element | string | boolean | undefined | null"
+    },
+    "DeprecateT": {
+      "fileName": "src/base/utils/deprecation.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "type alias",
+      "name": "DeprecateT",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/base/utils/deprecation.tsx#L1",
+      "type": "{ [oldPropName: string]: string | [string, function] }"
+    }
+  }
+}
