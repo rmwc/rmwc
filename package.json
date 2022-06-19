@@ -54,9 +54,12 @@
 		"@storybook/addon-links": "^6.4.22",
 		"@storybook/builder-webpack5": "^6.4.22",
 		"@storybook/manager-webpack5": "^6.4.22",
-		"@storybook/react": "^6.4.22",
 		"@storybook/preset-create-react-app": "4.1.0",
+		"@storybook/react": "^6.4.22",
+		"@testing-library/dom": "^7.31.2",
+		"@testing-library/jest-dom": "^5.16.4",
 		"@testing-library/react": "^11.2.7",
+		"@testing-library/user-event": "^14.2.0",
 		"@types/enzyme": "^3.10.12",
 		"@types/enzyme-adapter-react-16": "^1.0.6",
 		"@types/jest": "^27.4.1",
@@ -86,8 +89,7 @@
 		"react-router-dom": "^6.3.0",
 		"react-scripts": "^5.0.1",
 		"typescript": "4.3.5"
-	}
-	,
+	},
 	"eslintIgnore": [
 		"node_modules"
 	],

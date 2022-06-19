@@ -4,6 +4,7 @@ import Adapter17 from '@wojtekmaj/enzyme-adapter-react-17';
 import Enzyme from 'enzyme';
 // @ts-ignore
 import rmwcTestPolyfill from './base/test-polyfill';
+import '@testing-library/jest-dom/extend-expect';
 
 const Adapter = React.version.startsWith('17') ? Adapter17 : Adapter16;
 
