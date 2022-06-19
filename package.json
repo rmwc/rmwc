@@ -9,10 +9,6 @@
 	"sideEffects": true,
 	"main": "index.js",
 	"types": "index.d.ts",
-	"peerDependencies": {
-		"react": ">=16.8.x",
-		"react-dom": ">=16.8.x"
-	},
 	"scripts": {
 		"install": "lerna bootstrap --force-local --hoist",
 		"start": "export NODE_OPTIONS='--max-old-space-size=4096' && react-app-rewired start",
