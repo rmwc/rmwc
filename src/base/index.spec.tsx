@@ -1,6 +1,5 @@
-import * as RMWC from '@rmwc/types';
 import React from 'react';
-import { mount } from 'enzyme';
+import { render } from '@testing-library/react';
 import {
   withTheme,
   randomId,
@@ -41,7 +40,7 @@ describe('FoundationElement', () => {
       root: new FoundationElement(() => {})
     };
 
-    mount(<div ref={inst.root.setRef} />);
+    render(<div ref={inst.root.setRef} />);
 
     expect(inst.root.ref instanceof HTMLDivElement).toBe(true);
   });
@@ -104,13 +103,14 @@ describe('FoundationElement', () => {
   it('FoundationElement: handles prop merging', async () => {
     let blueChangeCalled = false;
     let redChangeCalled = false;
-    const el = mount(
+    const el = (
       <div
         className="blue"
         style={{ background: 'blue' }}
         onChange={() => (blueChangeCalled = true)}
       />
     );
+
     const inst = {
       root: new FoundationElement<any, any>(() => {})
     };
@@ -118,11 +118,11 @@ describe('FoundationElement', () => {
     inst.root.addClass('red');
     inst.root.setStyle('color', 'red');
     inst.root.addEventListener('change', () => (redChangeCalled = true));
-    el.update();
 
     await wait(100);
-    const mergedProps = inst.root.props(el.props());
+    const mergedProps = inst.root.props(el.props);
     mergedProps.onChange();
+
     expect(mergedProps.className).toBe('blue red');
     expect(mergedProps.style).toEqual({ color: 'red', background: 'blue' });
     expect(blueChangeCalled).toBe(true);
@@ -166,13 +166,24 @@ describe('Utils', () => {
       return wrapChild({ ...props, className: 'foo' });
     };
 
-    const el = mount(
+    const { container } = render(
       <Foo>
         <div className="child" />
       </Foo>
     );
 
-    expect(el.html().includes('foo child')).toBe(true);
+    expect(container).toMatchInlineSnapshot(`
+      <div>
+        <div
+          class="foo child"
+        >
+          <div
+            class="child"
+          />
+        </div>
+      </div>
+    `);
+    expect(container.firstChild).toHaveClass('foo child');
   });
 
   it('toCamel', () => {
@@ -187,23 +198,26 @@ describe('Utils', () => {
 describe('withTheme', () => {
   it('works with and without classnames', () => {
     const Component = withTheme(({ ...rest }) => <div {...rest} />);
-    const el = mount(<Component className="test" theme="primary" />);
-    expect(el.html().includes('test'));
+    const { container } = render(
+      <Component className="test" theme="primary" />
+    );
+    expect(container.firstChild).toHaveClass('test');
 
-    mount(<Component className="test" />);
-    expect(el.html().includes('test'));
+    render(<Component className="test" />);
+    expect(container.firstChild).toHaveClass('test');
   });
 
   it('works with arrays', () => {
     const Component = withTheme(({ ...rest }) => <div {...rest} />);
-    const el = mount(<Component theme={['primary']} />);
-    expect(el.html().includes('mdc-theme-primary'));
+    const { container } = render(<Component theme={['primary']} />);
+
+    expect(container.firstChild).toHaveClass('mdc-theme--primary');
   });
 
   it('handles deprecations', () => {
     const Component = withTheme(({ ...rest }) => <div {...rest} />);
-    // @ts-ignore
-    mount(<Component theme="primary foo" />);
-    mount(<Component theme="on-primary" />);
+
+    render(<Component theme="primary foo" />);
+    render(<Component theme="on-primary" />);
   });
 });
