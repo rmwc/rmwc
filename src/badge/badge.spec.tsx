@@ -1,38 +1,44 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render, screen } from '@testing-library/react';
 import { Badge, BadgeAnchor } from '.';
 
 describe('Badge', () => {
-  it('renders', () => {
-    mount(<Badge />);
+  it('renders with label', () => {
+    const { asFragment } = render(<Badge label="New" />);
+
+    expect(screen.getByText('New')).toBeInTheDocument();
+
+    expect(asFragment()).toMatchSnapshot();
   });
 
-  it('label', () => {
-    const el = mount(<Badge label="New" />);
-    expect(el.html().includes('New')).toBe(true);
+  it('align end', () => {
+    const { container } = render(<Badge align="end" />);
+
+    expect(container.firstChild).toHaveClass('rmwc-badge--align-end');
   });
 
-  it('align', () => {
-    const el = mount(<Badge align="end" />);
-    expect(el.html().includes('rmwc-badge--align-end')).toBe(true);
+  it('align start', () => {
+    const { container } = render(<Badge align="start" />);
 
-    const el2 = mount(<Badge align="start" />);
-    expect(el2.html().includes('rmwc-badge--align-start')).toBe(true);
+    expect(container.firstChild).toHaveClass('rmwc-badge--align-start');
   });
 
   it('exited', () => {
-    const el = mount(<Badge exited />);
-    expect(el.html().includes('rmwc-badge--exited')).toBe(true);
+    const { container } = render(<Badge exited />);
+
+    expect(container.firstChild).toHaveClass('rmwc-badge--exited');
   });
 
   it('inset', () => {
     // cant assert, jsdom doesn't include css vars?
-    mount(<Badge inset="10rem" />);
+    render(<Badge inset="10rem" />);
   });
 });
 
 describe('BadgeAnchor', () => {
   it('renders', () => {
-    mount(<BadgeAnchor />);
+    const { asFragment } = render(<BadgeAnchor />);
+
+    expect(asFragment()).toMatchSnapshot();
   });
 });

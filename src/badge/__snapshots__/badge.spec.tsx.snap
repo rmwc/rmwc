@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Badge renders with label 1`] = `
+<DocumentFragment>
+  <div
+    class="rmwc-badge rmwc-badge--align-end"
+  >
+    New
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BadgeAnchor renders 1`] = `
+<DocumentFragment>
+  <div
+    class="rmwc-badge-anchor"
+  />
+</DocumentFragment>
+`;
