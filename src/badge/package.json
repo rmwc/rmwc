@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/badge",
-  "version": "7.0.3",
+  "version": "8.0.0",
   "description": "RMWC badge component",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -36,8 +36,8 @@
     "react-dom": ">=16.8.x"
   },
   "dependencies": {
-    "@rmwc/base": "^7.0.3",
-    "@rmwc/types": "^7.0.3"
+    "@rmwc/base": "^8.0.0",
+    "@rmwc/types": "^8.0.0"
   },
   "gitHead": "bf098adc2571ee1641ef20d79f38fb64e9ff186e"
 }
