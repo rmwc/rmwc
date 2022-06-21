@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Switch renders 1`] = `
+<DocumentFragment>
+  <div
+    class="mdc-switch"
+  >
+    <div
+      class="mdc-switch__track"
+    />
+    <div
+      class="mdc-ripple-upgraded--unbounded mdc-switch__thumb-underlay"
+      data-mdc-ripple-is-unbounded="true"
+    >
+      <div
+        class="mdc-switch__thumb"
+      />
+      <input
+        class="mdc-switch__native-control"
+        id="toggle--test"
+        role="switch"
+        type="checkbox"
+      />
+    </div>
+    <div
+      class="mdc-switch__knob"
+    />
+  </div>
+</DocumentFragment>
+`;
