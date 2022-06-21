@@ -1,28 +1,30 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render } from '@testing-library/react';
 import { CircularProgress } from './';
 
 describe('CircularProgress', () => {
   it('renders', () => {
-    mount(<CircularProgress />);
+    const { asFragment } = render(<CircularProgress />);
+
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('can be sizes', () => {
-    mount(<CircularProgress size="xsmall" />);
-    mount(<CircularProgress size="small" />);
-    mount(<CircularProgress size="medium" />);
-    mount(<CircularProgress size="large" />);
-    mount(<CircularProgress size="xlarge" />);
-    mount(<CircularProgress size={72} />);
+    render(<CircularProgress size="xsmall" />);
+    render(<CircularProgress size="small" />);
+    render(<CircularProgress size="medium" />);
+    render(<CircularProgress size="large" />);
+    render(<CircularProgress size="xlarge" />);
+    render(<CircularProgress size={72} />);
   });
 
   it('can be determinate', () => {
-    mount(<CircularProgress progress={0.3} />);
+    render(<CircularProgress progress={0.3} />);
   });
 
   it('can have a different max / min', () => {
-    mount(<CircularProgress min={0} max={100} progress={30} />);
-    mount(<CircularProgress progress={-1} />);
-    mount(<CircularProgress progress={2} />);
+    render(<CircularProgress min={0} max={100} progress={30} />);
+    render(<CircularProgress progress={-1} />);
+    render(<CircularProgress progress={2} />);
   });
 });

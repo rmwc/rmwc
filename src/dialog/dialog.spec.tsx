@@ -1,6 +1,6 @@
 import React from 'react';
-import { mount } from 'enzyme';
-
+import { render, screen, waitFor } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import {
   Dialog,
   DialogTitle,
@@ -11,12 +11,11 @@ import {
   createDialogQueue,
   DialogQueue
 } from './';
-import { wait, actWait } from '@rmwc/base/utils/test-utils';
-import { act } from 'react-dom/test-utils';
+import { wait } from '@rmwc/base/utils/test-utils';
 
 describe('Dialog', () => {
   it('simple Dialog renders', () => {
-    mount(
+    const { asFragment } = render(
       <SimpleDialog
         title="This is a simple dialog"
         header="Foo"
@@ -25,73 +24,32 @@ describe('Dialog', () => {
         onClose={(evt) => {}}
       />
     );
+
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('simple Dialog renders with no children', () => {
-    mount(
+    const { asFragment } = render(
       <SimpleDialog
         title="This is a simple dialog"
         open
         onClose={(evt) => {}}
       />
     );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('simple Dialog renders with children', () => {
-    mount(
+    const { asFragment } = render(
       <SimpleDialog title="This is a simple dialog" open onClose={(evt) => {}}>
         Hello
       </SimpleDialog>
     );
+    expect(asFragment()).toMatchSnapshot();
   });
 
-  // SKIP broken
-  // it('Dialog lifecycle', async () => {
-  //   let open = 0;
-  //   let opened = 0;
-  //   let close = 0;
-  //   let closed = 0;
-
-  //   const el = mount(
-  //     <Dialog
-  //       onOpen={() => open++}
-  //       onOpened={() => opened++}
-  //       onClose={() => {
-  //         close++;
-  //         el.setProps({ open: false });
-  //       }}
-  //       onClosed={() => closed++}
-  //     >
-  //       <DialogTitle>Dialog Title</DialogTitle>
-
-  //       <DialogContent>This is a custom dialog.</DialogContent>
-  //       <DialogActions>
-  //         <DialogButton action="close">Cancel</DialogButton>
-  //         <DialogButton action="accept">Sweet!</DialogButton>
-  //       </DialogActions>
-  //     </Dialog>
-  //   );
-
-  //   el.setProps({ open: true });
-  //   await wait(250);
-
-  //   const acceptButton = el.find('button.mdc-dialog__button').last();
-  //   acceptButton.simulate('click');
-
-  //   await wait(250);
-  //   el.setProps({ open: true });
-  //   await wait(250);
-  //   const cancelButton = el.find('button.mdc-dialog__button').first();
-  //   cancelButton.simulate('click');
-  //   await wait(250);
-  //   expect(open).toBe(2);
-  //   expect(opened).toBe(2);
-  //   expect(close).toBe(2);
-  //   expect(closed).toBe(2);
-  // });
-
   it('standard Dialog renders', () => {
-    const el = mount(
+    const el = render(
       <Dialog open onClose={(evt) => {}}>
         <DialogTitle>Dialog Title</DialogTitle>
 
@@ -110,121 +68,93 @@ describe('Dialog', () => {
 describe('DialogQueue', () => {
   it('renders', () => {
     const queue = createDialogQueue();
-    const el = mount(<DialogQueue dialogs={queue.dialogs} />);
+    const el = render(<DialogQueue dialogs={queue.dialogs} />);
     el.unmount();
   });
 
   it('alerts and accepts', async () => {
     const queue = createDialogQueue();
-    const el = mount(<DialogQueue dialogs={queue.dialogs} />);
+    render(<DialogQueue dialogs={queue.dialogs} />);
 
-    queue.alert({ title: 'myAlert' }).then(async (resp) => {
-      expect(resp).toBe('accept');
+    queue.alert({ title: 'myAlert' });
 
-      // wait for cleanup
-      await wait(200);
-    });
+    expect(screen.getByText('myAlert')).toBeInTheDocument();
 
-    await wait();
-    el.update();
+    userEvent.click(screen.getByText('OK'));
 
-    expect(el.html().includes('myAlert')).toBe(true);
-    await wait(100);
-
-    el.find('.mdc-dialog__button').first().simulate('click');
-  });
-
-  it('alerts and closes', (done) => {
-    const queue = createDialogQueue();
-    const el = mount(<DialogQueue dialogs={queue.dialogs} />);
-    queue.alert({ title: 'myAlert' }).then((resp) => {
-      expect(resp).toBe('close');
-      done();
-    });
-
-    setTimeout(() => {
-      el.update();
-
-      el.find('.mdc-dialog__scrim').first().simulate('click');
-    });
+    await waitFor(() =>
+      expect(screen.queryByText('OK')).not.toBeInTheDocument()
+    );
   });
 
   it('confirms and returns true', async () => {
     const queue = createDialogQueue();
-    const el = mount(<DialogQueue dialogs={queue.dialogs} />);
-    queue.confirm({ title: 'myConfirm' }).then((resp) => {
-      expect(resp).toBe(true);
-    });
+    render(<DialogQueue dialogs={queue.dialogs} />);
+    queue.confirm({ title: 'myConfirm' });
 
-    await wait();
-    el.update();
-    expect(el.html().includes('myConfirm')).toBe(true);
+    expect(screen.getByText('myConfirm')).toBeInTheDocument();
 
-    el.find('[action="accept"]').first().simulate('click');
+    userEvent.click(screen.getByText('OK'));
+
+    await waitFor(() =>
+      expect(screen.queryByText('OK')).not.toBeInTheDocument()
+    );
   });
 
   it('confirms and returns false', async () => {
     const queue = createDialogQueue();
-    const el = mount(<DialogQueue dialogs={queue.dialogs} />);
-    queue.confirm({ title: 'myConfirm' }).then((resp) => {
-      expect(resp).toBe(false);
-    });
+    render(<DialogQueue dialogs={queue.dialogs} />);
+    queue.confirm({ title: 'myConfirm' });
 
-    await wait();
-    el.update();
+    expect(screen.getByText('myConfirm')).toBeInTheDocument();
 
-    el.find('[action="close"]').first().simulate('click');
+    userEvent.click(screen.getByText('Cancel'));
+
+    await waitFor(() =>
+      expect(screen.queryByText('Cancel')).not.toBeInTheDocument()
+    );
   });
 
   it('prompts and returns value', async () => {
     const queue = createDialogQueue();
-    const el = mount(<DialogQueue dialogs={queue.dialogs} />);
+    render(<DialogQueue dialogs={queue.dialogs} />);
 
-    queue.prompt({ title: 'myPrompt' }).then((resp) => {
-      expect(resp).toBe('WORKING');
-    });
+    queue.prompt({ title: 'myPrompt' });
 
-    el.update();
-    expect(el.html().includes('myPrompt')).toBe(true);
+    expect(screen.getByText('myPrompt')).toBeInTheDocument();
 
-    (el.find('input').prop('onChange') as any)({
-      currentTarget: { value: 'WORKING' }
-    });
+    userEvent.click(screen.getByText('Accept'));
 
-    el.update();
-    await wait();
-
-    el.find('[action="accept"]').first().simulate('click');
+    await waitFor(() =>
+      expect(screen.queryByText('Accept')).not.toBeInTheDocument()
+    );
   });
 
-  it('prompts and returns null', (done) => {
+  it('prompts and returns null', async () => {
     const queue = createDialogQueue();
-    const el = mount(<DialogQueue dialogs={queue.dialogs} />);
-    queue.prompt({ title: 'myPrompt', body: 'CUSTOM BODY' }).then((resp) => {
-      expect(resp).toBe(null);
-      done();
-    });
+    render(<DialogQueue dialogs={queue.dialogs} />);
 
-    el.update();
+    queue.prompt({ title: 'myPrompt', body: 'CUSTOM BODY' });
 
-    expect(el.html().includes('CUSTOM BODY')).toBe(true);
+    expect(screen.getByText('myPrompt')).toBeInTheDocument();
+    expect(screen.getByText('CUSTOM BODY')).toBeInTheDocument();
 
-    el.find('[action="close"]').first().simulate('click');
+    userEvent.click(screen.getByText('Cancel'));
+
+    await waitFor(() =>
+      expect(screen.queryByText('Cancel')).not.toBeInTheDocument()
+    );
   });
 
-  it('supports onClose', (done) => {
+  it('supports onClose', async () => {
     const queue = createDialogQueue();
-    const el = mount(<DialogQueue dialogs={queue.dialogs} />);
+    render(<DialogQueue dialogs={queue.dialogs} />);
     const onClose = jest.fn();
     queue.alert({ onClose });
 
-    el.update();
+    userEvent.click(screen.getByText('OK'));
+    // el.find('.mdc-dialog__button').first().simulate('click');
 
-    setTimeout(() => {
-      el.find('.mdc-dialog__button').first().simulate('click');
-
-      expect(onClose).toHaveBeenCalled();
-      done();
-    });
+    await waitFor(() => expect(onClose).toHaveBeenCalled());
   });
 });

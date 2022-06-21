@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render } from '@testing-library/react';
 import {
   Drawer,
   DrawerContent,
@@ -11,7 +11,7 @@ import {
 
 describe('Drawer', () => {
   it('Drawer renders', () => {
-    mount(
+    const { asFragment } = render(
       <Drawer>
         <DrawerHeader>
           <DrawerTitle>Title</DrawerTitle>
@@ -20,10 +20,11 @@ describe('Drawer', () => {
         <DrawerContent />
       </Drawer>
     );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('dismissible Drawer renders', () => {
-    mount(
+    const { asFragment } = render(
       <React.Fragment>
         <Drawer dismissible>
           <DrawerHeader>
@@ -35,10 +36,11 @@ describe('Drawer', () => {
         <DrawerAppContent>Test</DrawerAppContent>
       </React.Fragment>
     );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('modal Drawer renders', () => {
-    mount(
+    const { asFragment } = render(
       <React.Fragment>
         <Drawer modal>
           <DrawerHeader>
@@ -49,11 +51,12 @@ describe('Drawer', () => {
         </Drawer>
       </React.Fragment>
     );
+    expect(asFragment()).toMatchSnapshot();
   });
 
-  it('can open', (done) => {
-    const el = mount(
-      <Drawer dismissible>
+  it('can open', () => {
+    const { container } = render(
+      <Drawer dismissible open>
         <DrawerHeader>
           <DrawerTitle>Title</DrawerTitle>
           <DrawerSubtitle>Subtitle</DrawerSubtitle>
@@ -62,18 +65,16 @@ describe('Drawer', () => {
       </Drawer>
     );
 
-    el.setProps({ open: true });
-
-    setTimeout(() => {
-      expect(el.html().includes('mdc-drawer--open')).toBe(true);
-      done();
-    });
+    expect(container.firstChild).toHaveClass('mdc-drawer--open');
   });
+
   it('can have custom classnames', () => {
     [Drawer, DrawerHeader, DrawerContent, DrawerTitle, DrawerSubtitle].forEach(
       (Component: React.ComponentType<any>) => {
-        const el = mount(<Component className={'my-custom-classname'} />);
-        expect(!!~el.html().search('my-custom-classname')).toEqual(true);
+        const { container } = render(
+          <Component className={'my-custom-classname'} />
+        );
+        expect(container.firstChild).toHaveClass('my-custom-classname');
       }
     );
   });

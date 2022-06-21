@@ -1,0 +1,408 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DataTable renders 1`] = `
+<DocumentFragment>
+  <div
+    class="mdc-data-table"
+  >
+    <div
+      class="mdc-data-table__table-container"
+    >
+      <table
+        class="mdc-data-table__table"
+      >
+        <thead
+          class="rmwc-data-table__head"
+        >
+          <tr
+            class="rmwc-data-table__row mdc-data-table__header-row"
+          >
+            <th
+              class="rmwc-data-table__cell mdc-data-table__header-cell"
+              role="columnheader"
+              scope="col"
+            >
+              Item
+            </th>
+            <th
+              class="rmwc-data-table__cell mdc-data-table__header-cell"
+              role="columnheader"
+              scope="col"
+            >
+              Quantity (Click Me)
+            </th>
+            <th
+              class="rmwc-data-table__cell mdc-data-table__header-cell"
+              role="columnheader"
+              scope="col"
+            >
+              Unit price
+            </th>
+          </tr>
+        </thead>
+        <tbody
+          class="mdc-data-table__content"
+        >
+          <tr
+            class="rmwc-data-table__row mdc-data-table__row"
+          >
+            <td
+              class="mdc-data-table__cell rmwc-data-table__cell"
+            >
+              Cookies
+            </td>
+            <td
+              class="mdc-data-table__cell rmwc-data-table__cell"
+            >
+              25
+            </td>
+            <td
+              class="mdc-data-table__cell rmwc-data-table__cell"
+            >
+              $2.90
+            </td>
+          </tr>
+          <tr
+            class="rmwc-data-table__row mdc-data-table__row"
+          >
+            <td
+              class="mdc-data-table__cell rmwc-data-table__cell"
+            >
+              Pizza
+            </td>
+            <td
+              class="mdc-data-table__cell rmwc-data-table__cell"
+            >
+              50
+            </td>
+            <td
+              class="mdc-data-table__cell rmwc-data-table__cell"
+            >
+              $1.25
+            </td>
+          </tr>
+          <tr
+            class="rmwc-data-table__row mdc-data-table__row"
+          >
+            <td
+              class="mdc-data-table__cell rmwc-data-table__cell"
+            >
+              Icecream
+            </td>
+            <td
+              class="mdc-data-table__cell rmwc-data-table__cell"
+            >
+              10
+            </td>
+            <td
+              class="mdc-data-table__cell rmwc-data-table__cell"
+            >
+              $2.35
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`SimpleDataTable renders 1`] = `
+<DocumentFragment>
+  <div
+    class="mdc-data-table"
+  >
+    <div
+      class="mdc-data-table__table-container"
+    >
+      <table
+        class="mdc-data-table__table"
+      >
+        <tbody
+          class="mdc-data-table__content"
+        >
+          <tr
+            class="rmwc-data-table__row mdc-data-table__row"
+          >
+            <td
+              class="mdc-data-table__cell rmwc-data-table__cell"
+            >
+              Cookies
+            </td>
+            <td
+              class="mdc-data-table__cell rmwc-data-table__cell"
+            >
+              25
+            </td>
+            <td
+              class="mdc-data-table__cell rmwc-data-table__cell"
+            >
+              $12.40
+            </td>
+          </tr>
+          <tr
+            class="rmwc-data-table__row mdc-data-table__row"
+          >
+            <td
+              class="mdc-data-table__cell rmwc-data-table__cell"
+            >
+              Pizza
+            </td>
+            <td
+              class="mdc-data-table__cell rmwc-data-table__cell"
+            >
+              11
+            </td>
+            <td
+              class="mdc-data-table__cell rmwc-data-table__cell"
+            >
+              $10.43
+            </td>
+          </tr>
+          <tr
+            class="rmwc-data-table__row mdc-data-table__row"
+          >
+            <td
+              class="mdc-data-table__cell rmwc-data-table__cell"
+            >
+              Icecream
+            </td>
+            <td
+              class="mdc-data-table__cell rmwc-data-table__cell"
+            >
+              3
+            </td>
+            <td
+              class="mdc-data-table__cell rmwc-data-table__cell"
+            >
+              1.43
+            </td>
+          </tr>
+          <tr
+            class="rmwc-data-table__row mdc-data-table__row"
+          >
+            <td
+              class="mdc-data-table__cell rmwc-data-table__cell"
+            >
+              Candy
+            </td>
+            <td
+              class="mdc-data-table__cell rmwc-data-table__cell"
+            >
+              72
+            </td>
+            <td
+              class="mdc-data-table__cell rmwc-data-table__cell"
+            >
+              $22.45
+            </td>
+          </tr>
+          <tr
+            class="rmwc-data-table__row mdc-data-table__row"
+          >
+            <td
+              class="mdc-data-table__cell rmwc-data-table__cell"
+            >
+              Cakes
+            </td>
+            <td
+              class="mdc-data-table__cell rmwc-data-table__cell"
+            >
+              101
+            </td>
+            <td
+              class="mdc-data-table__cell rmwc-data-table__cell"
+            >
+              $215.05
+            </td>
+          </tr>
+          <tr
+            class="rmwc-data-table__row mdc-data-table__row"
+          >
+            <td
+              class="mdc-data-table__cell rmwc-data-table__cell"
+            >
+              Muffins
+            </td>
+            <td
+              class="mdc-data-table__cell rmwc-data-table__cell"
+            >
+              3
+            </td>
+            <td
+              class="mdc-data-table__cell rmwc-data-table__cell"
+            >
+              $5.97
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`SimpleDataTable renders with options 1`] = `
+<DocumentFragment>
+  <div
+    class="mdc-data-table"
+  >
+    <div
+      class="mdc-data-table__table-container"
+    >
+      <table
+        class="mdc-data-table__table"
+      >
+        <thead
+          class="rmwc-data-table__head"
+        >
+          <tr
+            class="rmwc-data-table__row mdc-data-table__header-row"
+          >
+            <th
+              class="rmwc-data-table__cell mdc-data-table__header-cell"
+              role="columnheader"
+              scope="col"
+            >
+              Item
+            </th>
+            <th
+              class="rmwc-data-table__cell mdc-data-table__header-cell"
+              role="columnheader"
+              scope="col"
+            >
+              Quantity
+            </th>
+            <th
+              class="rmwc-data-table__cell mdc-data-table__header-cell"
+              role="columnheader"
+              scope="col"
+            >
+              Value
+            </th>
+          </tr>
+        </thead>
+        <tbody
+          class="mdc-data-table__content"
+        >
+          <tr
+            class="rmwc-data-table__row mdc-data-table__row"
+          >
+            <td
+              class="mdc-data-table__cell rmwc-data-table__cell"
+            >
+              Cookies
+            </td>
+            <td
+              class="mdc-data-table__cell rmwc-data-table__cell"
+            >
+              25
+            </td>
+            <td
+              class="mdc-data-table__cell rmwc-data-table__cell"
+            >
+              $12.40
+            </td>
+          </tr>
+          <tr
+            class="rmwc-data-table__row mdc-data-table__row"
+          >
+            <td
+              class="mdc-data-table__cell rmwc-data-table__cell"
+            >
+              Pizza
+            </td>
+            <td
+              class="mdc-data-table__cell rmwc-data-table__cell"
+            >
+              11
+            </td>
+            <td
+              class="mdc-data-table__cell rmwc-data-table__cell"
+            >
+              $10.43
+            </td>
+          </tr>
+          <tr
+            class="rmwc-data-table__row mdc-data-table__row"
+          >
+            <td
+              class="mdc-data-table__cell rmwc-data-table__cell"
+            >
+              Icecream
+            </td>
+            <td
+              class="mdc-data-table__cell rmwc-data-table__cell"
+            >
+              3
+            </td>
+            <td
+              class="mdc-data-table__cell rmwc-data-table__cell"
+              style="color: red;"
+            >
+              1.43
+            </td>
+          </tr>
+          <tr
+            class="rmwc-data-table__row mdc-data-table__row"
+          >
+            <td
+              class="mdc-data-table__cell rmwc-data-table__cell"
+            >
+              Candy
+            </td>
+            <td
+              class="mdc-data-table__cell rmwc-data-table__cell"
+            >
+              72
+            </td>
+            <td
+              class="mdc-data-table__cell rmwc-data-table__cell"
+            >
+              $22.45
+            </td>
+          </tr>
+          <tr
+            class="rmwc-data-table__row mdc-data-table__row mdc-data-table__row--selected rmwc-data-table__row--activated"
+          >
+            <td
+              class="mdc-data-table__cell rmwc-data-table__cell"
+            >
+              Cakes
+            </td>
+            <td
+              class="mdc-data-table__cell rmwc-data-table__cell"
+            >
+              101
+            </td>
+            <td
+              class="mdc-data-table__cell rmwc-data-table__cell"
+            >
+              $215.05
+            </td>
+          </tr>
+          <tr
+            class="rmwc-data-table__row mdc-data-table__row"
+          >
+            <td
+              class="mdc-data-table__cell rmwc-data-table__cell"
+            >
+              Muffins
+            </td>
+            <td
+              class="mdc-data-table__cell rmwc-data-table__cell"
+            >
+              3
+            </td>
+            <td
+              class="mdc-data-table__cell rmwc-data-table__cell"
+            >
+              $5.97
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</DocumentFragment>
+`;

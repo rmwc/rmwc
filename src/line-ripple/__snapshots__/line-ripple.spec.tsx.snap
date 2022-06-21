@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LineRipple renders 1`] = `
+<DocumentFragment>
+  <span
+    class="mdc-line-ripple mdc-line-ripple--deactivating"
+  />
+</DocumentFragment>
+`;

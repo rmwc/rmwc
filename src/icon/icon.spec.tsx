@@ -1,29 +1,25 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render, screen } from '@testing-library/react';
 import { Icon } from './';
 
 describe('Icon', () => {
   it('renders ligature', () => {
-    const el = mount(<Icon icon="favorite" />);
-    expect(el.html()).toBe(
-      `<i class="rmwc-icon rmwc-icon--ligature material-icons">favorite</i>`
-    );
+    const { asFragment } = render(<Icon icon="favorite" />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('renders Url', () => {
-    const el2 = mount(<Icon icon="images/icons/twitter.png" />);
-    expect(el2.html()).toBe(
-      `<i class="rmwc-icon rmwc-icon--url material-icons" style="background-image: url(images/icons/twitter.png);"></i>`
-    );
+    const { asFragment } = render(<Icon icon="images/icons/twitter.png" />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('can have custom classnames', () => {
-    const el = mount(<Icon className={'my-custom-classname'} />);
-    expect(!!~el.html().search('my-custom-classname')).toEqual(true);
+    const { container } = render(<Icon className={'my-custom-classname'} />);
+    expect(container.firstChild).toHaveClass('my-custom-classname');
   });
 
   it('renders with JSX', () => {
-    const el = mount(
+    const { asFragment } = render(
       <Icon
         icon={
           <div
@@ -32,26 +28,11 @@ describe('Icon', () => {
         }
       />
     );
-    expect(el.html()).toBe(
-      `<i class="rmwc-icon rmwc-icon--component material-icons"><div style="background: purple; width: 24px; height: 24px;"></div></i>`
-    );
-
-    const el2 = mount(
-      <Icon
-        icon={
-          <div
-            style={{ background: 'purple', width: '24px', height: '24px' }}
-          />
-        }
-      />
-    );
-    expect(el2.html()).toBe(
-      `<i class="rmwc-icon rmwc-icon--component material-icons"><div style="background: purple; width: 24px; height: 24px;"></div></i>`
-    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('renders svg', () => {
-    const el = mount(
+    const { asFragment } = render(
       <Icon
         icon={
           <svg>
@@ -60,27 +41,25 @@ describe('Icon', () => {
         }
       />
     );
-    expect(el.html()).toBe(
-      `<svg class="rmwc-icon rmwc-icon--component material-icons"><path></path></svg>`
-    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('renders nested Icons', () => {
-    const el = mount(<Icon icon={<Icon icon={<div>Hello World</div>} />} />);
-    expect(!!~el.html().search('Hello World')).toEqual(true);
+    render(<Icon icon={<Icon icon={<div>Hello World</div>} />} />);
+    expect(screen.getByText('Hello World')).toBeInTheDocument();
   });
 
   it('can be sizes', () => {
     const sizes = ['xsmall', 'small', 'medium', 'large', 'xlarge'];
 
     sizes.forEach((size: any) => {
-      const el = mount(<Icon icon={{ icon: 'favorite', size }} />);
-      expect(el.html().includes(`rmwc-icon--size-${size}`)).toEqual(true);
+      const { container } = render(<Icon icon={{ icon: 'favorite', size }} />);
+      expect(container.firstChild).toHaveClass(`rmwc-icon--size-${size}`);
     });
   });
 
   it('renders className', () => {
-    const el = mount(
+    const { asFragment } = render(
       <Icon
         icon={{
           icon: 'ionic',
@@ -90,14 +69,12 @@ describe('Icon', () => {
         }}
       />
     );
-    expect(el.html()).toBe(
-      `<i class="rmwc-icon rmwc-icon--className icon ion-ionic"></i>`
-    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('Errors when bad strategy is passed', () => {
     jest.spyOn(console, 'error');
-    mount(
+    render(
       <Icon
         // @ts-ignore
         icon={{
@@ -110,7 +87,7 @@ describe('Icon', () => {
   });
 
   it('renders custom', () => {
-    const el = mount(
+    const { asFragment } = render(
       <Icon
         icon={{
           icon: 'CUSTOM',
@@ -124,21 +101,19 @@ describe('Icon', () => {
         }}
       />
     );
-    expect(el.html().replace(/<!--.+?-->/g, '')).toBe(
-      `<div>Customized-CUSTOM</div>`
-    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('does not crash when custom render returns a string', () => {
-    const el = mount(
+    const { asFragment } = render(
       <Icon
         icon={{
           icon: 'CUSTOM',
           strategy: 'custom',
-          render: () => 'custom',
+          render: () => 'custom'
         }}
       />
     );
-    expect(el.html()).toBe(null);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

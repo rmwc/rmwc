@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render } from '@testing-library/react';
 import {
   GridList,
   GridTile,
@@ -12,7 +12,7 @@ import {
 
 describe('GridList', () => {
   it('renders', () => {
-    mount(
+    const { asFragment } = render(
       <GridList>
         <GridTile>
           <GridTilePrimary>
@@ -25,29 +25,32 @@ describe('GridList', () => {
         </GridTile>
       </GridList>
     );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('can be tileGutter1', () => {
-    const list = mount(<GridList tileGutter1 />);
-    expect(!!~list.html().search('mdc-grid-list--tile-gutter-1')).toBe(true);
+    const { container } = render(<GridList tileGutter1 />);
+    expect(container.firstChild).toHaveClass('mdc-grid-list--tile-gutter-1');
   });
 
   it('can be headerCaption', () => {
-    mount(<GridList withIconAlignStart />);
+    const { asFragment } = render(<GridList withIconAlignStart />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('can be headerCaption', () => {
-    const list = mount(<GridList headerCaption />);
-    expect(!!~list.html().search('mdc-grid-list--header-caption')).toBe(true);
+    const { container } = render(<GridList headerCaption />);
+    expect(container.firstChild).toHaveClass('mdc-grid-list--header-caption');
   });
 
   it('can be tileAspect 1x1', () => {
-    const list = mount(<GridList tileAspect="1x1" />);
-    expect(!!~list.html().search('mdc-grid-list--tile-aspect-1x1')).toBe(true);
+    const { container } = render(<GridList tileAspect="1x1" />);
+    expect(container.firstChild).toHaveClass('mdc-grid-list--tile-aspect-1x1');
   });
 
   it('can be tileAspect undefined', () => {
-    mount(<GridList tileAspect={undefined} />);
+    const { asFragment } = render(<GridList tileAspect={undefined} />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('can have custom classnames', () => {
@@ -59,8 +62,10 @@ describe('GridList', () => {
       GridTileSecondary,
       GridTileTitle
     ].forEach((Component: React.ComponentType<any>) => {
-      const el = mount(<Component className={'my-custom-classname'} />);
-      expect(!!~el.html().search('my-custom-classname')).toEqual(true);
+      const { container } = render(
+        <Component className={'my-custom-classname'} />
+      );
+      expect(container.firstChild).toHaveClass('my-custom-classname');
     });
   });
 });

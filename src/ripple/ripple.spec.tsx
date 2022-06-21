@@ -1,43 +1,47 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render } from '@testing-library/react';
 import { Ripple } from './';
 
 describe('Ripple', () => {
   it('renders', () => {
-    mount(
+    const { asFragment } = render(
       <Ripple>
         <div />
       </Ripple>
     );
+    expect(asFragment()).toMatchInlineSnapshot(`
+      <DocumentFragment>
+        <div
+          class="mdc-ripple-surface"
+        />
+      </DocumentFragment>
+    `);
   });
 
   it('can be primary', () => {
-    const el = mount(
+    const { container } = render(
       <Ripple primary>
         <div />
       </Ripple>
     );
-
-    expect(!!~el.html().search('mdc-ripple-surface--primary')).toBe(true);
+    expect(container.firstChild).toHaveClass('mdc-ripple-surface--primary');
   });
 
   it('can be accent', () => {
-    const el = mount(
+    const { container } = render(
       <Ripple accent>
         <div />
       </Ripple>
     );
-
-    expect(!!~el.html().search('mdc-ripple-surface--accent')).toBe(true);
+    expect(container.firstChild).toHaveClass('mdc-ripple-surface--accent');
   });
 
   it('can be unbounded', () => {
-    const el = mount(
+    const { container } = render(
       <Ripple unbounded>
         <div />
       </Ripple>
     );
-
-    expect(!!~el.html().search('data-mdc-ripple-is-unbounded')).toBe(true);
+    expect(container.firstChild).toHaveClass('mdc-ripple-upgraded--unbounded');
   });
 });
