@@ -1,12 +1,16 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { fireEvent, render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { TextField, TextFieldHelperText } from './';
 import { wait } from '@rmwc/base/utils/test-utils';
-import { render } from '@testing-library/react';
 
 describe('TextField', () => {
   it('renders', () => {
-    mount(<TextField label="test" placeholder="test" />);
+    const { asFragment } = render(
+      <TextField label="test" placeholder="test" />
+    );
+    expect(screen.getByText('test')).toBeInTheDocument();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('can autoFocus', () => {
@@ -17,24 +21,26 @@ describe('TextField', () => {
   });
 
   it('can have children', () => {
-    mount(
+    const { asFragment } = render(
       <TextField placeholder="test">
         <div>Child</div>
       </TextField>
     );
+    expect(screen.getByText('Child')).toBeInTheDocument();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('can have helpText', () => {
-    const el = mount(
+    render(
       <div>
-        <TextField helpText="textHelpText" />
+        <TextField helpText="textHelpText1" />
       </div>
     );
-    const el2 = mount(
+    const { container } = render(
       <div>
         <TextField
           helpText={{
-            children: 'textHelpText',
+            children: 'textHelpText2',
             validationMsg: true,
             persistent: true
           }}
@@ -42,104 +48,108 @@ describe('TextField', () => {
       </div>
     );
 
-    expect(el.contains('textHelpText')).toBe(true);
-    expect(el2.contains('textHelpText')).toBe(true);
+    expect(screen.getByText('textHelpText1')).toBeInTheDocument();
+    expect(screen.getByText('textHelpText2')).toBeInTheDocument();
+
     expect(
-      el2.html().includes('mdc-text-field-helper-text--validation-msg')
-    ).toBe(true);
-    expect(el2.html().includes('mdc-text-field-helper-text--persistent')).toBe(
-      true
-    );
+      container.getElementsByClassName(
+        'mdc-text-field-helper-text--validation-msg'
+      )
+    ).toHaveLength(1);
+    expect(
+      container.getElementsByClassName('mdc-text-field-helper-text--persistent')
+    ).toHaveLength(1);
   });
 
   it('can have custom classnames', () => {
-    const el = mount(
+    const { container } = render(
       <TextField placeholder="test" className="my-custom-classname">
         <div>Child</div>
       </TextField>
     );
 
-    const html = el.html();
-    expect(
-      !!~html.search('mdc-text-field') && !!~html.search('my-custom-classname')
-    ).toEqual(true);
+    expect(container.firstChild).toHaveClass('my-custom-classname');
   });
 
   it('can be bound', () => {
-    const el = mount(
-      <TextField
-        placeholder="test"
-        value="hello world"
-        onChange={(evt) => {}}
-      />
+    render(
+      <TextField placeholder="test" value="hello world" onChange={() => {}} />
     );
-    expect((el.find('input').getDOMNode() as HTMLInputElement).value).toBe(
-      'hello world'
-    );
+    expect(screen.getByRole('textbox')).toHaveValue('hello world');
   });
 
   it('can be textarea', () => {
-    const el = mount(
+    const { asFragment } = render(
       <TextField
         placeholder="test"
         value="hello world"
         textarea
-        onChange={(evt) => {}}
+        onChange={() => {}}
       />
     );
-    expect(
-      (el.find('textarea').getDOMNode() as HTMLTextAreaElement).value
-    ).toBe('hello world');
+    expect(screen.getByText('hello world')).toBeInTheDocument();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('can have custom classnames on input', () => {
-    const el = mount(<TextField className={'my-custom-classname'} />);
-    expect(!!~el.html().search('my-custom-classname')).toEqual(true);
+    const { container } = render(
+      <TextField className={'my-custom-classname'} />
+    );
+    expect(container.firstChild).toHaveClass('my-custom-classname');
   });
 
   it('can be invalid', () => {
-    mount(<TextField invalid />);
+    const { asFragment } = render(<TextField invalid />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('can be outlined', () => {
-    mount(<TextField outlined />);
+    const { asFragment } = render(<TextField outlined />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('can be disabled', () => {
-    mount(<TextField disabled />);
+    const { asFragment } = render(<TextField disabled />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('can be required', async () => {
-    const el = mount(<TextField value="" onChange={() => {}} required />);
+    const { container } = render(
+      <TextField value="" onChange={() => {}} required />
+    );
     const getValid = () =>
-      el.html().includes('mdc-text-field--invalid') === false;
+      container.getElementsByClassName('mdc-text-field--invalid').length === 0;
 
     // should render valid to start
     expect(getValid()).toBe(true);
 
-    el.find('input').first().simulate('focus');
+    fireEvent.focus(screen.getByRole('textbox'));
     await wait(20);
-    el.find('input').first().simulate('blur');
+    fireEvent.blur(screen.getByRole('textbox'));
     await wait(20);
 
     expect(getValid()).toBe(false);
   });
 
   it('can be have icon', () => {
-    mount(<TextField icon="favorite" />);
+    const { asFragment } = render(<TextField icon="favorite" />);
+    expect(screen.getByText('favorite')).toBeInTheDocument();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('can be have trailingIcon', () => {
-    mount(<TextField trailingIcon="favorite" />);
+    const { asFragment } = render(<TextField trailingIcon="favorite" />);
+    expect(screen.getByText('favorite')).toBeInTheDocument();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('supports inputRef as an object reference', () => {
     const textObjectRef: any = { current: null };
-    mount(<TextField inputRef={textObjectRef} />);
+    const { rerender } = render(<TextField inputRef={textObjectRef} />);
     expect(textObjectRef.current instanceof HTMLInputElement).toBeTruthy();
 
     const areaObjectRef: any = { current: null };
-    mount(<TextField inputRef={areaObjectRef} textarea />);
+    rerender(<TextField inputRef={areaObjectRef} textarea />);
     expect(areaObjectRef.current instanceof HTMLTextAreaElement).toBeTruthy();
   });
 
@@ -148,32 +158,41 @@ describe('TextField', () => {
     const objectRefFunc: any = (el: HTMLInputElement) => {
       inputObjectRef = el;
     };
-    mount(<TextField inputRef={objectRefFunc} />);
+    render(<TextField inputRef={objectRefFunc} />);
     expect(inputObjectRef instanceof HTMLInputElement).toBeTruthy();
   });
 
   it('label floats on dynamic change', async () => {
-    const el = mount(<TextField label="test" value="" onChange={() => {}} />);
-    expect(el.html().includes('mdc-floating-label--float-above')).toBe(false);
-    el.setProps({ value: 'foo' });
-    el.update();
+    const { container } = render(
+      <TextField label="test" value="" onChange={() => {}} />
+    );
+    expect(
+      container.getElementsByClassName('mdc-floating-label--float-above')
+    ).toHaveLength(0);
+    userEvent.type(screen.getByRole('textbox'), 'foo');
     await wait(100);
-    expect(el.html().includes('mdc-floating-label--float-above')).toBe(true);
+    expect(
+      container.getElementsByClassName('mdc-floating-label--float-above')
+    ).toHaveLength(1);
   });
 
   it('can have a prefix', () => {
-    const el = mount(<TextField prefix="USD" />);
-    expect(el.html().includes('mdc-text-field__affix--prefix')).toBe(true);
+    render(<TextField prefix="USD" />);
+    expect(screen.getByText('USD')).toBeInTheDocument();
   });
 
   it('can have a suffix', () => {
-    const el = mount(<TextField suffix="USD" />);
-    expect(el.html().includes('mdc-text-field__affix--suffix')).toBe(true);
+    render(<TextField suffix="USD" />);
+    expect(screen.getByText('USD')).toBeInTheDocument();
   });
 });
 
 describe('TextFieldHelperText', () => {
   it('renders', () => {
-    mount(<TextFieldHelperText>Hello</TextFieldHelperText>);
+    const { asFragment } = render(
+      <TextFieldHelperText>Hello</TextFieldHelperText>
+    );
+    expect(screen.getByText('Hello')).toBeInTheDocument();
+    expect(asFragment()).toMatchSnapshot();
   });
 });
