@@ -1,19 +1,24 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render, screen, waitFor } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { Tooltip } from './';
 import { RMWCProvider } from '../provider';
+import { wait } from '@rmwc/base/utils/test-utils';
 
 describe('Tooltip', () => {
-  it('renders', () => {
-    mount(
+  it('renders', async () => {
+    const { asFragment } = render(
       <Tooltip content="tooltip">
         <span>test</span>
       </Tooltip>
     );
+    userEvent.hover(screen.getByText('test'));
+    expect(screen.getByText('tooltip')).toBeInTheDocument();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('activateOn', () => {
-    mount(
+    render(
       <Tooltip content="tooltip" activateOn="click">
         <span>test</span>
       </Tooltip>
@@ -21,23 +26,24 @@ describe('Tooltip', () => {
   });
 
   it('showArrow', () => {
-    mount(
+    const { asFragment } = render(
       <Tooltip content="tooltip" showArrow>
         <span>test</span>
       </Tooltip>
     );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('className', () => {
-    mount(
-      <Tooltip content="tooltip" className="foo">
+    render(
+      <Tooltip content="tooltip" className="my-custom-classname">
         <span>test</span>
       </Tooltip>
     );
   });
 
   it('enterDelay', () => {
-    mount(
+    render(
       <Tooltip content="tooltip" enterDelay={1000}>
         <span>test</span>
       </Tooltip>
@@ -45,7 +51,7 @@ describe('Tooltip', () => {
   });
 
   it('leaveDelay', () => {
-    mount(
+    render(
       <Tooltip content="tooltip" leaveDelay={1000}>
         <span>test</span>
       </Tooltip>
@@ -53,15 +59,16 @@ describe('Tooltip', () => {
   });
 
   it('align', () => {
-    mount(
+    const { asFragment } = render(
       <Tooltip content="tooltip" align="bottom">
         <span>test</span>
       </Tooltip>
     );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('works with provider', () => {
-    mount(
+    render(
       <RMWCProvider tooltip={{}}>
         <Tooltip content="tooltip">
           <span>test</span>
