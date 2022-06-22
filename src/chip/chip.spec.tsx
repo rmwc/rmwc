@@ -3,7 +3,6 @@ import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Chip, ChipSet } from './';
 import { useChipFoundation } from './foundation';
-import { mountHook } from '@rmwc/base/utils/test-utils';
 
 describe('Chip', () => {
   it('renders', () => {
@@ -72,14 +71,6 @@ describe('Chip', () => {
 
     await waitFor(() => {
       expect(onInteraction).toHaveBeenCalledTimes(1);
-    });
-  });
-});
-
-describe('Chip: Foundation', () => {
-  it('useChipFoundation', () => {
-    mountHook(() => {
-      const { foundation } = useChipFoundation({});
     });
   });
 });
