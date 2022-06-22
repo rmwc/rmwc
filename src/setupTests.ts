@@ -1,5 +1,3 @@
-// @ts-ignore
-import React from 'react';
 import rmwcTestPolyfill from './base/test-polyfill';
 import '@testing-library/jest-dom/extend-expect';
 
