@@ -168,7 +168,7 @@ describe('DataTable', () => {
     ).toHaveClass('rmwc-data-table__cell--align-end');
   });
 
-  it('can have have sorted columns', () => {
+  it('can have sorted columns', () => {
     const Comp = (dir: number | null) => (
       <DataTable>
         <DataTableContent>

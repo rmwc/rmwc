@@ -198,12 +198,12 @@ describe('Utils', () => {
 describe('withTheme', () => {
   it('works with and without classnames', () => {
     const Component = withTheme(({ ...rest }) => <div {...rest} />);
-    const { container } = render(
+    const { container, rerender } = render(
       <Component className="test" theme="primary" />
     );
     expect(container.firstChild).toHaveClass('test');
 
-    render(<Component className="test" />);
+    rerender(<Component className="test" />);
     expect(container.firstChild).toHaveClass('test');
   });
 
@@ -217,7 +217,12 @@ describe('withTheme', () => {
   it('handles deprecations', () => {
     const Component = withTheme(({ ...rest }) => <div {...rest} />);
 
-    render(<Component theme="primary foo" />);
-    render(<Component theme="on-primary" />);
+    const { container: container1 } = render(<Component theme="primary foo" />);
+    const { container: container2 } = render(<Component theme="on-primary" />);
+    expect(container1).toMatchSnapshot();
+    expect(container1.firstChild).toHaveClass('mdc-theme--primary foo');
+
+    expect(container2).toMatchSnapshot();
+    expect(container2.firstChild).toHaveClass('mdc-theme--on-primary');
   });
 });

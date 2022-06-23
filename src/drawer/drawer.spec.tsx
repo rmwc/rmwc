@@ -55,7 +55,18 @@ describe('Drawer', () => {
   });
 
   it('can open', () => {
-    const { container } = render(
+    const { container, rerender } = render(
+      <Drawer dismissible>
+        <DrawerHeader>
+          <DrawerTitle>Title</DrawerTitle>
+          <DrawerSubtitle>Subtitle</DrawerSubtitle>
+        </DrawerHeader>
+        <DrawerContent />
+      </Drawer>
+    );
+    expect(container.firstChild).not.toHaveClass('mdc-drawer--open');
+
+    rerender(
       <Drawer dismissible open>
         <DrawerHeader>
           <DrawerTitle>Title</DrawerTitle>
@@ -64,7 +75,6 @@ describe('Drawer', () => {
         <DrawerContent />
       </Drawer>
     );
-
     expect(container.firstChild).toHaveClass('mdc-drawer--open');
   });
 

@@ -93,14 +93,12 @@ describe('SnackbarQueue', () => {
     queue.notify({
       title: 'myNotificationTitle1',
       body: 'myNotificationBody1',
-      // timeout: 500,
       onClose: () => {}
     });
 
     queue.notify({
       title: 'myNotificationTitle2',
       body: 'myNotificationBody2',
-      // timeout: 500,
       image: 'test',
       actions: [
         {

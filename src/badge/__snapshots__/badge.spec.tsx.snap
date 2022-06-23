@@ -1,5 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Badge inset 1`] = `
+<DocumentFragment>
+  <div
+    class="rmwc-badge rmwc-badge--align-end rmwc-badge--no-content"
+    style="--rmwc-badge-inset: 10rem;"
+  >
+     
+  </div>
+</DocumentFragment>
+`;
+
 exports[`Badge renders with label 1`] = `
 <DocumentFragment>
   <div

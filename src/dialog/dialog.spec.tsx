@@ -11,7 +11,6 @@ import {
   createDialogQueue,
   DialogQueue
 } from './';
-import { wait } from '@rmwc/base/utils/test-utils';
 
 describe('Dialog', () => {
   it('simple Dialog renders', () => {
@@ -153,7 +152,6 @@ describe('DialogQueue', () => {
     queue.alert({ onClose });
 
     userEvent.click(screen.getByText('OK'));
-    // el.find('.mdc-dialog__button').first().simulate('click');
 
     await waitFor(() => expect(onClose).toHaveBeenCalled());
   });

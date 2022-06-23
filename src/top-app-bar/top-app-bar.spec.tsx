@@ -103,7 +103,6 @@ describe('TopAppBar', () => {
 
     // has the navigation icon
     expect(screen.getByText('foo')).toBeInTheDocument();
-    // expect(el.html().includes('mdc-top-app-bar__navigation-icon')).toBe(true);
 
     // has content
     expect(screen.getByText('TestStartContent')).toBeInTheDocument();
@@ -111,7 +110,6 @@ describe('TopAppBar', () => {
 
     // has action item
     expect(screen.getByText('star_outline')).toBeInTheDocument();
-    // expect(el.html().includes('star_outline')).toBe(true);
   });
 });
 

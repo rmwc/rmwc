@@ -31,7 +31,8 @@ describe('Badge', () => {
 
   it('inset', () => {
     // cant assert, jsdom doesn't include css vars?
-    render(<Badge inset="10rem" />);
+    const { asFragment } = render(<Badge inset="10rem" />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });
 
