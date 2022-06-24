@@ -104,15 +104,18 @@ describe('Tabs', () => {
     );
   });
 
-  it('focuses active tab on mount', () => {
+  it('focuses active tab on mount', async () => {
     const { container } = render(
       <TabBar>
         <Tab focusOnActivate>Test</Tab>
       </TabBar>
     );
 
-    window.requestAnimationFrame(() => {
-      expect(document.activeElement).toBe(container.querySelector('button'));
+    return new Promise((resolve) => {
+      window.requestAnimationFrame(() => {
+        expect(document.activeElement).toBe(container.querySelector('button'));
+        resolve(true);
+      });
     });
   });
 
