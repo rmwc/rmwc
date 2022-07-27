@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render } from '@testing-library/react';
 import {
   ImageList,
   ImageListItem,
@@ -29,7 +29,7 @@ const images = [
 
 describe('ImageList', () => {
   test('renders', () => {
-    mount(
+    const { asFragment } = render(
       <ImageList>
         {images.map((src) => (
           <ImageListItem
@@ -48,17 +48,18 @@ describe('ImageList', () => {
         ))}
       </ImageList>
     );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('masonry prop', () => {
-    const el = mount(<ImageList masonry />);
-    expect(el.html().includes('mdc-image-list--masonry')).toBe(true);
+    const { container } = render(<ImageList masonry />);
+    expect(container.firstChild).toHaveClass('mdc-image-list--masonry');
   });
 
   test('masonry withTextProtection', () => {
-    const el = mount(<ImageList withTextProtection />);
-    expect(el.html().includes('mdc-image-list--with-text-protection')).toBe(
-      true
+    const { container } = render(<ImageList withTextProtection />);
+    expect(container.firstChild).toHaveClass(
+      'mdc-image-list--with-text-protection'
     );
   });
 });

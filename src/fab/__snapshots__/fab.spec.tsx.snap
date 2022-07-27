@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Fab renders 1`] = `
+<div>
+  <button
+    class="mdc-fab"
+  >
+    <div
+      class="mdc-fab__ripple"
+    />
+  </button>
+</div>
+`;

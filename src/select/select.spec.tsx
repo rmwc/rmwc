@@ -1,7 +1,6 @@
 import React from 'react';
-import { mount, ReactWrapper } from 'enzyme';
 import { Select } from './';
-import { render, act, fireEvent } from '@testing-library/react';
+import { render, act, fireEvent, screen } from '@testing-library/react';
 
 test('renders learn react link', (done) => {
   const onChange = jest.fn();
@@ -24,29 +23,30 @@ test('renders learn react link', (done) => {
 
 describe('Select', () => {
   it('renders', () => {
-    mount(
+    const { asFragment } = render(
       <Select
         placeholder="Select a food"
         options={{ 1: 'Cookies', 2: 'Pizza', 3: 'Icecream' }}
       />
     );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('helpText', () => {
-    const el = mount(
+    const el1 = render(
       <div>
         <Select
-          helpText="selectHelpText"
+          helpText="selectHelpText1"
           options={{ 1: 'Cookies', 2: 'Pizza', 3: 'Icecream' }}
         />
       </div>
     );
 
-    const el2 = mount(
+    const el2 = render(
       <div>
         <Select
           helpText={{
-            children: 'selectHelpText',
+            children: 'selectHelpText2',
             validationMsg: true,
             persistent: true
           }}
@@ -55,18 +55,21 @@ describe('Select', () => {
       </div>
     );
 
-    expect(el.contains('selectHelpText')).toBe(true);
-    expect(el2.contains('selectHelpText')).toBe(true);
-    expect(el2.html().includes('mdc-select-helper-text--validation-msg')).toBe(
-      true
-    );
-    expect(el2.html().includes('mdc-select-helper-text--persistent')).toBe(
-      true
-    );
+    expect(screen.getByText('selectHelpText1')).toBeInTheDocument();
+    expect(screen.getByText('selectHelpText2')).toBeInTheDocument();
+
+    expect(
+      el2.container.getElementsByClassName(
+        'mdc-select-helper-text--validation-msg'
+      )
+    ).toHaveLength(1);
+    expect(
+      el2.container.getElementsByClassName('mdc-select-helper-text--persistent')
+    ).toHaveLength(1);
   });
 
   it('can have empty placeholder', () => {
-    const el = mount(
+    const { container } = render(
       <Select
         placeholder=""
         options={{ 1: 'Cookies', 2: 'Pizza', 3: 'Icecream' }}
@@ -74,23 +77,28 @@ describe('Select', () => {
     );
 
     // make sure the label is not floating
-    expect(el.html().includes('mdc-select__label--float-above')).toBe(false);
+    expect(
+      container.getElementsByClassName('mdc-select__label--float-above')
+    ).toHaveLength(0);
 
     // make sure we have 4 options
-    expect(el.find('option').length).toBe(4);
+    expect(screen.getAllByRole('option')).toHaveLength(4);
   });
 
   it('can accept options array', () => {
-    mount(<Select placeholder="Select a food" options={['1', '2', '3']} />);
+    const { asFragment } = render(
+      <Select placeholder="Select a food" options={['1', '2', '3']} />
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('can be outlined', () => {
-    const el = mount(<Select outlined options={['1', '2', '3']} />);
-    expect(el.html().includes('mdc-select--outlined')).toBe(true);
+    const { container } = render(<Select outlined options={['1', '2', '3']} />);
+    expect(container.firstChild).toHaveClass('mdc-select--outlined');
   });
 
   it('can accept formatted options array', () => {
-    mount(
+    const { asFragment } = render(
       <Select
         placeholder="Select a food"
         options={[
@@ -111,15 +119,21 @@ describe('Select', () => {
         ]}
       />
     );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('can have a tab index', () => {
-    const el = mount(<Select tabIndex={1} options={['1', '2', '3']} />);
-    expect(!!~el.html().search('tabindex="1"')).toEqual(true);
+    const { container } = render(
+      <Select tabIndex={1} options={['1', '2', '3']} />
+    );
+    expect(
+      container.getElementsByClassName('rmwc-select__native-control')[0]
+    ).toHaveAttribute('tabindex', '1');
   });
 
   it('can have custom rootProps', () => {
-    mount(<Select rootProps={{ name: 'test' }} />);
+    const { asFragment } = render(<Select rootProps={{ name: 'test' }} />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('can be disabled', () => {
@@ -139,16 +153,15 @@ describe('Select', () => {
   });
 
   it('can have custom classnames', () => {
-    const el = mount(
+    const { container } = render(
       <Select
         className={'my-custom-classname'}
         options={{ 1: 'Cookies', 2: 'Pizza', 3: 'Icecream' }}
       />
     );
-
-    expect(
-      el.find('.mdc-select').first().hasClass('my-custom-classname')
-    ).toEqual(true);
+    expect(container.getElementsByClassName('mdc-select')[0]).toHaveClass(
+      'my-custom-classname'
+    );
   });
 
   it('can autofocus', () => {
@@ -160,99 +173,90 @@ describe('Select', () => {
 });
 
 describe('Select: Lifecycle', () => {
-  const getLabel = (el: ReactWrapper) =>
-    el.find('.mdc-select__selected-text').first().text().trim();
-
   it('SelectedText is blank with no value', () => {
-    const el = mount(<Select options={['Cookies', 'Pizza', 'Icecream']} />);
-    expect(el.html().trim()).toContain('value=""');
+    const { container } = render(
+      <Select options={['Cookies', 'Pizza', 'Icecream']} />
+    );
+    expect(
+      container.getElementsByClassName('mdc-select__selected_text')
+    ).toHaveLength(0);
   });
 
   it('SelectedText is blank with no value, enhanced', () => {
-    const el = mount(
+    const { container } = render(
       <Select enhanced options={['Cookies', 'Pizza', 'Icecream']} />
     );
-    expect(getLabel(el)).toBe('');
+    expect(
+      container.getElementsByClassName('mdc-select__selected_text')
+    ).toHaveLength(0);
   });
 
   it('SelectedText is blank with incorrect defaultValue', () => {
-    const el = mount(
+    const { container } = render(
       <Select options={['Cookies', 'Pizza', 'Icecream']} defaultValue="Foo" />
     );
-    expect(getLabel(el)).toBe('');
+    expect(
+      container.getElementsByClassName('mdc-select__selected_text')
+    ).toHaveLength(0);
   });
 
   it('SelectedText is blank with incorrect defaultValue, enhanced', () => {
-    const el = mount(
+    const { container } = render(
       <Select
         enhanced
         options={['Cookies', 'Pizza', 'Icecream']}
         defaultValue="Foo"
       />
     );
-    expect(getLabel(el)).toBe('');
+    expect(
+      container.getElementsByClassName('mdc-select__selected_text')
+    ).toHaveLength(0);
   });
 
   it('SelectedText is set to value', () => {
-    const el = mount(
+    render(
       <Select options={['Cookies', 'Pizza', 'Icecream']} value="Cookies" />
     );
-    expect(el.html().trim()).toContain('value="Cookies"');
+    expect(screen.getAllByText('Cookies')[0]).toHaveClass(
+      'mdc-select__selected-text'
+    );
   });
 
   it('SelectedText is set to value, enhanced', () => {
-    const el = mount(
+    render(
       <Select
         enhanced
         options={['Cookies', 'Pizza', 'Icecream']}
         value="Cookies"
       />
     );
-    expect(el.html().trim()).toContain('value="Cookies"');
+    expect(screen.getAllByText('Cookies')[0]).toHaveClass(
+      'mdc-select__selected-text'
+    );
   });
 
   it('SelectedText is set to default value', () => {
-    const el = mount(
+    render(
       <Select
         options={['Cookies', 'Pizza', 'Icecream']}
         defaultValue="Cookies"
       />
     );
-    expect(el.html().trim()).toContain('value="Cookies"');
+    expect(screen.getAllByText('Cookies')[0]).toHaveClass(
+      'mdc-select__selected-text'
+    );
   });
 
   it('SelectedText is set to default value, enhanced', () => {
-    const el = mount(
+    render(
       <Select
         enhanced
         options={['Cookies', 'Pizza', 'Icecream']}
         defaultValue="Cookies"
       />
     );
-    expect(el.html().trim()).toContain('value="Cookies"');
-  });
-
-  it('SelectedText is set with async value', (done) => {
-    const el = mount(
-      <Select options={['Cookies', 'Pizza', 'Icecream']} value="" />
+    expect(screen.getAllByText('Cookies')[0]).toHaveClass(
+      'mdc-select__selected-text'
     );
-
-    setTimeout(() => {
-      el.setProps({ value: 'Cookies' });
-      expect(el.html().trim()).toContain('value="Cookies"');
-      done();
-    }, 100);
-  });
-
-  it('SelectedText is set with async value, enhanced', (done) => {
-    const el = mount(
-      <Select enhanced options={['Cookies', 'Pizza', 'Icecream']} value="" />
-    );
-
-    setTimeout(() => {
-      el.setProps({ value: 'Cookies' });
-      expect(el.html().trim()).toContain('value="Cookies"');
-      done();
-    }, 100);
   });
 });

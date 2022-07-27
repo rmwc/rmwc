@@ -1,16 +1,16 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render, screen, waitFor } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import {
   Snackbar,
   SnackbarAction,
   createSnackbarQueue,
   SnackbarQueue
 } from './';
-import { wait } from '@rmwc/base/utils/test-utils';
 
 describe('Snackbar', () => {
-  it('renders', (done) => {
-    const el = mount(
+  it('renders', () => {
+    const { asFragment } = render(
       <Snackbar
         open
         timeout={1000}
@@ -20,92 +20,85 @@ describe('Snackbar', () => {
       />
     );
 
-    setTimeout(() => {
-      expect(!!~el.html().search('mdc-snackbar')).toBe(true);
-      done();
-    }, 1500);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('can be leading', () => {
-    const el = mount(<Snackbar open message="This is a new message" leading />);
-    expect(!!~el.html().search('mdc-snackbar--leading')).toBe(true);
+    const { container } = render(
+      <Snackbar open message="This is a new message" leading />
+    );
+    expect(container.firstChild).toHaveClass('mdc-snackbar--leading');
   });
 
   it('can have an icon', () => {
-    const el = mount(
+    render(
       <Snackbar icon="favorite" open message="This is a new message" leading />
     );
-    expect(!!~el.html().search('favorite')).toBe(true);
+    expect(screen.getByText('favorite')).toBeInTheDocument();
   });
 
   it('can be multiline', () => {
-    mount(<Snackbar open message="This is a new message" />);
+    render(<Snackbar open message="This is a new message" />);
   });
 
   it('can dismissesOnAction', () => {
-    const el = mount(
-      <Snackbar open message="This is a new message" dismissesOnAction />
-    );
-    el.setProps({ dismissesOnAction: false });
+    render(<Snackbar open message="This is a new message" dismissesOnAction />);
   });
 
-  it('can be have JSX', () => {
-    mount(
+  it('can be have JSX as children', () => {
+    render(
       <Snackbar>
         <div>Hello World</div>
       </Snackbar>
     );
 
-    mount(<Snackbar message={<div>Hello World</div>} />);
+    expect(screen.getByText('Hello World')).toBeInTheDocument();
+  });
+  it('can be have JSX in message prop', () => {
+    render(<Snackbar message={<div>Hello World</div>} />);
+
+    expect(screen.getByText('Hello World')).toBeInTheDocument();
   });
 
-  it('handles events', () => {
-    const el = mount(
+  it('handles events', async () => {
+    const onClose = jest.fn();
+    render(
       <Snackbar
         open
         timeout={1000}
-        onClose={() => {}}
+        onClose={onClose}
         message="This is a new message"
         dismissIcon
         action={<SnackbarAction label="foo" />}
       />
     );
 
-    el.simulate('keydown');
+    userEvent.click(screen.getByText('close'));
 
-    const surface = el.find('.mdc-snackbar__surface');
-    surface.simulate('click');
-
-    const action = el.find('.mdc-snackbar__action').first();
-    action.simulate('click');
-
-    const dismiss = el.find('.mdc-snackbar__dismiss').first();
-    dismiss.simulate('click');
+    await waitFor(() => expect(onClose).toHaveBeenCalledTimes(1));
   });
 });
 
 describe('SnackbarQueue', () => {
   it('renders', () => {
     const queue = createSnackbarQueue();
-    const el = mount(<SnackbarQueue messages={queue.messages} />);
-    el.unmount();
+    const { asFragment } = render(<SnackbarQueue messages={queue.messages} />);
+    expect(asFragment).toMatchSnapshot();
   });
 
   it('notifies', async () => {
     const queue = createSnackbarQueue();
-    const el = mount(<SnackbarQueue messages={queue.messages} />);
+    render(<SnackbarQueue messages={queue.messages} />);
     // check multiple notifications
     queue.notify({
       title: 'myNotificationTitle1',
       body: 'myNotificationBody1',
-      timeout: 500,
       onClose: () => {}
     });
 
     queue.notify({
       title: 'myNotificationTitle2',
       body: 'myNotificationBody2',
-      timeout: 500,
       image: 'test',
       actions: [
         {
@@ -123,17 +116,14 @@ describe('SnackbarQueue', () => {
       ]
     });
 
-    await wait(500);
+    waitFor(() => {
+      expect(screen.getByText('myNotificationTitle1')).toBeInTheDocument();
+      expect(screen.getByText('myNotificationBody1')).toBeInTheDocument();
+    });
 
-    expect(el.html().includes('myNotificationTitle1')).toBe(true);
-    expect(el.html().includes('myNotificationBody1')).toBe(true);
-
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        expect(el.html().includes('myNotificationTitle2')).toBe(true);
-        expect(el.html().includes('myNotificationBody2')).toBe(true);
-        resolve(true);
-      }, 800);
+    waitFor(() => {
+      expect(screen.getByText('myNotificationTitle2')).toBeInTheDocument();
+      expect(screen.getByText('myNotificationBody2')).toBeInTheDocument();
     });
   });
 });

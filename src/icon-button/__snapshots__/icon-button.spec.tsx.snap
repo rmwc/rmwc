@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[` renders as toggle 1`] = `
+<DocumentFragment>
+  <button
+    aria-pressed="false"
+    class="mdc-ripple-upgraded--unbounded mdc-icon-button"
+    data-mdc-ripple-is-unbounded="true"
+    role="button"
+    tabindex="0"
+  >
+    <i
+      class="rmwc-icon rmwc-icon--ligature material-icons mdc-icon-button__icon"
+    >
+      favorite_border
+    </i>
+    <i
+      class="rmwc-icon rmwc-icon--ligature material-icons mdc-icon-button__icon mdc-icon-button__icon--on"
+    >
+      favorite
+    </i>
+  </button>
+</DocumentFragment>
+`;
+
+exports[` renders controlled 1`] = `
+<DocumentFragment>
+  <button
+    aria-pressed="true"
+    class="mdc-ripple-upgraded--unbounded mdc-icon-button--on mdc-icon-button mdc-icon-button--on"
+    data-mdc-ripple-is-unbounded="true"
+    role="button"
+    tabindex="0"
+  >
+    <i
+      class="rmwc-icon rmwc-icon--ligature material-icons mdc-icon-button__icon"
+    >
+      star_border
+    </i>
+    <i
+      class="rmwc-icon rmwc-icon--ligature material-icons mdc-icon-button__icon mdc-icon-button__icon--on"
+    >
+      star
+    </i>
+  </button>
+</DocumentFragment>
+`;
+
+exports[` renders with icon as JSX 1`] = `
+<DocumentFragment>
+  <button
+    aria-label="Tweet it!"
+    class="rmwc-icon rmwc-icon--component material-icons mdc-ripple-upgraded--unbounded mdc-icon-button"
+    data-mdc-ripple-is-unbounded="true"
+    role="button"
+    tabindex="0"
+  >
+    <div />
+  </button>
+</DocumentFragment>
+`;
+
+exports[` renders with icon as path 1`] = `
+<DocumentFragment>
+  <button
+    class="rmwc-icon rmwc-icon--url material-icons mdc-ripple-upgraded--unbounded mdc-icon-button"
+    data-mdc-ripple-is-unbounded="true"
+    role="button"
+    style="background-image: url(images/icons/twitter.png);"
+    tabindex="0"
+  />
+</DocumentFragment>
+`;
+
+exports[` renders with icon as string 1`] = `
+<DocumentFragment>
+  <button
+    aria-label="Rate this!"
+    class="rmwc-icon rmwc-icon--ligature material-icons mdc-ripple-upgraded--unbounded mdc-icon-button"
+    data-mdc-ripple-is-unbounded="true"
+    role="button"
+    tabindex="0"
+  >
+    star
+  </button>
+</DocumentFragment>
+`;

@@ -1,0 +1,340 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ImageList renders 1`] = `
+<DocumentFragment>
+  <ul
+    class="mdc-image-list"
+  >
+    <li
+      class="mdc-image-list__item"
+      style="margin: 2px; width: calc(100% / 5 - 4.2px);"
+    >
+      <div
+        class="mdc-image-list__image-aspect-container"
+      >
+        <img
+          class="mdc-image-list__image"
+          src="https://material-components-web.appspot.com/images/photos/3x2/1.jpg"
+        />
+      </div>
+      <div
+        class="mdc-image-list__supporting"
+      >
+        <div
+          class="mdc-image-list__label"
+        >
+          Text label
+        </div>
+      </div>
+    </li>
+    <li
+      class="mdc-image-list__item"
+      style="margin: 2px; width: calc(100% / 5 - 4.2px);"
+    >
+      <div
+        class="mdc-image-list__image-aspect-container"
+      >
+        <img
+          class="mdc-image-list__image"
+          src="https://material-components-web.appspot.com/images/photos/2x3/1.jpg"
+        />
+      </div>
+      <div
+        class="mdc-image-list__supporting"
+      >
+        <div
+          class="mdc-image-list__label"
+        >
+          Text label
+        </div>
+      </div>
+    </li>
+    <li
+      class="mdc-image-list__item"
+      style="margin: 2px; width: calc(100% / 5 - 4.2px);"
+    >
+      <div
+        class="mdc-image-list__image-aspect-container"
+      >
+        <img
+          class="mdc-image-list__image"
+          src="https://material-components-web.appspot.com/images/photos/3x2/4.jpg"
+        />
+      </div>
+      <div
+        class="mdc-image-list__supporting"
+      >
+        <div
+          class="mdc-image-list__label"
+        >
+          Text label
+        </div>
+      </div>
+    </li>
+    <li
+      class="mdc-image-list__item"
+      style="margin: 2px; width: calc(100% / 5 - 4.2px);"
+    >
+      <div
+        class="mdc-image-list__image-aspect-container"
+      >
+        <img
+          class="mdc-image-list__image"
+          src="https://material-components-web.appspot.com/images/photos/3x2/5.jpg"
+        />
+      </div>
+      <div
+        class="mdc-image-list__supporting"
+      >
+        <div
+          class="mdc-image-list__label"
+        >
+          Text label
+        </div>
+      </div>
+    </li>
+    <li
+      class="mdc-image-list__item"
+      style="margin: 2px; width: calc(100% / 5 - 4.2px);"
+    >
+      <div
+        class="mdc-image-list__image-aspect-container"
+      >
+        <img
+          class="mdc-image-list__image"
+          src="https://material-components-web.appspot.com/images/photos/3x2/6.jpg"
+        />
+      </div>
+      <div
+        class="mdc-image-list__supporting"
+      >
+        <div
+          class="mdc-image-list__label"
+        >
+          Text label
+        </div>
+      </div>
+    </li>
+    <li
+      class="mdc-image-list__item"
+      style="margin: 2px; width: calc(100% / 5 - 4.2px);"
+    >
+      <div
+        class="mdc-image-list__image-aspect-container"
+      >
+        <img
+          class="mdc-image-list__image"
+          src="https://material-components-web.appspot.com/images/photos/2x3/2.jpg"
+        />
+      </div>
+      <div
+        class="mdc-image-list__supporting"
+      >
+        <div
+          class="mdc-image-list__label"
+        >
+          Text label
+        </div>
+      </div>
+    </li>
+    <li
+      class="mdc-image-list__item"
+      style="margin: 2px; width: calc(100% / 5 - 4.2px);"
+    >
+      <div
+        class="mdc-image-list__image-aspect-container"
+      >
+        <img
+          class="mdc-image-list__image"
+          src="https://material-components-web.appspot.com/images/photos/3x2/8.jpg"
+        />
+      </div>
+      <div
+        class="mdc-image-list__supporting"
+      >
+        <div
+          class="mdc-image-list__label"
+        >
+          Text label
+        </div>
+      </div>
+    </li>
+    <li
+      class="mdc-image-list__item"
+      style="margin: 2px; width: calc(100% / 5 - 4.2px);"
+    >
+      <div
+        class="mdc-image-list__image-aspect-container"
+      >
+        <img
+          class="mdc-image-list__image"
+          src="https://material-components-web.appspot.com/images/photos/3x2/11.jpg"
+        />
+      </div>
+      <div
+        class="mdc-image-list__supporting"
+      >
+        <div
+          class="mdc-image-list__label"
+        >
+          Text label
+        </div>
+      </div>
+    </li>
+    <li
+      class="mdc-image-list__item"
+      style="margin: 2px; width: calc(100% / 5 - 4.2px);"
+    >
+      <div
+        class="mdc-image-list__image-aspect-container"
+      >
+        <img
+          class="mdc-image-list__image"
+          src="https://material-components-web.appspot.com/images/photos/2x3/5.jpg"
+        />
+      </div>
+      <div
+        class="mdc-image-list__supporting"
+      >
+        <div
+          class="mdc-image-list__label"
+        >
+          Text label
+        </div>
+      </div>
+    </li>
+    <li
+      class="mdc-image-list__item"
+      style="margin: 2px; width: calc(100% / 5 - 4.2px);"
+    >
+      <div
+        class="mdc-image-list__image-aspect-container"
+      >
+        <img
+          class="mdc-image-list__image"
+          src="https://material-components-web.appspot.com/images/photos/3x2/13.jpg"
+        />
+      </div>
+      <div
+        class="mdc-image-list__supporting"
+      >
+        <div
+          class="mdc-image-list__label"
+        >
+          Text label
+        </div>
+      </div>
+    </li>
+    <li
+      class="mdc-image-list__item"
+      style="margin: 2px; width: calc(100% / 5 - 4.2px);"
+    >
+      <div
+        class="mdc-image-list__image-aspect-container"
+      >
+        <img
+          class="mdc-image-list__image"
+          src="https://material-components-web.appspot.com/images/photos/3x2/14.jpg"
+        />
+      </div>
+      <div
+        class="mdc-image-list__supporting"
+      >
+        <div
+          class="mdc-image-list__label"
+        >
+          Text label
+        </div>
+      </div>
+    </li>
+    <li
+      class="mdc-image-list__item"
+      style="margin: 2px; width: calc(100% / 5 - 4.2px);"
+    >
+      <div
+        class="mdc-image-list__image-aspect-container"
+      >
+        <img
+          class="mdc-image-list__image"
+          src="https://material-components-web.appspot.com/images/photos/2x3/6.jpg"
+        />
+      </div>
+      <div
+        class="mdc-image-list__supporting"
+      >
+        <div
+          class="mdc-image-list__label"
+        >
+          Text label
+        </div>
+      </div>
+    </li>
+    <li
+      class="mdc-image-list__item"
+      style="margin: 2px; width: calc(100% / 5 - 4.2px);"
+    >
+      <div
+        class="mdc-image-list__image-aspect-container"
+      >
+        <img
+          class="mdc-image-list__image"
+          src="https://material-components-web.appspot.com/images/photos/3x2/15.jpg"
+        />
+      </div>
+      <div
+        class="mdc-image-list__supporting"
+      >
+        <div
+          class="mdc-image-list__label"
+        >
+          Text label
+        </div>
+      </div>
+    </li>
+    <li
+      class="mdc-image-list__item"
+      style="margin: 2px; width: calc(100% / 5 - 4.2px);"
+    >
+      <div
+        class="mdc-image-list__image-aspect-container"
+      >
+        <img
+          class="mdc-image-list__image"
+          src="https://material-components-web.appspot.com/images/photos/3x2/16.jpg"
+        />
+      </div>
+      <div
+        class="mdc-image-list__supporting"
+      >
+        <div
+          class="mdc-image-list__label"
+        >
+          Text label
+        </div>
+      </div>
+    </li>
+    <li
+      class="mdc-image-list__item"
+      style="margin: 2px; width: calc(100% / 5 - 4.2px);"
+    >
+      <div
+        class="mdc-image-list__image-aspect-container"
+      >
+        <img
+          class="mdc-image-list__image"
+          src="https://material-components-web.appspot.com/images/photos/2x3/7.jpg"
+        />
+      </div>
+      <div
+        class="mdc-image-list__supporting"
+      >
+        <div
+          class="mdc-image-list__label"
+        >
+          Text label
+        </div>
+      </div>
+    </li>
+  </ul>
+</DocumentFragment>
+`;

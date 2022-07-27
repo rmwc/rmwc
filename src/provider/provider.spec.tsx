@@ -1,35 +1,39 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render } from '@testing-library/react';
 import { RMWCProvider } from './';
 import { Button } from '@rmwc/button';
 import { Icon } from '@rmwc/icon';
 
 describe('Provider', () => {
   it('renders', () => {
-    const el = mount(
+    const { asFragment } = render(
       <RMWCProvider>
         <div />
       </RMWCProvider>
     );
 
-    el.setProps({ ripple: false });
+    expect(asFragment()).toMatchInlineSnapshot(`
+      <DocumentFragment>
+        <div />
+      </DocumentFragment>
+    `);
   });
 
   it('can set default ripple', () => {
-    const dom = mount(
+    const { container } = render(
       <RMWCProvider ripple={false}>
         <Button />
       </RMWCProvider>
     );
-    expect(!!~dom.html().search('mdc-ripple-surface')).toEqual(false);
+    expect(container.firstChild).not.toHaveClass('mdc-ripple-surface');
   });
 
   it('can set icon options', () => {
-    const el = mount(
+    const { container } = render(
       <RMWCProvider icon={{ basename: 'my-icon-lib-test' }}>
         <Icon icon="foo" />
       </RMWCProvider>
     );
-    expect(!!~el.html().search('my-icon-lib-test')).toEqual(true);
+    expect(container.firstChild).toHaveClass('my-icon-lib-test');
   });
 });
