@@ -1,33 +1,41 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render } from '@testing-library/react';
 import { LinearProgress } from './';
 
 describe('LinearProgress', () => {
   it('renders', () => {
-    const el = mount(<LinearProgress progress={0.5} />);
-    expect(el.html().includes('mdc-linear-progress')).toBe(true);
+    const { asFragment, container } = render(<LinearProgress progress={0.5} />);
+
+    expect(container.firstChild).toHaveClass('mdc-linear-progress');
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('can buffer', () => {
-    mount(<LinearProgress buffer={0.8} />);
+    const { asFragment } = render(<LinearProgress buffer={0.8} />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('can be closed', () => {
-    mount(<LinearProgress closed />);
+    const { asFragment } = render(<LinearProgress closed />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('can be indeterminate', () => {
-    const el = mount(<LinearProgress />);
-    expect(el.html().includes('mdc-linear-progress--determinate')).toBe(false);
+    const { container } = render(<LinearProgress />);
+    expect(container.firstChild).not.toHaveClass(
+      'mdc-linear-progress--determinate'
+    );
   });
 
   it('can be reversed', () => {
-    const el = mount(<LinearProgress reversed />);
-    expect(el.html().includes('mdc-linear-progress--reversed')).toBe(true);
+    const { container } = render(<LinearProgress reversed />);
+    expect(container.firstChild).toHaveClass('mdc-linear-progress--reversed');
   });
 
   it('can have custom classnames', () => {
-    const el = mount(<LinearProgress className={'my-custom-classname'} />);
-    expect(el.html().includes('my-custom-classname')).toEqual(true);
+    const { container } = render(
+      <LinearProgress className={'my-custom-classname'} />
+    );
+    expect(container.firstChild).toHaveClass('my-custom-classname');
   });
 });

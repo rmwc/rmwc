@@ -1,37 +1,39 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render, screen, waitFor } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { Radio } from './';
 
 describe('Radio', () => {
   test('renders', () => {
-    const radio = mount(<Radio label="test" />);
-    expect(!!~radio.html().search('mdc-radio')).toEqual(true);
+    const { container } = render(<Radio label="test" />);
+    expect(screen.getByText('test')).toBeInTheDocument();
+    expect(container).toMatchSnapshot();
   });
 
   test('can be checked', () => {
-    const radio = mount(<Radio checked={true} onChange={() => {}} />);
-    expect(
-      (radio.find('input').getDOMNode() as HTMLInputElement).checked
-    ).toEqual(true);
+    render(<Radio checked onChange={() => {}} />);
+    expect(screen.getByRole('radio')).toHaveAttribute('checked');
   });
 
   test('handles onChange', () => {
-    let value = 0;
-    const checkbox = mount(<Radio checked={true} onChange={() => value++} />);
+    let val = 0;
+    render(<Radio checked onChange={() => val++} label="Click me" />);
 
-    checkbox.find('input').simulate('change');
-    expect(value).toEqual(1);
+    userEvent.click(screen.getByText('Click me'));
+
+    waitFor(() => {
+      expect(val).toBe(1);
+    });
   });
 
   test('can be disabled', () => {
-    const radio = mount(<Radio disabled />);
-    expect(
-      (radio.find('input').getDOMNode() as HTMLInputElement).disabled
-    ).toEqual(true);
+    render(<Radio disabled />);
+
+    expect(screen.getByRole('radio')).toHaveAttribute('disabled');
   });
 
   test('can have custom classnames on input', () => {
-    const el = mount(<Radio className={'my-custom-classname'} />);
-    expect(!!~el.html().search('my-custom-classname')).toEqual(true);
+    const { container } = render(<Radio className={'my-custom-classname'} />);
+    expect(container.firstChild).toHaveClass('my-custom-classname');
   });
 });

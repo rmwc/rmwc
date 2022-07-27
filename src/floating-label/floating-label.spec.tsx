@@ -1,9 +1,10 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render } from '@testing-library/react';
 import { FloatingLabel } from './';
 
 describe('FloatingLabel', () => {
   it('renders', () => {
-    mount(<FloatingLabel />);
+    const { asFragment } = render(<FloatingLabel />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

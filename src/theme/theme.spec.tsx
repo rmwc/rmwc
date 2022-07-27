@@ -1,12 +1,12 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render, screen } from '@testing-library/react';
 import { Theme, ThemeProvider } from './';
 import { themeOptions } from './theme-options';
 
 describe('Theme', () => {
   test('renders', () => {
     themeOptions.map((theme, i) =>
-      mount(
+      render(
         <Theme key={i} use={theme}>
           {theme}
         </Theme>
@@ -15,24 +15,25 @@ describe('Theme', () => {
   });
 
   test('wraps', () => {
-    const el = mount(
+    render(
       <Theme use="primary" wrap>
-        <div className="test-classname" />
+        <div className="test-classname">Hello</div>
       </Theme>
     );
-
-    expect(el.html().includes('test-classname')).toBe(true);
+    expect(screen.getByText('Hello')).toHaveClass('test-classname');
   });
 
   test('can have custom classnames', () => {
-    const el = mount(<Theme use="onPrimary" className="my-custom-classname" />);
-    expect(!!~el.html().search('my-custom-classname')).toEqual(true);
+    const { container } = render(
+      <Theme use="onPrimary" className="my-custom-classname" />
+    );
+    expect(container.firstChild).toHaveClass('my-custom-classname');
   });
 });
 
 describe('ThemeProvider', () => {
   test('renders', () => {
-    const el = mount(
+    const { asFragment } = render(
       <ThemeProvider
         options={{ primary: 'red', secondary: '#fff', surface: '#000000' }}
       >
@@ -40,36 +41,29 @@ describe('ThemeProvider', () => {
       </ThemeProvider>
     );
 
-    el.setProps({
-      options: {
-        '--mdc-theme-primary': 'blue',
-        secondary: '#fff',
-        surface: '#000000'
-      }
-    });
-    el.update();
-
-    el.setProps({
-      options: {
-        '--mdc-theme-primary': 'green',
-        secondary: '#000000',
-        surface: '#000000'
-      }
-    });
-
-    el.update();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('can wrap', () => {
-    const el = mount(
+    render(
       <ThemeProvider options={{ primary: 'red' }} wrap>
         <span>Hello</span>
       </ThemeProvider>
     );
 
-    const el2 = mount(<ThemeProvider options={{ primary: 'red' }} wrap />);
+    const { asFragment } = render(
+      <ThemeProvider options={{ primary: 'red' }} wrap />
+    );
 
-    expect(el.html().includes('span') && !el.html().includes('div')).toBe(true);
-    expect(el2.html().includes('div')).toBe(true);
+    expect(screen.getByText('Hello')).toBeInTheDocument();
+
+    expect(asFragment()).toMatchInlineSnapshot(`
+      <DocumentFragment>
+        <div
+          class=""
+          style="--mdc-theme-on-primary: rgba(255, 255, 255, 1); --mdc-theme-primary: red;"
+        />
+      </DocumentFragment>
+    `);
   });
 });

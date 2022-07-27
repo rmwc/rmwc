@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Radio renders 1`] = `
+<div>
+  <div
+    class="mdc-form-field"
+  >
+    <div
+      class="mdc-ripple-upgraded--unbounded mdc-radio"
+      data-mdc-ripple-is-unbounded="true"
+    >
+      <input
+        class="mdc-radio__native-control"
+        id="toggle--test"
+        type="radio"
+      />
+      <div
+        class="mdc-radio__background"
+      >
+        <div
+          class="mdc-radio__outer-circle"
+        />
+        <div
+          class="mdc-radio__inner-circle"
+        />
+      </div>
+      <div
+        class="mdc-radio__ripple"
+      />
+    </div>
+    <label
+      for="toggle--test"
+      id="toggle--testlabel"
+    >
+      test
+    </label>
+  </div>
+</div>
+`;

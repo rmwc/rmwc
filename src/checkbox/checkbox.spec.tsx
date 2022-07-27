@@ -1,58 +1,65 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render, screen, waitFor } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { Checkbox } from './';
 
 describe('Checkbox', () => {
   test('renders', () => {
-    const checkbox = mount(<Checkbox />);
-    expect(!!~checkbox.html().search('mdc-checkbox')).toEqual(true);
-    checkbox.unmount();
+    const { asFragment } = render(<Checkbox />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('can be checked', () => {
-    const checkbox = mount(<Checkbox checked={true} onChange={() => {}} />);
-    expect(
-      (checkbox.find('input').getDOMNode() as HTMLInputElement).checked
-    ).toEqual(true);
+    const { container, rerender } = render(
+      <Checkbox checked={false} onChange={() => {}} />
+    );
+    const input = screen.getByRole('checkbox') as HTMLInputElement;
+
+    expect(container.firstChild).not.toHaveClass('mdc-checkbox--selected');
+    expect(input.checked).toBe(false);
+
+    rerender(<Checkbox checked={true} onChange={() => {}} />);
+
+    expect(container.firstChild).toHaveClass('mdc-checkbox--selected');
+    expect(input.checked).toBe(true);
   });
 
-  test('handles onChange', () => {
-    let value = 0;
-    const checkbox = mount(
-      <Checkbox checked={true} onChange={() => value++} />
-    );
+  test('handles onChange', async () => {
+    const onChange = jest.fn();
+    render(<Checkbox checked={true} onChange={onChange} label="Click me" />);
 
-    checkbox.find('input').simulate('change');
-    expect(value).toEqual(1);
+    userEvent.click(screen.getByText('Click me'));
+
+    await waitFor(() => expect(onChange).toHaveBeenCalledTimes(1));
   });
 
   test('can be disabled', () => {
-    const checkbox = mount(<Checkbox disabled />);
-    expect(
-      (checkbox.find('input').getDOMNode() as HTMLInputElement).disabled
-    ).toEqual(true);
+    const { container } = render(<Checkbox disabled />);
+
+    expect(container.firstChild).toHaveClass('mdc-checkbox--disabled');
   });
 
   test('can be indeterminate', () => {
-    const checkbox = mount(<Checkbox indeterminate />);
-    expect(
-      (checkbox.find('input').getDOMNode() as HTMLInputElement).indeterminate
-    ).toEqual(true);
+    const { container } = render(<Checkbox indeterminate />);
+
+    expect(container.firstChild).toHaveClass('mdc-checkbox--selected');
   });
 
   test('can have a label', () => {
-    const checkbox = mount(<Checkbox label="hello world" />);
-    expect(checkbox.text()).toEqual('hello world');
+    render(<Checkbox label="hello world" />);
+    expect(screen.getByText('hello world')).toBeInTheDocument();
   });
 
   test('can have custom classnames on input', () => {
-    const el = mount(<Checkbox className={'my-custom-classname'} />);
-    expect(!!~el.html().search('my-custom-classname')).toEqual(true);
+    const { container } = render(
+      <Checkbox className={'my-custom-classname'} />
+    );
+    expect(container.firstChild).toHaveClass('my-custom-classname');
   });
 
   it('supports inputRef as an object reference', () => {
     const inputObjectRef: any = { current: null };
-    mount(<Checkbox inputRef={inputObjectRef} />);
+    render(<Checkbox inputRef={inputObjectRef} />);
     expect(inputObjectRef.current instanceof HTMLInputElement).toBeTruthy();
   });
 
@@ -61,7 +68,7 @@ describe('Checkbox', () => {
     const objectRefFunc: any = (el: HTMLInputElement) => {
       inputObjectRef = el;
     };
-    mount(<Checkbox inputRef={objectRefFunc} />);
+    render(<Checkbox inputRef={objectRefFunc} />);
     expect(inputObjectRef instanceof HTMLInputElement).toBeTruthy();
   });
 });

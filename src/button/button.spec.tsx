@@ -1,53 +1,56 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render, screen } from '@testing-library/react';
 import { Button } from './';
 
 describe('Button', () => {
   it('renders', () => {
-    const btn = mount(<Button />);
-    expect(!!~btn.html().search('mdc-button')).toEqual(true);
+    const { asFragment } = render(<Button>Button</Button>);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('can have an icon', () => {
-    mount(<Button icon="favorite">Button</Button>);
+    const { asFragment } = render(<Button icon="favorite">Button</Button>);
+    expect(screen.getByText('favorite')).toBeInTheDocument();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('can be raised', () => {
-    const btn = mount(<Button raised />);
-    expect(!!~btn.html().search('mdc-button--raised')).toEqual(true);
+    const { container } = render(<Button raised />);
+    expect(container.firstChild).toHaveClass('mdc-button--raised');
   });
 
   it('can be danger', () => {
-    const btn = mount(<Button danger />);
+    const { asFragment } = render(<Button danger />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('can be unelevated', () => {
-    const btn = mount(<Button unelevated />);
-    expect(!!~btn.html().search('mdc-button--unelevated')).toEqual(true);
+    const { container } = render(<Button unelevated />);
+    expect(container.firstChild).toHaveClass('mdc-button--unelevated');
   });
 
   it('can be outlined', () => {
-    const btn = mount(<Button outlined />);
-    expect(!!~btn.html().search('mdc-button--outlined')).toEqual(true);
+    const { container } = render(<Button outlined />);
+    expect(container.firstChild).toHaveClass('mdc-button--outlined');
   });
 
   it('can be dense', () => {
-    const btn = mount(<Button dense />);
-    expect(!!~btn.html().search('mdc-button--dense')).toEqual(true);
+    const { container } = render(<Button dense />);
+    expect(container.firstChild).toHaveClass('mdc-button--dense');
   });
 
   it('can ripple', () => {
-    const btn = mount(<Button ripple />);
-    expect(!!~btn.html().search('mdc-button')).toEqual(true);
+    const { container } = render(<Button ripple />);
+    expect(container.firstChild).toHaveClass('mdc-button');
   });
 
   it('can not ripple', () => {
-    const btn = mount(<Button ripple={undefined} />);
-    expect(!!~btn.html().search('mdc-button')).toEqual(true);
+    const { container } = render(<Button ripple={undefined} />);
+    expect(container.firstChild).toHaveClass('mdc-button');
   });
 
   it('can have custom classnames', () => {
-    const el = mount(<Button className={'my-custom-classname'} />);
-    expect(!!~el.html().search('my-custom-classname')).toEqual(true);
+    const { container } = render(<Button className={'my-custom-classname'} />);
+    expect(container.firstChild).toHaveClass('my-custom-classname');
   });
 });
