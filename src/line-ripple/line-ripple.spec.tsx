@@ -1,9 +1,10 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render } from '@testing-library/react';
 import { LineRipple } from './';
 
 describe('LineRipple', () => {
   it('renders', () => {
-    mount(<LineRipple />);
+    const { asFragment } = render(<LineRipple />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

@@ -1,24 +1,27 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render } from '@testing-library/react';
 import { Elevation } from './';
 
 describe('Elevation', () => {
   it('renders', () => {
-    mount(<Elevation z={0} />);
+    const { asFragment } = render(<Elevation z={0} />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('can have z value', () => {
-    const el = mount(<Elevation z="24" />);
-    expect(!!~el.html().search('mdc-elevation--z24')).toBe(true);
+    const { container } = render(<Elevation z="24" />);
+    expect(container.firstChild).toHaveClass('mdc-elevation--z24');
   });
 
   it('can transition', () => {
-    const el = mount(<Elevation transition z={0} />);
-    expect(!!~el.html().search('mdc-elevation-transition')).toBe(true);
+    const { container } = render(<Elevation transition z={0} />);
+    expect(container.firstChild).toHaveClass('mdc-elevation-transition');
   });
 
   it('can have custom classnames', () => {
-    const el = mount(<Elevation z={0} className={'my-custom-classname'} />);
-    expect(!!~el.html().search('my-custom-classname')).toEqual(true);
+    const { container } = render(
+      <Elevation z={0} className={'my-custom-classname'} />
+    );
+    expect(container.firstChild).toHaveClass('my-custom-classname');
   });
 });

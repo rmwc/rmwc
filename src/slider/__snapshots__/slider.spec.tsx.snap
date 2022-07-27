@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Slider renders uncontrolled 1`] = `
+<DocumentFragment>
+  <div
+    aria-label="Select Value"
+    class="mdc-slider"
+    role="slider"
+    tabindex="0"
+  >
+    <div
+      class="mdc-slider__track-container"
+    >
+      <div
+        class="mdc-slider__track"
+      />
+    </div>
+    <div
+      class="mdc-slider__thumb-container"
+    >
+      <svg
+        class="mdc-slider__thumb"
+        height="21"
+        width="21"
+      >
+        <circle
+          cx="10.5"
+          cy="10.5"
+          r="7.875"
+        />
+      </svg>
+      <div
+        class="mdc-slider__focus-ring"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Slider renders with all props 1`] = `
+<DocumentFragment>
+  <div
+    aria-disabled="true"
+    aria-label="Select Value"
+    aria-valuemax="100"
+    aria-valuenow="50"
+    class="mdc-slider mdc-slider--discrete mdc-slider--display-markers mdc-slider--disabled"
+    data-step="10"
+    role="slider"
+    tabindex="0"
+  >
+    <div
+      class="mdc-slider__track-container"
+    >
+      <div
+        class="mdc-slider__track"
+      />
+      <div
+        class="mdc-slider__track-marker-container"
+      />
+    </div>
+    <div
+      class="mdc-slider__thumb-container"
+    >
+      <div
+        class="mdc-slider__pin"
+      >
+        <span
+          class="mdc-slider__pin-value-marker"
+        />
+      </div>
+      <svg
+        class="mdc-slider__thumb"
+        height="21"
+        width="21"
+      >
+        <circle
+          cx="10.5"
+          cy="10.5"
+          r="7.875"
+        />
+      </svg>
+      <div
+        class="mdc-slider__focus-ring"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;

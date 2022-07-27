@@ -1,0 +1,285 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Select can accept formatted options array 1`] = `
+<DocumentFragment>
+  <div
+    class="mdc-select mdc-select--filled mdc-select--no-label"
+  >
+    <div
+      aria-disabled="false"
+      aria-haspopup="listbox"
+      class="mdc-select__anchor"
+      role="button"
+      tabindex="0"
+    >
+      <span
+        class="mdc-line-ripple mdc-line-ripple--deactivating"
+        style="transform-origin: 0px center;"
+      />
+      <span
+        class="mdc-floating-label"
+        for="select-test"
+      />
+      <span
+        class="mdc-select__selected-text-container"
+      >
+        <span
+          class="mdc-select__selected-text"
+        >
+          Select a food
+        </span>
+      </span>
+      <span
+        class="mdc-select__dropdown-icon"
+      >
+        <i
+          class="rmwc-icon rmwc-icon--ligature material-icons mdc-select__dropdown-icon-inactive"
+        >
+          arrow_drop_down
+        </i>
+        <i
+          class="rmwc-icon rmwc-icon--ligature material-icons mdc-select__dropdown-icon-active"
+        >
+          arrow_drop_up
+        </i>
+      </span>
+      <select
+        class="rmwc-select__native-control "
+        tabindex="0"
+      >
+        <option
+          disabled=""
+          selected=""
+          value=""
+        >
+          Select a food
+        </option>
+        <option
+          value="1"
+        >
+          Cookies
+        </option>
+        <option
+          aria-disabled="true"
+          tabindex="-1"
+          value="2"
+        >
+          Pizza
+        </option>
+        <option
+          value="3"
+        >
+          Icecream
+        </option>
+      </select>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Select can accept options array 1`] = `
+<DocumentFragment>
+  <div
+    class="mdc-select mdc-select--filled mdc-select--no-label"
+  >
+    <div
+      aria-disabled="false"
+      aria-haspopup="listbox"
+      class="mdc-select__anchor"
+      role="button"
+      tabindex="0"
+    >
+      <span
+        class="mdc-line-ripple mdc-line-ripple--deactivating"
+        style="transform-origin: 0px center;"
+      />
+      <span
+        class="mdc-floating-label"
+        for="select-test"
+      />
+      <span
+        class="mdc-select__selected-text-container"
+      >
+        <span
+          class="mdc-select__selected-text"
+        >
+          Select a food
+        </span>
+      </span>
+      <span
+        class="mdc-select__dropdown-icon"
+      >
+        <i
+          class="rmwc-icon rmwc-icon--ligature material-icons mdc-select__dropdown-icon-inactive"
+        >
+          arrow_drop_down
+        </i>
+        <i
+          class="rmwc-icon rmwc-icon--ligature material-icons mdc-select__dropdown-icon-active"
+        >
+          arrow_drop_up
+        </i>
+      </span>
+      <select
+        class="rmwc-select__native-control "
+        tabindex="0"
+      >
+        <option
+          disabled=""
+          selected=""
+          value=""
+        >
+          Select a food
+        </option>
+        <option
+          value="1"
+        >
+          1
+        </option>
+        <option
+          value="2"
+        >
+          2
+        </option>
+        <option
+          value="3"
+        >
+          3
+        </option>
+      </select>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Select can have custom rootProps 1`] = `
+<DocumentFragment>
+  <div
+    class="mdc-select mdc-select--filled mdc-select--no-label"
+    name="test"
+  >
+    <div
+      aria-disabled="false"
+      aria-haspopup="listbox"
+      class="mdc-select__anchor"
+      role="button"
+      tabindex="0"
+    >
+      <span
+        class="mdc-line-ripple mdc-line-ripple--deactivating"
+        style="transform-origin: 0px center;"
+      />
+      <span
+        class="mdc-floating-label"
+        for="select-test"
+      />
+      <span
+        class="mdc-select__selected-text-container"
+      >
+        <span
+          class="mdc-select__selected-text"
+        />
+      </span>
+      <span
+        class="mdc-select__dropdown-icon"
+      >
+        <i
+          class="rmwc-icon rmwc-icon--ligature material-icons mdc-select__dropdown-icon-inactive"
+        >
+          arrow_drop_down
+        </i>
+        <i
+          class="rmwc-icon rmwc-icon--ligature material-icons mdc-select__dropdown-icon-active"
+        >
+          arrow_drop_up
+        </i>
+      </span>
+      <select
+        class="rmwc-select__native-control "
+        tabindex="0"
+      >
+        <option
+          disabled=""
+          selected=""
+          value=""
+        />
+      </select>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Select renders 1`] = `
+<DocumentFragment>
+  <div
+    class="mdc-select mdc-select--filled mdc-select--no-label"
+  >
+    <div
+      aria-disabled="false"
+      aria-haspopup="listbox"
+      class="mdc-select__anchor"
+      role="button"
+      tabindex="0"
+    >
+      <span
+        class="mdc-line-ripple mdc-line-ripple--deactivating"
+        style="transform-origin: 0px center;"
+      />
+      <span
+        class="mdc-floating-label"
+        for="select-test"
+      />
+      <span
+        class="mdc-select__selected-text-container"
+      >
+        <span
+          class="mdc-select__selected-text"
+        >
+          Select a food
+        </span>
+      </span>
+      <span
+        class="mdc-select__dropdown-icon"
+      >
+        <i
+          class="rmwc-icon rmwc-icon--ligature material-icons mdc-select__dropdown-icon-inactive"
+        >
+          arrow_drop_down
+        </i>
+        <i
+          class="rmwc-icon rmwc-icon--ligature material-icons mdc-select__dropdown-icon-active"
+        >
+          arrow_drop_up
+        </i>
+      </span>
+      <select
+        class="rmwc-select__native-control "
+        tabindex="0"
+      >
+        <option
+          disabled=""
+          selected=""
+          value=""
+        >
+          Select a food
+        </option>
+        <option
+          value="1"
+        >
+          Cookies
+        </option>
+        <option
+          value="2"
+        >
+          Pizza
+        </option>
+        <option
+          value="3"
+        >
+          Icecream
+        </option>
+      </select>
+    </div>
+  </div>
+</DocumentFragment>
+`;
