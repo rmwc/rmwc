@@ -27,5 +27,6 @@
     "**/*.story.tsx",
     "src/base/utils/use-knob.tsx",
     "public/version"
-  ]
+  ],
+  "types": ["node", "jest", "@testing-library/jest-dom"]
 }

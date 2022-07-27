@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`withTheme handles deprecations 1`] = `
+<div>
+  <div
+    class="mdc-theme--primary foo"
+  />
+</div>
+`;
+
+exports[`withTheme handles deprecations 2`] = `
+<div>
+  <div
+    class="mdc-theme--on-primary"
+  />
+</div>
+`;

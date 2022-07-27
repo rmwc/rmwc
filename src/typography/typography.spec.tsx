@@ -1,23 +1,24 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render, screen } from '@testing-library/react';
 import { Typography } from './';
 import { RMWCProvider } from '../provider';
 
 describe('Typography', () => {
   it('renders', () => {
-    mount(<Typography use="body1" />);
+    const { asFragment } = render(<Typography use="body1" />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('can have custom classnames', () => {
-    const el = mount(
+    const { container } = render(
       <Typography use="body1" className={'my-custom-classname'} />
     );
-    expect(!!~el.html().search('my-custom-classname')).toEqual(true);
+    expect(container.firstChild).toHaveClass('my-custom-classname');
   });
 
   it('supports refs', () => {
     let myRef = null;
-    mount(
+    render(
       <Typography
         use="body1"
         ref={(el) => {
@@ -32,7 +33,7 @@ describe('Typography', () => {
   });
 
   it('works with RMWCProvider', () => {
-    mount(
+    render(
       <RMWCProvider
         typography={{
           /** Make all Typography components default to <div>  */
@@ -56,10 +57,13 @@ describe('Typography', () => {
       </RMWCProvider>
     );
 
-    mount(
+    render(
       <RMWCProvider typography={undefined}>
-        <Typography use="headline6">Rendered default `div`</Typography>
+        <Typography use="headline6">Rendered default `div` 2</Typography>
       </RMWCProvider>
     );
+    expect(screen.getByText('Rendered default `div`')).toBeInTheDocument();
+    expect(screen.getByText('Rendered with `p`')).toBeInTheDocument();
+    expect(screen.getByText('Rendered default `div` 2')).toBeInTheDocument();
   });
 });
