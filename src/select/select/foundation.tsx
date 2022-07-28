@@ -390,7 +390,9 @@ export const useSelectFoundation = (
       // We need to call setSelectedTextContent to set the default value/the controlled value.
       // @ts-ignore unsafe private variable access
       if (foundation.menuItemValues.includes(value)) {
-        setSelectedTextContent(value);
+        // @ts-ignore unsafe private variable access
+        const textContent = foundation.adapter.getMenuItemTextAtIndex(index);
+        setSelectedTextContent(textContent);
       }
     }
     raf(() => {
