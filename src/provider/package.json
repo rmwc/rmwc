@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/provider",
-  "version": "8.0.0",
+  "version": "8.0.1",
   "description": "RMWC Provider component",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -36,8 +36,8 @@
     "react-dom": ">=16.8.x"
   },
   "dependencies": {
-    "@rmwc/base": "^8.0.0",
-    "@rmwc/types": "^8.0.0"
+    "@rmwc/base": "^8.0.1",
+    "@rmwc/types": "^8.0.1"
   },
   "gitHead": "bf098adc2571ee1641ef20d79f38fb64e9ff186e"
 }
