@@ -23,7 +23,7 @@
 		"build:lib": "node scripts/build-lib.js",
 		"build": "npm run clean && npm run build:docs && npm run build:code",
 		"pretest": "node scripts/pretest.js",
-		"test": "node scripts/test.js",
+		"test": "npm run docgen && node scripts/test.js",
 		"test:watch": "react-app-rewired test",
 		"test:coverage": "react-app-rewired test --coverage --watchAll=false",
 		"release:patch": "lerna version patch --force-publish --yes",
