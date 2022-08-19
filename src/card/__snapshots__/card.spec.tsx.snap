@@ -38,6 +38,12 @@ exports[`Card renders 1`] = `
           <div
             class="mdc-button__ripple"
           />
+          <div
+            class="mdc-button__touch"
+          />
+          <div
+            class="mdc-button__focus-ring"
+          />
           <span
             class="mdc-button__label"
           >
@@ -50,6 +56,12 @@ exports[`Card renders 1`] = `
           <div
             class="mdc-button__ripple"
           />
+          <div
+            class="mdc-button__touch"
+          />
+          <div
+            class="mdc-button__focus-ring"
+          />
           <span
             class="mdc-button__label"
           >
@@ -61,6 +73,12 @@ exports[`Card renders 1`] = `
         >
           <div
             class="mdc-button__ripple"
+          />
+          <div
+            class="mdc-button__touch"
+          />
+          <div
+            class="mdc-button__focus-ring"
           />
           <span
             class="mdc-button__label"
