@@ -3,7 +3,6 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Tooltip } from './';
 import { RMWCProvider } from '../provider';
-import { wait } from '@rmwc/base/utils/test-utils';
 
 describe('Tooltip', () => {
   it('renders', async () => {
@@ -12,7 +11,6 @@ describe('Tooltip', () => {
         <span>test</span>
       </Tooltip>
     );
-    await wait(100);
     userEvent.hover(screen.getByText('test'));
     expect(screen.getByText('tooltip')).toBeInTheDocument();
     expect(asFragment()).toMatchSnapshot();
