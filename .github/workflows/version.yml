@@ -39,3 +39,5 @@ jobs:
       - name: 'Alpha Major Release'
         run: npm run alpha:major
         if: contains(github.head_ref, '/major') && github.base_ref == 'next'
+      - name: 'Build Docs':
+        run: npm run build:docs
