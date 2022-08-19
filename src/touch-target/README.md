@@ -20,7 +20,6 @@ Touch targets are the parts of the screen that respond to user input. They exten
 
 The ButTouchTargetWrapperon component.
 
-### Props
 
 | Name       | Type              | Description                    |
 | ---------- | ----------------- | ------------------------------ |
