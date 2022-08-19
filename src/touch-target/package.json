@@ -1,7 +1,7 @@
 {
-  "name": "@rmwc/base",
-  "version": "8.0.7",
-  "description": "RMWC base module",
+  "name": "@rmwc/touch-target",
+  "version": "8.0.1",
+  "description": "RMWC Touch Target components",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "module": "next/index.js",
@@ -30,19 +30,14 @@
   "bugs": {
     "url": "https://github.com/jamesmfriedman/rmwc/issues"
   },
-  "homepage": "https://github.com/jamesmfriedman/rmwc/tree/master/src/base#readme",
+  "homepage": "https://github.com/jamesmfriedman/rmwc/tree/master/src/touch-target#readme",
   "peerDependencies": {
     "react": ">=16.8.x",
     "react-dom": ">=16.8.x"
   },
   "dependencies": {
-    "@material/dom": "^14.0.0",
-    "@rmwc/types": "^8.0.7",
-    "@types/classnames": "^2.3.1",
-    "classnames": "^2.3.1",
-    "hyperform": "^0.11.0",
-    "mutation-observer": "^1.0.3",
-    "tslib": "^2.4.0"
+    "@material/touch-target": "^14.0.0",
+    "@rmwc/base": "^8.0.1"
   },
-  "gitHead": "bf098adc2571ee1641ef20d79f38fb64e9ff186e"
+  "gitHead": "d9befec0e3b258864b71686eecd16c16feb43cf1"
 }
