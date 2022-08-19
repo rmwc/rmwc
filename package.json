@@ -22,7 +22,7 @@
 		"build:code": "npm run clean && node scripts/build-code.js",
 		"build:lib": "node scripts/build-lib.js",
 		"build": "npm run clean && npm run build:docs && npm run build:code",
-		"pretest": "npm run docgen && node scripts/pretest.js",
+		"pretest": "node scripts/pretest.js",
 		"test": "node scripts/test.js",
 		"test:watch": "react-app-rewired test",
 		"test:coverage": "react-app-rewired test --coverage --watchAll=false",
@@ -45,7 +45,7 @@
 		"preversion": "npm run clean && npm run docgen && npm run build:docsite && git add --all && git commit --allow-empty -m 'Generating Props'",
 		"version": "node scripts/fix-package-version && npm run changelog && git add CHANGELOG.md && git commit --allow-empty -m 'Updating Changelog'",
 		"prepare": "husky install",
-		"prepublish": "npm run build:code",
+		"prepublish": "npm run docgen && npm run build:code",
 		"build-storybook": "build-storybook",
 		"validate:actions": "action-validator .github/workflows/automerge.yml && action-validator .github/workflows/publish.yml && action-validator .github/workflows/pull-request.yml && action-validator .github/workflows/unit-test.yml && action-validator .github/workflows/version.yml"
 	},
