@@ -36,11 +36,12 @@
     "react-dom": ">=16.8.x"
   },
   "dependencies": {
-    "@material/button": "^8.0.0",
+    "@material/button": "^14.0.0",
     "@rmwc/base": "^8.0.1",
     "@rmwc/icon": "^8.0.1",
     "@rmwc/provider": "^8.0.1",
     "@rmwc/ripple": "^8.0.1",
+    "@rmwc/touch-target": "^8.0.1",
     "@rmwc/types": "^8.0.1"
   },
   "gitHead": "d9befec0e3b258864b71686eecd16c16feb43cf1"
