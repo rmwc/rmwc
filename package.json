@@ -15,6 +15,7 @@
 	},
 	"scripts": {
 		"install": "lerna bootstrap --force-local --hoist",
+		"devsetup": "npm i && npm run docgen",
 		"start": "export NODE_OPTIONS='--max-old-space-size=4096' && npm run clean && concurrently \"react-app-rewired start\" \"chokidar './src/**/readme.tsx' -c 'npm run docgen:examples'\"",
 		"build:docsite": "export NODE_OPTIONS='--max-old-space-size=4096' && react-app-rewired build && rm -R -f docs && mv build docs",
 		"build:docs": "npm run clean && npm run docgen && npm run build:docsite",
@@ -43,7 +44,7 @@
 		"storybook:update": "npm i -D @storybook/addon-actions@latest @storybook/addon-knobs@latest @storybook/react@latest",
 		"preversion": "npm run clean && npm run docgen && npm run build:docsite && git add --all && git commit --allow-empty -m 'Generating Props'",
 		"version": "node scripts/fix-package-version && npm run changelog && git add CHANGELOG.md && git commit --allow-empty -m 'Updating Changelog'",
-		"prepare": "npm run docgen && npm run build:code",
+		"prepublish": "npm run build:code",
 		"build-storybook": "build-storybook"
 	},
 	"devDependencies": {
