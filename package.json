@@ -15,7 +15,7 @@
 	},
 	"scripts": {
 		"install": "lerna bootstrap --force-local --hoist",
-		"start": "export NODE_OPTIONS='--max-old-space-size=4096' && react-app-rewired start",
+		"start": "export NODE_OPTIONS='--max-old-space-size=4096' && npm run clean && concurrently \"react-app-rewired start\" \"chokidar './src/**/readme.tsx' -c 'npm run docgen:examples'\"",
 		"build:docsite": "export NODE_OPTIONS='--max-old-space-size=4096' && react-app-rewired build && rm -R -f docs && mv build docs",
 		"build:docs": "npm run clean && npm run docgen && npm run build:docsite",
 		"build:code": "npm run clean && node scripts/build-code.js",
@@ -43,7 +43,7 @@
 		"storybook:update": "npm i -D @storybook/addon-actions@latest @storybook/addon-knobs@latest @storybook/react@latest",
 		"preversion": "npm run clean && npm run docgen && npm run build:docsite && git add --all && git commit --allow-empty -m 'Generating Props'",
 		"version": "node scripts/fix-package-version && npm run changelog && git add CHANGELOG.md && git commit --allow-empty -m 'Updating Changelog'",
-		"prepare": "npm run build:code",
+		"prepublish": "npm run docgen && npm run build:code",
 		"build-storybook": "build-storybook"
 	},
 	"devDependencies": {
@@ -67,7 +67,9 @@
 		"@types/react-router": "^5.1.18",
 		"@types/react-router-dom": "^5.1.7",
 		"babel-loader": "^8.2.5",
+		"chokidar-cli": "^3.0.0",
 		"colors": "^1.4.0",
+		"concurrently": "^7.3.0",
 		"copyfiles": "^2.4.1",
 		"documentalist": "^1.6.0",
 		"eslint-plugin-babel": "^5.3.1",
@@ -83,6 +85,7 @@
 		"react-markdown": "^6.0.2",
 		"react-router-dom": "^6.3.0",
 		"react-scripts": "^5.0.1",
+		"sass": "^1.54.4",
 		"typescript": "4.3.5"
 	},
 	"eslintIgnore": [

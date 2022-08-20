@@ -1,4 +1,5 @@
 import '@rmwc/theme/styles';
+import '@rmwc/touch-target/styles';
 import '@rmwc/icon/styles';
 import '@rmwc/button/styles';
 import '@rmwc/avatar/styles';
