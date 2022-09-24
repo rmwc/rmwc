@@ -25,6 +25,9 @@ exports[`Card renders 1`] = `
           Visit ten places on our planet that are undergoing the biggest changes today.
         </div>
       </div>
+      <div
+        class="mdc-card__ripple"
+      />
     </div>
     <section
       class="mdc-card__actions"
