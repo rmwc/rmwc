@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/formfield",
-  "version": "8.0.1",
+  "version": "8.0.2",
   "description": "RMWC FormField component",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -36,7 +36,7 @@
     "react-dom": ">=16.8.x"
   },
   "dependencies": {
-    "@material/form-field": "^8.0.0",
+    "@material/form-field": "^14.0.0",
     "@rmwc/base": "^8.0.1",
     "@rmwc/types": "^8.0.1"
   },

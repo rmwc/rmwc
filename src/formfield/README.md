@@ -26,5 +26,7 @@ A FormField component.
 |------|------|-------------|
 | `alignEnd` | `undefined \| false \| true` | Position the input after the label. |
 | `foundationRef` | `React.Ref<MDCFormFieldFoundation>` | Advanced: A reference to the MDCFoundation. |
+| `noWrap` | `undefined \| false \| true` | Forces text to stay on a single line. |
+| `spaceBetween` | `undefined \| false \| true` | Adds space between content. |
 
 
