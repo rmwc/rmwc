@@ -72,7 +72,13 @@ export const CardPrimaryAction = withRipple({
     ref
   ) {
     const className = useClassNames(props, ['mdc-card__primary-action']);
-    return <Tag {...props} ref={ref} className={className} />;
+    const { children, ...rest } = props;
+    return (
+      <Tag {...rest} ref={ref} className={className}>
+        {children}
+        <div className="mdc-card__ripple"></div>
+      </Tag>
+    );
   })
 );
 
