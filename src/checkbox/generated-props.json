@@ -22,7 +22,7 @@
       },
       "kind": "interface",
       "name": "CheckboxProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/checkbox/index.tsx#L34",
+      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/checkbox/index.tsx#L34",
       "extends": [
         "WithRippleProps",
         "ToggleableProps<MDCCheckboxFoundation>"
@@ -146,7 +146,7 @@
           },
           "kind": "property",
           "name": "indeterminate",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/checkbox/index.tsx#L38",
+          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/checkbox/index.tsx#L38",
           "type": "undefined | false | true"
         },
         {
@@ -285,7 +285,7 @@
       },
       "kind": "type alias",
       "name": "CheckboxHTMLProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/checkbox/index.tsx#L41",
+      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/checkbox/index.tsx#L41",
       "type": "ToggleHTMLProps"
     }
   }
