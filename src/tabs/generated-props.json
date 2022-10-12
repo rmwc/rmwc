@@ -1,0 +1,605 @@
+{
+  "npm": {},
+  "typescript": {
+    "TabBarProps": {
+      "documentation": {
+        "contents": [
+          "<p>The TabBar component</p>\n"
+        ],
+        "contentsRaw": "The TabBar component",
+        "metadata": {}
+      },
+      "fileName": "src/tabs/tab-bar.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "interface",
+      "name": "TabBarProps",
+      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/tabs/tab-bar.tsx#L20",
+      "methods": [],
+      "properties": [
+        {
+          "documentation": {
+            "contents": [
+              "<p>The index of the active tab.</p>\n"
+            ],
+            "contentsRaw": "The index of the active tab.",
+            "metadata": {}
+          },
+          "fileName": "src/tabs/tab-bar.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "activeTabIndex",
+          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/tabs/tab-bar.tsx#L24",
+          "type": "undefined | number"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Advanced: A reference to the MDCFoundation.</p>\n"
+            ],
+            "contentsRaw": "Advanced: A reference to the MDCFoundation.",
+            "metadata": {}
+          },
+          "fileName": "src/tabs/tab-bar.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "foundationRef",
+          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/tabs/tab-bar.tsx#L28",
+          "type": "React.Ref<MDCTabBarFoundation | null>"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Specifies whether the indicator should slide or fade. Defaults to slide.</p>\n"
+            ],
+            "contentsRaw": "Specifies whether the indicator should slide or fade. Defaults to slide.",
+            "metadata": {}
+          },
+          "fileName": "src/tabs/tab-bar.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "indicatorTransition",
+          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/tabs/tab-bar.tsx#L26",
+          "type": "\"slide\" | \"fade\""
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Callback when the active tab changes. Receives event as an argument with event.target.value set to the activeTabIndex. evt.detail = { index: number; }</p>\n"
+            ],
+            "contentsRaw": "Callback when the active tab changes. Receives event as an argument with event.target.value set to the activeTabIndex. evt.detail = { index: number; }",
+            "metadata": {}
+          },
+          "fileName": "src/tabs/tab-bar.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "onActivate",
+          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/tabs/tab-bar.tsx#L22",
+          "type": "undefined | (evt: TabBarOnActivateEventT) => void"
+        }
+      ]
+    },
+    "TabIndicatorProps": {
+      "fileName": "src/tabs/tab-indicator.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "interface",
+      "name": "TabIndicatorProps",
+      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/tabs/tab-indicator.tsx#L8",
+      "methods": [],
+      "properties": [
+        {
+          "documentation": {
+            "contents": [
+              "<p>Use an icon instead of an underline for the tab</p>\n"
+            ],
+            "contentsRaw": "Use an icon instead of an underline for the tab",
+            "metadata": {}
+          },
+          "fileName": "src/tabs/tab-indicator.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "icon",
+          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/tabs/tab-indicator.tsx#L10",
+          "type": "RMWC.IconPropT"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>The transition to use</p>\n"
+            ],
+            "contentsRaw": "The transition to use",
+            "metadata": {}
+          },
+          "fileName": "src/tabs/tab-indicator.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "transition",
+          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/tabs/tab-indicator.tsx#L12",
+          "type": "\"slide\" | \"fade\""
+        }
+      ]
+    },
+    "TabScrollerProps": {
+      "fileName": "src/tabs/tab-scroller.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "interface",
+      "name": "TabScrollerProps",
+      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/tabs/tab-scroller.tsx#L7",
+      "methods": [],
+      "properties": [
+        {
+          "fileName": "src/tabs/tab-scroller.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "apiRef",
+          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/tabs/tab-scroller.tsx#L8",
+          "type": "(api: TabScrollerApi) => void"
+        }
+      ]
+    },
+    "TabProps": {
+      "documentation": {
+        "contents": [
+          "<p>A Tab component</p>\n"
+        ],
+        "contentsRaw": "A Tab component",
+        "metadata": {}
+      },
+      "fileName": "src/tabs/tab.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "interface",
+      "name": "TabProps",
+      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/tabs/tab.tsx#L22",
+      "methods": [],
+      "properties": [
+        {
+          "documentation": {
+            "contents": [
+              "<p>The label for the tab, passed as children.</p>\n"
+            ],
+            "contentsRaw": "The label for the tab, passed as children.",
+            "metadata": {}
+          },
+          "fileName": "src/tabs/tab.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "children",
+          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/tabs/tab.tsx#L26",
+          "type": "React.ReactNode"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Focuses the tab when activated. Defaults to true.</p>\n"
+            ],
+            "contentsRaw": "Focuses the tab when activated. Defaults to true.",
+            "metadata": {}
+          },
+          "fileName": "src/tabs/tab.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "focusOnActivate",
+          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/tabs/tab.tsx#L42",
+          "type": "undefined | false | true"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Advanced: A reference to the MDCFoundation.</p>\n"
+            ],
+            "contentsRaw": "Advanced: A reference to the MDCFoundation.",
+            "metadata": {}
+          },
+          "fileName": "src/tabs/tab.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "foundationRef",
+          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/tabs/tab.tsx#L40",
+          "type": "React.Ref<MDCTabFoundation | null>"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>The icon to use for the tab.</p>\n"
+            ],
+            "contentsRaw": "The icon to use for the tab.",
+            "metadata": {}
+          },
+          "fileName": "src/tabs/tab.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "icon",
+          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/tabs/tab.tsx#L28",
+          "type": "RMWC.IconPropT"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Optionally use a custom icon for the active indicator, instead of the underline.</p>\n"
+            ],
+            "contentsRaw": "Optionally use a custom icon for the active indicator, instead of the underline.",
+            "metadata": {}
+          },
+          "fileName": "src/tabs/tab.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "iconIndicator",
+          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/tabs/tab.tsx#L30",
+          "type": "RMWC.IconPropT"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>A label for the tab.</p>\n"
+            ],
+            "contentsRaw": "A label for the tab.",
+            "metadata": {}
+          },
+          "fileName": "src/tabs/tab.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "label",
+          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/tabs/tab.tsx#L24",
+          "type": "any"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Indicates that the tab should shrink in size to be as narrow as possible without causing text to wrap.</p>\n"
+            ],
+            "contentsRaw": "Indicates that the tab should shrink in size to be as narrow as possible without causing text to wrap.",
+            "metadata": {}
+          },
+          "fileName": "src/tabs/tab.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "minWidth",
+          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/tabs/tab.tsx#L36",
+          "type": "undefined | false | true"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Fires when a tab has been interacted with. This is captures both keyboard and click events. evt.detail = { tabId: string }</p>\n"
+            ],
+            "contentsRaw": "Fires when a tab has been interacted with. This is captures both keyboard and click events. evt.detail = { tabId: string }",
+            "metadata": {}
+          },
+          "fileName": "src/tabs/tab.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "onInteraction",
+          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/tabs/tab.tsx#L38",
+          "type": "undefined | (evt: TabOnInteractionEventT) => void"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Restricts the indicator to the content</p>\n"
+            ],
+            "contentsRaw": "Restricts the indicator to the content",
+            "metadata": {}
+          },
+          "fileName": "src/tabs/tab.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "restrictIndicator",
+          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/tabs/tab.tsx#L34",
+          "type": "undefined | false | true"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Stacks the icon on top of the text label</p>\n"
+            ],
+            "contentsRaw": "Stacks the icon on top of the text label",
+            "metadata": {}
+          },
+          "fileName": "src/tabs/tab.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "stacked",
+          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/tabs/tab.tsx#L32",
+          "type": "undefined | false | true"
+        }
+      ]
+    },
+    "TabBarContextT": {
+      "fileName": "src/tabs/tab-bar-context.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "type alias",
+      "name": "TabBarContextT",
+      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/tabs/tab-bar-context.tsx#L3",
+      "type": ""
+    },
+    "TabBarOnActivateEventT": {
+      "documentation": {
+        "contents": [
+          "<p>TabBar</p>\n"
+        ],
+        "contentsRaw": "TabBar",
+        "metadata": {}
+      },
+      "fileName": "src/tabs/tab-bar.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "type alias",
+      "name": "TabBarOnActivateEventT",
+      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/tabs/tab-bar.tsx#L15",
+      "type": "RMWC.CustomEventT<>"
+    },
+    "TabIndicatorApi": {
+      "fileName": "src/tabs/tab-indicator.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "type alias",
+      "name": "TabIndicatorApi",
+      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/tabs/tab-indicator.tsx#L15",
+      "type": ""
+    },
+    "TabScrollerApi": {
+      "fileName": "src/tabs/tab-scroller.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "type alias",
+      "name": "TabScrollerApi",
+      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/tabs/tab-scroller.tsx#L11",
+      "type": ""
+    },
+    "TabOnInteractionEventT": {
+      "fileName": "src/tabs/tab.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "type alias",
+      "name": "TabOnInteractionEventT",
+      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/tabs/tab.tsx#L19",
+      "type": "RMWC.CustomEventT<>"
+    },
+    "TabApi": {
+      "fileName": "src/tabs/tab.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "type alias",
+      "name": "TabApi",
+      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/tabs/tab.tsx#L45",
+      "type": ""
+    }
+  }
+}

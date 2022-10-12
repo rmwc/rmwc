@@ -1,0 +1,201 @@
+{
+  "npm": {},
+  "typescript": {
+    "ThemeProps": {
+      "documentation": {
+        "contents": [
+          "<p>A Theme Component.</p>\n"
+        ],
+        "contentsRaw": "A Theme Component.",
+        "metadata": {}
+      },
+      "fileName": "src/theme/index.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "interface",
+      "name": "ThemeProps",
+      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/theme/index.tsx#L16",
+      "methods": [],
+      "properties": [
+        {
+          "documentation": {
+            "contents": [
+              "<p>A theme option as a string, a space separated string for multiple values, or an array of valid theme options.</p>\n"
+            ],
+            "contentsRaw": "A theme option as a string, a space separated string for multiple values, or an array of valid theme options.",
+            "metadata": {}
+          },
+          "fileName": "src/theme/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "use",
+          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/theme/index.tsx#L18",
+          "type": "RMWC.ThemePropT"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Collapse the styles directly onto the child component. This eliminates the need for a wrapping <code>span</code> element and may be required for applying things like background-colors.</p>\n"
+            ],
+            "contentsRaw": "Collapse the styles directly onto the child component. This eliminates the need for a wrapping `span` element and may be required for applying things like background-colors.",
+            "metadata": {}
+          },
+          "fileName": "src/theme/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "wrap",
+          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/theme/index.tsx#L20",
+          "type": "undefined | false | true"
+        }
+      ]
+    },
+    "ThemeProviderProps": {
+      "documentation": {
+        "contents": [
+          "<p>A ThemeProvider. This sets theme colors for its child tree.</p>\n"
+        ],
+        "contentsRaw": "A ThemeProvider. This sets theme colors for its child tree.",
+        "metadata": {}
+      },
+      "fileName": "src/theme/index.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "interface",
+      "name": "ThemeProviderProps",
+      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/theme/index.tsx#L43",
+      "methods": [],
+      "properties": [
+        {
+          "documentation": {
+            "contents": [
+              "<p>Children to render</p>\n"
+            ],
+            "contentsRaw": "Children to render",
+            "metadata": {}
+          },
+          "fileName": "src/theme/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "children",
+          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/theme/index.tsx#L51",
+          "type": "React.ReactNode"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Any theme option pointing to a valid CSS value.</p>\n"
+            ],
+            "contentsRaw": "Any theme option pointing to a valid CSS value.",
+            "metadata": {}
+          },
+          "fileName": "src/theme/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "options",
+          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/theme/index.tsx#L45",
+          "type": "{ [key: string]: string }"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Additional standard inline styles that will be merged into the style tag.</p>\n"
+            ],
+            "contentsRaw": "Additional standard inline styles that will be merged into the style tag.",
+            "metadata": {}
+          },
+          "fileName": "src/theme/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "style",
+          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/theme/index.tsx#L47",
+          "type": "Object"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Instead of injecting a div tag, wrap a child component by merging the theme styles directly onto it. Useful when you don&#39;t want to mess with layout.</p>\n"
+            ],
+            "contentsRaw": "Instead of injecting a div tag, wrap a child component by merging the theme styles directly onto it. Useful when you don't want to mess with layout.",
+            "metadata": {}
+          },
+          "fileName": "src/theme/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "wrap",
+          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/theme/index.tsx#L49",
+          "type": "undefined | false | true"
+        }
+      ]
+    }
+  }
+}

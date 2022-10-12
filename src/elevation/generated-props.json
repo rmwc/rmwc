@@ -1,0 +1,103 @@
+{
+  "npm": {},
+  "typescript": {
+    "ElevationProps": {
+      "documentation": {
+        "contents": [
+          "<p>The Elevation Component</p>\n"
+        ],
+        "contentsRaw": "The Elevation Component",
+        "metadata": {}
+      },
+      "fileName": "src/elevation/index.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "interface",
+      "name": "ElevationProps",
+      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/elevation/index.tsx#L8",
+      "methods": [],
+      "properties": [
+        {
+          "documentation": {
+            "contents": [
+              "<p>Allows for smooth transitions between elevations when the z value changes.</p>\n"
+            ],
+            "contentsRaw": "Allows for smooth transitions between elevations when the z value changes.",
+            "metadata": {}
+          },
+          "fileName": "src/elevation/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "transition",
+          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/elevation/index.tsx#L12",
+          "type": "undefined | false | true"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Allows the elevation classes to be merged onto the child component instead of creating an new DOM node.</p>\n"
+            ],
+            "contentsRaw": "Allows the elevation classes to be merged onto the child component instead of creating an new DOM node.",
+            "metadata": {}
+          },
+          "fileName": "src/elevation/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "wrap",
+          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/elevation/index.tsx#L14",
+          "type": "undefined | false | true"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>A number from 0 - 24 for different levels of elevation</p>\n"
+            ],
+            "contentsRaw": "A number from 0 - 24 for different levels of elevation",
+            "metadata": {}
+          },
+          "fileName": "src/elevation/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "z",
+          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/elevation/index.tsx#L10",
+          "type": "number | string"
+        }
+      ]
+    }
+  }
+}
