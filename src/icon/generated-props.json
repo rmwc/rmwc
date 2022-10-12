@@ -22,7 +22,7 @@
       },
       "kind": "interface",
       "name": "IconProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/icon/index.tsx#L7",
+      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/icon/index.tsx#L7",
       "methods": [],
       "properties": [
         {
@@ -46,7 +46,7 @@
           },
           "kind": "property",
           "name": "icon",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/icon/index.tsx#L9",
+          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/icon/index.tsx#L9",
           "type": "RMWC.IconPropT"
         }
       ]
@@ -65,7 +65,7 @@
       },
       "kind": "type alias",
       "name": "IconHTMLProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/icon/index.tsx#L12",
+      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/icon/index.tsx#L12",
       "type": "RMWC.HTMLProps<HTMLElement>"
     }
   }
