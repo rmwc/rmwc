@@ -101,11 +101,20 @@
 
 ##### Chores
 
+<<<<<<< HEAD
+
 - **readme:** update readme and package.json (12b4c443)
 
 ##### Bug Fixes
 
+- # **type:** Extends {} to fix error in declarations (d5936d7b)
+
+* **readme:** update readme and package.json (12b4c443)
+
+##### Bug Fixes
+
 - **type:** Extends {} to fix error in declarations (d5936d7b)
+  > > > > > > > e8457a0d (Updating Changelog)
 
 #### 8.0.2 (2022-10-12)
 
