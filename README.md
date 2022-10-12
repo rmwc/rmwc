@@ -38,7 +38,7 @@ Features:
 
 ## Recent updates
 
-v8.0.1 is here! This release includes bug fixes of v8.0.0.
+v8.0.2 is here! This release includes bug fixes of v8.0.0. One being the date-picker not showing up in Chrome, when setting Textfield to have type="date".
 
 - `npm i rmwc@latest` or `npm i @rmwc/button@latest`.
 - React 17 now usable as a peer dep
