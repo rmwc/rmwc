@@ -3,9 +3,7 @@
   "typescript": {
     "RMWCProviderProps": {
       "documentation": {
-        "contents": [
-          "<p>A provider for setting global options in RMWC.</p>\n"
-        ],
+        "contents": ["<p>A provider for setting global options in RMWC.</p>\n"],
         "contentsRaw": "A provider for setting global options in RMWC.",
         "metadata": {}
       },
@@ -22,14 +20,12 @@
       },
       "kind": "interface",
       "name": "RMWCProviderProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/provider/index.tsx#L47",
+      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/provider/index.tsx#L47",
       "methods": [],
       "properties": [
         {
           "documentation": {
-            "contents": [
-              "<p>Children to render</p>\n"
-            ],
+            "contents": ["<p>Children to render</p>\n"],
             "contentsRaw": "Children to render",
             "metadata": {}
           },
@@ -46,14 +42,12 @@
           },
           "kind": "property",
           "name": "children",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/provider/index.tsx#L57",
+          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/provider/index.tsx#L57",
           "type": "React.ReactNode"
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Global options for icons</p>\n"
-            ],
+            "contents": ["<p>Global options for icons</p>\n"],
             "contentsRaw": "Global options for icons",
             "metadata": {}
           },
@@ -94,14 +88,12 @@
           },
           "kind": "property",
           "name": "ripple",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/provider/index.tsx#L49",
+          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/provider/index.tsx#L49",
           "type": "undefined | false | true"
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Global tooltip options</p>\n"
-            ],
+            "contents": ["<p>Global tooltip options</p>\n"],
             "contentsRaw": "Global tooltip options",
             "metadata": {}
           },
@@ -118,14 +110,12 @@
           },
           "kind": "property",
           "name": "tooltip",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/provider/index.tsx#L53",
+          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/provider/index.tsx#L53",
           "type": "Partial<TooltipOptions>"
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Global typography options</p>\n"
-            ],
+            "contents": ["<p>Global typography options</p>\n"],
             "contentsRaw": "Global typography options",
             "metadata": {}
           },
@@ -142,7 +132,7 @@
           },
           "kind": "property",
           "name": "typography",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/provider/index.tsx#L55",
+          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/provider/index.tsx#L55",
           "type": "Partial<TypographyOptions>"
         }
       ]

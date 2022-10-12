@@ -15,7 +15,7 @@
       },
       "kind": "interface",
       "name": "MenuSurfaceApi",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu-surface/index.tsx#L21",
+      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/menu/menu-surface/index.tsx#L21",
       "methods": [],
       "properties": [
         {
@@ -155,9 +155,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Children to render.</p>\n"
-            ],
+            "contents": ["<p>Children to render.</p>\n"],
             "contentsRaw": "Children to render.",
             "metadata": {}
           },
@@ -179,9 +177,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Make the menu position fixed.</p>\n"
-            ],
+            "contents": ["<p>Make the menu position fixed.</p>\n"],
             "contentsRaw": "Make the menu position fixed.",
             "metadata": {}
           },
@@ -227,9 +223,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Callback for when the menu is closed.</p>\n"
-            ],
+            "contents": ["<p>Callback for when the menu is closed.</p>\n"],
             "contentsRaw": "Callback for when the menu is closed.",
             "metadata": {}
           },
@@ -251,9 +245,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Callback for when the menu is opened.</p>\n"
-            ],
+            "contents": ["<p>Callback for when the menu is opened.</p>\n"],
             "contentsRaw": "Callback for when the menu is opened.",
             "metadata": {}
           },
@@ -275,9 +267,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Opens the menu.</p>\n"
-            ],
+            "contents": ["<p>Opens the menu.</p>\n"],
             "contentsRaw": "Opens the menu.",
             "metadata": {}
           },
@@ -325,9 +315,7 @@
     },
     "MenuSurfaceAnchorProps": {
       "documentation": {
-        "contents": [
-          "<p>MenuSurfaceAnchor</p>\n"
-        ],
+        "contents": ["<p>MenuSurfaceAnchor</p>\n"],
         "contentsRaw": "MenuSurfaceAnchor",
         "metadata": {}
       },
@@ -362,11 +350,8 @@
       },
       "kind": "interface",
       "name": "MenuApi",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu/index.tsx#L30",
-      "extends": [
-        "ListApi",
-        "any"
-      ],
+      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/menu/menu/index.tsx#L30",
+      "extends": ["ListApi", "any"],
       "methods": [],
       "properties": [
         {
@@ -468,7 +453,7 @@
           },
           "kind": "property",
           "name": "items",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu/index.tsx#L31",
+          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/menu/menu/index.tsx#L31",
           "type": "() => HTMLLIElement[]"
         },
         {
@@ -560,9 +545,7 @@
     },
     "MenuProps": {
       "documentation": {
-        "contents": [
-          "<p>A menu component for displaying lists items.</p>\n"
-        ],
+        "contents": ["<p>A menu component for displaying lists items.</p>\n"],
         "contentsRaw": "A menu component for displaying lists items.",
         "metadata": {}
       },
@@ -579,10 +562,8 @@
       },
       "kind": "interface",
       "name": "MenuProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu/index.tsx#L35",
-      "extends": [
-        "any"
-      ],
+      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/menu/menu/index.tsx#L35",
+      "extends": ["any"],
       "methods": [],
       "properties": [
         {
@@ -606,7 +587,7 @@
           },
           "kind": "property",
           "name": "apiRef",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu/index.tsx#L42",
+          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/menu/menu/index.tsx#L42",
           "type": "undefined | (api: MenuApi | null) => void"
         },
         {
@@ -630,7 +611,7 @@
           },
           "kind": "property",
           "name": "focusOnOpen",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu/index.tsx#L40",
+          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/menu/menu/index.tsx#L40",
           "type": "undefined | false | true"
         },
         {
@@ -654,7 +635,7 @@
           },
           "kind": "property",
           "name": "foundationRef",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu/index.tsx#L44",
+          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/menu/menu/index.tsx#L44",
           "type": "React.Ref<MDCMenuFoundation>"
         },
         {
@@ -678,16 +659,14 @@
           },
           "kind": "property",
           "name": "onSelect",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu/index.tsx#L38",
+          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/menu/menu/index.tsx#L38",
           "type": "undefined | (evt: MenuOnSelectEventT) => void"
         }
       ]
     },
     "MenuItemsProps": {
       "documentation": {
-        "contents": [
-          "<p>A wrapper for menu items</p>\n"
-        ],
+        "contents": ["<p>A wrapper for menu items</p>\n"],
         "contentsRaw": "A wrapper for menu items",
         "metadata": {}
       },
@@ -704,10 +683,8 @@
       },
       "kind": "interface",
       "name": "MenuItemsProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu/index.tsx#L53",
-      "extends": [
-        "ListProps"
-      ],
+      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/menu/menu/index.tsx#L53",
+      "extends": ["ListProps"],
       "methods": [],
       "properties": [
         {
@@ -760,9 +737,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Reduces the padding on List items.</p>\n"
-            ],
+            "contents": ["<p>Reduces the padding on List items.</p>\n"],
             "contentsRaw": "Reduces the padding on List items.",
             "metadata": {}
           },
@@ -949,17 +924,13 @@
       },
       "kind": "interface",
       "name": "MenuItemProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu/index.tsx#L66",
-      "extends": [
-        "ListItemProps"
-      ],
+      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/menu/menu/index.tsx#L66",
+      "extends": ["ListItemProps"],
       "methods": [],
       "properties": [
         {
           "documentation": {
-            "contents": [
-              "<p>A modifier for an active state.</p>\n"
-            ],
+            "contents": ["<p>A modifier for an active state.</p>\n"],
             "contentsRaw": "A modifier for an active state.",
             "metadata": {}
           },
@@ -981,9 +952,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>A modifier for a disabled state.</p>\n"
-            ],
+            "contents": ["<p>A modifier for a disabled state.</p>\n"],
             "contentsRaw": "A modifier for a disabled state.",
             "metadata": {}
           },
@@ -1005,9 +974,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Adds a ripple effect to the component</p>\n"
-            ],
+            "contents": ["<p>Adds a ripple effect to the component</p>\n"],
             "contentsRaw": "Adds a ripple effect to the component",
             "metadata": {}
           },
@@ -1029,9 +996,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>A modifier for a selected state.</p>\n"
-            ],
+            "contents": ["<p>A modifier for a selected state.</p>\n"],
             "contentsRaw": "A modifier for a selected state.",
             "metadata": {}
           },
@@ -1074,10 +1039,8 @@
       },
       "kind": "interface",
       "name": "SimpleMenuProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu/index.tsx#L123",
-      "extends": [
-        "MenuProps"
-      ],
+      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/menu/menu/index.tsx#L123",
+      "extends": ["MenuProps"],
       "methods": [],
       "properties": [
         {
@@ -1101,15 +1064,13 @@
           },
           "kind": "property",
           "name": "apiRef",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu/index.tsx#L42",
+          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/menu/menu/index.tsx#L42",
           "inheritedFrom": "MenuProps.apiRef",
           "type": "undefined | (api: MenuApi | null) => void"
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Children to render</p>\n"
-            ],
+            "contents": ["<p>Children to render</p>\n"],
             "contentsRaw": "Children to render",
             "metadata": {}
           },
@@ -1126,7 +1087,7 @@
           },
           "kind": "property",
           "name": "children",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu/index.tsx#L129",
+          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/menu/menu/index.tsx#L129",
           "type": "React.ReactNode"
         },
         {
@@ -1150,7 +1111,7 @@
           },
           "kind": "property",
           "name": "focusOnOpen",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu/index.tsx#L40",
+          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/menu/menu/index.tsx#L40",
           "inheritedFrom": "MenuProps.focusOnOpen",
           "type": "undefined | false | true"
         },
@@ -1175,7 +1136,7 @@
           },
           "kind": "property",
           "name": "foundationRef",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu/index.tsx#L44",
+          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/menu/menu/index.tsx#L44",
           "inheritedFrom": "MenuProps.foundationRef",
           "type": "React.Ref<MDCMenuFoundation>"
         },
@@ -1200,7 +1161,7 @@
           },
           "kind": "property",
           "name": "handle",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu/index.tsx#L125",
+          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/menu/menu/index.tsx#L125",
           "type": "ReactElement<any>"
         },
         {
@@ -1224,7 +1185,7 @@
           },
           "kind": "property",
           "name": "onSelect",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu/index.tsx#L38",
+          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/menu/menu/index.tsx#L38",
           "inheritedFrom": "MenuProps.onSelect",
           "type": "undefined | (evt: MenuOnSelectEventT) => void"
         },
@@ -1249,16 +1210,14 @@
           },
           "kind": "property",
           "name": "rootProps",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu/index.tsx#L127",
+          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/menu/menu/index.tsx#L127",
           "type": "Object"
         }
       ]
     },
     "SimpleMenuSurfaceProps": {
       "documentation": {
-        "contents": [
-          "<p>The same as SimpleMenu, but a generic surface.</p>\n"
-        ],
+        "contents": ["<p>The same as SimpleMenu, but a generic surface.</p>\n"],
         "contentsRaw": "The same as SimpleMenu, but a generic surface.",
         "metadata": {}
       },
@@ -1275,17 +1234,13 @@
       },
       "kind": "interface",
       "name": "SimpleMenuSurfaceProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu/index.tsx#L133",
-      "extends": [
-        "any"
-      ],
+      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/menu/menu/index.tsx#L133",
+      "extends": ["any"],
       "methods": [],
       "properties": [
         {
           "documentation": {
-            "contents": [
-              "<p>Children to render</p>\n"
-            ],
+            "contents": ["<p>Children to render</p>\n"],
             "contentsRaw": "Children to render",
             "metadata": {}
           },
@@ -1302,7 +1257,7 @@
           },
           "kind": "property",
           "name": "children",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu/index.tsx#L139",
+          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/menu/menu/index.tsx#L139",
           "type": "React.ReactNode"
         },
         {
@@ -1326,7 +1281,7 @@
           },
           "kind": "property",
           "name": "handle",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu/index.tsx#L135",
+          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/menu/menu/index.tsx#L135",
           "type": "ReactElement<any>"
         },
         {
@@ -1350,7 +1305,7 @@
           },
           "kind": "property",
           "name": "rootProps",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu/index.tsx#L137",
+          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/menu/menu/index.tsx#L137",
           "type": "Object"
         }
       ]
@@ -1369,7 +1324,7 @@
       },
       "kind": "interface",
       "name": "SimpleMenuState",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu/index.tsx#L142",
+      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/menu/menu/index.tsx#L142",
       "methods": [],
       "properties": [
         {
@@ -1386,7 +1341,7 @@
           },
           "kind": "property",
           "name": "open",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu/index.tsx#L143",
+          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/menu/menu/index.tsx#L143",
           "type": "boolean"
         }
       ]
@@ -1405,7 +1360,7 @@
       },
       "kind": "type alias",
       "name": "AnchorT",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu-surface/index.tsx#L8",
+      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/menu/menu-surface/index.tsx#L8",
       "type": "\"bottomEnd\" | \"bottomLeft\" | \"bottomRight\" | \"bottomStart\" | \"topEnd\" | \"topLeft\" | \"topRight\" | \"topStart\""
     },
     "MenuSurfaceOnOpenEventT": {
@@ -1422,7 +1377,7 @@
       },
       "kind": "type alias",
       "name": "MenuSurfaceOnOpenEventT",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu-surface/index.tsx#L18",
+      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/menu/menu-surface/index.tsx#L18",
       "type": "RMWC.CustomEventT<{}>"
     },
     "MenuSurfaceOnCloseEventT": {
@@ -1439,14 +1394,12 @@
       },
       "kind": "type alias",
       "name": "MenuSurfaceOnCloseEventT",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu-surface/index.tsx#L19",
+      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/menu/menu-surface/index.tsx#L19",
       "type": "RMWC.CustomEventT<{}>"
     },
     "MenuOnSelectEventT": {
       "documentation": {
-        "contents": [
-          "<p>Menu</p>\n"
-        ],
+        "contents": ["<p>Menu</p>\n"],
         "contentsRaw": "Menu",
         "metadata": {}
       },
@@ -1463,7 +1416,7 @@
       },
       "kind": "type alias",
       "name": "MenuOnSelectEventT",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu/index.tsx#L25",
+      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/menu/menu/index.tsx#L25",
       "type": "RMWC.CustomEventT<>"
     },
     "MenuHTMLProps": {
@@ -1480,7 +1433,7 @@
       },
       "kind": "type alias",
       "name": "MenuHTMLProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu/index.tsx#L47",
+      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/menu/menu/index.tsx#L47",
       "type": "RMWC.HTMLProps<HTMLInputElement, Omit<AllHTMLAttributes<HTMLInputElement>, \"onSelect\">>"
     }
   }
