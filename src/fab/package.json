@@ -36,7 +36,7 @@
     "react-dom": ">=16.8.x"
   },
   "dependencies": {
-    "@material/fab": "^8.0.0",
+    "@material/fab": "^14.0.0",
     "@rmwc/base": "^8.0.1",
     "@rmwc/icon": "^8.0.1",
     "@rmwc/provider": "^8.0.1",
