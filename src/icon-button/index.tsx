@@ -67,6 +67,7 @@ const IconButtonToggle = createComponent<IconButtonProps>(
         tag="button"
         ref={ref}
       >
+        <div className="mdc-icon-button__ripple"></div>
         <IconButtonIcon icon={icon} />
         <IconButtonIcon icon={onIcon} on />
       </IconButtonToggleRoot>
@@ -83,7 +84,7 @@ const IconButtonRoot = withRipple({
   unbounded: true
 })(
   createComponent<IconButtonProps>(function IconButtonRoot(props, ref) {
-    const { checked, label, foundationRef, ...rest } = props;
+    const { checked, label, foundationRef, children, ...rest } = props;
     const className = useClassNames(props, [
       'mdc-icon-button',
       {
@@ -98,7 +99,10 @@ const IconButtonRoot = withRipple({
         {...rest}
         className={className}
         ref={ref}
-      />
+      >
+        <div className="mdc-icon-button__ripple"></div>
+        {children}
+      </Icon>
     );
   })
 );

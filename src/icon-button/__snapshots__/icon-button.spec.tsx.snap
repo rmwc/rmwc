@@ -9,6 +9,9 @@ exports[` renders as toggle 1`] = `
     role="button"
     tabindex="0"
   >
+    <div
+      class="mdc-icon-button__ripple"
+    />
     <i
       class="rmwc-icon rmwc-icon--ligature material-icons mdc-icon-button__icon"
     >
@@ -32,6 +35,9 @@ exports[` renders controlled 1`] = `
     role="button"
     tabindex="0"
   >
+    <div
+      class="mdc-icon-button__ripple"
+    />
     <i
       class="rmwc-icon rmwc-icon--ligature material-icons mdc-icon-button__icon"
     >
@@ -68,7 +74,11 @@ exports[` renders with icon as path 1`] = `
     role="button"
     style="background-image: url(images/icons/twitter.png);"
     tabindex="0"
-  />
+  >
+    <div
+      class="mdc-icon-button__ripple"
+    />
+  </button>
 </DocumentFragment>
 `;
 
