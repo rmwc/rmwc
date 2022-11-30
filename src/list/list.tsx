@@ -131,7 +131,7 @@ export const List = createComponent<ListProps>(function List(props, ref) {
         role={role}
         className={className} 
         ref={ref} 
-      >{needsListItemsWrapper 
+      >{needsListItemsWrapper() 
         ? React.Children.map(children, addRole)
         : children}
       </Tag>
