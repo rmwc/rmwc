@@ -63,29 +63,29 @@ describe('List', () => {
 
 
   it('has right role when having selectedIndex', () => {
-     const { container } = render(<List selectedIndex={1}>
+      render(<List selectedIndex={1}>
         <ListItem>Pizza</ListItem>
         <ListItem>Cookies</ListItem>
         <ListItem>IceCream</ListItem>
         </List>);
     
-    expect(container.firstChild.getAttribute('role')).toEqual('listbox')
+    expect(screen.getByRole('listbox')).toBeInTheDocument();
 
   });
 
   it('role set by user is not overwritten', () => {
-    const { container } = render(<List role="menu" selectedIndex={1}>
+     render(<List role="menu" selectedIndex={1}>
         <ListItem>Pizza</ListItem>
         <ListItem>Cookies</ListItem>
         <ListItem>IceCream</ListItem>
         </List>);
     
-    expect(container.firstChild.getAttribute('role')).toEqual('menu')
+    expect(screen.getByRole('menu')).toBeInTheDocument();
 
   });
 
   it('has the right role when ListItem has checkboxs', () => {
-    const { container } = render(
+     render(
           <List>
       {['Cookies', 'Pizza', 'Icecream'].map(key => (
         <ListItem key={key} >{key}
@@ -96,7 +96,7 @@ describe('List', () => {
       ))}
     </List>);
     
-    expect(container.firstChild.getAttribute('role')).toEqual('group')
+    expect(screen.getByRole('group')).toBeInTheDocument();
   });
 
   it('has the right role when ListItem has radios', () => {
@@ -111,7 +111,7 @@ describe('List', () => {
       ))}
     </List>);
     
-    expect(container.firstChild.getAttribute('role')).toEqual('radiogroup')
+    expect(screen.getByRole('radiogroup')).toBeInTheDocument();
   });
 
   it('SimpleListItem renders', () => {
@@ -223,28 +223,28 @@ describe('Collapsible List', () => {
 
 describe('ListItem', () => {
   it('has the right role when containing selectedIndex', () => {
-    const { container } = render(<List selectedIndex={1}>
+    render(<List selectedIndex={1}>
         <ListItem>Pizza</ListItem>
         <ListItem>Cookies</ListItem>
         <ListItem>IceCream</ListItem>
         </List>);
     
-    expect(container.firstChild.firstChild.getAttribute('role')).toEqual('option')
+    expect(screen.getByText('Pizza').getAttribute('role')).toEqual('option')
 
   });
   
   it('role set by user is not overwritten', () => {
-    const { container } = render(<List selectedIndex={1}>
+    render(<List selectedIndex={1}>
         <ListItem role="menuitem">Pizza</ListItem>
         <ListItem>Cookies</ListItem>
         <ListItem>IceCream</ListItem>
         </List>);
     
-    expect(container.firstChild.firstChild.getAttribute('role')).toEqual('menuitem')
+    expect(screen.getByText('Pizza').getAttribute('role')).toEqual('menuitem')
   });
 
   it('has the right role when ListItem has checkboxs', () => {
-    const { container } = render(
+    render(
           <List>
       {['Cookies', 'Pizza', 'Icecream'].map(key => (
         <ListItem key={key} >{key}
@@ -255,11 +255,11 @@ describe('ListItem', () => {
       ))}
     </List>);
 
-    expect(container.firstChild.firstChild.getAttribute('role')).toEqual('checkbox')
+    expect(screen.getByText('Cookies').getAttribute('role')).toEqual('checkbox')
   });
 
   it('has the right role when ListItem has radios', () => {
-    const { container } = render(
+    render(
           <List>
       {['Cookies', 'Pizza', 'Icecream'].map(key => (
         <ListItem key={key} >{key}
@@ -270,7 +270,7 @@ describe('ListItem', () => {
       ))}
     </List>);
     
-    expect(container.firstChild.firstChild.getAttribute('role')).toEqual('radio')
+    expect(screen.getByText('Cookies').getAttribute('role')).toEqual('radio')
   });
 
 })
