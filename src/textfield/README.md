@@ -1,6 +1,6 @@
 # Text Fields
 
-> Text fields allow users to input, edit, and select text.
+Text fields allow users to input, edit, and select text.
 
 - Module **@rmwc/textfield**
 - Import styles:
@@ -23,10 +23,6 @@
 
 ```jsx
 <TextField outlined label="outlined..." />
-```
-
-```jsx
-<TextField fullwidth placeholder="fullWidth..." />
 ```
 
 ```jsx
@@ -54,20 +50,21 @@
 You can make the TextField a textarea. Make sure to include `outlined` for proper styling You can optionally make help text always visible by passing an object as props with persistent set to true. Textareas can also have an optional character counter which will work with the maxLength property.
 
 ```jsx
-<TextField
-  textarea
-  outlined
-  fullwidth
-  label="textarea..."
-  rows={8}
-  maxLength={20}
-  characterCount
-  helpText={{
-    persistent: true,
-    validationMsg: true,
-    children: 'The field is required'
-  }}
-/>
+<div>
+  <TextField
+    textarea
+    label="textarea..."
+    rows={8}
+    maxLength={20}
+    characterCount
+    resizeable
+    helpText={{
+      persistent: true,
+      validationMsg: true,
+      children: 'The field is required'
+    }}
+  />
+</div>
 ```
 
 ## Validation
@@ -122,16 +119,17 @@ A TextField component for accepting text input from a user.
 | `disabled` | `undefined \| false \| true` | Makes the Textfield disabled. |
 | `floatLabel` | `undefined \| false \| true` | The label floats automatically based on value, but you can use this prop for manual control. |
 | `foundationRef` | `React.Ref<MDCTextFieldFoundation \| null>` | Advanced: A reference to the MDCFoundation. |
-| `fullwidth` | `undefined \| false \| true` | Makes the TextField fullwidth. |
 | `helpText` | `React.ReactNode \| TextFieldHelperTextProps` | Adds help text to the field |
 | `icon` | `RMWC.IconPropT` | Add a leading icon. |
 | `inputRef` | `React.Ref<HTMLInputElement \| HTMLTextAreaElement \| null>` | A reference to the native input or textarea. |
 | `invalid` | `undefined \| false \| true` | Makes the TextField visually invalid. This is sometimes automatically applied in cases where required or pattern is used. |
 | `label` | `React.ReactNode` | A label for the input. |
 | `outlined` | `undefined \| false \| true` | Outline the TextField. |
+| `prefix` | `undefined \| string` | Add prefix. |
 | `required` | `undefined \| false \| true` | Makes the Textfield required. |
-| `ripple` | `RipplePropT` | Adds a ripple effect to the component |
+| `resizeable` | `undefined \| false \| true` | Make textarea resizeable |
 | `rootProps` | `Object` | By default, props spread to the input. These props are for the component's root container. |
+| `suffix` | `undefined \| string` | Add suffix. |
 | `textarea` | `undefined \| false \| true` | Makes a multiline TextField. |
 | `trailingIcon` | `RMWC.IconPropT` | Add a trailing icon. |
 | `type` | `undefined \| string` | The type of input field to render, search, number, etc |

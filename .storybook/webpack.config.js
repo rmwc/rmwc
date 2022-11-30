@@ -5,7 +5,7 @@ const {
 } = require('../config/rewire');
 const craConfigBase = require('react-scripts/config/webpack.config');
 
-module.exports = ({ config: storybookBaseConfig, mode }) => {
+module.exports = ({ config: storybookBaseConfig, _mode }) => {
   storybookBaseConfig = rewireStorybook(storybookBaseConfig);
   craConfig = rewireCRA(craConfigBase('development'));
 
@@ -15,20 +15,19 @@ module.exports = ({ config: storybookBaseConfig, mode }) => {
   // are as close as possible
 
   // a utility function to get a loader from CRA
-  const getCRALoader = loaderName =>
+  const getCRALoader = (loaderName) =>
     craConfig.module.rules
-      .find(rule => rule.oneOf)
-      .oneOf.find(r => {
-        return r.loader && r.loader.includes(loaderName);
+      .find((rule) => rule.oneOf)
+      .oneOf.find((r) => {
+        return r.type && r.type === loaderName;
       });
 
   // the url loader allows loading of media
-  const urlLoader = getCRALoader('url-loader');
+  const urlLoader = getCRALoader('asset');
   storybookBaseConfig.module.rules.push(urlLoader);
 
   // Use the file loader for svgs
-  const fileLoader = getCRALoader('file-loader');
-  fileLoader.test = /\.svg$/;
+  const fileLoader = getCRALoader('asset/resource');
   storybookBaseConfig.module.rules.push(fileLoader);
 
   return storybookBaseConfig;

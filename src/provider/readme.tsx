@@ -6,7 +6,7 @@ import examples from './generated-examples.json';
 
 import { RMWCProvider } from '.';
 
-export default function () {
+export default function Readme() {
   return (
     <Docs
       title="Provider"
@@ -48,7 +48,7 @@ export default function () {
               // Global options for tooltips
               // Takes most of the options for tooltips
               // See the Tooltip docs for more info
-              tootlip={{
+              tooltip={{
                 align: 'right'
               }}
             >

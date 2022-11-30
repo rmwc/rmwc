@@ -1,6 +1,6 @@
 # Collapsible Lists `RMWC ADDON`
 
-> Lists are continuous, vertical indexes of text or images.
+Lists are continuous, vertical indexes of text or images.
 
 - Module **@rmwc/list**
 - Import styles:

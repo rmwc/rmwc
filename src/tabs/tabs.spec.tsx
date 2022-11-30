@@ -1,5 +1,6 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render, screen, waitFor } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { TabBar, Tab } from './';
 
 describe('Tabs', () => {
@@ -10,100 +11,121 @@ describe('Tabs', () => {
   });
 
   it('TabBar renders', () => {
-    mount(
+    const { asFragment } = render(
       <TabBar activeTabIndex={0} onActivate={(evt) => {}}>
         <Tab>Test</Tab>
       </TabBar>
     );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('Can be stacked', () => {
-    mount(
+    const { asFragment } = render(
       <TabBar>
         <Tab stacked>Test</Tab>
       </TabBar>
     );
+    expect(screen.getByText('Test')).toBeInTheDocument();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('Can have label', () => {
-    mount(
+    const { asFragment } = render(
       <TabBar>
         <Tab label="Test" />
       </TabBar>
     );
-  });
-
-  it('Can add and remove tabs dynamically', () => {
-    class Comp extends React.Component {
-      state = {
-        tabs: ['ONE']
-      };
-      render() {
-        return (
-          <TabBar>
-            {this.state.tabs.map((label) => (
-              <Tab key={label} label={label} />
-            ))}
-          </TabBar>
-        );
-      }
-    }
-
-    const el = mount(<Comp />);
-    expect(el.html().includes('TWO')).toBe(false);
-    el.setState({ tabs: ['MEW', 'TWO'] });
-    expect(el.html().includes('ONE')).toBe(false);
-    expect(el.html().includes('MEW')).toBe(true);
-    expect(el.html().includes('TWO')).toBe(true);
-    el.setState({ tabs: ['MEW'] });
-    expect(el.html().includes('TWO')).toBe(false);
+    expect(screen.getByText('Test')).toBeInTheDocument();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('Can have icon', () => {
-    mount(
+    const { asFragment } = render(
       <TabBar>
         <Tab icon="favorite" label="Test" />
       </TabBar>
     );
+    expect(screen.getByText('favorite')).toBeInTheDocument();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('Can have restrictIndicator', () => {
-    mount(
+    const { asFragment } = render(
       <TabBar>
         <Tab restrictIndicator icon="favorite" label="Test" />
       </TabBar>
     );
+    expect(screen.getByText('Test')).toBeInTheDocument();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('can have no tabs', () => {
-    mount(<TabBar />);
+    const { asFragment } = render(<TabBar />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('can have custom classnames', () => {
     [TabBar, Tab].forEach((Component: React.ComponentType<any>) => {
-      const el = mount(<Component className={'my-custom-classname'} />);
-      expect(!!~el.html().search('my-custom-classname')).toEqual(true);
+      const { container } = render(
+        <Component className={'my-custom-classname'} />
+      );
+      expect(container.firstChild).toHaveClass('my-custom-classname');
     });
   });
 
-  it('sets initial active tab', (done) => {
-    const el1 = mount(
-      <TabBar activeTabIndex={0}>
-        <Tab>1</Tab>
-        <Tab>2</Tab>
-      </TabBar>
-    );
-
-    const el2 = mount(
+  it('sets initial active tab', async () => {
+    render(
       <TabBar activeTabIndex={1}>
         <Tab>1</Tab>
         <Tab>2</Tab>
       </TabBar>
     );
-    window.requestAnimationFrame(() => {
-      expect(el1.html().includes('mdc-tab--active')).toEqual(true);
-      expect(el2.html().includes('mdc-tab--active')).toEqual(true);
-      done();
+    await waitFor(() =>
+      expect(screen.getByText('2').parentElement?.parentElement).toHaveClass(
+        'mdc-tab--active'
+      )
+    );
+  });
+
+  it('can be used as a controlled element', async () => {
+    const { container } = render(
+      <TabBar activeTabIndex={1}>
+        <Tab>1</Tab>
+        <Tab>2</Tab>
+      </TabBar>
+    );
+
+    userEvent.click(screen.getByText('1'));
+
+    await waitFor(() =>
+      expect(container.getElementsByClassName('mdc-tab--active')).toHaveLength(
+        1
+      )
+    );
+  });
+
+  it('focuses active tab on mount', async () => {
+    const { container } = render(
+      <TabBar>
+        <Tab focusOnActivate>Test</Tab>
+      </TabBar>
+    );
+
+    return new Promise((resolve) => {
+      window.requestAnimationFrame(() => {
+        expect(document.activeElement).toBe(container.querySelector('button'));
+        resolve(true);
+      });
     });
+  });
+
+  it('does not focus active tab on mount', () => {
+    const { container } = render(
+      <TabBar>
+        <Tab focusOnActivate={false}>Test</Tab>
+      </TabBar>
+    );
+
+    expect(document.activeElement).not.toBe(container.querySelector('button'));
   });
 });

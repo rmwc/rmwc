@@ -23,7 +23,7 @@ import { Checkbox } from '../checkbox';
 import { Switch } from '../switch';
 import { Radio } from '../radio';
 
-export default function() {
+export default function Readme() {
   return (
     <Docs
       title="Lists"
@@ -204,7 +204,7 @@ export default function() {
 
           return (
             <List>
-              {['Cookies', 'Pizza', 'Icecream'].map(key => (
+              {['Cookies', 'Pizza', 'Icecream'].map((key) => (
                 <ListItem
                   key={key}
                   onClick={() =>

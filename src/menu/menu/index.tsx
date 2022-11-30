@@ -39,7 +39,7 @@ export interface MenuProps
   /** Whether or not to focus the first list item on open. Defaults to true. */
   focusOnOpen?: boolean;
   /** Internal api reference for cross component communication. */
-  apiRef?: (api: MenuApi) => void;
+  apiRef?: (api: MenuApi | null) => void;
   /** Advanced: A reference to the MDCFoundation. */
   foundationRef?: React.Ref<MDCMenuFoundation>;
 }
@@ -77,46 +77,43 @@ const isMenuItems = (child: React.ReactNode) =>
   getDisplayName(child) === 'MenuItems';
 
 /** A menu component for displaying lists items. */
-export const Menu: RMWC.ComponentType<
-  MenuProps,
-  MenuHTMLProps,
-  'div'
-> = createComponent<MenuProps, MenuHTMLProps>(function Menu(props, ref) {
-  const { children, focusOnOpen, onSelect, foundationRef, ...rest } = props;
-  const { rootEl, setListApi, setMenuSurfaceApi } = useMenuFoundation(props);
+export const Menu: RMWC.ComponentType<MenuProps, MenuHTMLProps, 'div'> =
+  createComponent<MenuProps, MenuHTMLProps>(function Menu(props, ref) {
+    const { children, focusOnOpen, onSelect, foundationRef, ...rest } = props;
+    const { rootEl, setListApi, setMenuSurfaceApi } = useMenuFoundation(props);
 
-  const needsMenuItemsWrapper = (
-    React.Children.map(children, isMenuItems) || []
-  ).every((val) => val === false);
+    const needsMenuItemsWrapper = (
+      React.Children.map(children, isMenuItems) || []
+    ).every((val) => val === false);
 
-  const menuItemsProps = {
-    apiRef: setListApi
-  };
+    const menuItemsProps = {
+      apiRef: setListApi
+    };
 
-  return (
-    <MenuSurface
-      {...rootEl.props(rest)}
-      aria-hidden={!rest.open}
-      className={classNames('mdc-menu', rest.className)}
-      apiRef={setMenuSurfaceApi}
-      ref={ref}
-    >
-      {needsMenuItemsWrapper ? (
-        <MenuItems {...menuItemsProps}>{children}</MenuItems>
-      ) : (
-        React.Children.map(children, (child) => {
-          if (isMenuItems(child)) {
-            return React.cloneElement(child as React.ReactElement<any>, {
-              ...(React.isValidElement(child) ? (child.props as Object) : {}),
-              ...menuItemsProps
-            });
-          }
-          return child;
-        })
-      )}
-    </MenuSurface>
-  );
-});
+    return (
+      <MenuSurface
+        {...rootEl.props(rest)}
+        aria-hidden={!rest.open}
+        className={classNames('mdc-menu', rest.className)}
+        apiRef={setMenuSurfaceApi}
+        ref={ref}
+      >
+        {needsMenuItemsWrapper ? (
+          <MenuItems {...menuItemsProps}>{children}</MenuItems>
+        ) : (
+          React.Children.map(children, (child) => {
+            if (isMenuItems(child)) {
+              return React.cloneElement(child as React.ReactElement<any>, {
+                ...(React.isValidElement(child) ? (child.props as Object) : {}),
+                ...menuItemsProps
+              });
+            }
+            return child;
+          })
+        )}
+      </MenuSurface>
+    );
+  });
 
 /****************************************************************
  * Simple Menu
@@ -205,6 +202,5 @@ const simpleMenuFactory = <
 export const SimpleMenu = simpleMenuFactory<SimpleMenuProps>(Menu);
 
 /** The same as SimpleMenu, but a generic surface. */
-export const SimpleMenuSurface = simpleMenuFactory<SimpleMenuSurfaceProps>(
-  MenuSurface
-);
+export const SimpleMenuSurface =
+  simpleMenuFactory<SimpleMenuSurfaceProps>(MenuSurface);

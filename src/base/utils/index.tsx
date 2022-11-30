@@ -8,7 +8,6 @@ export * from './random-id';
 export * from './strings';
 export * from './wrap-child';
 export * from './emitter';
-export * from './apply-passive';
 export * from './get-display-name';
 export * from './empty-client-rect';
 export * from './data-table-context';

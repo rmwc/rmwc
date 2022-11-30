@@ -1,6 +1,6 @@
 # Theming
 
-> MDC Theme is a foundational module that themes MDC Web components.
+MDC Theme is a foundational module that themes MDC Web components.
 
 - Module **@rmwc/theme**
 - Import styles:

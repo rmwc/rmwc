@@ -2,7 +2,7 @@ import * as RMWC from '@rmwc/types';
 import React from 'react';
 
 import { classNames, useClassNames, Tag, createComponent, mergeRefs } from '@rmwc/base';
-import { withRipple } from '@rmwc/ripple';
+import { withRipple, RippleSurface } from '@rmwc/ripple';
 import { Icon, IconProps } from '@rmwc/icon';
 import { ListContext } from './list-context';
 
@@ -60,9 +60,12 @@ export const ListItem = withRipple({ surface: false })(
         'mdc-list-item--activated': props.activated,
       }
     ]);
-    
-    return ( <Tag tag="li" tabIndex={0} {...rest} className={className} ref={finalRef} /> )
-
+    return (
+      <Tag tag="li" tabIndex={0} {...rest} className={className} ref={finalRef}>
+        <RippleSurface className="mdc-list-item__ripple" />
+        {rest.children}
+      </Tag>
+    );
   })
 );
 
@@ -219,6 +222,7 @@ export const SimpleListItem = createComponent<SimpleListItemProps>(
 
     return (
       <ListItem {...rest} ref={ref}>
+        <RippleSurface className="mdc-list-item__ripple" />
         {graphic !== undefined && <ListItemGraphic icon={graphic} />}
         {secondaryTextToRender !== null ? (
           <ListItemText>

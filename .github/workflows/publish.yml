@@ -1,0 +1,32 @@
+name: RMWC Publish
+
+on:
+  pull_request:
+    branches: [master]
+    types: [closed]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    if: contains(github.head_ref, 'release/') && github.event.pull_request.merged == true
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14.x
+          registry-url: 'https://registry.npmjs.org'
+      - name: 'Install Dependencies'
+        run: npm ci
+      - name: 'Build'
+        run: npm run build
+      - name: 'Publish'
+        run: npx lerna exec -- npm publish --tag latest
+        if: github.base_ref == 'master'
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: 'Prerelease Publish'
+        run: npx lerna exec -- npm publish --tag next
+        if: github.base_ref == 'next'
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

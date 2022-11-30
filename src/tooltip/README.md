@@ -1,6 +1,6 @@
 # Tooltips `RMWC ADDON`
 
-> Tooltips display informative text when users hover over, focus on, or tap an element.
+Tooltips display informative text when users hover over, focus on, or tap an element.
 
 - Module **@rmwc/tooltip**
 - Import styles:
@@ -116,7 +116,7 @@ function AlignmentExample() {
     'topRight',
     'bottomLeft',
     'bottomRight'
-  ].map(align => (
+  ].map((align) => (
     <Tooltip key={align} content={`Align: ${align}`} align={align}>
       <IconButton icon="trip_origin" />
     </Tooltip>

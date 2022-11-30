@@ -1,6 +1,6 @@
 # Icon Buttons
 
-> Icon buttons allow users to take actions, and make choices, with a single tap.
+Icon buttons allow users to take actions, and make choices, with a single tap.
 
 - Module **@rmwc/icon-button**
 - Import styles:
@@ -106,6 +106,5 @@ An IconButton component that can also be used as a toggle.
 | `label` | `undefined \| string` | Apply an aria label. |
 | `onChange` | `undefined \| (evt: IconButtonOnChangeEventT) => void` | An onChange callback that receives a custom event. evt.detail = { isOn: boolean } |
 | `onIcon` | `RMWC.IconPropT` | If specified, renders a toggle with this icon as the on state. |
-| `ripple` | `RipplePropT` | Adds a ripple effect to the component |
 
 

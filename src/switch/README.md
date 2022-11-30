@@ -1,6 +1,6 @@
 # Switches
 
-> On/off switches toggle the state of a single settings option. The option that the switch controls, as well as the state it’s in, should be made clear from the corresponding inline label. Switches take on the same visual properties of the radio button.
+On/off switches toggle the state of a single settings option. The option that the switch controls, as well as the state it’s in, should be made clear from the corresponding inline label. Switches take on the same visual properties of the radio button.
 
 - Module **@rmwc/switch**
 - Import styles:
@@ -25,7 +25,7 @@ function Example() {
   return (
     <Switch
       checked={checked}
-      onChange={evt => setChecked(!!evt.currentTarget.checked)}
+      onChange={(evt) => setChecked(!!evt.currentTarget.checked)}
       label="Cookies"
     />
   );
@@ -46,18 +46,5 @@ function Example() {
 ## Switch
 A Switch component.
 
-### Props
-
-| Name | Type | Description |
-|------|------|-------------|
-| `checked` | `undefined \| false \| true` | Toggle the control on and off. |
-| `disabled` | `undefined \| false \| true` | Disables the control. |
-| `foundationRef` | `React.Ref<MDCSwitchFoundation>` | Advanced: A reference to the MDCFoundation. |
-| `id` | `undefined \| string` | A DOM ID for the toggle. |
-| `inputRef` | `React.Ref<HTMLInputElement>` | A reference to the native input. |
-| `label` | `React.ReactNode` | A label for the control. |
-| `ripple` | `RipplePropT` | Adds a ripple effect to the component |
-| `rootProps` | `React.HTMLProps<any>` | By default, all props except className and style spread to the input. These are additional props for the root of the checkbox. |
-| `value` | `string \| number \| string[]` | The value of the control. |
 
 

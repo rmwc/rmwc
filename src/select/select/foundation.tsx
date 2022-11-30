@@ -23,8 +23,8 @@ export const useSelectFoundation = (
 
   const selectedIndex = useRef(-1);
 
-  const floatingLabel = useRef<FloatingLabelApi>();
-  const setFloatingLabel = (api: FloatingLabelApi) => {
+  const floatingLabel = useRef<FloatingLabelApi | null>();
+  const setFloatingLabel = (api: FloatingLabelApi | null) => {
     floatingLabel.current = api;
   };
 
@@ -38,8 +38,8 @@ export const useSelectFoundation = (
     anchor.current = el;
   };
 
-  const leadingIcon = useRef<SelectIconApi>();
-  const setLeadingIcon = (api: SelectIconApi) => {
+  const leadingIcon = useRef<SelectIconApi | null>();
+  const setLeadingIcon = (api: SelectIconApi | null) => {
     leadingIcon.current = api;
   };
 
@@ -52,8 +52,11 @@ export const useSelectFoundation = (
 
   const { foundation, ...elements } = useFoundation({
     props,
-    elements: { rootEl: true, selectedTextEl: true },
-    foundation: ({ rootEl, selectedTextEl, getProps, emit }) => {
+    elements: {
+      rootEl: true,
+      anchorEl: true
+    },
+    foundation: ({ rootEl, anchorEl, getProps, emit }) => {
       const isNative = () => !getProps().enhanced;
 
       const getSelectAdapterMethods = (): Partial<MDCSelectAdapter> => {
@@ -72,45 +75,8 @@ export const useSelectFoundation = (
         };
 
         return {
-          getSelectedMenuItem: () => {
-            if (isNative()) {
-              return nativeControl.current?.selectedOptions[0] || null;
-            }
-
-            if (selectedIndex.current === -1) {
-              return (
-                menu.current
-                  ?.getSurfaceElement()
-                  ?.querySelector('.mdc-list-item--activated') || null
-              );
-            } else {
-              return items()[selectedIndex.current];
-            }
-          },
-          getMenuItemAttr: (menuItem: Element, attr: string) => {
-            if (attr === 'data-value') {
-              return getValue(menuItem);
-            }
-
-            return menuItem.getAttribute(attr);
-          },
           setSelectedText: (text: string) => {
             setSelectedTextContent(text);
-          },
-          isSelectedTextFocused: () =>
-            !!(
-              selectedTextEl.ref &&
-              selectedTextEl.ref === document.activeElement
-            ),
-          getSelectedTextAttr: (attr: any) => selectedTextEl.getProp(attr),
-          setSelectedTextAttr: (attr: any, value: string) => {
-            if (attr === 'tabindex') {
-              // Fixes bug 595 https://github.com/jamesmfriedman/rmwc/issues/595.
-              // Native selects don't need tabIndexes on the root element
-              if (isNative()) return;
-              attr = 'tabIndex';
-            }
-            selectedTextEl.setProp(attr, value);
           },
           openMenu: () => {
             setMenuOpen(true);
@@ -125,13 +91,8 @@ export const useSelectFoundation = (
           setMenuWrapFocus: (wrapFocus: boolean) => {
             //(this.menu_.wrapFocus = wrapFocus)
           },
-
-          setAttributeAtIndex: (...args) =>
-            menu.current?.setAttributeForElementIndex(...args),
-          removeAttributeAtIndex: (index: number, attributeName: string) =>
-            menu.current?.items()[index].removeAttribute(attributeName),
-          focusMenuItemAtIndex: (...args) =>
-            menu.current?.focusItemAtIndex(...args),
+          focusMenuItemAtIndex: (index: number) =>
+            menu.current?.focusItemAtIndex(index),
           getMenuItemCount: () => {
             return items().length;
           },
@@ -139,11 +100,39 @@ export const useSelectFoundation = (
           getMenuItemTextAtIndex: (index: number) => {
             return items()[index].textContent as string;
           },
-
-          addClassAtIndex: (...args) =>
-            menu.current?.addClassToElementIndex(...args),
-          removeClassAtIndex: (...args) =>
-            menu.current?.removeClassFromElementAtIndex(...args)
+          isSelectAnchorFocused: () =>
+            !!(anchorEl.ref && anchorEl.ref === document.activeElement),
+          getSelectAnchorAttr: (attr: any) => anchorEl.getProp(attr),
+          setSelectAnchorAttr: (attr: string, value: string) =>
+            anchorEl.setProp(attr as any, value),
+          removeSelectAnchorAttr: (attr: string) => {
+            anchor.current?.removeAttribute(attr);
+          },
+          addMenuClass: (className: string) => {
+            return menu.current
+              ?.getSurfaceElement()
+              ?.querySelector('.mdc-list-item--activated')
+              ?.classList.add(className);
+          },
+          removeMenuClass: (className: string) => {
+            return menu.current
+              ?.getSurfaceElement()
+              ?.querySelector('.mdc-list-item--activated')
+              ?.classList.remove(className);
+          },
+          getSelectedIndex: () => {
+            if (isNative() && nativeControl.current !== undefined) {
+              return nativeControl.current.selectedOptions[0].index;
+            }
+            if (menu.current === undefined) {
+              return -1;
+            }
+            const index = menu.current.selectedIndex;
+            return index instanceof Array ? index[0] : index;
+          },
+          setSelectedIndex: (index: number) => {
+            return menu.current?.setSelectedIndex(index);
+          }
         };
       };
 
@@ -201,6 +190,9 @@ export const useSelectFoundation = (
           },
           getLabelWidth: () => {
             return floatingLabel.current?.getWidth() || 0;
+          },
+          setLabelRequired: (isRequired: boolean) => {
+            return floatingLabel.current?.setRequired(isRequired);
           }
         };
       };
@@ -225,23 +217,27 @@ export const useSelectFoundation = (
 
       // This foundation requires a bit of monkey patching
       // in order to get placeholders working correctly
-      const adapter = (f as any).adapter_ as MDCSelectAdapter;
+      const adapter = (f as any).adapter as MDCSelectAdapter;
 
-      // @ts-ignore private override
-      f.updateLabel_ = () => {
+      f.layout = () => {
         const doWork = () => {
           const value = f.getValue();
 
-          // This is the line we have to override to work with placeholders
-          // we need to consider haveing a placeholder as a valid value
-          const optionHasValue = !!getProps().placeholder || value.length > 0;
-
           if (adapter.hasLabel()) {
-            f.notchOutline(optionHasValue);
+            // This is the line we have to override to work with placeholders
+            // we need to consider haveing a placeholder as a valid value
+            const optionHasValue =
+              !!getProps().placeholder ||
+              value.length > 0 ||
+              // As of MCW 8, we need to check for selectedIndex, else the label won't float when unfocused
+              selectedIndex.current > -1;
+            const isFocused = adapter.hasClass(cssClasses.FOCUSED);
+            const shouldFloatAndNotch = optionHasValue || isFocused;
+            const isRequired = adapter.hasClass(cssClasses.REQUIRED);
 
-            if (!adapter.hasClass(cssClasses.FOCUSED)) {
-              adapter.floatLabel(optionHasValue);
-            }
+            f.notchOutline(shouldFloatAndNotch);
+            adapter.floatLabel(shouldFloatAndNotch);
+            adapter.setLabelRequired(isRequired);
           }
         };
 
@@ -251,7 +247,7 @@ export const useSelectFoundation = (
       // This is only set one time in the constructor which
       // is before React even has a chance to render...
       // Make it a dynamic getter
-      Object.defineProperty(f, 'menuItemValues_', {
+      Object.defineProperty(f, 'menuItemValues', {
         get: () => {
           return adapter.getMenuItemValues();
         }
@@ -277,22 +273,33 @@ export const useSelectFoundation = (
     }
   });
 
-  const { selectedTextEl, rootEl } = elements;
+  const { rootEl } = elements;
 
+  const { onFocus } = props;
   const handleFocus = useCallback(
     (evt: any) => {
-      props.onFocus?.(evt);
+      onFocus?.(evt);
       foundation.handleFocus();
     },
-    [props.onFocus, foundation]
+    [onFocus, foundation]
   );
 
+  const { onBlur } = props;
   const handleBlur = useCallback(
     (evt: any) => {
-      props.onBlur?.(evt);
+      onBlur?.(evt);
       foundation.handleBlur();
     },
-    [props.onBlur, foundation]
+    [onBlur, foundation]
+  );
+
+  const { onChange } = props;
+  const handleChange = useCallback(
+    (evt: any) => {
+      onChange?.(evt);
+      foundation.handleChange();
+    },
+    [onChange, foundation]
   );
 
   const handleClick = useCallback(
@@ -302,7 +309,12 @@ export const useSelectFoundation = (
       // We can't use Reacts menuOpen variable because it is
       // ahead of the actual DOM animation...
       // Not ideal, but no other way currently
+      if (rootEl.ref?.querySelector('.mdc-select--disabled')) {
+        return;
+      }
+
       if (rootEl.ref?.querySelector('.mdc-menu-surface--open')) {
+        foundation.handleMenuClosed();
         return;
       }
 
@@ -313,18 +325,19 @@ export const useSelectFoundation = (
       };
 
       const coord = getNormalizedXCoordinate(evt);
-      selectedTextEl.ref && selectedTextEl.ref.focus();
+      rootEl.ref && rootEl.ref.focus();
       foundation.handleClick(coord);
     },
-    [foundation, selectedTextEl.ref, rootEl.ref]
+    [foundation, rootEl.ref]
   );
 
+  const { onKeyDown } = props;
   const handleKeydown = useCallback(
     (evt: any) => {
-      props.onKeyDown?.(evt);
+      onKeyDown?.(evt);
       foundation.handleKeydown(evt);
     },
-    [foundation, props.onKeyDown]
+    [foundation, onKeyDown]
   );
 
   const handleMenuSelected = useCallback(
@@ -370,9 +383,17 @@ export const useSelectFoundation = (
 
     if (value !== undefined && value !== foundationValue) {
       // @ts-ignore unsafe private variable access
-      const index = foundation.menuItemValues_.indexOf(value);
+      const index = foundation.menuItemValues.indexOf(value);
       selectedIndex.current = index;
       foundation.setValue(value || '');
+
+      // We need to call setSelectedTextContent to set the default value/the controlled value.
+      // @ts-ignore unsafe private variable access
+      if (foundation.menuItemValues.includes(value)) {
+        // @ts-ignore unsafe private variable access
+        const textContent = foundation.adapter.getMenuItemTextAtIndex(index);
+        setSelectedTextContent(textContent);
+      }
     }
     raf(() => {
       silenceChange.current = false;
@@ -404,6 +425,7 @@ export const useSelectFoundation = (
     handleFocus,
     handleBlur,
     handleClick,
+    handleChange,
     handleKeydown,
     handleMenuClosed,
     handleMenuOpened,

@@ -29,7 +29,7 @@ export const useListFoundation = (props: ListProps & React.HTMLProps<any>) => {
       rootEl: FoundationElement<any, any>;
       foundation: MDCListFoundation;
     }): ListApi => {
-      const adapter = (foundation as any).adapter_ as MDCListAdapter;
+      const adapter = (foundation as any).adapter as MDCListAdapter;
       return {
         listElements: () => listElements(rootEl.ref),
         focusRoot: () => rootEl.ref && rootEl.ref.focus(),
@@ -38,7 +38,11 @@ export const useListFoundation = (props: ListProps & React.HTMLProps<any>) => {
         removeClassFromElementAtIndex: adapter.removeClassForElementIndex,
         setAttributeForElementIndex: adapter.setAttributeForElementIndex,
         getListItemCount: adapter.getListItemCount,
-        focusItemAtIndex: adapter.focusItemAtIndex
+        focusItemAtIndex: adapter.focusItemAtIndex,
+        selectedIndex: MDCListFoundation.numbers.UNSET_INDEX,
+        setSelectedIndex: (index: number) => {
+          foundation.setSelectedIndex(index);
+        }
       };
     },
     elements: { rootEl: true },
@@ -204,9 +208,10 @@ export const useListFoundation = (props: ListProps & React.HTMLProps<any>) => {
     [listElements, rootEl.ref]
   );
 
+  const { onClick } = props;
   const handleClick = useCallback(
     (evt: React.MouseEvent) => {
-      props.onClick?.(evt);
+      onClick?.(evt);
 
       const index = getListItemIndex(evt);
 
@@ -218,12 +223,13 @@ export const useListFoundation = (props: ListProps & React.HTMLProps<any>) => {
 
       foundation.handleClick(index, toggleCheckbox);
     },
-    [getListItemIndex, foundation, props.onClick]
+    [getListItemIndex, foundation, onClick]
   );
 
+  const { onKeyDown } = props;
   const handleKeydown = useCallback(
     (evt: React.KeyboardEvent<HTMLElement> & KeyboardEvent) => {
-      props.onKeyDown?.(evt);
+      onKeyDown?.(evt);
 
       const index = getListItemIndex(evt);
 
@@ -238,23 +244,25 @@ export const useListFoundation = (props: ListProps & React.HTMLProps<any>) => {
         );
       }
     },
-    [getListItemIndex, foundation, props.onKeyDown]
+    [getListItemIndex, foundation, onKeyDown]
   );
 
+  const { onFocus } = props;
   const handleFocusIn = useCallback(
     (evt: React.FocusEvent & FocusEvent) => {
-      props.onFocus?.(evt);
+      onFocus?.(evt);
       foundation.handleFocusIn(evt, getListItemIndex(evt));
     },
-    [getListItemIndex, foundation, props.onFocus]
+    [getListItemIndex, foundation, onFocus]
   );
 
+  const { onBlur } = props;
   const handleFocusOut = useCallback(
     (evt: React.FocusEvent & FocusEvent) => {
-      props.onBlur?.(evt);
+      onBlur?.(evt);
       foundation.handleFocusOut(evt, getListItemIndex(evt));
     },
-    [getListItemIndex, foundation, props.onBlur]
+    [getListItemIndex, foundation, onBlur]
   );
 
   rootEl.setProp('onClick', handleClick, true);

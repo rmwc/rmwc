@@ -6,8 +6,8 @@ import { TabIndicatorApi } from './tab-indicator';
 import { TabBarContext } from './tab-bar-context';
 
 export const useTabFoundation = (props: TabProps & React.HTMLProps<any>) => {
-  const tabIndicatorApi = useRef<TabIndicatorApi>();
-  const setTabIndicatorApi = (api: TabIndicatorApi) =>
+  const tabIndicatorApi = useRef<TabIndicatorApi | null>();
+  const setTabIndicatorApi = (api: TabIndicatorApi | null) =>
     (tabIndicatorApi.current = api);
 
   const contextApi = useContext(TabBarContext);
@@ -76,6 +76,11 @@ export const useTabFoundation = (props: TabProps & React.HTMLProps<any>) => {
       contextApi.unregisterTab(tabApi);
     };
   }, [contextApi, tabApi]);
+
+  useEffect(() => {
+    props.focusOnActivate !== undefined &&
+      foundation.setFocusOnActivate(props.focusOnActivate);
+  }, [foundation, props.focusOnActivate]);
 
   return {
     ...elements,

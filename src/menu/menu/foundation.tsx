@@ -9,9 +9,9 @@ import { MenuProps } from './';
 
 export const useMenuFoundation = (props: MenuProps & React.HTMLProps<any>) => {
   const menuSurfaceApi = useRef<MenuSurfaceApi>();
-  const listApi = useRef<ListApi>();
+  const listApi = useRef<ListApi | null>();
 
-  const setListApi = (api: ListApi) => {
+  const setListApi = (api: ListApi | null) => {
     listApi.current = api;
   };
 
@@ -67,19 +67,21 @@ export const useMenuFoundation = (props: MenuProps & React.HTMLProps<any>) => {
 
   const { rootEl } = elements;
 
+  const { onClick } = props;
   const handleClick = useCallback(
     (evt: React.MouseEvent) => {
-      props.onClick?.(evt);
+      onClick?.(evt);
       // fixes an issue with nested span element on list items
       const el = closest(evt.target, '.mdc-list-item');
       el && foundation.handleItemAction(el);
     },
-    [foundation, props.onClick]
+    [foundation, onClick]
   );
 
+  const { onKeyDown } = props;
   const handleKeydown = useCallback(
     (evt: React.KeyboardEvent & KeyboardEvent) => {
-      props.onKeyDown?.(evt);
+      onKeyDown?.(evt);
       foundation.handleKeydown(evt);
 
       // Jump through some hoops to find out
@@ -95,23 +97,24 @@ export const useMenuFoundation = (props: MenuProps & React.HTMLProps<any>) => {
         foundation.handleItemAction(evt.target);
       }
     },
-    [foundation, props.onKeyDown]
+    [foundation, onKeyDown]
   );
 
+  const { onOpen, focusOnOpen } = props;
   const handleOpen = useCallback(
     (evt: MenuSurfaceOnOpenEventT) => {
       const list = items();
 
       if (
-        (props.focusOnOpen || props.focusOnOpen === undefined) &&
+        (focusOnOpen || focusOnOpen === undefined) &&
         list.length > 0 &&
         !list.some((el) => el === document.activeElement)
       ) {
         list[0].focus();
       }
-      props.onOpen?.(evt);
+      onOpen?.(evt);
     },
-    [props.onOpen, props.focusOnOpen, items]
+    [onOpen, focusOnOpen, items]
   );
 
   rootEl.setProp('onKeyDown', handleKeydown, true);
@@ -121,7 +124,11 @@ export const useMenuFoundation = (props: MenuProps & React.HTMLProps<any>) => {
   const canSetApi = listApi.current && menuSurfaceApi.current && props.apiRef;
   useEffect(() => {
     if (listApi.current && menuSurfaceApi.current && props.apiRef) {
-      props.apiRef({ ...listApi.current, ...menuSurfaceApi.current, items });
+      props.apiRef({
+        ...listApi.current,
+        ...menuSurfaceApi.current,
+        items
+      });
     }
     // eslint-disable-next-line
   }, [canSetApi, items]);

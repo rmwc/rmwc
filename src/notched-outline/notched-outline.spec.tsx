@@ -1,9 +1,26 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render } from '@testing-library/react';
 import { NotchedOutline } from './';
 
 describe('NotchedOutline', () => {
   it('renders', () => {
-    mount(<NotchedOutline />);
+    const { asFragment } = render(<NotchedOutline />);
+    expect(asFragment()).toMatchInlineSnapshot(`
+      <DocumentFragment>
+        <div
+          class="mdc-notched-outline mdc-notched-outline--no-label"
+        >
+          <div
+            class="mdc-notched-outline__leading"
+          />
+          <div
+            class="mdc-notched-outline__notch"
+          />
+          <div
+            class="mdc-notched-outline__trailing"
+          />
+        </div>
+      </DocumentFragment>
+    `);
   });
 });

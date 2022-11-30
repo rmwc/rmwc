@@ -1,6 +1,6 @@
 # Fabs
 
-> A floating action button (FAB) represents the primary action of a screen.
+A floating action button (FAB) represents the primary action of a screen.
 
 - Module **@rmwc/fab**
 - Import styles:
@@ -51,7 +51,6 @@ A floating action button component
 | `icon` | `RMWC.IconPropT` | The icon for the FAB |
 | `label` | `React.ReactNode &amp; any` | Make the Fab extended with a label. |
 | `mini` | `undefined \| false \| true` | Make the Fab smaller. |
-| `ripple` | `RipplePropT` | Adds a ripple effect to the component |
 | `trailingIcon` | `RMWC.IconPropT` | A trialing icon for the FAB |
 
 

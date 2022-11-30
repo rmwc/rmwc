@@ -6,7 +6,7 @@ import examples from './generated-examples.json';
 
 import { TextField } from '.';
 
-export default function() {
+export default function Readme() {
   return (
     <Docs
       title="Text Fields"
@@ -30,9 +30,6 @@ export default function() {
       </DocsExample>
       <DocsExample label="Outlined">
         <TextField outlined label="outlined..." />
-      </DocsExample>
-      <DocsExample label="Full Width">
-        <TextField fullwidth placeholder="fullWidth..." />
       </DocsExample>
       <DocsExample label="No Label">
         <TextField placeholder="No label" />
@@ -62,20 +59,21 @@ export default function() {
         maxLength property.
       </DocsP>
       <DocsExample>
-        <TextField
-          textarea
-          outlined
-          fullwidth
-          label="textarea..."
-          rows={8}
-          maxLength={20}
-          characterCount
-          helpText={{
-            persistent: true,
-            validationMsg: true,
-            children: 'The field is required'
-          }}
-        />
+        <div>
+          <TextField
+            textarea
+            label="textarea..."
+            rows={8}
+            maxLength={20}
+            characterCount
+            resizeable
+            helpText={{
+              persistent: true,
+              validationMsg: true,
+              children: 'The field is required'
+            }}
+          />
+        </div>
       </DocsExample>
 
       <DocsSubtitle>Validation</DocsSubtitle>

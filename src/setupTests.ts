@@ -1,9 +1,8 @@
-import Adapter from 'enzyme-adapter-react-16';
-import Enzyme from 'enzyme';
+import React from 'react';
 // @ts-ignore
 import rmwcTestPolyfill from './base/test-polyfill';
+import '@testing-library/jest-dom/extend-expect';
 
-Enzyme.configure({ adapter: new Adapter() });
 rmwcTestPolyfill();
 
 const consoleError = console.error;

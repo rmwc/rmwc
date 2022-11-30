@@ -11,10 +11,11 @@ export interface FloatingLabelProps {
 
 export interface FloatingLabelApi {
   getWidth: () => number;
+  setRequired: (isRequired: boolean) => void;
 }
 
 export const FloatingLabel = createComponent<
-  FloatingLabelProps & { apiRef?: (api: FloatingLabelApi) => void }
+  FloatingLabelProps & { apiRef?: (api: FloatingLabelApi | null) => void }
 >(function FloatingLabel(props, ref) {
   const { rootEl } = useFloatingLabelFoundation(props);
   const { shake, float, apiRef, ...rest } = props;

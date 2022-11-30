@@ -4,58 +4,62 @@
 [![npm](https://img.shields.io/npm/dm/@rmwc/base.svg)](https://www.npmjs.com/package/rmwc)
 [![npm](https://img.shields.io/npm/l/rmwc.svg)](https://github.com/jamesmfriedman/rmwc/blob/master/LICENSE)
 [![Chat](https://img.shields.io/discord/490680848979591168.svg)](https://discord.gg/4BSUxCW)
-[![Backers on Open Collective](https://opencollective.com/rmwc/backers/badge.svg)](#backers) 
-[![Sponsors on Open Collective](https://opencollective.com/rmwc/sponsors/badge.svg)](#sponsors) 
-
+[![Backers on Open Collective](https://opencollective.com/rmwc/backers/badge.svg)](#backers)
+[![Sponsors on Open Collective](https://opencollective.com/rmwc/sponsors/badge.svg)](#sponsors)
 
 # RMWC - React Material Web Components
 
-💥 Attention: Due to an increase in interest, this project is looking for additional maintainers and contributors! Message on Discord for more details.
+⚡️ Attention: This project is currently being brought back to life. If you're interested in helping with maintenance and becoming a contributor or maintainer, please message on Discord.
 
-RMWC is a React UI Kit built on Google's official Material Components Web library v5.x.x
+- https://github.com/jamesmfriedman/rmwc/issues/758
+- We recently closed all issues for a full reset as we get back to the most recent Google version. If any still apply, please reopen.
+
+RMWC is a React UI Kit built on Google's official Material Components Web library v8.x.x
 [https://rmwc.io/](https://rmwc.io/)
 
 Features:
 
-* [x] Uses Google's official material-components-web library
-* [x] Includes Addon components for ones missing from the official spec
-* [x] Works in React 16.8.x and up
-* [x] First class Typescript Support
-* [x] Server side rendering support
-* [x] Individually packaged and released components
+- [x] Uses Google's official material-components-web library
+- [x] Includes Addon components for ones missing from the official spec
+- [x] Works in React 16.8.x and up
+- [x] First class Typescript Support
+- [x] Server side rendering support
+- [x] Individually packaged and released components
 
 ## Try it in the Code Sandbox
+
 > - Javascript Sandbox https://codesandbox.io/s/rmwc-sandbox-o0s0d
 > - Typescript Sandbox https://codesandbox.io/s/rmwc-typescript-sandbox-y7516
 
 ## Like this project? Try out some of my others 😎
+
 - A library for simplified Redux development: https://github.com/jamesmfriedman/redux-state-branch
 - Feature Flagging made Easy: https://github.com/jamesmfriedman/flagg
 
 ## Recent updates
-v6.0.0 is here! Check out the migration guide https://opencollective.com/rmwc/updates/6-0-0-the-hooks-edition
 
-TL;DR
+v8.0.3 is here! This release includes bug fixes of v8.0.0. One being the date-picker not showing up in Chrome, when setting Textfield to have type="date".
+
 - `npm i rmwc@latest` or `npm i @rmwc/button@latest`.
-- Embracing React Hooks
-- New components, and latest updates from Google.
+- React 17 now usable as a peer dep
+- Updated dependencies
 
-*View all release notes* 👉 https://opencollective.com/rmwc/updates
+_View all release notes_ 👉 https://opencollective.com/rmwc/updates
 
 View the changelog for detailed updates: [https://github.com/jamesmfriedman/rmwc/blob/master/CHANGELOG.md](https://github.com/jamesmfriedman/rmwc/blob/master/CHANGELOG.md)
 
 ## Goals
 
-* To create the thinnest, lightest, and spec compliant wrapper around Google
+- To create the thinnest, lightest, and spec compliant wrapper around Google
   Material Design Components for the Web
   [https://material.io/components/web/](https://material.io/components/web/)
-* To utilize the Foundation javascript classes from material-components-web
-* To be as unobtrusive and sensible as possible.
-* To fill the gaps in material-components-web with custom React community driven components.
+- To utilize the Foundation javascript classes from material-components-web
+- To be as unobtrusive and sensible as possible.
+- To fill the gaps in material-components-web with custom React community driven components.
 
 ## Installation
 
-* `npm i rmwc --save` or `yarn add rmwc`
+- `npm i rmwc --save` or `yarn add rmwc`
 
 Additional information is available in the [Installation Guide](https://jamesmfriedman.github.io/rmwc/installation)
 
@@ -74,29 +78,27 @@ Read the docs on [Methodology](https://jamesmfriedman.github.io/rmwc/methodology
 
 ## To run the tests
 
-* On MacOS Sierra and higher, install watchman to fix a filesystem issue with
+- On MacOS Sierra and higher, install watchman to fix a filesystem issue with
   Jest. `brew install watchman`
-* `npm test`
+- `npm test`
 
 ## To run the docs / contribute
 
-* `git clone https://github.com/jamesmfriedman/rmwc.git`
-* `cd rmwc`
-* `npm install`
-* `npm start`
+- `git clone https://github.com/jamesmfriedman/rmwc.git`
+- `cd rmwc`
+- `npm install`
+- `npm start`
 
 ## Contributions
 
 This project exists thanks to all the people who contribute. [[Contribute](CONTRIBUTING.md)].
 <a href="https://github.com/jamesmfriedman/rmwc/graphs/contributors"><img src="https://opencollective.com/rmwc/contributors.svg?width=890&button=false" /></a>
 
-
 ### Backers
 
-Thank you to all our backers! 🙏 [[Become a backer](https://opencollective.com/rmwc#backer)]
+Thank you to all our backers! 🙏 We are no longer accepting financial contributions, and the remaining balance in our Open Collective will go to help efforts in the Ukraine. Thank you to all of our previous backers!
 
 <a href="https://opencollective.com/rmwc#backers" target="_blank"><img src="https://opencollective.com/rmwc/backers.svg?width=890"></a>
-
 
 ### Sponsors
 
@@ -112,4 +114,3 @@ Support this project by becoming a sponsor. Your logo will show up here with a l
 <a href="https://opencollective.com/rmwc/sponsor/7/website" target="_blank"><img src="https://opencollective.com/rmwc/sponsor/7/avatar.svg"></a>
 <a href="https://opencollective.com/rmwc/sponsor/8/website" target="_blank"><img src="https://opencollective.com/rmwc/sponsor/8/avatar.svg"></a>
 <a href="https://opencollective.com/rmwc/sponsor/9/website" target="_blank"><img src="https://opencollective.com/rmwc/sponsor/9/avatar.svg"></a>
-

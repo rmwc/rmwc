@@ -1,3 +1,323 @@
+#### 8.0.3 (2022-10-12)
+
+##### Chores
+
+* **readme:**  update readme and package.json (12b4c443)
+
+##### Bug Fixes
+
+* **type:**  Extends {} to fix error in declarations (d5936d7b)
+
+#### 8.0.2 (2022-10-12)
+
+##### Chores
+
+* **readme:**  update readme (c47f003e)
+
+##### Bug Fixes
+
+* **textfield:**  Add back styling for date picker (f9a609d8)
+
+#### 8.0.1 (2022-08-05)
+
+##### Breaking Changes
+
+* **Select:**  MDC removed fullwidth variant (32c4b87b)
+* **Textfield:**  Removing fullwidth variant (4f3b4e77)
+
+##### Build System / Dependencies
+
+* **deps:**
+  *  CRA-v5, webpack-v5, router-v6, react-live-v3 (f3b32fe7)
+  *  bump trim-off-newlines from 1.0.1 to 1.0.3 (8dfd5c8f)
+  *  bump nanoid from 3.1.23 to 3.3.1 (1df51758)
+  *  bump node-fetch from 2.6.1 to 2.6.7 (d17712e5)
+
+##### Chores
+
+*  storybook update 6.5.10 (9ca79cdd)
+* **core:**  Updated all doc dependencies (50507f2f)
+
+##### Bug Fixes
+
+*  use right variable (ed4155fd)
+* **Select:**  Fix data driven Select initial value (84eaf25e)
+* **Dialog:**  #781 Corrects an issue that would cause Esc to still dismiss for preventOusideDismiss (119478ab)
+* **Portal:**
+  *  fixes issue with portal and SSR #708 (4a7e45c0)
+  *  Prevent children from being mounted twice (beb9d433)
+* **TextField:**  Corrects issue with Character Counter #777 (b37c1822)
+* **select:**
+  *  New adapter methods & changed dom (ffacae5f)
+  *  New adapter methods & changed dom (cda0c061)
+  *  change ssr test to run on node (e1e912f5)
+  *  fix issue with placeholder (3aa9d2f1)
+  *  Restructure to work with material 7 (59e04002)
+  *  rename adapter (bd9571fc)
+  *  Fix tests for select (238b10da)
+  *  Remove active classes onBlur (496cd540)
+  *  Fix placeholder/float issue (24008b52)
+* **textfield:**
+  *  Updated prop list in readme (961f80f4)
+  *  Change helpertext to div (82fc5efe)
+  *  Updated prop list in readme (c76b64af)
+  *  Change helpertext to div (b428490a)
+  *  fix textfield to support v7 (7c4e4d7e)
+  *  Fix bug with outlined (c9e78d16)
+* **menu:**
+  *  Support new api methods for select (442db8d3)
+  *  Support new api methods for select (07019143)
+* **chip:**  fix error of chip not being removable (e3f3433a)
+* **menu-surface:**  fix error with autoPosition (d2c1970a)
+* **tab-bar:**  remove _ from adapter (6a7dd2d0)
+* **list:**
+  *  add ripple to list item (4044f7df)
+  *  rename adapter (35741063)
+* **data-table:**
+  *  reverse sorting arrows (10925e09)
+  *  add container wrapper (d794eb57)
+* **tabs:**  rename adapter (e11b3b72)
+* **top-app-bar:**  rename adapter (142f3217)
+* **readme:**  Fix styling for readme (ac884a34)
+
+##### Other Changes
+
+* //github.com/jamesmfriedman/rmwc into fix-select-on-safari (47398eda)
+* jamesmfriedman/rmwc into mcw/v8 (e7bdd0fb)
+* //github.com/jamesmfriedman/rmwc into mcw/v7 (1b6dc7af)
+* //github.com/Nykredit/rmwc into bump-material-version-7 (aabddfd7)
+* master' into master (fc6dbdf9)
+* //github.com/Nykredit/rmwc into bump-material-version-7 (f65b9777)
+* jamesmfriedman/rmwc (402fcefd)
+* jamesmfriedman/rmwc (511db98a)
+* jamesmfriedman/rmwc (a4d20027)
+* jamesmfriedman/rmwc (c76d3502)
+* //github.com/Nykredit/rmwc into bump-to-version-6 (2a165edb)
+* master' into master (e4cf416c)
+* jamesmfriedman/rmwc (bea038b7)
+* jamesmfriedman/rmwc (210bca62)
+* //github.com/Nykredit/rmwc into bump-material-version-7 (d2f7a134)
+* //github.com/Nykredit/rmwc into bump-to-version-6 (7e64fcba)
+* master' into master (f6d751a5)
+* **todo:**
+  *  Updated todo list (12ca023a)
+  *  Updated todo list (70c311a5)
+* **floating-label:**  setRequired adapter (eeb8cc84)
+* **chip:**
+  *  trailing action business logic (89c82178)
+  *  trailing action business logic (6c4c9922)
+* **all:**  material version 7 (a59c499a)
+* **textfield:**  added new feature props to list (6daf315f)
+* **grid-list:**  Add note on deprecation (ccd7493c)
+
+##### Refactors
+
+* **linear-progress:**  Extracted setStyle (fa886d7b)
+
+##### Reverts
+
+* **select:**  revert line of code (9fde841d)
+
+##### Tests
+
+* **textfield:**  added test for prefix/suffix (7e3b4b01)
+* **slider:**  Removed skip from tests (af32c678)
+* **select:**  Added missing " for consistency (06ca13bf)
+
+#### 8.0.0 (2022-06-01)
+
+##### Breaking Changes
+
+* **Select:**  MDC removed fullwidth variant (32c4b87b)
+* **Textfield:**  Removing fullwidth variant (4f3b4e77)
+
+##### Build System / Dependencies
+
+* **deps:**
+  *  CRA-v5, webpack-v5, router-v6, react-live-v3 (f3b32fe7)
+  *  bump trim-off-newlines from 1.0.1 to 1.0.3 (8dfd5c8f)
+  *  bump nanoid from 3.1.23 to 3.3.1 (1df51758)
+  *  bump node-fetch from 2.6.1 to 2.6.7 (d17712e5)
+
+##### Chores
+
+* **core:**  Updated all doc dependencies (50507f2f)
+
+##### Bug Fixes
+
+* **Dialog:**  #781 Corrects an issue that would cause Esc to still dismiss for preventOusideDismiss (119478ab)
+* **Portal:**
+  *  fixes issue with portal and SSR #708 (4a7e45c0)
+  *  Prevent children from being mounted twice (beb9d433)
+* **TextField:**  Corrects issue with Character Counter #777 (b37c1822)
+* **select:**
+  *  New adapter methods & changed dom (ffacae5f)
+  *  New adapter methods & changed dom (cda0c061)
+  *  change ssr test to run on node (e1e912f5)
+  *  fix issue with placeholder (3aa9d2f1)
+  *  Restructure to work with material 7 (59e04002)
+  *  rename adapter (bd9571fc)
+  *  Fix tests for select (238b10da)
+  *  Remove active classes onBlur (496cd540)
+  *  Fix placeholder/float issue (24008b52)
+* **textfield:**
+  *  Updated prop list in readme (961f80f4)
+  *  Change helpertext to div (82fc5efe)
+  *  Updated prop list in readme (c76b64af)
+  *  Change helpertext to div (b428490a)
+  *  fix textfield to support v7 (7c4e4d7e)
+  *  Fix bug with outlined (c9e78d16)
+* **menu:**
+  *  Support new api methods for select (442db8d3)
+  *  Support new api methods for select (07019143)
+* **chip:**  fix error of chip not being removable (e3f3433a)
+* **menu-surface:**  fix error with autoPosition (d2c1970a)
+* **tab-bar:**  remove _ from adapter (6a7dd2d0)
+* **list:**
+  *  add ripple to list item (4044f7df)
+  *  rename adapter (35741063)
+* **data-table:**
+  *  reverse sorting arrows (10925e09)
+  *  add container wrapper (d794eb57)
+* **tabs:**  rename adapter (e11b3b72)
+* **top-app-bar:**  rename adapter (142f3217)
+* **readme:**  Fix styling for readme (ac884a34)
+
+##### Other Changes
+
+* //github.com/jamesmfriedman/rmwc into fix-select-on-safari (47398eda)
+* jamesmfriedman/rmwc into mcw/v8 (e7bdd0fb)
+* //github.com/jamesmfriedman/rmwc into mcw/v7 (1b6dc7af)
+* //github.com/Nykredit/rmwc into bump-material-version-7 (aabddfd7)
+* master' into master (fc6dbdf9)
+* //github.com/Nykredit/rmwc into bump-material-version-7 (f65b9777)
+* jamesmfriedman/rmwc (402fcefd)
+* jamesmfriedman/rmwc (511db98a)
+* jamesmfriedman/rmwc (a4d20027)
+* jamesmfriedman/rmwc (c76d3502)
+* //github.com/Nykredit/rmwc into bump-to-version-6 (2a165edb)
+* master' into master (e4cf416c)
+* jamesmfriedman/rmwc (bea038b7)
+* jamesmfriedman/rmwc (210bca62)
+* //github.com/Nykredit/rmwc into bump-material-version-7 (d2f7a134)
+* //github.com/Nykredit/rmwc into bump-to-version-6 (7e64fcba)
+* master' into master (f6d751a5)
+* **todo:**
+  *  Updated todo list (12ca023a)
+  *  Updated todo list (70c311a5)
+* **floating-label:**  setRequired adapter (eeb8cc84)
+* **chip:**
+  *  trailing action business logic (89c82178)
+  *  trailing action business logic (6c4c9922)
+* **all:**  material version 7 (a59c499a)
+* **textfield:**  added new feature props to list (6daf315f)
+* **grid-list:**  Add note on deprecation (ccd7493c)
+
+##### Refactors
+
+* **linear-progress:**  Extracted setStyle (fa886d7b)
+
+##### Reverts
+
+* **select:**  revert line of code (9fde841d)
+
+##### Tests
+
+* **textfield:**  added test for prefix/suffix (7e3b4b01)
+* **slider:**  Removed skip from tests (af32c678)
+* **select:**  Added missing " for consistency (06ca13bf)
+
+#### 7.0.3 (2022-03-06)
+
+##### Other Changes
+
+* jamesmfriedman/rmwc (a4d20027)
+* jamesmfriedman/rmwc (c76d3502)
+* jamesmfriedman/rmwc (bea038b7)
+* jamesmfriedman/rmwc (210bca62)
+
+#### 7.0.2 (2022-03-06)
+
+##### Other Changes
+
+* jamesmfriedman/rmwc (bea038b7)
+* jamesmfriedman/rmwc (210bca62)
+
+#### 7.0.1 (2022-03-06)
+
+##### Other Changes
+
+* jamesmfriedman/rmwc (210bca62)
+
+#### 7.0.0 (2022-02-17)
+
+##### Chores
+
+* **Dependencies:**  Update to React 17, update all dep versions (7e22a0e2)
+* **Icon:**
+  *  Add unit test to cover crash when custom render returns a string (9350f1e5)
+  *  Improve typings of icon render method (25aa225e)
+
+##### Bug Fixes
+
+* **Github Actions:**  Fixed Github Actions for running test and uploading code coverage to Codecov (5e022170)
+* **docs:**  Display proper markdown for code (3ee72fce)
+* **test:**  Fixed failing tests (bd59dba6)
+* **snackbar:**  support SVGs as dismiss icon (261a7311)
+* **list:**  Do not pass wrapFocus to Tag (d963fc42)
+
+##### Other Changes
+
+*  remove unneeded markdown (dd22bdd9)
+
+#### 6.1.4 (2020-09-11)
+
+##### Build System / Dependencies
+
+* **deps:**  bump elliptic from 6.5.2 to 6.5.3 (0e5d097b)
+
+##### New Features
+
+* **Tab:**  Add ability to set focusOnActivate (ab155a96)
+
+##### Bug Fixes
+
+* **Select:**
+  *  added the "sudden removal" story (616ee47f)
+  *  fixed unhandled error on "sudden" item removal (b34c0b47)
+* **base:**
+  *  Properly pass foundation in useFoundation effect (cd556bc3)
+  *  Use local foundation reference in useFoundation effect (b9fdc94c)
+  *  Re-set apiRef in useFoundation after nulling it (748bdf35)
+* **Tab:**  activeTabIndex always updating automatically (ed0f0091)
+
+##### Other Changes
+
+*  remove not use deps from externals (e03ed26a)
+
+##### Tests
+
+* **Select:**  Story for enhanced Select with Portal (e882c13a)
+* **Menu:**  Show index in hoistToBody story (b0600e28)
+
+#### 6.1.3 (2020-06-15)
+
+#### 6.1.2 (2020-06-11)
+
+#### 6.1.1 (2020-06-11)
+
+##### Bug Fixes
+
+* **Select:**  fixed menu props not frowarding for enhanced select (4a3e57d9)
+* **TopAppBar:**
+  *  Fix TopAppBarFixedAdjust to pass broken tests (905f9c8e)
+  *  Add classname tests for TopAppBarFixedAdjust component (fd6a73b6)
+* **top-app-bar:**  Fix wrong className for TopAppBarAdjust (c4ff7664)
+
+##### Other Changes
+
+*  should fix (a54056d4)
+
 #### 6.1.0 (2020-04-22)
 
 ##### New Features

@@ -1,5 +1,6 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render, screen, waitFor } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import {
   DataTable,
   DataTableContent,
@@ -13,7 +14,7 @@ import {
 
 describe('DataTable', () => {
   it('renders', () => {
-    mount(
+    const { asFragment } = render(
       <DataTable>
         <DataTableContent>
           <DataTableHead>
@@ -43,10 +44,12 @@ describe('DataTable', () => {
         </DataTableContent>
       </DataTable>
     );
+
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('can have stickyRows', () => {
-    const el = mount(
+    const { container } = render(
       <DataTable stickyRows={1}>
         <DataTableContent>
           <DataTableHead>
@@ -66,11 +69,11 @@ describe('DataTable', () => {
         </DataTableContent>
       </DataTable>
     );
-    expect(el.html().includes('rmwc-data-table--sticky-rows')).toBe(true);
+    expect(container.firstChild).toHaveClass('rmwc-data-table--sticky-rows');
   });
 
   it('can have stickyColumns', () => {
-    const el = mount(
+    const { container } = render(
       <DataTable stickyColumns={1}>
         <DataTableContent>
           <DataTableHead>
@@ -90,11 +93,11 @@ describe('DataTable', () => {
         </DataTableContent>
       </DataTable>
     );
-    expect(el.html().includes('rmwc-data-table--sticky-columns')).toBe(true);
+    expect(container.firstChild).toHaveClass('rmwc-data-table--sticky-columns');
   });
 
   it('can have have activated row', () => {
-    const el = mount(
+    render(
       <DataTable>
         <DataTableContent>
           <DataTableBody>
@@ -107,11 +110,13 @@ describe('DataTable', () => {
         </DataTableContent>
       </DataTable>
     );
-    expect(el.html().includes('rmwc-data-table__row--activated')).toBe(true);
+    expect(screen.getByRole('row')).toHaveClass(
+      'rmwc-data-table__row--activated'
+    );
   });
 
   it('can have have selected row', () => {
-    const el = mount(
+    render(
       <DataTable>
         <DataTableContent>
           <DataTableBody>
@@ -124,11 +129,13 @@ describe('DataTable', () => {
         </DataTableContent>
       </DataTable>
     );
-    expect(el.html().includes('mdc-data-table__row--selected')).toBe(true);
+    expect(screen.getByRole('row')).toHaveClass(
+      'mdc-data-table__row--selected'
+    );
   });
 
   it('can have have aligned cells', () => {
-    const el = mount(
+    render(
       <DataTable>
         <DataTableContent>
           <DataTableHead>
@@ -150,68 +157,57 @@ describe('DataTable', () => {
         </DataTableContent>
       </DataTable>
     );
-    expect(el.html().includes('rmwc-data-table__cell--align-start')).toBe(true);
-    expect(el.html().includes('rmwc-data-table__cell--align-middle')).toBe(
-      true
+    expect(screen.getByRole('columnheader', { name: 'Item' })).toHaveClass(
+      'rmwc-data-table__cell--align-start'
     );
-    expect(el.html().includes('rmwc-data-table__cell--align-end')).toBe(true);
+    expect(
+      screen.getByRole('columnheader', { name: 'Quantity (Click Me)' })
+    ).toHaveClass('rmwc-data-table__cell--align-middle');
+    expect(
+      screen.getByRole('columnheader', { name: 'Unit price' })
+    ).toHaveClass('rmwc-data-table__cell--align-end');
   });
 
-  it('can have have sorted columns', () => {
-    let dir: number | null = null;
-    const getComp = () =>
-      mount(
-        <DataTable>
-          <DataTableContent>
-            <DataTableHead>
-              <DataTableRow>
-                <DataTableHeadCell>Item</DataTableHeadCell>
-                <DataTableHeadCell sort={dir} onSortChange={(d) => (dir = d)}>
-                  Quantity (Click Me)
-                </DataTableHeadCell>
-                <DataTableHeadCell>Unit price</DataTableHeadCell>
-              </DataTableRow>
-            </DataTableHead>
-          </DataTableContent>
-        </DataTable>
-      );
-
-    const clickCell = (el: any) => {
-      const cell = el.find('.rmwc-data-table__head-cell--sortable').first();
-      cell.simulate('click');
-    };
-
-    let el = getComp();
-    expect(el.html().includes('rmwc-data-table__head-cell--sortable')).toBe(
-      true
+  it('can have sorted columns', () => {
+    const Comp = (dir: number | null) => (
+      <DataTable>
+        <DataTableContent>
+          <DataTableHead>
+            <DataTableRow>
+              <DataTableHeadCell>Item</DataTableHeadCell>
+              <DataTableHeadCell sort={dir} onSortChange={(d) => (dir = d)}>
+                Quantity (Click Me)
+              </DataTableHeadCell>
+              <DataTableHeadCell>Unit price</DataTableHeadCell>
+            </DataTableRow>
+          </DataTableHead>
+        </DataTableContent>
+      </DataTable>
     );
-
-    clickCell(el);
-    expect(dir).toBe(1);
-
-    el = getComp();
-    expect(
-      el.html().includes('rmwc-data-table__head-cell--sorted-ascending')
-    ).toBe(true);
-
-    clickCell(el);
-    expect(dir).toBe(-1);
-
-    el = getComp();
+    const { rerender } = render(Comp(null));
 
     expect(
-      el.html().includes('rmwc-data-table__head-cell--sorted-descending')
-    ).toBe(true);
+      screen.getByRole('columnheader', { name: 'Quantity (Click Me)' })
+    ).toHaveClass('rmwc-data-table__head-cell--sortable');
 
-    clickCell(el);
-    expect(dir).toBe(null);
+    userEvent.click(screen.getByText('Quantity (Click Me)'));
+    rerender(Comp(1));
+    expect(
+      screen.getByRole('columnheader', { name: 'Quantity (Click Me)' })
+    ).toHaveClass('rmwc-data-table__head-cell--sorted-ascending');
+
+    userEvent.click(screen.getByText('Quantity (Click Me)'));
+    rerender(Comp(-1));
+    expect(
+      screen.getByRole('columnheader', { name: 'Quantity (Click Me)' })
+    ).toHaveClass('rmwc-data-table__head-cell--sorted-descending');
   });
 });
 
-it('Sorted columns can have an onClick', () => {
+it('Sorted columns can have an onClick', async () => {
   let value = 0;
 
-  const el = mount(
+  render(
     <DataTable>
       <DataTableContent>
         <DataTableHead>
@@ -231,15 +227,15 @@ it('Sorted columns can have an onClick', () => {
     </DataTable>
   );
 
-  const cell = el.find('.rmwc-data-table__head-cell--sortable').first();
-  cell.simulate('click');
-  expect(value).toBe(1);
+  userEvent.click(screen.getByText('Quantity (Click Me)'));
+
+  await waitFor(() => expect(value).toBe(1));
 });
 
-it('Sorted columns can be sorted by only providing sort and onClick prop', () => {
+it('Sorted columns can be sorted by only providing sort and onClick prop', async () => {
   let dir: number | null = null;
 
-  const el = mount(
+  render(
     <DataTable>
       <DataTableContent>
         <DataTableHead>
@@ -254,14 +250,13 @@ it('Sorted columns can be sorted by only providing sort and onClick prop', () =>
       </DataTableContent>
     </DataTable>
   );
-  const cell = el.find('.rmwc-data-table__head-cell--sortable').first();
-  cell.simulate('click');
-  expect(dir).toBe(1);
+  userEvent.click(screen.getByText('Quantity (Click Me)'));
+  await waitFor(() => expect(dir).toBe(1));
 });
 
 describe('SimpleDataTable', () => {
   it('renders', () => {
-    mount(
+    const { asFragment } = render(
       <SimpleDataTable
         data={[
           ['Cookies', 25, '$12.40'],
@@ -273,10 +268,11 @@ describe('SimpleDataTable', () => {
         ]}
       />
     );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('renders with options', () => {
-    mount(
+    const { asFragment } = render(
       <SimpleDataTable
         getRowProps={(row) => {
           return row[1] > 100 ? { activated: true } : {};
@@ -297,5 +293,6 @@ describe('SimpleDataTable', () => {
         ]}
       />
     );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

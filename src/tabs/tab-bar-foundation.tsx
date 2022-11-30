@@ -38,7 +38,19 @@ export const useTabBarFoundation = (
           !!rootEl.ref &&
           window.getComputedStyle(rootEl.ref).getPropertyValue('direction') ===
             'rtl',
-        setActiveTab: (index: number) => setActiveTabIndex(index),
+        setActiveTab: (index: number) => {
+          if (
+            props.activeTabIndex === index ||
+            props.activeTabIndex === undefined
+          ) {
+            setActiveTabIndex(index);
+          } else {
+            // ignore clicks when using controlled tabs, but we still need to notify
+            // to trigger the callback
+            // @ts-ignore ignoring unsafe protected access
+            foundation.adapter.notifyTabActivated(index);
+          }
+        },
         activateTabAtIndex: (index: number, clientRect: ClientRect) => {
           tabListRef.current[index] &&
             tabListRef.current[index].activate(clientRect);
@@ -121,7 +133,7 @@ export const useTabBarFoundation = (
     const index = activeTabIndex;
 
     // @ts-ignore ignoring unsafe protected access
-    const adapter = foundation.adapter_;
+    const adapter = foundation.adapter;
     const previousActiveIndex = adapter.getPreviousActiveTabIndex();
 
     // @ts-ignore private method access

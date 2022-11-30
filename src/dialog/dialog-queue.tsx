@@ -18,7 +18,7 @@ export interface DialogQueueInput
   inputProps?: TextFieldProps & TextFieldHTMLProps;
 }
 
-interface DialogQueueSpec extends DialogQueueInput {
+export interface DialogQueueSpec extends DialogQueueInput {
   id: string;
   resolve: (response: any) => void;
   reject: (reason: any) => void;

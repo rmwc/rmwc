@@ -1,6 +1,6 @@
 # Image Lists
 
-> MDC Image List provides a RTL-aware Material Design image list component, representing an evolution of the Material Design Grid List spec. An Image List consists of several items, each containing an image and optionally supporting content (i.e. a text label).
+MDC Image List provides a RTL-aware Material Design image list component, representing an evolution of the Material Design Grid List spec. An Image List consists of several items, each containing an image and optionally supporting content (i.e. a text label).
 
 - Module **@rmwc/image-list**
 - Import styles:
@@ -32,7 +32,7 @@ Image Lists will give you basic layout, but you will have to use inline styling 
     'images/photos/3x2-15.jpg',
     'images/photos/3x2-16.jpg',
     'images/photos/2x3-7.jpg'
-  ].map(src => (
+  ].map((src) => (
     <ImageListItem
       key={src}
       style={{ margin: '2px', width: 'calc(100% / 5 - 4.2px)' }}
@@ -78,7 +78,7 @@ Image Lists will give you basic layout, but you will have to use inline styling 
     'images/photos/3x2-15.jpg',
     'images/photos/2x3-7.jpg',
     'images/photos/3x2-16.jpg'
-  ].map(src => (
+  ].map((src) => (
     <ImageListItem key={src} style={{ marginBottom: '16px' }}>
       <ImageListImage src={src} />
       <ImageListSupporting>

@@ -6,6 +6,7 @@ import { text, object, array } from '@storybook/addon-knobs';
 import { Select } from './';
 import { useKnob } from '@rmwc/base/utils/use-knob';
 import { MenuItems, MenuItem } from '@rmwc/menu';
+import { Portal } from '@rmwc/base';
 
 function MutatingSelect(props: any) {
   const [value, setValue] = useKnob('text', 'value', 'Cookies');
@@ -37,6 +38,48 @@ function MutatingSelect(props: any) {
       }}
     />
   );
+}
+
+// This story describes the bug in issue https://github.com/jamesmfriedman/rmwc/issues/686
+// Selecting the first element of the first select will cause the bug
+const DependentSelects = () => {
+  const [first, setFist] = React.useState(3);
+  const [second, setSecond] = React.useState<number | undefined>(2);
+
+  return (
+    <div>
+      <Select
+        value={first.toString()}
+        label='first-select'
+        enhanced={{ focusOnOpen: false }}
+        onChange={(e: any) => {
+          setFist(parseInt(e.detail.value));
+
+          // Clear the second select to cause the bug
+          setSecond(undefined);
+        }}
+      >
+        <MenuItem data-value='1'>first-menu-item-1</MenuItem>
+        <MenuItem data-value='2'>first-menu-item-2</MenuItem>
+        <MenuItem data-value='3'>first-menu-item-3</MenuItem>
+      </Select>
+      <Select
+        value={second?.toString() || ''}
+        label='second-select'
+        enhanced={{ focusOnOpen: false }}
+        onChange={(e: any) => {
+          setSecond(e.detail.value);
+        }}
+      >
+        {Array.from(Array(first)).map((num, index) => {
+          return (
+            <MenuItem key={index} data-value={index}>
+              second-menu-item-{index}
+            </MenuItem>
+          );
+        })}
+      </Select>
+    </div>);
 }
 
 function EnhancedSelect() {
@@ -233,6 +276,34 @@ function ControlledSelect() {
   );
 }
 
+
+function EnhancedSelectWithPortal(props: any) {
+  const [value, setValue] = useKnob('text', 'value', "Cookies");
+
+  return (
+    <>
+      <Portal/>
+      <Select
+        label={'Enhanced with Portal'}
+        enhanced={{
+          renderToPortal: true
+        }}
+        value={value}
+        onChange={(evt) => {
+          const value = evt.currentTarget.value;
+          console.log('onChange', value);
+          setValue(value === undefined ? "undefined" : value);
+        }}
+        options={[
+          'Cookies',
+          'Pizza',
+          'Icecream'
+        ]}
+      />
+    </>
+  );
+}
+
 storiesOf('Select', module)
   .add('Select with object', () => (
     <Select
@@ -269,6 +340,7 @@ storiesOf('Select', module)
       </Select>
     </div>
   ))
+  .add('Select Enhanced with Portal', () => <EnhancedSelectWithPortal/>)
   .add('Select without placeholder', () => (
     <Select
       label={text('label', 'Foods')}
@@ -351,4 +423,5 @@ storiesOf('Select', module)
         }}
       />
     );
-  });
+  })
+  .add('Interdepndent Selects', DependentSelects);

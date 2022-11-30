@@ -33,6 +33,7 @@ const RippleSurfaceContext = React.createContext({});
 const withDomNode = () => <P extends any>(
   Component: React.ComponentType<P>
 ): React.ComponentType<P & { domNode?: Element }> => {
+  // @ts-ignore
   return class extends React.Component<
     { children: React.ReactNode } & P & { domNode?: Element }
   > {
@@ -168,7 +169,7 @@ export const withRipple = ({
   Component: C
 ): C => {
   const WithRippleComponent = React.forwardRef<any, P & RMWC.WithRippleProps>(
-    ({ ripple, ...rest }, ref) => {
+    ({ ripple, ...rest }: any, ref) => {
       const providerContext = useProviderContext();
       ripple = ripple ?? providerContext.ripple;
       const rippleOptions = typeof ripple !== 'object' ? {} : ripple;

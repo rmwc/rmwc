@@ -1,6 +1,6 @@
 # Provider
 
-> A component that provides global configuration for RMWC.
+A component that provides global configuration for RMWC.
 
 - Module **@rmwc/provider**
 
@@ -35,7 +35,7 @@ You can wrap your top level App component with RMWC provider to set global confi
       // Global options for tooltips
       // Takes most of the options for tooltips
       // See the Tooltip docs for more info
-      tootlip={{
+      tooltip={{
         align: 'right'
       }}
     >
@@ -55,7 +55,7 @@ A provider for setting global options in RMWC.
 | Name | Type | Description |
 |------|------|-------------|
 | `children` | `React.ReactNode` | Children to render |
-| `icon` | `Partial<IconOptions>` | Global options for icons |
+| `icon` | `Partial<RMWC.IconOptions>` | Global options for icons |
 | `ripple` | `undefined \| false \| true` | Enable / Disable interaction ripples globally |
 | `tooltip` | `Partial<TooltipOptions>` | Global tooltip options |
 | `typography` | `Partial<TypographyOptions>` | Global typography options |

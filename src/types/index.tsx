@@ -91,7 +91,8 @@ export interface IconOptions {
   render?: (props: {
     content: IconElementT;
     className: string;
-  }) => React.ReactNode;
+    ref?: React.Ref<any>;
+  }) => Exclude<React.ReactNode, React.ReactText>; // Don't allow string | number, those would be rendered as {null} anyway
   /** A size to render the icon  */
   size?: IconSizeT;
   /** Additional props */
@@ -121,8 +122,8 @@ export type ComponentProps<
   );
 
 export type ComponentType<
-  Props,
-  ElementProps,
+  Props extends {},
+  ElementProps extends {},
   Element extends React.ElementType<any>
 > = {
   <Tag extends React.ElementType<any> = Element>(

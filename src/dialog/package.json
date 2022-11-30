@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/dialog",
-  "version": "6.1.0",
+  "version": "8.0.3",
   "description": "RMWC Dialog component",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -32,15 +32,15 @@
   },
   "homepage": "https://github.com/jamesmfriedman/rmwc/tree/master/src/dialog#readme",
   "peerDependencies": {
-    "react": "^16.3.x",
-    "react-dom": "^16.3.x"
+    "react": ">=16.8.x",
+    "react-dom": ">=16.8.x"
   },
   "dependencies": {
-    "@material/dialog": "^5.1.0",
-    "@rmwc/base": "^6.0.14",
-    "@rmwc/button": "^6.0.14",
-    "@rmwc/textfield": "^6.1.0",
-    "@rmwc/types": "^6.0.5"
+    "@material/dialog": "^8.0.0",
+    "@rmwc/base": "^8.0.3",
+    "@rmwc/button": "^8.0.3",
+    "@rmwc/textfield": "^8.0.3",
+    "@rmwc/types": "^8.0.3"
   },
-  "gitHead": "bf098adc2571ee1641ef20d79f38fb64e9ff186e"
+  "gitHead": "d9befec0e3b258864b71686eecd16c16feb43cf1"
 }

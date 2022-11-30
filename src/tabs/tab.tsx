@@ -38,6 +38,8 @@ export interface TabProps {
   onInteraction?: (evt: TabOnInteractionEventT) => void;
   /** Advanced: A reference to the MDCFoundation. */
   foundationRef?: React.Ref<MDCTabFoundation | null>;
+  /** Focuses the tab when activated. Defaults to true. */
+  focusOnActivate?: boolean;
 }
 
 export type TabApi = {
@@ -86,6 +88,7 @@ export const Tab = createComponent<TabProps>(function Tab(props, ref) {
     onInteraction,
     iconIndicator,
     foundationRef,
+    focusOnActivate,
     ...rest
   } = props;
 

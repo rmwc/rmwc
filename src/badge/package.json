@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/badge",
-  "version": "6.0.14",
+  "version": "8.0.3",
   "description": "RMWC badge component",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -32,12 +32,12 @@
   },
   "homepage": "https://github.com/jamesmfriedman/rmwc/tree/master/src/badge#readme",
   "peerDependencies": {
-    "react": "^16.3.x",
-    "react-dom": "^16.3.x"
+    "react": ">=16.8.x",
+    "react-dom": ">=16.8.x"
   },
   "dependencies": {
-    "@rmwc/base": "^6.0.14",
-    "@rmwc/types": "^6.0.5"
+    "@rmwc/base": "^8.0.3",
+    "@rmwc/types": "^8.0.3"
   },
   "gitHead": "bf098adc2571ee1641ef20d79f38fb64e9ff186e"
 }
