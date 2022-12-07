@@ -84,7 +84,6 @@
 		"react-markdown": "^6.0.2",
 		"react-router-dom": "^6.3.0",
 		"react-scripts": "^5.0.1",
-		"rimraf": "^3.0.2",
 		"typescript": "4.3.5"
 	},
 	"eslintIgnore": [
