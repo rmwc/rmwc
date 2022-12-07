@@ -12,16 +12,16 @@ const copyFile = (inputFile, outputFile) => {
 const root = path.resolve(__dirname, '../');
 
 execSync(
-  `./node_modules/.bin/tsc --project ${root}/tsconfig-build.json --target es5 --module CommonJS`,
+  `npx tsc --project ${root}/tsconfig-build.json --target es5 --module CommonJS`,
   {
-    stdio: [0, 1, 2]
+    stdio: 'inherit'
   }
 );
 
 execSync(
-  `./node_modules/.bin/tsc --project ${root}/tsconfig-build.json --target es5 --module esnext --outDir ${root}/build/next`,
+  `npx tsc --project ${root}/tsconfig-build.json --target es5 --module esnext --outDir ${root}/build/next`,
   {
-    stdio: [0, 1, 2]
+    stdio: 'inherit'
   }
 );
 
