@@ -15,8 +15,8 @@
 	},
 	"scripts": {
 		"install": "lerna bootstrap --force-local --hoist",
-		"start": "export NODE_OPTIONS='--max-old-space-size=4096' && react-app-rewired start",
-		"build:docsite": "export NODE_OPTIONS='--max-old-space-size=4096' && react-app-rewired build && rm -R -f docs && mv build docs",
+		"start": "cross-env NODE_OPTIONS='--max-old-space-size=4096' react-app-rewired start",
+		"build:docsite": "cross-env NODE_OPTIONS='--max-old-space-size=4096' react-app-rewired build && rm -R -f docs && mv build docs",
 		"build:docs": "npm run clean && npm run docgen && npm run build:docsite",
 		"build:code": "npm run clean && node scripts/build-code.js",
 		"build:lib": "node scripts/build-lib.js",
@@ -47,6 +47,7 @@
 		"build-storybook": "build-storybook"
 	},
 	"devDependencies": {
+		"rimraf": "^3.0.2",
 		"@babel/core": "^7.17.9",
 		"@storybook/addon-actions": "^6.5.10",
 		"@storybook/addon-essentials": "^6.5.10",
