@@ -1,17 +1,24 @@
-const rimraf = require('rimraf')
-
 process.env.NODE_ENV = process.env.NODE_ENV || 'production';
 
-console.log('Starting clean...');
+const glob = require('glob');
+const { execSync } = require('child_process');
 
-rimraf.sync('./build')
+execSync('rm -R -f ./build');
 
-rimraf.sync('./src/*/dist/', { glob: { ignore: 'node_modules' }})
+const removeFileOrDir = f => execSync(`rm -R -f ${f}`);
 
-rimraf.sync('./src/*/styles.js', { glob: { ignore: 'node_modules' }})
+glob('./src/*/dist/', { ignore: 'node_modules' }, function(er, files) {
+  files.forEach(removeFileOrDir);
+});
 
-rimraf.sync('./src/*/styles.d.ts', { glob: { ignore: 'node_modules' }})
+glob('./src/*/styles.js', { ignore: 'node_modules' }, function(er, files) {
+  files.forEach(removeFileOrDir);
+});
 
-rimraf.sync('./src/*/next/', { glob: { ignore: 'node_modules' }})
+glob('./src/*/styles.d.ts', { ignore: 'node_modules' }, function(er, files) {
+  files.forEach(removeFileOrDir);
+});
 
-console.log('Clean done');
+glob('./src/*/next/', { ignore: 'node_modules' }, function(er, files) {
+  files.forEach(removeFileOrDir);
+});
