@@ -4,6 +4,8 @@ const getPackageDirs = require('./get-package-dirs');
 const path = require('path');
 const { exec, execSync } = require('child_process');
 
+console.log('Starting build...');
+
 // Simply copies the file
 const copyFile = (inputFile, outputFile) => {
   exec(`cp -R ${inputFile} ${outputFile}`);
@@ -54,5 +56,5 @@ const promises = getPackageDirs().map((d) => {
 
 // Compile the TS
 Promise.all(promises).then(() => {
-  console.log('Done');
+  console.log('Build done');
 });
