@@ -61,20 +61,20 @@ View the changelog for detailed updates: [https://github.com/jamesmfriedman/rmwc
 
 - `npm i rmwc --save` or `yarn add rmwc`
 
-Additional information is available in the [Installation Guide](https://jamesmfriedman.github.io/rmwc/installation)
+Additional information is available in the [Installation Guide](https://rmwc.io/installation)
 
 ## Usage
 
-Read the docs on how to [Usage](https://jamesmfriedman.github.io/rmwc/usage)
+Read the docs on how to [Usage](https://rmwc.io/usage)
 
 ## Why?
 
-Read the docs on [Methodology](https://jamesmfriedman.github.io/rmwc/methodology)
+Read the docs on [Methodology](https://rmwc.io/methodology)
 
 ## About Breaking Changes
 
 RMWC avoids them at all costs!
-Read the docs on [Methodology](https://jamesmfriedman.github.io/rmwc/methodology)
+Read the docs on [Methodology](https://rmwc.io/methodology)
 
 ## To run the tests
 
