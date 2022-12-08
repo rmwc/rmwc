@@ -15,8 +15,8 @@
 	},
 	"scripts": {
 		"install": "lerna bootstrap --force-local --hoist",
-		"start": "export NODE_OPTIONS='--max-old-space-size=4096' && npm run clean && concurrently \"react-app-rewired start\" \"chokidar './src/**/readme.tsx' -c 'npm run docgen:examples'\"",
-		"build:docsite": "export NODE_OPTIONS='--max-old-space-size=4096' && react-app-rewired build && rm -R -f docs && mv build docs",
+		"start": "cross-env NODE_OPTIONS='--max-old-space-size=4096' && npm run clean && concurrently \"react-app-rewired start\" \"chokidar './src/**/readme.tsx' -c 'npm run docgen:examples'\"",
+		"build:docsite": "cross-env NODE_OPTIONS='--max-old-space-size=4096' && react-app-rewired build && rm -R -f docs && mv build docs",
 		"build:docs": "npm run clean && npm run docgen && npm run build:docsite",
 		"build:code": "npm run clean && node scripts/build-code.js",
 		"build:lib": "node scripts/build-lib.js",
@@ -71,6 +71,7 @@
 		"colors": "^1.4.0",
 		"concurrently": "^7.3.0",
 		"copyfiles": "^2.4.1",
+		"cross-env": "^7.0.3",
 		"documentalist": "^1.6.0",
 		"eslint-plugin-babel": "^5.3.1",
 		"generate-changelog": "^1.8.0",
