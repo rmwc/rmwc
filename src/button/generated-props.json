@@ -22,7 +22,7 @@
       },
       "kind": "interface",
       "name": "ButtonProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/button/index.tsx#L20",
+      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/button/index.tsx#L20",
       "extends": [
         "any"
       ],
@@ -49,7 +49,7 @@
           },
           "kind": "property",
           "name": "children",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/button/index.tsx#L36",
+          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/button/index.tsx#L36",
           "type": "React.ReactNode"
         },
         {
@@ -73,7 +73,7 @@
           },
           "kind": "property",
           "name": "danger",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/button/index.tsx#L32",
+          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/button/index.tsx#L32",
           "type": "undefined | false | true"
         },
         {
@@ -97,7 +97,7 @@
           },
           "kind": "property",
           "name": "dense",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/button/index.tsx#L22",
+          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/button/index.tsx#L22",
           "type": "undefined | false | true"
         },
         {
@@ -121,7 +121,7 @@
           },
           "kind": "property",
           "name": "disabled",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/button/index.tsx#L30",
+          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/button/index.tsx#L30",
           "type": "undefined | false | true"
         },
         {
@@ -145,7 +145,7 @@
           },
           "kind": "property",
           "name": "icon",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/button/index.tsx#L38",
+          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/button/index.tsx#L38",
           "type": "RMWC.IconPropT"
         },
         {
@@ -169,7 +169,7 @@
           },
           "kind": "property",
           "name": "label",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/button/index.tsx#L34",
+          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/button/index.tsx#L34",
           "type": "React.ReactNode | any"
         },
         {
@@ -193,7 +193,7 @@
           },
           "kind": "property",
           "name": "outlined",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/button/index.tsx#L28",
+          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/button/index.tsx#L28",
           "type": "undefined | false | true"
         },
         {
@@ -217,7 +217,7 @@
           },
           "kind": "property",
           "name": "raised",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/button/index.tsx#L24",
+          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/button/index.tsx#L24",
           "type": "undefined | false | true"
         },
         {
@@ -241,7 +241,7 @@
           },
           "kind": "property",
           "name": "trailingIcon",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/button/index.tsx#L40",
+          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/button/index.tsx#L40",
           "type": "RMWC.IconPropT"
         },
         {
@@ -265,7 +265,7 @@
           },
           "kind": "property",
           "name": "unelevated",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/button/index.tsx#L26",
+          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/button/index.tsx#L26",
           "type": "undefined | false | true"
         }
       ]
@@ -284,7 +284,7 @@
       },
       "kind": "type alias",
       "name": "ButtonHTMLProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/button/index.tsx#L43",
+      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/button/index.tsx#L43",
       "type": "RMWC.HTMLProps<HTMLButtonElement>"
     }
   }

@@ -1,3 +1,23 @@
+#### 8.0.3 (2022-10-12)
+
+##### Chores
+
+* **readme:**  update readme and package.json (12b4c443)
+
+##### Bug Fixes
+
+* **type:**  Extends {} to fix error in declarations (d5936d7b)
+
+#### 8.0.2 (2022-10-12)
+
+##### Chores
+
+* **readme:**  update readme (c47f003e)
+
+##### Bug Fixes
+
+* **textfield:**  Add back styling for date picker (f9a609d8)
+
 #### 8.0.1 (2022-08-05)
 
 ##### Breaking Changes
