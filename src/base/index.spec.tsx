@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import {
   withTheme,
   randomId,
@@ -7,10 +7,14 @@ import {
   debounce,
   toCamel,
   toDashCase,
-  closest
+  closest,
+  Portal
 } from './';
 import { FoundationElement } from './foundation-component';
 import { wait } from './utils/test-utils';
+import { Dialog, DialogContent } from '@rmwc/dialog';
+import userEvent from '@testing-library/user-event';
+import { Button } from '@rmwc/button';
 
 jest.spyOn(console, 'warn');
 
@@ -224,5 +228,44 @@ describe('withTheme', () => {
 
     expect(container2).toMatchSnapshot();
     expect(container2.firstChild).toHaveClass('mdc-theme--on-primary');
+  });
+});
+
+describe('Portal', () => {
+  it('renders', () => {
+    const { asFragment } = render(<Portal />);
+    expect(asFragment()).toMatchSnapshot();
+  });
+  it.skip('does not mount twice', async () => {
+    const Content = ({ value, inc }: { value: number; inc: () => void }) => {
+      React.useEffect(() => {
+        inc();
+      }, []);
+
+      return <div>Opened {value} times</div>;
+    };
+    const MyComp = () => {
+      const [open, setOpen] = React.useState(false);
+      const [counter, setCounter] = React.useState(0);
+
+      return (
+        <>
+          <Portal />
+          <Button onClick={() => setOpen(true)}>Open</Button>
+          {open && (
+            <Dialog renderToPortal open={open} onClosed={() => setOpen(false)}>
+              <DialogContent>
+                <Content value={counter} inc={() => setCounter((c) => c + 1)} />
+              </DialogContent>
+            </Dialog>
+          )}
+        </>
+      );
+    };
+    render(<MyComp />);
+    userEvent.click(screen.getByText(/open/i));
+    await waitFor(() =>
+      expect(screen.getByText('Opened 1 times')).toBeInTheDocument()
+    );
   });
 });

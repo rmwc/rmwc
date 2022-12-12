@@ -52,9 +52,6 @@ export const useMenuSurfaceFoundation = (
       rootEl: FoundationElement<any, any>;
     }): MenuSurfaceApi => {
       return {
-        hoistMenuToBody: () => {
-          // this is controlled by the renderToPortal prop
-        },
         setAnchorCorner: (corner: Corner) => foundation.setAnchorCorner(corner),
         setAnchorElement: (element: HTMLElement) =>
           (anchorElementRef.current = element),
@@ -291,8 +288,7 @@ export const useMenuSurfaceFoundation = (
     if (anchorCorner !== undefined) {
       foundation.setAnchorCorner(anchorCorner);
       // @ts-ignore unsafe private variable reference
-      foundation.dimensions_ = foundation.adapter.getInnerDimensions();
-      // @ts-ignore unsafe private variable reference
+      foundation.dimensions = foundation.adapter.getInnerDimensions();
       try {
         // silence this, it blows up loudly occasionally
         // @ts-ignore unsafe private variable access
