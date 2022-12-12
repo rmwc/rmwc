@@ -1,4 +1,4 @@
-import React, { useRef, useMemo } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 
 const PORTAL_ID = 'rmwcPortal';
@@ -18,11 +18,9 @@ export function PortalChild({
   children: React.ReactNode;
   renderTo?: PortalPropT;
 }) {
-  const portalEl: Element | undefined = useMemo(() => {
-    if (typeof document === 'undefined') {
-      return undefined;
-    }
+  const [portalEl, setPortalEl] = useState<Element | undefined>();
 
+  useEffect(() => {
     let element: Element | undefined = undefined;
 
     if (renderTo === true) {
@@ -43,8 +41,10 @@ export function PortalChild({
       element = renderTo;
     }
 
-    return element;
-  }, [renderTo]);
+    if (element !== portalEl) {
+      setPortalEl(element);
+    }
+  }, [renderTo, portalEl]);
 
   if (portalEl) {
     return ReactDOM.createPortal(children, portalEl);
