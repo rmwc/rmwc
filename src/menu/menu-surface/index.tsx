@@ -19,7 +19,6 @@ export type MenuSurfaceOnOpenEventT = RMWC.CustomEventT<{}>;
 export type MenuSurfaceOnCloseEventT = RMWC.CustomEventT<{}>;
 
 export interface MenuSurfaceApi {
-  hoistMenuToBody: () => void;
   setAnchorCorner: (corner: Corner) => void;
   setAnchorElement: (element: HTMLElement) => void;
   setOpen: (open: boolean) => void;
