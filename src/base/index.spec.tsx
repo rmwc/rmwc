@@ -236,13 +236,13 @@ describe('Portal', () => {
     const { asFragment } = render(<Portal />);
     expect(asFragment()).toMatchSnapshot();
   });
-  it.skip('does not mount twice', async () => {
+  it('does not mount twice', async () => {
     const Content = ({ value, inc }: { value: number; inc: () => void }) => {
       React.useEffect(() => {
         inc();
       }, []);
 
-      return <div>Opened {value} times</div>;
+      return <span>{`Opened ${value} times`}</span>;
     };
     const MyComp = () => {
       const [open, setOpen] = React.useState(false);
@@ -252,20 +252,17 @@ describe('Portal', () => {
         <>
           <Portal />
           <Button onClick={() => setOpen(true)}>Open</Button>
-          {open && (
-            <Dialog renderToPortal open={open} onClosed={() => setOpen(false)}>
-              <DialogContent>
-                <Content value={counter} inc={() => setCounter((c) => c + 1)} />
-              </DialogContent>
-            </Dialog>
-          )}
+          <Dialog renderToPortal open={open} onClosed={() => setOpen(false)}>
+            <DialogContent>
+              <Content value={counter} inc={() => setCounter((c) => c + 1)} />
+            </DialogContent>
+          </Dialog>
+          )
         </>
       );
     };
     render(<MyComp />);
-    userEvent.click(screen.getByText(/open/i));
-    await waitFor(() =>
-      expect(screen.getByText('Opened 1 times')).toBeInTheDocument()
-    );
+    userEvent.click(screen.getByRole('button', { name: /open/i }));
+    expect(await screen.findByText('Opened 1 times')).toBeInTheDocument();
   });
 });

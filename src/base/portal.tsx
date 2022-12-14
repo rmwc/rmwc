@@ -24,14 +24,14 @@ export function PortalChild({
     let element: Element | undefined = undefined;
 
     if (renderTo === true) {
-      element = document.getElementById(PORTAL_ID) || undefined;
+      element = document?.getElementById(PORTAL_ID) ?? undefined;
 
       !element &&
         console.warn(
           'No default Portal found. Did you forget to include it in the root of your app? `import { Portal } from "@rmwc/base";`'
         );
     } else if (typeof renderTo === 'string') {
-      element = document.querySelector(renderTo) || undefined;
+      element = document?.querySelector(renderTo) ?? undefined;
 
       !element &&
         console.warn(
@@ -49,6 +49,5 @@ export function PortalChild({
   if (portalEl) {
     return ReactDOM.createPortal(children, portalEl);
   }
-
-  return <>{children}</>;
+  return null;
 }
