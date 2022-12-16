@@ -40,7 +40,6 @@ export function PortalChild({
     } else if (renderTo instanceof Element) {
       element = renderTo;
     }
-
     if (element !== portalEl) {
       setPortalEl(element);
     }

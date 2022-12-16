@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen, waitFor } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import {
   withTheme,
   randomId,
@@ -242,7 +242,7 @@ describe('Portal', () => {
         inc();
       }, []);
 
-      return <div>Opened {value} times</div>;
+      return <span>{`Opened ${value} times`}</span>;
     };
     const MyComp = () => {
       const [open, setOpen] = React.useState(false);
@@ -252,20 +252,17 @@ describe('Portal', () => {
         <>
           <Portal />
           <Button onClick={() => setOpen(true)}>Open</Button>
-          {open && (
-            <Dialog renderToPortal open={open} onClosed={() => setOpen(false)}>
-              <DialogContent>
-                <Content value={counter} inc={() => setCounter((c) => c + 1)} />
-              </DialogContent>
-            </Dialog>
-          )}
+          <Dialog renderToPortal open={open} onClosed={() => setOpen(false)}>
+            <DialogContent>
+              <Content value={counter} inc={() => setCounter((c) => c + 1)} />
+            </DialogContent>
+          </Dialog>
+          )
         </>
       );
     };
     render(<MyComp />);
-    userEvent.click(screen.getByText(/open/i));
-    await waitFor(() =>
-      expect(screen.getByText('Opened 1 times')).toBeInTheDocument()
-    );
+    userEvent.click(screen.getByRole('button', { name: /open/i }));
+    expect(await screen.findByText('Opened 1 times')).toBeInTheDocument();
   });
 });
