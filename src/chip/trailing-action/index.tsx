@@ -23,12 +23,12 @@ export const TrailingAction = createComponent<TrailingActionProps>(
     return (
       <Tag
         tag="buton"
-        className="mdc-chip-trailing-action"
+        className="mdc-deprecated-chip-trailing-action"
         aria-hidden={props.isNavigable}
         ref={ref}
       >
-        <span className="mdc-chip-trailing-action__ripple"></span>
-        <span className="mdc-chip-trailing-action__icon material-icons">
+        <span className="mdc-deprecated-chip-trailing-action__ripple"></span>
+        <span className="mdc-deprecated-chip-trailing-action__icon material-icons">
           {props.icon}
         </span>
       </Tag>

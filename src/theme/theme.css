@@ -49,22 +49,27 @@ body .mdc-tab:not(.mdc-tab--active) .mdc-tab__text-label {
  * List Items
  ****************************************************************/
 /** Fixes the focus state color */
-body .mdc-drawer .mdc-list-item--activated {
+body .mdc-drawer .mdc-deprecated-list-item--activated {
   color: var(--mdc-theme-primary);
 }
 
 /** Fixes list item color in drawers */
-body .mdc-drawer .mdc-list-item:not(.mdc-list-item--activated) {
+body
+  .mdc-drawer
+  .mdc-deprecated-list-item:not(.mdc-deprecated-list-item--activated) {
   color: var(--mdc-theme-on-surface);
 }
 
 /** Fixes list item graphic activated color in drawers */
-body .mdc-drawer .mdc-list-item--activated .mdc-list-item__graphic {
+body
+  .mdc-drawer
+  .mdc-deprecated-list-item--activated
+  .mdc-deprecated-list-item__graphic {
   color: var(--mdc-theme-primary);
 }
 
 /** Fixes an issue where dividers on cards had bullet points */
-body .mdc-list-divider {
+body .mdc-deprecated-list-divider {
   list-style: none;
 }
 

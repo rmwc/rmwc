@@ -36,7 +36,7 @@
     "react-dom": ">=16.8.x"
   },
   "dependencies": {
-    "@material/switch": "^8.0.0",
+    "@material/switch": "^14.0.0",
     "@rmwc/base": "^8.0.7",
     "@rmwc/formfield": "^8.0.7",
     "@rmwc/ripple": "^8.0.7",

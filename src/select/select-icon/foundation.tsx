@@ -3,7 +3,6 @@ import { useFoundation } from '@rmwc/base';
 import { IconProps } from '@rmwc/icon';
 import { EventType, SpecificEventListener } from '@material/base/types';
 import { MDCSelectIconFoundation } from '@material/select';
-import { MDCTextFieldIconFoundation } from '@material/textfield';
 import { SelectIconApi } from './';
 
 export const useSelectIconFoundation = (
@@ -15,7 +14,7 @@ export const useSelectIconFoundation = (
     api: ({
       foundation
     }: {
-      foundation: MDCTextFieldIconFoundation;
+      foundation: MDCSelectIconFoundation;
     }): SelectIconApi => {
       return {
         getFoundation: () => foundation
