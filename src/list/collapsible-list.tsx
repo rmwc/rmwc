@@ -204,7 +204,7 @@ export class CollapsibleList extends React.Component<
       this.childContainer.contains(document.activeElement)
     ) {
       const el = this.root.querySelector(
-        '.rmwc-collapsible-list__handle .mdc-list-item'
+        '.rmwc-collapsible-list__handle .mdc-deprecated-list-item'
       );
       el && (el as HTMLElement).focus();
     }

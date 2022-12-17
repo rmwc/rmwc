@@ -1,8 +1,10 @@
 import React from 'react';
 import { useFoundation } from '@rmwc/base';
-import { MDCChipTrailingActionFoundation } from '@material/chips';
+import {
+  MDCChipActionAttributes,
+  MDCChipTrailingActionFoundation
+} from '@material/chips';
 import { TrailingActionProps } from '.';
-import { InteractionTrigger } from '@material/chips/trailingaction/constants';
 
 export const useTrailingActionFoundation = (props: TrailingActionProps) => {
   const foundationWithElements = useFoundation({
@@ -11,16 +13,12 @@ export const useTrailingActionFoundation = (props: TrailingActionProps) => {
     foundation: ({ rootEl, emit }) => {
       return new MDCChipTrailingActionFoundation({
         focus: () => rootEl.ref?.focus(),
-        getAttribute: (attr: string) =>
+        getAttribute: (attr: MDCChipActionAttributes) =>
           rootEl.ref && rootEl.ref.getAttribute(attr),
-        notifyInteraction: (trigger: InteractionTrigger) => {
-          emit('onInteraction', { trigger });
-        },
-        notifyNavigation: (key: string) => {
-          emit('onNavigation', { key });
-        },
-        setAttribute: (attr: string, value: string) =>
-          rootEl.setProp(attr as any, value)
+        setAttribute: (attr: MDCChipActionAttributes, value: string) =>
+          rootEl.setProp(attr as any, value),
+        getElementID: () => '',
+        removeAttribute: (attr: MDCChipActionAttributes) => {}
       });
     }
   });

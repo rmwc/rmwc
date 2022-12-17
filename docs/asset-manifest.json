@@ -26,8 +26,5 @@
     "606.c2b5fc84.chunk.js.map": "/static/js/606.c2b5fc84.chunk.js.map",
     "929.b8256ae4.chunk.js.map": "/static/js/929.b8256ae4.chunk.js.map"
   },
-  "entrypoints": [
-    "static/css/main.e82eb4fc.css",
-    "static/js/main.b9bd8380.js"
-  ]
+  "entrypoints": ["static/css/main.e82eb4fc.css", "static/js/main.b9bd8380.js"]
 }

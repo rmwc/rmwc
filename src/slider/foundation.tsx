@@ -2,10 +2,13 @@ import React, { useRef, useEffect } from 'react';
 import { SliderProps } from '.';
 import { useFoundation, emptyClientRect } from '@rmwc/base';
 
-import { EventType, SpecificEventListener } from '@material/base/types';
-import { debounce } from '@rmwc/base';
-
-import { MDCSliderFoundation } from '@material/slider';
+import {
+  cssClasses,
+  events,
+  MDCSliderFoundation,
+  Thumb,
+  TickMark
+} from '@material/slider';
 
 export const useSliderFoundation = (
   props: SliderProps & React.HTMLProps<any>
@@ -25,99 +28,206 @@ export const useSliderFoundation = (
       sliderPinEl: true
     },
     foundation: ({ rootEl, thumbContainerEl, sliderPinEl, emit }) => {
+      const thumbs = [].slice.call(
+        rootEl.ref?.querySelectorAll(`.${cssClasses.THUMB}`)
+      ) as HTMLElement[];
+
+      const getThumbEl = (thumb: Thumb) => {
+        return thumb === Thumb.END ? thumbs[thumbs.length - 1] : thumbs[0];
+      };
+
+      const inputs = [].slice.call(
+        rootEl.ref?.querySelectorAll(`.${cssClasses.INPUT}`)
+      ) as HTMLInputElement[];
+
+      const getInput = (thumb: Thumb) => {
+        return thumb === Thumb.END ? inputs[inputs.length - 1] : inputs[0];
+      };
+
+      const addTickMarks = (
+        tickMarkContainer: HTMLElement,
+        tickMarks: TickMark[]
+      ) => {
+        const fragment = document.createDocumentFragment();
+        for (let i = 0; i < tickMarks.length; i++) {
+          const div = document.createElement('div');
+          const tickMarkClass =
+            tickMarks[i] === TickMark.ACTIVE
+              ? cssClasses.TICK_MARK_ACTIVE
+              : cssClasses.TICK_MARK_INACTIVE;
+          div.classList.add(tickMarkClass);
+          fragment.appendChild(div);
+        }
+        tickMarkContainer.appendChild(fragment);
+      };
+
+      const updateTickMarks = (
+        tickMarkContainer: HTMLElement,
+        tickMarks: TickMark[]
+      ) => {
+        const tickMarkEls = Array.from(tickMarkContainer.children);
+        for (let i = 0; i < tickMarkEls.length; i++) {
+          if (tickMarks[i] === TickMark.ACTIVE) {
+            tickMarkEls[i].classList.add(cssClasses.TICK_MARK_ACTIVE);
+            tickMarkEls[i].classList.remove(cssClasses.TICK_MARK_INACTIVE);
+          } else {
+            tickMarkEls[i].classList.add(cssClasses.TICK_MARK_INACTIVE);
+            tickMarkEls[i].classList.remove(cssClasses.TICK_MARK_ACTIVE);
+          }
+        }
+      };
+
+      // const ripples = foundation.createRipples();
+
+      // const getRipple = (thumb: Thumb) => {
+      //   return thumb === Thumb.END ? ripples[ripples.length - 1] : ripples[0];
+      // };
+
       return new MDCSliderFoundation({
         hasClass: (className: string) => rootEl.hasClass(className),
         addClass: (className: string) => rootEl.addClass(className),
         removeClass: (className: string) => rootEl.removeClass(className),
+        addThumbClass: (className, thumb: Thumb) => {
+          getThumbEl(thumb).classList.add(className);
+        },
+        removeThumbClass: (className, thumb: Thumb) => {
+          getThumbEl(thumb).classList.remove(className);
+        },
         getAttribute: (name: string) =>
           rootEl.getProp(name as any) as string | null,
-        setAttribute: debounce(
-          (name: string, value: any) => rootEl.setProp(name as any, value),
-          300
-        ),
-        removeAttribute: (name: string) => rootEl.removeProp(name as any),
-        computeBoundingRect: () =>
-          rootEl.ref ? rootEl.ref.getBoundingClientRect() : emptyClientRect,
-        getTabIndex: () => (rootEl.ref ? rootEl.ref.tabIndex : 0),
-        registerInteractionHandler: <K extends EventType>(
-          evtType: K,
-          handler: SpecificEventListener<K>
-        ): void => {
-          rootEl.addEventListener(evtType, handler);
+        getInputValue: (thumb: Thumb) => getInput(thumb).value,
+        setInputValue: (value: string, thumb: Thumb) => {
+          getInput(thumb).value = value;
         },
-        deregisterInteractionHandler: <K extends EventType>(
-          evtType: K,
-          handler: SpecificEventListener<K>
-        ): void => {
-          rootEl.removeEventListener(evtType, handler);
+        getInputAttribute: (attribute, thumb: Thumb) =>
+          getInput(thumb).getAttribute(attribute),
+        setInputAttribute: (attribute, value, thumb: Thumb) => {
+          getInput(thumb).setAttribute(attribute, value);
         },
-        registerThumbContainerInteractionHandler: <K extends EventType>(
-          evtType: K,
-          handler: SpecificEventListener<K>
-        ): void => {
-          thumbContainerEl.addEventListener(evtType, handler);
+        removeInputAttribute: (attribute, thumb: Thumb) => {
+          getInput(thumb).removeAttribute(attribute);
         },
-        deregisterThumbContainerInteractionHandler: <K extends EventType>(
-          evtType: K,
-          handler: SpecificEventListener<K>
-        ): void => {
-          thumbContainerEl.removeEventListener(evtType, handler);
+        focusInput: (thumb: Thumb) => {
+          getInput(thumb).focus();
         },
-        registerBodyInteractionHandler: <K extends EventType>(
-          evtType: K,
-          handler: SpecificEventListener<K>
-        ): void => {
-          document.body && document.body.addEventListener(evtType, handler);
+        isInputFocused: (thumb: Thumb) =>
+          getInput(thumb) === document.activeElement,
+        shouldHideFocusStylesForPointerEvents: () => false,
+        getThumbKnobWidth: (thumb: Thumb) => {
+          return getThumbEl(thumb)
+            .querySelector<HTMLElement>(`.${cssClasses.THUMB_KNOB}`)!
+            .getBoundingClientRect().width;
         },
-        deregisterBodyInteractionHandler: <K extends EventType>(
-          evtType: K,
-          handler: SpecificEventListener<K>
-        ): void => {
-          document.body && document.body.removeEventListener(evtType, handler);
-        },
-        registerResizeHandler: (
-          handler: SpecificEventListener<'resize'>
-        ): void => {
-          window.addEventListener('resize', handler);
-        },
-        deregisterResizeHandler: (
-          handler: SpecificEventListener<'resize'>
-        ): void => {
-          window.removeEventListener('resize', handler);
-        },
-        notifyInput: () => {
-          emit('onInput', { value: foundation.getValue() });
-        },
-        notifyChange: () => {
-          emit('onChange', { value: foundation.getValue() });
-        },
-        setThumbContainerStyleProperty: (propertyName: string, value: any) => {
-          thumbContainerEl.setStyle(propertyName, value);
-        },
-        setTrackStyleProperty: (propertyName: string, value: any) => {
-          trackRef.current?.style.setProperty(propertyName, value);
-        },
-        setMarkerValue: (value: number) => {
-          sliderPinEl.setProp('value', value);
-        },
-
-        setTrackMarkers: (step: number, max: number, min: number) => {
-          const stepStr = step.toLocaleString();
-          const maxStr = max.toLocaleString();
-          const minStr = min.toLocaleString();
-          // keep calculation in css for better rounding/subpixel behavior
-          const markerAmount = `((${maxStr} - ${minStr}) / ${stepStr})`;
-          const markerWidth = `2px`;
-          const markerBkgdImage = `linear-gradient(to right, currentColor ${markerWidth}, transparent 0)`;
-          const markerBkgdLayout = `0 center / calc((100% - ${markerWidth}) / ${markerAmount}) 100% repeat-x`;
-          const markerBkgdShorthand = `${markerBkgdImage} ${markerBkgdLayout}`;
-          trackmarkerContainerRef.current?.style.setProperty(
-            'background',
-            markerBkgdShorthand
-          );
+        getThumbBoundingClientRect: (thumb: Thumb) =>
+          getThumbEl(thumb).getBoundingClientRect(),
+        getBoundingClientRect: () =>
+          rootEl.ref?.getBoundingClientRect() ?? emptyClientRect,
+        getValueIndicatorContainerWidth: (thumb: Thumb) => {
+          return getThumbEl(thumb)
+            .querySelector<HTMLElement>(
+              `.${cssClasses.VALUE_INDICATOR_CONTAINER}`
+            )!
+            .getBoundingClientRect().width;
         },
         isRTL: () =>
-          !!rootEl.ref && getComputedStyle(rootEl.ref).direction === 'rtl'
+          !!rootEl.ref && getComputedStyle(rootEl.ref).direction === 'rtl',
+        setThumbStyleProperty: (propertyName, value, thumb: Thumb) => {
+          getThumbEl(thumb).style.setProperty(propertyName, value);
+        },
+        removeThumbStyleProperty: (propertyName, thumb: Thumb) => {
+          getThumbEl(thumb).style.removeProperty(propertyName);
+        },
+        setTrackActiveStyleProperty: (propertyName, value) => {
+          // TODO: is trackRef correct?
+          trackRef.current?.style.setProperty(propertyName, value);
+        },
+        removeTrackActiveStyleProperty: (propertyName) => {
+          // TODO: is trackRef correct?
+          trackRef.current?.style.removeProperty(propertyName);
+        },
+        setValueIndicatorText: (value: number, thumb: Thumb) => {
+          const valueIndicatorEl = getThumbEl(thumb).querySelector<HTMLElement>(
+            `.${cssClasses.VALUE_INDICATOR_TEXT}`
+          );
+          valueIndicatorEl!.textContent = String(value);
+        },
+        // getValueToAriaValueTextFn: () => valueToAriaValueTextFn, // TODO
+        updateTickMarks: (tickMarks: TickMark[]) => {
+          let tickMarksContainer = rootEl.ref?.querySelector<HTMLElement>(
+            `.${cssClasses.TICK_MARKS_CONTAINER}`
+          );
+          if (!tickMarksContainer) {
+            tickMarksContainer = document.createElement('div');
+            tickMarksContainer.classList.add(cssClasses.TICK_MARKS_CONTAINER);
+            const track = rootEl.ref?.querySelector<HTMLElement>(
+              `.${cssClasses.TRACK}`
+            );
+            track!.appendChild(tickMarksContainer);
+          }
+
+          if (tickMarks.length !== tickMarksContainer.children.length) {
+            while (tickMarksContainer.firstChild) {
+              tickMarksContainer.removeChild(tickMarksContainer.firstChild);
+            }
+            addTickMarks(tickMarksContainer, tickMarks);
+          } else {
+            updateTickMarks(tickMarksContainer, tickMarks);
+          }
+        },
+        setPointerCapture: (pointerId) => {
+          rootEl.ref?.setPointerCapture(pointerId);
+        },
+        emitChangeEvent: (value, thumb: Thumb) => {
+          emit(events.CHANGE, {
+            value,
+            thumb
+          });
+        },
+        emitInputEvent: (value, thumb: Thumb) => {
+          emit(events.INPUT, { value, thumb });
+        },
+        // emitDragStartEvent: (_, thumb: Thumb) => {
+        //   // Emitting event is not yet implemented. See issue:
+        //   // https://github.com/material-components/material-components-web/issues/6448
+
+        //   getRipple(thumb).activate();
+        // },
+        // emitDragEndEvent: (_, thumb: Thumb) => {
+        //   // Emitting event is not yet implemented. See issue:
+        //   // https://github.com/material-components/material-components-web/issues/6448
+
+        //   getRipple(thumb).deactivate();
+        // },
+        registerEventHandler: (evtType, handler) => {
+          rootEl.addEventListener(evtType, handler);
+        },
+        deregisterEventHandler: (evtType, handler) => {
+          rootEl.removeEventListener(evtType, handler);
+        },
+        registerThumbEventHandler: (thumb, evtType, handler) => {
+          getThumbEl(thumb).addEventListener(evtType, handler);
+        },
+        deregisterThumbEventHandler: (thumb, evtType, handler) => {
+          getThumbEl(thumb).removeEventListener(evtType, handler);
+        },
+        registerInputEventHandler: (thumb, evtType, handler) => {
+          getInput(thumb).addEventListener(evtType, handler);
+        },
+        deregisterInputEventHandler: (thumb, evtType, handler) => {
+          getInput(thumb).removeEventListener(evtType, handler);
+        },
+        registerBodyEventHandler: (evtType, handler) => {
+          document.body.addEventListener(evtType, handler);
+        },
+        deregisterBodyEventHandler: (evtType, handler) => {
+          document.body.removeEventListener(evtType, handler);
+        },
+        registerWindowEventHandler: (evtType, handler) => {
+          window.addEventListener(evtType, handler);
+        },
+        deregisterWindowEventHandler: (evtType, handler) => {
+          window.removeEventListener(evtType, handler);
+        }
       });
     }
   });
@@ -189,7 +299,7 @@ export const useSliderFoundation = (
     ) {
       // @ts-ignore unsafe private variable access
       foundation.hasTrackMarker_ = props.displayMarkers;
-      window.requestAnimationFrame(() => foundation.setupTrackMarker());
+      // window.requestAnimationFrame(() => foundation.setupTrackMarker());
     }
   }, [props.displayMarkers, foundation]);
 

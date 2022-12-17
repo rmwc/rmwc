@@ -64,12 +64,12 @@ export const List = createComponent<ListProps>(function List(props, ref) {
     wrapFocus
   });
   const className = useClassNames(props, [
-    'mdc-list',
+    'mdc-deprecated-list',
     {
-      'mdc-list--dense': dense,
-      'mdc-list--two-line': twoLine,
-      'mdc-list--avatar-list': avatarList,
-      'mdc-list--non-interactive': nonInteractive
+      'mdc-deprecated-list--dense': dense,
+      'mdc-deprecated-list--two-line': twoLine,
+      'mdc-deprecated-list--avatar-list': avatarList,
+      'mdc-deprecated-list--non-interactive': nonInteractive
     }
   ]);
   return (
