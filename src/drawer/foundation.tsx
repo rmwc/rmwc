@@ -48,7 +48,7 @@ const useDrawerFoundationFactory = (
           },
           focusActiveNavigationItem: () => {
             const activeNavItemEl = rootEl.ref?.querySelector(
-              `.mdc-list-item--activated`
+              `.mdc-deprecated-list-item--activated`
             );
             if (activeNavItemEl) {
               (activeNavItemEl as HTMLElement).focus();

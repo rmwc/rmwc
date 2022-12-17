@@ -1,5 +1,10 @@
 import React, { useEffect, useCallback } from 'react';
-import { MDCListFoundation, MDCListAdapter } from '@material/list';
+import {
+  MDCListFoundation,
+  MDCListAdapter,
+  strings,
+  deprecatedClassNameMap
+} from '@material/list';
 import { matches, FoundationElement } from '@rmwc/base';
 import { useFoundation } from '@rmwc/base';
 import { ListProps, ListApi } from './list';
@@ -8,11 +13,37 @@ export const useListFoundation = (props: ListProps & React.HTMLProps<any>) => {
   const listElements = useCallback((el: Element | null): HTMLLIElement[] => {
     if (el) {
       return [].slice.call(
-        el.querySelectorAll(`.${MDCListFoundation.cssClasses.LIST_ITEM_CLASS}`)
+        el.querySelectorAll(
+          `.${
+            deprecatedClassNameMap[MDCListFoundation.cssClasses.LIST_ITEM_CLASS]
+          }`
+        )
       );
     }
     return [];
   }, []);
+
+  const getPrimaryText = (item: Element): string => {
+    const primaryText = item.querySelector(
+      `.${
+        deprecatedClassNameMap[
+          MDCListFoundation.cssClasses.LIST_ITEM_PRIMARY_TEXT_CLASS
+        ]
+      }`
+    );
+    if (primaryText) {
+      return primaryText?.textContent ?? '';
+    }
+
+    const singleLineText = item.querySelector(
+      `.${
+        deprecatedClassNameMap[
+          MDCListFoundation.cssClasses.LIST_ITEM_TEXT_CLASS
+        ]
+      }`
+    );
+    return (singleLineText && singleLineText.textContent) || '';
+  };
 
   const { foundation, ...elements } = useFoundation({
     props,
@@ -27,7 +58,8 @@ export const useListFoundation = (props: ListProps & React.HTMLProps<any>) => {
       return {
         listElements: () => listElements(rootEl.ref),
         focusRoot: () => rootEl.ref && rootEl.ref.focus(),
-        getClasses: () => MDCListFoundation.cssClasses.LIST_ITEM_CLASS,
+        getClasses: () =>
+          deprecatedClassNameMap[MDCListFoundation.cssClasses.LIST_ITEM_CLASS],
         addClassToElementIndex: adapter.addClassForElementIndex,
         removeClassFromElementAtIndex: adapter.removeClassForElementIndex,
         setAttributeForElementIndex: adapter.setAttributeForElementIndex,
@@ -47,9 +79,13 @@ export const useListFoundation = (props: ListProps & React.HTMLProps<any>) => {
           listElements(rootEl.ref).indexOf(
             document.activeElement as HTMLLIElement
           ),
+        getAttributeForElementIndex: (index, attr) =>
+          listElements(rootEl.ref)[index].getAttribute(attr),
         listItemAtIndexHasClass: (index: number, className: string) => {
           const element = listElements(rootEl.ref)[index];
-          return !!element?.classList.contains(className);
+          return !!element?.classList.contains(
+            deprecatedClassNameMap[className]
+          );
         },
         setAttributeForElementIndex: (
           index: number,
@@ -74,13 +110,13 @@ export const useListFoundation = (props: ListProps & React.HTMLProps<any>) => {
         addClassForElementIndex: (index: number, className: string) => {
           const element = listElements(rootEl.ref)[index];
           if (element) {
-            element.classList.add(className);
+            element.classList.add(deprecatedClassNameMap[className]);
           }
         },
         removeClassForElementIndex: (index: number, className: string) => {
           const element = listElements(rootEl.ref)[index];
           if (element) {
-            element.classList.remove(className);
+            element.classList.remove(deprecatedClassNameMap[className]);
           }
         },
         focusItemAtIndex: (index: number) => {
@@ -140,13 +176,15 @@ export const useListFoundation = (props: ListProps & React.HTMLProps<any>) => {
             toggleEl.dispatchEvent(event);
           }
         },
-        notifyAction: (index: number) => {
-          emit('onAction', { index });
-        },
+        notifyAction: (index: number) => emit('onAction', { index }),
+        notifySelectionChange: (changedIndices: number[]) =>
+          emit(strings.SELECTION_CHANGE_EVENT, { changedIndices }, true),
         isFocusInsideList: () => {
           return !!rootEl.ref?.contains(document.activeElement);
         },
-        isRootFocused: () => document.activeElement === rootEl.ref
+        isRootFocused: () => document.activeElement === rootEl.ref,
+        getPrimaryTextAtIndex: (index) =>
+          getPrimaryText(listElements(rootEl.ref)[index])
       });
     }
   });
@@ -166,9 +204,11 @@ export const useListFoundation = (props: ListProps & React.HTMLProps<any>) => {
       while (
         eventTarget &&
         !eventTarget.classList.contains(
-          MDCListFoundation.cssClasses.LIST_ITEM_CLASS
+          deprecatedClassNameMap[MDCListFoundation.cssClasses.LIST_ITEM_CLASS]
         ) &&
-        !eventTarget.classList.contains(MDCListFoundation.cssClasses.ROOT)
+        !eventTarget.classList.contains(
+          deprecatedClassNameMap[MDCListFoundation.cssClasses.ROOT]
+        )
       ) {
         eventTarget = eventTarget.parentElement as HTMLLIElement;
       }
@@ -177,7 +217,7 @@ export const useListFoundation = (props: ListProps & React.HTMLProps<any>) => {
       if (
         eventTarget &&
         eventTarget.classList.contains(
-          MDCListFoundation.cssClasses.LIST_ITEM_CLASS
+          deprecatedClassNameMap[MDCListFoundation.cssClasses.LIST_ITEM_CLASS]
         )
       ) {
         index = listElements(rootEl.ref).indexOf(eventTarget as HTMLLIElement);
@@ -218,7 +258,9 @@ export const useListFoundation = (props: ListProps & React.HTMLProps<any>) => {
           evt,
           evt.target instanceof Element &&
             evt.target.classList.contains(
-              MDCListFoundation.cssClasses.LIST_ITEM_CLASS
+              deprecatedClassNameMap[
+                MDCListFoundation.cssClasses.LIST_ITEM_CLASS
+              ]
             ),
           index
         );
@@ -231,7 +273,7 @@ export const useListFoundation = (props: ListProps & React.HTMLProps<any>) => {
   const handleFocusIn = useCallback(
     (evt: React.FocusEvent & FocusEvent) => {
       onFocus?.(evt);
-      foundation.handleFocusIn(evt, getListItemIndex(evt));
+      foundation.handleFocusIn(getListItemIndex(evt));
     },
     [getListItemIndex, foundation, onFocus]
   );
@@ -240,7 +282,7 @@ export const useListFoundation = (props: ListProps & React.HTMLProps<any>) => {
   const handleFocusOut = useCallback(
     (evt: React.FocusEvent & FocusEvent) => {
       onBlur?.(evt);
-      foundation.handleFocusOut(evt, getListItemIndex(evt));
+      foundation.handleFocusOut(getListItemIndex(evt));
     },
     [getListItemIndex, foundation, onBlur]
   );

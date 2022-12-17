@@ -295,11 +295,11 @@ ul {
   height: calc(100vh - 15rem);
 }
 
-#main-nav .mdc-list-item:before {
+#main-nav .mdc-deprecated-list-item:before {
   pointer-events: none;
 }
 
-#main-nav .mdc-list-item {
+#main-nav .mdc-deprecated-list-item {
   box-sizing: border-box;
 }
 

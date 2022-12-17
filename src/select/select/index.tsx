@@ -235,7 +235,7 @@ function EnhancedMenu(props: EnhancedMenuProps & SelectHTMLProps) {
         {...option}
         data-value={option.value}
       >
-        <span className="mdc-list-item__text">{label}</span>
+        <span className="mdc-deprecated-list-item__text">{label}</span>
       </MenuItem>
     );
   };
@@ -248,7 +248,7 @@ function EnhancedMenu(props: EnhancedMenuProps & SelectHTMLProps) {
           data-value=""
           theme="textDisabledOnBackground"
         >
-          <span className="mdc-list-item__text">{placeholder}</span>
+          <span className="mdc-deprecated-list-item__text">{placeholder}</span>
         </MenuItem>
       )}
 

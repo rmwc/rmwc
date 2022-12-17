@@ -305,14 +305,26 @@ export const galleryExample = (
     className="mdc-menu  mdc-menu-surface--open mdc-menu-surface"
     style={{ position: 'static' }}
   >
-    <div role="menu" className="mdc-list mdc-menu__items mdc-list">
-      <div role="menuitem" className="mdc-ripple-upgraded mdc-list-item">
+    <div
+      role="menu"
+      className="mdc-deprecated-list mdc-menu__items mdc-deprecated-list"
+    >
+      <div
+        role="menuitem"
+        className="mdc-ripple-upgraded mdc-deprecated-list-item"
+      >
         Cookies
       </div>
-      <div role="menuitem" className="mdc-ripple-upgraded mdc-list-item">
+      <div
+        role="menuitem"
+        className="mdc-ripple-upgraded mdc-deprecated-list-item"
+      >
         Pizza
       </div>
-      <div role="menuitem" className="mdc-ripple-upgraded mdc-list-item">
+      <div
+        role="menuitem"
+        className="mdc-ripple-upgraded mdc-deprecated-list-item"
+      >
         Icecream
       </div>
     </div>

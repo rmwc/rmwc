@@ -8,11 +8,11 @@ import {
 } from '@rmwc/base';
 import {
   MDCMenuSurfaceFoundation,
-  util,
   MDCMenuDimensions,
   Corner,
   MDCMenuDistance
 } from '@material/menu-surface';
+import { getCorrectPropertyName } from '@material/animation/util';
 import { MenuSurfaceProps, MenuSurfaceApi } from '.';
 
 const ANCHOR_CORNER_MAP: {
@@ -92,21 +92,21 @@ export const useMenuSurfaceFoundation = (
                 previousFocusRef.current.focus();
               }
             }
-          },
-          isFirstElementFocused: () =>
-            !!firstFocusableElementRef.current &&
-            firstFocusableElementRef.current === document.activeElement,
-          isLastElementFocused: () =>
-            !!firstFocusableElementRef.current &&
-            firstFocusableElementRef.current === document.activeElement,
-          focusFirstElement: () =>
-            !!firstFocusableElementRef.current &&
-            firstFocusableElementRef.current.focus &&
-            firstFocusableElementRef.current.focus(),
-          focusLastElement: () =>
-            !!firstFocusableElementRef.current &&
-            firstFocusableElementRef.current.focus &&
-            firstFocusableElementRef.current.focus()
+          }
+          // isFirstElementFocused: () =>
+          //   !!firstFocusableElementRef.current &&
+          //   firstFocusableElementRef.current === document.activeElement,
+          // isLastElementFocused: () =>
+          //   !!firstFocusableElementRef.current &&
+          //   firstFocusableElementRef.current === document.activeElement,
+          // focusFirstElement: () =>
+          //   !!firstFocusableElementRef.current &&
+          //   firstFocusableElementRef.current.focus &&
+          //   firstFocusableElementRef.current.focus(),
+          // focusLastElement: () =>
+          //   !!firstFocusableElementRef.current &&
+          //   firstFocusableElementRef.current.focus &&
+          //   firstFocusableElementRef.current.focus()
         };
       };
 
@@ -177,20 +177,25 @@ export const useMenuSurfaceFoundation = (
           deregisterBodyClickListener();
           setOpen(false);
         },
+        notifyClosing: () =>
+          emit(MDCMenuSurfaceFoundation.strings.CLOSING_EVENT, {}),
         notifyOpen: () => {
           emit('onOpen', {});
           registerBodyClickListener();
         },
+        notifyOpening: () =>
+          emit(MDCMenuSurfaceFoundation.strings.OPENING_EVENT, {}),
         isElementInContainer: (el: HTMLElement) =>
           rootEl.ref === el || (!!rootEl.ref && rootEl.ref.contains(el)),
         isRtl: () =>
           !!rootEl.ref &&
           getComputedStyle(rootEl.ref).getPropertyValue('direction') === 'rtl',
         setTransformOrigin: (origin: string) => {
-          rootEl.setStyle(
-            `${util.getTransformPropertyName(window)}-origin`,
-            origin
-          );
+          const propertyName = `${getCorrectPropertyName(
+            window,
+            'transform'
+          )}-origin`;
+          rootEl.setStyle(propertyName, origin);
         },
         ...getFocusAdapterMethods(),
         ...getDimensionAdapterMethods()

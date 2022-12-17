@@ -20,17 +20,16 @@ export const ListItem = withRipple({ surface: false })(
   createComponent<ListItemProps>(function ListItem(props, ref) {
     const { selected, activated, disabled, ...rest } = props;
     const className = useClassNames(props, [
-      'mdc-list-item',
+      'mdc-deprecated-list-item',
       {
-        'mdc-list-item--selected': props.selected,
-        'mdc-list-item--activated': props.activated,
-        'mdc-list-item--disabled': props.disabled,
-        'rmwc-list-item__disabled': props.disabled
+        'mdc-deprecated-list-item--selected': props.selected,
+        'mdc-deprecated-list-item--activated': props.activated,
+        'mdc-deprecated-list-item--disabled': props.disabled
       }
     ]);
     return (
       <Tag tag="li" tabIndex={0} {...rest} className={className} ref={ref}>
-        <RippleSurface className="mdc-list-item__ripple" />
+        <RippleSurface className="mdc-deprecated-list-item__ripple" />
         {rest.children}
       </Tag>
     );
@@ -43,7 +42,7 @@ export interface ListItemTextProps {}
 /** Text Wrapper for the ListItem */
 export const ListItemText = createComponent<ListItemTextProps>(
   function ListItemText(props, ref) {
-    const className = useClassNames(props, ['mdc-list-item__text']);
+    const className = useClassNames(props, ['mdc-deprecated-list-item__text']);
     return <Tag tag="span" {...props} ref={ref} className={className} />;
   }
 );
@@ -54,7 +53,9 @@ export interface ListItemPrimaryTextProps {}
 /** Primary Text for the ListItem */
 export const ListItemPrimaryText = createComponent<ListItemPrimaryTextProps>(
   function ListItemPrimaryText(props, ref) {
-    const className = useClassNames(props, ['mdc-list-item__primary-text']);
+    const className = useClassNames(props, [
+      'mdc-deprecated-list-item__primary-text'
+    ]);
     return <Tag tag="span" {...props} ref={ref} className={className} />;
   }
 );
@@ -68,7 +69,9 @@ export const ListItemSecondaryText =
     props,
     ref
   ) {
-    const className = useClassNames(props, ['mdc-list-item__secondary-text']);
+    const className = useClassNames(props, [
+      'mdc-deprecated-list-item__secondary-text'
+    ]);
     return <Tag tag="span" {...props} ref={ref} className={className} />;
   });
 
@@ -78,7 +81,9 @@ export interface ListItemGraphicProps extends IconProps {}
 /** A graphic / icon for the ListItem */
 export const ListItemGraphic = createComponent<ListItemGraphicProps>(
   function ListItemGraphic(props, ref) {
-    const className = useClassNames(props, ['mdc-list-item__graphic']);
+    const className = useClassNames(props, [
+      'mdc-deprecated-list-item__graphic'
+    ]);
     return (
       <Icon {...props} aria-hidden="true" ref={ref} className={className} />
     );
@@ -91,7 +96,7 @@ export interface ListItemMetaProps extends IconProps {}
 /** Meta content for the ListItem. This can either by an icon by setting the `icon` prop, or any other kind of content. */
 export const ListItemMeta = createComponent<ListItemMetaProps>(
   function ListItemMeta(props, ref) {
-    const className = useClassNames(props, ['mdc-list-item__meta']);
+    const className = useClassNames(props, ['mdc-deprecated-list-item__meta']);
 
     if (!!props.icon) {
       return (
@@ -120,7 +125,7 @@ export const ListGroup = createComponent<ListGroupProps>(function ListGroup(
   props,
   ref
 ) {
-  const className = useClassNames(props, ['mdc-list-group']);
+  const className = useClassNames(props, ['mdc-deprecated-list-group']);
   return <Tag {...props} ref={ref} className={className} />;
 });
 
@@ -130,7 +135,9 @@ export interface ListGroupSubheaderProps {}
 /** A subheader for the ListGroup */
 export const ListGroupSubheader = createComponent<ListGroupSubheaderProps>(
   function ListGroupSubheader(props, ref) {
-    const className = useClassNames(props, ['mdc-list-group__subheader']);
+    const className = useClassNames(props, [
+      'mdc-deprecated-list-group__subheader'
+    ]);
     return <Tag {...props} ref={ref} className={className} />;
   }
 );
@@ -141,7 +148,7 @@ export interface ListDividerProps {}
 /** A divider for the List */
 export const ListDivider = createComponent<ListDividerProps>(
   function ListDivider(props, ref) {
-    const className = useClassNames(props, ['mdc-list-divider']);
+    const className = useClassNames(props, ['mdc-deprecated-list-divider']);
     return (
       <Tag
         tag="li"
@@ -190,7 +197,7 @@ export const SimpleListItem = createComponent<SimpleListItemProps>(
 
     return (
       <ListItem {...rest} ref={ref}>
-        <RippleSurface className="mdc-list-item__ripple" />
+        <RippleSurface className="mdc-deprecated-list-item__ripple" />
         {graphic !== undefined && <ListItemGraphic icon={graphic} />}
         {secondaryTextToRender !== null ? (
           <ListItemText>

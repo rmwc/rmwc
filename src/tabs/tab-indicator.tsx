@@ -13,9 +13,9 @@ export interface TabIndicatorProps {
 }
 
 export type TabIndicatorApi = {
-  activate: (previousIndicatorClientRect?: ClientRect) => void;
+  activate: (previousIndicatorClientRect?: DOMRect) => void;
   deactivate: () => void;
-  computeContentClientRect: () => ClientRect;
+  computeContentClientRect: () => DOMRect;
 };
 
 export function TabIndicator(

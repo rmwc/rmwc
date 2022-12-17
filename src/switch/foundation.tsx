@@ -8,9 +8,10 @@ import { useFoundation } from '@rmwc/base';
 import { MDCSwitchFoundation, MDCSwitchAdapter } from '@material/switch';
 
 export const useSwitchFoundation = (props: SwitchProps & SwitchHTMLProps) => {
-  const { renderToggle, toggleRootProps, id } = useToggleFoundation<
-    MDCSwitchFoundation
-  >(props);
+  const { renderToggle, toggleRootProps, id } =
+    useToggleFoundation<MDCSwitchFoundation>(props);
+
+  const [selected, setSelected] = React.useState(false);
 
   const { foundation, ...elements } = useFoundation({
     props,
@@ -18,53 +19,38 @@ export const useSwitchFoundation = (props: SwitchProps & SwitchHTMLProps) => {
       rootEl: true,
       checkboxEl: true
     },
-    foundation: ({ rootEl, checkboxEl }) => {
+    foundation: ({ rootEl }) => {
       return new MDCSwitchFoundation({
         addClass: (className: string) => rootEl.addClass(className),
+        hasClass: (className: string) => rootEl.hasClass(className),
+        isDisabled: () => props.disabled,
         removeClass: (className: string) => rootEl.removeClass(className),
-        setNativeControlChecked: (checked: boolean) =>
-          checkboxEl.setProp('checked', checked),
-        setNativeControlDisabled: (disabled: boolean) =>
-          checkboxEl.setProp('disabled', disabled),
-        setNativeControlAttr: (attr: string, value: string) =>
-          rootEl.setProp(attr as any, value)
+        setAriaChecked: (ariaChecked: string) =>
+          rootEl.ref?.setAttribute('aria-checked', ariaChecked),
+        setDisabled: (disabled: boolean) => {
+          rootEl.setProp('disabled', disabled);
+        },
+        state: {
+          disabled: false,
+          processing: false,
+          selected: false
+        }
       } as MDCSwitchAdapter);
     }
   });
 
-  const { checkboxEl } = elements;
+  const { rootEl } = elements;
 
-  // On mount, sync the values with the native checkbox
-  useEffect(() => {
-    checkboxEl.ref &&
-      (foundation as any).updateCheckedStyling_(
-        (checkboxEl.ref as HTMLInputElement).checked
-      );
-    checkboxEl.ref &&
-      foundation.setDisabled((checkboxEl.ref as HTMLInputElement).disabled);
-  }, [checkboxEl.ref, foundation]);
-
-  // sync checked
-  useEffect(() => {
-    if (props.checked !== undefined) {
-      (foundation as any).updateCheckedStyling_(props.checked);
-    }
-  }, [props.checked, foundation]);
-
-  // sync disabled
-  useEffect(() => {
-    if (props.disabled !== undefined) {
-      foundation.setDisabled(props.disabled);
-    }
-  }, [props.disabled, foundation]);
-
-  // Callback handling
-  const handleOnChange = (evt: React.ChangeEvent<HTMLInputElement>) => {
-    foundation.handleChange(evt as any);
-    props.onChange?.(evt);
+  const handleOnClick = (
+    evt: React.MouseEvent<HTMLInputElement, MouseEvent>
+  ) => {
+    foundation.handleClick();
+    setSelected((c) => !c);
+    rootEl.setProp('checked', selected);
+    props.onClick?.(evt);
   };
 
-  checkboxEl.setProp('onChange', handleOnChange, true);
+  rootEl.setProp('onClick', handleOnClick, true);
 
   return { foundation, renderToggle, toggleRootProps, id, ...elements };
 };

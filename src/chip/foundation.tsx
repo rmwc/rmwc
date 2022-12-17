@@ -1,16 +1,17 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import * as RMWC from '@rmwc/types';
 import { ChipProps, ChipHTMLProps } from './';
-import { useId, emptyClientRect } from '@rmwc/base';
 import { useFoundation } from '@rmwc/base';
-import { MDCChipFoundation, MDCChipAdapter } from '@material/chips';
-import { EventSource } from '@material/chips/chip/constants';
-import React, { useEffect, useCallback, useRef } from 'react';
+import {
+  MDCChipFoundation,
+  MDCChipAdapter,
+  MDCChipActionType,
+  MDCChipActionFocusBehavior
+} from '@material/chips';
+import React, { useCallback, useRef } from 'react';
 import { TrailingActionApi } from './trailing-action';
 
 export const useChipFoundation = (props: ChipProps & ChipHTMLProps) => {
-  const chipId = useId('chip', props);
-
   const trailingAction = useRef<TrailingActionApi | null>();
   const setTrailingAction = (api: TrailingActionApi | null) => {
     trailingAction.current = api;
@@ -24,79 +25,54 @@ export const useChipFoundation = (props: ChipProps & ChipHTMLProps) => {
       checkmarkEl: true,
       trailingActionEl: true
     },
-    foundation: ({ rootEl, checkmarkEl, emit, getProps, trailingActionEl }) =>
-      new MDCChipFoundation({
+    foundation: ({ rootEl, checkmarkEl, emit, getProps, trailingActionEl }) => {
+      const rootHTML = rootEl.ref as HTMLElement;
+      const actions = new Map();
+      return new MDCChipFoundation({
         addClass: (className) => {
           rootEl.addClass(className);
         },
-        removeClass: (className) => rootEl.removeClass(className),
-        hasClass: (className) => rootEl.hasClass(className),
-        addClassToLeadingIcon: (className) => {
-          // handled by props
+        emitEvent: (eventName, eventDetail) => {
+          emit(eventName, eventDetail, true);
         },
-        removeClassFromLeadingIcon: (className) => {
-          // handled by props
-        },
-        eventTargetHasClass: (target: HTMLElement, className) => {
-          return (
-            rootEl.hasClass(className) || target.classList.contains(className)
-          );
-        },
-        notifyInteraction: () =>
-          emit('onInteraction', { chipId }, true /* shouldBubble */),
-        notifySelection: (selected) =>
-          emit(
-            'onSelect',
-            { chipId, selected: selected },
-            true /* shouldBubble */
-          ),
-        notifyTrailingIconInteraction: () =>
-          emit(
-            'onTrailingIconInteraction',
-            { chipId },
-            true /* shouldBubble */
-          ),
-        notifyRemoval: () =>
-          emit(
-            'onRemove',
-            { chipId, root: rootEl.ref },
-            true /* shouldBubble */
-          ),
-        notifyNavigation: (key: string, source: EventSource) => {
-          //TODO, but probably not needed in case of React
-        },
-        getComputedStyleValue: (propertyName) =>
-          rootEl.ref
-            ? window.getComputedStyle(rootEl.ref).getPropertyValue(propertyName)
-            : '',
-        setStyleProperty: (propertyName, value) => {
-          rootEl.setStyle(propertyName, value);
+        getActions: () => {
+          const actions: MDCChipActionType[] = [];
+          for (const key of actions) {
+            actions.push(key);
+          }
+          return actions;
         },
         getAttribute: (attrName) => rootEl.ref?.getAttribute(attrName),
-        hasLeadingIcon: () => !!props.icon,
-        getRootBoundingClientRect: () =>
-          rootEl.ref?.getBoundingClientRect() || emptyClientRect,
-        getCheckmarkBoundingClientRect: () =>
-          checkmarkEl.ref?.getBoundingClientRect() || emptyClientRect,
-        setPrimaryActionAttr: (attr: string, value: string) => {
-          // Not clear in documentation what this should be used for
+        getElementID: () => rootHTML.id,
+        getOffsetWidth: () => rootHTML.offsetWidth,
+        hasClass: (className) => rootEl.hasClass(className),
+        isActionSelectable: (actionType: MDCChipActionType) => {
+          const action = actions.get(actionType);
+          if (action) {
+            return action.isSelectable();
+          }
+          return false;
         },
-        focusPrimaryAction: () => {
-          // Not clear in documentation what this should be used for
+        isActionSelected: (actionType: MDCChipActionType) => {
+          const action = actions.get(actionType);
+          if (action) {
+            return action.isSelected();
+          }
+          return false;
         },
-        setTrailingActionAttr: (attr: string, value: string) => {
-          const safeAttr = attr === 'tabindex' ? 'tabIndex' : attr;
-          return trailingActionEl.setProp(safeAttr as any, value);
+        isActionFocusable: (actionType: MDCChipActionType) => {
+          const action = actions.get(actionType);
+          if (action) {
+            return action.isFocusable();
+          }
+          return false;
         },
-
-        focusTrailingAction: () => {
-          return trailingActionEl.ref?.focus();
-        },
-        removeTrailingActionFocus: () => {
-          return trailingAction.current?.getFoundation().removeFocus();
-        },
-        isTrailingActionNavigable: () => {
-          return trailingAction.current?.getFoundation().isNavigable();
+        isActionDisabled: (actionType: MDCChipActionType) => {
+          const action = actions.get(actionType);
+          if (action) {
+            return action.isDisabled();
+          }
+          return false;
         },
         isRTL: () => {
           return rootEl.ref
@@ -105,16 +81,42 @@ export const useChipFoundation = (props: ChipProps & ChipHTMLProps) => {
                 .getPropertyValue('direction') === 'rtl'
             : false;
         },
-        notifyEditFinish: () => {
-          // NOT IMPLEMENTED IN MATERIAL 7
+        removeClass: (className) => rootEl.removeClass(className),
+        setActionDisabled: (
+          actionType: MDCChipActionType,
+          isDisabled: boolean
+        ) => {
+          const action = actions.get(actionType);
+          if (action) {
+            action.setDisabled(isDisabled);
+          }
         },
-        notifyEditStart: () => {
-          // NOT IMPLEMENTED IN MATERIAL 7
+        setActionFocus: (
+          actionType: MDCChipActionType,
+          behavior: MDCChipActionFocusBehavior
+        ) => {
+          const action = actions.get(actionType);
+          if (action) {
+            action.setFocus(behavior);
+          }
+        },
+        setActionSelected: (
+          actionType: MDCChipActionType,
+          isSelected: boolean
+        ) => {
+          const action = actions.get(actionType);
+          if (action) {
+            action.setSelected(isSelected);
+          }
+        },
+        setStyleProperty: (propertyName, value) => {
+          rootEl.setStyle(propertyName, value);
         }
-      } as MDCChipAdapter)
+      } as MDCChipAdapter);
+    }
   });
 
-  const { rootEl, trailingIconEl, foundation } = foundationWithElements;
+  const { rootEl, foundation } = foundationWithElements;
   const { onClick, onKeyDown } = props;
 
   const handleInteraction = useCallback(
@@ -123,34 +125,13 @@ export const useChipFoundation = (props: ChipProps & ChipHTMLProps) => {
     ) => {
       evt.type === 'click' && onClick?.(evt as any);
       evt.type === 'keydown' && onKeyDown?.(evt as any);
-      return foundation.handleClick();
+      return foundation.handleActionInteraction(evt as any);
     },
     [foundation, onClick, onKeyDown]
   );
 
-  const handleTransitionEnd = useCallback(
-    (evt: React.TransitionEvent & TransitionEvent) => {
-      foundation.handleTransitionEnd(evt);
-    },
-    [foundation]
-  );
-
-  const handleTrailingActionInteraction = useCallback(() => {
-    return foundation.handleTrailingActionInteraction();
-  }, [foundation]);
-
-  // Allow customizing the behavior of the trailing icon
-  useEffect(() => {
-    foundation.setShouldRemoveOnTrailingIconClick(
-      props.trailingIconRemovesChip ?? true
-    );
-  }, [foundation, props.trailingIconRemovesChip]);
-
   rootEl.setProp('onClick', handleInteraction, true);
   rootEl.setProp('onKeyDown', handleInteraction, true);
-  rootEl.setProp('onTransitionEnd', handleTransitionEnd, true);
-  trailingIconEl.setProp('onClick', handleTrailingActionInteraction, true);
-  trailingIconEl.setProp('onKeyDown', handleTrailingActionInteraction, true);
 
   return { setTrailingAction, ...foundationWithElements };
 };
