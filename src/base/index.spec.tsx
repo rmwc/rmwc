@@ -236,10 +236,11 @@ describe('Portal', () => {
     const { asFragment } = render(<Portal />);
     expect(asFragment()).toMatchSnapshot();
   });
-  it.skip('does not mount twice', async () => {
+  it('does not mount twice', async () => {
     const Content = ({ value, inc }: { value: number; inc: () => void }) => {
       React.useEffect(() => {
         inc();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
       }, []);
 
       return <span>{`Opened ${value} times`}</span>;
