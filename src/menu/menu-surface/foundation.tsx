@@ -33,7 +33,8 @@ const getAnchorCornerFromProp = (
 ) => MDCMenuSurfaceFoundation.Corner[ANCHOR_CORNER_MAP[anchorCorner]];
 
 export const useMenuSurfaceFoundation = (
-  props: MenuSurfaceProps & React.HTMLProps<any>
+  props: MenuSurfaceProps & React.HTMLProps<any>,
+  menuSurfaceWrapperRef: React.MutableRefObject<HTMLDivElement | null>
 ) => {
   const [open, setOpen] = useState(props.open);
   const firstFocusableElementRef = useRef<HTMLElement | null>(null);
@@ -240,7 +241,7 @@ export const useMenuSurfaceFoundation = (
 
   // on mount
   useEffect(() => {
-    const el = rootEl.ref;
+    const el = menuSurfaceWrapperRef?.current || rootEl.ref;
 
     if (el) {
       const anchor = closest(
@@ -249,7 +250,7 @@ export const useMenuSurfaceFoundation = (
       );
       anchor && (anchorElementRef.current = anchor);
     }
-  }, [rootEl.ref]);
+  }, [menuSurfaceWrapperRef, rootEl.ref]);
 
   // renderToPortal
   useEffect(() => {
