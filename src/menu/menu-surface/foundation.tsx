@@ -12,7 +12,7 @@ import {
   Corner,
   MDCMenuDistance
 } from '@material/menu-surface';
-import { getCorrectPropertyName } from '@material/animation/util';
+import { getCorrectPropertyName } from '@material/animation';
 import { MenuSurfaceProps, MenuSurfaceApi } from '.';
 
 const ANCHOR_CORNER_MAP: {
@@ -93,20 +93,6 @@ export const useMenuSurfaceFoundation = (
               }
             }
           }
-          // isFirstElementFocused: () =>
-          //   !!firstFocusableElementRef.current &&
-          //   firstFocusableElementRef.current === document.activeElement,
-          // isLastElementFocused: () =>
-          //   !!firstFocusableElementRef.current &&
-          //   firstFocusableElementRef.current === document.activeElement,
-          // focusFirstElement: () =>
-          //   !!firstFocusableElementRef.current &&
-          //   firstFocusableElementRef.current.focus &&
-          //   firstFocusableElementRef.current.focus(),
-          // focusLastElement: () =>
-          //   !!firstFocusableElementRef.current &&
-          //   firstFocusableElementRef.current.focus &&
-          //   firstFocusableElementRef.current.focus()
         };
       };
 
