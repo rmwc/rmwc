@@ -11,13 +11,14 @@ export const useSwitchFoundation = (props: SwitchProps & SwitchHTMLProps) => {
   const { renderToggle, toggleRootProps, id } =
     useToggleFoundation<MDCSwitchFoundation>(props);
 
+  const [disabled, setDisabled] = React.useState(false);
+  const [processing, setProcessing] = React.useState(false);
   const [selected, setSelected] = React.useState(false);
 
   const { foundation, ...elements } = useFoundation({
     props,
     elements: {
-      rootEl: true,
-      checkboxEl: true
+      rootEl: true
     },
     foundation: ({ rootEl }) => {
       return new MDCSwitchFoundation({
@@ -31,9 +32,9 @@ export const useSwitchFoundation = (props: SwitchProps & SwitchHTMLProps) => {
           rootEl.setProp('disabled', disabled);
         },
         state: {
-          disabled: false,
-          processing: false,
-          selected: false
+          disabled: disabled,
+          processing: processing,
+          selected: selected
         }
       } as MDCSwitchAdapter);
     }
@@ -41,16 +42,53 @@ export const useSwitchFoundation = (props: SwitchProps & SwitchHTMLProps) => {
 
   const { rootEl } = elements;
 
+  // sync checked
+  useEffect(() => {
+    if (props.checked !== undefined) {
+      setSelected(props.checked);
+    }
+  }, [props.checked]);
+
+  // sync defaultChecked
+  useEffect(() => {
+    if (props.defaultChecked !== undefined) {
+      setSelected(props.defaultChecked);
+    }
+  }, [props.defaultChecked]);
+
+  // sync disabled
+  useEffect(() => {
+    if (props.disabled !== undefined) {
+      setDisabled(props.disabled);
+    }
+  }, [props.disabled]);
+
+  // sync processing
+  useEffect(() => {
+    if (props.processing !== undefined) {
+      setProcessing(props.processing);
+    }
+  }, [props.processing]);
+
   const handleOnClick = (
     evt: React.MouseEvent<HTMLInputElement, MouseEvent>
   ) => {
-    foundation.handleClick();
     setSelected((c) => !c);
-    rootEl.setProp('checked', selected);
     props.onClick?.(evt);
+    rootEl.setProp('checked', selected);
+    foundation.handleClick();
   };
 
   rootEl.setProp('onClick', handleOnClick, true);
 
-  return { foundation, renderToggle, toggleRootProps, id, ...elements };
+  return {
+    foundation,
+    renderToggle,
+    toggleRootProps,
+    id,
+    disabled,
+    selected,
+    processing,
+    ...elements
+  };
 };
