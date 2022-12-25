@@ -54,10 +54,17 @@ describe('Slider', () => {
   it('handles out of bounds', () => {
     render(<Slider value={0} min={1} max={2} />);
     render(<Slider value={3} min={1} max={2} />);
+    expect(console.warn).toHaveBeenCalled();
   });
 
   it('can have custom classnames', () => {
     const { container } = render(<Slider className={'my-custom-classname'} />);
     expect(container.firstChild).toHaveClass('my-custom-classname');
+  });
+
+  it('can be a range slider', () => {
+    const { asFragment, container } = render(<Slider range />);
+    expect(container.firstChild).toHaveClass('mdc-slider--range');
+    expect(asFragment()).toMatchSnapshot();
   });
 });

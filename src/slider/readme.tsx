@@ -32,12 +32,14 @@ export default function Readme() {
         internally. If you are using something below React 16.4, you will see
         unknown attribute errors, however the slider should still work.
       </DocsP>
+
       <DocsExample label="Uncontrolled">
         <Slider
           onInput={(evt) => console.log(evt)}
           onChange={(evt) => console.log(evt)}
         />
       </DocsExample>
+
       <DocsExample label="Controlled">
         {function Example() {
           const [value, setValue] = React.useState(50);
@@ -49,14 +51,35 @@ export default function Readme() {
               onChange={(evt) => setValue(evt.detail.value)}
               onInput={(evt) => setValue(evt.detail.value)}
               discrete
-              step={1}
+              step={10}
             />
           );
         }}
       </DocsExample>
-      {/* <DocsExample label="With Markers">
-        <Slider discrete displayMarkers min={100} max={200} step={5} />
-      </DocsExample> */}
+
+      <DocsExample label="With markers">
+        <Slider discrete displayMarkers step={10} />
+      </DocsExample>
+
+      <DocsExample label="Range">
+        {function Example() {
+          const [value, setValue] = React.useState(80);
+          const [startValue, setStartValue] = React.useState(20);
+          console.log({ value });
+          console.log({ startValue });
+          return (
+            <Slider
+              range
+              discrete
+              valueStart={startValue}
+              value={value}
+              onChange={(evt) => setValue(evt.detail.value)}
+              onInput={(evt) => setValue(evt.detail.value)}
+              onChangeValueStart={(evt) => setStartValue(evt.detail.value)}
+            />
+          );
+        }}
+      </DocsExample>
 
       <DocProps
         src={propsSrc}
