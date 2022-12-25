@@ -18,7 +18,7 @@ export interface SliderProps {
   onChange?: (evt: SliderOnChangeEventT) => void;
   /** A callback that fires continuously while the Slider is sliding that takes an event with event.detail.value set to the Slider's value. evt.detail = { value: number;} */
   onInput?: (evt: SliderOnInputEventT) => void;
-  /** The value of the Slider. */
+  /** The value of the Slider. When Slider is of type range, value becomes the end value. */
   value?: number | string;
   /** The minimum value of the Slider. */
   min?: number | string;
@@ -34,6 +34,14 @@ export interface SliderProps {
   disabled?: boolean;
   /** Advanced: A reference to the MDCFoundation. */
   foundationRef?: React.Ref<MDCSliderFoundation>;
+  /** Makes the slider a range slider. */
+  range?: boolean;
+  /** The minimum gap between two thumbs for range sliders. */
+  minRange?: number | string;
+  /** The start value of the Slider range.  */
+  valueStart?: number;
+  // onChangeValueStart?: React.ChangeEventHandler<HTMLInputElement> | undefined;
+  onChangeValueStart?: (evt: SliderOnChangeEventT) => void;
 }
 
 export type SliderHTMLProps = RMWC.HTMLProps<
@@ -41,63 +49,101 @@ export type SliderHTMLProps = RMWC.HTMLProps<
   Omit<React.AllHTMLAttributes<HTMLInputElement>, 'onChange' | 'onInput'>
 >;
 
-const SliderTrack = React.memo(
-  React.forwardRef(function SliderTrack(props: any, ref: React.Ref<any>) {
-    return <div ref={ref} className="mdc-slider__track" />;
-  })
-);
+// TODO: Consider export components such that slider is composable. And not a prop hell.
 
-const SliderTrackMarkerContainer = React.memo(
-  React.forwardRef(function SliderTrackMarkerContainer(
-    props: any,
-    ref: React.Ref<any>
-  ) {
-    return <div ref={ref} className="mdc-slider__track-marker-container"></div>;
-  })
-);
-
-const SliderPin = React.memo(function SliderPin({ value }: { value: number }) {
+const SliderTrack = React.memo(function SliderTrack(props: any) {
+  const { children, ...rest } = props;
   return (
-    <div className="mdc-slider__pin">
-      <span className="mdc-slider__pin-value-marker">{value}</span>
+    <div className="mdc-slider__track">
+      <div className="mdc-slider__track--inactive"></div>
+      <div className="mdc-slider__track--active">
+        <div {...rest} className="mdc-slider__track--active_fill" />
+      </div>
+      {children}
     </div>
   );
 });
 
-const SliderThumb = React.memo(function SliderThumb() {
+const SliderTickMarks = React.memo(function SliderTickMarks({
+  tickMarks
+}: {
+  tickMarks: Array<any>;
+}) {
   return (
-    <svg className="mdc-slider__thumb" width="21" height="21">
-      <circle cx="10.5" cy="10.5" r="7.875" />
-    </svg>
+    <div className="mdc-slider__tick-marks">
+      {tickMarks.map((tick, index) => (
+        <div className={tick.className} key={index} />
+      ))}
+    </div>
   );
 });
 
-const SliderFocusRing = React.memo(function SliderFocusRing() {
-  return <div className="mdc-slider__focus-ring" />;
-});
+const SliderThumb = React.memo(
+  React.forwardRef(function SliderThumb(props: any, ref: React.Ref<any>) {
+    return (
+      <div className="mdc-slider__thumb" ref={ref}>
+        {props.children}
+        <div className="mdc-slider__thumb-knob"></div>
+      </div>
+    );
+  })
+);
+
+export interface SliderInputProps {
+  disabled: boolean;
+  max: number | undefined;
+  min: number | undefined;
+  setInputsRef: (index: number, element: HTMLInputElement | null) => void;
+  step: string | number | undefined;
+}
+
+// export const SliderInput = createComponent<SliderInputProps>(
+//   function SliderInput({disabled, max, min, setInputsRef, ...rest}) {
+//     return (
+//       <input
+//         className="mdc-slider__input"
+//         disabled={disabled}
+//         max={safeNum(max)}
+//         min={safeNum(min)}
+//         name="rangeStart"
+//         {...rest}
+//         ref={(el) => setInputsRef(0, el)} // should index be switched around?
+//         step={step}
+//         type="range"
+//         {...props}
+//         ref={ref}
+//         value={valueStart}
+//       />
+//     );
+//     // return <ListItem role="menuitem" tabIndex={0} {...props} ref={ref} />;
+//   }
+// );
+
+const safeNum = (num: string | number | undefined) => {
+  const parsed = Number(num);
+  return typeof parsed === 'number' && !isNaN(parsed) ? parsed : undefined;
+};
 
 export const Slider: RMWC.ComponentType<SliderProps, SliderHTMLProps, 'input'> =
   createComponent<SliderProps, SliderHTMLProps>(function Slider(props, ref) {
-    const {
-      rootEl,
-      thumbContainerEl,
-      sliderPinEl,
-      setTrackRef,
-      setTrackMarkerContainerRef
-    } = useSliderFoundation(props);
+    const { rootEl, setInputsRef, setThumbRef, tickMarks, trackActiveEl } =
+      useSliderFoundation(props);
 
     const {
-      value,
-      min,
-      max,
+      children,
+      disabled,
       discrete,
       displayMarkers,
-      step,
-      disabled,
+      max = 100,
+      min = 0,
+      minRange,
       onChange,
+      onChangeValueStart,
       onInput,
-      children,
-      foundationRef,
+      range,
+      step,
+      value,
+      valueStart,
       ...rest
     } = props;
 
@@ -105,11 +151,11 @@ export const Slider: RMWC.ComponentType<SliderProps, SliderHTMLProps, 'input'> =
       'mdc-slider',
       {
         'mdc-slider--discrete': discrete,
-        'mdc-slider--display-markers': displayMarkers && discrete
+        'mdc-slider--tick-marks': displayMarkers && discrete,
+        'mdc-slider--disabled': disabled,
+        'mdc-slider--range': range
       }
     ]);
-
-    const dataStep = step ? { 'data-step': step } : {};
 
     if (displayMarkers && !discrete) {
       console.warn(
@@ -120,30 +166,73 @@ export const Slider: RMWC.ComponentType<SliderProps, SliderHTMLProps, 'input'> =
 
     return (
       <Tag
-        tabIndex={0}
-        //eslint-disable-next-line jsx-a11y/role-has-required-aria-props
-        role="slider"
-        aria-valuemax={max as any}
-        aria-valuenow={value as any}
-        aria-label="Select Value"
-        {...(disabled ? { 'aria-disabled': disabled } : {})}
-        {...dataStep}
-        {...rest}
-        ref={ref}
-        element={rootEl}
         className={className}
+        tabIndex={0}
+        tag="div"
+        element={rootEl}
+        data-min-range={minRange}
       >
-        <div className="mdc-slider__track-container">
-          <SliderTrack ref={setTrackRef} />
-          {displayMarkers && (
-            <SliderTrackMarkerContainer ref={setTrackMarkerContainerRef} />
+        {range && (
+          <input
+            className="mdc-slider__input"
+            disabled={disabled}
+            max={safeNum(max)}
+            min={safeNum(min)}
+            name="rangeStart"
+            // @ts-ignore
+            // onChange={onChangeValueStart}
+            {...rest}
+            ref={(el) => setInputsRef(0, el)} // should index be switched around?
+            step={step}
+            type="range"
+            value={valueStart}
+          />
+        )}
+        <input
+          className="mdc-slider__input"
+          disabled={disabled}
+          max={safeNum(max)}
+          min={safeNum(min)}
+          name="rangeEnd"
+          {...rest}
+          ref={(el) => setInputsRef(1, el)}
+          step={step}
+          type="range"
+          value={value}
+        />
+        <SliderTrack {...trackActiveEl.props({})}>
+          {displayMarkers && <SliderTickMarks tickMarks={tickMarks} />}
+        </SliderTrack>
+        {range && (
+          <SliderThumb ref={(el) => setThumbRef(0, el)}>
+            {discrete && (
+              <div
+                className="mdc-slider__value-indicator-container"
+                aria-hidden="true"
+              >
+                <div className="mdc-slider__value-indicator">
+                  <span className="mdc-slider__value-indicator-text">
+                    {valueStart}
+                  </span>
+                </div>
+              </div>
+            )}
+          </SliderThumb>
+        )}
+        <SliderThumb ref={(el) => setThumbRef(1, el)}>
+          {discrete && (
+            <div
+              className="mdc-slider__value-indicator-container"
+              aria-hidden="true"
+            >
+              <div className="mdc-slider__value-indicator">
+                <span className="mdc-slider__value-indicator-text">
+                  {value}
+                </span>
+              </div>
+            </div>
           )}
-        </div>
-        <Tag element={thumbContainerEl} className="mdc-slider__thumb-container">
-          {discrete && <SliderPin value={sliderPinEl.getProp('value')} />}
-          <SliderThumb />
-          <SliderFocusRing />
-        </Tag>
+        </SliderThumb>
         {children}
       </Tag>
     );

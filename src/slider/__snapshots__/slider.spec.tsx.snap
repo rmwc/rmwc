@@ -1,36 +1,92 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Slider renders uncontrolled 1`] = `
+exports[`Slider can be a range slider 1`] = `
 <DocumentFragment>
   <div
-    aria-label="Select Value"
-    class="mdc-slider"
-    role="slider"
+    class="mdc-slider mdc-slider--range"
     tabindex="0"
   >
+    <input
+      class="mdc-slider__input"
+      max="100"
+      min="0"
+      name="rangeStart"
+      type="range"
+      value=""
+    />
+    <input
+      class="mdc-slider__input"
+      max="100"
+      min="0"
+      name="rangeEnd"
+      type="range"
+      value=""
+    />
     <div
-      class="mdc-slider__track-container"
+      class="mdc-slider__track"
     >
       <div
-        class="mdc-slider__track"
+        class="mdc-slider__track--inactive"
+      />
+      <div
+        class="mdc-slider__track--active"
+      >
+        <div
+          class="mdc-slider__track--active_fill"
+        />
+      </div>
+    </div>
+    <div
+      class="mdc-slider__thumb"
+    >
+      <div
+        class="mdc-slider__thumb-knob"
       />
     </div>
     <div
-      class="mdc-slider__thumb-container"
+      class="mdc-slider__thumb"
     >
-      <svg
-        class="mdc-slider__thumb"
-        height="21"
-        width="21"
-      >
-        <circle
-          cx="10.5"
-          cy="10.5"
-          r="7.875"
-        />
-      </svg>
       <div
-        class="mdc-slider__focus-ring"
+        class="mdc-slider__thumb-knob"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Slider renders uncontrolled 1`] = `
+<DocumentFragment>
+  <div
+    class="mdc-slider"
+    tabindex="0"
+  >
+    <input
+      class="mdc-slider__input"
+      max="100"
+      min="0"
+      name="rangeEnd"
+      type="range"
+      value=""
+    />
+    <div
+      class="mdc-slider__track"
+    >
+      <div
+        class="mdc-slider__track--inactive"
+      />
+      <div
+        class="mdc-slider__track--active"
+      >
+        <div
+          class="mdc-slider__track--active_fill"
+        />
+      </div>
+    </div>
+    <div
+      class="mdc-slider__thumb"
+    >
+      <div
+        class="mdc-slider__thumb-knob"
       />
     </div>
   </div>
