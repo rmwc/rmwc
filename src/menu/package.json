@@ -36,6 +36,7 @@
     "react-dom": ">=16.8.x"
   },
   "dependencies": {
+    "@material/animation": "^14.0.0",
     "@material/menu": "^14.0.0",
     "@material/menu-surface": "^14.0.0",
     "@rmwc/base": "^8.0.7",
