@@ -6,45 +6,37 @@ exports[`CircularProgress can be determinate 1`] = `
     aria-valuemax="1"
     aria-valuemin="0"
     aria-valuenow="0.3"
-    class="rmwc-circular-progress"
+    class="mdc-circular-progress"
+    role="progressbar"
+    style="width: 24px; height: 24px;"
   >
-    <svg
-      class="rmwc-circular-progress__circle"
-      viewBox="0 0 24 24"
+    <div
+      class="mdc-circular-progress__determinate-container"
     >
-      <circle
-        class="rmwc-circular-progress__path"
-        cx="12"
-        cy="12"
-        r="10"
-        style="stroke-dasharray: 18.84955592153876, 666.66%;"
-      />
-    </svg>
+      <svg
+        class="mdc-circular-progress__determinate-circle-graphic"
+        viewBox="0 0 24 24"
+      >
+        <circle
+          class="mdc-circular-progress__determinate-track"
+          cx="12"
+          cy="12"
+          r="10"
+          stroke-width="4"
+        />
+        <circle
+          class="mdc-circular-progress__determinate-circle"
+          cx="12"
+          cy="12"
+          r="10"
+          stroke-dashoffset="43.982297150257104"
+          stroke-width="4"
+          style="stroke-dasharray: 18.84955592153876, 666.66%; width: 24px; height: 24px;"
+        />
+      </svg>
+    </div>
   </div>
 </DocumentFragment>
-`;
-
-exports[`CircularProgress can be sizes 1`] = `
-<div>
-  <div
-    aria-valuemax="1"
-    aria-valuemin="0"
-    class="rmwc-circular-progress rmwc-circular-progress--indeterminate rmwc-circular-progress--thickerstroke"
-    style="font-size: 72px;"
-  >
-    <svg
-      class="rmwc-circular-progress__circle"
-      viewBox="0 0 72 72"
-    >
-      <circle
-        class="rmwc-circular-progress__path"
-        cx="36"
-        cy="36"
-        r="30"
-      />
-    </svg>
-  </div>
-</div>
 `;
 
 exports[`CircularProgress renders 1`] = `
@@ -52,19 +44,66 @@ exports[`CircularProgress renders 1`] = `
   <div
     aria-valuemax="1"
     aria-valuemin="0"
-    class="rmwc-circular-progress rmwc-circular-progress--indeterminate"
+    class="mdc-circular-progress mdc-circular-progress--indeterminate"
+    role="progressbar"
+    style="width: 24px; height: 24px;"
   >
-    <svg
-      class="rmwc-circular-progress__circle"
-      viewBox="0 0 24 24"
+    <div
+      class="mdc-circular-progress__indeterminate-container"
     >
-      <circle
-        class="rmwc-circular-progress__path"
-        cx="12"
-        cy="12"
-        r="10"
-      />
-    </svg>
+      <div
+        class="mdc-circular-progress__spinner-layer"
+      >
+        <div
+          class="mdc-circular-progress__circle-clipper mdc-circular-progress__circle-left"
+        >
+          <svg
+            class="mdc-circular-progress__indeterminate-circle-graphic"
+            viewBox="0 0 24 24"
+          >
+            <circle
+              cx="12"
+              cy="12"
+              r="10"
+              stroke-dashoffset="56.549"
+              stroke-width="4"
+            />
+          </svg>
+        </div>
+        <div
+          class="mdc-circular-progress__gap-patch"
+        >
+          <svg
+            class="mdc-circular-progress__indeterminate-circle-graphic"
+            viewBox="0 0 24 24"
+          >
+            <circle
+              cx="12"
+              cy="12"
+              r="10"
+              stroke-dashoffset="56.549"
+              stroke-width="3.2"
+            />
+          </svg>
+        </div>
+        <div
+          class="mdc-circular-progress__circle-clipper mdc-circular-progress__circle-right"
+        >
+          <svg
+            class="mdc-circular-progress__indeterminate-circle-graphic"
+            viewBox="0 0 24 24"
+          >
+            <circle
+              cx="12"
+              cy="12"
+              r="10"
+              stroke-dashoffset="56.549"
+              stroke-width="4"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
   </div>
 </DocumentFragment>
 `;

@@ -1,4 +1,4 @@
-.rmwc-circular-progress {
+/* .rmwc-circular-progress {
   font-size: 1.5rem;
   position: relative;
   display: inline-block;
@@ -62,11 +62,11 @@
   stroke-width: 0.25rem;
 }
 
-/** Overrides for icons */
+* Overrides for icons
 .rmwc-icon .rmwc-circular-progress {
   font-size: inherit;
 }
-
+*/
 @keyframes rmwc-circular-progress-indeterminate-bar-rotate {
   100% {
     transform: rotate(360deg);
