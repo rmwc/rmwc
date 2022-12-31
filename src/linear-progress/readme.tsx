@@ -29,7 +29,7 @@ export default function Readme() {
       </DocsExample>
 
       <DocsExample label="Reversed">
-        <LinearProgress progress={0.2} reversed />
+        <LinearProgress reversed />
       </DocsExample>
 
       <DocProps

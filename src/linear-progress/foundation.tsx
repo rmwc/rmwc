@@ -86,11 +86,6 @@ export const useLinearProgressFoundation = (props: LinearProgressProps) => {
     foundation.setBuffer(props.buffer || 0);
   }, [props.buffer, foundation]);
 
-  // reversed
-  // useEffect(() => {
-  //   foundation.setReverse(!!props.reversed);
-  // }, [props.reversed, foundation]);
-
   // closed
   useEffect(() => {
     props.closed ? foundation.close() : foundation.open();
