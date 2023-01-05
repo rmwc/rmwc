@@ -75,7 +75,7 @@
 		"documentalist": "^1.6.0",
 		"eslint-plugin-babel": "^5.3.1",
 		"generate-changelog": "^1.8.0",
-		"lerna": "^3.22.1",
+		"lerna": "^6.3.0",
 		"module-alias": "^2.2.2",
 		"prettier": "2.3.1",
 		"react": "^17.0.2",
