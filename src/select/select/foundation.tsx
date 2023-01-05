@@ -75,9 +75,7 @@ export const useSelectFoundation = (
         };
 
         return {
-          setSelectedText: (text: string) => {
-            setSelectedTextContent(text);
-          },
+          setSelectedText: (text: string) => setSelectedTextContent(text),
           openMenu: () => {
             setMenuOpen(true);
           },
@@ -103,8 +101,13 @@ export const useSelectFoundation = (
           isSelectAnchorFocused: () =>
             !!(anchorEl.ref && anchorEl.ref === document.activeElement),
           getSelectAnchorAttr: (attr: any) => anchorEl.getProp(attr),
-          setSelectAnchorAttr: (attr: string, value: string) =>
-            anchorEl.setProp(attr as any, value),
+          setSelectAnchorAttr: (attr: string, value: string) => {
+            if (attr === 'tabindex') {
+              if (isNative()) return;
+              attr = 'tabIndex';
+            }
+            return anchorEl.setProp(attr as any, value);
+          },
           removeSelectAnchorAttr: (attr: string) => {
             anchor.current?.removeAttribute(attr);
           },
@@ -124,14 +127,10 @@ export const useSelectFoundation = (
             if (isNative() && nativeControl.current !== undefined) {
               return nativeControl.current.selectedOptions[0].index;
             }
-            if (menu.current === undefined) {
-              return -1;
-            }
-            const index = menu.current.selectedIndex;
-            return index instanceof Array ? index[0] : index;
+            return selectedIndex.current;
           },
           setSelectedIndex: (index: number) => {
-            return menu.current?.setSelectedIndex(index);
+            return selectedIndex;
           }
         };
       };
