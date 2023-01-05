@@ -16,9 +16,11 @@ export default function Readme() {
       title="Tooltips"
       lead="Tooltips display informative text when users hover over, focus on, or tap an element."
       module="@rmwc/tooltip"
-      styles={['@rmwc/tooltip/tooltip.css']}
+      styles={[
+        '@material/tooltip/dist/mdc.tooltip.css',
+        '@rmwc/tooltip/tooltip.css'
+      ]}
       examples={examples}
-      addon
     >
       <DocsSubtitle>Basic Usage</DocsSubtitle>
       <DocsP>
@@ -30,7 +32,7 @@ export default function Readme() {
       <DocsExample label="Default">
         <>
           <Tooltip content="Cookies">
-            <IconButton icon="star_border" />
+            <IconButton icon="star_border" aria-describedby="tooltip-id" />
           </Tooltip>
 
           <Tooltip content="Pizza">
@@ -49,7 +51,6 @@ export default function Readme() {
           <IconButton icon="cake" />
         </Tooltip>
       </DocsExample>
-
       <DocsExample label="Controlled / Always open">
         <Tooltip content="Hello" align="right" open={true}>
           <IconButton icon="mood" />
@@ -57,6 +58,7 @@ export default function Readme() {
       </DocsExample>
       <DocsExample label="Rich Content">
         <Tooltip
+          // @ts-ignore
           content={
             <div style={{ display: 'flex' }}>
               <Avatar
@@ -64,7 +66,7 @@ export default function Readme() {
                 size="large"
                 name="Steve Rogers"
               />
-              <div style={{ marginLeft: '0.5rem' }}>
+              <div style={{ marginLeft: '0.5rem', width: '100px' }}>
                 <b>Captain America</b>
                 <div>Steve Rogers</div>
               </div>
@@ -76,7 +78,8 @@ export default function Readme() {
       </DocsExample>
       <DocsExample label="Styled content">
         <Tooltip
-          /** You make something like a popover window by just styling your inner content. */
+          // You make something like a popover window by just styling your inner content.
+          // @ts-ignore
           content={
             <div
               style={{
@@ -91,11 +94,14 @@ export default function Readme() {
                 margin: '0 -3px'
               }}
             >
-              Hello World!
+              <Button onClick={() => console.log('Popover was clicked')}>
+                Click me
+              </Button>
             </div>
           }
+          isPersistent
         >
-          <span role="button">Popover Window</span>
+          <span role="button">Popover Window with clickable content</span>
         </Tooltip>
       </DocsExample>
       <DocsExample label="Delay">
@@ -173,7 +179,6 @@ export default function Readme() {
           tooltip={{
             align: 'right',
             activateOn: 'hover',
-            showArrow: true,
             leaveDelay: 500,
             enterDelay: 0
           }}
