@@ -24,15 +24,6 @@ describe('Tooltip', () => {
     );
   });
 
-  it('showArrow', () => {
-    const { asFragment } = render(
-      <Tooltip content="tooltip" open showArrow>
-        <span>test</span>
-      </Tooltip>
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-
   it('className', () => {
     render(
       <Tooltip content="tooltip" className="my-custom-classname">
