@@ -15,7 +15,11 @@ import { wait } from './utils/test-utils';
 import { Dialog, DialogContent } from '@rmwc/dialog';
 import userEvent from '@testing-library/user-event';
 import { Button } from '@rmwc/button';
-import { PortalContext, portalContextDefaultValues, PortalProvider } from './PortalContext';
+import {
+  PortalContext,
+  portalContextDefaultValues,
+  PortalProvider
+} from './PortalContext';
 
 jest.spyOn(console, 'warn');
 
@@ -237,7 +241,6 @@ describe('Portal', () => {
     const { asFragment } = render(<Portal />);
     expect(asFragment()).toMatchSnapshot();
   });
-
   it('does not mount twice', async () => {
     const Content = ({ value, inc }: { value: number; inc: () => void }) => {
       React.useEffect(() => {
