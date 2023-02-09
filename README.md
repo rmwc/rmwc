@@ -38,7 +38,7 @@ Features:
 
 ## Recent updates
 
-v8.0.4 is here! This release includes bug fixes of v8.0.0.
+v8.0.5 is here! This release includes a bug fix for the menu renderToPortal issue [800](https://github.com/rmwc/rmwc/issues/800).
 
 - `npm i rmwc@latest` or `npm i @rmwc/button@latest`.
 - React 17 now usable as a peer dep
