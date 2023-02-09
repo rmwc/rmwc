@@ -38,7 +38,7 @@ Features:
 
 ## Recent updates
 
-v8.0.3 is here! This release includes bug fixes of v8.0.0. One being the date-picker not showing up in Chrome, when setting Textfield to have type="date".
+v8.0.5 is here! This release includes a bug fix for the menu renderToPortal issue [800](https://github.com/rmwc/rmwc/issues/800).
 
 - `npm i rmwc@latest` or `npm i @rmwc/button@latest`.
 - React 17 now usable as a peer dep
@@ -61,20 +61,20 @@ View the changelog for detailed updates: [https://github.com/jamesmfriedman/rmwc
 
 - `npm i rmwc --save` or `yarn add rmwc`
 
-Additional information is available in the [Installation Guide](https://jamesmfriedman.github.io/rmwc/installation)
+Additional information is available in the [Installation Guide](https://rmwc.io/installation)
 
 ## Usage
 
-Read the docs on how to [Usage](https://jamesmfriedman.github.io/rmwc/usage)
+Read the docs on how to [Usage](https://rmwc.io/usage)
 
 ## Why?
 
-Read the docs on [Methodology](https://jamesmfriedman.github.io/rmwc/methodology)
+Read the docs on [Methodology](https://rmwc.io/methodology)
 
 ## About Breaking Changes
 
 RMWC avoids them at all costs!
-Read the docs on [Methodology](https://jamesmfriedman.github.io/rmwc/methodology)
+Read the docs on [Methodology](https://rmwc.io/methodology)
 
 ## To run the tests
 

@@ -1,3 +1,34 @@
+#### 8.0.5 (2023-02-09)
+
+##### Continuous Integration
+
+* **rmwc:**
+  *  Release of v8.0.5 (b970c863)
+  *  Release 8.0.4 (#846) (0b4ab072)
+
+##### Bug Fixes
+
+* **menu:**  Correctly renderToPortal for menu  (#850) (1f490cad)
+* **select:**  Fix controlled enhanced select bug (#844) (530d7912)
+
+##### Other Changes
+
+* **build:**   Fix build on Windows (2a1658fb)
+
+#### 8.0.4 (2023-01-05)
+
+##### Continuous Integration
+
+* **rmwc:**  Release 8.0.4 (70540de2)
+
+##### Bug Fixes
+
+* **select:**  Fix controlled enhanced select bug (#844) (530d7912)
+
+##### Other Changes
+
+* **build:**   Fix build on Windows (2a1658fb)
+
 #### 8.0.3 (2022-10-12)
 
 ##### Chores
