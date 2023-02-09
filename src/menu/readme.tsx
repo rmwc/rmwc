@@ -210,6 +210,7 @@ export default function Readme() {
       <DocsExample>
         {function Example() {
           const [renderToPortal, setRenderToPortal] = React.useState(true);
+          const [menuIsOpen, setMenuIsOpen] = React.useState(false);
           const options = ['Cookies', 'Pizza', 'Icecream'];
           return (
             <>
@@ -221,8 +222,14 @@ export default function Readme() {
                 }}
               >
                 <MenuSurfaceAnchor>
-                  <Button raised>Open Menu</Button>
-                  <Menu open renderToPortal={renderToPortal}>
+                  <Button raised onClick={() => setMenuIsOpen(!menuIsOpen)}>
+                    Open Menu
+                  </Button>
+                  <Menu
+                    open={menuIsOpen}
+                    onClose={() => setMenuIsOpen(false)}
+                    renderToPortal={renderToPortal}
+                  >
                     {options.map((o) => (
                       <MenuItem key={o}>{o}</MenuItem>
                     ))}
