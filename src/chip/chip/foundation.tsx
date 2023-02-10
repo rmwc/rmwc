@@ -1,6 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import * as RMWC from '@rmwc/types';
-import { ChipProps, ChipHTMLProps } from './';
+import { ChipProps, ChipHTMLProps, ChipOnInteractionEventT } from './';
 import { useFoundation } from '@rmwc/base';
 import {
   MDCChipFoundation,
@@ -9,7 +9,7 @@ import {
   MDCChipActionFocusBehavior
 } from '@material/chips';
 import React, { useCallback, useRef } from 'react';
-import { TrailingActionApi } from './action';
+import { TrailingActionApi } from '../action';
 
 export const useChipFoundation = (props: ChipProps & ChipHTMLProps) => {
   const trailingAction = useRef<TrailingActionApi | null>();
@@ -22,12 +22,23 @@ export const useChipFoundation = (props: ChipProps & ChipHTMLProps) => {
     elements: {
       rootEl: true,
       trailingIconEl: true,
-      checkmarkEl: true,
       trailingActionEl: true
     },
-    foundation: ({ rootEl, checkmarkEl, emit, getProps, trailingActionEl }) => {
+    foundation: ({ rootEl, emit, getProps, trailingActionEl }) => {
       const rootHTML = rootEl.ref as HTMLElement;
       const actions = new Map();
+
+      // const actionFactory: MDCChipActionFactory = (el: Element) =>
+      //   new MDCChipAction(el);
+
+      // const actionEls = rootHTML.querySelectorAll(
+      //   '.mdc-evolution-chip__action'
+      // );
+      // for (let i = 0; i < actionEls.length; i++) {
+      //   const action = actionFactory(actionEls[i]);
+      //   actions.set(action.actionType(), action);
+      // }
+
       return new MDCChipFoundation({
         addClass: (className) => {
           rootEl.addClass(className);
@@ -43,7 +54,9 @@ export const useChipFoundation = (props: ChipProps & ChipHTMLProps) => {
           return actions;
         },
         getAttribute: (attrName) => rootEl.ref?.getAttribute(attrName),
-        getElementID: () => rootHTML.id,
+        getElementID: () => {
+          return rootEl.ref?.id;
+        },
         getOffsetWidth: () => rootHTML.offsetWidth,
         hasClass: (className) => rootEl.hasClass(className),
         isActionSelectable: (actionType: MDCChipActionType) => {
@@ -116,22 +129,38 @@ export const useChipFoundation = (props: ChipProps & ChipHTMLProps) => {
     }
   });
 
-  const { rootEl, foundation } = foundationWithElements;
-  const { onClick, onKeyDown } = props;
+  const { rootEl, foundation, trailingActionEl } = foundationWithElements;
+
+  const { onClick, onKeyDown, onInteraction } = props;
 
   const handleInteraction = useCallback(
     (
-      evt: React.MouseEvent & React.KeyboardEvent & MouseEvent & KeyboardEvent
+      evt: React.MouseEvent &
+        React.KeyboardEvent &
+        MouseEvent &
+        KeyboardEvent &
+        ChipOnInteractionEventT
     ) => {
       evt.type === 'click' && onClick?.(evt as any);
       evt.type === 'keydown' && onKeyDown?.(evt as any);
+      onInteraction?.(evt);
       return foundation.handleActionInteraction(evt as any);
     },
-    [foundation, onClick, onKeyDown]
+    [foundation, onClick, onKeyDown, onInteraction]
   );
 
   rootEl.setProp('onClick', handleInteraction, true);
   rootEl.setProp('onKeyDown', handleInteraction, true);
+
+  const remove = (evt: any) => {
+    props.onRemove?.(evt);
+    const parent = rootEl.ref?.parentNode;
+    if (parent !== null || parent !== undefined) {
+      rootEl.ref && parent?.removeChild(rootEl.ref);
+    }
+  };
+
+  trailingActionEl.setProp('onClick', remove, true);
 
   return { setTrailingAction, ...foundationWithElements };
 };
