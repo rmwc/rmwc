@@ -4,7 +4,8 @@
 
 import React from 'react';
 import { renderToString as mount } from 'react-dom/server';
-import { Chip, ChipSet } from './';
+import { Chip } from './chip';
+import { ChipSet } from './chip-set';
 
 describe('Chip', () => {
   it('renders', () => {

@@ -1,4 +1,4 @@
-# Circular Progress
+# Circular Progress `RMWC ADDON`
 
 Circular progress indicators display progress by animating an indicator along an invisible circular track in a clockwise direction. They can be applied directly to a surface, such as a button or card.
 
@@ -8,6 +8,7 @@ Circular progress indicators display progress by animating an indicator along an
     - import '@rmwc/circular-progress/styles';
   - Or include stylesheets
     - **'@rmwc/circular-progress/circular-progress.css'**
+
 
 ## Basic Usage
 
@@ -40,7 +41,10 @@ Circular progress indicators display progress by animating an indicator along an
 
 ```jsx
 <>
-  <Button icon={<CircularProgress theme="secondary" />} label="Cookies" />
+  <Button
+    icon={<CircularProgress theme="secondary" />}
+    label="Cookies"
+  />
 
   <List>
     <SimpleListItem graphic={<CircularProgress />} text="Pizza" />
@@ -52,15 +56,16 @@ Circular progress indicators display progress by animating an indicator along an
 ```
 
 ## CircularProgress
-
 A Circular Progress indicator.
 
 ### Props
 
-| Name       | Type                                                               | Description                                                                              |
-| ---------- | ------------------------------------------------------------------ | ---------------------------------------------------------------------------------------- |
-| `closed`   | `undefined \| false \| true`                                       | Hides the progress bar. Adding / removing this prop will trigger an animation in or out. |
-| `max`      | `undefined \| number`                                              | Max value for determinate progress bars.                                                 |
-| `min`      | `undefined \| number`                                              | Min value for determinate progress bars.                                                 |
-| `progress` | `undefined \| number`                                              | Value for determinate progress bars.                                                     |
-| `size`     | `"xsmall" \| "small" \| "medium" \| "large" \| "xlarge" \| number` | The size of the loader you would like to render.                                         |
+| Name | Type | Description |
+|------|------|-------------|
+| `closed` | `undefined \| false \| true` | Hides the progress bar. Adding / removing this prop will trigger an animation in or out. |
+| `max` | `undefined \| number` | Max value for determinate progress bars. |
+| `min` | `undefined \| number` | Min value for determinate progress bars. |
+| `progress` | `undefined \| number` | Value for determinate progress bars. |
+| `size` | `Size` | The size of the loader you would like to render. |
+
+
