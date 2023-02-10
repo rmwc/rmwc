@@ -25,7 +25,7 @@ function Example() {
   return (
     <Switch
       checked={checked}
-      onChange={(evt) => setChecked(!!evt.currentTarget.checked)}
+      onClick={(evt) => setChecked((c) => !c)}
       label="Cookies"
     />
   );
@@ -46,5 +46,10 @@ function Example() {
 ## Switch
 A Switch component.
 
+### Props
+
+| Name | Type | Description |
+|------|------|-------------|
+| `processing` | `undefined \| false \| true` |  |
 
 

@@ -1,7 +1,8 @@
 import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { Chip, ChipSet } from './';
+import { ChipSet } from './chip-set';
+import { Chip } from './chip';
 
 describe('Chip', () => {
   it('renders', () => {
@@ -35,8 +36,12 @@ describe('Chip', () => {
         <Chip checkmark selected icon="favorite" label="test-label" />
       </ChipSet>
     );
-    expect(screen.getAllByRole('row')[0]).toHaveClass('mdc-chip--selected');
-    expect(screen.getAllByRole('row')[1]).toHaveClass('mdc-chip--selected');
+    expect(screen.getAllByRole('row')[0]).toHaveClass(
+      'mdc-evolution-chip--selected'
+    );
+    expect(screen.getAllByRole('row')[1]).toHaveClass(
+      'mdc-evolution-chip--selected'
+    );
   });
 
   it('handles onInteraction', async () => {
@@ -48,28 +53,37 @@ describe('Chip', () => {
     await waitFor(() => expect(onInteraction).toHaveBeenCalledTimes(1));
   });
 
+  it('handles onRemove', async () => {
+    const onRemove = jest.fn();
+    render(
+      <ChipSet>
+        <Chip
+          label="my label"
+          onRemove={onRemove}
+          id="1"
+          trailingIcon="close"
+        />
+      </ChipSet>
+    );
+
+    userEvent.click(screen.getByText('close'));
+
+    await waitFor(() => expect(onRemove).toHaveBeenCalledTimes(1));
+  });
+
   it('handles custom ChipIcon', () => {
     render(<Chip icon="favorite" />);
 
     expect(screen.getByText('favorite')).toBeInTheDocument();
   });
 
-  it('handles onTrailingIconInteraction', async () => {
-    let onInteraction = jest.fn();
-    let onRemove = jest.fn();
+  it('should not trigger events when disabled', () => {
+    const onClick = jest.fn();
 
-    render(
-      <Chip
-        trailingIcon="close"
-        onTrailingIconInteraction={onInteraction}
-        onRemove={onRemove}
-      />
-    );
+    render(<Chip disabled label="Cookie" onClick={onClick} />);
 
-    userEvent.click(screen.getByText('close'));
+    userEvent.click(screen.getByText('Cookie'));
 
-    await waitFor(() => {
-      expect(onInteraction).toHaveBeenCalledTimes(1);
-    });
+    expect(onClick).not.toHaveBeenCalled();
   });
 });

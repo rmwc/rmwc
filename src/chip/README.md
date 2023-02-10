@@ -135,34 +135,34 @@ function Example() {
 ```
 
 ## Chip
+
 A Chip component.
 
 ### Props
 
-| Name | Type | Description |
-|------|------|-------------|
-| `checkmark` | `undefined \| false \| true` | Includes an optional checkmark for the chips selected state. |
-| `children` | `React.ReactNode` | Additional children will be rendered in the text area. |
-| `foundationRef` | `React.Ref<MDCChipFoundation>` | Advanced: A reference to the MDCFoundation. |
-| `icon` | `RMWC.IconPropT` | Instance of an Icon Component. |
-| `id` | `undefined \| string` | An optional chip ID that will be included in callback evt.detail. If this is not passed, RMWC will attempt to use the "key" prop if present. |
-| `label` | `React.ReactNode` | Text for your Chip. |
-| `onInteraction` | `undefined \| (evt: ChipOnInteractionEventT) => void` | A callback for click or enter key. This should be used over onClick for accessibility reasons. evt.detail = { chipId: string } |
-| `onRemove` | `undefined \| (evt: ChipOnRemoveEventT) => void` | A callback that is fired once the chip is in an exited state from removing it. evt.detail = { chipId: string } |
+| Name                        | Type                                                              | Description                                                                                                                                                          |
+| --------------------------- | ----------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `checkmark`                 | `undefined \| false \| true`                                      | Includes an optional checkmark for the chips selected state.                                                                                                         |
+| `children`                  | `React.ReactNode`                                                 | Additional children will be rendered in the text area.                                                                                                               |
+| `foundationRef`             | `React.Ref<MDCChipFoundation>`                                    | Advanced: A reference to the MDCFoundation.                                                                                                                          |
+| `icon`                      | `RMWC.IconPropT`                                                  | Instance of an Icon Component.                                                                                                                                       |
+| `id`                        | `undefined \| string`                                             | An optional chip ID that will be included in callback evt.detail. If this is not passed, RMWC will attempt to use the "key" prop if present.                         |
+| `label`                     | `React.ReactNode`                                                 | Text for your Chip.                                                                                                                                                  |
+| `onInteraction`             | `undefined \| (evt: ChipOnInteractionEventT) => void`             | A callback for click or enter key. This should be used over onClick for accessibility reasons. evt.detail = { chipId: string }                                       |
+| `onRemove`                  | `undefined \| (evt: ChipOnRemoveEventT) => void`                  | A callback that is fired once the chip is in an exited state from removing it. evt.detail = { chipId: string }                                                       |
 | `onTrailingIconInteraction` | `undefined \| (evt: ChipOnTrailingIconInteractionEventT) => void` | A callback for click or enter key for the trailing icon. material-components-web always treats this as an intent to remove the chip. evt.detail = { chipId: string } |
-| `selected` | `undefined \| false \| true` | makes the Chip appear selected. |
-| `trailingIcon` | `RMWC.IconPropT` | Instance of an Icon Component. |
-| `trailingIconRemovesChip` | `undefined \| false \| true` | Defaults to true. Set this to false if your trailing icon is something other than a remove button. |
-
+| `selected`                  | `undefined \| false \| true`                                      | makes the Chip appear selected.                                                                                                                                      |
+| `trailingIcon`              | `RMWC.IconPropT`                                                  | Instance of an Icon Component.                                                                                                                                       |
+| `trailingIconRemovesChip`   | `undefined \| false \| true`                                      | Defaults to true. Set this to false if your trailing icon is something other than a remove button.                                                                   |
 
 ## ChipSet
+
 A container for multiple chips.
 
 ### Props
 
-| Name | Type | Description |
-|------|------|-------------|
+| Name     | Type                         | Description              |
+| -------- | ---------------------------- | ------------------------ |
 | `choice` | `undefined \| false \| true` | Creates a choice chipset |
 | `filter` | `undefined \| false \| true` | Creates a filter chipset |
-
-
+| `layout` | `"grid" \| "listbox"`        |                          |
