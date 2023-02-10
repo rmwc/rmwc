@@ -65,8 +65,6 @@ export default function Readme() {
         {function Example() {
           const [value, setValue] = React.useState(80);
           const [startValue, setStartValue] = React.useState(20);
-          console.log({ value });
-          console.log({ startValue });
           return (
             <Slider
               range
@@ -74,9 +72,8 @@ export default function Readme() {
               valueStart={startValue}
               value={value}
               onChange={(evt) => setValue(evt.detail.value)}
-              onInput={(evt) => setValue(evt.detail.value)}
               onChangeValueStart={(evt) => setStartValue(evt.detail.value)}
-            />
+            ></Slider>
           );
         }}
       </DocsExample>

@@ -135,13 +135,27 @@ export const useSliderFoundation = (
           rootEl.ref?.setPointerCapture(pointerId);
         },
         emitChangeEvent: (value, thumb: Thumb) => {
-          emit('onChange', {
-            value,
-            thumb
-          });
+          if (thumb === 2) {
+            emit('onChange', {
+              value,
+              thumb
+            });
+          } else if (thumb === 1) {
+            emit('onChangeValueStart', {
+              value,
+              thumb
+            });
+          }
         },
         emitInputEvent: (value, thumb: Thumb) => {
-          emit('onInput', { value, thumb });
+          if (thumb === 2) {
+            emit('onInput', { value, thumb });
+          } else if (thumb === 1) {
+            emit('onInputValueStart', {
+              value,
+              thumb
+            });
+          }
         },
         // emitDragStartEvent: (_, thumb: Thumb) => {
         //   // Emitting event is not yet implemented. See issue:
