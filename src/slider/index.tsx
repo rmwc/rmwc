@@ -40,16 +40,16 @@ export interface SliderProps {
   minRange?: number | string;
   /** The start value of the Slider range.  */
   valueStart?: number;
-  // onChangeValueStart?: React.ChangeEventHandler<HTMLInputElement> | undefined;
+  /** A callback that fires when the Slider stops sliding which takes an event with event.detail.value set to the Slider's valueStart. evt.detail = { value: number;} */
   onChangeValueStart?: (evt: SliderOnChangeEventT) => void;
+  /** A callback that fires continuously while the Slider is sliding that takes an event with event.detail.value set to the Slider's valueStart. evt.detail = { value: number;} */
+  onInputValueStart?: (evt: SliderOnInputEventT) => void;
 }
 
 export type SliderHTMLProps = RMWC.HTMLProps<
   HTMLDivElement,
   Omit<React.AllHTMLAttributes<HTMLInputElement>, 'onChange' | 'onInput'>
 >;
-
-// TODO: Consider export components such that slider is composable. And not a prop hell.
 
 const SliderTrack = React.memo(function SliderTrack(props: any) {
   const { children, ...rest } = props;
@@ -89,36 +89,6 @@ const SliderThumb = React.memo(
   })
 );
 
-export interface SliderInputProps {
-  disabled: boolean;
-  max: number | undefined;
-  min: number | undefined;
-  setInputsRef: (index: number, element: HTMLInputElement | null) => void;
-  step: string | number | undefined;
-}
-
-// export const SliderInput = createComponent<SliderInputProps>(
-//   function SliderInput({disabled, max, min, setInputsRef, ...rest}) {
-//     return (
-//       <input
-//         className="mdc-slider__input"
-//         disabled={disabled}
-//         max={safeNum(max)}
-//         min={safeNum(min)}
-//         name="rangeStart"
-//         {...rest}
-//         ref={(el) => setInputsRef(0, el)} // should index be switched around?
-//         step={step}
-//         type="range"
-//         {...props}
-//         ref={ref}
-//         value={valueStart}
-//       />
-//     );
-//     // return <ListItem role="menuitem" tabIndex={0} {...props} ref={ref} />;
-//   }
-// );
-
 const safeNum = (num: string | number | undefined) => {
   const parsed = Number(num);
   return typeof parsed === 'number' && !isNaN(parsed) ? parsed : undefined;
@@ -140,6 +110,7 @@ export const Slider: RMWC.ComponentType<SliderProps, SliderHTMLProps, 'input'> =
       onChange,
       onChangeValueStart,
       onInput,
+      onInputValueStart,
       range,
       step,
       value,
@@ -179,10 +150,12 @@ export const Slider: RMWC.ComponentType<SliderProps, SliderHTMLProps, 'input'> =
             max={safeNum(max)}
             min={safeNum(min)}
             name="rangeStart"
-            // @ts-ignore
-            // onChange={onChangeValueStart}
             {...rest}
-            ref={(el) => setInputsRef(0, el)} // should index be switched around?
+            // @ts-ignore
+            onChange={onChangeValueStart}
+            // @ts-ignore
+            onInput={onInputValueStart}
+            ref={(el) => setInputsRef(0, el)}
             step={step}
             type="range"
             value={valueStart}
