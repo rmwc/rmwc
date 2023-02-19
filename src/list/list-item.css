@@ -1,0 +1,3 @@
+.rmwc-list-item__disabled {
+  pointer-events: none;
+}
