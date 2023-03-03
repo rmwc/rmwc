@@ -21,6 +21,7 @@ import '@rmwc/linear-progress/styles';
 import '@rmwc/list/styles';
 import '@rmwc/menu/styles';
 import '@rmwc/radio/styles';
+import '@rmwc/segmented-button/styles';
 import '@rmwc/select/styles';
 import '@rmwc/slider/styles';
 import '@rmwc/snackbar/styles';

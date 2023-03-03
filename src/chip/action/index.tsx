@@ -16,7 +16,6 @@ export type ActionHTMLProps = RMWC.HTMLProps<
 >;
 
 export interface PrimaryActionProps {
-  // apiRef?: (api: TrailingActionApi | null) => void;
   deletable?: boolean;
   href?: string;
   icon?: IconPropT;
