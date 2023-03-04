@@ -1,9 +1,8 @@
-import {
+import React, {
   useEffect,
   useState,
   useContext,
   useCallback,
-  ReactNode,
   MutableRefObject
 } from 'react';
 import { createPortal } from 'react-dom';
@@ -34,7 +33,7 @@ export function PortalChild({
   renderTo,
   menuSurfaceDomPositionRef
 }: {
-  children: ReactNode;
+  children: React.ReactNode;
   renderTo?: PortalPropT;
   menuSurfaceDomPositionRef?: MutableRefObject<HTMLDivElement | null>;
 }) {
