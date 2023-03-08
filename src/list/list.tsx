@@ -29,7 +29,7 @@ export interface ListProps {
   wrapFocus?: boolean;
   /** Sets the lists vertical orientation. Defaults to true */
   vertical?: boolean;
-  /** sets the selectedIdex for singleSelection, radiogroup, or checkboxlist variants. Only supply number[] to checkboxlists */
+  /** Sets the selectedIndex for singleSelection, radiogroup, or checkboxlist variants. Only supply number[] to checkboxlists */
   selectedIndex?: number[] | number;
   /** Children to render */
   children?: React.ReactNode;
