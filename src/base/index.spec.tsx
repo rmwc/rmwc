@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import {
   withTheme,
   randomId,
@@ -15,6 +15,7 @@ import { wait } from './utils/test-utils';
 import { Dialog, DialogContent } from '@rmwc/dialog';
 import userEvent from '@testing-library/user-event';
 import { Button } from '@rmwc/button';
+import { PortalContext, portalContextDefaultValues, PortalProvider } from './PortalContext';
 
 jest.spyOn(console, 'warn');
 
@@ -261,9 +262,110 @@ describe('Portal', () => {
           )
         </>
       );
+      
     };
     render(<MyComp />);
     userEvent.click(screen.getByRole('button', { name: /open/i }));
     expect(await screen.findByText('Opened 1 times')).toBeInTheDocument();
+  });
+});
+
+describe('PortalProvider', () => {
+  it('renders without crashing', () => {
+    render(
+      <PortalProvider>
+        <div>Child element</div>
+      </PortalProvider>
+    );
+  });
+
+  it('renders its children', () => {
+    const { getByText } = render(
+      <PortalProvider>
+        <div>Child element</div>
+      </PortalProvider>
+    );
+
+    expect(getByText(/Child element/i)).toBeInTheDocument();
+  });
+
+  it('provides a default context value', () => {
+    const { container } = render(
+      <PortalProvider>
+        <PortalContext.Consumer>
+          {({ portalElement, setPortalElement }) => (
+            <div>
+              portalElement: {String(portalElement)}
+              setPortalElement: {String(setPortalElement)}
+            </div>
+          )}
+        </PortalContext.Consumer>
+      </PortalProvider>
+    );
+
+    expect(container.firstChild).toBeTruthy();
+    expect(container.firstChild).toHaveTextContent(
+      `portalElement: ${String(portalContextDefaultValues.portalElement)}`
+    );
+  });
+
+  it('sets the portalElement value correctly', () => {
+    const div = document.createElement('div');
+    const { getByText, container } = render(
+      <PortalProvider>
+        <PortalContext.Consumer>
+          {({ portalElement, setPortalElement }) => (
+            <div>
+              <button onClick={() => setPortalElement && setPortalElement(div)}>
+                setPortalElement
+              </button>
+              <div>portalElement: {JSON.stringify(portalElement)}</div>
+            </div>
+          )}
+        </PortalContext.Consumer>
+      </PortalProvider>
+    );
+
+    const button = getByText(/setPortalElement/i);
+    fireEvent.click(button);
+
+    expect(container).toHaveTextContent(JSON.stringify(div));
+  });
+
+  it('updates portalElement correctly when setPortalElement is called multiple times', () => {
+    const div1 = document.createElement('div');
+    const div2 = document.createElement('div');
+
+    const { getByText, container } = render(
+      <PortalProvider>
+        <PortalContext.Consumer>
+          {({ portalElement, setPortalElement }) => (
+            <div>
+              <button
+                onClick={() => setPortalElement && setPortalElement(div1)}
+              >
+                setPortalElement 1
+              </button>
+              <button
+                onClick={() => setPortalElement && setPortalElement(div2)}
+              >
+                setPortalElement 2
+              </button>
+              <div>portalElement: {JSON.stringify(portalElement)}</div>
+            </div>
+          )}
+        </PortalContext.Consumer>
+      </PortalProvider>
+    );
+
+    const button1 = getByText(/setPortalElement 1/i);
+    fireEvent.click(button1);
+
+    expect(container).toHaveTextContent(JSON.stringify(div1));
+
+    const button2 = getByText(/setPortalElement 2/i);
+    fireEvent.click(button2);
+
+    expect(container).toHaveTextContent(JSON.stringify(div2));
   });
 });
