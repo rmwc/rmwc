@@ -6,13 +6,17 @@ import React, {
   MutableRefObject
 } from 'react';
 import { createPortal } from 'react-dom';
+import * as RMWC from '@rmwc/types';
 import { PortalContext } from './PortalContext';
 
 const PORTAL_ID = 'rmwcPortal';
 
 export type PortalPropT = Element | string | boolean | undefined | null;
 
-export const Portal = (): JSX.Element => {
+export interface PortalProps
+  extends Omit<RMWC.HTMLProps<HTMLDivElement>, 'id' | 'ref'> {}
+
+export const Portal = (props: PortalProps): JSX.Element => {
   const portalContext = useContext(PortalContext);
   const setPortalElement = portalContext?.setPortalElement;
 
@@ -25,7 +29,7 @@ export const Portal = (): JSX.Element => {
     [setPortalElement]
   );
 
-  return <div ref={portalRef} id={PORTAL_ID} />;
+  return <div ref={portalRef} id={PORTAL_ID} {...props} />;
 };
 
 export function PortalChild({
