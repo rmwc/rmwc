@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import {
   withTheme,
@@ -237,6 +237,7 @@ describe('Portal', () => {
     const { asFragment } = render(<Portal />);
     expect(asFragment()).toMatchSnapshot();
   });
+
   it('does not mount twice', async () => {
     const Content = ({ value, inc }: { value: number; inc: () => void }) => {
       React.useEffect(() => {
@@ -262,11 +263,146 @@ describe('Portal', () => {
           )
         </>
       );
-      
     };
     render(<MyComp />);
     userEvent.click(screen.getByRole('button', { name: /open/i }));
     expect(await screen.findByText('Opened 1 times')).toBeInTheDocument();
+  });
+
+  it('renders to portal when using PortalProvider and renderToPortal is true', () => {
+    const MyComp = () => {
+      const [open, setOpen] = useState(false);
+
+      return (
+        <PortalProvider>
+          <div data-testid="portal-sibling">
+            <Button data-testid="trigger-button" onClick={() => setOpen(true)}>
+              Open
+            </Button>
+            <Dialog
+              renderToPortal={true}
+              open={open}
+              onClosed={() => setOpen(false)}
+            >
+              <DialogContent>
+                <Button data-testid="dialog-content-button" />
+              </DialogContent>
+            </Dialog>
+          </div>
+          <Portal data-testid="rmwc-portal" />
+        </PortalProvider>
+      );
+    };
+
+    render(<MyComp />);
+    const portalSibling = screen.getByTestId('portal-sibling');
+    const portalElement = screen.getByTestId('rmwc-portal');
+    const dialogContentButton = screen.getByTestId('dialog-content-button');
+
+    expect(portalSibling).not.toContainElement(dialogContentButton);
+    expect(portalElement).toContainElement(dialogContentButton);
+  });
+
+  it('does not render to portal when using PortalProvider and renderToPortal is false', () => {
+    const MyComp = () => {
+      const [open, setOpen] = useState(false);
+
+      return (
+        <PortalProvider>
+          <div data-testid="portal-sibling">
+            <Button data-testid="trigger-button" onClick={() => setOpen(true)}>
+              Open
+            </Button>
+            <Dialog
+              renderToPortal={false}
+              open={open}
+              onClosed={() => setOpen(false)}
+            >
+              <DialogContent>
+                <Button data-testid="dialog-content-button" />
+              </DialogContent>
+            </Dialog>
+          </div>
+          <Portal data-testid="rmwc-portal" />
+        </PortalProvider>
+      );
+    };
+
+    render(<MyComp />);
+    const portalSibling = screen.getByTestId('portal-sibling');
+    const portalElement = screen.getByTestId('rmwc-portal');
+    const dialogContentButton = screen.getByTestId('dialog-content-button');
+
+    expect(portalSibling).toContainElement(dialogContentButton);
+    expect(portalElement).not.toContainElement(dialogContentButton);
+  });
+
+  it('renders to portal when not using PortalProvider and renderToPortal is true', () => {
+    const MyComp = () => {
+      const [open, setOpen] = useState(false);
+
+      return (
+        <>
+          <div data-testid="portal-sibling">
+            <Button data-testid="trigger-button" onClick={() => setOpen(true)}>
+              Open
+            </Button>
+            <Dialog
+              renderToPortal={true}
+              open={open}
+              onClosed={() => setOpen(false)}
+            >
+              <DialogContent>
+                <Button data-testid="dialog-content-button" />
+              </DialogContent>
+            </Dialog>
+          </div>
+          <Portal data-testid="rmwc-portal" />
+        </>
+      );
+    };
+
+    render(<MyComp />);
+    const portalSibling = screen.getByTestId('portal-sibling');
+    const portalElement = screen.getByTestId('rmwc-portal');
+    const dialogContentButton = screen.getByTestId('dialog-content-button');
+
+    expect(portalSibling).not.toContainElement(dialogContentButton);
+    expect(portalElement).toContainElement(dialogContentButton);
+  });
+
+  it('does not render to portal when not using PortalProvider and renderToPortal is false', () => {
+    const MyComp = () => {
+      const [open, setOpen] = useState(false);
+
+      return (
+        <>
+          <div data-testid="portal-sibling">
+            <Button data-testid="trigger-button" onClick={() => setOpen(true)}>
+              Open
+            </Button>
+            <Dialog
+              renderToPortal={false}
+              open={open}
+              onClosed={() => setOpen(false)}
+            >
+              <DialogContent>
+                <Button data-testid="dialog-content-button" />
+              </DialogContent>
+            </Dialog>
+          </div>
+          <Portal data-testid="rmwc-portal" />
+        </>
+      );
+    };
+
+    render(<MyComp />);
+    const portalSibling = screen.getByTestId('portal-sibling');
+    const portalElement = screen.getByTestId('rmwc-portal');
+    const dialogContentButton = screen.getByTestId('dialog-content-button');
+
+    expect(portalSibling).toContainElement(dialogContentButton);
+    expect(portalElement).not.toContainElement(dialogContentButton);
   });
 });
 
