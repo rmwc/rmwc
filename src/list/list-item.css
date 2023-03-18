@@ -1,3 +1,8 @@
+/* MDC gap fill: according to MDC documentation, disabled items should have
+  0.38 opacity, but the style is not included, so adding a gap fill here. 
+  https://m2.material.io/design/interaction/states.html#disabled */
+
 .rmwc-list-item__disabled {
   pointer-events: none;
+  opacity: 0.38;
 }
