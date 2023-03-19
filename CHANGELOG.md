@@ -1,3 +1,31 @@
+#### 8.0.6 (2023-03-19)
+
+##### Build System / Dependencies
+
+* **deps:**
+  *  bump loader-utils from 1.4.0 to 1.4.2 (#835) (04db5896)
+  *  bump decode-uri-component from 0.2.0 to 0.2.2 (#837) (ffe7ad54)
+  *  bump json5 from 1.0.1 to 1.0.2 (#845) (b6fc93b3)
+
+##### Continuous Integration
+
+* **rmwc:**
+  *  Release of v8.0.6 (fe499076)
+  *  Release of v8.0.5 (#851) (0b280ac1)
+  *  Release 8.0.4 (#846) (0b4ab072)
+
+##### Bug Fixes
+
+* **menu:**
+  *  add disabled opacity style (a4076f46)
+  *  Disable events when disabled is true (fe694827)
+  *  Correctly renderToPortal for menu  (#850) (1f490cad)
+* **select:**  Fix controlled enhanced select bug (#844) (530d7912)
+
+##### Other Changes
+
+* **build:**   Fix build on Windows (2a1658fb)
+
 #### 8.0.5 (2023-02-09)
 
 ##### Continuous Integration
