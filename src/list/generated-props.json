@@ -1673,7 +1673,7 @@
       },
       "kind": "interface",
       "name": "ListItemTextProps",
-      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/list-item.tsx#L40",
+      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/list-item.tsx#L41",
       "methods": [],
       "properties": []
     },
@@ -1698,7 +1698,7 @@
       },
       "kind": "interface",
       "name": "ListItemPrimaryTextProps",
-      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/list-item.tsx#L51",
+      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/list-item.tsx#L52",
       "methods": [],
       "properties": []
     },
@@ -1723,7 +1723,7 @@
       },
       "kind": "interface",
       "name": "ListItemSecondaryTextProps",
-      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/list-item.tsx#L62",
+      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/list-item.tsx#L63",
       "methods": [],
       "properties": []
     },
@@ -1748,7 +1748,7 @@
       },
       "kind": "interface",
       "name": "ListItemGraphicProps",
-      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/list-item.tsx#L73",
+      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/list-item.tsx#L76",
       "extends": [
         "any"
       ],
@@ -1776,7 +1776,7 @@
       },
       "kind": "interface",
       "name": "ListItemMetaProps",
-      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/list-item.tsx#L86",
+      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/list-item.tsx#L89",
       "extends": [
         "any"
       ],
@@ -1804,7 +1804,7 @@
       },
       "kind": "interface",
       "name": "ListGroupProps",
-      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/list-item.tsx#L113",
+      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/list-item.tsx#L116",
       "methods": [],
       "properties": []
     },
@@ -1829,7 +1829,7 @@
       },
       "kind": "interface",
       "name": "ListGroupSubheaderProps",
-      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/list-item.tsx#L125",
+      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/list-item.tsx#L128",
       "methods": [],
       "properties": []
     },
@@ -1854,7 +1854,7 @@
       },
       "kind": "interface",
       "name": "ListDividerProps",
-      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/list-item.tsx#L136",
+      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/list-item.tsx#L139",
       "methods": [],
       "properties": []
     },
@@ -1879,7 +1879,7 @@
       },
       "kind": "interface",
       "name": "SimpleListItemProps",
-      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/list-item.tsx#L155",
+      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/list-item.tsx#L158",
       "extends": [
         "ListItemProps"
       ],
@@ -1931,7 +1931,7 @@
           },
           "kind": "property",
           "name": "children",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/list-item.tsx#L167",
+          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/list-item.tsx#L170",
           "type": "React.ReactNode"
         },
         {
@@ -1980,7 +1980,7 @@
           },
           "kind": "property",
           "name": "graphic",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/list-item.tsx#L161",
+          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/list-item.tsx#L164",
           "type": "RMWC.IconPropT"
         },
         {
@@ -2004,7 +2004,7 @@
           },
           "kind": "property",
           "name": "meta",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/list-item.tsx#L165",
+          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/list-item.tsx#L168",
           "type": "React.ReactNode"
         },
         {
@@ -2028,7 +2028,7 @@
           },
           "kind": "property",
           "name": "metaIcon",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/list-item.tsx#L163",
+          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/list-item.tsx#L166",
           "type": "RMWC.IconPropT"
         },
         {
@@ -2052,7 +2052,7 @@
           },
           "kind": "property",
           "name": "secondaryText",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/list-item.tsx#L159",
+          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/list-item.tsx#L162",
           "type": "React.ReactNode"
         },
         {
@@ -2101,7 +2101,7 @@
           },
           "kind": "property",
           "name": "text",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/list-item.tsx#L157",
+          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/list-item.tsx#L160",
           "type": "React.ReactNode"
         }
       ]
