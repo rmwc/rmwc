@@ -24,7 +24,8 @@ export const ListItem = withRipple({ surface: false })(
       {
         'mdc-list-item--selected': props.selected,
         'mdc-list-item--activated': props.activated,
-        'mdc-list-item--disabled': props.disabled
+        'mdc-list-item--disabled': props.disabled,
+        'rmwc-list-item__disabled': props.disabled
       }
     ]);
     return (
@@ -62,12 +63,14 @@ export const ListItemPrimaryText = createComponent<ListItemPrimaryTextProps>(
 export interface ListItemSecondaryTextProps {}
 
 /** Secondary text for the ListItem */
-export const ListItemSecondaryText = createComponent<
-  ListItemSecondaryTextProps
->(function ListItemSecondaryText(props, ref) {
-  const className = useClassNames(props, ['mdc-list-item__secondary-text']);
-  return <Tag tag="span" {...props} ref={ref} className={className} />;
-});
+export const ListItemSecondaryText =
+  createComponent<ListItemSecondaryTextProps>(function ListItemSecondaryText(
+    props,
+    ref
+  ) {
+    const className = useClassNames(props, ['mdc-list-item__secondary-text']);
+    return <Tag tag="span" {...props} ref={ref} className={className} />;
+  });
 
 /** A graphic / icon for the ListItem */
 export interface ListItemGraphicProps extends IconProps {}
