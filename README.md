@@ -43,7 +43,7 @@ v8.0.6 is here! This release includes a bug fix for this issue: Disabled MenuIte
 
 - `npm i rmwc@latest` or `npm i @rmwc/button@latest`.
 - React 17 now usable as a peer dep
-- Updated dependencies
+- Updated lerna & other dependencies
 
 _View all release notes_ 👉 https://opencollective.com/rmwc/updates
 
