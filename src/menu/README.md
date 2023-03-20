@@ -80,6 +80,30 @@ function Example() {
 }
 ```
 
+```jsx
+function Example() {
+  const [open, setOpen] = React.useState(false);
+
+  return (
+    <MenuSurfaceAnchor>
+      <Menu
+        open={open}
+        onSelect={(evt) => console.log(evt.detail.index)}
+        onClose={(evt) => setOpen(false)}
+      >
+        <MenuItem>Item One</MenuItem>
+        <MenuItem disabled>Item Two (disabled)</MenuItem>
+        <MenuItem>Item Three</MenuItem>
+      </Menu>
+
+      <Button raised onClick={() => setOpen(!open)}>
+        Menu
+      </Button>
+    </MenuSurfaceAnchor>
+  );
+}
+```
+
 ## Simplified usage
 
 RMWC provides a convenience `SimpleMenu` component that takes a handle as a prop, and manages the open state for you.
