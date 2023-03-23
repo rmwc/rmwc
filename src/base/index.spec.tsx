@@ -1,6 +1,5 @@
-import * as RMWC from '@rmwc/types';
 import React from 'react';
-import { mount } from 'enzyme';
+import { render, screen } from '@testing-library/react';
 import {
   withTheme,
   randomId,
@@ -8,10 +7,14 @@ import {
   debounce,
   toCamel,
   toDashCase,
-  closest
+  closest,
+  Portal
 } from './';
 import { FoundationElement } from './foundation-component';
 import { wait } from './utils/test-utils';
+import { Dialog, DialogContent } from '@rmwc/dialog';
+import userEvent from '@testing-library/user-event';
+import { Button } from '@rmwc/button';
 
 jest.spyOn(console, 'warn');
 
@@ -41,7 +44,7 @@ describe('FoundationElement', () => {
       root: new FoundationElement(() => {})
     };
 
-    mount(<div ref={inst.root.setRef} />);
+    render(<div ref={inst.root.setRef} />);
 
     expect(inst.root.ref instanceof HTMLDivElement).toBe(true);
   });
@@ -104,13 +107,14 @@ describe('FoundationElement', () => {
   it('FoundationElement: handles prop merging', async () => {
     let blueChangeCalled = false;
     let redChangeCalled = false;
-    const el = mount(
+    const el = (
       <div
         className="blue"
         style={{ background: 'blue' }}
         onChange={() => (blueChangeCalled = true)}
       />
     );
+
     const inst = {
       root: new FoundationElement<any, any>(() => {})
     };
@@ -118,11 +122,11 @@ describe('FoundationElement', () => {
     inst.root.addClass('red');
     inst.root.setStyle('color', 'red');
     inst.root.addEventListener('change', () => (redChangeCalled = true));
-    el.update();
 
     await wait(100);
-    const mergedProps = inst.root.props(el.props());
+    const mergedProps = inst.root.props(el.props);
     mergedProps.onChange();
+
     expect(mergedProps.className).toBe('blue red');
     expect(mergedProps.style).toEqual({ color: 'red', background: 'blue' });
     expect(blueChangeCalled).toBe(true);
@@ -166,13 +170,24 @@ describe('Utils', () => {
       return wrapChild({ ...props, className: 'foo' });
     };
 
-    const el = mount(
+    const { container } = render(
       <Foo>
         <div className="child" />
       </Foo>
     );
 
-    expect(el.html().includes('foo child')).toBe(true);
+    expect(container).toMatchInlineSnapshot(`
+      <div>
+        <div
+          class="foo child"
+        >
+          <div
+            class="child"
+          />
+        </div>
+      </div>
+    `);
+    expect(container.firstChild).toHaveClass('foo child');
   });
 
   it('toCamel', () => {
@@ -187,23 +202,68 @@ describe('Utils', () => {
 describe('withTheme', () => {
   it('works with and without classnames', () => {
     const Component = withTheme(({ ...rest }) => <div {...rest} />);
-    const el = mount(<Component className="test" theme="primary" />);
-    expect(el.html().includes('test'));
+    const { container, rerender } = render(
+      <Component className="test" theme="primary" />
+    );
+    expect(container.firstChild).toHaveClass('test');
 
-    mount(<Component className="test" />);
-    expect(el.html().includes('test'));
+    rerender(<Component className="test" />);
+    expect(container.firstChild).toHaveClass('test');
   });
 
   it('works with arrays', () => {
     const Component = withTheme(({ ...rest }) => <div {...rest} />);
-    const el = mount(<Component theme={['primary']} />);
-    expect(el.html().includes('mdc-theme-primary'));
+    const { container } = render(<Component theme={['primary']} />);
+
+    expect(container.firstChild).toHaveClass('mdc-theme--primary');
   });
 
   it('handles deprecations', () => {
     const Component = withTheme(({ ...rest }) => <div {...rest} />);
-    // @ts-ignore
-    mount(<Component theme="primary foo" />);
-    mount(<Component theme="on-primary" />);
+
+    const { container: container1 } = render(<Component theme="primary foo" />);
+    const { container: container2 } = render(<Component theme="on-primary" />);
+    expect(container1).toMatchSnapshot();
+    expect(container1.firstChild).toHaveClass('mdc-theme--primary foo');
+
+    expect(container2).toMatchSnapshot();
+    expect(container2.firstChild).toHaveClass('mdc-theme--on-primary');
+  });
+});
+
+describe('Portal', () => {
+  it('renders', () => {
+    const { asFragment } = render(<Portal />);
+    expect(asFragment()).toMatchSnapshot();
+  });
+  it('does not mount twice', async () => {
+    const Content = ({ value, inc }: { value: number; inc: () => void }) => {
+      React.useEffect(() => {
+        inc();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+      }, []);
+
+      return <span>{`Opened ${value} times`}</span>;
+    };
+    const MyComp = () => {
+      const [open, setOpen] = React.useState(false);
+      const [counter, setCounter] = React.useState(0);
+
+      return (
+        <>
+          <Portal />
+          <Button onClick={() => setOpen(true)}>Open</Button>
+          <Dialog renderToPortal open={open} onClosed={() => setOpen(false)}>
+            <DialogContent>
+              <Content value={counter} inc={() => setCounter((c) => c + 1)} />
+            </DialogContent>
+          </Dialog>
+          )
+        </>
+      );
+    };
+    render(<MyComp />);
+    userEvent.click(screen.getByRole('button', { name: /open/i }));
+    expect(await screen.findByText('Opened 1 times')).toBeInTheDocument();
   });
 });

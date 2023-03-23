@@ -1,0 +1,121 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card renders 1`] = `
+<DocumentFragment>
+  <div
+    class="mdc-card"
+    style="width: 21rem;"
+  >
+    <div
+      class="mdc-card__primary-action"
+    >
+      <section
+        class="mdc-card__media mdc-card__media--16-9"
+      />
+      <div
+        style="padding: 0px 1rem 1rem 1rem;"
+      >
+        <h2>
+          Our Changing Planet
+        </h2>
+        <h3>
+          by Kurt Wagner
+        </h3>
+        <div>
+          Visit ten places on our planet that are undergoing the biggest changes today.
+        </div>
+      </div>
+    </div>
+    <section
+      class="mdc-card__actions"
+    >
+      <div
+        class="mdc-card__action-buttons"
+      >
+        <button
+          class="mdc-card__action mdc-card__action--button mdc-button"
+        >
+          <div
+            class="mdc-button__ripple"
+          />
+          <span
+            class="mdc-button__label"
+          >
+            Read
+          </span>
+        </button>
+        <button
+          class="mdc-card__action mdc-card__action--button mdc-button"
+        >
+          <div
+            class="mdc-button__ripple"
+          />
+          <span
+            class="mdc-button__label"
+          >
+            Bookmark
+          </span>
+        </button>
+        <button
+          class="mdc-card__action mdc-card__action--button mdc-button"
+        >
+          <div
+            class="mdc-button__ripple"
+          />
+          <span
+            class="mdc-button__label"
+          >
+            Foo
+          </span>
+        </button>
+      </div>
+      <div
+        class="mdc-card__action-icons"
+      >
+        <button
+          class="rmwc-icon rmwc-icon--ligature material-icons mdc-ripple-upgraded--unbounded mdc-card__action mdc-card__action--icon mdc-icon-button"
+          data-mdc-ripple-is-unbounded="true"
+          role="button"
+          tabindex="0"
+        >
+          favorite_border
+        </button>
+        <button
+          aria-pressed="false"
+          class="mdc-ripple-upgraded--unbounded mdc-card__action mdc-card__action--icon mdc-icon-button"
+          data-mdc-ripple-is-unbounded="true"
+          role="button"
+          tabindex="0"
+        >
+          <i
+            class="rmwc-icon rmwc-icon--ligature material-icons mdc-icon-button__icon"
+          >
+            favorite_border
+          </i>
+          <i
+            class="rmwc-icon rmwc-icon--ligature material-icons mdc-icon-button__icon mdc-icon-button__icon--on"
+          >
+            favorite
+          </i>
+        </button>
+        <button
+          class="rmwc-icon rmwc-icon--ligature material-icons mdc-ripple-upgraded--unbounded mdc-card__action mdc-card__action--icon mdc-icon-button"
+          data-mdc-ripple-is-unbounded="true"
+          role="button"
+          tabindex="0"
+        >
+          share
+        </button>
+        <button
+          class="rmwc-icon rmwc-icon--ligature material-icons mdc-ripple-upgraded--unbounded mdc-card__action mdc-card__action--icon mdc-icon-button"
+          data-mdc-ripple-is-unbounded="true"
+          role="button"
+          tabindex="0"
+        >
+          more_vert
+        </button>
+      </div>
+    </section>
+  </div>
+</DocumentFragment>
+`;

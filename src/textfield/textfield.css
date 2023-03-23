@@ -1,0 +1,3 @@
+.mdc-text-field__input::-webkit-calendar-picker-indicator {
+  display: initial;
+}

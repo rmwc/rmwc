@@ -1,66 +1,91 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render } from '@testing-library/react';
 import { Grid, GridCell, GridRow } from './';
 
 describe('Grid', () => {
-  it('renders', () => {
-    const grid = mount(<Grid />);
-    const gridCell = mount(<GridCell />);
-    expect(!!~grid.html().search('mdc-layout-grid')).toEqual(true);
-    expect(!!~gridCell.html().search('mdc-layout-grid__cell')).toEqual(true);
+  it('renders grid', () => {
+    const grid = render(<Grid />);
+
+    expect(grid.container.firstChild).toHaveClass('mdc-layout-grid');
+
+    expect(grid.asFragment()).toMatchSnapshot();
+  });
+
+  it('renders gridCell', () => {
+    const gridCell = render(<GridCell />);
+
+    expect(gridCell.container.firstChild).toHaveClass('mdc-layout-grid__cell');
+
+    expect(gridCell.asFragment()).toMatchSnapshot();
   });
 
   it('can be fixedColumnWidth', () => {
-    mount(<Grid fixedColumnWidth />);
+    const { asFragment } = render(<Grid fixedColumnWidth />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('automatically renders inner grid', () => {
-    const el = mount(<Grid />);
-    expect(el.html().includes('mdc-layout-grid__inner')).toBe(true);
+    const { container } = render(<Grid />);
+    expect(container.firstChild?.firstChild).toHaveClass(
+      'mdc-layout-grid__inner'
+    );
   });
 
   it('can have a custom GridRow component', () => {
-    const el = mount(
+    const { asFragment } = render(
       <Grid>
         <GridRow />
       </Grid>
     );
-    expect((el.html().match(/mdc-layout-grid__inner/g) || []).length).toBe(1);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('can be align', () => {
-    mount(<Grid align="left" />);
-    mount(<Grid align="right" />);
+    const { asFragment } = render(
+      <>
+        <Grid align="left" />
+        <Grid align="right" />
+      </>
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('GridCell span', () => {
-    mount(<GridCell span={4} />);
+    const { asFragment } = render(<GridCell span={4} />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('GridCell phone', () => {
-    mount(<GridCell phone={4} />);
+    const { asFragment } = render(<GridCell phone={4} />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('GridCell tablet', () => {
-    mount(<GridCell tablet={4} />);
+    const { asFragment } = render(<GridCell tablet={4} />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('GridCell desktop', () => {
-    mount(<GridCell desktop={4} />);
+    const { asFragment } = render(<GridCell desktop={4} />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('GridCell order', () => {
-    mount(<GridCell order={4} />);
+    const { asFragment } = render(<GridCell order={4} />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('GridCell align', () => {
-    mount(<GridCell align="top" />);
+    const { asFragment } = render(<GridCell align="top" />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('can have custom classnames', () => {
     [Grid, GridCell].forEach((Component: React.ComponentType<any>) => {
-      const el = mount(<Component className={'my-custom-classname'} />);
-      expect(!!~el.html().search('my-custom-classname')).toEqual(true);
+      const { container } = render(
+        <Component className={'my-custom-classname'} />
+      );
+      expect(container.firstChild).toHaveClass('my-custom-classname');
     });
   });
 });

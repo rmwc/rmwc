@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GridList can be headerCaption 1`] = `
+<DocumentFragment>
+  <div
+    class="mdc-grid-list mdc-grid-list--with-icon-align-start mdc-grid-list--tile-aspect-1x1"
+  >
+    <ul
+      class="mdc-grid-list__tiles"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`GridList can be tileAspect undefined 1`] = `
+<DocumentFragment>
+  <div
+    class="mdc-grid-list mdc-grid-list--tile-aspect-1x1"
+  >
+    <ul
+      class="mdc-grid-list__tiles"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`GridList renders 1`] = `
+<DocumentFragment>
+  <div
+    class="mdc-grid-list mdc-grid-list--tile-aspect-1x1"
+  >
+    <ul
+      class="mdc-grid-list__tiles"
+    >
+      <li
+        class="mdc-grid-tile"
+      >
+        <div
+          class="mdc-grid-tile__primary"
+        >
+          <img
+            alt=""
+            class="mdc-grid-tile__primary-content"
+            src=""
+          />
+        </div>
+        <span
+          class="mdc-grid-tile__secondary"
+        >
+          <i
+            class="rmwc-icon rmwc-icon--ligature material-icons mdc-grid-tile__icon"
+          >
+            icon
+          </i>
+          <span
+            class="mdc-grid-tile__title"
+          >
+            Tile
+          </span>
+        </span>
+      </li>
+    </ul>
+  </div>
+</DocumentFragment>
+`;

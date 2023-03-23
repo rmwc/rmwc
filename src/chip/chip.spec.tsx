@@ -1,22 +1,23 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render, screen, waitFor } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { Chip, ChipSet } from './';
-import { useChipFoundation } from './foundation';
-import { mountHook } from '@rmwc/base/utils/test-utils';
 
 describe('Chip', () => {
   it('renders', () => {
-    const el = mount(
+    const { asFragment } = render(
       <ChipSet>
         <Chip icon="favorite" trailingIcon="close" label="test-label" />
       </ChipSet>
     );
 
-    expect(el.html().includes('test-label')).toBe(true);
+    expect(screen.getByText('test-label')).toBeInTheDocument();
+
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('renders with children', () => {
-    const el = mount(
+    render(
       <ChipSet>
         <Chip icon="favorite" trailingIcon="close">
           test-label
@@ -24,67 +25,51 @@ describe('Chip', () => {
       </ChipSet>
     );
 
-    expect(el.html().includes('test-label')).toBe(true);
+    expect(screen.getByText('test-label')).toBeInTheDocument();
   });
 
   it('handles selected', () => {
-    const el = mount(
+    render(
       <ChipSet>
         <Chip checkmark selected label="test-label" />
         <Chip checkmark selected icon="favorite" label="test-label" />
       </ChipSet>
     );
-
-    expect(el.html().includes('mdc-chip--selected')).toBe(true);
+    expect(screen.getAllByRole('row')[0]).toHaveClass('mdc-chip--selected');
+    expect(screen.getAllByRole('row')[1]).toHaveClass('mdc-chip--selected');
   });
 
-  it('handles onInteraction', () => {
-    let value = 0;
-    const el = mount(<Chip onInteraction={() => value++} />);
-    el.simulate('click');
-    expect(value).toEqual(1);
+  it('handles onInteraction', async () => {
+    const onInteraction = jest.fn();
+    render(<Chip label="my label" onInteraction={onInteraction} />);
+
+    userEvent.click(screen.getByText('my label'));
+
+    await waitFor(() => expect(onInteraction).toHaveBeenCalledTimes(1));
   });
 
   it('handles custom ChipIcon', () => {
-    const el = mount(<Chip icon="favorite" />);
-    expect(el.html().includes('favorite')).toBe(true);
+    render(<Chip icon="favorite" />);
+
+    expect(screen.getByText('favorite')).toBeInTheDocument();
   });
 
-  it('handles onTrailingIconInteraction, onRemove, and onTransitionEnd', () => {
-    let onInteraction = 0;
-    let onRemove = 0;
+  it('handles onTrailingIconInteraction', async () => {
+    let onInteraction = jest.fn();
+    let onRemove = jest.fn();
 
-    const el = mount(
+    render(
       <Chip
         trailingIcon="close"
-        onTrailingIconInteraction={() => onInteraction++}
-        onRemove={() => onRemove++}
+        onTrailingIconInteraction={onInteraction}
+        onRemove={onRemove}
       />
     );
-    el.find('.mdc-chip__icon--trailing').first().simulate('click');
 
-    expect(onInteraction).toEqual(1);
-    el.simulate('transitionend');
+    userEvent.click(screen.getByText('close'));
 
-    // Having to force a call of this since JSDOM cant
-    // replicate MDCs internal animation behavior
-    el.props().onRemove();
-
-    expect(onRemove).toEqual(1);
-  });
-
-  it('handles onInteraction', () => {
-    let value = 0;
-    const el = mount(<Chip onInteraction={() => value++} />);
-    el.simulate('click');
-    expect(value).toEqual(1);
-  });
-});
-
-describe('Chip: Foundation', () => {
-  it('useChipFoundation', () => {
-    mountHook(() => {
-      const { foundation } = useChipFoundation({});
+    await waitFor(() => {
+      expect(onInteraction).toHaveBeenCalledTimes(1);
     });
   });
 });

@@ -6,5 +6,6 @@ module.exports = babelJest.createTransformer({
     require.resolve('@babel/plugin-proposal-optional-chaining'),
     require.resolve('@babel/plugin-proposal-nullish-coalescing-operator')
   ],
-  babelrc: true
+  babelrc: true,
+  setupFilesAfterEnv: ['<rootDir>/support/setupTests.js']
 });

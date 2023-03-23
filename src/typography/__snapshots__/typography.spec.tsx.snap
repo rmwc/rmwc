@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Typography renders 1`] = `
+<DocumentFragment>
+  <span
+    class="mdc-typography--body1"
+  />
+</DocumentFragment>
+`;

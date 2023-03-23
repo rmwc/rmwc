@@ -1,14 +1,15 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render } from '@testing-library/react';
 import { FormField } from './';
 
 describe('FormField', () => {
   test('renders', () => {
-    mount(
+    const { asFragment } = render(
       <FormField>
         <input type="checkbox" id="input" />
         <label htmlFor="input">Input Label</label>
       </FormField>
     );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

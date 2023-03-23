@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render, screen } from '@testing-library/react';
 
 import {
   TopAppBar,
@@ -14,7 +14,7 @@ import {
 
 describe('TopAppBar', () => {
   test('renders', () => {
-    mount(
+    const { asFragment } = render(
       <TopAppBar>
         <TopAppBarRow>
           <TopAppBarSection alignStart>
@@ -31,10 +31,12 @@ describe('TopAppBar', () => {
         </TopAppBarRow>
       </TopAppBar>
     );
+    expect(screen.getByText('Title')).toBeInTheDocument();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('can be fixed', () => {
-    const el = mount(
+    const { container } = render(
       <div>
         <TopAppBar fixed>
           <TopAppBarNavigationIcon icon="menu" />
@@ -42,107 +44,112 @@ describe('TopAppBar', () => {
         <TopAppBarFixedAdjust />
       </div>
     );
-    expect(el.html().includes('mdc-top-app-bar--fixed')).toBe(true);
+    expect(container.firstChild?.firstChild).toHaveClass(
+      'mdc-top-app-bar--fixed'
+    );
   });
 
   test('can be prominent', () => {
-    const el = mount(
+    const { container } = render(
       <TopAppBar prominent>
         <TopAppBarNavigationIcon icon="menu" />
       </TopAppBar>
     );
-    expect(el.html().includes('mdc-top-app-bar--prominent')).toBe(true);
+    expect(container.firstChild).toHaveClass('mdc-top-app-bar--prominent');
   });
 
   test('can be short', () => {
-    const el = mount(
+    const { container } = render(
       <TopAppBar short>
         <TopAppBarNavigationIcon icon="menu" />
       </TopAppBar>
     );
-    expect(el.html().includes('mdc-top-app-bar--short')).toBe(true);
+    expect(container.firstChild).toHaveClass('mdc-top-app-bar--short');
   });
 
   test('can be dense', () => {
-    const el = mount(
+    const { container } = render(
       <TopAppBar dense>
         <TopAppBarNavigationIcon icon="menu" />
       </TopAppBar>
     );
-    expect(el.html().includes('mdc-top-app-bar--dense')).toBe(true);
+    expect(container.firstChild).toHaveClass('mdc-top-app-bar--dense');
   });
 
   test('can be shortCollapsed', () => {
-    const el = mount(
+    const { container } = render(
       <TopAppBar shortCollapsed>
         <TopAppBarNavigationIcon icon="menu" />
       </TopAppBar>
     );
-    expect(el.html().includes('mdc-top-app-bar--short-collapsed')).toBe(true);
+    expect(container.firstChild).toHaveClass(
+      'mdc-top-app-bar--short-collapsed'
+    );
   });
 
   test('SimpleTopAppBar', () => {
-    const el = mount(
+    const el = render(
       <SimpleTopAppBar
         title="TestTitle"
-        navigationIcon
+        navigationIcon={{ icon: 'foo' }}
         startContent="TestStartContent"
         endContent="TestEndContent"
         actionItems={[{ icon: 'star_outline' }]}
       />
     );
 
-    mount(
-      <SimpleTopAppBar title="TestTitle" navigationIcon={{ icon: 'foo' }} />
-    );
     // has title
-    expect(el.html().includes('TestTitle')).toBe(true);
+    expect(screen.getByText('TestTitle')).toBeInTheDocument();
 
     // has the navigation icon
-    expect(el.html().includes('mdc-top-app-bar__navigation-icon')).toBe(true);
+    expect(screen.getByText('foo')).toBeInTheDocument();
 
     // has content
-    expect(el.html().includes('TestStartContent')).toBe(true);
-    expect(el.html().includes('TestEndContent')).toBe(true);
+    expect(screen.getByText('TestStartContent')).toBeInTheDocument();
+    expect(screen.getByText('TestEndContent')).toBeInTheDocument();
 
     // has action item
-    expect(el.html().includes('star_outline')).toBe(true);
+    expect(screen.getByText('star_outline')).toBeInTheDocument();
   });
 });
 
 describe('TopAppBarFixedAdjust', () => {
   it('renders', () => {
-    const el = mount(<TopAppBarFixedAdjust />);
-    const div = el.find('div');
-    const classNames = new Set((div.props().className ?? "").split(" "));
-    expect(classNames).toEqual(new Set(['mdc-top-app-bar--fixed-adjust']));
+    const { container } = render(<TopAppBarFixedAdjust />);
+    expect(
+      container.getElementsByClassName('mdc-top-app-bar--fixed-adjust')
+    ).toHaveLength(1);
   });
 
   it('can be short', () => {
-    const el = mount(<TopAppBarFixedAdjust short />);
-    const div = el.find('div');
-    const classNames = new Set((div.props().className ?? "").split(" "));
-    expect(classNames).toEqual(new Set(['mdc-top-app-bar--short-fixed-adjust']));
+    const { container } = render(<TopAppBarFixedAdjust short />);
+    expect(
+      container.getElementsByClassName('mdc-top-app-bar--short-fixed-adjust')
+    ).toHaveLength(1);
   });
 
   it('can be dense', () => {
-    const el = mount(<TopAppBarFixedAdjust dense />);
-    const div = el.find('div');
-    const classNames = new Set((div.props().className ?? "").split(" "));
-    expect(classNames).toEqual(new Set(['mdc-top-app-bar--dense-fixed-adjust']));
+    const { container } = render(<TopAppBarFixedAdjust dense />);
+    expect(
+      container.getElementsByClassName('mdc-top-app-bar--dense-fixed-adjust')
+    ).toHaveLength(1);
   });
 
   it('can be prominent', () => {
-    const el = mount(<TopAppBarFixedAdjust prominent />);
-    const div = el.find('div');
-    const classNames = new Set((div.props().className ?? "").split(" "));
-    expect(classNames).toEqual(new Set(['mdc-top-app-bar--prominent-fixed-adjust']));
+    const { container } = render(<TopAppBarFixedAdjust prominent />);
+    expect(
+      container.getElementsByClassName(
+        'mdc-top-app-bar--prominent-fixed-adjust'
+      )
+    ).toHaveLength(1);
   });
 
   it('can be denseProminent', () => {
-    const el = mount(<TopAppBarFixedAdjust denseProminent />);
-    const div = el.find('div');
-    const classNames = new Set((div.props().className ?? "").split(" "));
-    expect(classNames).toEqual(new Set(['mdc-top-app-bar--dense-prominent-fixed-adjust']));
+    const { container } = render(<TopAppBarFixedAdjust denseProminent />);
+    expect(
+      container.getElementsByClassName(
+        'mdc-top-app-bar--dense-prominent-fixed-adjust'
+      )
+    ).toHaveLength(1);
   });
 });

@@ -1,28 +1,61 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render } from '@testing-library/react';
 import { CircularProgress } from './';
 
 describe('CircularProgress', () => {
   it('renders', () => {
-    mount(<CircularProgress />);
+    const { asFragment } = render(<CircularProgress />);
+
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('can be sizes', () => {
-    mount(<CircularProgress size="xsmall" />);
-    mount(<CircularProgress size="small" />);
-    mount(<CircularProgress size="medium" />);
-    mount(<CircularProgress size="large" />);
-    mount(<CircularProgress size="xlarge" />);
-    mount(<CircularProgress size={72} />);
+    const { container, rerender } = render(<CircularProgress size="xsmall" />);
+    expect(container.firstChild).toHaveClass(
+      'rmwc-circular-progress--size-xsmall'
+    );
+
+    rerender(<CircularProgress size="small" />);
+    expect(container.firstChild).toHaveClass(
+      'rmwc-circular-progress--size-small'
+    );
+
+    rerender(<CircularProgress size="medium" />);
+    expect(container.firstChild).toHaveClass(
+      'rmwc-circular-progress--size-medium'
+    );
+
+    rerender(<CircularProgress size="large" />);
+    expect(container.firstChild).toHaveClass(
+      'rmwc-circular-progress--size-large'
+    );
+
+    rerender(<CircularProgress size="xlarge" />);
+    expect(container.firstChild).toHaveClass(
+      'rmwc-circular-progress--size-xlarge'
+    );
+
+    rerender(<CircularProgress size={72} />);
+    expect(container).toMatchSnapshot();
   });
 
   it('can be determinate', () => {
-    mount(<CircularProgress progress={0.3} />);
+    const { asFragment } = render(<CircularProgress progress={0.3} />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('can have a different max / min', () => {
-    mount(<CircularProgress min={0} max={100} progress={30} />);
-    mount(<CircularProgress progress={-1} />);
-    mount(<CircularProgress progress={2} />);
+    const { container, rerender } = render(
+      <CircularProgress min={0} max={100} progress={30} />
+    );
+    expect(container.firstChild).toHaveAttribute('aria-valuemax', '100');
+    expect(container.firstChild).toHaveAttribute('aria-valuemin', '0');
+    expect(container.firstChild).toHaveAttribute('aria-valuenow', '30');
+
+    rerender(<CircularProgress progress={-1} />);
+    expect(container.firstChild).toHaveAttribute('aria-valuenow', '-1');
+
+    rerender(<CircularProgress progress={2} />);
+    expect(container.firstChild).toHaveAttribute('aria-valuenow', '2');
   });
 });

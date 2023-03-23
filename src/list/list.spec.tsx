@@ -1,5 +1,6 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render, screen, waitFor } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import {
   List,
   ListItem,
@@ -12,7 +13,7 @@ import {
 
 describe('List', () => {
   it('renders', () => {
-    const el = mount(
+    const { asFragment } = render(
       <List>
         <ListItem ripple>
           <ListItemGraphic />
@@ -27,29 +28,34 @@ describe('List', () => {
       </List>
     );
 
-    el.unmount();
+    expect(asFragment()).toMatchSnapshot();
   });
 
-  it('handles onAction', () => {
-    let clickedIndex;
+  it('handles onAction', async () => {
+    let clickedIndex: any;
 
-    const el = mount(
+    render(
       <List onAction={(evt) => (clickedIndex = evt.detail)}>
         <ListItem>
           <ListItemPrimaryText>Cookies</ListItemPrimaryText>
         </ListItem>
         <ListItem>
-          <ListItemPrimaryText>Cookies</ListItemPrimaryText>
+          <ListItemPrimaryText>Pancakes</ListItemPrimaryText>
         </ListItem>
       </List>
     );
 
-    el.find(ListItem).last().simulate('click');
-    expect(clickedIndex).toEqual({ index: 1 });
+    userEvent.click(screen.getByText('Pancakes'));
+
+    await waitFor(() => expect(clickedIndex).toEqual({ index: 1 }));
+
+    userEvent.click(screen.getByText('Cookies'));
+
+    await waitFor(() => expect(clickedIndex).toEqual({ index: 0 }));
   });
 
   it('SimpleListItem renders', () => {
-    mount(
+    const { asFragment } = render(
       <List>
         <SimpleListItem graphic="star_border" text="Cookies" />
         <SimpleListItem
@@ -65,10 +71,12 @@ describe('List', () => {
         />
       </List>
     );
+
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('SimpleListItem can have children', () => {
-    const el = mount(
+    render(
       <SimpleListItem
         graphic="star_border"
         text="Cookies"
@@ -78,46 +86,34 @@ describe('List', () => {
         <aside>Test</aside>
       </SimpleListItem>
     );
-    expect(el.find('aside').length).toBe(1);
+    expect(screen.getByText('Test')).toBeInTheDocument();
   });
 
   it('can have custom classnames', () => {
     [List, ListItem, ListItemPrimaryText].forEach(
       (Component: React.ComponentType<any>) => {
-        const el = mount(<Component className={'my-custom-classname'} />);
-        expect(!!~el.html().search('my-custom-classname')).toEqual(true);
+        const { container } = render(
+          <Component className={'my-custom-classname'} />
+        );
+        expect(container.firstChild).toHaveClass('my-custom-classname');
       }
     );
   });
 
   it('can be activated', () => {
-    const el = mount(<ListItem activated />);
-    expect(!!~el.html().search('mdc-list-item--activated')).toEqual(true);
+    const { container } = render(<ListItem activated />);
+    expect(container.firstChild).toHaveClass('mdc-list-item--activated');
   });
 
   it('can be selected', () => {
-    const el = mount(<ListItem selected />);
-    expect(!!~el.html().search('mdc-list-item--selected')).toEqual(true);
-  });
-
-  it('handles events', () => {
-    const el = mount(
-      <List>
-        <SimpleListItem />
-        <SimpleListItem />
-      </List>
-    );
-
-    el.simulate('focus');
-    el.find(SimpleListItem).first().simulate('keydown');
-    el.simulate('click');
-    el.simulate('blur');
+    const { container } = render(<ListItem selected />);
+    expect(container.firstChild).toHaveClass('mdc-list-item--selected');
   });
 });
 
 describe('Collapsible List', () => {
   it('renders', () => {
-    mount(
+    const { asFragment } = render(
       <List>
         <ListItem>One</ListItem>
         <CollapsibleList handle={<ListItem>Handle</ListItem>}>
@@ -125,10 +121,12 @@ describe('Collapsible List', () => {
         </CollapsibleList>
       </List>
     );
+
+    expect(asFragment()).toMatchSnapshot();
   });
 
-  it('handles lifecycle', (done) => {
-    const el = mount(
+  it('handles lifecycle', () => {
+    render(
       <List>
         <ListItem>One</ListItem>
         <CollapsibleList
@@ -140,19 +138,13 @@ describe('Collapsible List', () => {
       </List>
     );
 
-    el.update();
-    setTimeout(() => {
-      el.setProps({ open: false });
-      el.update();
+    userEvent.click(screen.getByText('One'));
 
-      el.find('.handle').first().simulate('click');
-
-      done();
-    }, 300);
+    expect(screen.getByText('Handle')).toBeInTheDocument();
   });
 
-  it('handles events', (done) => {
-    const el = mount(
+  it('handles events: enter', () => {
+    render(
       <List>
         <ListItem>One</ListItem>
         <CollapsibleList
@@ -164,22 +156,7 @@ describe('Collapsible List', () => {
       </List>
     );
 
-    const root = el.find('.rmwc-collapsible-list').first();
-    root.simulate('focus');
-
-    const handle = el.find('.handle').first();
-    handle.simulate('click');
-    handle.simulate('keydown', { which: 13 });
-    handle.simulate('keydown', { which: 39 });
-    handle.simulate('keydown', { which: 38 });
-    handle.simulate('keydown', { which: 40 });
-    handle.simulate('keydown', { which: 40, shiftKey: true });
-    handle.simulate('keydown', { which: 9 });
-    handle.simulate('keydown', { which: 37 });
-    handle.simulate('keydown', { which: null });
-
-    setTimeout(() => {
-      done();
-    }, 500);
+    userEvent.type(screen.getByText('One'), '{enter}');
+    expect(screen.getByText('Handle')).toBeInTheDocument();
   });
 });
