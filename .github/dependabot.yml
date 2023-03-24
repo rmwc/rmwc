@@ -8,8 +8,6 @@ updates:
       - dependency-name: "@material/*"
       - dependency-name: "material-components-web"      
     target-branch: "next"
-    labels:
-      - "next branch"
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
@@ -17,5 +15,4 @@ updates:
     ignore:
       - dependency-name: "@material/*"
       - dependency-name: "material-components-web"
-    labels:
-      - "master"
+ 
