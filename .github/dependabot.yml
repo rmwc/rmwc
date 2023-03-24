@@ -1,18 +1,17 @@
 version: 2
 updates:
-  - package-ecosystem: "npm"
-    directory: "/"
+  - package-ecosystem: 'npm'
+    directory: '/'
     schedule:
-      interval: "daily"
+      interval: 'daily'
     ignore:
-      - dependency-name: "@material/*"
-      - dependency-name: "material-components-web"      
-    target-branch: "next"
-  - package-ecosystem: "npm"
-    directory: "/"
+      - dependency-name: '@material/*'
+      - dependency-name: 'material-components-web'
+    target-branch: 'next'
+  - package-ecosystem: 'npm'
+    directory: '/'
     schedule:
-      interval: "daily"
+      interval: 'daily'
     ignore:
-      - dependency-name: "@material/*"
-      - dependency-name: "material-components-web"
- 
+      - dependency-name: '@material/*'
+      - dependency-name: 'material-components-web'
