@@ -66,7 +66,7 @@
 		"@types/react-dom": "^17.0.15",
 		"@types/react-router": "^5.1.18",
 		"@types/react-router-dom": "^5.1.7",
-		"babel-loader": "^8.2.5",
+		"babel-loader": "^9.1.2",
 		"chokidar-cli": "^3.0.0",
 		"colors": "^1.4.0",
 		"concurrently": "^7.3.0",
