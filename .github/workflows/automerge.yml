@@ -1,4 +1,4 @@
-name: "Dependabot Automerge"
+name: 'Dependabot Automerge'
 
 on:
   workflow_call:
@@ -24,4 +24,3 @@ jobs:
         env:
           PR_URL: ${{github.event.pull_request.html_url}}
           GITHUB_TOKEN: ${{ secrets.DEPENDABOT_TOKEN }}
-
