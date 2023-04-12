@@ -241,6 +241,7 @@ describe('Portal', () => {
     const { asFragment } = render(<Portal />);
     expect(asFragment()).toMatchSnapshot();
   });
+
   it('does not mount twice', async () => {
     const Content = ({ value, inc }: { value: number; inc: () => void }) => {
       React.useEffect(() => {
