@@ -35,6 +35,7 @@ import { SiteSearch } from '../site-search';
 import { DOC_VERSIONS } from '../../common/doc-versions';
 import { menuContent, MenuItemT } from '../../common/menu-content';
 import { ThemePicker, getTheme } from './theme-picker';
+import { PortalProvider } from '@rmwc/base/PortalContext';
 
 const MainMenuItem = ({ url, label }: { url?: string; label: string }) => {
   const location = useLocation();
@@ -175,38 +176,40 @@ export function App() {
       tag="div"
       id={pageId}
     >
-      <AppBar
-        onNavClick={(evt) => {
-          setMenuIsOpen(!menuIsOpen);
-        }}
-      >
-        {!isMobile && (
-          <ThemePicker
-            selectedThemeName={theme}
-            onThemeClick={(themeName) => {
-              window.localStorage.setItem('rmwcTheme', themeName);
-              setTheme(themeName);
-            }}
+      <PortalProvider>
+        <AppBar
+          onNavClick={(evt) => {
+            setMenuIsOpen(!menuIsOpen);
+          }}
+        >
+          {!isMobile && (
+            <ThemePicker
+              selectedThemeName={theme}
+              onThemeClick={(themeName) => {
+                window.localStorage.setItem('rmwcTheme', themeName);
+                setTheme(themeName);
+              }}
+            />
+          )}
+        </AppBar>
+
+        <div className="demo-content">
+          <Nav
+            open={menuIsOpen}
+            dismissible={!isMobile}
+            modal={isMobile}
+            onClose={() => setMenuIsOpen(false)}
           />
-        )}
-      </AppBar>
 
-      <div className="demo-content">
-        <Nav
-          open={menuIsOpen}
-          dismissible={!isMobile}
-          modal={isMobile}
-          onClose={() => setMenuIsOpen(false)}
-        />
-
-        <DrawerAppContent tag="main" className="app__content">
-          <Routes>
-            <Route key={'home'} path="/" element={<Home />} />
-            {getDocRoutes({ options: menuContent })}
-          </Routes>
-        </DrawerAppContent>
-      </div>
-      <Portal />
+          <DrawerAppContent tag="main" className="app__content">
+            <Routes>
+              <Route key={'home'} path="/" element={<Home />} />
+              {getDocRoutes({ options: menuContent })}
+            </Routes>
+          </DrawerAppContent>
+        </div>
+        <Portal />
+      </PortalProvider>
     </ThemeProvider>
   );
 }

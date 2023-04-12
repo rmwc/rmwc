@@ -2,12 +2,12 @@ const path = require('path');
 const fs = require('fs');
 const getAllPackages = require('./get-all-packages');
 
-const genDocExample = packageName => {
+const genDocExample = (packageName) => {
   const readmeFiles = fs
     .readdirSync(path.resolve('src', packageName))
-    .filter(fName => fName.startsWith('readme') && fName.endsWith('.tsx'));
+    .filter((fName) => fName.startsWith('readme') && fName.endsWith('.tsx'));
 
-  readmeFiles.forEach(fName => {
+  readmeFiles.forEach((fName) => {
     const docsExamplePath = path.resolve('src', packageName, fName);
     const examplesFilename =
       fName === 'readme.tsx'
@@ -25,7 +25,7 @@ const genDocExample = packageName => {
         match && matches.push(match[1]);
       }
 
-      const formattedMatches = matches.map(m => {
+      const formattedMatches = matches.map((m) => {
         // do some global find and replace
         m = m.replace(/\<any\>/g, '');
         m = m.replace(/\/\* jsx \*\/ /g, '');
@@ -33,10 +33,10 @@ const genDocExample = packageName => {
         const parts = m
           .split('\n')
           .slice(1, -1)
-          .filter(l => !l.includes('@ts-ignore'));
+          .filter((l) => !l.includes('@ts-ignore'));
         const regexp = /(^\s+)/g;
         const trimLength = regexp.exec(parts[0])[1].length;
-        let cleaned = parts.map(p => p.slice(trimLength)).join('\n');
+        let cleaned = parts.map((p) => p.slice(trimLength)).join('\n');
         if (cleaned.startsWith('{')) {
           cleaned = cleaned.slice(1, -1);
         }
@@ -57,8 +57,8 @@ const genDocExample = packageName => {
 
 try {
   getAllPackages()
-    .filter(name => !['base', 'rmwc', '@types'].includes(name))
-    .forEach(d => {
+    .filter((name) => !['rmwc', '@types'].includes(name))
+    .forEach((d) => {
       console.log(`Generating Examples For: ${d}`);
       genDocExample(d);
     });
