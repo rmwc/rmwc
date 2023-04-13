@@ -8,7 +8,7 @@ exports[`CircularProgress can be determinate 1`] = `
     aria-valuenow="0.3"
     class="mdc-circular-progress"
     role="progressbar"
-    style="width: 24px; height: 24px;"
+    style="font-size: 24px; width: 24px; height: 24px;"
   >
     <div
       class="mdc-circular-progress__determinate-container"
@@ -46,7 +46,7 @@ exports[`CircularProgress renders 1`] = `
     aria-valuemin="0"
     class="mdc-circular-progress mdc-circular-progress--indeterminate"
     role="progressbar"
-    style="width: 24px; height: 24px;"
+    style="font-size: 24px; width: 24px; height: 24px;"
   >
     <div
       class="mdc-circular-progress__indeterminate-container"

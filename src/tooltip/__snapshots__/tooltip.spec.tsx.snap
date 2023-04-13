@@ -2,7 +2,23 @@
 
 exports[`Tooltip align 1`] = `
 <DocumentFragment>
-  <span>
+  <div
+    aria-hidden="true"
+    class="mdc-tooltip"
+    id="tooltip-id"
+    role="tooltip"
+  >
+    <div
+      class="mdc-tooltip__surface mdc-tooltip__surface-animation"
+    >
+      tooltip
+    </div>
+  </div>
+  <span
+    aria-describedby="tooltip-id"
+    class=""
+    data-tooltip-id="tooltip-id"
+  >
     test
   </span>
 </DocumentFragment>
@@ -10,18 +26,25 @@ exports[`Tooltip align 1`] = `
 
 exports[`Tooltip renders 1`] = `
 <DocumentFragment>
-  <span
-    style=""
+  <div
+    aria-hidden="true"
+    class="mdc-tooltip mdc-tooltip--shown mdc-tooltip--showing"
+    data-mdc-tooltip-persistent="true"
+    id="tooltip-id"
+    role="tooltip"
+    style="top: 4px; left: 0px;"
   >
-    test
-  </span>
-</DocumentFragment>
-`;
-
-exports[`Tooltip showArrow 1`] = `
-<DocumentFragment>
+    <div
+      class="mdc-tooltip__surface mdc-tooltip__surface-animation"
+      style="transform-origin: center top;"
+    >
+      tooltip
+    </div>
+  </div>
   <span
-    style=""
+    aria-describedby="tooltip-id"
+    class=""
+    data-tooltip-id="tooltip-id"
   >
     test
   </span>

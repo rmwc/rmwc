@@ -145,12 +145,12 @@ export const Slider: RMWC.ComponentType<SliderProps, SliderHTMLProps, 'input'> =
       >
         {range && (
           <input
+            {...rest}
             className="mdc-slider__input"
             disabled={disabled}
             max={safeNum(max)}
             min={safeNum(min)}
             name="rangeStart"
-            {...rest}
             // @ts-ignore
             onChange={onChangeValueStart}
             // @ts-ignore
