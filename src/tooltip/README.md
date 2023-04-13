@@ -67,7 +67,7 @@ Wrap any component in a `Tooltip` and provide the content attribute. The only re
 
 ```jsx
 <Tooltip
-  /** You make something like a popover window by just styling your inner content. */
+  // You make something like a popover window by just styling your inner content.
   content={
     <div
       style={{
