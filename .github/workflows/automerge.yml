@@ -17,9 +17,14 @@ jobs:
         uses: dependabot/fetch-metadata@v1.1.1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Automerge
+      - name: Enable auto-merge
+        run: gh pr merge --auto --merge "$PR_URL"
+        env:
+          PR_URL: ${{github.event.pull_request.html_url}}
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      - name: Approve update
         if: ${{ steps.dependabot_metadata.outputs.update-type == 'version-update:semver-minor' || steps.dependabot_metadata.outputs.update-type == 'version-update:semver-patch' }}
-        run: gh pr merge --admin --merge "$PR_URL"
+        run: gh pr review $PR_URL --approve -b "Approving this pull request as it is a patch or minor update"
         env:
           PR_URL: ${{github.event.pull_request.html_url}}
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
