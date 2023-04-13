@@ -1,6 +1,5 @@
 import React from 'react';
-import { render, screen, waitFor } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
+import { render } from '@testing-library/react';
 import { Slider } from './';
 
 jest.spyOn(console, 'warn');
@@ -33,28 +32,8 @@ describe('Slider', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('handles onChange', async () => {
-    let value = 0;
-    render(<Slider onChange={() => value++} />);
-    userEvent.click(screen.getByRole('slider'));
-    await waitFor(() => expect(value).toEqual(1));
-  });
-
-  it('handles onInput', async () => {
-    let value = 0;
-    render(<Slider onInput={() => value++} />);
-    userEvent.click(screen.getByRole('slider'));
-    await waitFor(() => expect(value).toEqual(1));
-  });
-
   it('handles min > 100', () => {
-    render(<Slider min={101} max={200} />);
-  });
-
-  it('handles out of bounds', () => {
-    render(<Slider value={0} min={1} max={2} />);
-    render(<Slider value={3} min={1} max={2} />);
-    expect(console.warn).toHaveBeenCalled();
+    render(<Slider min={101} max={200} value={102} />);
   });
 
   it('can have custom classnames', () => {

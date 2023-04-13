@@ -258,16 +258,6 @@ export const useSliderFoundation = (
     }
   }, [props.range, foundation]);
 
-  // max
-  useEffect(() => {
-    props.max !== undefined && foundation.setMax(+props.max);
-  }, [props.max, foundation]);
-
-  // min
-  useEffect(() => {
-    props.min !== undefined && foundation.setMin(+props.min);
-  }, [props.min, foundation]);
-
   // value
   useEffect(() => {
     let value =
