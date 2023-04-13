@@ -59,6 +59,10 @@ export default function Readme() {
         </>
       </DocsExample>
 
+      <DocsExample label="With min and max">
+        <Slider discrete min={0} max={200} step={10} />
+      </DocsExample>
+
       <DocsExample label="With markers">
         <Slider discrete displayMarkers step={10} />
       </DocsExample>
