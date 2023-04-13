@@ -41,6 +41,10 @@ function Example() {
 ```
 
 ```jsx
+<Slider discrete min={0} max={200} step={10} />
+```
+
+```jsx
 <Slider discrete displayMarkers step={10} />
 ```
 
