@@ -3,10 +3,6 @@ name: "Dependabot Automerge"
 on:
   workflow_call:
 
-permissions:
-  pull-requests: write
-  contents: write
-
 jobs:
   automerge:
     runs-on: ubuntu-latest
@@ -16,16 +12,16 @@ jobs:
         id: dependabot_metadata
         uses: dependabot/fetch-metadata@v1.1.1
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.DEPENDABOT_TOKEN }}
       - name: Enable auto-merge
         run: gh pr merge --auto --merge "$PR_URL"
         env:
           PR_URL: ${{github.event.pull_request.html_url}}
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          GITHUB_TOKEN: ${{ secrets.DEPENDABOT_TOKEN }}
       - name: Approve update
         if: ${{ steps.dependabot_metadata.outputs.update-type == 'version-update:semver-minor' || steps.dependabot_metadata.outputs.update-type == 'version-update:semver-patch' }}
         run: gh pr review $PR_URL --approve -b "Approving this pull request as it is a patch or minor update"
         env:
           PR_URL: ${{github.event.pull_request.html_url}}
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          GITHUB_TOKEN: ${{ secrets.DEPENDABOT_TOKEN }}
 
