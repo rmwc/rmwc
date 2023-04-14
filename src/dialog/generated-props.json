@@ -15,7 +15,7 @@
       },
       "kind": "interface",
       "name": "DialogQueueInput",
-      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/dialog/dialog-queue.tsx#L13",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog-queue.tsx#L13",
       "extends": [
         "any",
         "any"
@@ -36,7 +36,7 @@
           },
           "kind": "property",
           "name": "id",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/dialog/dialog-queue.tsx#L16",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog-queue.tsx#L16",
           "type": "undefined | string"
         },
         {
@@ -60,7 +60,7 @@
           },
           "kind": "property",
           "name": "inputProps",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/dialog/dialog-queue.tsx#L18",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog-queue.tsx#L18",
           "type": "TextFieldProps & TextFieldHTMLProps"
         }
       ]
@@ -79,7 +79,7 @@
       },
       "kind": "interface",
       "name": "DialogQueueSpec",
-      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/dialog/dialog-queue.tsx#L21",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog-queue.tsx#L21",
       "extends": [
         "DialogQueueInput"
       ],
@@ -99,7 +99,7 @@
           },
           "kind": "property",
           "name": "id",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/dialog/dialog-queue.tsx#L22",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog-queue.tsx#L22",
           "type": "string"
         },
         {
@@ -123,7 +123,7 @@
           },
           "kind": "property",
           "name": "inputProps",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/dialog/dialog-queue.tsx#L18",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog-queue.tsx#L18",
           "inheritedFrom": "DialogQueueInput.inputProps",
           "type": "TextFieldProps & TextFieldHTMLProps"
         },
@@ -141,7 +141,7 @@
           },
           "kind": "property",
           "name": "reject",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/dialog/dialog-queue.tsx#L24",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog-queue.tsx#L24",
           "type": "(reason: any) => void"
         },
         {
@@ -158,7 +158,7 @@
           },
           "kind": "property",
           "name": "resolve",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/dialog/dialog-queue.tsx#L23",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog-queue.tsx#L23",
           "type": "(response: any) => void"
         }
       ]
@@ -184,7 +184,7 @@
       },
       "kind": "interface",
       "name": "DialogQueueProps",
-      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/dialog/dialog-queue.tsx#L28",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog-queue.tsx#L28",
       "extends": [
         "any"
       ],
@@ -204,7 +204,7 @@
           },
           "kind": "property",
           "name": "dialogs",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/dialog/dialog-queue.tsx#L29",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog-queue.tsx#L29",
           "type": "ArrayEmitter<DialogQueueSpec>"
         }
       ]
@@ -230,7 +230,7 @@
       },
       "kind": "interface",
       "name": "DialogProps",
-      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/dialog/dialog.tsx#L30",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L30",
       "methods": [],
       "properties": [
         {
@@ -254,7 +254,7 @@
           },
           "kind": "property",
           "name": "foundationRef",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/dialog/dialog.tsx#L46",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L46",
           "type": "React.Ref<MDCDialogFoundation>"
         },
         {
@@ -278,7 +278,7 @@
           },
           "kind": "property",
           "name": "onClose",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/dialog/dialog.tsx#L38",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L38",
           "type": "undefined | (evt: DialogOnCloseEventT) => void"
         },
         {
@@ -302,7 +302,7 @@
           },
           "kind": "property",
           "name": "onClosed",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/dialog/dialog.tsx#L40",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L40",
           "type": "undefined | (evt: DialogOnCloseEventT) => void"
         },
         {
@@ -326,7 +326,7 @@
           },
           "kind": "property",
           "name": "onOpen",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/dialog/dialog.tsx#L34",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L34",
           "type": "undefined | (evt: DialogOnOpenEventT) => void"
         },
         {
@@ -350,7 +350,7 @@
           },
           "kind": "property",
           "name": "onOpened",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/dialog/dialog.tsx#L36",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L36",
           "type": "undefined | (evt: DialogOnOpenedEventT) => void"
         },
         {
@@ -374,7 +374,7 @@
           },
           "kind": "property",
           "name": "open",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/dialog/dialog.tsx#L32",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L32",
           "type": "undefined | false | true"
         },
         {
@@ -398,7 +398,7 @@
           },
           "kind": "property",
           "name": "preventOutsideDismiss",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/dialog/dialog.tsx#L42",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L42",
           "type": "undefined | false | true"
         },
         {
@@ -422,7 +422,7 @@
           },
           "kind": "property",
           "name": "renderToPortal",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/dialog/dialog.tsx#L44",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L44",
           "type": "PortalPropT"
         }
       ]
@@ -448,7 +448,7 @@
       },
       "kind": "interface",
       "name": "SimpleDialogProps",
-      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/dialog/dialog.tsx#L91",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L91",
       "extends": [
         "DialogProps"
       ],
@@ -475,7 +475,7 @@
           },
           "kind": "property",
           "name": "acceptLabel",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/dialog/dialog.tsx#L101",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L101",
           "type": "React.ReactNode"
         },
         {
@@ -499,7 +499,7 @@
           },
           "kind": "property",
           "name": "body",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/dialog/dialog.tsx#L97",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L97",
           "type": "React.ReactNode"
         },
         {
@@ -523,7 +523,7 @@
           },
           "kind": "property",
           "name": "cancelLabel",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/dialog/dialog.tsx#L103",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L103",
           "type": "React.ReactNode"
         },
         {
@@ -547,7 +547,7 @@
           },
           "kind": "property",
           "name": "children",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/dialog/dialog.tsx#L105",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L105",
           "type": "React.ReactNode"
         },
         {
@@ -571,7 +571,7 @@
           },
           "kind": "property",
           "name": "footer",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/dialog/dialog.tsx#L99",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L99",
           "type": "React.ReactNode"
         },
         {
@@ -595,7 +595,7 @@
           },
           "kind": "property",
           "name": "foundationRef",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/dialog/dialog.tsx#L46",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L46",
           "inheritedFrom": "DialogProps.foundationRef",
           "type": "React.Ref<MDCDialogFoundation>"
         },
@@ -620,7 +620,7 @@
           },
           "kind": "property",
           "name": "header",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/dialog/dialog.tsx#L95",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L95",
           "type": "React.ReactNode"
         },
         {
@@ -644,7 +644,7 @@
           },
           "kind": "property",
           "name": "onClose",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/dialog/dialog.tsx#L38",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L38",
           "inheritedFrom": "DialogProps.onClose",
           "type": "undefined | (evt: DialogOnCloseEventT) => void"
         },
@@ -669,7 +669,7 @@
           },
           "kind": "property",
           "name": "onClosed",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/dialog/dialog.tsx#L40",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L40",
           "inheritedFrom": "DialogProps.onClosed",
           "type": "undefined | (evt: DialogOnCloseEventT) => void"
         },
@@ -694,7 +694,7 @@
           },
           "kind": "property",
           "name": "onOpen",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/dialog/dialog.tsx#L34",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L34",
           "inheritedFrom": "DialogProps.onOpen",
           "type": "undefined | (evt: DialogOnOpenEventT) => void"
         },
@@ -719,7 +719,7 @@
           },
           "kind": "property",
           "name": "onOpened",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/dialog/dialog.tsx#L36",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L36",
           "inheritedFrom": "DialogProps.onOpened",
           "type": "undefined | (evt: DialogOnOpenedEventT) => void"
         },
@@ -744,7 +744,7 @@
           },
           "kind": "property",
           "name": "open",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/dialog/dialog.tsx#L32",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L32",
           "inheritedFrom": "DialogProps.open",
           "type": "undefined | false | true"
         },
@@ -769,7 +769,7 @@
           },
           "kind": "property",
           "name": "preventOutsideDismiss",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/dialog/dialog.tsx#L42",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L42",
           "inheritedFrom": "DialogProps.preventOutsideDismiss",
           "type": "undefined | false | true"
         },
@@ -794,7 +794,7 @@
           },
           "kind": "property",
           "name": "renderToPortal",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/dialog/dialog.tsx#L44",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L44",
           "inheritedFrom": "DialogProps.renderToPortal",
           "type": "PortalPropT"
         },
@@ -819,7 +819,7 @@
           },
           "kind": "property",
           "name": "title",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/dialog/dialog.tsx#L93",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L93",
           "type": "React.ReactNode"
         }
       ]
@@ -845,7 +845,7 @@
       },
       "kind": "interface",
       "name": "DialogTitleProps",
-      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/dialog/dialog.tsx#L184",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L184",
       "methods": [],
       "properties": []
     },
@@ -870,7 +870,7 @@
       },
       "kind": "interface",
       "name": "DialogContentProps",
-      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/dialog/dialog.tsx#L195",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L195",
       "methods": [],
       "properties": []
     },
@@ -895,7 +895,7 @@
       },
       "kind": "interface",
       "name": "DialogActionsProps",
-      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/dialog/dialog.tsx#L206",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L206",
       "methods": [],
       "properties": []
     },
@@ -920,9 +920,9 @@
       },
       "kind": "interface",
       "name": "DialogButtonProps",
-      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/dialog/dialog.tsx#L217",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L217",
       "extends": [
-        "any"
+        "ButtonProps"
       ],
       "methods": [],
       "properties": [
@@ -947,8 +947,128 @@
           },
           "kind": "property",
           "name": "action",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/dialog/dialog.tsx#L219",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L219",
           "type": "undefined | string"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Content specified as children.</p>\n"
+            ],
+            "contentsRaw": "Content specified as children.",
+            "metadata": {}
+          },
+          "fileName": "src/button/dist/index.d.ts",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "children",
+          "inheritedFrom": "ButtonProps.children",
+          "type": "React.ReactNode"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Used to indicate a dangerous action.</p>\n"
+            ],
+            "contentsRaw": "Used to indicate a dangerous action.",
+            "metadata": {}
+          },
+          "fileName": "src/button/dist/index.d.ts",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "danger",
+          "inheritedFrom": "ButtonProps.danger",
+          "type": "undefined | false | true"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Make the Button dense.</p>\n"
+            ],
+            "contentsRaw": "Make the Button dense.",
+            "metadata": {}
+          },
+          "fileName": "src/button/dist/index.d.ts",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "dense",
+          "inheritedFrom": "ButtonProps.dense",
+          "type": "undefined | false | true"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Make the button disabled</p>\n"
+            ],
+            "contentsRaw": "Make the button disabled",
+            "metadata": {}
+          },
+          "fileName": "src/button/dist/index.d.ts",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "disabled",
+          "inheritedFrom": "ButtonProps.disabled",
+          "type": "undefined | false | true"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>An Icon for the Button</p>\n"
+            ],
+            "contentsRaw": "An Icon for the Button",
+            "metadata": {}
+          },
+          "fileName": "src/button/dist/index.d.ts",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "icon",
+          "inheritedFrom": "ButtonProps.icon",
+          "type": "RMWC.IconPropT"
         },
         {
           "documentation": {
@@ -971,7 +1091,175 @@
           },
           "kind": "property",
           "name": "isDefaultAction",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/dialog/dialog.tsx#L221",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L221",
+          "type": "undefined | false | true"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Content specified as a label prop.</p>\n"
+            ],
+            "contentsRaw": "Content specified as a label prop.",
+            "metadata": {}
+          },
+          "fileName": "src/button/dist/index.d.ts",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "label",
+          "inheritedFrom": "ButtonProps.label",
+          "type": "React.ReactNode | any"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Make the button outlined.</p>\n"
+            ],
+            "contentsRaw": "Make the button outlined.",
+            "metadata": {}
+          },
+          "fileName": "src/button/dist/index.d.ts",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "outlined",
+          "inheritedFrom": "ButtonProps.outlined",
+          "type": "undefined | false | true"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Make the Button raised.</p>\n"
+            ],
+            "contentsRaw": "Make the Button raised.",
+            "metadata": {}
+          },
+          "fileName": "src/button/dist/index.d.ts",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "raised",
+          "inheritedFrom": "ButtonProps.raised",
+          "type": "undefined | false | true"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Adds a ripple effect to the component</p>\n"
+            ],
+            "contentsRaw": "Adds a ripple effect to the component",
+            "metadata": {}
+          },
+          "fileName": "src/types/dist/index.d.ts",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "ripple",
+          "inheritedFrom": "WithRippleProps.ripple",
+          "type": "RipplePropT"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Makes the button more touch friendly. This will automatically be set true if used inside of TouchTargetWrapper.</p>\n"
+            ],
+            "contentsRaw": "Makes the button more touch friendly. This will automatically be set true if used inside of TouchTargetWrapper.",
+            "metadata": {}
+          },
+          "fileName": "src/button/dist/index.d.ts",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "touch",
+          "inheritedFrom": "ButtonProps.touch",
+          "type": "undefined | false | true"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>A trailing icon for the Button</p>\n"
+            ],
+            "contentsRaw": "A trailing icon for the Button",
+            "metadata": {}
+          },
+          "fileName": "src/button/dist/index.d.ts",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "trailingIcon",
+          "inheritedFrom": "ButtonProps.trailingIcon",
+          "type": "RMWC.IconPropT"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Make the button unelevated.</p>\n"
+            ],
+            "contentsRaw": "Make the button unelevated.",
+            "metadata": {}
+          },
+          "fileName": "src/button/dist/index.d.ts",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "unelevated",
+          "inheritedFrom": "ButtonProps.unelevated",
           "type": "undefined | false | true"
         }
       ]
@@ -997,7 +1285,7 @@
       },
       "kind": "type alias",
       "name": "DialogOnOpenEventT",
-      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/dialog/dialog.tsx#L20",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L20",
       "type": "RMWC.CustomEventT<{}>"
     },
     "DialogOnOpenedEventT": {
@@ -1014,7 +1302,7 @@
       },
       "kind": "type alias",
       "name": "DialogOnOpenedEventT",
-      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/dialog/dialog.tsx#L21",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L21",
       "type": "RMWC.CustomEventT<{}>"
     },
     "DialogOnCloseEventT": {
@@ -1031,7 +1319,7 @@
       },
       "kind": "type alias",
       "name": "DialogOnCloseEventT",
-      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/dialog/dialog.tsx#L22",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L22",
       "type": "RMWC.CustomEventT<>"
     },
     "DialogOnClosedEventT": {
@@ -1048,7 +1336,7 @@
       },
       "kind": "type alias",
       "name": "DialogOnClosedEventT",
-      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/dialog/dialog.tsx#L23",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L23",
       "type": "RMWC.CustomEventT<>"
     },
     "SimpleDialogHTMLProps": {
@@ -1065,7 +1353,7 @@
       },
       "kind": "type alias",
       "name": "SimpleDialogHTMLProps",
-      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/dialog/dialog.tsx#L108",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L108",
       "type": "RMWC.HTMLProps<HTMLDivElement, Omit<AllHTMLAttributes<HTMLDivElement>, \"title\">>"
     }
   }

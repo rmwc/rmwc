@@ -15,7 +15,7 @@
       },
       "kind": "interface",
       "name": "NotchedOutlineProps",
-      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/notched-outline/index.tsx#L7",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/notched-outline/index.tsx#L7",
       "methods": [],
       "properties": [
         {
@@ -32,7 +32,7 @@
           },
           "kind": "property",
           "name": "notch",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/notched-outline/index.tsx#L8",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/notched-outline/index.tsx#L8",
           "type": "undefined | number"
         }
       ]
