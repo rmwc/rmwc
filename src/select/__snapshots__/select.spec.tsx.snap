@@ -10,7 +10,7 @@ exports[`Select can accept formatted options array 1`] = `
       aria-haspopup="listbox"
       class="mdc-select__anchor"
       role="button"
-      tabindex="0"
+      tabindex="-1"
     >
       <span
         class="mdc-line-ripple mdc-line-ripple--deactivating"
@@ -87,7 +87,7 @@ exports[`Select can accept options array 1`] = `
       aria-haspopup="listbox"
       class="mdc-select__anchor"
       role="button"
-      tabindex="0"
+      tabindex="-1"
     >
       <span
         class="mdc-line-ripple mdc-line-ripple--deactivating"
@@ -163,7 +163,7 @@ exports[`Select can have custom rootProps 1`] = `
       aria-haspopup="listbox"
       class="mdc-select__anchor"
       role="button"
-      tabindex="0"
+      tabindex="-1"
     >
       <span
         class="mdc-line-ripple mdc-line-ripple--deactivating"
@@ -219,7 +219,7 @@ exports[`Select renders 1`] = `
       aria-haspopup="listbox"
       class="mdc-select__anchor"
       role="button"
-      tabindex="0"
+      tabindex="-1"
     >
       <span
         class="mdc-line-ripple mdc-line-ripple--deactivating"
