@@ -14,7 +14,7 @@
 		"react-dom": ">=16.8.x"
 	},
 	"scripts": {
-		"install": "lerna bootstrap --force-local --hoist",
+		"bootstrap": "lerna bootstrap --force-local --hoist --ignore-scripts",
 		"start": "cross-env NODE_OPTIONS='--max-old-space-size=4096' && npm run clean && concurrently \"react-app-rewired start\" \"chokidar './src/**/readme.tsx' -c 'npm run docgen:examples'\"",
 		"build:docsite": "cross-env NODE_OPTIONS='--max-old-space-size=4096' react-app-rewired build && rm -R -f docs && mv build docs",
 		"build:docs": "npm run clean && npm run docgen && npm run build:docsite",
@@ -79,7 +79,7 @@
 		"eslint-plugin-babel": "^5.3.1",
 		"generate-changelog": "^1.8.0",
 		"husky": "^8.0.3",
-		"lerna": "^6.4.1",
+		"lerna": "^6.6.1",
 		"module-alias": "^2.2.2",
 		"prettier": "2.3.1",
 		"react": "^17.0.2",
@@ -94,6 +94,9 @@
 	},
 	"eslintIgnore": [
 		"node_modules"
+	],
+	"workspaces": [
+		"./src/*"
 	],
 	"config-overrides-path": "config/rewire",
 	"browserslist": [
