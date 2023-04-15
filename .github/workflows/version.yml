@@ -21,7 +21,7 @@ jobs:
           node-version: '16.x'
           registry-url: 'https://registry.npmjs.org'
           cache: 'npm'
-      - run: npm ci
+      - run: npm ci --ignore-scripts
       - name: 'Patch Release'
         run: npm run release:patch
         if: contains(github.head_ref, '/patch') && github.base_ref == 'master'
