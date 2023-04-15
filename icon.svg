@@ -1,0 +1,30 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 225 225" width="1000" height="1000">
+	<title>icon-sketch</title>
+	<defs>
+		<clipPath clipPathUnits="userSpaceOnUse" id="cp1">
+			<path d="m0 0h225v225h-225z"/>
+		</clipPath>
+		<clipPath clipPathUnits="userSpaceOnUse" id="cp2">
+			<path d="m33 34h158v158h-158z"/>
+		</clipPath>
+		<filter x="-50%" y="-50%" width="200%" height="200%" id="f1" ><feDropShadow dx="-1.2246467991473532e-16" dy="2" stdDeviation="8.75" flood-color="#000000" flood-opacity=".1"/></filter>
+		<filter x="-50%" y="-50%" width="200%" height="200%" id="f2" ><feDropShadow dx="-1.2246467991473532e-16" dy="2" stdDeviation="10.833333333333334" flood-color="#000000" flood-opacity=".3"/></filter>
+		<filter x="-50%" y="-50%" width="200%" height="200%" id="f3" ><feDropShadow dx="-1.2246467991473532e-16" dy="2" stdDeviation="5" flood-color="#000000" flood-opacity=".1"/></filter>
+	</defs>
+	<style>
+		.s0 { fill: #6200ee } 
+		.s1 { fill-opacity: .7;fill: #afe9f9 } 
+		.s2 { filter: url(#f1);fill: #f3f2ff } 
+		.s3 { filter: url(#f2);fill: #ffffff } 
+		.s4 { opacity: .7;filter: url(#f3);fill: #03dac4 } 
+	</style>
+	<g id="Artboard Copy" clip-path="url(#cp1)">
+		<path id="Oval" class="s0" d="m112.5 225c62.1 0 112.5-50.4 112.5-112.5 0-62.1-50.4-112.5-112.5-112.5-62.1 0-112.5 50.4-112.5 112.5 0 62.1 50.4 112.5 112.5 112.5z"/>
+		<path id="Rectangle 3" class="s1" d="m33 34h158v158h-158z"/>
+		<g id="Mask by Rectangle 3" clip-path="url(#cp2)">
+			<path id="Rectangle 4" class="s2" d="m33 34l158 158h-158z"/>
+			<path id="Oval 2" class="s3" d="m85.5 139c29 0 52.5-23.5 52.5-52.5 0-29-23.5-52.5-52.5-52.5-16 0-52.5 0-52.5 0 0 0 0 39.5 0 52.5 0 29 23.5 52.5 52.5 52.5z"/>
+			<path id="Rectangle 2" class="s4" d="m33 34h52.7v158h-52.7z"/>
+		</g>
+	</g>
+</svg>
