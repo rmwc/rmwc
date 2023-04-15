@@ -1,4 +1,4 @@
-name: RMWC Release
+name: Release
 
 on:
   pull_request:

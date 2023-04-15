@@ -1,4 +1,4 @@
-name: RMWC Publish
+name: Publish
 
 on:
   pull_request:

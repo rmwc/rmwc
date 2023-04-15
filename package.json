@@ -45,7 +45,7 @@
 		"version": "node scripts/fix-package-version && npm run changelog && git add CHANGELOG.md && git commit --allow-empty -m 'Updating Changelog'",
 		"prepare": "husky install",
 		"build-storybook": "build-storybook",
-		"validate:actions": "action-validator .github/workflows/automerge.yml && action-validator .github/workflows/publish.yml && action-validator .github/workflows/pull-request.yml && action-validator .github/workflows/unit-test.yml && action-validator .github/workflows/version.yml"
+		"validate:actions": "action-validator .github/workflows/automerge.yml && action-validator .github/workflows/publish.yml && action-validator .github/workflows/unit-test.yml && action-validator .github/workflows/version.yml"
 	},
 	"devDependencies": {
 		"@action-validator/cli": "^0.5.1",

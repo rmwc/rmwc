@@ -1,7 +1,8 @@
-name: RMWC Unit Tests
+name: Unit Tests
 
 on:
-  workflow_call:
+  pull_request:
+    branches: [master, next]
 
 jobs:
   test:
