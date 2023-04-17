@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Docs, DocsExample, DocProps } from '@doc-utils';
+import { Docs, DocsExample, DocProps, DocsSubtitle } from '@doc-utils';
 import propsSrc from './generated-props.json';
 import examples from './generated-examples.json';
 
@@ -18,6 +18,30 @@ export default function Readme() {
     >
       <DocsExample>
         <FormField>
+          <input type="checkbox" id="input" />
+          <label htmlFor="input">Input Label</label>
+        </FormField>
+      </DocsExample>
+
+      <DocsSubtitle>Align end</DocsSubtitle>
+      <DocsExample>
+        <FormField alignEnd>
+          <input type="checkbox" id="input" />
+          <label htmlFor="input">Input Label</label>
+        </FormField>
+      </DocsExample>
+
+      <DocsSubtitle>No wrap</DocsSubtitle>
+      <DocsExample>
+        <FormField noWrap>
+          <input type="checkbox" id="input" />
+          <label htmlFor="input">Input Label</label>
+        </FormField>
+      </DocsExample>
+
+      <DocsSubtitle>Space between</DocsSubtitle>
+      <DocsExample>
+        <FormField spaceBetween>
           <input type="checkbox" id="input" />
           <label htmlFor="input">Input Label</label>
         </FormField>
