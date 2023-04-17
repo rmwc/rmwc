@@ -3,7 +3,7 @@ name: "Dependabot Automerge"
 on: pull_request_target
 
 permissions:
-  contents: read
+  contents: write
   pull-requests: write  
 
 jobs:
