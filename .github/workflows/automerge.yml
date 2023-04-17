@@ -1,10 +1,6 @@
 name: "Dependabot Automerge"
 
-on:
-  workflow_run:
-    workflows: ["Unit Tests"]
-    types: 
-      - completed
+on: pull_request_target
 
 permissions:
   contents: read
@@ -15,10 +11,6 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ github.actor == 'dependabot[bot]' }}
     steps:
-      - uses: actions/checkout@v3
-        with:
-           ref: ${{ github.event.pull_request.head.sha }}
-           github-token: ${{ secrets.GITHUB_TOKEN }}    
       - name: Dependabot metadata
         id: dependabot_metadata
         uses: dependabot/fetch-metadata@v1.1.1
