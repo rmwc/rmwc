@@ -1,10 +1,13 @@
 name: 'Dependabot Automerge'
 
 on:
-  workflow_call:
+  workflow_run:
+    workflows: ["Unit Tests"]
+    types: 
+      - completed
 
 permissions:
-  contents: write
+  contents: read
   pull-requests: write  
 
 jobs:
@@ -22,10 +25,6 @@ jobs:
         env:
           PR_URL: ${{github.event.pull_request.html_url}}
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-      - name: Testing
-        run: echo ${{ secrets.TEST_KEY }}
-      - name: Testing
-        run: gh secret list --app dependabot
       - name: Approve update
         if: ${{ steps.dependabot_metadata.outputs.update-type == 'version-update:semver-minor' || steps.dependabot_metadata.outputs.update-type == 'version-update:semver-patch' }}
         run: gh pr review $PR_URL --approve -b "Approving this pull request as it is a patch or minor update"
