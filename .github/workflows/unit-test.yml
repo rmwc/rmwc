@@ -1,7 +1,8 @@
-name: RMWC Unit Tests
+name: Unit Tests
 
 on:
-  workflow_call:
+  pull_request:
+    branches: [master, next]
 
 jobs:
   test:
@@ -14,7 +15,7 @@ jobs:
           node-version: 16.x
           registry-url: 'https://registry.npmjs.org'
           cache: 'npm'
-      - run: npm ci
+      - run: npm ci --ignore-scripts
       - run: npm run clean
       - run: npm test
         env:
