@@ -3,7 +3,7 @@ import { render } from '@testing-library/react';
 import { FormField } from './';
 
 describe('FormField', () => {
-  test('renders', () => {
+  it('renders', () => {
     const { asFragment } = render(
       <FormField>
         <input type="checkbox" id="input" />
