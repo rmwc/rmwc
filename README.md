@@ -1,4 +1,4 @@
-[![tests](https://github.com/rmwc/rmwc/actions/workflows/unit-test.yml/badge.svg)]
+![tests](https://github.com/rmwc/rmwc/actions/workflows/unit-test.yml/badge.svg)
 [![codecov](https://codecov.io/gh/jamesmfriedman/rmwc/branch/master/graph/badge.svg)](https://codecov.io/gh/jamesmfriedman/rmwc)
 [![npm](https://img.shields.io/npm/v/rmwc.svg)](https://www.npmjs.com/package/rmwc)
 [![npm](https://img.shields.io/npm/dm/@rmwc/base.svg)](https://www.npmjs.com/package/rmwc)
