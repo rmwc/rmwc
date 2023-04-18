@@ -24,20 +24,22 @@ Sliders will automatically layout themselves on window resize. If you need to ma
 ```
 
 ```jsx
-function Example() {
-  const [value, setValue] = React.useState(50);
-  // onInput is required and will fire continuously.
-  // onChange is optional and fires at the end of the interaction
-  return (
-    <Slider
-      value={value}
-      onChange={(evt) => setValue(evt.detail.value)}
-      onInput={(evt) => setValue(evt.detail.value)}
-      discrete
-      step={1}
-    />
-  );
-}
+<>
+  {function Example() {
+    const [value, setValue] = React.useState(50);
+    // onInput is required and will fire continuously.
+    // onChange is optional and fires at the end of the interaction
+    return (
+      <Slider
+        value={value}
+        onChange={(evt) => setValue(evt.detail.value)}
+        onInput={(evt) => setValue(evt.detail.value)}
+        discrete
+        step={1}
+      />
+    );
+  }}
+</>
 ```
 
 ## Slider

@@ -13,16 +13,18 @@ Checkboxes allow the user to select multiple options from a set.
 - MDC Docs: [https://material.io/develop/web/components/input-controls/checkboxes/](https://material.io/develop/web/components/input-controls/checkboxes/)
 
 ```jsx
-function Example() {
-  const [checked, setChecked] = React.useState(false);
-  return (
-    <Checkbox
-      label="Cookies"
-      checked={checked}
-      onChange={(evt) => setChecked(!!evt.currentTarget.checked)}
-    />
-  );
-}
+<>
+  {function Example() {
+    const [checked, setChecked] = React.useState(false);
+    return (
+      <Checkbox
+        label="Cookies"
+        checked={checked}
+        onChange={(evt) => setChecked(!!evt.currentTarget.checked)}
+      />
+    );
+  }}
+</>
 ```
 
 ```jsx

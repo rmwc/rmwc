@@ -369,7 +369,7 @@ export const Select: RMWC.ComponentType<
     return helpText && shouldSpread ? (
       <SelectHelperText {...(helpText as any)} />
     ) : (
-      <SelectHelperText>{helpText}</SelectHelperText>
+      <SelectHelperText>{helpText as any}</SelectHelperText>
     );
   };
 
@@ -460,6 +460,8 @@ export interface SelectHelperTextProps {
   persistent?: boolean;
   /** Make the help a validation message style */
   validationMsg?: boolean;
+  /** Content for the help text */
+  children: React.ReactNode;
 }
 
 /** A help text component */
