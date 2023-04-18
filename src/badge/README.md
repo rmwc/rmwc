@@ -111,34 +111,36 @@ Badges can be aligned to the start, end, or use inline alignment. They are also 
 You can transition between the standalone indicator and a badge with content. The badge will consider any `label` other than null or undefined as valid content.
 
 ```jsx
-function Example() {
-  const [label, setLabel] = React.useState(undefined);
+<>
+  {function Example() {
+    const [label, setLabel] = React.useState(undefined);
 
-  React.useEffect(() => {
-    const timeout = setTimeout(() => {
-      switch (label) {
-        case '99+':
-          setLabel(undefined);
-          break;
-        case '':
-          setLabel('99+');
-          break;
-        case undefined:
-          setLabel('');
-          break;
-      }
-    }, 1800);
+    React.useEffect(() => {
+      const timeout = setTimeout(() => {
+        switch (label) {
+          case '99+':
+            setLabel(undefined);
+            break;
+          case '':
+            setLabel('99+');
+            break;
+          case undefined:
+            setLabel('');
+            break;
+        }
+      }, 1800);
 
-    return () => clearTimeout(timeout);
-  }, [label]);
+      return () => clearTimeout(timeout);
+    }, [label]);
 
-  return (
-    <BadgeAnchor>
-      <Button raised label="Button" />
-      <Badge label={label} exited={label === undefined} />
-    </BadgeAnchor>
-  );
-}
+    return (
+      <BadgeAnchor>
+        <Button raised label="Button" />
+        <Badge label={label} exited={label === undefined} />
+      </BadgeAnchor>
+    );
+  }}
+</>
 ```
 
 ## Badge

@@ -76,9 +76,9 @@ describe('Icon', () => {
     jest.spyOn(console, 'error');
     render(
       <Icon
-        // @ts-ignore
         icon={{
           icon: 'foo',
+          // @ts-ignore
           strategy: 'error'
         }}
       />

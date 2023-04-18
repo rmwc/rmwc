@@ -27,28 +27,30 @@ Chips represent complex entities in small blocks, such as a contact.
 ```
 
 ```jsx
-function Example() {
-  const [selected, setSelected] = React.useState(false);
-  return (
-    <ChipSet>
-      <Chip
-        key="my-chip"
-        label="Click Me"
-        checkmark
-        selected={selected}
-        onRemove={(evt) => console.log('onRemove', evt.detail)}
-        onInteraction={(evt) => {
-          console.log('onInteraction', evt.detail);
-          setSelected(!selected);
-        }}
-        onTrailingIconInteraction={(evt) =>
-          console.log('onTrailingIconIteraction', evt.detail)
-        }
-        trailingIcon="close"
-      />
-    </ChipSet>
-  );
-}
+<>
+  {function Example() {
+    const [selected, setSelected] = React.useState(false);
+    return (
+      <ChipSet>
+        <Chip
+          key="my-chip"
+          label="Click Me"
+          checkmark
+          selected={selected}
+          onRemove={(evt) => console.log('onRemove', evt.detail)}
+          onInteraction={(evt) => {
+            console.log('onInteraction', evt.detail);
+            setSelected(!selected);
+          }}
+          onTrailingIconInteraction={(evt) =>
+            console.log('onTrailingIconIteraction', evt.detail)
+          }
+          trailingIcon="close"
+        />
+      </ChipSet>
+    );
+  }}
+</>
 ```
 
 ## Filter and Choice Chipsets
@@ -58,80 +60,84 @@ You can specify a `ChipSet` as either a `filter` of `choice` which slightly chan
 Clicking on the trailing close icon will trigger a close animation and put the chip in an exited state, but it is up to you to remove component out from rendering. The you use the `onRemove` prop implement this behavior.
 
 ```jsx
-function Example() {
-  const [selected, setSelected] = React.useState({
-    cookies: false,
-    pizza: false,
-    icecream: false
-  });
-  const toggleSelected = (key) =>
-    setSelected({
-      ...selected,
-      [key]: !selected[key]
+<>
+  {function Example() {
+    const [selected, setSelected] = React.useState({
+      cookies: false,
+      pizza: false,
+      icecream: false
     });
+    const toggleSelected = (key) =>
+      setSelected({
+        ...selected,
+        [key]: !selected[key]
+      });
 
-  return (
-    <ChipSet filter>
-      <Chip
-        selected={selected.cookies}
-        checkmark
-        onInteraction={() => toggleSelected('cookies')}
-        label="Cookies"
-      />
-      <Chip
-        selected={selected.pizza}
-        checkmark
-        onInteraction={() => toggleSelected('pizza')}
-        icon="local_pizza"
-        label="Pizza"
-      />
-      <Chip
-        selected={selected.icecream}
-        checkmark
-        onInteraction={() => toggleSelected('icecream')}
-        icon="favorite_border"
-        label="Icecream"
-      />
-    </ChipSet>
-  );
-}
+    return (
+      <ChipSet filter>
+        <Chip
+          selected={selected.cookies}
+          checkmark
+          onInteraction={() => toggleSelected('cookies')}
+          label="Cookies"
+        />
+        <Chip
+          selected={selected.pizza}
+          checkmark
+          onInteraction={() => toggleSelected('pizza')}
+          icon="local_pizza"
+          label="Pizza"
+        />
+        <Chip
+          selected={selected.icecream}
+          checkmark
+          onInteraction={() => toggleSelected('icecream')}
+          icon="favorite_border"
+          label="Icecream"
+        />
+      </ChipSet>
+    );
+  }}
+</>
 ```
 
 ```jsx
-function Example() {
-  const [selected, setSelected] = React.useState({
-    cookies: false,
-    pizza: false,
-    icecream: false
-  });
-  const toggleSelected = (key) =>
-    setSelected({
-      ...selected,
-      [key]: !selected[key]
+<>
+  {function Example() {
+    const [selected, setSelected] = React.useState({
+      cookies: false,
+      pizza: false,
+      icecream: false
     });
+    const toggleSelected = (key) =>
+      setSelected({
+        ...selected,
+        [key]: !selected[key]
+      });
 
-  return (
-    <ChipSet choice>
-      <Chip
-        selected={selected.cookies}
-        onInteraction={() => toggleSelected('cookies')}
-        label="Cookies"
-      />
-      <Chip
-        selected={selected.pizza}
-        onInteraction={() => toggleSelected('pizza')}
-        icon="local_pizza"
-        label="Pizza"
-      />
-      <Chip
-        selected={selected.icecream}
-        onInteraction={() => toggleSelected('icecream')}
-        icon="favorite_border"
-        label="Icecream"
-      />
-    </ChipSet>
-  );
-}
+    return (
+      <ChipSet choice>
+        <Chip
+          selected={selected.cookies}
+          onInteraction={() => toggleSelected('cookies')}
+          label="Cookies"
+        />
+        <Chip
+          selected={selected.pizza}
+          onInteraction={() => toggleSelected('pizza')}
+          icon="local_pizza"
+          label="Pizza"
+        />
+        <Chip
+          selected={selected.icecream}
+          onInteraction={() => toggleSelected('icecream')}
+          icon="favorite_border"
+          label="Icecream"
+        />
+      </ChipSet>
+    );
+  }}
+</>
 ```
 
 ## Chip

@@ -83,17 +83,19 @@ Selects come in three different styles: standard,outlined, and enhanced.
 The Select component has the same behaviors as a native HTML select and be both controlled and uncontrolled.
 
 ```jsx
-function () {
-  const [value, setValue] = React.useState('Cookies');
-  return (
-    <Select
-      label="Controlled"
-      options={['Cookies', 'Pizza', 'Icecream']}
-      value={value}
-      onChange={(evt) => setValue(evt.currentTarget.value)}
-    />
-  );
-}
+<>
+  {function () {
+    const [value, setValue] = React.useState('Cookies');
+    return (
+      <Select
+        label="Controlled"
+        options={['Cookies', 'Pizza', 'Icecream']}
+        value={value}
+        onChange={(evt) => setValue(evt.currentTarget.value)}
+      />
+    );
+  }}
+</>
 ```
 
 ```jsx
@@ -110,29 +112,31 @@ function () {
 To fit common use cases, RMWC Select provides a data driven method for rendering select menus. There are multiple formats you can pass data in, use the one that best fits your requirements. To make your label not float by default and to have an unselected blank value, set the `placeholder` prop to a blank string.
 
 ```jsx
-function Example() {
-  // A controlled select Using a formatted array of options
-  const options = [
-    {
-      label: 'Cookies',
-      value: '1'
-    },
-    {
-      label: 'Pizza',
-      value: '2',
-      /** Any additional items will be passed to the
+<>
+  {function Example() {
+    // A controlled select Using a formatted array of options
+    const options = [
+      {
+        label: 'Cookies',
+        value: '1'
+      },
+      {
+        label: 'Pizza',
+        value: '2',
+        /** Any additional items will be passed to the
          child ListItem as props */
-      'aria-disabled': true,
-      tabIndex: -1
-    },
-    {
-      label: 'Icecream',
-      value: '3'
-    }
-  ];
+        'aria-disabled': true,
+        tabIndex: -1
+      },
+      {
+        label: 'Icecream',
+        value: '3'
+      }
+    ];
 
-  return <Select label="Array" options={options} />;
-}
+    return <Select label="Array" options={options} />;
+  }}
+</>
 ```
 
 ```jsx

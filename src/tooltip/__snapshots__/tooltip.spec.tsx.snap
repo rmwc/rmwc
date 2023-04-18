@@ -10,9 +10,7 @@ exports[`Tooltip align 1`] = `
 
 exports[`Tooltip renders 1`] = `
 <DocumentFragment>
-  <span
-    style=""
-  >
+  <span>
     test
   </span>
 </DocumentFragment>
@@ -20,9 +18,7 @@ exports[`Tooltip renders 1`] = `
 
 exports[`Tooltip showArrow 1`] = `
 <DocumentFragment>
-  <span
-    style=""
-  >
+  <span>
     test
   </span>
 </DocumentFragment>

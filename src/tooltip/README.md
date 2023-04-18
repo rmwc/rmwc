@@ -106,22 +106,28 @@ Wrap any component in a `Tooltip` and provide the content attribute. The only re
 ```
 
 ```jsx
-function AlignmentExample() {
-  return [
-    'left',
-    'right',
-    'top',
-    'bottom',
-    'topLeft',
-    'topRight',
-    'bottomLeft',
-    'bottomRight'
-  ].map((align) => (
-    <Tooltip key={align} content={`Align: ${align}`} align={align}>
-      <IconButton icon="trip_origin" />
-    </Tooltip>
-  ));
-}
+<>
+  {function AlignmentExample() {
+    return [
+      'left',
+      'right',
+      'top',
+      'bottom',
+      'topLeft',
+      'topRight',
+      'bottomLeft',
+      'bottomRight'
+    ].map((align) => (
+      <Tooltip
+        key={align}
+        content={`Align: ${align}`}
+        align={align as TooltipAlignT}
+      >
+        <IconButton icon="trip_origin" />
+      </Tooltip>
+    ));
+  }}
+</>
 ```
 
 ## Activation
@@ -175,7 +181,7 @@ A Tooltip component for displaying informative popover information.
 |------|------|-------------|
 | `activateOn` | `TooltipActivationT \| TooltipActivationT[]` | Activate the tooltip through one or more interactions. Defaults to `['hover', 'focus']`. |
 | `align` | `TooltipAlignT` | How to align the tooltip. Defaults to `top`. |
-| `children` | `React.ReactChild` | The children that the tooltip belongs to. Must be a single React.child. |
+| `children` | `ReactElement<any, string \| React.JSXElementConstructor<any>> \| undefined` | The children that the tooltip belongs to. Must be a single React.child. |
 | `className` | `undefined \| string` | Custom className to add to the tooltip overlay container. |
 | `content` | `React.ReactNode` | The overlay content for the tooltip. |
 | `enterDelay` | `undefined \| number` | Delay in milliseconds before showing the tooltip when interacting via touch or mouse. |
