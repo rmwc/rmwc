@@ -4,7 +4,7 @@ on: pull_request_target
 
 permissions:
   contents: write
-  pull-requests: write  
+  pull-requests: write
 
 jobs:
   automerge:
@@ -15,7 +15,7 @@ jobs:
         id: dependabot_metadata
         uses: dependabot/fetch-metadata@v1
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Enable auto-merge
         run: gh pr merge --auto --merge "$PR_URL"
         env:
@@ -26,4 +26,4 @@ jobs:
         run: gh pr review $PR_URL --approve -b "Approving this pull request as it is a patch or minor update"
         env:
           PR_URL: ${{github.event.pull_request.html_url}}
-          GH_TOKEN: ${{ secrets.DEPENDABOT_TOKEN }}
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
