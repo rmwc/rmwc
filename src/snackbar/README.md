@@ -224,5 +224,17 @@ A button for a snackbar action.
 | Name | Type | Description |
 |------|------|-------------|
 | `action` | `undefined \| string` | An action returned in evt.detail.reason to the onClose handler. |
+| `children` | `React.ReactNode` | Content specified as children. |
+| `danger` | `undefined \| false \| true` | Used to indicate a dangerous action. |
+| `dense` | `undefined \| false \| true` | Make the Button dense. |
+| `disabled` | `undefined \| false \| true` | Make the button disabled |
+| `icon` | `RMWC.IconPropT` | An Icon for the Button |
+| `label` | `React.ReactNode \| any` | Content specified as a label prop. |
+| `outlined` | `undefined \| false \| true` | Make the button outlined. |
+| `raised` | `undefined \| false \| true` | Make the Button raised. |
+| `ripple` | `RipplePropT` | Adds a ripple effect to the component |
+| `touch` | `undefined \| false \| true` | Makes the button more touch friendly. This will automatically be set true if used inside of TouchTargetWrapper. |
+| `trailingIcon` | `RMWC.IconPropT` | A trailing icon for the Button |
+| `unelevated` | `undefined \| false \| true` | Make the button unelevated. |
 
 

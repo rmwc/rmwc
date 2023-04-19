@@ -102,6 +102,11 @@ A grid tile
 ## GridTileIcon
 The icon for a Grid tile. This is an instance of Icon component.
 
+### Props
+
+| Name | Type | Description |
+|------|------|-------------|
+| `icon` | `RMWC.IconPropT` | The icon to use. This can be a string for a font icon, a url, or whatever the selected strategy needs. |
 
 
 ## GridTilePrimary

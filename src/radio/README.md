@@ -82,5 +82,18 @@ You can use Radio Buttons and receive change events without having to manually s
 ## Radio
 A Radio button component.
 
+### Props
+
+| Name | Type | Description |
+|------|------|-------------|
+| `checked` | `undefined \| false \| true` | Toggle the control on and off. |
+| `disabled` | `undefined \| false \| true` | Disables the control. |
+| `foundationRef` | `React.Ref<MDCRadioFoundation>` | Advanced: A reference to the MDCFoundation. |
+| `id` | `undefined \| string` | A DOM ID for the toggle. |
+| `inputRef` | `React.Ref<HTMLInputElement>` | A reference to the native input. |
+| `label` | `React.ReactNode` | A label for the control. |
+| `ripple` | `RipplePropT` | Adds a ripple effect to the component |
+| `rootProps` | `React.HTMLProps<any>` | By default, all props except className and style spread to the input. These are additional props for the root of the checkbox. |
+| `value` | `string \| number \| string[]` | The value of the control. |
 
 
