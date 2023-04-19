@@ -3,9 +3,7 @@
   "typescript": {
     "CircularProgressProps": {
       "documentation": {
-        "contents": [
-          "<p>A Circular Progress indicator.</p>\n"
-        ],
+        "contents": ["<p>A Circular Progress indicator.</p>\n"],
         "contentsRaw": "A Circular Progress indicator.",
         "metadata": {}
       },
@@ -27,9 +25,7 @@
       "properties": [
         {
           "documentation": {
-            "contents": [
-              "<p>Max value for determinate progress bars.</p>\n"
-            ],
+            "contents": ["<p>Max value for determinate progress bars.</p>\n"],
             "contentsRaw": "Max value for determinate progress bars.",
             "metadata": {}
           },
@@ -51,9 +47,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Min value for determinate progress bars.</p>\n"
-            ],
+            "contents": ["<p>Min value for determinate progress bars.</p>\n"],
             "contentsRaw": "Min value for determinate progress bars.",
             "metadata": {}
           },
@@ -75,9 +69,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Value for determinate progress bars.</p>\n"
-            ],
+            "contents": ["<p>Value for determinate progress bars.</p>\n"],
             "contentsRaw": "Value for determinate progress bars.",
             "metadata": {}
           },

@@ -3,9 +3,7 @@
   "typescript": {
     "ThemeProps": {
       "documentation": {
-        "contents": [
-          "<p>A Theme Component.</p>\n"
-        ],
+        "contents": ["<p>A Theme Component.</p>\n"],
         "contentsRaw": "A Theme Component.",
         "metadata": {}
       },
@@ -101,9 +99,7 @@
       "properties": [
         {
           "documentation": {
-            "contents": [
-              "<p>Children to render</p>\n"
-            ],
+            "contents": ["<p>Children to render</p>\n"],
             "contentsRaw": "Children to render",
             "metadata": {}
           },

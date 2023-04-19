@@ -3,9 +3,7 @@
   "typescript": {
     "LinearProgressProps": {
       "documentation": {
-        "contents": [
-          "<p>A component to display linear progress.</p>\n"
-        ],
+        "contents": ["<p>A component to display linear progress.</p>\n"],
         "contentsRaw": "A component to display linear progress.",
         "metadata": {}
       },
@@ -99,9 +97,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Progress float percentage between 0 and 1.</p>\n"
-            ],
+            "contents": ["<p>Progress float percentage between 0 and 1.</p>\n"],
             "contentsRaw": "Progress float percentage between 0 and 1.",
             "metadata": {}
           },
@@ -123,9 +119,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Progress goes from right to left.</p>\n"
-            ],
+            "contents": ["<p>Progress goes from right to left.</p>\n"],
             "contentsRaw": "Progress goes from right to left.",
             "metadata": {}
           },

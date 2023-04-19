@@ -3,9 +3,7 @@
   "typescript": {
     "TopAppBarProps": {
       "documentation": {
-        "contents": [
-          "<p>TopAppBar</p>\n"
-        ],
+        "contents": ["<p>TopAppBar</p>\n"],
         "contentsRaw": "TopAppBar",
         "metadata": {}
       },
@@ -27,9 +25,7 @@
       "properties": [
         {
           "documentation": {
-            "contents": [
-              "<p>Styles the top app bar to be dense.</p>\n"
-            ],
+            "contents": ["<p>Styles the top app bar to be dense.</p>\n"],
             "contentsRaw": "Styles the top app bar to be dense.",
             "metadata": {}
           },
@@ -99,9 +95,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Emits when the navigation icon is clicked.</p>\n"
-            ],
+            "contents": ["<p>Emits when the navigation icon is clicked.</p>\n"],
             "contentsRaw": "Emits when the navigation icon is clicked.",
             "metadata": {}
           },
@@ -221,9 +215,7 @@
     },
     "SimpleTopAppBarProps": {
       "documentation": {
-        "contents": [
-          "<p>A simplified syntax for creating an AppBar.</p>\n"
-        ],
+        "contents": ["<p>A simplified syntax for creating an AppBar.</p>\n"],
         "contentsRaw": "A simplified syntax for creating an AppBar.",
         "metadata": {}
       },
@@ -241,9 +233,7 @@
       "kind": "interface",
       "name": "SimpleTopAppBarProps",
       "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/top-app-bar/index.tsx#L90",
-      "extends": [
-        "TopAppBarProps"
-      ],
+      "extends": ["TopAppBarProps"],
       "methods": [],
       "properties": [
         {
@@ -272,9 +262,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Styles the top app bar to be dense.</p>\n"
-            ],
+            "contents": ["<p>Styles the top app bar to be dense.</p>\n"],
             "contentsRaw": "Styles the top app bar to be dense.",
             "metadata": {}
           },
@@ -395,9 +383,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Emits when the navigation icon is clicked.</p>\n"
-            ],
+            "contents": ["<p>Emits when the navigation icon is clicked.</p>\n"],
             "contentsRaw": "Emits when the navigation icon is clicked.",
             "metadata": {}
           },
@@ -544,9 +530,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>The title for the App Bar.</p>\n"
-            ],
+            "contents": ["<p>The title for the App Bar.</p>\n"],
             "contentsRaw": "The title for the App Bar.",
             "metadata": {}
           },
@@ -570,9 +554,7 @@
     },
     "TopAppBarRowProps": {
       "documentation": {
-        "contents": [
-          "<p>A row for the app bar.</p>\n"
-        ],
+        "contents": ["<p>A row for the app bar.</p>\n"],
         "contentsRaw": "A row for the app bar.",
         "metadata": {}
       },
@@ -595,9 +577,7 @@
     },
     "TopAppBarSectionProps": {
       "documentation": {
-        "contents": [
-          "<p>A section for the app bar.</p>\n"
-        ],
+        "contents": ["<p>A section for the app bar.</p>\n"],
         "contentsRaw": "A section for the app bar.",
         "metadata": {}
       },
@@ -619,9 +599,7 @@
       "properties": [
         {
           "documentation": {
-            "contents": [
-              "<p>Aligns the section to the end.</p>\n"
-            ],
+            "contents": ["<p>Aligns the section to the end.</p>\n"],
             "contentsRaw": "Aligns the section to the end.",
             "metadata": {}
           },
@@ -643,9 +621,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Aligns the section to the start.</p>\n"
-            ],
+            "contents": ["<p>Aligns the section to the start.</p>\n"],
             "contentsRaw": "Aligns the section to the start.",
             "metadata": {}
           },
@@ -689,9 +665,7 @@
       "kind": "interface",
       "name": "TopAppBarNavigationIconProps",
       "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/top-app-bar/index.tsx#L182",
-      "extends": [
-        "IconButtonProps"
-      ],
+      "extends": ["IconButtonProps"],
       "methods": [],
       "properties": [
         {
@@ -720,9 +694,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Makes the button disabled</p>\n"
-            ],
+            "contents": ["<p>Makes the button disabled</p>\n"],
             "contentsRaw": "Makes the button disabled",
             "metadata": {}
           },
@@ -768,9 +740,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Icon for the button</p>\n"
-            ],
+            "contents": ["<p>Icon for the button</p>\n"],
             "contentsRaw": "Icon for the button",
             "metadata": {}
           },
@@ -792,9 +762,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Apply an aria label.</p>\n"
-            ],
+            "contents": ["<p>Apply an aria label.</p>\n"],
             "contentsRaw": "Apply an aria label.",
             "metadata": {}
           },
@@ -864,9 +832,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Adds a ripple effect to the component</p>\n"
-            ],
+            "contents": ["<p>Adds a ripple effect to the component</p>\n"],
             "contentsRaw": "Adds a ripple effect to the component",
             "metadata": {}
           },
@@ -910,9 +876,7 @@
       "kind": "interface",
       "name": "TopAppBarActionItemProps",
       "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/top-app-bar/index.tsx#L193",
-      "extends": [
-        "IconButtonProps"
-      ],
+      "extends": ["IconButtonProps"],
       "methods": [],
       "properties": [
         {
@@ -941,9 +905,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Makes the button disabled</p>\n"
-            ],
+            "contents": ["<p>Makes the button disabled</p>\n"],
             "contentsRaw": "Makes the button disabled",
             "metadata": {}
           },
@@ -989,9 +951,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Icon for the button</p>\n"
-            ],
+            "contents": ["<p>Icon for the button</p>\n"],
             "contentsRaw": "Icon for the button",
             "metadata": {}
           },
@@ -1013,9 +973,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Apply an aria label.</p>\n"
-            ],
+            "contents": ["<p>Apply an aria label.</p>\n"],
             "contentsRaw": "Apply an aria label.",
             "metadata": {}
           },
@@ -1085,9 +1043,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Adds a ripple effect to the component</p>\n"
-            ],
+            "contents": ["<p>Adds a ripple effect to the component</p>\n"],
             "contentsRaw": "Adds a ripple effect to the component",
             "metadata": {}
           },
@@ -1111,9 +1067,7 @@
     },
     "TopAppBarTitleProps": {
       "documentation": {
-        "contents": [
-          "<p>A title for the top app bar.</p>\n"
-        ],
+        "contents": ["<p>A title for the top app bar.</p>\n"],
         "contentsRaw": "A title for the top app bar.",
         "metadata": {}
       },
@@ -1258,9 +1212,7 @@
     },
     "TopAppBarOnNavEventT": {
       "documentation": {
-        "contents": [
-          "<p>Events</p>\n"
-        ],
+        "contents": ["<p>Events</p>\n"],
         "contentsRaw": "Events",
         "metadata": {}
       },

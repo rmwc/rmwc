@@ -3,9 +3,7 @@
   "typescript": {
     "DrawerProps": {
       "documentation": {
-        "contents": [
-          "<p>A Drawer component.</p>\n"
-        ],
+        "contents": ["<p>A Drawer component.</p>\n"],
         "contentsRaw": "A Drawer component.",
         "metadata": {}
       },
@@ -27,9 +25,7 @@
       "properties": [
         {
           "documentation": {
-            "contents": [
-              "<p>Makes a dismissible drawer.</p>\n"
-            ],
+            "contents": ["<p>Makes a dismissible drawer.</p>\n"],
             "contentsRaw": "Makes a dismissible drawer.",
             "metadata": {}
           },
@@ -75,9 +71,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Makes a modal / temporary drawer.</p>\n"
-            ],
+            "contents": ["<p>Makes a modal / temporary drawer.</p>\n"],
             "contentsRaw": "Makes a modal / temporary drawer.",
             "metadata": {}
           },
@@ -147,9 +141,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Opens or closes the Drawer.</p>\n"
-            ],
+            "contents": ["<p>Opens or closes the Drawer.</p>\n"],
             "contentsRaw": "Opens or closes the Drawer.",
             "metadata": {}
           },
@@ -173,9 +165,7 @@
     },
     "DrawerHeaderProps": {
       "documentation": {
-        "contents": [
-          "<p>An optional header for the Drawer.</p>\n"
-        ],
+        "contents": ["<p>An optional header for the Drawer.</p>\n"],
         "contentsRaw": "An optional header for the Drawer.",
         "metadata": {}
       },
@@ -198,9 +188,7 @@
     },
     "DrawerTitleProps": {
       "documentation": {
-        "contents": [
-          "<p>An title for the DrawerHeader.</p>\n"
-        ],
+        "contents": ["<p>An title for the DrawerHeader.</p>\n"],
         "contentsRaw": "An title for the DrawerHeader.",
         "metadata": {}
       },
@@ -223,9 +211,7 @@
     },
     "DrawerSubtitleProps": {
       "documentation": {
-        "contents": [
-          "<p>A subtitle for the DrawerHeader.</p>\n"
-        ],
+        "contents": ["<p>A subtitle for the DrawerHeader.</p>\n"],
         "contentsRaw": "A subtitle for the DrawerHeader.",
         "metadata": {}
       },
@@ -248,9 +234,7 @@
     },
     "DrawerContentProps": {
       "documentation": {
-        "contents": [
-          "<p>Content for Drawers.</p>\n"
-        ],
+        "contents": ["<p>Content for Drawers.</p>\n"],
         "contentsRaw": "Content for Drawers.",
         "metadata": {}
       },
@@ -298,9 +282,7 @@
     },
     "DrawerOnCloseEventT": {
       "documentation": {
-        "contents": [
-          "<p>Events</p>\n"
-        ],
+        "contents": ["<p>Events</p>\n"],
         "contentsRaw": "Events",
         "metadata": {}
       },

@@ -3,9 +3,7 @@
   "typescript": {
     "FormFieldProps": {
       "documentation": {
-        "contents": [
-          "<p>A FormField component.</p>\n"
-        ],
+        "contents": ["<p>A FormField component.</p>\n"],
         "contentsRaw": "A FormField component.",
         "metadata": {}
       },
@@ -27,9 +25,7 @@
       "properties": [
         {
           "documentation": {
-            "contents": [
-              "<p>Position the input after the label.</p>\n"
-            ],
+            "contents": ["<p>Position the input after the label.</p>\n"],
             "contentsRaw": "Position the input after the label.",
             "metadata": {}
           },

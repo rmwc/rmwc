@@ -3,9 +3,7 @@
   "typescript": {
     "GridProps": {
       "documentation": {
-        "contents": [
-          "<p>A Grid component</p>\n"
-        ],
+        "contents": ["<p>A Grid component</p>\n"],
         "contentsRaw": "A Grid component",
         "metadata": {}
       },
@@ -27,9 +25,7 @@
       "properties": [
         {
           "documentation": {
-            "contents": [
-              "<p>Specifies the alignment of the whole grid.</p>\n"
-            ],
+            "contents": ["<p>Specifies the alignment of the whole grid.</p>\n"],
             "contentsRaw": "Specifies the alignment of the whole grid.",
             "metadata": {}
           },
@@ -51,9 +47,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Children for the Grid</p>\n"
-            ],
+            "contents": ["<p>Children for the Grid</p>\n"],
             "contentsRaw": "Children for the Grid",
             "metadata": {}
           },
@@ -101,9 +95,7 @@
     },
     "GridCellProps": {
       "documentation": {
-        "contents": [
-          "<p>A Grid cell</p>\n"
-        ],
+        "contents": ["<p>A Grid cell</p>\n"],
         "contentsRaw": "A Grid cell",
         "metadata": {}
       },
@@ -125,9 +117,7 @@
       "properties": [
         {
           "documentation": {
-            "contents": [
-              "<p>Specifies the alignment of cell</p>\n"
-            ],
+            "contents": ["<p>Specifies the alignment of cell</p>\n"],
             "contentsRaw": "Specifies the alignment of cell",
             "metadata": {}
           },
@@ -149,9 +139,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Number of columns to span on a desktop.</p>\n"
-            ],
+            "contents": ["<p>Number of columns to span on a desktop.</p>\n"],
             "contentsRaw": "Number of columns to span on a desktop.",
             "metadata": {}
           },
@@ -173,9 +161,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Specifies the order of the cell.</p>\n"
-            ],
+            "contents": ["<p>Specifies the order of the cell.</p>\n"],
             "contentsRaw": "Specifies the order of the cell.",
             "metadata": {}
           },
@@ -197,9 +183,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Number of columns to span on a phone.</p>\n"
-            ],
+            "contents": ["<p>Number of columns to span on a phone.</p>\n"],
             "contentsRaw": "Number of columns to span on a phone.",
             "metadata": {}
           },
@@ -221,9 +205,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Default number of columns to span.</p>\n"
-            ],
+            "contents": ["<p>Default number of columns to span.</p>\n"],
             "contentsRaw": "Default number of columns to span.",
             "metadata": {}
           },
@@ -245,9 +227,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Number of columns to span on a tablet.</p>\n"
-            ],
+            "contents": ["<p>Number of columns to span on a tablet.</p>\n"],
             "contentsRaw": "Number of columns to span on a tablet.",
             "metadata": {}
           },

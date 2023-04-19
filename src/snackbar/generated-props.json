@@ -16,11 +16,7 @@
       "kind": "interface",
       "name": "SnackbarQueueMessage",
       "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/snackbar/snackbar-queue.tsx#L22",
-      "extends": [
-        "any",
-        "SnackbarQueueMessageBase",
-        "any"
-      ],
+      "extends": ["any", "SnackbarQueueMessageBase", "any"],
       "methods": [],
       "properties": [
         {
@@ -99,9 +95,7 @@
     },
     "SnackbarQueueProps": {
       "documentation": {
-        "contents": [
-          "<p>A snackbar queue for rendering messages</p>\n"
-        ],
+        "contents": ["<p>A snackbar queue for rendering messages</p>\n"],
         "contentsRaw": "A snackbar queue for rendering messages",
         "metadata": {}
       },
@@ -119,9 +113,7 @@
       "kind": "interface",
       "name": "SnackbarQueueProps",
       "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/snackbar/snackbar-queue.tsx#L28",
-      "extends": [
-        "any"
-      ],
+      "extends": ["any"],
       "methods": [],
       "properties": [
         {
@@ -145,9 +137,7 @@
     },
     "SnackbarProps": {
       "documentation": {
-        "contents": [
-          "<p>A Snackbar component for notifications.</p>\n"
-        ],
+        "contents": ["<p>A Snackbar component for notifications.</p>\n"],
         "contentsRaw": "A Snackbar component for notifications.",
         "metadata": {}
       },
@@ -258,9 +248,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>An icon for the snackbar</p>\n"
-            ],
+            "contents": ["<p>An icon for the snackbar</p>\n"],
             "contentsRaw": "An icon for the snackbar",
             "metadata": {}
           },
@@ -371,9 +359,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Show the Snackbar.</p>\n"
-            ],
+            "contents": ["<p>Show the Snackbar.</p>\n"],
             "contentsRaw": "Show the Snackbar.",
             "metadata": {}
           },
@@ -445,9 +431,7 @@
     },
     "SnackbarActionProps": {
       "documentation": {
-        "contents": [
-          "<p>A button for a snackbar action.</p>\n"
-        ],
+        "contents": ["<p>A button for a snackbar action.</p>\n"],
         "contentsRaw": "A button for a snackbar action.",
         "metadata": {}
       },
@@ -465,9 +449,7 @@
       "kind": "interface",
       "name": "SnackbarActionProps",
       "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/snackbar/snackbar.tsx#L162",
-      "extends": [
-        "ButtonProps"
-      ],
+      "extends": ["ButtonProps"],
       "methods": [],
       "properties": [
         {
@@ -496,9 +478,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Content specified as children.</p>\n"
-            ],
+            "contents": ["<p>Content specified as children.</p>\n"],
             "contentsRaw": "Content specified as children.",
             "metadata": {}
           },
@@ -520,9 +500,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Used to indicate a dangerous action.</p>\n"
-            ],
+            "contents": ["<p>Used to indicate a dangerous action.</p>\n"],
             "contentsRaw": "Used to indicate a dangerous action.",
             "metadata": {}
           },
@@ -544,9 +522,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Make the Button dense.</p>\n"
-            ],
+            "contents": ["<p>Make the Button dense.</p>\n"],
             "contentsRaw": "Make the Button dense.",
             "metadata": {}
           },
@@ -568,9 +544,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Make the button disabled</p>\n"
-            ],
+            "contents": ["<p>Make the button disabled</p>\n"],
             "contentsRaw": "Make the button disabled",
             "metadata": {}
           },
@@ -592,9 +566,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>An Icon for the Button</p>\n"
-            ],
+            "contents": ["<p>An Icon for the Button</p>\n"],
             "contentsRaw": "An Icon for the Button",
             "metadata": {}
           },
@@ -616,9 +588,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Content specified as a label prop.</p>\n"
-            ],
+            "contents": ["<p>Content specified as a label prop.</p>\n"],
             "contentsRaw": "Content specified as a label prop.",
             "metadata": {}
           },
@@ -640,9 +610,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Make the button outlined.</p>\n"
-            ],
+            "contents": ["<p>Make the button outlined.</p>\n"],
             "contentsRaw": "Make the button outlined.",
             "metadata": {}
           },
@@ -664,9 +632,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Make the Button raised.</p>\n"
-            ],
+            "contents": ["<p>Make the Button raised.</p>\n"],
             "contentsRaw": "Make the Button raised.",
             "metadata": {}
           },
@@ -688,9 +654,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Adds a ripple effect to the component</p>\n"
-            ],
+            "contents": ["<p>Adds a ripple effect to the component</p>\n"],
             "contentsRaw": "Adds a ripple effect to the component",
             "metadata": {}
           },
@@ -736,9 +700,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>A trailing icon for the Button</p>\n"
-            ],
+            "contents": ["<p>A trailing icon for the Button</p>\n"],
             "contentsRaw": "A trailing icon for the Button",
             "metadata": {}
           },
@@ -760,9 +722,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Make the button unelevated.</p>\n"
-            ],
+            "contents": ["<p>Make the button unelevated.</p>\n"],
             "contentsRaw": "Make the button unelevated.",
             "metadata": {}
           },
@@ -786,9 +746,7 @@
     },
     "SnackbarOnOpenEventT": {
       "documentation": {
-        "contents": [
-          "<p>Events</p>\n"
-        ],
+        "contents": ["<p>Events</p>\n"],
         "contentsRaw": "Events",
         "metadata": {}
       },

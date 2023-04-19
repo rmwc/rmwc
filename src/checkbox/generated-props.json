@@ -3,9 +3,7 @@
   "typescript": {
     "CheckboxProps": {
       "documentation": {
-        "contents": [
-          "<p>A Checkbox component.</p>\n"
-        ],
+        "contents": ["<p>A Checkbox component.</p>\n"],
         "contentsRaw": "A Checkbox component.",
         "metadata": {}
       },

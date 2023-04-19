@@ -80,9 +80,7 @@
       "properties": [
         {
           "documentation": {
-            "contents": [
-              "<p>Makes the ripple an accent color</p>\n"
-            ],
+            "contents": ["<p>Makes the ripple an accent color</p>\n"],
             "contentsRaw": "Makes the ripple an accent color",
             "metadata": {}
           },
@@ -104,9 +102,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>makes the ripple disabled</p>\n"
-            ],
+            "contents": ["<p>makes the ripple disabled</p>\n"],
             "contentsRaw": "makes the ripple disabled",
             "metadata": {}
           },
@@ -152,9 +148,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Makes the ripple primary</p>\n"
-            ],
+            "contents": ["<p>Makes the ripple primary</p>\n"],
             "contentsRaw": "Makes the ripple primary",
             "metadata": {}
           },
@@ -176,9 +170,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>For internal use</p>\n"
-            ],
+            "contents": ["<p>For internal use</p>\n"],
             "contentsRaw": "For internal use",
             "metadata": {}
           },
@@ -200,9 +192,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Makes the ripple unbounded</p>\n"
-            ],
+            "contents": ["<p>Makes the ripple unbounded</p>\n"],
             "contentsRaw": "Makes the ripple unbounded",
             "metadata": {}
           },

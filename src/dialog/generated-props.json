@@ -16,10 +16,7 @@
       "kind": "interface",
       "name": "DialogQueueInput",
       "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/dialog/dialog-queue.tsx#L13",
-      "extends": [
-        "any",
-        "any"
-      ],
+      "extends": ["any", "any"],
       "methods": [],
       "properties": [
         {
@@ -80,9 +77,7 @@
       "kind": "interface",
       "name": "DialogQueueSpec",
       "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/dialog/dialog-queue.tsx#L21",
-      "extends": [
-        "DialogQueueInput"
-      ],
+      "extends": ["DialogQueueInput"],
       "methods": [],
       "properties": [
         {
@@ -165,9 +160,7 @@
     },
     "DialogQueueProps": {
       "documentation": {
-        "contents": [
-          "<p>A snackbar queue for rendering messages</p>\n"
-        ],
+        "contents": ["<p>A snackbar queue for rendering messages</p>\n"],
         "contentsRaw": "A snackbar queue for rendering messages",
         "metadata": {}
       },
@@ -185,9 +178,7 @@
       "kind": "interface",
       "name": "DialogQueueProps",
       "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/dialog/dialog-queue.tsx#L28",
-      "extends": [
-        "any"
-      ],
+      "extends": ["any"],
       "methods": [],
       "properties": [
         {
@@ -211,9 +202,7 @@
     },
     "DialogProps": {
       "documentation": {
-        "contents": [
-          "<p>A Dialog component.</p>\n"
-        ],
+        "contents": ["<p>A Dialog component.</p>\n"],
         "contentsRaw": "A Dialog component.",
         "metadata": {}
       },
@@ -307,9 +296,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Callback for when the Dialog opens.</p>\n"
-            ],
+            "contents": ["<p>Callback for when the Dialog opens.</p>\n"],
             "contentsRaw": "Callback for when the Dialog opens.",
             "metadata": {}
           },
@@ -355,9 +342,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Whether or not the Dialog is showing.</p>\n"
-            ],
+            "contents": ["<p>Whether or not the Dialog is showing.</p>\n"],
             "contentsRaw": "Whether or not the Dialog is showing.",
             "metadata": {}
           },
@@ -429,9 +414,7 @@
     },
     "SimpleDialogProps": {
       "documentation": {
-        "contents": [
-          "<p>A SimpleDialog component for ease of use.</p>\n"
-        ],
+        "contents": ["<p>A SimpleDialog component for ease of use.</p>\n"],
         "contentsRaw": "A SimpleDialog component for ease of use.",
         "metadata": {}
       },
@@ -449,9 +432,7 @@
       "kind": "interface",
       "name": "SimpleDialogProps",
       "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/dialog/dialog.tsx#L91",
-      "extends": [
-        "DialogProps"
-      ],
+      "extends": ["DialogProps"],
       "methods": [],
       "properties": [
         {
@@ -675,9 +656,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Callback for when the Dialog opens.</p>\n"
-            ],
+            "contents": ["<p>Callback for when the Dialog opens.</p>\n"],
             "contentsRaw": "Callback for when the Dialog opens.",
             "metadata": {}
           },
@@ -725,9 +704,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Whether or not the Dialog is showing.</p>\n"
-            ],
+            "contents": ["<p>Whether or not the Dialog is showing.</p>\n"],
             "contentsRaw": "Whether or not the Dialog is showing.",
             "metadata": {}
           },
@@ -800,9 +777,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>A title for the default Dialog template.</p>\n"
-            ],
+            "contents": ["<p>A title for the default Dialog template.</p>\n"],
             "contentsRaw": "A title for the default Dialog template.",
             "metadata": {}
           },
@@ -826,9 +801,7 @@
     },
     "DialogTitleProps": {
       "documentation": {
-        "contents": [
-          "<p>The Dialog title.</p>\n"
-        ],
+        "contents": ["<p>The Dialog title.</p>\n"],
         "contentsRaw": "The Dialog title.",
         "metadata": {}
       },
@@ -851,9 +824,7 @@
     },
     "DialogContentProps": {
       "documentation": {
-        "contents": [
-          "<p>The Dialog content.</p>\n"
-        ],
+        "contents": ["<p>The Dialog content.</p>\n"],
         "contentsRaw": "The Dialog content.",
         "metadata": {}
       },
@@ -876,9 +847,7 @@
     },
     "DialogActionsProps": {
       "documentation": {
-        "contents": [
-          "<p>Actions container for the Dialog.</p>\n"
-        ],
+        "contents": ["<p>Actions container for the Dialog.</p>\n"],
         "contentsRaw": "Actions container for the Dialog.",
         "metadata": {}
       },
@@ -901,9 +870,7 @@
     },
     "DialogButtonProps": {
       "documentation": {
-        "contents": [
-          "<p>Action buttons for the Dialog.</p>\n"
-        ],
+        "contents": ["<p>Action buttons for the Dialog.</p>\n"],
         "contentsRaw": "Action buttons for the Dialog.",
         "metadata": {}
       },
@@ -921,9 +888,7 @@
       "kind": "interface",
       "name": "DialogButtonProps",
       "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/dialog/dialog.tsx#L217",
-      "extends": [
-        "ButtonProps"
-      ],
+      "extends": ["ButtonProps"],
       "methods": [],
       "properties": [
         {
@@ -952,9 +917,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Content specified as children.</p>\n"
-            ],
+            "contents": ["<p>Content specified as children.</p>\n"],
             "contentsRaw": "Content specified as children.",
             "metadata": {}
           },
@@ -976,9 +939,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Used to indicate a dangerous action.</p>\n"
-            ],
+            "contents": ["<p>Used to indicate a dangerous action.</p>\n"],
             "contentsRaw": "Used to indicate a dangerous action.",
             "metadata": {}
           },
@@ -1000,9 +961,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Make the Button dense.</p>\n"
-            ],
+            "contents": ["<p>Make the Button dense.</p>\n"],
             "contentsRaw": "Make the Button dense.",
             "metadata": {}
           },
@@ -1024,9 +983,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Make the button disabled</p>\n"
-            ],
+            "contents": ["<p>Make the button disabled</p>\n"],
             "contentsRaw": "Make the button disabled",
             "metadata": {}
           },
@@ -1048,9 +1005,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>An Icon for the Button</p>\n"
-            ],
+            "contents": ["<p>An Icon for the Button</p>\n"],
             "contentsRaw": "An Icon for the Button",
             "metadata": {}
           },
@@ -1096,9 +1051,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Content specified as a label prop.</p>\n"
-            ],
+            "contents": ["<p>Content specified as a label prop.</p>\n"],
             "contentsRaw": "Content specified as a label prop.",
             "metadata": {}
           },
@@ -1120,9 +1073,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Make the button outlined.</p>\n"
-            ],
+            "contents": ["<p>Make the button outlined.</p>\n"],
             "contentsRaw": "Make the button outlined.",
             "metadata": {}
           },
@@ -1144,9 +1095,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Make the Button raised.</p>\n"
-            ],
+            "contents": ["<p>Make the Button raised.</p>\n"],
             "contentsRaw": "Make the Button raised.",
             "metadata": {}
           },
@@ -1168,9 +1117,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Adds a ripple effect to the component</p>\n"
-            ],
+            "contents": ["<p>Adds a ripple effect to the component</p>\n"],
             "contentsRaw": "Adds a ripple effect to the component",
             "metadata": {}
           },
@@ -1216,9 +1163,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>A trailing icon for the Button</p>\n"
-            ],
+            "contents": ["<p>A trailing icon for the Button</p>\n"],
             "contentsRaw": "A trailing icon for the Button",
             "metadata": {}
           },
@@ -1240,9 +1185,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Make the button unelevated.</p>\n"
-            ],
+            "contents": ["<p>Make the button unelevated.</p>\n"],
             "contentsRaw": "Make the button unelevated.",
             "metadata": {}
           },
@@ -1266,9 +1209,7 @@
     },
     "DialogOnOpenEventT": {
       "documentation": {
-        "contents": [
-          "<p>Events</p>\n"
-        ],
+        "contents": ["<p>Events</p>\n"],
         "contentsRaw": "Events",
         "metadata": {}
       },

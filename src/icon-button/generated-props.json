@@ -23,9 +23,7 @@
       "kind": "interface",
       "name": "IconButtonProps",
       "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/icon-button/index.tsx#L20",
-      "extends": [
-        "WithRippleProps"
-      ],
+      "extends": ["WithRippleProps"],
       "methods": [],
       "properties": [
         {
@@ -54,9 +52,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Makes the button disabled</p>\n"
-            ],
+            "contents": ["<p>Makes the button disabled</p>\n"],
             "contentsRaw": "Makes the button disabled",
             "metadata": {}
           },
@@ -102,9 +98,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Icon for the button</p>\n"
-            ],
+            "contents": ["<p>Icon for the button</p>\n"],
             "contentsRaw": "Icon for the button",
             "metadata": {}
           },
@@ -126,9 +120,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Apply an aria label.</p>\n"
-            ],
+            "contents": ["<p>Apply an aria label.</p>\n"],
             "contentsRaw": "Apply an aria label.",
             "metadata": {}
           },
@@ -198,9 +190,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Adds a ripple effect to the component</p>\n"
-            ],
+            "contents": ["<p>Adds a ripple effect to the component</p>\n"],
             "contentsRaw": "Adds a ripple effect to the component",
             "metadata": {}
           },
@@ -224,9 +214,7 @@
     },
     "IconButtonOnChangeEventT": {
       "documentation": {
-        "contents": [
-          "<p>Events</p>\n"
-        ],
+        "contents": ["<p>Events</p>\n"],
         "contentsRaw": "Events",
         "metadata": {}
       },

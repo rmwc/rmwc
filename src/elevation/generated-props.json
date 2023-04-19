@@ -3,9 +3,7 @@
   "typescript": {
     "ElevationProps": {
       "documentation": {
-        "contents": [
-          "<p>The Elevation Component</p>\n"
-        ],
+        "contents": ["<p>The Elevation Component</p>\n"],
         "contentsRaw": "The Elevation Component",
         "metadata": {}
       },

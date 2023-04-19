@@ -3,9 +3,7 @@
   "typescript": {
     "DataTableProps": {
       "documentation": {
-        "contents": [
-          "<p>The DataTable Component.</p>\n"
-        ],
+        "contents": ["<p>The DataTable Component.</p>\n"],
         "contentsRaw": "The DataTable Component.",
         "metadata": {}
       },
@@ -77,9 +75,7 @@
     },
     "DataTableContentProps": {
       "documentation": {
-        "contents": [
-          "<p>The data table content.</p>\n"
-        ],
+        "contents": ["<p>The data table content.</p>\n"],
         "contentsRaw": "The data table content.",
         "metadata": {}
       },
@@ -102,9 +98,7 @@
     },
     "DataTableHeadProps": {
       "documentation": {
-        "contents": [
-          "<p>A header for the data table.</p>\n"
-        ],
+        "contents": ["<p>A header for the data table.</p>\n"],
         "contentsRaw": "A header for the data table.",
         "metadata": {}
       },
@@ -127,9 +121,7 @@
     },
     "DataTableBodyProps": {
       "documentation": {
-        "contents": [
-          "<p>A body for the data table.</p>\n"
-        ],
+        "contents": ["<p>A body for the data table.</p>\n"],
         "contentsRaw": "A body for the data table.",
         "metadata": {}
       },
@@ -152,9 +144,7 @@
     },
     "DataTableRowProps": {
       "documentation": {
-        "contents": [
-          "<p>A row for the data table.</p>\n"
-        ],
+        "contents": ["<p>A row for the data table.</p>\n"],
         "contentsRaw": "A row for the data table.",
         "metadata": {}
       },
@@ -200,9 +190,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Styles the row in a selected state.</p>\n"
-            ],
+            "contents": ["<p>Styles the row in a selected state.</p>\n"],
             "contentsRaw": "Styles the row in a selected state.",
             "metadata": {}
           },
@@ -226,9 +214,7 @@
     },
     "DataTableHeadCellProps": {
       "documentation": {
-        "contents": [
-          "<p>A header cell for the data table.</p>\n"
-        ],
+        "contents": ["<p>A header cell for the data table.</p>\n"],
         "contentsRaw": "A header cell for the data table.",
         "metadata": {}
       },
@@ -246,16 +232,12 @@
       "kind": "interface",
       "name": "DataTableHeadCellProps",
       "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/data-table/index.tsx#L138",
-      "extends": [
-        "SharedDataTableCellProps"
-      ],
+      "extends": ["SharedDataTableCellProps"],
       "methods": [],
       "properties": [
         {
           "documentation": {
-            "contents": [
-              "<p>Align content to the end of the cell.</p>\n"
-            ],
+            "contents": ["<p>Align content to the end of the cell.</p>\n"],
             "contentsRaw": "Align content to the end of the cell.",
             "metadata": {}
           },
@@ -278,9 +260,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Align content to the middle of the cell.</p>\n"
-            ],
+            "contents": ["<p>Align content to the middle of the cell.</p>\n"],
             "contentsRaw": "Align content to the middle of the cell.",
             "metadata": {}
           },
@@ -303,9 +283,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Align content to the start of the cell.</p>\n"
-            ],
+            "contents": ["<p>Align content to the start of the cell.</p>\n"],
             "contentsRaw": "Align content to the start of the cell.",
             "metadata": {}
           },
@@ -328,9 +306,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Children to pass to the cell.</p>\n"
-            ],
+            "contents": ["<p>Children to pass to the cell.</p>\n"],
             "contentsRaw": "Children to pass to the cell.",
             "metadata": {}
           },
@@ -377,9 +353,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Changes alignment for numeric columns</p>\n"
-            ],
+            "contents": ["<p>Changes alignment for numeric columns</p>\n"],
             "contentsRaw": "Changes alignment for numeric columns",
             "metadata": {}
           },
@@ -452,9 +426,7 @@
     },
     "DataTableCellProps": {
       "documentation": {
-        "contents": [
-          "<p>A cell for the DataTable</p>\n"
-        ],
+        "contents": ["<p>A cell for the DataTable</p>\n"],
         "contentsRaw": "A cell for the DataTable",
         "metadata": {}
       },
@@ -472,16 +444,12 @@
       "kind": "interface",
       "name": "DataTableCellProps",
       "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/data-table/index.tsx#L209",
-      "extends": [
-        "SharedDataTableCellProps"
-      ],
+      "extends": ["SharedDataTableCellProps"],
       "methods": [],
       "properties": [
         {
           "documentation": {
-            "contents": [
-              "<p>Align content to the end of the cell.</p>\n"
-            ],
+            "contents": ["<p>Align content to the end of the cell.</p>\n"],
             "contentsRaw": "Align content to the end of the cell.",
             "metadata": {}
           },
@@ -504,9 +472,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Align content to the middle of the cell.</p>\n"
-            ],
+            "contents": ["<p>Align content to the middle of the cell.</p>\n"],
             "contentsRaw": "Align content to the middle of the cell.",
             "metadata": {}
           },
@@ -529,9 +495,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Align content to the start of the cell.</p>\n"
-            ],
+            "contents": ["<p>Align content to the start of the cell.</p>\n"],
             "contentsRaw": "Align content to the start of the cell.",
             "metadata": {}
           },
@@ -579,9 +543,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Changes alignment for numeric columns</p>\n"
-            ],
+            "contents": ["<p>Changes alignment for numeric columns</p>\n"],
             "contentsRaw": "Changes alignment for numeric columns",
             "metadata": {}
           },
@@ -606,9 +568,7 @@
     },
     "SimpleDataTableProps": {
       "documentation": {
-        "contents": [
-          "<p>A simple data table to render matrices.</p>\n"
-        ],
+        "contents": ["<p>A simple data table to render matrices.</p>\n"],
         "contentsRaw": "A simple data table to render matrices.",
         "metadata": {}
       },
@@ -626,16 +586,12 @@
       "kind": "interface",
       "name": "SimpleDataTableProps",
       "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/data-table/index.tsx#L238",
-      "extends": [
-        "DataTableProps"
-      ],
+      "extends": ["DataTableProps"],
       "methods": [],
       "properties": [
         {
           "documentation": {
-            "contents": [
-              "<p>Data to render.</p>\n"
-            ],
+            "contents": ["<p>Data to render.</p>\n"],
             "contentsRaw": "Data to render.",
             "metadata": {}
           },
@@ -705,9 +661,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Table headers to render.</p>\n"
-            ],
+            "contents": ["<p>Table headers to render.</p>\n"],
             "contentsRaw": "Table headers to render.",
             "metadata": {}
           },

@@ -3,9 +3,7 @@
   "typescript": {
     "FabProps": {
       "documentation": {
-        "contents": [
-          "<p>A floating action button component</p>\n"
-        ],
+        "contents": ["<p>A floating action button component</p>\n"],
         "contentsRaw": "A floating action button component",
         "metadata": {}
       },
@@ -23,16 +21,12 @@
       "kind": "interface",
       "name": "FabProps",
       "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/fab/index.tsx#L8",
-      "extends": [
-        "WithRippleProps"
-      ],
+      "extends": ["WithRippleProps"],
       "methods": [],
       "properties": [
         {
           "documentation": {
-            "contents": [
-              "<p>Content specified as children.</p>\n"
-            ],
+            "contents": ["<p>Content specified as children.</p>\n"],
             "contentsRaw": "Content specified as children.",
             "metadata": {}
           },
@@ -78,9 +72,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>The icon for the FAB</p>\n"
-            ],
+            "contents": ["<p>The icon for the FAB</p>\n"],
             "contentsRaw": "The icon for the FAB",
             "metadata": {}
           },
@@ -102,9 +94,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Make the Fab extended with a label.</p>\n"
-            ],
+            "contents": ["<p>Make the Fab extended with a label.</p>\n"],
             "contentsRaw": "Make the Fab extended with a label.",
             "metadata": {}
           },
@@ -126,9 +116,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Make the Fab smaller.</p>\n"
-            ],
+            "contents": ["<p>Make the Fab smaller.</p>\n"],
             "contentsRaw": "Make the Fab smaller.",
             "metadata": {}
           },
@@ -150,9 +138,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Adds a ripple effect to the component</p>\n"
-            ],
+            "contents": ["<p>Adds a ripple effect to the component</p>\n"],
             "contentsRaw": "Adds a ripple effect to the component",
             "metadata": {}
           },
@@ -174,9 +160,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>A trialing icon for the FAB</p>\n"
-            ],
+            "contents": ["<p>A trialing icon for the FAB</p>\n"],
             "contentsRaw": "A trialing icon for the FAB",
             "metadata": {}
           },

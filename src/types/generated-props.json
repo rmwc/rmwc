@@ -20,9 +20,7 @@
       "properties": [
         {
           "documentation": {
-            "contents": [
-              "<p>Adds a ripple effect to the component</p>\n"
-            ],
+            "contents": ["<p>Adds a ripple effect to the component</p>\n"],
             "contentsRaw": "Adds a ripple effect to the component",
             "metadata": {}
           },
@@ -61,9 +59,7 @@
       "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/types/index.tsx#L70",
       "indexSignature": {
         "documentation": {
-          "contents": [
-            "<p>Additional props</p>\n"
-          ],
+          "contents": ["<p>Additional props</p>\n"],
           "contentsRaw": "Additional props",
           "metadata": {}
         },
@@ -184,9 +180,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>A size to render the icon</p>\n"
-            ],
+            "contents": ["<p>A size to render the icon</p>\n"],
             "contentsRaw": "A size to render the icon",
             "metadata": {}
           },
@@ -234,9 +228,7 @@
     },
     "ThemeOptionT": {
       "documentation": {
-        "contents": [
-          "<p>Theming</p>\n"
-        ],
+        "contents": ["<p>Theming</p>\n"],
         "contentsRaw": "Theming",
         "metadata": {}
       },
@@ -275,9 +267,7 @@
     },
     "RipplePropT": {
       "documentation": {
-        "contents": [
-          "<p>Ripples</p>\n"
-        ],
+        "contents": ["<p>Ripples</p>\n"],
         "contentsRaw": "Ripples",
         "metadata": {}
       },
@@ -299,9 +289,7 @@
     },
     "TagT": {
       "documentation": {
-        "contents": [
-          "<p>Components</p>\n"
-        ],
+        "contents": ["<p>Components</p>\n"],
         "contentsRaw": "Components",
         "metadata": {}
       },

@@ -39,9 +39,7 @@
     },
     "SelectIconProps": {
       "documentation": {
-        "contents": [
-          "<p>An Icon in a Select</p>\n"
-        ],
+        "contents": ["<p>An Icon in a Select</p>\n"],
         "contentsRaw": "An Icon in a Select",
         "metadata": {}
       },
@@ -59,9 +57,7 @@
       "kind": "interface",
       "name": "SelectIconProps",
       "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/select/select-icon/index.tsx#L13",
-      "extends": [
-        "IconProps"
-      ],
+      "extends": ["IconProps"],
       "methods": [],
       "properties": [
         {
@@ -122,9 +118,7 @@
       "kind": "interface",
       "name": "FormattedOption",
       "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/select/select/index.tsx#L24",
-      "extends": [
-        "any"
-      ],
+      "extends": ["any"],
       "methods": [],
       "properties": [
         {
@@ -182,9 +176,7 @@
     },
     "SelectProps": {
       "documentation": {
-        "contents": [
-          "<p>A Select Component</p>\n"
-        ],
+        "contents": ["<p>A Select Component</p>\n"],
         "contentsRaw": "A Select Component",
         "metadata": {}
       },
@@ -206,9 +198,7 @@
       "properties": [
         {
           "documentation": {
-            "contents": [
-              "<p>Makes the Select disabled.</p>\n"
-            ],
+            "contents": ["<p>Makes the Select disabled.</p>\n"],
             "contentsRaw": "Makes the Select disabled.",
             "metadata": {}
           },
@@ -230,9 +220,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Renders a non native / enhanced dropdown</p>\n"
-            ],
+            "contents": ["<p>Renders a non native / enhanced dropdown</p>\n"],
             "contentsRaw": "Renders a non native / enhanced dropdown",
             "metadata": {}
           },
@@ -278,9 +266,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Adds help text to the field</p>\n"
-            ],
+            "contents": ["<p>Adds help text to the field</p>\n"],
             "contentsRaw": "Adds help text to the field",
             "metadata": {}
           },
@@ -302,9 +288,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Add a leading icon.</p>\n"
-            ],
+            "contents": ["<p>Add a leading icon.</p>\n"],
             "contentsRaw": "Add a leading icon.",
             "metadata": {}
           },
@@ -374,9 +358,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>A label for the form control.</p>\n"
-            ],
+            "contents": ["<p>A label for the form control.</p>\n"],
             "contentsRaw": "A label for the form control.",
             "metadata": {}
           },
@@ -422,9 +404,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Makes the select outlined.</p>\n"
-            ],
+            "contents": ["<p>Makes the select outlined.</p>\n"],
             "contentsRaw": "Makes the select outlined.",
             "metadata": {}
           },
@@ -470,9 +450,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Makes the Select required.</p>\n"
-            ],
+            "contents": ["<p>Makes the Select required.</p>\n"],
             "contentsRaw": "Makes the Select required.",
             "metadata": {}
           },
@@ -518,9 +496,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>The value for a controlled select.</p>\n"
-            ],
+            "contents": ["<p>The value for a controlled select.</p>\n"],
             "contentsRaw": "The value for a controlled select.",
             "metadata": {}
           },
@@ -544,9 +520,7 @@
     },
     "SelectHelperTextProps": {
       "documentation": {
-        "contents": [
-          "<p>A help text component</p>\n"
-        ],
+        "contents": ["<p>A help text component</p>\n"],
         "contentsRaw": "A help text component",
         "metadata": {}
       },
@@ -568,9 +542,7 @@
       "properties": [
         {
           "documentation": {
-            "contents": [
-              "<p>Make the help text always visible</p>\n"
-            ],
+            "contents": ["<p>Make the help text always visible</p>\n"],
             "contentsRaw": "Make the help text always visible",
             "metadata": {}
           },
@@ -592,9 +564,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Make the help a validation message style</p>\n"
-            ],
+            "contents": ["<p>Make the help a validation message style</p>\n"],
             "contentsRaw": "Make the help a validation message style",
             "metadata": {}
           },

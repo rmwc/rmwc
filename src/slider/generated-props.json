@@ -3,9 +3,7 @@
   "typescript": {
     "SliderProps": {
       "documentation": {
-        "contents": [
-          "<p>A Slider component.</p>\n"
-        ],
+        "contents": ["<p>A Slider component.</p>\n"],
         "contentsRaw": "A Slider component.",
         "metadata": {}
       },
@@ -27,9 +25,7 @@
       "properties": [
         {
           "documentation": {
-            "contents": [
-              "<p>Disables the control.</p>\n"
-            ],
+            "contents": ["<p>Disables the control.</p>\n"],
             "contentsRaw": "Disables the control.",
             "metadata": {}
           },
@@ -123,9 +119,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>The maximum value of the Slider.</p>\n"
-            ],
+            "contents": ["<p>The maximum value of the Slider.</p>\n"],
             "contentsRaw": "The maximum value of the Slider.",
             "metadata": {}
           },
@@ -147,9 +141,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>The minimum value of the Slider.</p>\n"
-            ],
+            "contents": ["<p>The minimum value of the Slider.</p>\n"],
             "contentsRaw": "The minimum value of the Slider.",
             "metadata": {}
           },
@@ -219,9 +211,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>A step to quantize values by.</p>\n"
-            ],
+            "contents": ["<p>A step to quantize values by.</p>\n"],
             "contentsRaw": "A step to quantize values by.",
             "metadata": {}
           },
@@ -243,9 +233,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>The value of the Slider.</p>\n"
-            ],
+            "contents": ["<p>The value of the Slider.</p>\n"],
             "contentsRaw": "The value of the Slider.",
             "metadata": {}
           },

@@ -27,9 +27,7 @@
       "properties": [
         {
           "documentation": {
-            "contents": [
-              "<p>How to align the badge.</p>\n"
-            ],
+            "contents": ["<p>How to align the badge.</p>\n"],
             "contentsRaw": "How to align the badge.",
             "metadata": {}
           },
@@ -99,9 +97,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>A label or count for the badge.</p>\n"
-            ],
+            "contents": ["<p>A label or count for the badge.</p>\n"],
             "contentsRaw": "A label or count for the badge.",
             "metadata": {}
           },
@@ -125,9 +121,7 @@
     },
     "BadgeAnchorProps": {
       "documentation": {
-        "contents": [
-          "<p>An anchor component for badges.</p>\n"
-        ],
+        "contents": ["<p>An anchor component for badges.</p>\n"],
         "contentsRaw": "An anchor component for badges.",
         "metadata": {}
       },

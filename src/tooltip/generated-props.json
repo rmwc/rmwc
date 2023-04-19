@@ -123,9 +123,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>The overlay content for the tooltip.</p>\n"
-            ],
+            "contents": ["<p>The overlay content for the tooltip.</p>\n"],
             "contentsRaw": "The overlay content for the tooltip.",
             "metadata": {}
           },
@@ -195,9 +193,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Manually control the open state</p>\n"
-            ],
+            "contents": ["<p>Manually control the open state</p>\n"],
             "contentsRaw": "Manually control the open state",
             "metadata": {}
           },

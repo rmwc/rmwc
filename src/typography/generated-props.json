@@ -3,9 +3,7 @@
   "typescript": {
     "TypographyProps": {
       "documentation": {
-        "contents": [
-          "<p>The Typography Component</p>\n"
-        ],
+        "contents": ["<p>The Typography Component</p>\n"],
         "contentsRaw": "The Typography Component",
         "metadata": {}
       },
@@ -27,9 +25,7 @@
       "properties": [
         {
           "documentation": {
-            "contents": [
-              "<p>The typography style.</p>\n"
-            ],
+            "contents": ["<p>The typography style.</p>\n"],
             "contentsRaw": "The typography style.",
             "metadata": {}
           },

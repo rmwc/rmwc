@@ -3,9 +3,7 @@
   "typescript": {
     "ImageListProps": {
       "documentation": {
-        "contents": [
-          "<p>The root of the Image List.</p>\n"
-        ],
+        "contents": ["<p>The root of the Image List.</p>\n"],
         "contentsRaw": "The root of the Image List.",
         "metadata": {}
       },
@@ -77,9 +75,7 @@
     },
     "ImageListItemProps": {
       "documentation": {
-        "contents": [
-          "<p>Indicates each item in an Image List.</p>\n"
-        ],
+        "contents": ["<p>Indicates each item in an Image List.</p>\n"],
         "contentsRaw": "Indicates each item in an Image List.",
         "metadata": {}
       },
@@ -127,9 +123,7 @@
     },
     "ImageListImageProps": {
       "documentation": {
-        "contents": [
-          "<p>Indicates the image element in each item.</p>\n"
-        ],
+        "contents": ["<p>Indicates the image element in each item.</p>\n"],
         "contentsRaw": "Indicates the image element in each item.",
         "metadata": {}
       },

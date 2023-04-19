@@ -3,9 +3,7 @@
   "typescript": {
     "ChipProps": {
       "documentation": {
-        "contents": [
-          "<p>A Chip component.</p>\n"
-        ],
+        "contents": ["<p>A Chip component.</p>\n"],
         "contentsRaw": "A Chip component.",
         "metadata": {}
       },
@@ -99,9 +97,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Instance of an Icon Component.</p>\n"
-            ],
+            "contents": ["<p>Instance of an Icon Component.</p>\n"],
             "contentsRaw": "Instance of an Icon Component.",
             "metadata": {}
           },
@@ -147,9 +143,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Text for your Chip.</p>\n"
-            ],
+            "contents": ["<p>Text for your Chip.</p>\n"],
             "contentsRaw": "Text for your Chip.",
             "metadata": {}
           },
@@ -243,9 +237,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>makes the Chip appear selected.</p>\n"
-            ],
+            "contents": ["<p>makes the Chip appear selected.</p>\n"],
             "contentsRaw": "makes the Chip appear selected.",
             "metadata": {}
           },
@@ -267,9 +259,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Instance of an Icon Component.</p>\n"
-            ],
+            "contents": ["<p>Instance of an Icon Component.</p>\n"],
             "contentsRaw": "Instance of an Icon Component.",
             "metadata": {}
           },
@@ -317,9 +307,7 @@
     },
     "ChipSetProps": {
       "documentation": {
-        "contents": [
-          "<p>A container for multiple chips.</p>\n"
-        ],
+        "contents": ["<p>A container for multiple chips.</p>\n"],
         "contentsRaw": "A container for multiple chips.",
         "metadata": {}
       },
@@ -341,9 +329,7 @@
       "properties": [
         {
           "documentation": {
-            "contents": [
-              "<p>Creates a choice chipset</p>\n"
-            ],
+            "contents": ["<p>Creates a choice chipset</p>\n"],
             "contentsRaw": "Creates a choice chipset",
             "metadata": {}
           },
@@ -365,9 +351,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Creates a filter chipset</p>\n"
-            ],
+            "contents": ["<p>Creates a filter chipset</p>\n"],
             "contentsRaw": "Creates a filter chipset",
             "metadata": {}
           },
@@ -391,9 +375,7 @@
     },
     "TrailingActionApi": {
       "documentation": {
-        "contents": [
-          "<p>Trailing Action</p>\n"
-        ],
+        "contents": ["<p>Trailing Action</p>\n"],
         "contentsRaw": "Trailing Action",
         "metadata": {}
       },
@@ -504,9 +486,7 @@
     },
     "ChipOnInteractionEventT": {
       "documentation": {
-        "contents": [
-          "<p>Events</p>\n"
-        ],
+        "contents": ["<p>Events</p>\n"],
         "contentsRaw": "Events",
         "metadata": {}
       },

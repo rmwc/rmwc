@@ -3,9 +3,7 @@
   "typescript": {
     "RadioProps": {
       "documentation": {
-        "contents": [
-          "<p>A Radio button component.</p>\n"
-        ],
+        "contents": ["<p>A Radio button component.</p>\n"],
         "contentsRaw": "A Radio button component.",
         "metadata": {}
       },
@@ -23,17 +21,12 @@
       "kind": "interface",
       "name": "RadioProps",
       "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/radio/index.tsx#L14",
-      "extends": [
-        "WithRippleProps",
-        "ToggleableProps<MDCRadioFoundation>"
-      ],
+      "extends": ["WithRippleProps", "ToggleableProps<MDCRadioFoundation>"],
       "methods": [],
       "properties": [
         {
           "documentation": {
-            "contents": [
-              "<p>Toggle the control on and off.</p>\n"
-            ],
+            "contents": ["<p>Toggle the control on and off.</p>\n"],
             "contentsRaw": "Toggle the control on and off.",
             "metadata": {}
           },
@@ -55,9 +48,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Disables the control.</p>\n"
-            ],
+            "contents": ["<p>Disables the control.</p>\n"],
             "contentsRaw": "Disables the control.",
             "metadata": {}
           },
@@ -103,9 +94,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>A DOM ID for the toggle.</p>\n"
-            ],
+            "contents": ["<p>A DOM ID for the toggle.</p>\n"],
             "contentsRaw": "A DOM ID for the toggle.",
             "metadata": {}
           },
@@ -127,9 +116,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>A reference to the native input.</p>\n"
-            ],
+            "contents": ["<p>A reference to the native input.</p>\n"],
             "contentsRaw": "A reference to the native input.",
             "metadata": {}
           },
@@ -151,9 +138,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>A label for the control.</p>\n"
-            ],
+            "contents": ["<p>A label for the control.</p>\n"],
             "contentsRaw": "A label for the control.",
             "metadata": {}
           },
@@ -175,9 +160,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Adds a ripple effect to the component</p>\n"
-            ],
+            "contents": ["<p>Adds a ripple effect to the component</p>\n"],
             "contentsRaw": "Adds a ripple effect to the component",
             "metadata": {}
           },
@@ -223,9 +206,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>The value of the control.</p>\n"
-            ],
+            "contents": ["<p>The value of the control.</p>\n"],
             "contentsRaw": "The value of the control.",
             "metadata": {}
           },

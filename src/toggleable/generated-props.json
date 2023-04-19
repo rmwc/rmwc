@@ -20,9 +20,7 @@
       "properties": [
         {
           "documentation": {
-            "contents": [
-              "<p>Toggle the control on and off.</p>\n"
-            ],
+            "contents": ["<p>Toggle the control on and off.</p>\n"],
             "contentsRaw": "Toggle the control on and off.",
             "metadata": {}
           },
@@ -44,9 +42,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Disables the control.</p>\n"
-            ],
+            "contents": ["<p>Disables the control.</p>\n"],
             "contentsRaw": "Disables the control.",
             "metadata": {}
           },
@@ -92,9 +88,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>A DOM ID for the toggle.</p>\n"
-            ],
+            "contents": ["<p>A DOM ID for the toggle.</p>\n"],
             "contentsRaw": "A DOM ID for the toggle.",
             "metadata": {}
           },
@@ -116,9 +110,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>A reference to the native input.</p>\n"
-            ],
+            "contents": ["<p>A reference to the native input.</p>\n"],
             "contentsRaw": "A reference to the native input.",
             "metadata": {}
           },
@@ -140,9 +132,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>A label for the control.</p>\n"
-            ],
+            "contents": ["<p>A label for the control.</p>\n"],
             "contentsRaw": "A label for the control.",
             "metadata": {}
           },
@@ -188,9 +178,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>The value of the control.</p>\n"
-            ],
+            "contents": ["<p>The value of the control.</p>\n"],
             "contentsRaw": "The value of the control.",
             "metadata": {}
           },

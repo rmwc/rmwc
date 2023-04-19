@@ -3,9 +3,7 @@
   "typescript": {
     "TabBarProps": {
       "documentation": {
-        "contents": [
-          "<p>The TabBar component</p>\n"
-        ],
+        "contents": ["<p>The TabBar component</p>\n"],
         "contentsRaw": "The TabBar component",
         "metadata": {}
       },
@@ -27,9 +25,7 @@
       "properties": [
         {
           "documentation": {
-            "contents": [
-              "<p>The index of the active tab.</p>\n"
-            ],
+            "contents": ["<p>The index of the active tab.</p>\n"],
             "contentsRaw": "The index of the active tab.",
             "metadata": {}
           },
@@ -166,9 +162,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>The transition to use</p>\n"
-            ],
+            "contents": ["<p>The transition to use</p>\n"],
             "contentsRaw": "The transition to use",
             "metadata": {}
           },
@@ -228,9 +222,7 @@
     },
     "TabProps": {
       "documentation": {
-        "contents": [
-          "<p>A Tab component</p>\n"
-        ],
+        "contents": ["<p>A Tab component</p>\n"],
         "contentsRaw": "A Tab component",
         "metadata": {}
       },
@@ -252,9 +244,7 @@
       "properties": [
         {
           "documentation": {
-            "contents": [
-              "<p>The label for the tab, passed as children.</p>\n"
-            ],
+            "contents": ["<p>The label for the tab, passed as children.</p>\n"],
             "contentsRaw": "The label for the tab, passed as children.",
             "metadata": {}
           },
@@ -324,9 +314,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>The icon to use for the tab.</p>\n"
-            ],
+            "contents": ["<p>The icon to use for the tab.</p>\n"],
             "contentsRaw": "The icon to use for the tab.",
             "metadata": {}
           },
@@ -372,9 +360,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>A label for the tab.</p>\n"
-            ],
+            "contents": ["<p>A label for the tab.</p>\n"],
             "contentsRaw": "A label for the tab.",
             "metadata": {}
           },
@@ -444,9 +430,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Restricts the indicator to the content</p>\n"
-            ],
+            "contents": ["<p>Restricts the indicator to the content</p>\n"],
             "contentsRaw": "Restricts the indicator to the content",
             "metadata": {}
           },
@@ -468,9 +452,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Stacks the icon on top of the text label</p>\n"
-            ],
+            "contents": ["<p>Stacks the icon on top of the text label</p>\n"],
             "contentsRaw": "Stacks the icon on top of the text label",
             "metadata": {}
           },
@@ -511,9 +493,7 @@
     },
     "TabBarOnActivateEventT": {
       "documentation": {
-        "contents": [
-          "<p>TabBar</p>\n"
-        ],
+        "contents": ["<p>TabBar</p>\n"],
         "contentsRaw": "TabBar",
         "metadata": {}
       },

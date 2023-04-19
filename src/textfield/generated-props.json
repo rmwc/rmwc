@@ -23,9 +23,7 @@
       "kind": "interface",
       "name": "TextFieldProps",
       "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/textfield/index.tsx#L24",
-      "extends": [
-        "WithRippleProps"
-      ],
+      "extends": ["WithRippleProps"],
       "methods": [],
       "properties": [
         {
@@ -78,9 +76,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Makes the Textfield disabled.</p>\n"
-            ],
+            "contents": ["<p>Makes the Textfield disabled.</p>\n"],
             "contentsRaw": "Makes the Textfield disabled.",
             "metadata": {}
           },
@@ -150,9 +146,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Adds help text to the field</p>\n"
-            ],
+            "contents": ["<p>Adds help text to the field</p>\n"],
             "contentsRaw": "Adds help text to the field",
             "metadata": {}
           },
@@ -174,9 +168,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Add a leading icon.</p>\n"
-            ],
+            "contents": ["<p>Add a leading icon.</p>\n"],
             "contentsRaw": "Add a leading icon.",
             "metadata": {}
           },
@@ -246,9 +238,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>A label for the input.</p>\n"
-            ],
+            "contents": ["<p>A label for the input.</p>\n"],
             "contentsRaw": "A label for the input.",
             "metadata": {}
           },
@@ -270,9 +260,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Outline the TextField.</p>\n"
-            ],
+            "contents": ["<p>Outline the TextField.</p>\n"],
             "contentsRaw": "Outline the TextField.",
             "metadata": {}
           },
@@ -294,9 +282,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Add prefix.</p>\n"
-            ],
+            "contents": ["<p>Add prefix.</p>\n"],
             "contentsRaw": "Add prefix.",
             "metadata": {}
           },
@@ -318,9 +304,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Makes the Textfield required.</p>\n"
-            ],
+            "contents": ["<p>Makes the Textfield required.</p>\n"],
             "contentsRaw": "Makes the Textfield required.",
             "metadata": {}
           },
@@ -342,9 +326,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Make textarea resizeable</p>\n"
-            ],
+            "contents": ["<p>Make textarea resizeable</p>\n"],
             "contentsRaw": "Make textarea resizeable",
             "metadata": {}
           },
@@ -366,9 +348,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Adds a ripple effect to the component</p>\n"
-            ],
+            "contents": ["<p>Adds a ripple effect to the component</p>\n"],
             "contentsRaw": "Adds a ripple effect to the component",
             "metadata": {}
           },
@@ -414,9 +394,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Add suffix.</p>\n"
-            ],
+            "contents": ["<p>Add suffix.</p>\n"],
             "contentsRaw": "Add suffix.",
             "metadata": {}
           },
@@ -438,9 +416,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Makes a multiline TextField.</p>\n"
-            ],
+            "contents": ["<p>Makes a multiline TextField.</p>\n"],
             "contentsRaw": "Makes a multiline TextField.",
             "metadata": {}
           },
@@ -462,9 +438,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Add a trailing icon.</p>\n"
-            ],
+            "contents": ["<p>Add a trailing icon.</p>\n"],
             "contentsRaw": "Add a trailing icon.",
             "metadata": {}
           },
@@ -510,9 +484,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Sets the value for controlled TextFields.</p>\n"
-            ],
+            "contents": ["<p>Sets the value for controlled TextFields.</p>\n"],
             "contentsRaw": "Sets the value for controlled TextFields.",
             "metadata": {}
           },
@@ -536,9 +508,7 @@
     },
     "TextFieldHelperTextProps": {
       "documentation": {
-        "contents": [
-          "<p>Helper Text</p>\n"
-        ],
+        "contents": ["<p>Helper Text</p>\n"],
         "contentsRaw": "Helper Text",
         "metadata": {}
       },
@@ -560,9 +530,7 @@
       "properties": [
         {
           "documentation": {
-            "contents": [
-              "<p>Content for the help text</p>\n"
-            ],
+            "contents": ["<p>Content for the help text</p>\n"],
             "contentsRaw": "Content for the help text",
             "metadata": {}
           },
@@ -584,9 +552,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Make the help text always visible</p>\n"
-            ],
+            "contents": ["<p>Make the help text always visible</p>\n"],
             "contentsRaw": "Make the help text always visible",
             "metadata": {}
           },
@@ -608,9 +574,7 @@
         },
         {
           "documentation": {
-            "contents": [
-              "<p>Make the help a validation message style</p>\n"
-            ],
+            "contents": ["<p>Make the help a validation message style</p>\n"],
             "contentsRaw": "Make the help a validation message style",
             "metadata": {}
           },
@@ -634,9 +598,7 @@
     },
     "TextFieldIconApi": {
       "documentation": {
-        "contents": [
-          "<p>Icon</p>\n"
-        ],
+        "contents": ["<p>Icon</p>\n"],
         "contentsRaw": "Icon",
         "metadata": {}
       },
@@ -677,9 +639,7 @@
     },
     "TextFieldIconProps": {
       "documentation": {
-        "contents": [
-          "<p>An Icon in a TextField</p>\n"
-        ],
+        "contents": ["<p>An Icon in a TextField</p>\n"],
         "contentsRaw": "An Icon in a TextField",
         "metadata": {}
       },
@@ -697,9 +657,7 @@
       "kind": "interface",
       "name": "TextFieldIconProps",
       "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/textfield/index.tsx#L338",
-      "extends": [
-        "IconProps"
-      ],
+      "extends": ["IconProps"],
       "methods": [],
       "properties": [
         {
