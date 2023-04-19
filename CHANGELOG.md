@@ -1,3 +1,122 @@
+#### 8.0.7 (2023-03-20)
+
+##### Build System / Dependencies
+
+* **deps:**
+  *  bump trim-newlines and meow (bc4e918f)
+  *  bump markdown-it and kss (ac855d99)
+  *  bump webpack from 5.70.0 to 5.76.1 (23653f4e)
+  *  bump http-cache-semantics and lerna (e2cded73)
+  *  bump loader-utils from 1.4.0 to 1.4.2 (#835) (04db5896)
+  *  bump decode-uri-component from 0.2.0 to 0.2.2 (#837) (ffe7ad54)
+  *  bump json5 from 1.0.1 to 1.0.2 (#845) (b6fc93b3)
+  *  bump minimatch and recursive-readdir (7f3831e5)
+
+##### Chores
+
+* **readme:**  update recent updates section (c97a9b05)
+*  update package version (ce620ed8)
+*  update package lock (fc32a165)
+*  update package version (9c933e97)
+
+##### Continuous Integration
+
+* **rmwc:**
+  *  Release of v8.0.6 (fe499076)
+  *  Release of v8.0.5 (#851) (0b280ac1)
+  *  Release 8.0.4 (#846) (0b4ab072)
+
+##### Bug Fixes
+
+* **menu:**
+  *  add disabled opacity style (a4076f46)
+  *  Disable events when disabled is true (fe694827)
+  *  Correctly renderToPortal for menu  (#850) (1f490cad)
+* **select:**  Fix controlled enhanced select bug (#844) (530d7912)
+
+##### Other Changes
+
+* **build:**   Fix build on Windows (2a1658fb)
+
+#### 8.0.6 (2023-03-19)
+
+##### Build System / Dependencies
+
+* **deps:**
+  *  bump loader-utils from 1.4.0 to 1.4.2 (#835) (04db5896)
+  *  bump decode-uri-component from 0.2.0 to 0.2.2 (#837) (ffe7ad54)
+  *  bump json5 from 1.0.1 to 1.0.2 (#845) (b6fc93b3)
+
+##### Continuous Integration
+
+* **rmwc:**
+  *  Release of v8.0.6 (fe499076)
+  *  Release of v8.0.5 (#851) (0b280ac1)
+  *  Release 8.0.4 (#846) (0b4ab072)
+
+##### Bug Fixes
+
+* **menu:**
+  *  add disabled opacity style (a4076f46)
+  *  Disable events when disabled is true (fe694827)
+  *  Correctly renderToPortal for menu  (#850) (1f490cad)
+* **select:**  Fix controlled enhanced select bug (#844) (530d7912)
+
+##### Other Changes
+
+* **build:**   Fix build on Windows (2a1658fb)
+
+#### 8.0.5 (2023-02-09)
+
+##### Continuous Integration
+
+* **rmwc:**
+  *  Release of v8.0.5 (b970c863)
+  *  Release 8.0.4 (#846) (0b4ab072)
+
+##### Bug Fixes
+
+* **menu:**  Correctly renderToPortal for menu  (#850) (1f490cad)
+* **select:**  Fix controlled enhanced select bug (#844) (530d7912)
+
+##### Other Changes
+
+* **build:**   Fix build on Windows (2a1658fb)
+
+#### 8.0.4 (2023-01-05)
+
+##### Continuous Integration
+
+* **rmwc:**  Release 8.0.4 (70540de2)
+
+##### Bug Fixes
+
+* **select:**  Fix controlled enhanced select bug (#844) (530d7912)
+
+##### Other Changes
+
+* **build:**   Fix build on Windows (2a1658fb)
+
+#### 8.0.3 (2022-10-12)
+
+##### Chores
+
+* **readme:**  update readme and package.json (12b4c443)
+
+##### Bug Fixes
+
+* **type:**  Extends {} to fix error in declarations (d5936d7b)
+
+#### 8.0.2 (2022-10-12)
+
+##### Chores
+
+* **readme:**  update readme (c47f003e)
+
+##### Bug Fixes
+
+* **textfield:**  Add back styling for date picker (f9a609d8)
+
 #### 8.0.1 (2022-08-05)
 
 ##### Breaking Changes

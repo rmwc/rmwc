@@ -1,0 +1,281 @@
+{
+  "npm": {},
+  "typescript": {
+    "TooltipProps": {
+      "documentation": {
+        "contents": [
+          "<p>A Tooltip component for displaying informative popover information.</p>\n"
+        ],
+        "contentsRaw": "A Tooltip component for displaying informative popover information.",
+        "metadata": {}
+      },
+      "fileName": "src/tooltip/index.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "interface",
+      "name": "TooltipProps",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/tooltip/index.tsx#L19",
+      "methods": [],
+      "properties": [
+        {
+          "documentation": {
+            "contents": [
+              "<p>Activate the tooltip through one or more interactions. Defaults to <code>[&#39;hover&#39;, &#39;focus&#39;]</code>.</p>\n"
+            ],
+            "contentsRaw": "Activate the tooltip through one or more interactions. Defaults to `['hover', 'focus']`.",
+            "metadata": {}
+          },
+          "fileName": "src/tooltip/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "activateOn",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/tooltip/index.tsx#L25",
+          "type": "TooltipActivationT | TooltipActivationT[]"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>How to align the tooltip. Defaults to <code>top</code>.</p>\n"
+            ],
+            "contentsRaw": "How to align the tooltip. Defaults to `top`.",
+            "metadata": {}
+          },
+          "fileName": "src/tooltip/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "align",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/tooltip/index.tsx#L35",
+          "type": "TooltipAlignT"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>The children that the tooltip belongs to. Must be a single React.child.</p>\n"
+            ],
+            "contentsRaw": "The children that the tooltip belongs to. Must be a single React.child.",
+            "metadata": {}
+          },
+          "fileName": "src/tooltip/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "children",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/tooltip/index.tsx#L23",
+          "type": "React.ReactChild"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Custom className to add to the tooltip overlay container.</p>\n"
+            ],
+            "contentsRaw": "Custom className to add to the tooltip overlay container.",
+            "metadata": {}
+          },
+          "fileName": "src/tooltip/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "className",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/tooltip/index.tsx#L29",
+          "type": "undefined | string"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>The overlay content for the tooltip.</p>\n"
+            ],
+            "contentsRaw": "The overlay content for the tooltip.",
+            "metadata": {}
+          },
+          "fileName": "src/tooltip/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "content",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/tooltip/index.tsx#L21",
+          "type": "React.ReactNode"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Delay in milliseconds before showing the tooltip when interacting via touch or mouse.</p>\n"
+            ],
+            "contentsRaw": "Delay in milliseconds before showing the tooltip when interacting via touch or mouse.",
+            "metadata": {}
+          },
+          "fileName": "src/tooltip/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "enterDelay",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/tooltip/index.tsx#L31",
+          "type": "undefined | number"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Delay in milliseconds before hiding the tooltip when interacting via touch or mouse.</p>\n"
+            ],
+            "contentsRaw": "Delay in milliseconds before hiding the tooltip when interacting via touch or mouse.",
+            "metadata": {}
+          },
+          "fileName": "src/tooltip/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "leaveDelay",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/tooltip/index.tsx#L33",
+          "type": "undefined | number"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Manually control the open state</p>\n"
+            ],
+            "contentsRaw": "Manually control the open state",
+            "metadata": {}
+          },
+          "fileName": "src/tooltip/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "open",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/tooltip/index.tsx#L37",
+          "type": "undefined | false | true"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Whether or not to show an arrow on the Tooltip. Defaults to <code>false</code>.</p>\n"
+            ],
+            "contentsRaw": "Whether or not to show an arrow on the Tooltip. Defaults to `false`.",
+            "metadata": {}
+          },
+          "fileName": "src/tooltip/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "showArrow",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/tooltip/index.tsx#L27",
+          "type": "undefined | false | true"
+        }
+      ]
+    },
+    "TooltipActivationT": {
+      "fileName": "src/tooltip/index.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "type alias",
+      "name": "TooltipActivationT",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/tooltip/index.tsx#L6",
+      "type": "\"hover\" | \"click\" | \"focus\""
+    },
+    "TooltipAlignT": {
+      "fileName": "src/tooltip/index.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "type alias",
+      "name": "TooltipAlignT",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/tooltip/index.tsx#L8",
+      "type": "\"left\" | \"right\" | \"top\" | \"bottom\" | \"topLeft\" | \"topRight\" | \"bottomLeft\" | \"bottomRight\""
+    }
+  }
+}

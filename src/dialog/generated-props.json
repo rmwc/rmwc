@@ -1,0 +1,1360 @@
+{
+  "npm": {},
+  "typescript": {
+    "DialogQueueInput": {
+      "fileName": "src/dialog/dialog-queue.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "interface",
+      "name": "DialogQueueInput",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog-queue.tsx#L13",
+      "extends": [
+        "any",
+        "any"
+      ],
+      "methods": [],
+      "properties": [
+        {
+          "fileName": "src/dialog/dialog-queue.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "id",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog-queue.tsx#L16",
+          "type": "undefined | string"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Props for the input when using the prompt dialog. Only applies to prompt.</p>\n"
+            ],
+            "contentsRaw": "Props for the input when using the prompt dialog. Only applies to prompt.",
+            "metadata": {}
+          },
+          "fileName": "src/dialog/dialog-queue.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "inputProps",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog-queue.tsx#L18",
+          "type": "TextFieldProps & TextFieldHTMLProps"
+        }
+      ]
+    },
+    "DialogQueueSpec": {
+      "fileName": "src/dialog/dialog-queue.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "interface",
+      "name": "DialogQueueSpec",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog-queue.tsx#L21",
+      "extends": [
+        "DialogQueueInput"
+      ],
+      "methods": [],
+      "properties": [
+        {
+          "fileName": "src/dialog/dialog-queue.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "id",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog-queue.tsx#L22",
+          "type": "string"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Props for the input when using the prompt dialog. Only applies to prompt.</p>\n"
+            ],
+            "contentsRaw": "Props for the input when using the prompt dialog. Only applies to prompt.",
+            "metadata": {}
+          },
+          "fileName": "src/dialog/dialog-queue.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "inputProps",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog-queue.tsx#L18",
+          "inheritedFrom": "DialogQueueInput.inputProps",
+          "type": "TextFieldProps & TextFieldHTMLProps"
+        },
+        {
+          "fileName": "src/dialog/dialog-queue.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "reject",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog-queue.tsx#L24",
+          "type": "(reason: any) => void"
+        },
+        {
+          "fileName": "src/dialog/dialog-queue.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "resolve",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog-queue.tsx#L23",
+          "type": "(response: any) => void"
+        }
+      ]
+    },
+    "DialogQueueProps": {
+      "documentation": {
+        "contents": [
+          "<p>A snackbar queue for rendering messages</p>\n"
+        ],
+        "contentsRaw": "A snackbar queue for rendering messages",
+        "metadata": {}
+      },
+      "fileName": "src/dialog/dialog-queue.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "interface",
+      "name": "DialogQueueProps",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog-queue.tsx#L28",
+      "extends": [
+        "any"
+      ],
+      "methods": [],
+      "properties": [
+        {
+          "fileName": "src/dialog/dialog-queue.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "dialogs",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog-queue.tsx#L29",
+          "type": "ArrayEmitter<DialogQueueSpec>"
+        }
+      ]
+    },
+    "DialogProps": {
+      "documentation": {
+        "contents": [
+          "<p>A Dialog component.</p>\n"
+        ],
+        "contentsRaw": "A Dialog component.",
+        "metadata": {}
+      },
+      "fileName": "src/dialog/dialog.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "interface",
+      "name": "DialogProps",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L30",
+      "methods": [],
+      "properties": [
+        {
+          "documentation": {
+            "contents": [
+              "<p>Advanced: A reference to the MDCFoundation.</p>\n"
+            ],
+            "contentsRaw": "Advanced: A reference to the MDCFoundation.",
+            "metadata": {}
+          },
+          "fileName": "src/dialog/dialog.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "foundationRef",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L46",
+          "type": "React.Ref<MDCDialogFoundation>"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Callback for when the Dialog beings to close. evt.detail = { action?: string }</p>\n"
+            ],
+            "contentsRaw": "Callback for when the Dialog beings to close. evt.detail = { action?: string }",
+            "metadata": {}
+          },
+          "fileName": "src/dialog/dialog.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "onClose",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L38",
+          "type": "undefined | (evt: DialogOnCloseEventT) => void"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Callback for when the Dialog finishes closing. evt.detail = { action?: string }</p>\n"
+            ],
+            "contentsRaw": "Callback for when the Dialog finishes closing. evt.detail = { action?: string }",
+            "metadata": {}
+          },
+          "fileName": "src/dialog/dialog.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "onClosed",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L40",
+          "type": "undefined | (evt: DialogOnCloseEventT) => void"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Callback for when the Dialog opens.</p>\n"
+            ],
+            "contentsRaw": "Callback for when the Dialog opens.",
+            "metadata": {}
+          },
+          "fileName": "src/dialog/dialog.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "onOpen",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L34",
+          "type": "undefined | (evt: DialogOnOpenEventT) => void"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Callback for when the Dialog finishes opening</p>\n"
+            ],
+            "contentsRaw": "Callback for when the Dialog finishes opening",
+            "metadata": {}
+          },
+          "fileName": "src/dialog/dialog.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "onOpened",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L36",
+          "type": "undefined | (evt: DialogOnOpenedEventT) => void"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Whether or not the Dialog is showing.</p>\n"
+            ],
+            "contentsRaw": "Whether or not the Dialog is showing.",
+            "metadata": {}
+          },
+          "fileName": "src/dialog/dialog.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "open",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L32",
+          "type": "undefined | false | true"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Prevent the dialog from closing when the scrim is clicked or escape key is pressed.</p>\n"
+            ],
+            "contentsRaw": "Prevent the dialog from closing when the scrim is clicked or escape key is pressed.",
+            "metadata": {}
+          },
+          "fileName": "src/dialog/dialog.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "preventOutsideDismiss",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L42",
+          "type": "undefined | false | true"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Renders the dialog to a portal. Useful for situations where the dialog might be cutoff by an overflow: hidden container. You can pass &quot;true&quot; to render to the default RMWC portal.</p>\n"
+            ],
+            "contentsRaw": "Renders the dialog to a portal. Useful for situations where the dialog might be cutoff by an overflow: hidden container. You can pass \"true\" to render to the default RMWC portal.",
+            "metadata": {}
+          },
+          "fileName": "src/dialog/dialog.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "renderToPortal",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L44",
+          "type": "PortalPropT"
+        }
+      ]
+    },
+    "SimpleDialogProps": {
+      "documentation": {
+        "contents": [
+          "<p>A SimpleDialog component for ease of use.</p>\n"
+        ],
+        "contentsRaw": "A SimpleDialog component for ease of use.",
+        "metadata": {}
+      },
+      "fileName": "src/dialog/dialog.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "interface",
+      "name": "SimpleDialogProps",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L91",
+      "extends": [
+        "DialogProps"
+      ],
+      "methods": [],
+      "properties": [
+        {
+          "documentation": {
+            "contents": [
+              "<p>Creates an accept button for the default Dialog template with a given label. You can pass <code>null</code> to remove the button.</p>\n"
+            ],
+            "contentsRaw": "Creates an accept button for the default Dialog template with a given label. You can pass `null` to remove the button.",
+            "metadata": {}
+          },
+          "fileName": "src/dialog/dialog.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "acceptLabel",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L101",
+          "type": "React.ReactNode"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Body content for the default Dialog template, rendered before children.</p>\n"
+            ],
+            "contentsRaw": "Body content for the default Dialog template, rendered before children.",
+            "metadata": {}
+          },
+          "fileName": "src/dialog/dialog.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "body",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L97",
+          "type": "React.ReactNode"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Creates an cancel button for the default Dialog with a given label. You can pass <code>null</code> to remove the button.</p>\n"
+            ],
+            "contentsRaw": "Creates an cancel button for the default Dialog with a given label. You can pass `null` to remove the button.",
+            "metadata": {}
+          },
+          "fileName": "src/dialog/dialog.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "cancelLabel",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L103",
+          "type": "React.ReactNode"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Any children will be rendered in the body of the default Dialog template.</p>\n"
+            ],
+            "contentsRaw": "Any children will be rendered in the body of the default Dialog template.",
+            "metadata": {}
+          },
+          "fileName": "src/dialog/dialog.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "children",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L105",
+          "type": "React.ReactNode"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Additional footer content for the default Dialog template, rendered before any buttons.</p>\n"
+            ],
+            "contentsRaw": "Additional footer content for the default Dialog template, rendered before any buttons.",
+            "metadata": {}
+          },
+          "fileName": "src/dialog/dialog.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "footer",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L99",
+          "type": "React.ReactNode"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Advanced: A reference to the MDCFoundation.</p>\n"
+            ],
+            "contentsRaw": "Advanced: A reference to the MDCFoundation.",
+            "metadata": {}
+          },
+          "fileName": "src/dialog/dialog.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "foundationRef",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L46",
+          "inheritedFrom": "DialogProps.foundationRef",
+          "type": "React.Ref<MDCDialogFoundation>"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Additional Dialog header content for the default Dialog template.</p>\n"
+            ],
+            "contentsRaw": "Additional Dialog header content for the default Dialog template.",
+            "metadata": {}
+          },
+          "fileName": "src/dialog/dialog.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "header",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L95",
+          "type": "React.ReactNode"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Callback for when the Dialog beings to close. evt.detail = { action?: string }</p>\n"
+            ],
+            "contentsRaw": "Callback for when the Dialog beings to close. evt.detail = { action?: string }",
+            "metadata": {}
+          },
+          "fileName": "src/dialog/dialog.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "onClose",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L38",
+          "inheritedFrom": "DialogProps.onClose",
+          "type": "undefined | (evt: DialogOnCloseEventT) => void"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Callback for when the Dialog finishes closing. evt.detail = { action?: string }</p>\n"
+            ],
+            "contentsRaw": "Callback for when the Dialog finishes closing. evt.detail = { action?: string }",
+            "metadata": {}
+          },
+          "fileName": "src/dialog/dialog.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "onClosed",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L40",
+          "inheritedFrom": "DialogProps.onClosed",
+          "type": "undefined | (evt: DialogOnCloseEventT) => void"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Callback for when the Dialog opens.</p>\n"
+            ],
+            "contentsRaw": "Callback for when the Dialog opens.",
+            "metadata": {}
+          },
+          "fileName": "src/dialog/dialog.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "onOpen",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L34",
+          "inheritedFrom": "DialogProps.onOpen",
+          "type": "undefined | (evt: DialogOnOpenEventT) => void"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Callback for when the Dialog finishes opening</p>\n"
+            ],
+            "contentsRaw": "Callback for when the Dialog finishes opening",
+            "metadata": {}
+          },
+          "fileName": "src/dialog/dialog.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "onOpened",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L36",
+          "inheritedFrom": "DialogProps.onOpened",
+          "type": "undefined | (evt: DialogOnOpenedEventT) => void"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Whether or not the Dialog is showing.</p>\n"
+            ],
+            "contentsRaw": "Whether or not the Dialog is showing.",
+            "metadata": {}
+          },
+          "fileName": "src/dialog/dialog.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "open",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L32",
+          "inheritedFrom": "DialogProps.open",
+          "type": "undefined | false | true"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Prevent the dialog from closing when the scrim is clicked or escape key is pressed.</p>\n"
+            ],
+            "contentsRaw": "Prevent the dialog from closing when the scrim is clicked or escape key is pressed.",
+            "metadata": {}
+          },
+          "fileName": "src/dialog/dialog.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "preventOutsideDismiss",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L42",
+          "inheritedFrom": "DialogProps.preventOutsideDismiss",
+          "type": "undefined | false | true"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Renders the dialog to a portal. Useful for situations where the dialog might be cutoff by an overflow: hidden container. You can pass &quot;true&quot; to render to the default RMWC portal.</p>\n"
+            ],
+            "contentsRaw": "Renders the dialog to a portal. Useful for situations where the dialog might be cutoff by an overflow: hidden container. You can pass \"true\" to render to the default RMWC portal.",
+            "metadata": {}
+          },
+          "fileName": "src/dialog/dialog.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "renderToPortal",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L44",
+          "inheritedFrom": "DialogProps.renderToPortal",
+          "type": "PortalPropT"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>A title for the default Dialog template.</p>\n"
+            ],
+            "contentsRaw": "A title for the default Dialog template.",
+            "metadata": {}
+          },
+          "fileName": "src/dialog/dialog.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "title",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L93",
+          "type": "React.ReactNode"
+        }
+      ]
+    },
+    "DialogTitleProps": {
+      "documentation": {
+        "contents": [
+          "<p>The Dialog title.</p>\n"
+        ],
+        "contentsRaw": "The Dialog title.",
+        "metadata": {}
+      },
+      "fileName": "src/dialog/dialog.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "interface",
+      "name": "DialogTitleProps",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L184",
+      "methods": [],
+      "properties": []
+    },
+    "DialogContentProps": {
+      "documentation": {
+        "contents": [
+          "<p>The Dialog content.</p>\n"
+        ],
+        "contentsRaw": "The Dialog content.",
+        "metadata": {}
+      },
+      "fileName": "src/dialog/dialog.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "interface",
+      "name": "DialogContentProps",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L195",
+      "methods": [],
+      "properties": []
+    },
+    "DialogActionsProps": {
+      "documentation": {
+        "contents": [
+          "<p>Actions container for the Dialog.</p>\n"
+        ],
+        "contentsRaw": "Actions container for the Dialog.",
+        "metadata": {}
+      },
+      "fileName": "src/dialog/dialog.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "interface",
+      "name": "DialogActionsProps",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L206",
+      "methods": [],
+      "properties": []
+    },
+    "DialogButtonProps": {
+      "documentation": {
+        "contents": [
+          "<p>Action buttons for the Dialog.</p>\n"
+        ],
+        "contentsRaw": "Action buttons for the Dialog.",
+        "metadata": {}
+      },
+      "fileName": "src/dialog/dialog.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "interface",
+      "name": "DialogButtonProps",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L217",
+      "extends": [
+        "ButtonProps"
+      ],
+      "methods": [],
+      "properties": [
+        {
+          "documentation": {
+            "contents": [
+              "<p>An action returned in evt.detail.action to the onClose handler.</p>\n"
+            ],
+            "contentsRaw": "An action returned in evt.detail.action to the onClose handler.",
+            "metadata": {}
+          },
+          "fileName": "src/dialog/dialog.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "action",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L219",
+          "type": "undefined | string"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Content specified as children.</p>\n"
+            ],
+            "contentsRaw": "Content specified as children.",
+            "metadata": {}
+          },
+          "fileName": "src/button/dist/index.d.ts",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "children",
+          "inheritedFrom": "ButtonProps.children",
+          "type": "React.ReactNode"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Used to indicate a dangerous action.</p>\n"
+            ],
+            "contentsRaw": "Used to indicate a dangerous action.",
+            "metadata": {}
+          },
+          "fileName": "src/button/dist/index.d.ts",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "danger",
+          "inheritedFrom": "ButtonProps.danger",
+          "type": "undefined | false | true"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Make the Button dense.</p>\n"
+            ],
+            "contentsRaw": "Make the Button dense.",
+            "metadata": {}
+          },
+          "fileName": "src/button/dist/index.d.ts",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "dense",
+          "inheritedFrom": "ButtonProps.dense",
+          "type": "undefined | false | true"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Make the button disabled</p>\n"
+            ],
+            "contentsRaw": "Make the button disabled",
+            "metadata": {}
+          },
+          "fileName": "src/button/dist/index.d.ts",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "disabled",
+          "inheritedFrom": "ButtonProps.disabled",
+          "type": "undefined | false | true"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>An Icon for the Button</p>\n"
+            ],
+            "contentsRaw": "An Icon for the Button",
+            "metadata": {}
+          },
+          "fileName": "src/button/dist/index.d.ts",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "icon",
+          "inheritedFrom": "ButtonProps.icon",
+          "type": "RMWC.IconPropT"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Indicates this is the default selected action when pressing enter</p>\n"
+            ],
+            "contentsRaw": "Indicates this is the default selected action when pressing enter",
+            "metadata": {}
+          },
+          "fileName": "src/dialog/dialog.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "isDefaultAction",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L221",
+          "type": "undefined | false | true"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Content specified as a label prop.</p>\n"
+            ],
+            "contentsRaw": "Content specified as a label prop.",
+            "metadata": {}
+          },
+          "fileName": "src/button/dist/index.d.ts",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "label",
+          "inheritedFrom": "ButtonProps.label",
+          "type": "React.ReactNode | any"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Make the button outlined.</p>\n"
+            ],
+            "contentsRaw": "Make the button outlined.",
+            "metadata": {}
+          },
+          "fileName": "src/button/dist/index.d.ts",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "outlined",
+          "inheritedFrom": "ButtonProps.outlined",
+          "type": "undefined | false | true"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Make the Button raised.</p>\n"
+            ],
+            "contentsRaw": "Make the Button raised.",
+            "metadata": {}
+          },
+          "fileName": "src/button/dist/index.d.ts",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "raised",
+          "inheritedFrom": "ButtonProps.raised",
+          "type": "undefined | false | true"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Adds a ripple effect to the component</p>\n"
+            ],
+            "contentsRaw": "Adds a ripple effect to the component",
+            "metadata": {}
+          },
+          "fileName": "src/types/dist/index.d.ts",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "ripple",
+          "inheritedFrom": "WithRippleProps.ripple",
+          "type": "RipplePropT"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Makes the button more touch friendly. This will automatically be set true if used inside of TouchTargetWrapper.</p>\n"
+            ],
+            "contentsRaw": "Makes the button more touch friendly. This will automatically be set true if used inside of TouchTargetWrapper.",
+            "metadata": {}
+          },
+          "fileName": "src/button/dist/index.d.ts",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "touch",
+          "inheritedFrom": "ButtonProps.touch",
+          "type": "undefined | false | true"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>A trailing icon for the Button</p>\n"
+            ],
+            "contentsRaw": "A trailing icon for the Button",
+            "metadata": {}
+          },
+          "fileName": "src/button/dist/index.d.ts",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "trailingIcon",
+          "inheritedFrom": "ButtonProps.trailingIcon",
+          "type": "RMWC.IconPropT"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Make the button unelevated.</p>\n"
+            ],
+            "contentsRaw": "Make the button unelevated.",
+            "metadata": {}
+          },
+          "fileName": "src/button/dist/index.d.ts",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "unelevated",
+          "inheritedFrom": "ButtonProps.unelevated",
+          "type": "undefined | false | true"
+        }
+      ]
+    },
+    "DialogOnOpenEventT": {
+      "documentation": {
+        "contents": [
+          "<p>Events</p>\n"
+        ],
+        "contentsRaw": "Events",
+        "metadata": {}
+      },
+      "fileName": "src/dialog/dialog.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "type alias",
+      "name": "DialogOnOpenEventT",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L20",
+      "type": "RMWC.CustomEventT<{}>"
+    },
+    "DialogOnOpenedEventT": {
+      "fileName": "src/dialog/dialog.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "type alias",
+      "name": "DialogOnOpenedEventT",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L21",
+      "type": "RMWC.CustomEventT<{}>"
+    },
+    "DialogOnCloseEventT": {
+      "fileName": "src/dialog/dialog.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "type alias",
+      "name": "DialogOnCloseEventT",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L22",
+      "type": "RMWC.CustomEventT<>"
+    },
+    "DialogOnClosedEventT": {
+      "fileName": "src/dialog/dialog.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "type alias",
+      "name": "DialogOnClosedEventT",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L23",
+      "type": "RMWC.CustomEventT<>"
+    },
+    "SimpleDialogHTMLProps": {
+      "fileName": "src/dialog/dialog.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "type alias",
+      "name": "SimpleDialogHTMLProps",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L108",
+      "type": "RMWC.HTMLProps<HTMLDivElement, Omit<AllHTMLAttributes<HTMLDivElement>, \"title\">>"
+    }
+  }
+}
