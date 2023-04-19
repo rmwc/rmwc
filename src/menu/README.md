@@ -262,14 +262,6 @@ A menu component for displaying lists items.
 ## MenuItem
 This is just the ListItem component exported from the Menu module for convenience. You can use `ListItem` or `SimpleListItem` components from the List section as long as you add `role="menuitem"` and `tabIndex="0"` to the components for accessibility.
 
-### Props
-
-| Name | Type | Description |
-|------|------|-------------|
-| `activated` | `undefined \| false \| true` | A modifier for an active state. |
-| `disabled` | `undefined \| false \| true` | A modifier for a disabled state. |
-| `ripple` | `RipplePropT` | Adds a ripple effect to the component |
-| `selected` | `undefined \| false \| true` | A modifier for a selected state. |
 
 
 ## MenuSurface

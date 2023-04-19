@@ -128,7 +128,6 @@ A TextField component for accepting text input from a user.
 | `prefix` | `undefined \| string` | Add prefix. |
 | `required` | `undefined \| false \| true` | Makes the Textfield required. |
 | `resizeable` | `undefined \| false \| true` | Make textarea resizeable |
-| `ripple` | `RipplePropT` | Adds a ripple effect to the component |
 | `rootProps` | `Object` | By default, props spread to the input. These props are for the component's root container. |
 | `suffix` | `undefined \| string` | Add suffix. |
 | `textarea` | `undefined \| false \| true` | Makes a multiline TextField. |
