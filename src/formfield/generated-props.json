@@ -22,7 +22,7 @@
       },
       "kind": "interface",
       "name": "FormFieldProps",
-      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/formfield/index.tsx#L9",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/formfield/index.tsx#L9",
       "methods": [],
       "properties": [
         {
@@ -46,7 +46,7 @@
           },
           "kind": "property",
           "name": "alignEnd",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/formfield/index.tsx#L11",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/formfield/index.tsx#L11",
           "type": "undefined | false | true"
         },
         {
@@ -70,7 +70,7 @@
           },
           "kind": "property",
           "name": "foundationRef",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/formfield/index.tsx#L13",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/formfield/index.tsx#L13",
           "type": "React.Ref<MDCFormFieldFoundation>"
         }
       ]

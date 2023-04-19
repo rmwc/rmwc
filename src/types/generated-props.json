@@ -15,7 +15,7 @@
       },
       "kind": "interface",
       "name": "WithRippleProps",
-      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/types/index.tsx#L46",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/types/index.tsx#L46",
       "methods": [],
       "properties": [
         {
@@ -39,7 +39,7 @@
           },
           "kind": "property",
           "name": "ripple",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/types/index.tsx#L48",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/types/index.tsx#L48",
           "type": "RipplePropT"
         }
       ]
@@ -58,7 +58,7 @@
       },
       "kind": "interface",
       "name": "IconOptions",
-      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/types/index.tsx#L70",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/types/index.tsx#L70",
       "indexSignature": {
         "documentation": {
           "contents": [
@@ -70,7 +70,7 @@
         "fileName": "src/types/index.tsx",
         "kind": "signature",
         "name": "__index",
-        "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/types/index.tsx#L97",
+        "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/types/index.tsx#L97",
         "parameters": [
           {
             "flags": {
@@ -114,7 +114,7 @@
           },
           "kind": "property",
           "name": "basename",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/types/index.tsx#L89",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/types/index.tsx#L89",
           "type": "undefined | string"
         },
         {
@@ -131,7 +131,7 @@
           },
           "kind": "property",
           "name": "icon",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/types/index.tsx#L71",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/types/index.tsx#L71",
           "type": "IconElementT"
         },
         {
@@ -155,7 +155,7 @@
           },
           "kind": "property",
           "name": "prefix",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/types/index.tsx#L87",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/types/index.tsx#L87",
           "type": "undefined | string"
         },
         {
@@ -179,7 +179,7 @@
           },
           "kind": "property",
           "name": "render",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/types/index.tsx#L91",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/types/index.tsx#L91",
           "type": "undefined | (props: ) => Exclude<React.ReactNode, React.ReactText>"
         },
         {
@@ -203,7 +203,7 @@
           },
           "kind": "property",
           "name": "size",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/types/index.tsx#L97",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/types/index.tsx#L97",
           "type": "IconSizeT"
         },
         {
@@ -227,7 +227,7 @@
           },
           "kind": "property",
           "name": "strategy",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/types/index.tsx#L81",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/types/index.tsx#L81",
           "type": "IconStrategyT"
         }
       ]
@@ -253,7 +253,7 @@
       },
       "kind": "type alias",
       "name": "ThemeOptionT",
-      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/types/index.tsx#L4",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/types/index.tsx#L4",
       "type": "\"primary\" | \"secondary\" | \"background\" | \"surface\" | \"error\" | \"primaryBg\" | \"secondaryBg\" | \"onPrimary\" | \"onSecondary\" | \"onSurface\" | \"onError\" | \"textPrimaryOnBackground\" | \"textSecondaryOnBackground\" | \"textHintOnBackground\" | \"textDisabledOnBackground\" | \"textIconOnBackground\" | \"textPrimaryOnLight\" | \"textSecondaryOnLight\" | \"textHintOnLight\" | \"textDisabledOnLight\" | \"textIconOnLight\" | \"textPrimaryOnDark\" | \"textSecondaryOnDark\" | \"textHintOnDark\" | \"textDisabledOnDark\" | \"textIconOnDark\" | undefined"
     },
     "ThemePropT": {
@@ -270,7 +270,7 @@
       },
       "kind": "type alias",
       "name": "ThemePropT",
-      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/types/index.tsx#L33",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/types/index.tsx#L33",
       "type": "ThemeOptionT | ThemeOptionT[]"
     },
     "RipplePropT": {
@@ -294,7 +294,7 @@
       },
       "kind": "type alias",
       "name": "RipplePropT",
-      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/types/index.tsx#L38",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/types/index.tsx#L38",
       "type": "boolean | "
     },
     "TagT": {
@@ -318,7 +318,7 @@
       },
       "kind": "type alias",
       "name": "TagT",
-      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/types/index.tsx#L54",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/types/index.tsx#L54",
       "type": "string | React.ComponentType<any>"
     },
     "CustomEventT": {
@@ -335,7 +335,7 @@
       },
       "kind": "type alias",
       "name": "CustomEventT",
-      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/types/index.tsx#L56",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/types/index.tsx#L56",
       "type": "CustomEvent<T> & SyntheticEvent<EventTarget>"
     },
     "IconSizeT": {
@@ -352,7 +352,7 @@
       },
       "kind": "type alias",
       "name": "IconSizeT",
-      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/types/index.tsx#L60",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/types/index.tsx#L60",
       "type": "\"xsmall\" | \"small\" | \"medium\" | \"large\" | \"xlarge\""
     },
     "IconStrategyT": {
@@ -369,7 +369,7 @@
       },
       "kind": "type alias",
       "name": "IconStrategyT",
-      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/types/index.tsx#L62",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/types/index.tsx#L62",
       "type": "\"auto\" | \"ligature\" | \"className\" | \"url\" | \"component\" | \"custom\""
     },
     "IconPropT": {
@@ -386,7 +386,7 @@
       },
       "kind": "type alias",
       "name": "IconPropT",
-      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/types/index.tsx#L102",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/types/index.tsx#L102",
       "type": "IconElementT | IconOptions"
     },
     "HTMLProps": {
@@ -403,7 +403,7 @@
       },
       "kind": "type alias",
       "name": "HTMLProps",
-      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/types/index.tsx#L104",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/types/index.tsx#L104",
       "type": "A & ClassAttributes<T> & "
     },
     "ComponentProps": {
@@ -420,7 +420,7 @@
       },
       "kind": "type alias",
       "name": "ComponentProps",
-      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/types/index.tsx#L111",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/types/index.tsx#L111",
       "type": "Props & ElementProps | ComponentPropsWithRef<Tag> & "
     },
     "ComponentType": {
@@ -437,7 +437,7 @@
       },
       "kind": "type alias",
       "name": "ComponentType",
-      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/types/index.tsx#L124",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/types/index.tsx#L124",
       "type": "(props: ComponentProps<Props, ElementProps, Tag>, ref: any) => Element"
     }
   }

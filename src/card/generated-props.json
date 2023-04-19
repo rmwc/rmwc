@@ -3,7 +3,9 @@
   "typescript": {
     "CardProps": {
       "documentation": {
-        "contents": ["<p>A Card Component</p>\n"],
+        "contents": [
+          "<p>A Card Component</p>\n"
+        ],
         "contentsRaw": "A Card Component",
         "metadata": {}
       },
@@ -20,7 +22,7 @@
       },
       "kind": "interface",
       "name": "CardProps",
-      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/card/index.tsx#L11",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/card/index.tsx#L11",
       "methods": [],
       "properties": [
         {
@@ -44,7 +46,7 @@
           },
           "kind": "property",
           "name": "outlined",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/card/index.tsx#L13",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/card/index.tsx#L13",
           "type": "undefined | false | true"
         }
       ]
@@ -70,7 +72,7 @@
       },
       "kind": "interface",
       "name": "CardMediaProps",
-      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/card/index.tsx#L29",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/card/index.tsx#L29",
       "methods": [],
       "properties": [
         {
@@ -94,7 +96,7 @@
           },
           "kind": "property",
           "name": "sixteenByNine",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/card/index.tsx#L33",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/card/index.tsx#L33",
           "type": "undefined | false | true"
         },
         {
@@ -118,7 +120,7 @@
           },
           "kind": "property",
           "name": "square",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/card/index.tsx#L31",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/card/index.tsx#L31",
           "type": "undefined | false | true"
         }
       ]
@@ -144,7 +146,7 @@
       },
       "kind": "interface",
       "name": "CardMediaContentProps",
-      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/card/index.tsx#L53",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/card/index.tsx#L53",
       "methods": [],
       "properties": []
     },
@@ -169,13 +171,15 @@
       },
       "kind": "interface",
       "name": "CardPrimaryActionProps",
-      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/card/index.tsx#L64",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/card/index.tsx#L64",
       "methods": [],
       "properties": []
     },
     "CardActionsProps": {
       "documentation": {
-        "contents": ["<p>Row containing action buttons and/or icons</p>\n"],
+        "contents": [
+          "<p>Row containing action buttons and/or icons</p>\n"
+        ],
         "contentsRaw": "Row containing action buttons and/or icons",
         "metadata": {}
       },
@@ -273,7 +277,9 @@
     },
     "CardActionIconProps": {
       "documentation": {
-        "contents": ["<p>A card action Icon</p>\n"],
+        "contents": [
+          "<p>A card action Icon</p>\n"
+        ],
         "contentsRaw": "A card action Icon",
         "metadata": {}
       },
@@ -291,198 +297,17 @@
       "kind": "interface",
       "name": "CardActionIconProps",
       "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/card/index.tsx#L126",
-      "extends": ["IconButtonProps"],
+      "extends": [
+        "any"
+      ],
       "methods": [],
-      "properties": [
-        {
-          "documentation": {
-            "contents": [
-              "<p>Controls the on / off state of the a toggleable button.</p>\n"
-            ],
-            "contentsRaw": "Controls the on / off state of the a toggleable button.",
-            "metadata": {}
-          },
-          "fileName": "src/icon-button/dist/index.d.ts",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "checked",
-          "inheritedFrom": "IconButtonProps.checked",
-          "type": "undefined | false | true"
-        },
-        {
-          "documentation": {
-            "contents": ["<p>Makes the button disabled</p>\n"],
-            "contentsRaw": "Makes the button disabled",
-            "metadata": {}
-          },
-          "fileName": "src/icon-button/dist/index.d.ts",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "disabled",
-          "inheritedFrom": "IconButtonProps.disabled",
-          "type": "undefined | false | true"
-        },
-        {
-          "documentation": {
-            "contents": [
-              "<p>Advanced: A reference to the MDCFoundation. Only for Toggleable buttons.</p>\n"
-            ],
-            "contentsRaw": "Advanced: A reference to the MDCFoundation. Only for Toggleable buttons.",
-            "metadata": {}
-          },
-          "fileName": "src/icon-button/dist/index.d.ts",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "foundationRef",
-          "inheritedFrom": "IconButtonProps.foundationRef",
-          "type": "React.Ref<MDCIconButtonToggleFoundation>"
-        },
-        {
-          "documentation": {
-            "contents": ["<p>Icon for the button</p>\n"],
-            "contentsRaw": "Icon for the button",
-            "metadata": {}
-          },
-          "fileName": "src/icon-button/dist/index.d.ts",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "icon",
-          "inheritedFrom": "IconButtonProps.icon",
-          "type": "RMWC.IconPropT"
-        },
-        {
-          "documentation": {
-            "contents": ["<p>Apply an aria label.</p>\n"],
-            "contentsRaw": "Apply an aria label.",
-            "metadata": {}
-          },
-          "fileName": "src/icon-button/dist/index.d.ts",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "label",
-          "inheritedFrom": "IconButtonProps.label",
-          "type": "undefined | string"
-        },
-        {
-          "documentation": {
-            "contents": [
-              "<p>An onChange callback that receives a custom event. evt.detail = { isOn: boolean }</p>\n"
-            ],
-            "contentsRaw": "An onChange callback that receives a custom event. evt.detail = { isOn: boolean }",
-            "metadata": {}
-          },
-          "fileName": "src/icon-button/dist/index.d.ts",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "onChange",
-          "inheritedFrom": "IconButtonProps.onChange",
-          "type": "undefined | (evt: IconButtonOnChangeEventT) => void"
-        },
-        {
-          "documentation": {
-            "contents": [
-              "<p>If specified, renders a toggle with this icon as the on state.</p>\n"
-            ],
-            "contentsRaw": "If specified, renders a toggle with this icon as the on state.",
-            "metadata": {}
-          },
-          "fileName": "src/icon-button/dist/index.d.ts",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "onIcon",
-          "inheritedFrom": "IconButtonProps.onIcon",
-          "type": "RMWC.IconPropT"
-        },
-        {
-          "documentation": {
-            "contents": ["<p>Adds a ripple effect to the component</p>\n"],
-            "contentsRaw": "Adds a ripple effect to the component",
-            "metadata": {}
-          },
-          "fileName": "src/types/dist/index.d.ts",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "ripple",
-          "inheritedFrom": "WithRippleProps.ripple",
-          "type": "RipplePropT"
-        }
-      ]
+      "properties": []
     },
     "CardActionButtonProps": {
       "documentation": {
-        "contents": ["<p>A card action Button</p>\n"],
+        "contents": [
+          "<p>A card action Button</p>\n"
+        ],
         "contentsRaw": "A card action Button",
         "metadata": {}
       },
@@ -500,276 +325,11 @@
       "kind": "interface",
       "name": "CardActionButtonProps",
       "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/card/index.tsx#L140",
-      "extends": ["ButtonProps"],
+      "extends": [
+        "any"
+      ],
       "methods": [],
-      "properties": [
-        {
-          "documentation": {
-            "contents": ["<p>Content specified as children.</p>\n"],
-            "contentsRaw": "Content specified as children.",
-            "metadata": {}
-          },
-          "fileName": "src/button/dist/index.d.ts",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "children",
-          "inheritedFrom": "ButtonProps.children",
-          "type": "React.ReactNode"
-        },
-        {
-          "documentation": {
-            "contents": ["<p>Used to indicate a dangerous action.</p>\n"],
-            "contentsRaw": "Used to indicate a dangerous action.",
-            "metadata": {}
-          },
-          "fileName": "src/button/dist/index.d.ts",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "danger",
-          "inheritedFrom": "ButtonProps.danger",
-          "type": "undefined | false | true"
-        },
-        {
-          "documentation": {
-            "contents": ["<p>Make the Button dense.</p>\n"],
-            "contentsRaw": "Make the Button dense.",
-            "metadata": {}
-          },
-          "fileName": "src/button/dist/index.d.ts",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "dense",
-          "inheritedFrom": "ButtonProps.dense",
-          "type": "undefined | false | true"
-        },
-        {
-          "documentation": {
-            "contents": ["<p>Make the button disabled</p>\n"],
-            "contentsRaw": "Make the button disabled",
-            "metadata": {}
-          },
-          "fileName": "src/button/dist/index.d.ts",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "disabled",
-          "inheritedFrom": "ButtonProps.disabled",
-          "type": "undefined | false | true"
-        },
-        {
-          "documentation": {
-            "contents": ["<p>An Icon for the Button</p>\n"],
-            "contentsRaw": "An Icon for the Button",
-            "metadata": {}
-          },
-          "fileName": "src/button/dist/index.d.ts",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "icon",
-          "inheritedFrom": "ButtonProps.icon",
-          "type": "RMWC.IconPropT"
-        },
-        {
-          "documentation": {
-            "contents": ["<p>Content specified as a label prop.</p>\n"],
-            "contentsRaw": "Content specified as a label prop.",
-            "metadata": {}
-          },
-          "fileName": "src/button/dist/index.d.ts",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "label",
-          "inheritedFrom": "ButtonProps.label",
-          "type": "React.ReactNode | any"
-        },
-        {
-          "documentation": {
-            "contents": ["<p>Make the button outlined.</p>\n"],
-            "contentsRaw": "Make the button outlined.",
-            "metadata": {}
-          },
-          "fileName": "src/button/dist/index.d.ts",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "outlined",
-          "inheritedFrom": "ButtonProps.outlined",
-          "type": "undefined | false | true"
-        },
-        {
-          "documentation": {
-            "contents": ["<p>Make the Button raised.</p>\n"],
-            "contentsRaw": "Make the Button raised.",
-            "metadata": {}
-          },
-          "fileName": "src/button/dist/index.d.ts",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "raised",
-          "inheritedFrom": "ButtonProps.raised",
-          "type": "undefined | false | true"
-        },
-        {
-          "documentation": {
-            "contents": ["<p>Adds a ripple effect to the component</p>\n"],
-            "contentsRaw": "Adds a ripple effect to the component",
-            "metadata": {}
-          },
-          "fileName": "src/types/dist/index.d.ts",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "ripple",
-          "inheritedFrom": "WithRippleProps.ripple",
-          "type": "RipplePropT"
-        },
-        {
-          "documentation": {
-            "contents": [
-              "<p>Makes the button more touch friendly. This will automatically be set true if used inside of TouchTargetWrapper.</p>\n"
-            ],
-            "contentsRaw": "Makes the button more touch friendly. This will automatically be set true if used inside of TouchTargetWrapper.",
-            "metadata": {}
-          },
-          "fileName": "src/button/dist/index.d.ts",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "touch",
-          "inheritedFrom": "ButtonProps.touch",
-          "type": "undefined | false | true"
-        },
-        {
-          "documentation": {
-            "contents": ["<p>A trailing icon for the Button</p>\n"],
-            "contentsRaw": "A trailing icon for the Button",
-            "metadata": {}
-          },
-          "fileName": "src/button/dist/index.d.ts",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "trailingIcon",
-          "inheritedFrom": "ButtonProps.trailingIcon",
-          "type": "RMWC.IconPropT"
-        },
-        {
-          "documentation": {
-            "contents": ["<p>Make the button unelevated.</p>\n"],
-            "contentsRaw": "Make the button unelevated.",
-            "metadata": {}
-          },
-          "fileName": "src/button/dist/index.d.ts",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "unelevated",
-          "inheritedFrom": "ButtonProps.unelevated",
-          "type": "undefined | false | true"
-        }
-      ]
+      "properties": []
     }
   }
 }

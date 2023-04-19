@@ -22,7 +22,7 @@
       },
       "kind": "interface",
       "name": "GridListProps",
-      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/grid-list/index.tsx#L13",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/grid-list/index.tsx#L13",
       "methods": [],
       "properties": [
         {
@@ -46,7 +46,7 @@
           },
           "kind": "property",
           "name": "headerCaption",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/grid-list/index.tsx#L17",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/grid-list/index.tsx#L17",
           "type": "undefined | false | true"
         },
         {
@@ -70,7 +70,7 @@
           },
           "kind": "property",
           "name": "tileAspect",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/grid-list/index.tsx#L23",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/grid-list/index.tsx#L23",
           "type": "\"1x1\" | \"16x9\" | \"2x3\" | \"3x2\" | \"4x3\" | \"3x4\""
         },
         {
@@ -94,7 +94,7 @@
           },
           "kind": "property",
           "name": "tileGutter1",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/grid-list/index.tsx#L15",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/grid-list/index.tsx#L15",
           "type": "undefined | false | true"
         },
         {
@@ -118,7 +118,7 @@
           },
           "kind": "property",
           "name": "twolineCaption",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/grid-list/index.tsx#L19",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/grid-list/index.tsx#L19",
           "type": "undefined | false | true"
         },
         {
@@ -142,7 +142,7 @@
           },
           "kind": "property",
           "name": "withIconAlignStart",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/grid-list/index.tsx#L21",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/grid-list/index.tsx#L21",
           "type": "undefined | false | true"
         }
       ]
@@ -168,7 +168,7 @@
       },
       "kind": "interface",
       "name": "GridTilePrimaryProps",
-      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/grid-list/index.tsx#L60",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/grid-list/index.tsx#L60",
       "methods": [],
       "properties": []
     },
@@ -193,7 +193,7 @@
       },
       "kind": "interface",
       "name": "GridTilePrimaryContentProps",
-      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/grid-list/index.tsx#L71",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/grid-list/index.tsx#L71",
       "methods": [],
       "properties": []
     },
@@ -218,7 +218,7 @@
       },
       "kind": "interface",
       "name": "GridTileProps",
-      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/grid-list/index.tsx#L82",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/grid-list/index.tsx#L82",
       "methods": [],
       "properties": []
     },
@@ -243,7 +243,7 @@
       },
       "kind": "interface",
       "name": "GridTileSecondaryProps",
-      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/grid-list/index.tsx#L94",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/grid-list/index.tsx#L94",
       "methods": [],
       "properties": []
     },
@@ -268,37 +268,12 @@
       },
       "kind": "interface",
       "name": "GridTileIconProps",
-      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/grid-list/index.tsx#L105",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/grid-list/index.tsx#L105",
       "extends": [
-        "IconProps"
+        "any"
       ],
       "methods": [],
-      "properties": [
-        {
-          "documentation": {
-            "contents": [
-              "<p>The icon to use. This can be a string for a font icon, a url, or whatever the selected strategy needs.</p>\n"
-            ],
-            "contentsRaw": "The icon to use. This can be a string for a font icon, a url, or whatever the selected strategy needs.",
-            "metadata": {}
-          },
-          "fileName": "src/icon/dist/index.d.ts",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "icon",
-          "inheritedFrom": "IconProps.icon",
-          "type": "RMWC.IconPropT"
-        }
-      ]
+      "properties": []
     },
     "GridTileTitleProps": {
       "documentation": {
@@ -321,7 +296,7 @@
       },
       "kind": "interface",
       "name": "GridTileTitleProps",
-      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/grid-list/index.tsx#L116",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/grid-list/index.tsx#L116",
       "methods": [],
       "properties": []
     },
@@ -346,7 +321,7 @@
       },
       "kind": "interface",
       "name": "GridTileTitleSupportTextProps",
-      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/grid-list/index.tsx#L127",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/grid-list/index.tsx#L127",
       "methods": [],
       "properties": []
     }

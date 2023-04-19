@@ -3,7 +3,9 @@
   "typescript": {
     "CollapsibleList": {
       "documentation": {
-        "contents": ["<p>A collapsible list component.</p>\n"],
+        "contents": [
+          "<p>A collapsible list component.</p>\n"
+        ],
         "contentsRaw": "A collapsible list component.",
         "metadata": {}
       },
@@ -20,7 +22,7 @@
       },
       "kind": "class",
       "name": "CollapsibleList",
-      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/collapsible-list.tsx#L51",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L51",
       "extends": [
         "Component<CollapsibleListProps & RMWC.HTMLProps, CollapsibleState>"
       ],
@@ -39,13 +41,13 @@
           },
           "kind": "method",
           "name": "getDerivedStateFromProps",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/collapsible-list.tsx#L57",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L57",
           "signatures": [
             {
               "fileName": "src/list/collapsible-list.tsx",
               "kind": "signature",
               "name": "getDerivedStateFromProps",
-              "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/collapsible-list.tsx#L57",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L57",
               "parameters": [
                 {
                   "flags": {
@@ -361,13 +363,13 @@
           },
           "kind": "method",
           "name": "componentDidMount",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/collapsible-list.tsx#L88",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L88",
           "signatures": [
             {
               "fileName": "src/list/collapsible-list.tsx",
               "kind": "signature",
               "name": "componentDidMount",
-              "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/collapsible-list.tsx#L88",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L88",
               "parameters": [],
               "returnType": "void",
               "type": "() => void"
@@ -388,13 +390,13 @@
           },
           "kind": "method",
           "name": "componentDidUpdate",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/collapsible-list.tsx#L92",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L92",
           "signatures": [
             {
               "fileName": "src/list/collapsible-list.tsx",
               "kind": "signature",
               "name": "componentDidUpdate",
-              "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/collapsible-list.tsx#L92",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L92",
               "parameters": [
                 {
                   "flags": {
@@ -559,13 +561,13 @@
           },
           "kind": "method",
           "name": "componentWillUnmount",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/collapsible-list.tsx#L101",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L101",
           "signatures": [
             {
               "fileName": "src/list/collapsible-list.tsx",
               "kind": "signature",
               "name": "componentWillUnmount",
-              "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/collapsible-list.tsx#L101",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L101",
               "parameters": [],
               "returnType": "void",
               "type": "() => void"
@@ -673,13 +675,13 @@
           },
           "kind": "method",
           "name": "correctFocus",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/collapsible-list.tsx#L137",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L137",
           "signatures": [
             {
               "fileName": "src/list/collapsible-list.tsx",
               "kind": "signature",
               "name": "correctFocus",
-              "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/collapsible-list.tsx#L137",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L137",
               "parameters": [
                 {
                   "flags": {
@@ -822,13 +824,13 @@
           },
           "kind": "method",
           "name": "handleClick",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/collapsible-list.tsx#L165",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L165",
           "signatures": [
             {
               "fileName": "src/list/collapsible-list.tsx",
               "kind": "signature",
               "name": "handleClick",
-              "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/collapsible-list.tsx#L165",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L165",
               "parameters": [
                 {
                   "flags": {
@@ -865,13 +867,13 @@
           },
           "kind": "method",
           "name": "handleFocus",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/collapsible-list.tsx#L199",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L199",
           "signatures": [
             {
               "fileName": "src/list/collapsible-list.tsx",
               "kind": "signature",
               "name": "handleFocus",
-              "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/collapsible-list.tsx#L199",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L199",
               "parameters": [
                 {
                   "flags": {
@@ -908,13 +910,13 @@
           },
           "kind": "method",
           "name": "handleKeydown",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/collapsible-list.tsx#L173",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L173",
           "signatures": [
             {
               "fileName": "src/list/collapsible-list.tsx",
               "kind": "signature",
               "name": "handleKeydown",
-              "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/collapsible-list.tsx#L173",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L173",
               "parameters": [
                 {
                   "flags": {
@@ -951,13 +953,13 @@
           },
           "kind": "method",
           "name": "render",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/collapsible-list.tsx#L213",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L213",
           "signatures": [
             {
               "fileName": "src/list/collapsible-list.tsx",
               "kind": "signature",
               "name": "render",
-              "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/collapsible-list.tsx#L213",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L213",
               "parameters": [],
               "returnType": "Element",
               "type": "() => Element"
@@ -1114,13 +1116,13 @@
           },
           "kind": "method",
           "name": "syncOpenState",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/collapsible-list.tsx#L106",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L106",
           "signatures": [
             {
               "fileName": "src/list/collapsible-list.tsx",
               "kind": "signature",
               "name": "syncOpenState",
-              "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/collapsible-list.tsx#L106",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L106",
               "parameters": [],
               "returnType": "void",
               "type": "() => void"
@@ -1141,13 +1143,13 @@
           },
           "kind": "method",
           "name": "toggleOpen",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/collapsible-list.tsx#L161",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L161",
           "signatures": [
             {
               "fileName": "src/list/collapsible-list.tsx",
               "kind": "signature",
               "name": "toggleOpen",
-              "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/collapsible-list.tsx#L161",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L161",
               "parameters": [
                 {
                   "flags": {
@@ -1214,7 +1216,7 @@
           },
           "kind": "property",
           "name": "displayName",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/collapsible-list.tsx#L55",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L55",
           "defaultValue": "\"CollapsibleList\"",
           "type": "string"
         },
@@ -1232,7 +1234,7 @@
           },
           "kind": "property",
           "name": "childContainer",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/collapsible-list.tsx#L71",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L71",
           "defaultValue": " null",
           "type": "HTMLDivElement | null"
         },
@@ -1295,7 +1297,7 @@
           },
           "kind": "property",
           "name": "rafId",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/collapsible-list.tsx#L73",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L73",
           "defaultValue": " null",
           "type": "number | null"
         },
@@ -1336,7 +1338,7 @@
           },
           "kind": "property",
           "name": "root",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/collapsible-list.tsx#L72",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L72",
           "defaultValue": " null",
           "type": "HTMLDivElement | null"
         },
@@ -1354,7 +1356,7 @@
           },
           "kind": "property",
           "name": "timerId",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/collapsible-list.tsx#L74",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L74",
           "defaultValue": " null",
           "type": "number | null"
         }
@@ -1373,13 +1375,13 @@
         },
         "kind": "constructor",
         "name": "constructor",
-        "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/collapsible-list.tsx#L79",
+        "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L79",
         "signatures": [
           {
             "fileName": "src/list/collapsible-list.tsx",
             "kind": "signature",
             "name": "new CollapsibleList",
-            "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/collapsible-list.tsx#L79",
+            "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L79",
             "parameters": [
               {
                 "flags": {
@@ -1405,7 +1407,9 @@
     },
     "CollapsibleListProps": {
       "documentation": {
-        "contents": ["<p>A collapsible list component.</p>\n"],
+        "contents": [
+          "<p>A collapsible list component.</p>\n"
+        ],
         "contentsRaw": "A collapsible list component.",
         "metadata": {}
       },
@@ -1422,12 +1426,14 @@
       },
       "kind": "interface",
       "name": "CollapsibleListProps",
-      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/collapsible-list.tsx#L6",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L6",
       "methods": [],
       "properties": [
         {
           "documentation": {
-            "contents": ["<p>Starts the collapsible list as open.</p>\n"],
+            "contents": [
+              "<p>Starts the collapsible list as open.</p>\n"
+            ],
             "contentsRaw": "Starts the collapsible list as open.",
             "metadata": {}
           },
@@ -1444,7 +1450,7 @@
           },
           "kind": "property",
           "name": "defaultOpen",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/collapsible-list.tsx#L12",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L12",
           "type": "undefined | false | true"
         },
         {
@@ -1468,7 +1474,7 @@
           },
           "kind": "property",
           "name": "handle",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/collapsible-list.tsx#L8",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L8",
           "type": "ReactElement<any>"
         },
         {
@@ -1492,7 +1498,7 @@
           },
           "kind": "property",
           "name": "onClose",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/collapsible-list.tsx#L16",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L16",
           "type": "undefined | () => void"
         },
         {
@@ -1516,12 +1522,14 @@
           },
           "kind": "property",
           "name": "onOpen",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/collapsible-list.tsx#L14",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L14",
           "type": "undefined | () => void"
         },
         {
           "documentation": {
-            "contents": ["<p>Show the collapsible list as open.</p>\n"],
+            "contents": [
+              "<p>Show the collapsible list as open.</p>\n"
+            ],
             "contentsRaw": "Show the collapsible list as open.",
             "metadata": {}
           },
@@ -1538,14 +1546,16 @@
           },
           "kind": "property",
           "name": "open",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/collapsible-list.tsx#L10",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L10",
           "type": "undefined | false | true"
         }
       ]
     },
     "ListItemProps": {
       "documentation": {
-        "contents": ["<p>A ListItem component.</p>\n"],
+        "contents": [
+          "<p>A ListItem component.</p>\n"
+        ],
         "contentsRaw": "A ListItem component.",
         "metadata": {}
       },
@@ -1562,13 +1572,17 @@
       },
       "kind": "interface",
       "name": "ListItemProps",
-      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/list-item.tsx#L9",
-      "extends": ["WithRippleProps"],
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L9",
+      "extends": [
+        "any"
+      ],
       "methods": [],
       "properties": [
         {
           "documentation": {
-            "contents": ["<p>A modifier for an active state.</p>\n"],
+            "contents": [
+              "<p>A modifier for an active state.</p>\n"
+            ],
             "contentsRaw": "A modifier for an active state.",
             "metadata": {}
           },
@@ -1585,12 +1599,14 @@
           },
           "kind": "property",
           "name": "activated",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/list-item.tsx#L13",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L13",
           "type": "undefined | false | true"
         },
         {
           "documentation": {
-            "contents": ["<p>A modifier for a disabled state.</p>\n"],
+            "contents": [
+              "<p>A modifier for a disabled state.</p>\n"
+            ],
             "contentsRaw": "A modifier for a disabled state.",
             "metadata": {}
           },
@@ -1607,34 +1623,14 @@
           },
           "kind": "property",
           "name": "disabled",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/list-item.tsx#L15",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L15",
           "type": "undefined | false | true"
         },
         {
           "documentation": {
-            "contents": ["<p>Adds a ripple effect to the component</p>\n"],
-            "contentsRaw": "Adds a ripple effect to the component",
-            "metadata": {}
-          },
-          "fileName": "src/types/dist/index.d.ts",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "ripple",
-          "inheritedFrom": "WithRippleProps.ripple",
-          "type": "RipplePropT"
-        },
-        {
-          "documentation": {
-            "contents": ["<p>A modifier for a selected state.</p>\n"],
+            "contents": [
+              "<p>A modifier for a selected state.</p>\n"
+            ],
             "contentsRaw": "A modifier for a selected state.",
             "metadata": {}
           },
@@ -1651,14 +1647,16 @@
           },
           "kind": "property",
           "name": "selected",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/list-item.tsx#L11",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L11",
           "type": "undefined | false | true"
         }
       ]
     },
     "ListItemTextProps": {
       "documentation": {
-        "contents": ["<p>Text Wrapper for the ListItem</p>\n"],
+        "contents": [
+          "<p>Text Wrapper for the ListItem</p>\n"
+        ],
         "contentsRaw": "Text Wrapper for the ListItem",
         "metadata": {}
       },
@@ -1681,7 +1679,9 @@
     },
     "ListItemPrimaryTextProps": {
       "documentation": {
-        "contents": ["<p>Primary Text for the ListItem</p>\n"],
+        "contents": [
+          "<p>Primary Text for the ListItem</p>\n"
+        ],
         "contentsRaw": "Primary Text for the ListItem",
         "metadata": {}
       },
@@ -1704,7 +1704,9 @@
     },
     "ListItemSecondaryTextProps": {
       "documentation": {
-        "contents": ["<p>Secondary text for the ListItem</p>\n"],
+        "contents": [
+          "<p>Secondary text for the ListItem</p>\n"
+        ],
         "contentsRaw": "Secondary text for the ListItem",
         "metadata": {}
       },
@@ -1727,7 +1729,9 @@
     },
     "ListItemGraphicProps": {
       "documentation": {
-        "contents": ["<p>A graphic / icon for the ListItem</p>\n"],
+        "contents": [
+          "<p>A graphic / icon for the ListItem</p>\n"
+        ],
         "contentsRaw": "A graphic / icon for the ListItem",
         "metadata": {}
       },
@@ -1745,34 +1749,11 @@
       "kind": "interface",
       "name": "ListItemGraphicProps",
       "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L76",
-      "extends": ["IconProps"],
+      "extends": [
+        "any"
+      ],
       "methods": [],
-      "properties": [
-        {
-          "documentation": {
-            "contents": [
-              "<p>The icon to use. This can be a string for a font icon, a url, or whatever the selected strategy needs.</p>\n"
-            ],
-            "contentsRaw": "The icon to use. This can be a string for a font icon, a url, or whatever the selected strategy needs.",
-            "metadata": {}
-          },
-          "fileName": "src/icon/dist/index.d.ts",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "icon",
-          "inheritedFrom": "IconProps.icon",
-          "type": "RMWC.IconPropT"
-        }
-      ]
+      "properties": []
     },
     "ListItemMetaProps": {
       "documentation": {
@@ -1796,38 +1777,17 @@
       "kind": "interface",
       "name": "ListItemMetaProps",
       "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L89",
-      "extends": ["IconProps"],
+      "extends": [
+        "any"
+      ],
       "methods": [],
-      "properties": [
-        {
-          "documentation": {
-            "contents": [
-              "<p>The icon to use. This can be a string for a font icon, a url, or whatever the selected strategy needs.</p>\n"
-            ],
-            "contentsRaw": "The icon to use. This can be a string for a font icon, a url, or whatever the selected strategy needs.",
-            "metadata": {}
-          },
-          "fileName": "src/icon/dist/index.d.ts",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "icon",
-          "inheritedFrom": "IconProps.icon",
-          "type": "RMWC.IconPropT"
-        }
-      ]
+      "properties": []
     },
     "ListGroupProps": {
       "documentation": {
-        "contents": ["<p>A container to group ListItems</p>\n"],
+        "contents": [
+          "<p>A container to group ListItems</p>\n"
+        ],
         "contentsRaw": "A container to group ListItems",
         "metadata": {}
       },
@@ -1850,7 +1810,9 @@
     },
     "ListGroupSubheaderProps": {
       "documentation": {
-        "contents": ["<p>A subheader for the ListGroup</p>\n"],
+        "contents": [
+          "<p>A subheader for the ListGroup</p>\n"
+        ],
         "contentsRaw": "A subheader for the ListGroup",
         "metadata": {}
       },
@@ -1873,7 +1835,9 @@
     },
     "ListDividerProps": {
       "documentation": {
-        "contents": ["<p>A divider for the List</p>\n"],
+        "contents": [
+          "<p>A divider for the List</p>\n"
+        ],
         "contentsRaw": "A divider for the List",
         "metadata": {}
       },
@@ -1896,7 +1860,9 @@
     },
     "SimpleListItemProps": {
       "documentation": {
-        "contents": ["<p>A simple list item template.</p>\n"],
+        "contents": [
+          "<p>A simple list item template.</p>\n"
+        ],
         "contentsRaw": "A simple list item template.",
         "metadata": {}
       },
@@ -1914,12 +1880,16 @@
       "kind": "interface",
       "name": "SimpleListItemProps",
       "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L158",
-      "extends": ["ListItemProps"],
+      "extends": [
+        "ListItemProps"
+      ],
       "methods": [],
       "properties": [
         {
           "documentation": {
-            "contents": ["<p>A modifier for an active state.</p>\n"],
+            "contents": [
+              "<p>A modifier for an active state.</p>\n"
+            ],
             "contentsRaw": "A modifier for an active state.",
             "metadata": {}
           },
@@ -1936,13 +1906,15 @@
           },
           "kind": "property",
           "name": "activated",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/list-item.tsx#L13",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L13",
           "inheritedFrom": "ListItemProps.activated",
           "type": "undefined | false | true"
         },
         {
           "documentation": {
-            "contents": ["<p>Children to render</p>\n"],
+            "contents": [
+              "<p>Children to render</p>\n"
+            ],
             "contentsRaw": "Children to render",
             "metadata": {}
           },
@@ -1964,7 +1936,9 @@
         },
         {
           "documentation": {
-            "contents": ["<p>A modifier for a disabled state.</p>\n"],
+            "contents": [
+              "<p>A modifier for a disabled state.</p>\n"
+            ],
             "contentsRaw": "A modifier for a disabled state.",
             "metadata": {}
           },
@@ -1981,13 +1955,15 @@
           },
           "kind": "property",
           "name": "disabled",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/list-item.tsx#L15",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L15",
           "inheritedFrom": "ListItemProps.disabled",
           "type": "undefined | false | true"
         },
         {
           "documentation": {
-            "contents": ["<p>A graphic icon for the ListItem.</p>\n"],
+            "contents": [
+              "<p>A graphic icon for the ListItem.</p>\n"
+            ],
             "contentsRaw": "A graphic icon for the ListItem.",
             "metadata": {}
           },
@@ -2033,7 +2009,9 @@
         },
         {
           "documentation": {
-            "contents": ["<p>A meta icon for the ListItem</p>\n"],
+            "contents": [
+              "<p>A meta icon for the ListItem</p>\n"
+            ],
             "contentsRaw": "A meta icon for the ListItem",
             "metadata": {}
           },
@@ -2055,29 +2033,9 @@
         },
         {
           "documentation": {
-            "contents": ["<p>Adds a ripple effect to the component</p>\n"],
-            "contentsRaw": "Adds a ripple effect to the component",
-            "metadata": {}
-          },
-          "fileName": "src/types/dist/index.d.ts",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "ripple",
-          "inheritedFrom": "WithRippleProps.ripple",
-          "type": "RipplePropT"
-        },
-        {
-          "documentation": {
-            "contents": ["<p>Secondary Text for the ListItem.</p>\n"],
+            "contents": [
+              "<p>Secondary Text for the ListItem.</p>\n"
+            ],
             "contentsRaw": "Secondary Text for the ListItem.",
             "metadata": {}
           },
@@ -2099,7 +2057,9 @@
         },
         {
           "documentation": {
-            "contents": ["<p>A modifier for a selected state.</p>\n"],
+            "contents": [
+              "<p>A modifier for a selected state.</p>\n"
+            ],
             "contentsRaw": "A modifier for a selected state.",
             "metadata": {}
           },
@@ -2116,13 +2076,15 @@
           },
           "kind": "property",
           "name": "selected",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/list-item.tsx#L11",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L11",
           "inheritedFrom": "ListItemProps.selected",
           "type": "undefined | false | true"
         },
         {
           "documentation": {
-            "contents": ["<p>Text for the ListItem.</p>\n"],
+            "contents": [
+              "<p>Text for the ListItem.</p>\n"
+            ],
             "contentsRaw": "Text for the ListItem.",
             "metadata": {}
           },
@@ -2146,7 +2108,9 @@
     },
     "ListProps": {
       "documentation": {
-        "contents": ["<p>A List Component</p>\n"],
+        "contents": [
+          "<p>A List Component</p>\n"
+        ],
         "contentsRaw": "A List Component",
         "metadata": {}
       },
@@ -2163,7 +2127,7 @@
       },
       "kind": "interface",
       "name": "ListProps",
-      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/list.tsx#L10",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L10",
       "methods": [],
       "properties": [
         {
@@ -2187,7 +2151,7 @@
           },
           "kind": "property",
           "name": "apiRef",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/list.tsx#L22",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L22",
           "type": "undefined | (api: ListApi | null) => void"
         },
         {
@@ -2211,12 +2175,14 @@
           },
           "kind": "property",
           "name": "avatarList",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/list.tsx#L16",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L16",
           "type": "undefined | false | true"
         },
         {
           "documentation": {
-            "contents": ["<p>Reduces the padding on List items.</p>\n"],
+            "contents": [
+              "<p>Reduces the padding on List items.</p>\n"
+            ],
             "contentsRaw": "Reduces the padding on List items.",
             "metadata": {}
           },
@@ -2233,7 +2199,7 @@
           },
           "kind": "property",
           "name": "dense",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/list.tsx#L12",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L12",
           "type": "undefined | false | true"
         },
         {
@@ -2257,7 +2223,7 @@
           },
           "kind": "property",
           "name": "foundationRef",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/list.tsx#L24",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L24",
           "type": "React.Ref<MDCListFoundation | null>"
         },
         {
@@ -2281,7 +2247,7 @@
           },
           "kind": "property",
           "name": "nonInteractive",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/list.tsx#L18",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L18",
           "type": "undefined | false | true"
         },
         {
@@ -2305,7 +2271,7 @@
           },
           "kind": "property",
           "name": "onAction",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/list.tsx#L20",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L20",
           "type": "undefined | (evt: ListOnActionEventT) => void"
         },
         {
@@ -2329,7 +2295,7 @@
           },
           "kind": "property",
           "name": "twoLine",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/list.tsx#L14",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L14",
           "type": "undefined | false | true"
         },
         {
@@ -2353,7 +2319,7 @@
           },
           "kind": "property",
           "name": "vertical",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/list.tsx#L30",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L30",
           "type": "undefined | false | true"
         },
         {
@@ -2377,7 +2343,7 @@
           },
           "kind": "property",
           "name": "wrapFocus",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/list.tsx#L28",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L28",
           "type": "undefined | false | true"
         }
       ]
@@ -2396,7 +2362,7 @@
       },
       "kind": "interface",
       "name": "ListApi",
-      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/list.tsx#L33",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L33",
       "methods": [],
       "properties": [
         {
@@ -2413,7 +2379,7 @@
           },
           "kind": "property",
           "name": "addClassToElementIndex",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/list.tsx#L37",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L37",
           "type": "(index: number, className: string) => void"
         },
         {
@@ -2430,7 +2396,7 @@
           },
           "kind": "property",
           "name": "focusItemAtIndex",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/list.tsx#L45",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L45",
           "type": "(index: number) => void"
         },
         {
@@ -2447,7 +2413,7 @@
           },
           "kind": "property",
           "name": "focusRoot",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/list.tsx#L35",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L35",
           "type": "() => void"
         },
         {
@@ -2464,7 +2430,7 @@
           },
           "kind": "property",
           "name": "getClasses",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/list.tsx#L36",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L36",
           "type": "() => string"
         },
         {
@@ -2481,7 +2447,7 @@
           },
           "kind": "property",
           "name": "getListItemCount",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/list.tsx#L44",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L44",
           "type": "() => number"
         },
         {
@@ -2498,7 +2464,7 @@
           },
           "kind": "property",
           "name": "listElements",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/list.tsx#L34",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L34",
           "type": "() => HTMLLIElement[]"
         },
         {
@@ -2515,7 +2481,7 @@
           },
           "kind": "property",
           "name": "removeClassFromElementAtIndex",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/list.tsx#L38",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L38",
           "type": "(index: number, className: string) => void"
         },
         {
@@ -2532,7 +2498,7 @@
           },
           "kind": "property",
           "name": "selectedIndex",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/list.tsx#L46",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L46",
           "type": "number | number[]"
         },
         {
@@ -2549,7 +2515,7 @@
           },
           "kind": "property",
           "name": "setAttributeForElementIndex",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/list.tsx#L39",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L39",
           "type": "(index: number, attr: string, value: any) => void"
         },
         {
@@ -2566,7 +2532,7 @@
           },
           "kind": "property",
           "name": "setSelectedIndex",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/list.tsx#L47",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L47",
           "type": "(index: number) => void"
         }
       ]
@@ -2585,7 +2551,7 @@
       },
       "kind": "type alias",
       "name": "ListOnActionEventT",
-      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/list/list.tsx#L7",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L7",
       "type": "RMWC.CustomEventT<>"
     }
   }

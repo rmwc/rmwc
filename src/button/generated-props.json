@@ -3,7 +3,9 @@
   "typescript": {
     "ButtonProps": {
       "documentation": {
-        "contents": ["<p>The Button component.</p>\n"],
+        "contents": [
+          "<p>The Button component.</p>\n"
+        ],
         "contentsRaw": "The Button component.",
         "metadata": {}
       },
@@ -21,12 +23,16 @@
       "kind": "interface",
       "name": "ButtonProps",
       "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/button/index.tsx#L21",
-      "extends": ["WithRippleProps"],
+      "extends": [
+        "any"
+      ],
       "methods": [],
       "properties": [
         {
           "documentation": {
-            "contents": ["<p>Content specified as children.</p>\n"],
+            "contents": [
+              "<p>Content specified as children.</p>\n"
+            ],
             "contentsRaw": "Content specified as children.",
             "metadata": {}
           },
@@ -48,7 +54,9 @@
         },
         {
           "documentation": {
-            "contents": ["<p>Used to indicate a dangerous action.</p>\n"],
+            "contents": [
+              "<p>Used to indicate a dangerous action.</p>\n"
+            ],
             "contentsRaw": "Used to indicate a dangerous action.",
             "metadata": {}
           },
@@ -70,7 +78,9 @@
         },
         {
           "documentation": {
-            "contents": ["<p>Make the Button dense.</p>\n"],
+            "contents": [
+              "<p>Make the Button dense.</p>\n"
+            ],
             "contentsRaw": "Make the Button dense.",
             "metadata": {}
           },
@@ -92,7 +102,9 @@
         },
         {
           "documentation": {
-            "contents": ["<p>Make the button disabled</p>\n"],
+            "contents": [
+              "<p>Make the button disabled</p>\n"
+            ],
             "contentsRaw": "Make the button disabled",
             "metadata": {}
           },
@@ -114,7 +126,9 @@
         },
         {
           "documentation": {
-            "contents": ["<p>An Icon for the Button</p>\n"],
+            "contents": [
+              "<p>An Icon for the Button</p>\n"
+            ],
             "contentsRaw": "An Icon for the Button",
             "metadata": {}
           },
@@ -136,7 +150,9 @@
         },
         {
           "documentation": {
-            "contents": ["<p>Content specified as a label prop.</p>\n"],
+            "contents": [
+              "<p>Content specified as a label prop.</p>\n"
+            ],
             "contentsRaw": "Content specified as a label prop.",
             "metadata": {}
           },
@@ -158,7 +174,9 @@
         },
         {
           "documentation": {
-            "contents": ["<p>Make the button outlined.</p>\n"],
+            "contents": [
+              "<p>Make the button outlined.</p>\n"
+            ],
             "contentsRaw": "Make the button outlined.",
             "metadata": {}
           },
@@ -180,7 +198,9 @@
         },
         {
           "documentation": {
-            "contents": ["<p>Make the Button raised.</p>\n"],
+            "contents": [
+              "<p>Make the Button raised.</p>\n"
+            ],
             "contentsRaw": "Make the Button raised.",
             "metadata": {}
           },
@@ -199,28 +219,6 @@
           "name": "raised",
           "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/button/index.tsx#L25",
           "type": "undefined | false | true"
-        },
-        {
-          "documentation": {
-            "contents": ["<p>Adds a ripple effect to the component</p>\n"],
-            "contentsRaw": "Adds a ripple effect to the component",
-            "metadata": {}
-          },
-          "fileName": "src/types/dist/index.d.ts",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "ripple",
-          "inheritedFrom": "WithRippleProps.ripple",
-          "type": "RipplePropT"
         },
         {
           "documentation": {
@@ -248,7 +246,9 @@
         },
         {
           "documentation": {
-            "contents": ["<p>A trailing icon for the Button</p>\n"],
+            "contents": [
+              "<p>A trailing icon for the Button</p>\n"
+            ],
             "contentsRaw": "A trailing icon for the Button",
             "metadata": {}
           },
@@ -270,7 +270,9 @@
         },
         {
           "documentation": {
-            "contents": ["<p>Make the button unelevated.</p>\n"],
+            "contents": [
+              "<p>Make the button unelevated.</p>\n"
+            ],
             "contentsRaw": "Make the button unelevated.",
             "metadata": {}
           },

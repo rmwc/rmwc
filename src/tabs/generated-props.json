@@ -22,7 +22,7 @@
       },
       "kind": "interface",
       "name": "TabBarProps",
-      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/tabs/tab-bar.tsx#L20",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/tabs/tab-bar.tsx#L20",
       "methods": [],
       "properties": [
         {
@@ -46,7 +46,7 @@
           },
           "kind": "property",
           "name": "activeTabIndex",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/tabs/tab-bar.tsx#L24",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/tabs/tab-bar.tsx#L24",
           "type": "undefined | number"
         },
         {
@@ -70,7 +70,7 @@
           },
           "kind": "property",
           "name": "foundationRef",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/tabs/tab-bar.tsx#L28",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/tabs/tab-bar.tsx#L28",
           "type": "React.Ref<MDCTabBarFoundation | null>"
         },
         {
@@ -94,7 +94,7 @@
           },
           "kind": "property",
           "name": "indicatorTransition",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/tabs/tab-bar.tsx#L26",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/tabs/tab-bar.tsx#L26",
           "type": "\"slide\" | \"fade\""
         },
         {
@@ -118,7 +118,7 @@
           },
           "kind": "property",
           "name": "onActivate",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/tabs/tab-bar.tsx#L22",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/tabs/tab-bar.tsx#L22",
           "type": "undefined | (evt: TabBarOnActivateEventT) => void"
         }
       ]
@@ -137,7 +137,7 @@
       },
       "kind": "interface",
       "name": "TabIndicatorProps",
-      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/tabs/tab-indicator.tsx#L8",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/tabs/tab-indicator.tsx#L8",
       "methods": [],
       "properties": [
         {
@@ -161,7 +161,7 @@
           },
           "kind": "property",
           "name": "icon",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/tabs/tab-indicator.tsx#L10",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/tabs/tab-indicator.tsx#L10",
           "type": "RMWC.IconPropT"
         },
         {
@@ -185,7 +185,7 @@
           },
           "kind": "property",
           "name": "transition",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/tabs/tab-indicator.tsx#L12",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/tabs/tab-indicator.tsx#L12",
           "type": "\"slide\" | \"fade\""
         }
       ]
@@ -204,7 +204,7 @@
       },
       "kind": "interface",
       "name": "TabScrollerProps",
-      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/tabs/tab-scroller.tsx#L7",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/tabs/tab-scroller.tsx#L7",
       "methods": [],
       "properties": [
         {
@@ -221,7 +221,7 @@
           },
           "kind": "property",
           "name": "apiRef",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/tabs/tab-scroller.tsx#L8",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/tabs/tab-scroller.tsx#L8",
           "type": "(api: TabScrollerApi) => void"
         }
       ]
@@ -247,7 +247,7 @@
       },
       "kind": "interface",
       "name": "TabProps",
-      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/tabs/tab.tsx#L22",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/tabs/tab.tsx#L22",
       "methods": [],
       "properties": [
         {
@@ -271,7 +271,7 @@
           },
           "kind": "property",
           "name": "children",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/tabs/tab.tsx#L26",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/tabs/tab.tsx#L26",
           "type": "React.ReactNode"
         },
         {
@@ -295,7 +295,7 @@
           },
           "kind": "property",
           "name": "focusOnActivate",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/tabs/tab.tsx#L42",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/tabs/tab.tsx#L42",
           "type": "undefined | false | true"
         },
         {
@@ -319,7 +319,7 @@
           },
           "kind": "property",
           "name": "foundationRef",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/tabs/tab.tsx#L40",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/tabs/tab.tsx#L40",
           "type": "React.Ref<MDCTabFoundation | null>"
         },
         {
@@ -343,7 +343,7 @@
           },
           "kind": "property",
           "name": "icon",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/tabs/tab.tsx#L28",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/tabs/tab.tsx#L28",
           "type": "RMWC.IconPropT"
         },
         {
@@ -367,7 +367,7 @@
           },
           "kind": "property",
           "name": "iconIndicator",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/tabs/tab.tsx#L30",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/tabs/tab.tsx#L30",
           "type": "RMWC.IconPropT"
         },
         {
@@ -391,7 +391,7 @@
           },
           "kind": "property",
           "name": "label",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/tabs/tab.tsx#L24",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/tabs/tab.tsx#L24",
           "type": "any"
         },
         {
@@ -415,7 +415,7 @@
           },
           "kind": "property",
           "name": "minWidth",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/tabs/tab.tsx#L36",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/tabs/tab.tsx#L36",
           "type": "undefined | false | true"
         },
         {
@@ -439,7 +439,7 @@
           },
           "kind": "property",
           "name": "onInteraction",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/tabs/tab.tsx#L38",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/tabs/tab.tsx#L38",
           "type": "undefined | (evt: TabOnInteractionEventT) => void"
         },
         {
@@ -463,7 +463,7 @@
           },
           "kind": "property",
           "name": "restrictIndicator",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/tabs/tab.tsx#L34",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/tabs/tab.tsx#L34",
           "type": "undefined | false | true"
         },
         {
@@ -487,7 +487,7 @@
           },
           "kind": "property",
           "name": "stacked",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/tabs/tab.tsx#L32",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/tabs/tab.tsx#L32",
           "type": "undefined | false | true"
         }
       ]
@@ -506,7 +506,7 @@
       },
       "kind": "type alias",
       "name": "TabBarContextT",
-      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/tabs/tab-bar-context.tsx#L3",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/tabs/tab-bar-context.tsx#L3",
       "type": ""
     },
     "TabBarOnActivateEventT": {
@@ -530,7 +530,7 @@
       },
       "kind": "type alias",
       "name": "TabBarOnActivateEventT",
-      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/tabs/tab-bar.tsx#L15",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/tabs/tab-bar.tsx#L15",
       "type": "RMWC.CustomEventT<>"
     },
     "TabIndicatorApi": {
@@ -547,7 +547,7 @@
       },
       "kind": "type alias",
       "name": "TabIndicatorApi",
-      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/tabs/tab-indicator.tsx#L15",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/tabs/tab-indicator.tsx#L15",
       "type": ""
     },
     "TabScrollerApi": {
@@ -564,7 +564,7 @@
       },
       "kind": "type alias",
       "name": "TabScrollerApi",
-      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/tabs/tab-scroller.tsx#L11",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/tabs/tab-scroller.tsx#L11",
       "type": ""
     },
     "TabOnInteractionEventT": {
@@ -581,7 +581,7 @@
       },
       "kind": "type alias",
       "name": "TabOnInteractionEventT",
-      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/tabs/tab.tsx#L19",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/tabs/tab.tsx#L19",
       "type": "RMWC.CustomEventT<>"
     },
     "TabApi": {
@@ -598,7 +598,7 @@
       },
       "kind": "type alias",
       "name": "TabApi",
-      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/tabs/tab.tsx#L45",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/tabs/tab.tsx#L45",
       "type": ""
     }
   }

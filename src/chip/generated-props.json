@@ -22,7 +22,7 @@
       },
       "kind": "interface",
       "name": "ChipProps",
-      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/chip/index.tsx#L24",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/chip/index.tsx#L24",
       "methods": [],
       "properties": [
         {
@@ -46,7 +46,7 @@
           },
           "kind": "property",
           "name": "checkmark",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/chip/index.tsx#L38",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/chip/index.tsx#L38",
           "type": "undefined | false | true"
         },
         {
@@ -70,7 +70,7 @@
           },
           "kind": "property",
           "name": "children",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/chip/index.tsx#L40",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/chip/index.tsx#L40",
           "type": "React.ReactNode"
         },
         {
@@ -94,7 +94,7 @@
           },
           "kind": "property",
           "name": "foundationRef",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/chip/index.tsx#L50",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/chip/index.tsx#L50",
           "type": "React.Ref<MDCChipFoundation>"
         },
         {
@@ -118,7 +118,7 @@
           },
           "kind": "property",
           "name": "icon",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/chip/index.tsx#L30",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/chip/index.tsx#L30",
           "type": "RMWC.IconPropT"
         },
         {
@@ -142,7 +142,7 @@
           },
           "kind": "property",
           "name": "id",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/chip/index.tsx#L36",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/chip/index.tsx#L36",
           "type": "undefined | string"
         },
         {
@@ -166,7 +166,7 @@
           },
           "kind": "property",
           "name": "label",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/chip/index.tsx#L26",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/chip/index.tsx#L26",
           "type": "React.ReactNode"
         },
         {
@@ -190,7 +190,7 @@
           },
           "kind": "property",
           "name": "onInteraction",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/chip/index.tsx#L42",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/chip/index.tsx#L42",
           "type": "undefined | (evt: ChipOnInteractionEventT) => void"
         },
         {
@@ -214,7 +214,7 @@
           },
           "kind": "property",
           "name": "onRemove",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/chip/index.tsx#L48",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/chip/index.tsx#L48",
           "type": "undefined | (evt: ChipOnRemoveEventT) => void"
         },
         {
@@ -238,7 +238,7 @@
           },
           "kind": "property",
           "name": "onTrailingIconInteraction",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/chip/index.tsx#L44",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/chip/index.tsx#L44",
           "type": "undefined | (evt: ChipOnTrailingIconInteractionEventT) => void"
         },
         {
@@ -262,7 +262,7 @@
           },
           "kind": "property",
           "name": "selected",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/chip/index.tsx#L28",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/chip/index.tsx#L28",
           "type": "undefined | false | true"
         },
         {
@@ -286,7 +286,7 @@
           },
           "kind": "property",
           "name": "trailingIcon",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/chip/index.tsx#L32",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/chip/index.tsx#L32",
           "type": "RMWC.IconPropT"
         },
         {
@@ -310,7 +310,7 @@
           },
           "kind": "property",
           "name": "trailingIconRemovesChip",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/chip/index.tsx#L34",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/chip/index.tsx#L34",
           "type": "undefined | false | true"
         }
       ]
@@ -336,7 +336,7 @@
       },
       "kind": "interface",
       "name": "ChipSetProps",
-      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/chip/index.tsx#L189",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/chip/index.tsx#L189",
       "methods": [],
       "properties": [
         {
@@ -360,7 +360,7 @@
           },
           "kind": "property",
           "name": "choice",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/chip/index.tsx#L191",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/chip/index.tsx#L191",
           "type": "undefined | false | true"
         },
         {
@@ -384,7 +384,7 @@
           },
           "kind": "property",
           "name": "filter",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/chip/index.tsx#L193",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/chip/index.tsx#L193",
           "type": "undefined | false | true"
         }
       ]
@@ -410,7 +410,7 @@
       },
       "kind": "interface",
       "name": "TrailingActionApi",
-      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/chip/trailing-action/index.tsx#L9",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/chip/trailing-action/index.tsx#L9",
       "methods": [],
       "properties": [
         {
@@ -427,7 +427,7 @@
           },
           "kind": "property",
           "name": "getFoundation",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/chip/trailing-action/index.tsx#L10",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/chip/trailing-action/index.tsx#L10",
           "type": "() => MDCChipTrailingActionFoundation"
         }
       ]
@@ -446,7 +446,7 @@
       },
       "kind": "interface",
       "name": "TrailingActionProps",
-      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/chip/trailing-action/index.tsx#L13",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/chip/trailing-action/index.tsx#L13",
       "methods": [],
       "properties": [
         {
@@ -463,7 +463,7 @@
           },
           "kind": "property",
           "name": "apiRef",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/chip/trailing-action/index.tsx#L14",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/chip/trailing-action/index.tsx#L14",
           "type": "undefined | (api: TrailingActionApi | null) => void"
         },
         {
@@ -480,7 +480,7 @@
           },
           "kind": "property",
           "name": "icon",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/chip/trailing-action/index.tsx#L16",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/chip/trailing-action/index.tsx#L16",
           "type": "string"
         },
         {
@@ -497,7 +497,7 @@
           },
           "kind": "property",
           "name": "isNavigable",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/chip/trailing-action/index.tsx#L15",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/chip/trailing-action/index.tsx#L15",
           "type": "undefined | false | true"
         }
       ]
@@ -523,7 +523,7 @@
       },
       "kind": "type alias",
       "name": "ChipOnInteractionEventT",
-      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/chip/index.tsx#L13",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/chip/index.tsx#L13",
       "type": "RMWC.CustomEventT<>"
     },
     "ChipOnTrailingIconInteractionEventT": {
@@ -540,7 +540,7 @@
       },
       "kind": "type alias",
       "name": "ChipOnTrailingIconInteractionEventT",
-      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/chip/index.tsx#L14",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/chip/index.tsx#L14",
       "type": "RMWC.CustomEventT<>"
     },
     "ChipOnRemoveEventT": {
@@ -557,7 +557,7 @@
       },
       "kind": "type alias",
       "name": "ChipOnRemoveEventT",
-      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/chip/index.tsx#L17",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/chip/index.tsx#L17",
       "type": "RMWC.CustomEventT<>"
     },
     "ChipHTMLProps": {
@@ -574,7 +574,7 @@
       },
       "kind": "type alias",
       "name": "ChipHTMLProps",
-      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/chip/index.tsx#L53",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/chip/index.tsx#L53",
       "type": "RMWC.HTMLProps<HTMLDivElement, Omit<AllHTMLAttributes<HTMLDivElement>, \"label\">>"
     }
   }
