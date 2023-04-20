@@ -10,12 +10,12 @@ const { execSync } = require('child_process');
 const fs = require('fs');
 const getChangedPackages = require('./get-changed-packages');
 
-const getMarkdown = (packageName) => {
+const getMarkdown = packageName => {
   const readmeFiles = fs
     .readdirSync(path.resolve('build', 'dist', packageName))
-    .filter((fName) => fName.startsWith('readme') && fName.endsWith('.js'));
+    .filter(fName => fName.startsWith('readme') && fName.endsWith('.js'));
 
-  const promises = readmeFiles.map((fName) => {
+  const promises = readmeFiles.map(fName => {
     const docPath = path.resolve('build', 'dist', packageName, fName);
     const fileOutputName = path.basename(fName, '.js').toUpperCase() + '.md';
     const outputPath = path.resolve('src', packageName, fileOutputName);
@@ -26,7 +26,7 @@ const getMarkdown = (packageName) => {
       .replace(/&#x27;/g, "'")
       .replace(/&quot;/g, '"');
 
-    return new Promise((resolve) => {
+    return new Promise(resolve => {
       fs.writeFile(outputPath, content, () => {
         resolve();
       });
@@ -47,8 +47,8 @@ try {
   execSync(`./node_modules/.bin/copyfiles --up 1 src/**/*.json build/dist`);
 
   const promises = getChangedPackages()
-    .filter((name) => !['rmwc', '@types'].includes(name))
-    .map((d) => {
+    .filter(name => !['base', 'rmwc', '@types'].includes(name))
+    .map(d => {
       console.log(`Generating Markdown For: ${d}`);
       return getMarkdown(d);
     });

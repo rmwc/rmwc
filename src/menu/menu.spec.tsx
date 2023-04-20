@@ -39,32 +39,6 @@ describe('Menu', () => {
     );
   });
 
-  it('does not trigger action when disabled', async () => {
-    const onSelect = jest.fn();
-
-    render(
-      <MenuSurfaceAnchor>
-        <Menu open={true} onSelect={onSelect} onClose={jest.fn()}>
-          <MenuItem>Cookies</MenuItem>
-          <MenuItem disabled={true}>Pizza</MenuItem>
-          <MenuItem>Icecream</MenuItem>
-        </Menu>
-      </MenuSurfaceAnchor>
-    );
-
-    userEvent.click(screen.getByText('Cookies'));
-
-    await waitFor(() => expect(onSelect).toHaveBeenCalledTimes(1));
-
-    userEvent.click(screen.getByText('Pizza'));
-
-    await waitFor(() => expect(onSelect).toHaveBeenCalledTimes(1));
-
-    userEvent.click(screen.getByText('Icecream'));
-
-    await waitFor(() => expect(onSelect).toHaveBeenCalledTimes(2));
-  });
-
   it('dynamically updates aria-hidden based on whether or not the menu is open', () => {
     const { container, rerender } = render(<Menu open />);
 

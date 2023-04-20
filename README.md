@@ -38,12 +38,11 @@ Features:
 
 ## Recent updates
 
-v8.0.6 is here! This release includes a bug fix for this issue: Disabled MenuItems are expected to not be interactable
-[847](https://github.com/rmwc/rmwc/issues/847).
+v8.0.1 is here! This release includes bug fixes of v8.0.0.
 
 - `npm i rmwc@latest` or `npm i @rmwc/button@latest`.
 - React 17 now usable as a peer dep
-- Updated lerna & other dependencies
+- Updated dependencies
 
 _View all release notes_ 👉 https://opencollective.com/rmwc/updates
 
@@ -62,20 +61,20 @@ View the changelog for detailed updates: [https://github.com/jamesmfriedman/rmwc
 
 - `npm i rmwc --save` or `yarn add rmwc`
 
-Additional information is available in the [Installation Guide](https://rmwc.io/installation)
+Additional information is available in the [Installation Guide](https://jamesmfriedman.github.io/rmwc/installation)
 
 ## Usage
 
-Read the docs on how to [Usage](https://rmwc.io/usage)
+Read the docs on how to [Usage](https://jamesmfriedman.github.io/rmwc/usage)
 
 ## Why?
 
-Read the docs on [Methodology](https://rmwc.io/methodology)
+Read the docs on [Methodology](https://jamesmfriedman.github.io/rmwc/methodology)
 
 ## About Breaking Changes
 
 RMWC avoids them at all costs!
-Read the docs on [Methodology](https://rmwc.io/methodology)
+Read the docs on [Methodology](https://jamesmfriedman.github.io/rmwc/methodology)
 
 ## To run the tests
 
