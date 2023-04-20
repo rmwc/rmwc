@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/select",
-  "version": "8.0.1",
+  "version": "8.0.7",
   "description": "RMWC Select component",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -37,15 +37,15 @@
   },
   "dependencies": {
     "@material/select": "^8.0.0",
-    "@rmwc/base": "^8.0.1",
-    "@rmwc/floating-label": "^8.0.1",
-    "@rmwc/icon": "^8.0.1",
-    "@rmwc/line-ripple": "^8.0.1",
-    "@rmwc/list": "^8.0.1",
-    "@rmwc/menu": "^8.0.1",
-    "@rmwc/notched-outline": "^8.0.1",
-    "@rmwc/ripple": "^8.0.1",
-    "@rmwc/types": "^8.0.1"
+    "@rmwc/base": "^8.0.7",
+    "@rmwc/floating-label": "^8.0.7",
+    "@rmwc/icon": "^8.0.7",
+    "@rmwc/line-ripple": "^8.0.7",
+    "@rmwc/list": "^8.0.7",
+    "@rmwc/menu": "^8.0.7",
+    "@rmwc/notched-outline": "^8.0.7",
+    "@rmwc/ripple": "^8.0.7",
+    "@rmwc/types": "^8.0.7"
   },
   "gitHead": "d9befec0e3b258864b71686eecd16c16feb43cf1"
 }
