@@ -9,12 +9,6 @@ exports[`Button can be danger 1`] = `
     <div
       class="mdc-button__ripple"
     />
-    <div
-      class="mdc-button__touch"
-    />
-    <div
-      class="mdc-button__focus-ring"
-    />
     <span
       class="mdc-button__label"
     />
@@ -29,12 +23,6 @@ exports[`Button can have an icon 1`] = `
   >
     <div
       class="mdc-button__ripple"
-    />
-    <div
-      class="mdc-button__touch"
-    />
-    <div
-      class="mdc-button__focus-ring"
     />
     <i
       class="rmwc-icon rmwc-icon--ligature material-icons mdc-button__icon"
@@ -57,12 +45,6 @@ exports[`Button renders 1`] = `
   >
     <div
       class="mdc-button__ripple"
-    />
-    <div
-      class="mdc-button__touch"
-    />
-    <div
-      class="mdc-button__focus-ring"
     />
     <span
       class="mdc-button__label"
