@@ -1,0 +1,1 @@
+["<Portal />","function App() {\n  return (\n    <PortalProvider>\n      <div>\n        {/* Other components here */}\n        <Portal />\n      </div>\n    </PortalProvider>\n  );\n}"]

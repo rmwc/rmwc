@@ -122,8 +122,8 @@ export type ComponentProps<
   );
 
 export type ComponentType<
-  Props,
-  ElementProps,
+  Props extends {},
+  ElementProps extends {},
   Element extends React.ElementType<any>
 > = {
   <Tag extends React.ElementType<any> = Element>(

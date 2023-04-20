@@ -80,6 +80,30 @@ function Example() {
 }
 ```
 
+```jsx
+function Example() {
+  const [open, setOpen] = React.useState(false);
+
+  return (
+    <MenuSurfaceAnchor>
+      <Menu
+        open={open}
+        onSelect={(evt) => console.log(evt.detail.index)}
+        onClose={(evt) => setOpen(false)}
+      >
+        <MenuItem>Item One</MenuItem>
+        <MenuItem disabled>Item Two (disabled)</MenuItem>
+        <MenuItem>Item Three</MenuItem>
+      </Menu>
+
+      <Button raised onClick={() => setOpen(!open)}>
+        Menu
+      </Button>
+    </MenuSurfaceAnchor>
+  );
+}
+```
+
 ## Simplified usage
 
 RMWC provides a convenience `SimpleMenu` component that takes a handle as a prop, and manages the open state for you.
@@ -172,6 +196,7 @@ Now you can use the `renderToPortal` prop. Below is a contrived example of a men
 ```jsx
 function Example() {
   const [renderToPortal, setRenderToPortal] = React.useState(true);
+  const [menuIsOpen, setMenuIsOpen] = React.useState(false);
   const options = ['Cookies', 'Pizza', 'Icecream'];
   return (
     <>
@@ -183,8 +208,14 @@ function Example() {
         }}
       >
         <MenuSurfaceAnchor>
-          <Button raised>Open Menu</Button>
-          <Menu open renderToPortal={renderToPortal}>
+          <Button raised onClick={() => setMenuIsOpen(!menuIsOpen)}>
+            Open Menu
+          </Button>
+          <Menu
+            open={menuIsOpen}
+            onClose={() => setMenuIsOpen(false)}
+            renderToPortal={renderToPortal}
+          >
             {options.map((o) => (
               <MenuItem key={o}>{o}</MenuItem>
             ))}

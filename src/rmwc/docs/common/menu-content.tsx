@@ -95,6 +95,7 @@ const TypographyDocs = React.lazy(() => import('@rmwc/typography/readme'));
 const IconDocs = React.lazy(() => import('@rmwc/icon/readme'));
 const ProviderDocs = React.lazy(() => import('@rmwc/provider/readme'));
 const TooltipDocs = React.lazy(() => import('@rmwc/tooltip/readme'));
+const PortalDocs = React.lazy(() => import('@rmwc/base/readme'));
 
 const Loading = () => (
   <div
@@ -410,6 +411,11 @@ export const menuContent: MenuItemT[] = [
         label: 'Provider',
         url: `/provider`,
         component: Loadable(ProviderDocs)
+      },
+      {
+        label: 'Portal',
+        url: `/portal`,
+        component: Loadable(PortalDocs)
       }
     ]
   }

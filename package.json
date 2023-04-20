@@ -1,7 +1,7 @@
 {
 	"name": "rmwc-main",
 	"author": "James Friedman",
-	"version": "8.0.1",
+	"version": "8.0.7",
 	"private": true,
 	"homepage": "https://rmwc.io",
 	"description": "RMWC is a React UI Kit built on Google's official Material Components Web library.",
@@ -14,9 +14,9 @@
 		"react-dom": ">=16.8.x"
 	},
 	"scripts": {
-		"install": "lerna bootstrap --force-local --hoist",
-		"start": "export NODE_OPTIONS='--max-old-space-size=4096' && npm run clean && concurrently \"react-app-rewired start\" \"chokidar './src/**/readme.tsx' -c 'npm run docgen:examples'\"",
-		"build:docsite": "export NODE_OPTIONS='--max-old-space-size=4096' && react-app-rewired build && rm -R -f docs && mv build docs",
+		"bootstrap": "lerna bootstrap --force-local --hoist --ignore-scripts",
+		"start": "cross-env NODE_OPTIONS='--max-old-space-size=4096' && npm run clean && concurrently \"react-app-rewired start\" \"chokidar './src/**/readme.tsx' -c 'npm run docgen:examples'\"",
+		"build:docsite": "cross-env NODE_OPTIONS='--max-old-space-size=4096' react-app-rewired build && rm -R -f docs && mv build docs",
 		"build:docs": "npm run clean && npm run docgen && npm run build:docsite",
 		"build:code": "npm run clean && node scripts/build-code.js",
 		"build:lib": "node scripts/build-lib.js",
@@ -43,10 +43,13 @@
 		"storybook:update": "npm i -D @storybook/addon-actions@latest @storybook/addon-knobs@latest @storybook/react@latest",
 		"preversion": "npm run clean && npm run docgen && npm run build:docsite && git add --all && git commit --allow-empty -m 'Generating Props'",
 		"version": "node scripts/fix-package-version && npm run changelog && git add CHANGELOG.md && git commit --allow-empty -m 'Updating Changelog'",
-		"prepublish": "npm run docgen && npm run build:code",
-		"build-storybook": "build-storybook"
+		"prepare": "husky install",
+		"build-storybook": "build-storybook",
+		"validate:actions": "action-validator .github/workflows/automerge.yml && action-validator .github/workflows/publish.yml && action-validator .github/workflows/unit-test.yml && action-validator .github/workflows/version.yml"
 	},
 	"devDependencies": {
+		"@action-validator/cli": "^0.5.1",
+		"@action-validator/core": "^0.5.1",
 		"@babel/core": "^7.17.9",
 		"@storybook/addon-actions": "^6.5.10",
 		"@storybook/addon-essentials": "^6.5.10",
@@ -71,10 +74,12 @@
 		"colors": "^1.4.0",
 		"concurrently": "^7.3.0",
 		"copyfiles": "^2.4.1",
+		"cross-env": "^7.0.3",
 		"documentalist": "^1.6.0",
 		"eslint-plugin-babel": "^5.3.1",
 		"generate-changelog": "^1.8.0",
-		"lerna": "^3.22.1",
+		"husky": "^8.0.3",
+		"lerna": "^6.6.1",
 		"module-alias": "^2.2.2",
 		"prettier": "2.3.1",
 		"react": "^17.0.2",
@@ -90,6 +95,9 @@
 	},
 	"eslintIgnore": [
 		"node_modules"
+	],
+	"workspaces": [
+		"./src/*"
 	],
 	"config-overrides-path": "config/rewire",
 	"browserslist": [

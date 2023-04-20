@@ -1,8 +1,8 @@
-[![tests](https://img.shields.io/github/workflow/status/jamesmfriedman/rmwc/RMWC%20Unit%20Tests)](https://github.com/jamesmfriedman/rmwc/)
-[![codecov](https://codecov.io/gh/jamesmfriedman/rmwc/branch/master/graph/badge.svg)](https://codecov.io/gh/jamesmfriedman/rmwc)
+![tests](https://github.com/rmwc/rmwc/actions/workflows/unit-test.yml/badge.svg)
+[![codecov](https://codecov.io/gh/rmwc/rmwc/branch/master/graph/badge.svg)](https://codecov.io/gh/rmwc/rmwc)
 [![npm](https://img.shields.io/npm/v/rmwc.svg)](https://www.npmjs.com/package/rmwc)
 [![npm](https://img.shields.io/npm/dm/@rmwc/base.svg)](https://www.npmjs.com/package/rmwc)
-[![npm](https://img.shields.io/npm/l/rmwc.svg)](https://github.com/jamesmfriedman/rmwc/blob/master/LICENSE)
+[![npm](https://img.shields.io/npm/l/rmwc.svg)](https://github.com/rmwc/rmwc/blob/master/LICENSE)
 [![Chat](https://img.shields.io/discord/490680848979591168.svg)](https://discord.gg/4BSUxCW)
 [![Backers on Open Collective](https://opencollective.com/rmwc/backers/badge.svg)](#backers)
 [![Sponsors on Open Collective](https://opencollective.com/rmwc/sponsors/badge.svg)](#sponsors)
@@ -11,7 +11,7 @@
 
 ⚡️ Attention: This project is currently being brought back to life. If you're interested in helping with maintenance and becoming a contributor or maintainer, please message on Discord.
 
-- https://github.com/jamesmfriedman/rmwc/issues/758
+- https://github.com/rmwc/rmwc/issues/758
 - We recently closed all issues for a full reset as we get back to the most recent Google version. If any still apply, please reopen.
 
 RMWC is a React UI Kit built on Google's official Material Components Web library v8.x.x
@@ -38,11 +38,12 @@ Features:
 
 ## Recent updates
 
-v8.0.1 is here! This release includes bug fixes of v8.0.0.
+v8.0.6 is here! This release includes a bug fix for this issue: Disabled MenuItems are expected to not be interactable
+[847](https://github.com/rmwc/rmwc/issues/847).
 
 - `npm i rmwc@latest` or `npm i @rmwc/button@latest`.
 - React 17 now usable as a peer dep
-- Updated dependencies
+- Updated lerna & other dependencies
 
 _View all release notes_ 👉 https://opencollective.com/rmwc/updates
 
@@ -61,20 +62,20 @@ View the changelog for detailed updates: [https://github.com/jamesmfriedman/rmwc
 
 - `npm i rmwc --save` or `yarn add rmwc`
 
-Additional information is available in the [Installation Guide](https://jamesmfriedman.github.io/rmwc/installation)
+Additional information is available in the [Installation Guide](https://rmwc.io/installation)
 
 ## Usage
 
-Read the docs on how to [Usage](https://jamesmfriedman.github.io/rmwc/usage)
+Read the docs on how to [Usage](https://rmwc.io/usage)
 
 ## Why?
 
-Read the docs on [Methodology](https://jamesmfriedman.github.io/rmwc/methodology)
+Read the docs on [Methodology](https://rmwc.io/methodology)
 
 ## About Breaking Changes
 
 RMWC avoids them at all costs!
-Read the docs on [Methodology](https://jamesmfriedman.github.io/rmwc/methodology)
+Read the docs on [Methodology](https://rmwc.io/methodology)
 
 ## To run the tests
 
