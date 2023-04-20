@@ -8,7 +8,7 @@ const getPackages =
 
 try {
   getPackages()
-    .filter((name) => !['rmwc', '@types'].includes(name))
+    .filter((name) => !['base', 'rmwc', '@types'].includes(name))
     .forEach((d) => {
       console.log(`Building Docs For: ${d}`);
       const proc = exec(

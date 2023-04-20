@@ -19,6 +19,7 @@ export type MenuSurfaceOnOpenEventT = RMWC.CustomEventT<{}>;
 export type MenuSurfaceOnCloseEventT = RMWC.CustomEventT<{}>;
 
 export interface MenuSurfaceApi {
+  hoistMenuToBody: () => void;
   setAnchorCorner: (corner: Corner) => void;
   setAnchorElement: (element: HTMLElement) => void;
   setOpen: (open: boolean) => void;
@@ -66,16 +67,7 @@ export const MenuSurface = createComponent<MenuSurfaceProps>(
       ...rest
     } = props;
 
-    // menuSurfaceDomPositionRef is used to position the menu when it's rendered
-    // into a portal. MenuSurfaceFoundation needs to crawl the dom parents
-    // of 'children' to find the MenuSurfaceAnchor, and when children is rendered
-    // in a portal it removes it from the dom hierarchy.
-    const menuSurfaceDomPositionRef = React.useRef<HTMLDivElement | null>(null);
-
-    const { rootEl } = useMenuSurfaceFoundation(
-      props,
-      menuSurfaceDomPositionRef
-    );
+    const { rootEl } = useMenuSurfaceFoundation(props);
 
     const className = useClassNames(props, [
       'mdc-menu-surface',
@@ -85,16 +77,11 @@ export const MenuSurface = createComponent<MenuSurfaceProps>(
     ]);
 
     return (
-      <>
-        <PortalChild
-          renderTo={renderToPortal}
-          menuSurfaceDomPositionRef={menuSurfaceDomPositionRef}
-        >
-          <Tag {...rest} element={rootEl} className={className} ref={ref}>
-            {children}
-          </Tag>
-        </PortalChild>
-      </>
+      <PortalChild renderTo={renderToPortal}>
+        <Tag {...rest} element={rootEl} className={className} ref={ref}>
+          {children}
+        </Tag>
+      </PortalChild>
     );
   }
 );

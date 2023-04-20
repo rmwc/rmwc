@@ -1,93 +1,54 @@
-import React, {
-  useEffect,
-  useState,
-  useContext,
-  useCallback,
-  MutableRefObject
-} from 'react';
-import { createPortal } from 'react-dom';
-import * as RMWC from '@rmwc/types';
-import { PortalContext } from './PortalContext';
+import React, { useRef, useMemo } from 'react';
+import ReactDOM from 'react-dom';
 
 const PORTAL_ID = 'rmwcPortal';
 
 export type PortalPropT = Element | string | boolean | undefined | null;
 
-export interface PortalProps
-  extends Omit<RMWC.HTMLProps<HTMLDivElement>, 'id' | 'ref'> {}
+export function Portal() {
+  const el = useRef<HTMLDivElement | null>(null);
 
-export const Portal = (props: PortalProps): JSX.Element => {
-  const portalContext = useContext(PortalContext);
-  const setPortalElement = portalContext?.setPortalElement;
-
-  const portalRef = useCallback(
-    (node: HTMLDivElement) => {
-      if (node !== null && setPortalElement) {
-        setPortalElement(node);
-      }
-    },
-    [setPortalElement]
-  );
-
-  return <div ref={portalRef} id={PORTAL_ID} {...props} />;
-};
+  return <div ref={el} id={PORTAL_ID} />;
+}
 
 export function PortalChild({
   children,
-  renderTo,
-  menuSurfaceDomPositionRef
+  renderTo
 }: {
   children: React.ReactNode;
   renderTo?: PortalPropT;
-  menuSurfaceDomPositionRef?: MutableRefObject<HTMLDivElement | null>;
 }) {
-  const [portalEl, setPortalEl] = useState<Element | undefined>();
-  const { portalElement: portalElementFromContext } = useContext(PortalContext);
+  const portalEl: Element | undefined = useMemo(() => {
+    if (typeof document === 'undefined') {
+      return undefined;
+    }
 
-  useEffect(() => {
     let element: Element | undefined = undefined;
 
-    if (renderTo === true && portalElementFromContext) {
-      element = portalElementFromContext;
-    } else if (renderTo === true) {
-      element = document?.getElementById(PORTAL_ID) ?? undefined;
+    if (renderTo === true) {
+      element = document.getElementById(PORTAL_ID) || undefined;
 
-      if (!element) {
+      !element &&
         console.warn(
           'No default Portal found. Did you forget to include it in the root of your app? `import { Portal } from "@rmwc/base";`'
         );
-      }
     } else if (typeof renderTo === 'string') {
-      element = document?.querySelector(renderTo) ?? undefined;
+      element = document.querySelector(renderTo) || undefined;
 
-      if (!element) {
+      !element &&
         console.warn(
           `The selector you provided for renderToPortal "${renderTo}" didn't find any elements.`
         );
-      }
     } else if (renderTo instanceof Element) {
       element = renderTo;
     }
 
-    if (element !== portalEl) {
-      setPortalEl(element);
-    }
-  }, [renderTo, portalEl, portalElementFromContext]);
+    return element;
+  }, [renderTo]);
 
-  // if renderTo defined, render children if we have the portalEl, else don't render anything.
-  // menuSurfaceDomPositionRef is used to position the menu at the correct location on the menuSurfaceAnchor
-  // when children is rendered in the portal
-  if (renderTo) {
-    if (portalEl) {
-      return (
-        <div ref={menuSurfaceDomPositionRef}>
-          {createPortal(children, portalEl)}
-        </div>
-      );
-    } else {
-      return null;
-    }
+  if (portalEl) {
+    return ReactDOM.createPortal(children, portalEl);
   }
-  // if renderTo is not defined render the children directly.
+
   return <>{children}</>;
 }

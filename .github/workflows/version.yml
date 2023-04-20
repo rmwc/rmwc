@@ -10,17 +10,16 @@ jobs:
     runs-on: ubuntu-latest
     if: contains(github.head_ref, 'release/')
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
       - name: Setup Git
         run: git fetch origin ${{ github.head_ref }} && git checkout ${{ github.head_ref }}
       - run: git config --global user.email "ci@rmwc.io"
       - run: git config --global user.name "RMWC CI"
       - name: Use Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v2
         with:
-          node-version: '16.x'
+          node-version: '14.x'
           registry-url: 'https://registry.npmjs.org'
-          cache: 'npm'
       - run: npm ci
       - name: 'Patch Release'
         run: npm run release:patch
@@ -40,5 +39,5 @@ jobs:
       - name: 'Alpha Major Release'
         run: npm run alpha:major
         if: contains(github.head_ref, '/major') && github.base_ref == 'next'
-      - name: 'Build Docs'
+      - name: 'Build Docs':
         run: npm run build:docs

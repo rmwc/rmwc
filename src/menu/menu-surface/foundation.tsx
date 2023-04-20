@@ -33,8 +33,7 @@ const getAnchorCornerFromProp = (
 ) => MDCMenuSurfaceFoundation.Corner[ANCHOR_CORNER_MAP[anchorCorner]];
 
 export const useMenuSurfaceFoundation = (
-  props: MenuSurfaceProps & React.HTMLProps<any>,
-  menuSurfaceWrapperRef: React.MutableRefObject<HTMLDivElement | null>
+  props: MenuSurfaceProps & React.HTMLProps<any>
 ) => {
   const [open, setOpen] = useState(props.open);
   const firstFocusableElementRef = useRef<HTMLElement | null>(null);
@@ -53,6 +52,9 @@ export const useMenuSurfaceFoundation = (
       rootEl: FoundationElement<any, any>;
     }): MenuSurfaceApi => {
       return {
+        hoistMenuToBody: () => {
+          // this is controlled by the renderToPortal prop
+        },
         setAnchorCorner: (corner: Corner) => foundation.setAnchorCorner(corner),
         setAnchorElement: (element: HTMLElement) =>
           (anchorElementRef.current = element),
@@ -241,7 +243,7 @@ export const useMenuSurfaceFoundation = (
 
   // on mount
   useEffect(() => {
-    const el = menuSurfaceWrapperRef?.current || rootEl.ref;
+    const el = rootEl.ref;
 
     if (el) {
       const anchor = closest(
@@ -250,7 +252,7 @@ export const useMenuSurfaceFoundation = (
       );
       anchor && (anchorElementRef.current = anchor);
     }
-  }, [menuSurfaceWrapperRef, rootEl.ref]);
+  }, [rootEl.ref]);
 
   // renderToPortal
   useEffect(() => {
@@ -289,7 +291,8 @@ export const useMenuSurfaceFoundation = (
     if (anchorCorner !== undefined) {
       foundation.setAnchorCorner(anchorCorner);
       // @ts-ignore unsafe private variable reference
-      foundation.dimensions = foundation.adapter.getInnerDimensions();
+      foundation.dimensions_ = foundation.adapter.getInnerDimensions();
+      // @ts-ignore unsafe private variable reference
       try {
         // silence this, it blows up loudly occasionally
         // @ts-ignore unsafe private variable access

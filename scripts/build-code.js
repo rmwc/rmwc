@@ -4,8 +4,6 @@ const getPackageDirs = require('./get-package-dirs');
 const path = require('path');
 const { exec, execSync } = require('child_process');
 
-console.log('Starting build...');
-
 // Simply copies the file
 const copyFile = (inputFile, outputFile) => {
   exec(`cp -R ${inputFile} ${outputFile}`);
@@ -14,16 +12,16 @@ const copyFile = (inputFile, outputFile) => {
 const root = path.resolve(__dirname, '../');
 
 execSync(
-  `npx tsc --project ${root}/tsconfig-build.json --target es5 --module CommonJS`,
+  `./node_modules/.bin/tsc --project ${root}/tsconfig-build.json --target es5 --module CommonJS`,
   {
-    stdio: 'inherit'
+    stdio: [0, 1, 2]
   }
 );
 
 execSync(
-  `npx tsc --project ${root}/tsconfig-build.json --target es5 --module esnext --outDir ${root}/build/next`,
+  `./node_modules/.bin/tsc --project ${root}/tsconfig-build.json --target es5 --module esnext --outDir ${root}/build/next`,
   {
-    stdio: 'inherit'
+    stdio: [0, 1, 2]
   }
 );
 
@@ -56,5 +54,5 @@ const promises = getPackageDirs().map((d) => {
 
 // Compile the TS
 Promise.all(promises).then(() => {
-  console.log('Build done');
+  console.log('Done');
 });

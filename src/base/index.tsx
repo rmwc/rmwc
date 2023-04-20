@@ -7,6 +7,5 @@ export * from './utils';
 export * from './foundation-component';
 export * from './component';
 export * from './portal';
-export * from './PortalContext';
 
 export type WithThemeProps = _WithThemeProps;

@@ -2,6 +2,7 @@ import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Chip, ChipSet } from './';
+import { useChipFoundation } from './foundation';
 
 describe('Chip', () => {
   it('renders', () => {
