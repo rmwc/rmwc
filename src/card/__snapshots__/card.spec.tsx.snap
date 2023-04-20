@@ -25,6 +25,9 @@ exports[`Card renders 1`] = `
           Visit ten places on our planet that are undergoing the biggest changes today.
         </div>
       </div>
+      <div
+        class="mdc-card__ripple"
+      />
     </div>
     <section
       class="mdc-card__actions"
@@ -38,6 +41,12 @@ exports[`Card renders 1`] = `
           <div
             class="mdc-button__ripple"
           />
+          <div
+            class="mdc-button__touch"
+          />
+          <div
+            class="mdc-button__focus-ring"
+          />
           <span
             class="mdc-button__label"
           >
@@ -50,6 +59,12 @@ exports[`Card renders 1`] = `
           <div
             class="mdc-button__ripple"
           />
+          <div
+            class="mdc-button__touch"
+          />
+          <div
+            class="mdc-button__focus-ring"
+          />
           <span
             class="mdc-button__label"
           >
@@ -61,6 +76,12 @@ exports[`Card renders 1`] = `
         >
           <div
             class="mdc-button__ripple"
+          />
+          <div
+            class="mdc-button__touch"
+          />
+          <div
+            class="mdc-button__focus-ring"
           />
           <span
             class="mdc-button__label"
@@ -87,6 +108,9 @@ exports[`Card renders 1`] = `
           role="button"
           tabindex="0"
         >
+          <div
+            class="mdc-icon-button__ripple"
+          />
           <i
             class="rmwc-icon rmwc-icon--ligature material-icons mdc-icon-button__icon"
           >
