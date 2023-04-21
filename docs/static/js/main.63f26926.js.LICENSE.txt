@@ -222,7 +222,7 @@ PERFORMANCE OF THIS SOFTWARE.
  */
 
 /**
- * React Router DOM v6.3.0
+ * @remix-run/router v1.5.0
  *
  * Copyright (c) Remix Software Inc.
  *
@@ -233,7 +233,18 @@ PERFORMANCE OF THIS SOFTWARE.
  */
 
 /**
- * React Router v6.3.0
+ * React Router DOM v6.10.0
+ *
+ * Copyright (c) Remix Software Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE.md file in the root directory of this source tree.
+ *
+ * @license MIT
+ */
+
+/**
+ * React Router v6.10.0
  *
  * Copyright (c) Remix Software Inc.
  *
