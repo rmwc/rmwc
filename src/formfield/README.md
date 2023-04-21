@@ -17,6 +17,33 @@ MDC Form Field provides an mdc-formfield helper class for easily making theme-aw
 </FormField>
 ```
 
+## Align end
+
+```jsx
+<FormField alignEnd>
+  <input type="checkbox" id="input" />
+  <label htmlFor="input">Input Label</label>
+</FormField>
+```
+
+## No wrap
+
+```jsx
+<FormField noWrap>
+  <input type="checkbox" id="input" />
+  <label htmlFor="input">Input Label</label>
+</FormField>
+```
+
+## Space between
+
+```jsx
+<FormField spaceBetween>
+  <input type="checkbox" id="input" />
+  <label htmlFor="input">Input Label</label>
+</FormField>
+```
+
 ## FormField
 A FormField component.
 

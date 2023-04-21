@@ -17,9 +17,12 @@ Touch targets are the parts of the screen that respond to user input. They exten
 ```
 
 ## TouchTargetWrapper
-
 The ButTouchTargetWrapperon component.
 
-| Name       | Type              | Description                    |
-| ---------- | ----------------- | ------------------------------ |
+### Props
+
+| Name | Type | Description |
+|------|------|-------------|
 | `children` | `React.ReactNode` | Content specified as children. |
+
+
