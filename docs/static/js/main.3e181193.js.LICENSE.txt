@@ -160,8 +160,6 @@
 
 /**
  * @license
-<<<<<<< HEAD:docs/static/js/main.b9bd8380.js.LICENSE.txt
-=======
  * Copyright 2019 Google Inc.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -231,7 +229,6 @@
 
 /**
  * @license
->>>>>>> 289c4ffb (chore(all): Bump to v14 and fix build errors):docs/static/js/main.8942fda5.js.LICENSE.txt
  * Copyright Google LLC All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
@@ -239,8 +236,18 @@
  */
 
 /**
- * @license React
- * react-dom.production.min.js
+ * @remix-run/router v1.5.0
+ *
+ * Copyright (c) Remix Software Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE.md file in the root directory of this source tree.
+ *
+ * @license MIT
+ */
+
+/**
+ * React Router DOM v6.10.0
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -249,8 +256,7 @@
  */
 
 /**
- * @license React
- * react-jsx-runtime.production.min.js
+ * React Router v6.10.0
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
