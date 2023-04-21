@@ -6,7 +6,8 @@ import {
   MDCChipFoundation,
   MDCChipAdapter,
   MDCChipActionType,
-  MDCChipActionFocusBehavior
+  MDCChipActionFocusBehavior,
+  MDCChipAction
 } from '@material/chips';
 import React, { useCallback, useRef } from 'react';
 import { TrailingActionApi } from '../action';
@@ -26,7 +27,7 @@ export const useChipFoundation = (props: ChipProps & ChipHTMLProps) => {
     },
     foundation: ({ rootEl, emit, getProps, trailingActionEl }) => {
       const rootHTML = rootEl.ref as HTMLElement;
-      const actions = new Map();
+      const actions = new Map<MDCChipActionType, MDCChipAction>();
 
       // const actionFactory: MDCChipActionFactory = (el: Element) =>
       //   new MDCChipAction(el);
