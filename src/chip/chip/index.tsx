@@ -1,10 +1,16 @@
 import * as RMWC from '@rmwc/types';
-import React from 'react';
-import { MDCChipFoundation } from '@material/chips';
+import React, { useRef } from 'react';
+import {
+  MDCChipActionFocusBehavior,
+  MDCChipActionType,
+  MDCChipAnimation,
+  MDCChipFoundation
+} from '@material/chips';
 import { withRipple } from '@rmwc/ripple';
 import { useChipFoundation } from './foundation';
 import { Tag, useClassNames, createComponent } from '@rmwc/base';
 import { PrimaryAction, TrailingAction } from '../action';
+import { ActionContext, ActionContextT } from '../action-context';
 
 /*********************************************************************
  * Events
@@ -46,6 +52,23 @@ export interface ChipProps {
   foundationRef?: React.Ref<MDCChipFoundation>;
 }
 
+export type ChipApi = {
+  getIndex: () => number;
+  getActions: () => MDCChipActionType[];
+  getElementID: () => string;
+  isActionFocusable: (action: MDCChipActionType) => boolean;
+  isActionSelectable: (action: MDCChipActionType) => boolean;
+  isActionSelected: (action: MDCChipActionType) => boolean;
+  destroy: () => void;
+  remove: () => void;
+  setActionFocus: (
+    action: MDCChipActionType,
+    focus: MDCChipActionFocusBehavior
+  ) => void;
+  setActionSelected: (action: MDCChipActionType, isSelected: boolean) => void;
+  startAnimation: (animation: MDCChipAnimation) => void;
+};
+
 export type ChipHTMLProps = RMWC.HTMLProps<
   HTMLDivElement,
   Omit<React.AllHTMLAttributes<HTMLDivElement>, 'label'>
@@ -71,7 +94,13 @@ export const Chip: RMWC.ComponentType<ChipProps, ChipHTMLProps, 'div'> =
         ...rest
       } = props;
 
-      const { rootEl, trailingActionEl } = useChipFoundation(props);
+      const {
+        rootEl,
+        trailingActionEl,
+        registerAction,
+        unregisterAction,
+        setTrailingAction
+      } = useChipFoundation(props);
 
       const className = useClassNames(props, [
         'mdc-evolution-chip',
@@ -81,36 +110,44 @@ export const Chip: RMWC.ComponentType<ChipProps, ChipHTMLProps, 'div'> =
         }
       ]);
 
+      const contextApi = useRef<ActionContextT>({
+        registerAction,
+        unregisterAction
+      });
+
       return (
-        <Tag
-          tag="span"
-          role="row"
-          element={rootEl}
-          {...rest}
-          className={className}
-          id={props.id}
-          ref={ref}
-        >
-          <span
-            className="mdc-evolution-chip__cell mdc-evolution-chip__cell--primary"
-            role="gridcell"
+        <ActionContext.Provider value={contextApi.current}>
+          <Tag
+            {...rest}
+            tag="span"
+            role="row"
+            element={rootEl}
+            className={className}
+            id={props.id}
+            ref={ref}
           >
-            <PrimaryAction label={label} icon={icon} selectable={selected}>
-              {children}
-            </PrimaryAction>
-          </span>
-          {!!trailingIcon && (
             <span
-              className="mdc-evolution-chip__cell mdc-evolution-chip__cell--trailing"
+              className="mdc-evolution-chip__cell mdc-evolution-chip__cell--primary"
               role="gridcell"
             >
-              <TrailingAction
-                icon={trailingIcon}
-                {...trailingActionEl.props({})}
-              />
+              <PrimaryAction label={label} icon={icon} selectable={selected}>
+                {children}
+              </PrimaryAction>
             </span>
-          )}
-        </Tag>
+            {!!trailingIcon && (
+              <span
+                className="mdc-evolution-chip__cell mdc-evolution-chip__cell--trailing"
+                role="gridcell"
+              >
+                <TrailingAction
+                  icon={trailingIcon}
+                  apiRef={setTrailingAction}
+                  {...trailingActionEl.props({})}
+                />
+              </span>
+            )}
+          </Tag>
+        </ActionContext.Provider>
       );
     })
   );

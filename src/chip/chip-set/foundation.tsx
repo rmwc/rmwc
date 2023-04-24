@@ -5,19 +5,19 @@ import { useFoundation } from '@rmwc/base';
 import {
   MDCChipSetAdapter,
   MDCChipSetFoundation,
-  MDCChipSetCssClasses,
-  MDCChipFactory,
-  MDCChip,
   ChipInteractionEvent,
   ChipNavigationEvent,
   ChipAnimationEvent,
   MDCChipEvents
 } from '@material/chips';
-import { useEffect } from 'react';
+import { useRef } from 'react';
+import { ChipApi } from '../chip';
 
 export const useChipSetFoundation = (
   props: ChipSetProps & ChipSetHTMLProps
 ) => {
+  const chipsRef = useRef<ChipApi[]>([]);
+
   const foundationWithElements = useFoundation({
     props,
     elements: {
@@ -26,10 +26,8 @@ export const useChipSetFoundation = (
     foundation: ({ rootEl, emit }) => {
       const rootHTML = rootEl.ref as HTMLElement;
 
-      const chips: MDCChip[] = [];
-
       const isIndexValid = (index: number): boolean => {
-        return index > -1 && index < chips.length;
+        return index > -1 && index < chipsRef.current.length;
       };
 
       return new MDCChipSetFoundation({
@@ -42,44 +40,44 @@ export const useChipSetFoundation = (
         getAttribute: (attrName) => rootHTML.getAttribute(attrName),
         getChipActionsAtIndex: (index) => {
           if (!isIndexValid(index)) return [];
-          return chips[index].getActions();
+          return chipsRef.current[index].getActions();
         },
-        getChipCount: () => chips.length,
+        getChipCount: () => chipsRef.current.length,
         getChipIdAtIndex: (index) => {
           if (!isIndexValid(index)) return '';
-          return chips[index].getElementID();
+          return chipsRef.current[index].getElementID();
         },
         getChipIndexById: (id) =>
-          chips.findIndex((chip) => chip.getElementID() === id),
+          chipsRef.current.findIndex((chip) => chip.getElementID() === id),
         isChipFocusableAtIndex: (index, action) => {
           if (!isIndexValid(index)) return false;
-          return chips[index].isActionFocusable(action);
+          return chipsRef.current[index].isActionFocusable(action);
         },
         isChipSelectableAtIndex: (index, action) => {
           if (!isIndexValid(index)) return false;
-          return chips[index].isActionSelectable(action);
+          return chipsRef.current[index].isActionSelectable(action);
         },
         isChipSelectedAtIndex: (index, action) => {
           if (!isIndexValid(index)) return false;
-          return chips[index].isActionSelected(action);
+          return chipsRef.current[index].isActionSelected(action);
         },
         removeChipAtIndex: (index) => {
           if (!isIndexValid(index)) return;
-          chips[index].destroy();
-          chips[index].remove();
-          chips.splice(index, 1);
+          chipsRef.current[index].destroy();
+          chipsRef.current[index].remove();
+          chipsRef.current.splice(index, 1);
         },
         setChipFocusAtIndex: (index, action, focus) => {
           if (!isIndexValid(index)) return;
-          chips[index].setActionFocus(action, focus);
+          chipsRef.current[index].setActionFocus(action, focus);
         },
         setChipSelectedAtIndex: (index, action, selected) => {
           if (!isIndexValid(index)) return;
-          chips[index].setActionSelected(action, selected);
+          chipsRef.current[index].setActionSelected(action, selected);
         },
         startChipAnimationAtIndex: (index, animation) => {
           if (!isIndexValid(index)) return;
-          chips[index].startAnimation(animation);
+          chipsRef.current[index].startAnimation(animation);
         }
       } as MDCChipSetAdapter);
     }
@@ -87,15 +85,28 @@ export const useChipSetFoundation = (
 
   const { foundation, rootEl } = foundationWithElements;
 
+  const registerChip = (chip: ChipApi) => {
+    chipsRef.current.push(chip);
+    chipsRef.current.sort((a, b) => a.getIndex() - b.getIndex());
+  };
+
+  const unregisterChip = (chip: ChipApi) => {
+    chipsRef.current.splice(chipsRef.current.indexOf(chip), 1);
+    chipsRef.current.sort((a, b) => a.getIndex() - b.getIndex());
+  };
+
   const handleChipAnimation = (event: ChipAnimationEvent) => {
+    console.log('animation');
     foundation.handleChipAnimation(event);
   };
 
-  const handleChipInteraction = (e: ChipInteractionEvent) => {
-    foundation.handleChipInteraction(e);
+  const handleChipInteraction = (event: ChipInteractionEvent) => {
+    console.log('interaction');
+    foundation.handleChipInteraction(event);
   };
 
   const handleChipNavigation = (event: ChipNavigationEvent) => {
+    console.log('navigation');
     foundation.handleChipNavigation(event);
   };
 
@@ -112,18 +123,5 @@ export const useChipSetFoundation = (
     handleChipNavigation as EventListener
   );
 
-  useEffect(() => {
-    const chipFactory: MDCChipFactory = (el: Element) => new MDCChip(el);
-
-    const chips: MDCChip[] = [];
-    const chipEls = (rootEl.ref as HTMLElement).querySelectorAll(
-      `.${MDCChipSetCssClasses.CHIP}`
-    );
-    for (let i = 0; i < chipEls.length; i++) {
-      const chip = chipFactory(chipEls[i]);
-      chips.push(chip);
-    }
-  }, [rootEl.ref]);
-
-  return { ...foundationWithElements };
+  return { ...foundationWithElements, registerChip, unregisterChip };
 };

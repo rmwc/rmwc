@@ -1,44 +1,52 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import * as RMWC from '@rmwc/types';
-import { ChipProps, ChipHTMLProps, ChipOnInteractionEventT } from './';
+import { ChipProps, ChipHTMLProps, ChipOnInteractionEventT, ChipApi } from './';
 import { useFoundation } from '@rmwc/base';
 import {
   MDCChipFoundation,
   MDCChipAdapter,
   MDCChipActionType,
   MDCChipActionFocusBehavior,
-  MDCChipAction
+  MDCChipAction,
+  MDCChipAnimation
 } from '@material/chips';
-import React, { useCallback, useRef } from 'react';
-import { TrailingActionApi } from '../action';
+import React, { useCallback, useEffect, useMemo, useRef } from 'react';
+import { ActionApi } from '../action';
+import { useChipContext } from '../chip-context';
 
 export const useChipFoundation = (props: ChipProps & ChipHTMLProps) => {
-  const trailingAction = useRef<TrailingActionApi | null>();
-  const setTrailingAction = (api: TrailingActionApi | null) => {
+  const trailingAction = useRef<MDCChipAction | null>(null);
+  const setTrailingAction = (api: MDCChipAction | null) => {
     trailingAction.current = api;
   };
+
+  const primaryAction = useRef<MDCChipAction | null>(null);
+  const setPrimaryAction = (api: MDCChipAction | null) => {
+    primaryAction.current = api;
+  };
+
+  const actions = new Map<MDCChipActionType, MDCChipAction | null>();
+  const actionsRef =
+    useRef<Map<MDCChipActionType, MDCChipAction | null>>(actions);
+
+  const chipContextApi = useChipContext();
 
   const foundationWithElements = useFoundation({
     props,
     elements: {
       rootEl: true,
       trailingIconEl: true,
-      trailingActionEl: true
+      trailingActionEl: true,
+      primaryActionEl: true
     },
-    foundation: ({ rootEl, emit, getProps, trailingActionEl }) => {
+    foundation: ({
+      rootEl,
+      emit,
+      getProps,
+      trailingActionEl,
+      primaryActionEl
+    }) => {
       const rootHTML = rootEl.ref as HTMLElement;
-      const actions = new Map<MDCChipActionType, MDCChipAction>();
-
-      // const actionFactory: MDCChipActionFactory = (el: Element) =>
-      //   new MDCChipAction(el);
-
-      // const actionEls = rootHTML.querySelectorAll(
-      //   '.mdc-evolution-chip__action'
-      // );
-      // for (let i = 0; i < actionEls.length; i++) {
-      //   const action = actionFactory(actionEls[i]);
-      //   actions.set(action.actionType(), action);
-      // }
 
       return new MDCChipFoundation({
         addClass: (className) => {
@@ -61,28 +69,28 @@ export const useChipFoundation = (props: ChipProps & ChipHTMLProps) => {
         getOffsetWidth: () => rootHTML.offsetWidth,
         hasClass: (className) => rootEl.hasClass(className),
         isActionSelectable: (actionType: MDCChipActionType) => {
-          const action = actions.get(actionType);
+          const action = actionsRef.current.get(actionType);
           if (action) {
             return action.isSelectable();
           }
           return false;
         },
         isActionSelected: (actionType: MDCChipActionType) => {
-          const action = actions.get(actionType);
+          const action = actionsRef.current.get(actionType);
           if (action) {
             return action.isSelected();
           }
           return false;
         },
         isActionFocusable: (actionType: MDCChipActionType) => {
-          const action = actions.get(actionType);
+          const action = actionsRef.current.get(actionType);
           if (action) {
             return action.isFocusable();
           }
           return false;
         },
         isActionDisabled: (actionType: MDCChipActionType) => {
-          const action = actions.get(actionType);
+          const action = actionsRef.current.get(actionType);
           if (action) {
             return action.isDisabled();
           }
@@ -100,7 +108,7 @@ export const useChipFoundation = (props: ChipProps & ChipHTMLProps) => {
           actionType: MDCChipActionType,
           isDisabled: boolean
         ) => {
-          const action = actions.get(actionType);
+          const action = actionsRef.current.get(actionType);
           if (action) {
             action.setDisabled(isDisabled);
           }
@@ -109,7 +117,7 @@ export const useChipFoundation = (props: ChipProps & ChipHTMLProps) => {
           actionType: MDCChipActionType,
           behavior: MDCChipActionFocusBehavior
         ) => {
-          const action = actions.get(actionType);
+          const action = actionsRef.current.get(actionType);
           if (action) {
             action.setFocus(behavior);
           }
@@ -118,7 +126,7 @@ export const useChipFoundation = (props: ChipProps & ChipHTMLProps) => {
           actionType: MDCChipActionType,
           isSelected: boolean
         ) => {
-          const action = actions.get(actionType);
+          const action = actionsRef.current.get(actionType);
           if (action) {
             action.setSelected(isSelected);
           }
@@ -133,6 +141,65 @@ export const useChipFoundation = (props: ChipProps & ChipHTMLProps) => {
   const { rootEl, foundation, trailingActionEl } = foundationWithElements;
 
   const { onClick, onKeyDown, onInteraction } = props;
+
+  const setAction = (action: ActionApi) => {
+    if (action.actionType === MDCChipActionType.TRAILING) {
+      return trailingAction.current;
+    } else if (action.actionType === MDCChipActionType.PRIMARY) {
+      return primaryAction.current;
+    } else {
+      return null;
+    }
+  };
+
+  const registerAction = (action: ActionApi) => {
+    actionsRef.current.set(action.actionType, setAction(action));
+  };
+
+  const unregisterAction = (action: ActionApi) => {
+    // actionsRef.current.splice(actionsRef.current.indexOf(action), 1);
+    actionsRef.current.delete(action.actionType);
+  };
+
+  const chipApi = useMemo<ChipApi>(() => {
+    return {
+      getIndex: () =>
+        rootEl.ref?.parentElement
+          ? Array.from(rootEl.ref.parentElement.children).indexOf(rootEl.ref)
+          : -1,
+      getActions: () => foundation.getActions(),
+      getElementID: () => foundation.getElementID(),
+      isActionFocusable: (action: MDCChipActionType) =>
+        foundation.isActionFocusable(action),
+      isActionSelectable: (action: MDCChipActionType) =>
+        foundation.isActionFocusable(action),
+      isActionSelected: (action: MDCChipActionType) =>
+        foundation.isActionSelectable(action),
+      destroy: () => {},
+      remove: () => {
+        const parent = rootEl.ref?.parentNode;
+        if (parent !== null || parent !== undefined) {
+          rootEl.ref && parent?.removeChild(rootEl.ref);
+        }
+      },
+      setActionFocus: (
+        action: MDCChipActionType,
+        focus: MDCChipActionFocusBehavior
+      ) => foundation.setActionFocus(action, focus),
+      setActionSelected: (action: MDCChipActionType, isSelected: boolean) =>
+        foundation.setActionSelected(action, isSelected),
+      startAnimation: (animation: MDCChipAnimation) =>
+        foundation.startAnimation(animation)
+    };
+  }, [rootEl.ref, foundation]);
+
+  useEffect(() => {
+    chipContextApi.registerChip(chipApi);
+
+    return () => {
+      chipContextApi.unregisterChip(chipApi);
+    };
+  }, [chipContextApi, chipApi]);
 
   const handleInteraction = useCallback(
     (
@@ -163,5 +230,11 @@ export const useChipFoundation = (props: ChipProps & ChipHTMLProps) => {
 
   trailingActionEl.setProp('onClick', remove, true);
 
-  return { setTrailingAction, ...foundationWithElements };
+  return {
+    setTrailingAction,
+    ...foundationWithElements,
+    registerAction,
+    unregisterAction,
+    setPrimaryAction
+  };
 };
