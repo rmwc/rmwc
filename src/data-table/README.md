@@ -17,48 +17,50 @@ Data tables display sets of data.
 The DataTable components are intended to be flexible, properly styled, Material compliant HTML tables. Because of the complexities of working with datasets (especially large ones), the DataTable component DOES NOT handle pagination, data fetching, sorting, or performance of long lists.
 
 ```jsx
-function Example() {
-  const [sortDir, setSortDir] = React.useState(null);
-  return (
-    <DataTable>
-      <DataTableContent>
-        <DataTableHead>
-          <DataTableRow>
-            <DataTableHeadCell>Item</DataTableHeadCell>
-            <DataTableHeadCell
-              alignEnd
-              sort={sortDir}
-              onSortChange={(sortDir) => {
-                setSortDir(sortDir);
-                console.log(sortDir);
-              }}
-            >
-              Quantity (Click Me)
-            </DataTableHeadCell>
-            <DataTableHeadCell alignEnd>Unit price</DataTableHeadCell>
-          </DataTableRow>
-        </DataTableHead>
-        <DataTableBody>
-          <DataTableRow>
-            <DataTableCell>Cookies</DataTableCell>
-            <DataTableCell alignEnd>25</DataTableCell>
-            <DataTableCell alignEnd>$2.90</DataTableCell>
-          </DataTableRow>
-          <DataTableRow selected>
-            <DataTableCell>Pizza</DataTableCell>
-            <DataTableCell alignEnd>50</DataTableCell>
-            <DataTableCell alignEnd>$1.25</DataTableCell>
-          </DataTableRow>
-          <DataTableRow>
-            <DataTableCell>Icecream</DataTableCell>
-            <DataTableCell alignEnd>10</DataTableCell>
-            <DataTableCell alignEnd>$2.35</DataTableCell>
-          </DataTableRow>
-        </DataTableBody>
-      </DataTableContent>
-    </DataTable>
-  );
-}
+<>
+  {function Example() {
+    const [sortDir, setSortDir] = React.useState(null);
+    return (
+      <DataTable>
+        <DataTableContent>
+          <DataTableHead>
+            <DataTableRow>
+              <DataTableHeadCell>Item</DataTableHeadCell>
+              <DataTableHeadCell
+                alignEnd
+                sort={sortDir}
+                onSortChange={(sortDir) => {
+                  setSortDir(sortDir);
+                  console.log(sortDir);
+                }}
+              >
+                Quantity (Click Me)
+              </DataTableHeadCell>
+              <DataTableHeadCell alignEnd>Unit price</DataTableHeadCell>
+            </DataTableRow>
+          </DataTableHead>
+          <DataTableBody>
+            <DataTableRow>
+              <DataTableCell>Cookies</DataTableCell>
+              <DataTableCell alignEnd>25</DataTableCell>
+              <DataTableCell alignEnd>$2.90</DataTableCell>
+            </DataTableRow>
+            <DataTableRow selected>
+              <DataTableCell>Pizza</DataTableCell>
+              <DataTableCell alignEnd>50</DataTableCell>
+              <DataTableCell alignEnd>$1.25</DataTableCell>
+            </DataTableRow>
+            <DataTableRow>
+              <DataTableCell>Icecream</DataTableCell>
+              <DataTableCell alignEnd>10</DataTableCell>
+              <DataTableCell alignEnd>$2.35</DataTableCell>
+            </DataTableRow>
+          </DataTableBody>
+        </DataTableContent>
+      </DataTable>
+    );
+  }}
+</>
 ```
 
 ## Scrollable / Sticky Rows and Columns
@@ -66,62 +68,64 @@ function Example() {
 You can set a fixed sized for your table container to make it scrollable. Additionally, you can specify `stickyRows` or `stickyColumns` to affix rows or columns. Currently, only 1 row / column is supported but more may be supported in a future release.
 
 ```jsx
-function Example() {
-  const [rows, setRows] = React.useState(0);
-  const [cols, setCols] = React.useState(0);
-  const sampleColumns = Array(7).fill(undefined);
-  const sampleRows = Array(50).fill(undefined);
+<>
+  {function Example() {
+    const [rows, setRows] = React.useState(0);
+    const [cols, setCols] = React.useState(0);
+    const sampleColumns = Array(7).fill(undefined);
+    const sampleRows = Array(50).fill(undefined);
 
-  return (
-    <>
-      <DataTable
-        style={{ height: '300px', width: '375px' }}
-        stickyRows={rows}
-        stickyColumns={cols}
-      >
-        <DataTableContent>
-          <DataTableHead>
-            <DataTableRow>
-              <DataTableHeadCell>Label</DataTableHeadCell>
-              {sampleColumns.map((v, i) => (
-                <DataTableHeadCell key={i}>Header</DataTableHeadCell>
-              ))}
-            </DataTableRow>
-          </DataTableHead>
-          <DataTableBody>
-            {sampleRows.map((v, i) => (
-              <DataTableRow key={i}>
-                <DataTableCell>Label</DataTableCell>
-                <DataTableCell>R{i} C1</DataTableCell>
-                <DataTableCell>R{i} C2</DataTableCell>
-                <DataTableCell>R{i} C3</DataTableCell>
-                <DataTableCell>R{i} C4</DataTableCell>
-                <DataTableCell>R{i} C5</DataTableCell>
-                <DataTableCell>R{i} C6</DataTableCell>
-                <DataTableCell>R{i} C7</DataTableCell>
+    return (
+      <>
+        <DataTable
+          style={{ height: '300px', width: '375px' }}
+          stickyRows={rows}
+          stickyColumns={cols}
+        >
+          <DataTableContent>
+            <DataTableHead>
+              <DataTableRow>
+                <DataTableHeadCell>Label</DataTableHeadCell>
+                {sampleColumns.map((v, i) => (
+                  <DataTableHeadCell key={i}>Header</DataTableHeadCell>
+                ))}
               </DataTableRow>
-            ))}
-          </DataTableBody>
-        </DataTableContent>
-      </DataTable>
+            </DataTableHead>
+            <DataTableBody>
+              {sampleRows.map((v, i) => (
+                <DataTableRow key={i}>
+                  <DataTableCell>Label</DataTableCell>
+                  <DataTableCell>R{i} C1</DataTableCell>
+                  <DataTableCell>R{i} C2</DataTableCell>
+                  <DataTableCell>R{i} C3</DataTableCell>
+                  <DataTableCell>R{i} C4</DataTableCell>
+                  <DataTableCell>R{i} C5</DataTableCell>
+                  <DataTableCell>R{i} C6</DataTableCell>
+                  <DataTableCell>R{i} C7</DataTableCell>
+                </DataTableRow>
+              ))}
+            </DataTableBody>
+          </DataTableContent>
+        </DataTable>
 
-      <div className="doc-controls">
-        <Select
-          label="Sticky Rows"
-          options={['0', '1']}
-          value={String(rows)}
-          onChange={(evt) => setRows(Number(evt.currentTarget.value))}
-        />
-        <Select
-          label="Sticky Cols"
-          options={['0', '1']}
-          value={String(cols)}
-          onChange={(evt) => setCols(Number(evt.currentTarget.value))}
-        />
-      </div>
-    </>
-  );
-}
+        <div className="doc-controls">
+          <Select
+            label="Sticky Rows"
+            options={['0', '1']}
+            value={String(rows)}
+            onChange={(evt) => setRows(Number(evt.currentTarget.value))}
+          />
+          <Select
+            label="Sticky Cols"
+            options={['0', '1']}
+            value={String(cols)}
+            onChange={(evt) => setCols(Number(evt.currentTarget.value))}
+          />
+        </div>
+      </>
+    );
+  }}
+</>
 ```
 
 ## Form Controls
@@ -129,54 +133,56 @@ function Example() {
 DataTables play nice with the rest of the RMWC form controls. You are responsible for scripting your own selection behavior.
 
 ```jsx
-function Example() {
-  const [checked, setChecked] = React.useState({});
-  const sampleRows = new Array(5).fill(undefined);
+<>
+  {function Example() {
+    const [checked, setChecked] = React.useState({});
+    const sampleRows = new Array(5).fill(undefined);
 
-  return (
-    <DataTable>
-      <DataTableContent>
-        <DataTableHead>
-          <DataTableRow>
-            <DataTableHeadCell hasFormControl>
-              <Checkbox />
-            </DataTableHeadCell>
-            <DataTableHeadCell>Label</DataTableHeadCell>
-            <DataTableHeadCell>Header</DataTableHeadCell>
-            <DataTableHeadCell>Header</DataTableHeadCell>
-            <DataTableHeadCell>Toggle</DataTableHeadCell>
-          </DataTableRow>
-        </DataTableHead>
-        <DataTableBody>
-          {sampleRows.map((v, i) => (
-            <DataTableRow key={i} selected={checked[i]}>
-              <DataTableCell hasFormControl>
-                <Checkbox
-                  checked={checked[i]}
-                  onChange={(evt) => {
-                    checked[i] = evt.currentTarget.checked;
-                    setChecked({ ...checked });
-                  }}
-                />
-              </DataTableCell>
-              <DataTableCell>Label</DataTableCell>
-              <DataTableCell>
-                <Select
-                  placeholder="--Select--"
-                  options={['Cookies', 'Pizza', 'Icecream']}
-                />
-              </DataTableCell>
-              <DataTableCell>R{i} C3</DataTableCell>
-              <DataTableCell>
-                <Switch />
-              </DataTableCell>
+    return (
+      <DataTable>
+        <DataTableContent>
+          <DataTableHead>
+            <DataTableRow>
+              <DataTableHeadCell hasFormControl>
+                <Checkbox />
+              </DataTableHeadCell>
+              <DataTableHeadCell>Label</DataTableHeadCell>
+              <DataTableHeadCell>Header</DataTableHeadCell>
+              <DataTableHeadCell>Header</DataTableHeadCell>
+              <DataTableHeadCell>Toggle</DataTableHeadCell>
             </DataTableRow>
-          ))}
-        </DataTableBody>
-      </DataTableContent>
-    </DataTable>
-  );
-}
+          </DataTableHead>
+          <DataTableBody>
+            {sampleRows.map((v, i) => (
+              <DataTableRow key={i} selected={checked[i]}>
+                <DataTableCell hasFormControl>
+                  <Checkbox
+                    checked={checked[i]}
+                    onChange={(evt) => {
+                      checked[i] = evt.currentTarget.checked;
+                      setChecked({ ...checked });
+                    }}
+                  />
+                </DataTableCell>
+                <DataTableCell>Label</DataTableCell>
+                <DataTableCell>
+                  <Select
+                    placeholder="--Select--"
+                    options={['Cookies', 'Pizza', 'Icecream']}
+                  />
+                </DataTableCell>
+                <DataTableCell>R{i} C3</DataTableCell>
+                <DataTableCell>
+                  <Switch />
+                </DataTableCell>
+              </DataTableRow>
+            ))}
+          </DataTableBody>
+        </DataTableContent>
+      </DataTable>
+    );
+  }}
+</>
 ```
 
 ## Simplified Usage

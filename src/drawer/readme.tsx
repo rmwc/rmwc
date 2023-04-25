@@ -55,13 +55,62 @@ export default function Readme() {
       </DocsP>
 
       <DocsExample>
-        {function Example() {
-          const [open, setOpen] = React.useState(false);
+        <>
+          {function Example() {
+            const [open, setOpen] = React.useState(false);
 
-          return (
-            <>
-              <div style={{ overflow: 'hidden', position: 'relative' }}>
-                <Drawer dismissible open={open}>
+            return (
+              <>
+                <div style={{ overflow: 'hidden', position: 'relative' }}>
+                  <Drawer dismissible open={open}>
+                    <DrawerHeader>
+                      <DrawerTitle>DrawerHeader</DrawerTitle>
+                      <DrawerSubtitle>Subtitle</DrawerSubtitle>
+                    </DrawerHeader>
+                    <DrawerContent>
+                      <List>
+                        <ListItem>Cookies</ListItem>
+                        <ListItem>Pizza</ListItem>
+                        <ListItem>Icecream</ListItem>
+                      </List>
+                    </DrawerContent>
+                  </Drawer>
+
+                  {/* Optional DrawerAppContent */}
+                  <DrawerAppContent
+                    style={{ minHeight: '15rem', padding: '1rem' }}
+                  >
+                    DrawerAppContent is an optional component that will resize
+                    content when the dismissible drawer is open and closed. It
+                    must be placed directly after the Drawer component.
+                  </DrawerAppContent>
+                </div>
+
+                <div style={{ textAlign: 'center' }}>
+                  <Button onClick={() => setOpen(!open)} raised>
+                    Toggle Dismissible
+                  </Button>
+                </div>
+              </>
+            );
+          }}
+        </>
+      </DocsExample>
+
+      <DocsSubtitle>Modal</DocsSubtitle>
+      <DocsP>
+        These are drawers that can be temporarily displayed fixed on the side of
+        the entire viewport.
+      </DocsP>
+
+      <DocsExample>
+        <>
+          {function Example() {
+            const [open, setOpen] = React.useState(false);
+
+            return (
+              <>
+                <Drawer modal open={open} onClose={() => setOpen(false)}>
                   <DrawerHeader>
                     <DrawerTitle>DrawerHeader</DrawerTitle>
                     <DrawerSubtitle>Subtitle</DrawerSubtitle>
@@ -75,58 +124,13 @@ export default function Readme() {
                   </DrawerContent>
                 </Drawer>
 
-                {/* Optional DrawerAppContent */}
-                <DrawerAppContent
-                  style={{ minHeight: '15rem', padding: '1rem' }}
-                >
-                  DrawerAppContent is an optional component that will resize
-                  content when the dismissible drawer is open and closed. It
-                  must be placed directly after the Drawer component.
-                </DrawerAppContent>
-              </div>
-
-              <div style={{ textAlign: 'center' }}>
                 <Button onClick={() => setOpen(!open)} raised>
-                  Toggle Dismissible
+                  Toggle Modal
                 </Button>
-              </div>
-            </>
-          );
-        }}
-      </DocsExample>
-
-      <DocsSubtitle>Modal</DocsSubtitle>
-      <DocsP>
-        These are drawers that can be temporarily displayed fixed on the side of
-        the entire viewport.
-      </DocsP>
-
-      <DocsExample>
-        {function Example() {
-          const [open, setOpen] = React.useState(false);
-
-          return (
-            <>
-              <Drawer modal open={open} onClose={() => setOpen(false)}>
-                <DrawerHeader>
-                  <DrawerTitle>DrawerHeader</DrawerTitle>
-                  <DrawerSubtitle>Subtitle</DrawerSubtitle>
-                </DrawerHeader>
-                <DrawerContent>
-                  <List>
-                    <ListItem>Cookies</ListItem>
-                    <ListItem>Pizza</ListItem>
-                    <ListItem>Icecream</ListItem>
-                  </List>
-                </DrawerContent>
-              </Drawer>
-
-              <Button onClick={() => setOpen(!open)} raised>
-                Toggle Modal
-              </Button>
-            </>
-          );
-        }}
+              </>
+            );
+          }}
+        </>
       </DocsExample>
 
       <DocsSubtitle>Right Side Drawers</DocsSubtitle>
@@ -139,39 +143,41 @@ export default function Readme() {
       </DocsP>
 
       <DocsExample>
-        {function Example() {
-          const [open, setOpen] = React.useState(false);
+        <>
+          {function Example() {
+            const [open, setOpen] = React.useState(false);
 
-          return (
-            <>
-              {/** Make the drawer appear right-to-left */}
-              <Drawer
-                dir="rtl"
-                modal
-                open={open}
-                onClose={() => setOpen(false)}
-              >
-                {/** Set the content back to left-to-right */}
-                <DrawerHeader dir="ltr">
-                  <DrawerTitle>Right Drawer</DrawerTitle>
-                  <DrawerSubtitle>Subtitle</DrawerSubtitle>
-                </DrawerHeader>
+            return (
+              <>
+                {/** Make the drawer appear right-to-left */}
+                <Drawer
+                  dir="rtl"
+                  modal
+                  open={open}
+                  onClose={() => setOpen(false)}
+                >
+                  {/** Set the content back to left-to-right */}
+                  <DrawerHeader dir="ltr">
+                    <DrawerTitle>Right Drawer</DrawerTitle>
+                    <DrawerSubtitle>Subtitle</DrawerSubtitle>
+                  </DrawerHeader>
 
-                <DrawerContent dir="ltr">
-                  <List>
-                    <ListItem>Cookies</ListItem>
-                    <ListItem>Pizza</ListItem>
-                    <ListItem>Icecream</ListItem>
-                  </List>
-                </DrawerContent>
-              </Drawer>
+                  <DrawerContent dir="ltr">
+                    <List>
+                      <ListItem>Cookies</ListItem>
+                      <ListItem>Pizza</ListItem>
+                      <ListItem>Icecream</ListItem>
+                    </List>
+                  </DrawerContent>
+                </Drawer>
 
-              <Button onClick={() => setOpen(!open)} raised>
-                Toggle Right Drawer
-              </Button>
-            </>
-          );
-        }}
+                <Button onClick={() => setOpen(!open)} raised>
+                  Toggle Right Drawer
+                </Button>
+              </>
+            );
+          }}
+        </>
       </DocsExample>
 
       <DocProps

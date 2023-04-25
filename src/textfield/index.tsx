@@ -168,7 +168,7 @@ export const TextField: RMWC.ComponentType<
         {helpText && shouldSpread ? (
           <TextFieldHelperText {...(helpText as any)} />
         ) : (
-          <TextFieldHelperText>{helpText}</TextFieldHelperText>
+          <TextFieldHelperText>{helpText as any}</TextFieldHelperText>
         )}
         {!textarea && renderedCharacterCounter}
       </div>

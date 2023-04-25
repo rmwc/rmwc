@@ -15,34 +15,36 @@ Dialogs inform users about a specific task and may contain critical information,
 ## Standard Usage
 
 ```jsx
-function Example() {
-  const [open, setOpen] = React.useState(false);
-  return (
-    <>
-      <Dialog
-        open={open}
-        onClose={(evt) => {
-          console.log(evt.detail.action);
-          setOpen(false);
-        }}
-        onClosed={(evt) => console.log(evt.detail.action)}
-      >
-        <DialogTitle>Dialog Title</DialogTitle>
-        <DialogContent>This is a standard dialog.</DialogContent>
-        <DialogActions>
-          <DialogButton action="close">Cancel</DialogButton>
-          <DialogButton action="accept" isDefaultAction>
-            Sweet!
-          </DialogButton>
-        </DialogActions>
-      </Dialog>
+<>
+  {function Example() {
+    const [open, setOpen] = React.useState(false);
+    return (
+      <>
+        <Dialog
+          open={open}
+          onClose={(evt) => {
+            console.log(evt.detail.action);
+            setOpen(false);
+          }}
+          onClosed={(evt) => console.log(evt.detail.action)}
+        >
+          <DialogTitle>Dialog Title</DialogTitle>
+          <DialogContent>This is a standard dialog.</DialogContent>
+          <DialogActions>
+            <DialogButton action="close">Cancel</DialogButton>
+            <DialogButton action="accept" isDefaultAction>
+              Sweet!
+            </DialogButton>
+          </DialogActions>
+        </Dialog>
 
-      <Button raised onClick={() => setOpen(true)}>
-        Open standard Dialog
-      </Button>
-    </>
-  );
-}
+        <Button raised onClick={() => setOpen(true)}>
+          Open standard Dialog
+        </Button>
+      </>
+    );
+  }}
+</>
 ```
 
 ## Simplified Usage
@@ -50,26 +52,28 @@ function Example() {
 Material Dialogs are a complex component. RMWC contains an additional `SimpleDialog` component for ease of use that internally contains the default structure already built out. Illustrated below is both the standard and simple dialog usage.
 
 ```jsx
-function Example() {
-  const [open, setOpen] = React.useState(false);
-  return (
-    <>
-      <SimpleDialog
-        title="This is a simple dialog"
-        body="You can pass the body prop or children."
-        open={open}
-        onClose={(evt) => {
-          console.log(evt.detail.action);
-          setOpen(false);
-        }}
-      />
+<>
+  {function Example() {
+    const [open, setOpen] = React.useState(false);
+    return (
+      <>
+        <SimpleDialog
+          title="This is a simple dialog"
+          body="You can pass the body prop or children."
+          open={open}
+          onClose={(evt) => {
+            console.log(evt.detail.action);
+            setOpen(false);
+          }}
+        />
 
-      <Button raised onClick={() => setOpen(true)}>
-        Open Simple Dialog
-      </Button>
-    </>
-  );
-}
+        <Button raised onClick={() => setOpen(true)}>
+          Open Simple Dialog
+        </Button>
+      </>
+    );
+  }}
+</>
 ```
 
 ## Usage with DialogQueue
@@ -151,46 +155,48 @@ queue.prompt({
 ```
 
 ```jsx
-() => {
-  const { dialogs, alert, confirm, prompt } = createDialogQueue();
+<>
+  {() => {
+    const { dialogs, alert, confirm, prompt } = createDialogQueue();
 
-  function App() {
-    const [response, setResponse] = React.useState('____________');
+    function App() {
+      const [response, setResponse] = React.useState('____________');
 
-    const fireAlert = () =>
-      alert({ title: 'Hello!' }).then((res) => setResponse(res));
+      const fireAlert = () =>
+        alert({ title: 'Hello!' }).then((res) => setResponse(res));
 
-    const fireConfirm = () =>
-      confirm({}).then((res) => setResponse(res));
+      const fireConfirm = () =>
+        confirm({}).then((res) => setResponse(res));
 
-    const firePrompt = () =>
-      prompt({ inputProps: { outlined: true } }).then((res) =>
-        setResponse(res)
+      const firePrompt = () =>
+        prompt({ inputProps: { outlined: true } }).then((res) =>
+          setResponse(res)
+        );
+
+      return (
+        <div>
+          <Button label="Alert" onClick={fireAlert} />
+          <Button label="Confirm" onClick={fireConfirm} />
+          <Button label="Prompt" onClick={firePrompt} />
+          <Button
+            label="In Sequence"
+            onClick={() => {
+              fireAlert();
+              fireConfirm();
+              firePrompt();
+            }}
+          />
+
+          <p>
+            Response: <b>{String(response)}</b>
+          </p>
+          <DialogQueue dialogs={dialogs} />
+        </div>
       );
-
-    return (
-      <div>
-        <Button label="Alert" onClick={fireAlert} />
-        <Button label="Confirm" onClick={fireConfirm} />
-        <Button label="Prompt" onClick={firePrompt} />
-        <Button
-          label="In Sequence"
-          onClick={() => {
-            fireAlert();
-            fireConfirm();
-            firePrompt();
-          }}
-        />
-
-        <p>
-          Response: <b>{String(response)}</b>
-        </p>
-        <DialogQueue dialogs={dialogs} />
-      </div>
-    );
-  }
-  return <App />;
-}
+    }
+    return <App />;
+  }}
+</>
 ```
 
 ## Rendering through Portals
@@ -223,55 +229,57 @@ You can specify any element or selector you want, but the simplest method is to 
 Now you can use the `renderToPortal` prop. Below is a contrived example of a dialog being cut off due to `overflow: hidden`.
 
 ```jsx
-function Example() {
-  const [renderToPortal, setRenderToPortal] = React.useState(true);
-  const [open, setOpen] = React.useState(false);
-  return (
-    <>
-      <div
-        id="dialog-portal-example"
-        style={{
-          transform: 'translateZ(0)',
-          height: '20rem',
-          overflow: 'hidden'
-        }}
-      >
-        <SimpleDialog
-          title={`This is a ${
-            renderToPortal ? 'working!' : 'broken :/'
-          }`}
-          renderToPortal={renderToPortal}
-          body="Use `renderToPortal` to get around `overflow:hidden` and layout issues."
-          open={open}
-          onClose={(evt) => {
-            console.log(evt.detail.action);
-            setOpen(false);
-          }}
-        />
-
-        <Button
-          raised
-          onClick={() => {
-            setRenderToPortal(false);
-            setOpen(true);
+<>
+  {function Example() {
+    const [renderToPortal, setRenderToPortal] = React.useState(true);
+    const [open, setOpen] = React.useState(false);
+    return (
+      <>
+        <div
+          id="dialog-portal-example"
+          style={{
+            transform: 'translateZ(0)',
+            height: '20rem',
+            overflow: 'hidden'
           }}
         >
-          Open Broken :/
-        </Button>
+          <SimpleDialog
+            title={`This is a ${
+              renderToPortal ? 'working!' : 'broken :/'
+            }`}
+            renderToPortal={renderToPortal}
+            body="Use `renderToPortal` to get around `overflow:hidden` and layout issues."
+            open={open}
+            onClose={(evt) => {
+              console.log(evt.detail.action);
+              setOpen(false);
+            }}
+          />
 
-        <Button
-          raised
-          onClick={() => {
-            setRenderToPortal(true);
-            setOpen(true);
-          }}
-        >
-          Open in Portal
-        </Button>
-      </div>
-    </>
-  );
-}
+          <Button
+            raised
+            onClick={() => {
+              setRenderToPortal(false);
+              setOpen(true);
+            }}
+          >
+            Open Broken :/
+          </Button>
+
+          <Button
+            raised
+            onClick={() => {
+              setRenderToPortal(true);
+              setOpen(true);
+            }}
+          >
+            Open in Portal
+          </Button>
+        </div>
+      </>
+    );
+  }}
+</>
 ```
 
 ## Dialog
