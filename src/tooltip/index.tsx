@@ -19,7 +19,7 @@ export type TooltipAlignT =
 export interface TooltipProps {
   /** The overlay content for the tooltip. */
   content: React.ReactNode;
-  /** The children that the tooltip belongs to. Must be a single React.child. */
+  /** The children that the tooltip belongs to. Must be a single React element. */
   children:
     | React.ReactElement<any, string | React.JSXElementConstructor<any>>
     | undefined;
