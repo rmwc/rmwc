@@ -5,6 +5,9 @@ on:
     branches: [master, next]
     types: [opened, reopened]
 
+permissions:
+  contents: write
+
 jobs:
   version:
     runs-on: ubuntu-latest
@@ -14,8 +17,9 @@ jobs:
         with:
           ref: ${{ github.head_ref }}
       - name: Setup Git
-      - run: git config --global user.email "ci@rmwc.io"
-      - run: git config --global user.name "RMWC CI"
+        run: | 
+          git config --global user.email "ci@rmwc.io"
+          git config --global user.name "RMWC CI"
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
