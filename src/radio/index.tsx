@@ -40,7 +40,7 @@ export const Radio: RMWC.ComponentType<
   const radio = (
     <RadioRoot
       {...rootEl.props(toggleRootProps)}
-      ref={mergeRefs(rootEl.setRef, ref)}
+      ref={mergeRefs(rootEl.reactRef, ref)}
     >
       <input
         {...rest}

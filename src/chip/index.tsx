@@ -99,7 +99,8 @@ export const Chip: RMWC.ComponentType<
         {!!icon && (
           <ChipIcon icon={icon} leading hidden={selected && checkmark} />
         )}
-        {!!checkmark && <ChipCheckmark ref={checkmarkEl.setRef} />}
+        {!!checkmark && <ChipCheckmark
+          ref={checkmarkEl.reactRef as React.Ref<HTMLDivElement>} />}
         <span role="gridcell">
           <span
             role="button"

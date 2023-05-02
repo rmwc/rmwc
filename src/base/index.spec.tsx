@@ -15,7 +15,11 @@ import { wait } from './utils/test-utils';
 import { Dialog, DialogContent } from '@rmwc/dialog';
 import userEvent from '@testing-library/user-event';
 import { Button } from '@rmwc/button';
-import { PortalContext, portalContextDefaultValues, PortalProvider } from './PortalContext';
+import {
+  PortalContext,
+  portalContextDefaultValues,
+  PortalProvider
+} from './PortalContext';
 
 jest.spyOn(console, 'warn');
 
@@ -45,7 +49,7 @@ describe('FoundationElement', () => {
       root: new FoundationElement(() => {})
     };
 
-    render(<div ref={inst.root.setRef} />);
+    render(<div ref={inst.root.reactRef} />);
 
     expect(inst.root.ref instanceof HTMLDivElement).toBe(true);
   });

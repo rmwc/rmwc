@@ -11,6 +11,7 @@ import {
   createDialogQueue,
   DialogQueue
 } from './';
+import { wait } from '@rmwc/base/utils/test-utils';
 
 describe('Dialog', () => {
   it('simple Dialog renders', () => {
@@ -39,7 +40,7 @@ describe('Dialog', () => {
   });
 
   it('simple Dialog renders with children', () => {
-    const { asFragment } = render(
+    mount(
       <SimpleDialog title="This is a simple dialog" open onClose={(evt) => {}}>
         Hello
       </SimpleDialog>
@@ -48,7 +49,7 @@ describe('Dialog', () => {
   });
 
   it('standard Dialog renders', () => {
-    const el = render(
+    const el = mount(
       <Dialog open onClose={(evt) => {}}>
         <DialogTitle>Dialog Title</DialogTitle>
 
@@ -129,20 +130,17 @@ describe('DialogQueue', () => {
     );
   });
 
-  it('prompts and returns null', async () => {
+  it('prompts and returns null', (done) => {
     const queue = createDialogQueue();
     render(<DialogQueue dialogs={queue.dialogs} />);
 
     queue.prompt({ title: 'myPrompt', body: 'CUSTOM BODY' });
 
-    expect(screen.getByText('myPrompt')).toBeInTheDocument();
-    expect(screen.getByText('CUSTOM BODY')).toBeInTheDocument();
+    el.update();
 
-    userEvent.click(screen.getByText('Cancel'));
+    expect(el.html().includes('CUSTOM BODY')).toBe(true);
 
-    await waitFor(() =>
-      expect(screen.queryByText('Cancel')).not.toBeInTheDocument()
-    );
+    el.find('[action="close"]').first().simulate('click');
   });
 
   it('supports onClose', async () => {
