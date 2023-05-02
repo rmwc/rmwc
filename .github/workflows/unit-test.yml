@@ -6,6 +6,9 @@ on:
   pull_request:
     branches: [master, next]
 
+permissions:
+  contents: read
+
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -23,4 +26,4 @@ jobs:
         env:
           CI: true
       - name: Codecov
-        uses: codecov/codecov-action@v2
+        uses: codecov/codecov-action@v3
