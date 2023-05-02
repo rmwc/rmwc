@@ -49,7 +49,7 @@ export interface SelectProps {
   /** Makes the Select required.  */
   required?: boolean;
   /** Renders a non native / enhanced dropdown */
-  enhanced?: boolean | MenuProps;
+  enhanced?: boolean | (MenuProps & { ref?: React.Ref<HTMLElement> });
   /** Props for the root element. By default, additional props spread to the native select element.  */
   rootProps?: Object;
   /** A reference to the native select element. Not applicable when `enhanced` is true. */
@@ -200,7 +200,7 @@ interface EnhancedMenuProps extends MenuProps {
   children?: React.ReactNode;
 }
 
-function EnhancedMenu(props: EnhancedMenuProps & SelectHTMLProps) {
+const EnhancedMenu = React.forwardRef((props: EnhancedMenuProps & SelectHTMLProps, ref: React.Ref<HTMLElement>) => {
   const {
     selectOptions,
     menuApiRef,
@@ -241,7 +241,7 @@ function EnhancedMenu(props: EnhancedMenuProps & SelectHTMLProps) {
   };
 
   return (
-    <Menu {...rest} apiRef={menuApiRef} className={className} focusOnOpen>
+    <Menu {...rest} ref={ref} apiRef={menuApiRef} className={className} focusOnOpen>
       {!!props.placeholder && (
         <MenuItem
           selected={currentIndex - 1 === selectedIndex}
