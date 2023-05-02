@@ -166,45 +166,43 @@ export class FoundationElement<Props extends {}, ElementType = HTMLElement> {
   /**************************************************
    * Refs
    **************************************************/
-  readonly reactRef = React.createRef<ElementType>();
-  get ref(): ElementType | null {
+  readonly reactRef = React.createRef<HTMLDivElement>();
+  get ref(): HTMLDivElement | null {
     return this.reactRef.current;
   }
 }
 
-const emitFactory = (props: { [key: string]: any }) => (
-  evtType: string,
-  evtData: any,
-  shouldBubble: boolean = false
-) => {
-  let evt;
+const emitFactory =
+  (props: { [key: string]: any }) =>
+  (evtType: string, evtData: any, shouldBubble: boolean = false) => {
+    let evt;
 
-  evt = new CustomEvent(evtType, {
-    detail: evtData,
-    bubbles: shouldBubble
-  });
+    evt = new CustomEvent(evtType, {
+      detail: evtData,
+      bubbles: shouldBubble
+    });
 
-  // bugfix for events coming from form elements
-  // and also fits with reacts form pattern better...
-  // This should always otherwise be null since there is no target
-  // for Custom Events
-  Object.defineProperty(evt, 'target', {
-    value: evtData,
-    writable: false
-  });
+    // bugfix for events coming from form elements
+    // and also fits with reacts form pattern better...
+    // This should always otherwise be null since there is no target
+    // for Custom Events
+    Object.defineProperty(evt, 'target', {
+      value: evtData,
+      writable: false
+    });
 
-  Object.defineProperty(evt, 'currentTarget', {
-    value: evtData,
-    writable: false
-  });
+    Object.defineProperty(evt, 'currentTarget', {
+      value: evtData,
+      writable: false
+    });
 
-  // Custom handling for React
-  const propName = evtType;
+    // Custom handling for React
+    const propName = evtType;
 
-  props[propName] && props[propName](evt);
+    props[propName] && props[propName](evt);
 
-  return evt;
-};
+    return evt;
+  };
 
 export const useFoundation = <
   Foundation extends MDCFoundation<any>,
