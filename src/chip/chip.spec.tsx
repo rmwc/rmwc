@@ -71,6 +71,19 @@ describe('Chip', () => {
     await waitFor(() => expect(onRemove).toHaveBeenCalledTimes(1));
   });
 
+  it('handles onInteraction', async () => {
+    const onInteraction = jest.fn();
+    render(
+      <ChipSet>
+        <Chip label="my label" onInteraction={onInteraction} id="1" />
+      </ChipSet>
+    );
+
+    userEvent.click(screen.getByText('my label'));
+
+    await waitFor(() => expect(onInteraction).toHaveBeenCalledTimes(1));
+  });
+
   it('handles custom ChipIcon', () => {
     render(<Chip icon="favorite" />);
 

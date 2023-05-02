@@ -1,7 +1,12 @@
 import React from 'react';
 import * as RMWC from '@rmwc/types';
 import { createComponent, Tag } from '@rmwc/base';
-import { MDCChipTrailingActionFoundation } from '@material/chips';
+import {
+  MDCChipActionFocusBehavior,
+  MDCChipActionType,
+  MDCChipPrimaryActionFoundation,
+  MDCChipTrailingActionFoundation
+} from '@material/chips';
 import { IconPropT } from '@rmwc/types';
 import { usePrimaryActionFoundation } from './foundation';
 import { ChipOnInteractionEventT } from '../chip';
@@ -15,7 +20,12 @@ export type ActionHTMLProps = RMWC.HTMLProps<
   Omit<React.AllHTMLAttributes<HTMLButtonElement>, 'label'>
 >;
 
+export interface PrimaryActionApi {
+  getFoundation: () => MDCChipPrimaryActionFoundation;
+}
+
 export interface PrimaryActionProps {
+  apiRef?: (api: PrimaryActionApi | null) => void;
   deletable?: boolean;
   href?: string;
   icon?: IconPropT;
@@ -25,13 +35,24 @@ export interface PrimaryActionProps {
   children?: React.ReactNode;
 }
 
+export type ActionApi = {
+  actionType: MDCChipActionType;
+  isSelectAble: () => boolean;
+  isSelected: () => boolean;
+  isFocusable: () => void;
+  isDisabled: () => void;
+  setDisabled: (isDisabled: boolean) => void;
+  setFocus: (behavior: MDCChipActionFocusBehavior) => void;
+  setSelected: (isSelected: boolean) => void;
+};
+
 /** The trailing action is used in removable input chips.
  * It is a subcomponent of the chips and intended only for use in the context of a chip. */
 export const PrimaryAction = createComponent<
   PrimaryActionProps,
   ActionHTMLProps
 >(function PrimaryAction(props, ref) {
-  const { rootEl } = usePrimaryActionFoundation(props);
+  const { rootEl } = usePrimaryActionFoundation(props, 'primary');
 
   const shouldShowGraphic = !!props.icon || !!props.selectable;
 
@@ -92,13 +113,15 @@ export interface TrailingActionProps {
   apiRef?: (api: TrailingActionApi | null) => void;
   icon?: RMWC.IconPropT;
   remove?: () => void;
+  onInteraction?: (evt: ChipOnInteractionEventT) => void;
 }
 
 export const TrailingAction = createComponent<
   TrailingActionProps,
   ActionHTMLProps
 >(function TrailingAction(props, ref) {
-  const { rootEl } = usePrimaryActionFoundation(props);
+  // @ts-ignore
+  const { rootEl } = usePrimaryActionFoundation(props, 'trailing');
   return (
     <Tag
       {...props}

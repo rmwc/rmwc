@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import * as RMWC from '@rmwc/types';
 import { createComponent, Tag, useClassNames } from '@rmwc/base';
 import { useChipSetFoundation } from './foundation';
+import { ChipContext, ChipContextT } from '../chip-context';
 
 /*********************************************************************
  * Chip Set
@@ -29,7 +30,7 @@ export const ChipSet: RMWC.ComponentType<
   props,
   ref
 ) {
-  const { rootEl } = useChipSetFoundation(props);
+  const { rootEl, registerChip, unregisterChip } = useChipSetFoundation(props);
 
   const { overflow, role = 'grid', ...rest } = props;
 
@@ -44,19 +45,26 @@ export const ChipSet: RMWC.ComponentType<
     'aria-orientation': 'horizontal'
   };
 
+  const contextApi = useRef<ChipContextT>({
+    registerChip,
+    unregisterChip
+  });
+
   return (
-    <Tag
-      tag="span"
-      element={rootEl}
-      {...rest}
-      ref={ref}
-      className={className}
-      role={role}
-      {...(role === 'listbox' && otherProps)}
-    >
-      <span className="mdc-evolution-chip-set__chips" role="presentation">
-        {props.children}
-      </span>
-    </Tag>
+    <ChipContext.Provider value={contextApi.current}>
+      <Tag
+        {...rest}
+        tag="span"
+        ref={ref}
+        className={className}
+        role={role}
+        element={rootEl}
+        {...(role === 'listbox' && otherProps)}
+      >
+        <span className="mdc-evolution-chip-set__chips" role="presentation">
+          {props.children}
+        </span>
+      </Tag>
+    </ChipContext.Provider>
   );
 });
