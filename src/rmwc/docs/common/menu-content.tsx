@@ -24,6 +24,7 @@ import { galleryExample as gridListExample } from '@rmwc/grid-list/readme';
 import { galleryExample as imageListExample } from '@rmwc/image-list/readme';
 import { galleryExample as checkboxExample } from '@rmwc/checkbox/readme';
 import { galleryExample as radioExample } from '@rmwc/radio/readme';
+import { galleryExample as segmentedButtonExample } from '@rmwc/segmented-button/readme';
 import { galleryExample as selectExample } from '@rmwc/select/readme';
 import { galleryExample as sliderExample } from '@rmwc/slider/readme';
 import { galleryExample as switchExample } from '@rmwc/switch/readme';
@@ -69,6 +70,9 @@ const ImageListDocs = React.lazy(() => import('@rmwc/image-list/readme'));
 const CheckboxDocs = React.lazy(() => import('@rmwc/checkbox/readme'));
 const FormfieldDocs = React.lazy(() => import('@rmwc/formfield/readme'));
 const RadioDocs = React.lazy(() => import('@rmwc/radio/readme'));
+const SegmentedButtonDocs = React.lazy(
+  () => import('@rmwc/segmented-button/readme')
+);
 const SelectDocs = React.lazy(() => import('@rmwc/select/readme'));
 const SliderDocs = React.lazy(() => import('@rmwc/slider/readme'));
 const SwitchDocs = React.lazy(() => import('@rmwc/switch/readme'));
@@ -203,6 +207,12 @@ export const menuContent: MenuItemT[] = [
             url: `/icon-buttons`,
             gallery: iconButtonExample,
             component: Loadable(IconButtonDocs)
+          },
+          {
+            label: 'Segmented Button',
+            url: `/segmented-button`,
+            gallery: segmentedButtonExample,
+            component: Loadable(SegmentedButtonDocs)
           }
         ]
       },

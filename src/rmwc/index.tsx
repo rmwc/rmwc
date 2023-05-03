@@ -26,6 +26,7 @@ export * from '@rmwc/notched-outline';
 export * from '@rmwc/provider';
 export * from '@rmwc/radio';
 export * from '@rmwc/ripple';
+export * from '@rmwc/segmented-button';
 export * from '@rmwc/select';
 export * from '@rmwc/slider';
 export * from '@rmwc/snackbar';
