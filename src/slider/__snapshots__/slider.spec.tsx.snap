@@ -1,36 +1,92 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Slider renders uncontrolled 1`] = `
+exports[`Slider can be a range slider 1`] = `
 <DocumentFragment>
   <div
-    aria-label="Select Value"
-    class="mdc-slider"
-    role="slider"
+    class="mdc-slider mdc-slider--range"
     tabindex="0"
   >
+    <input
+      class="mdc-slider__input"
+      max="100"
+      min="0"
+      name="rangeStart"
+      type="range"
+      value=""
+    />
+    <input
+      class="mdc-slider__input"
+      max="100"
+      min="0"
+      name="rangeEnd"
+      type="range"
+      value=""
+    />
     <div
-      class="mdc-slider__track-container"
+      class="mdc-slider__track"
     >
       <div
-        class="mdc-slider__track"
+        class="mdc-slider__track--inactive"
+      />
+      <div
+        class="mdc-slider__track--active"
+      >
+        <div
+          class="mdc-slider__track--active_fill"
+        />
+      </div>
+    </div>
+    <div
+      class="mdc-slider__thumb"
+    >
+      <div
+        class="mdc-slider__thumb-knob"
       />
     </div>
     <div
-      class="mdc-slider__thumb-container"
+      class="mdc-slider__thumb"
     >
-      <svg
-        class="mdc-slider__thumb"
-        height="21"
-        width="21"
-      >
-        <circle
-          cx="10.5"
-          cy="10.5"
-          r="7.875"
-        />
-      </svg>
       <div
-        class="mdc-slider__focus-ring"
+        class="mdc-slider__thumb-knob"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Slider renders uncontrolled 1`] = `
+<DocumentFragment>
+  <div
+    class="mdc-slider"
+    tabindex="0"
+  >
+    <input
+      class="mdc-slider__input"
+      max="100"
+      min="0"
+      name="rangeEnd"
+      type="range"
+      value=""
+    />
+    <div
+      class="mdc-slider__track"
+    >
+      <div
+        class="mdc-slider__track--inactive"
+      />
+      <div
+        class="mdc-slider__track--active"
+      >
+        <div
+          class="mdc-slider__track--active_fill"
+        />
+      </div>
+    </div>
+    <div
+      class="mdc-slider__thumb"
+    >
+      <div
+        class="mdc-slider__thumb-knob"
       />
     </div>
   </div>
@@ -40,48 +96,89 @@ exports[`Slider renders uncontrolled 1`] = `
 exports[`Slider renders with all props 1`] = `
 <DocumentFragment>
   <div
-    aria-disabled="true"
-    aria-label="Select Value"
-    aria-valuemax="100"
-    aria-valuenow="50"
-    class="mdc-slider mdc-slider--discrete mdc-slider--display-markers mdc-slider--disabled"
-    data-step="10"
-    role="slider"
+    class="mdc-slider mdc-slider--discrete mdc-slider--tick-marks mdc-slider--disabled mdc-slider--disabled"
     tabindex="0"
   >
+    <input
+      class="mdc-slider__input"
+      disabled=""
+      max="100"
+      min="0"
+      name="rangeEnd"
+      step="10"
+      type="range"
+      value="50"
+    />
     <div
-      class="mdc-slider__track-container"
+      class="mdc-slider__track"
     >
       <div
-        class="mdc-slider__track"
+        class="mdc-slider__track--inactive"
       />
       <div
-        class="mdc-slider__track-marker-container"
-      />
-    </div>
-    <div
-      class="mdc-slider__thumb-container"
-    >
-      <div
-        class="mdc-slider__pin"
+        class="mdc-slider__track--active"
       >
-        <span
-          class="mdc-slider__pin-value-marker"
+        <div
+          class="mdc-slider__track--active_fill"
         />
       </div>
-      <svg
-        class="mdc-slider__thumb"
-        height="21"
-        width="21"
-      >
-        <circle
-          cx="10.5"
-          cy="10.5"
-          r="7.875"
-        />
-      </svg>
       <div
-        class="mdc-slider__focus-ring"
+        class="mdc-slider__tick-marks"
+      >
+        <div
+          class="mdc-slider__tick-mark--active"
+        />
+        <div
+          class="mdc-slider__tick-mark--active"
+        />
+        <div
+          class="mdc-slider__tick-mark--active"
+        />
+        <div
+          class="mdc-slider__tick-mark--active"
+        />
+        <div
+          class="mdc-slider__tick-mark--active"
+        />
+        <div
+          class="mdc-slider__tick-mark--active"
+        />
+        <div
+          class="mdc-slider__tick-mark--inactive"
+        />
+        <div
+          class="mdc-slider__tick-mark--inactive"
+        />
+        <div
+          class="mdc-slider__tick-mark--inactive"
+        />
+        <div
+          class="mdc-slider__tick-mark--inactive"
+        />
+        <div
+          class="mdc-slider__tick-mark--inactive"
+        />
+      </div>
+    </div>
+    <div
+      class="mdc-slider__thumb"
+    >
+      <div
+        aria-hidden="true"
+        class="mdc-slider__value-indicator-container"
+      >
+        <div
+          class="mdc-slider__value-indicator"
+        >
+          <span
+            class="mdc-slider__value-indicator-text"
+          >
+            50
+          </span>
+        </div>
+      </div>
+      <div
+        class="mdc-slider__thumb-knob"
       />
     </div>
   </div>

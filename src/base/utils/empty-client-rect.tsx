@@ -1,4 +1,5 @@
-export const emptyClientRect: ClientRect = {
+// as of mcw 14, mcw themselves has typed it as any
+export const emptyClientRect: any = {
   bottom: 0,
   height: 0,
   left: 0,

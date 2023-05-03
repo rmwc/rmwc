@@ -7,7 +7,7 @@ import { RMWCProvider } from '../provider';
 describe('Tooltip', () => {
   it('renders', async () => {
     const { asFragment } = render(
-      <Tooltip content="tooltip">
+      <Tooltip content="tooltip" open>
         <span>test</span>
       </Tooltip>
     );
@@ -22,15 +22,6 @@ describe('Tooltip', () => {
         <span>test</span>
       </Tooltip>
     );
-  });
-
-  it('showArrow', () => {
-    const { asFragment } = render(
-      <Tooltip content="tooltip" showArrow>
-        <span>test</span>
-      </Tooltip>
-    );
-    expect(asFragment()).toMatchSnapshot();
   });
 
   it('className', () => {

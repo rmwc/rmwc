@@ -102,12 +102,16 @@ describe('List', () => {
 
   it('can be activated', () => {
     const { container } = render(<ListItem activated />);
-    expect(container.firstChild).toHaveClass('mdc-list-item--activated');
+    expect(container.firstChild).toHaveClass(
+      'mdc-deprecated-list-item--activated'
+    );
   });
 
   it('can be selected', () => {
     const { container } = render(<ListItem selected />);
-    expect(container.firstChild).toHaveClass('mdc-list-item--selected');
+    expect(container.firstChild).toHaveClass(
+      'mdc-deprecated-list-item--selected'
+    );
   });
 });
 

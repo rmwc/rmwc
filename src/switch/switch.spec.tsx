@@ -10,13 +10,13 @@ describe('Switch', () => {
   });
 
   test('can be checked', () => {
-    render(<Switch checked onChange={() => {}} />);
-    expect(screen.getByRole('switch')).toHaveAttribute('checked');
+    render(<Switch checked={true} />);
+    expect(screen.getByRole('switch')).toHaveClass('mdc-switch--selected');
   });
 
   test('handles onChange', async () => {
     let value = 0;
-    render(<Switch checked={true} onChange={() => value++} />);
+    render(<Switch checked={true} onClick={() => value++} />);
 
     userEvent.click(screen.getByRole('switch'));
 
@@ -36,20 +36,5 @@ describe('Switch', () => {
   test('can have custom classnames on input', () => {
     const { container } = render(<Switch className={'my-custom-classname'} />);
     expect(container.firstChild).toHaveClass('my-custom-classname');
-  });
-
-  it('supports inputRef as an object reference', () => {
-    const inputObjectRef: any = { current: null };
-    render(<Switch inputRef={inputObjectRef} />);
-    expect(inputObjectRef.current instanceof HTMLInputElement).toBeTruthy();
-  });
-
-  it('supports inputRef as a function reference', () => {
-    let inputObjectRef: any;
-    const objectRefFunc: any = (el: HTMLInputElement) => {
-      inputObjectRef = el;
-    };
-    render(<Switch inputRef={objectRefFunc} />);
-    expect(inputObjectRef instanceof HTMLInputElement).toBeTruthy();
   });
 });

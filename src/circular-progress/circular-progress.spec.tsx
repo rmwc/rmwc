@@ -9,34 +9,48 @@ describe('CircularProgress', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('can be sizes', () => {
+  it('can be xsmall', () => {
     const { container, rerender } = render(<CircularProgress size="xsmall" />);
-    expect(container.firstChild).toHaveClass(
-      'rmwc-circular-progress--size-xsmall'
-    );
+    expect(
+      container.getElementsByClassName(
+        'mdc-circular-progress__indeterminate-circle-graphic'
+      )[0]
+    ).toHaveAttribute('viewBox', '0 0 18 18');
 
     rerender(<CircularProgress size="small" />);
-    expect(container.firstChild).toHaveClass(
-      'rmwc-circular-progress--size-small'
-    );
+    expect(
+      container.getElementsByClassName(
+        'mdc-circular-progress__indeterminate-circle-graphic'
+      )[0]
+    ).toHaveAttribute('viewBox', '0 0 20 20');
 
     rerender(<CircularProgress size="medium" />);
-    expect(container.firstChild).toHaveClass(
-      'rmwc-circular-progress--size-medium'
-    );
+    expect(
+      container.getElementsByClassName(
+        'mdc-circular-progress__indeterminate-circle-graphic'
+      )[0]
+    ).toHaveAttribute('viewBox', '0 0 24 24');
 
     rerender(<CircularProgress size="large" />);
-    expect(container.firstChild).toHaveClass(
-      'rmwc-circular-progress--size-large'
-    );
+    expect(
+      container.getElementsByClassName(
+        'mdc-circular-progress__indeterminate-circle-graphic'
+      )[0]
+    ).toHaveAttribute('viewBox', '0 0 36 36');
 
     rerender(<CircularProgress size="xlarge" />);
-    expect(container.firstChild).toHaveClass(
-      'rmwc-circular-progress--size-xlarge'
-    );
+    expect(
+      container.getElementsByClassName(
+        'mdc-circular-progress__indeterminate-circle-graphic'
+      )[0]
+    ).toHaveAttribute('viewBox', '0 0 48 48');
 
     rerender(<CircularProgress size={72} />);
-    expect(container).toMatchSnapshot();
+    expect(
+      container.getElementsByClassName(
+        'mdc-circular-progress__indeterminate-circle-graphic'
+      )[0]
+    ).toHaveAttribute('viewBox', '0 0 72 72');
   });
 
   it('can be determinate', () => {

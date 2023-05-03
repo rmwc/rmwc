@@ -1,4 +1,4 @@
-const fs = require('fs-extra');
+const fs = require('fs');
 const childProcess = require('child_process');
 
 fs.readdir('react-versions', function (err, files) {

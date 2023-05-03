@@ -228,9 +228,9 @@ export const useFoundation = <
       [key in keyof Elements]: FoundationElement<Props, HTMLElement>;
     } & {
       getProps: () => Props;
-      emit: (
+      emit: <T>(
         evtType: string,
-        evtData: any,
+        evtData: T,
         shouldBubble?: boolean
       ) => CustomEvent<any>;
     }

@@ -23,7 +23,7 @@ Progress and activity indicators are visual indications of an app loading conten
 ```
 
 ```jsx
-<LinearProgress progress={0.2} reversed />
+<LinearProgress reversed />
 ```
 
 ## LinearProgress

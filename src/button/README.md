@@ -64,6 +64,15 @@ Buttons communicate the action that will occur when the user touches them.
 </Button>
 ```
 
+```jsx
+<>
+  {/** Wrapping a button in TouchTargetWrapper will automatically set its `touch` prop to true. */}
+  <TouchTargetWrapper>
+    <Button>Touch Accessible</Button>
+  </TouchTargetWrapper>
+</>
+```
+
 ## Button
 The Button component.
 
@@ -79,6 +88,7 @@ The Button component.
 | `label` | `React.ReactNode \| any` | Content specified as a label prop. |
 | `outlined` | `undefined \| false \| true` | Make the button outlined. |
 | `raised` | `undefined \| false \| true` | Make the Button raised. |
+| `touch` | `undefined \| false \| true` | Makes the button more touch friendly. This will automatically be set true if used inside of TouchTargetWrapper. |
 | `trailingIcon` | `RMWC.IconPropT` | A trailing icon for the Button |
 | `unelevated` | `undefined \| false \| true` | Make the button unelevated. |
 

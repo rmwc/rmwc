@@ -7,43 +7,43 @@ exports[`Menu Menu Item can be nested 1`] = `
   >
     <div
       aria-hidden="false"
-      class="mdc-menu mdc-menu-surface mdc-menu-surface--animating-open"
+      class="mdc-menu mdc-menu-surface"
     >
       <ul
-        class="mdc-list mdc-menu__items mdc-list"
+        class="mdc-list mdc-menu__items mdc-deprecated-list"
         role="menu"
       >
         <li
-          class="mdc-list-item"
+          class="mdc-deprecated-list-item"
           role="menuitem"
           tabindex="0"
         >
           <div
-            class="mdc-list-item__ripple "
+            class="mdc-deprecated-list-item__ripple "
           />
           <span>
             Cookies
           </span>
         </li>
         <li
-          class="mdc-list-item"
+          class="mdc-deprecated-list-item"
           role="menuitem"
           tabindex="0"
         >
           <div
-            class="mdc-list-item__ripple "
+            class="mdc-deprecated-list-item__ripple "
           />
           <span>
             Pizza
           </span>
         </li>
         <li
-          class="mdc-list-item"
+          class="mdc-deprecated-list-item"
           role="menuitem"
           tabindex="0"
         >
           <div
-            class="mdc-list-item__ripple "
+            class="mdc-deprecated-list-item__ripple "
           />
           <span>
             Icecream
@@ -67,35 +67,35 @@ exports[`Menu MenuSurface renders 1`] = `
       Test
     </button>
     <div
-      class="mdc-menu-surface mdc-menu-surface--animating-open"
+      class="mdc-menu-surface"
     >
       <li
-        class="mdc-list-item"
+        class="mdc-deprecated-list-item"
         role="menuitem"
         tabindex="0"
       >
         <div
-          class="mdc-list-item__ripple "
+          class="mdc-deprecated-list-item__ripple "
         />
         Cookies
       </li>
       <li
-        class="mdc-list-item"
+        class="mdc-deprecated-list-item"
         role="menuitem"
         tabindex="0"
       >
         <div
-          class="mdc-list-item__ripple "
+          class="mdc-deprecated-list-item__ripple "
         />
         Pizza
       </li>
       <li
-        class="mdc-list-item"
+        class="mdc-deprecated-list-item"
         role="menuitem"
         tabindex="0"
       >
         <div
-          class="mdc-list-item__ripple "
+          class="mdc-deprecated-list-item__ripple "
         />
         Icecream
       </li>
@@ -111,40 +111,40 @@ exports[`Menu SimpleMenu renders 1`] = `
   >
     <div
       aria-hidden="false"
-      class="mdc-menu mdc-menu-surface mdc-menu-surface--animating-open mdc-menu-surface--open mdc-menu-surface--is-open-below"
+      class="mdc-menu mdc-menu-surface mdc-menu-surface--animating-open mdc-menu-surface--is-open-below mdc-menu-surface--open"
       style="transform-origin: left top; left: 0px; top: 0px; max-height: 736px;"
     >
       <ul
-        class="mdc-list mdc-menu__items mdc-list"
+        class="mdc-list mdc-menu__items mdc-deprecated-list"
         role="menu"
       >
         <li
-          class="mdc-list-item"
+          class="mdc-deprecated-list-item"
           role="menuitem"
           tabindex="0"
         >
           <div
-            class="mdc-list-item__ripple "
+            class="mdc-deprecated-list-item__ripple "
           />
           Cookies
         </li>
         <li
-          class="mdc-list-item"
+          class="mdc-deprecated-list-item"
           role="menuitem"
           tabindex="0"
         >
           <div
-            class="mdc-list-item__ripple "
+            class="mdc-deprecated-list-item__ripple "
           />
           Pizza
         </li>
         <li
-          class="mdc-list-item"
+          class="mdc-deprecated-list-item"
           role="menuitem"
           tabindex="0"
         >
           <div
-            class="mdc-list-item__ripple "
+            class="mdc-deprecated-list-item__ripple "
           />
           Icecream
         </li>
@@ -163,7 +163,7 @@ exports[`Menu SimpleMenuSurface renders 1`] = `
     class="mdc-menu-surface--anchor"
   >
     <div
-      class="mdc-menu-surface mdc-menu-surface--animating-open mdc-menu-surface--open mdc-menu-surface--is-open-below"
+      class="mdc-menu-surface mdc-menu-surface--animating-open mdc-menu-surface--is-open-below mdc-menu-surface--open"
       style="transform-origin: left top; left: 0px; top: 0px; max-height: 736px;"
     >
       <div>
@@ -184,36 +184,36 @@ exports[`Menu renders 1`] = `
     class="mdc-menu mdc-menu-surface mdc-menu-surface--animating-open"
   >
     <ul
-      class="mdc-list mdc-menu__items mdc-list"
+      class="mdc-list mdc-menu__items mdc-deprecated-list"
       role="menu"
     >
       <li
-        class="mdc-list-item"
+        class="mdc-deprecated-list-item"
         role="menuitem"
         tabindex="0"
       >
         <div
-          class="mdc-list-item__ripple "
+          class="mdc-deprecated-list-item__ripple "
         />
         Cookies
       </li>
       <li
-        class="mdc-list-item"
+        class="mdc-deprecated-list-item"
         role="menuitem"
         tabindex="0"
       >
         <div
-          class="mdc-list-item__ripple "
+          class="mdc-deprecated-list-item__ripple "
         />
         Pizza
       </li>
       <li
-        class="mdc-list-item"
+        class="mdc-deprecated-list-item"
         role="menuitem"
         tabindex="0"
       >
         <div
-          class="mdc-list-item__ripple "
+          class="mdc-deprecated-list-item__ripple "
         />
         Icecream
       </li>

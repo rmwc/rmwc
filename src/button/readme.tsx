@@ -6,6 +6,7 @@ import examples from './generated-examples.json';
 
 import { Button } from '.';
 import { CircularProgress } from '../circular-progress';
+import { TouchTargetWrapper } from '../touch-target';
 
 export default function Readme() {
   return (
@@ -61,11 +62,20 @@ export default function Readme() {
           <Button label="With Theme" theme="secondary" />
         </>
       </DocsExample>
-      <DocsExample>
+      <DocsExample label="Children">
         <Button>
           {/** Alternatively pass content as children */}
           As Children
         </Button>
+      </DocsExample>
+
+      <DocsExample label="Touch Target Wrapper">
+        <>
+          {/** Wrapping a button in TouchTargetWrapper will automatically set its `touch` prop to true. */}
+          <TouchTargetWrapper>
+            <Button>Touch Accessible</Button>
+          </TouchTargetWrapper>
+        </>
       </DocsExample>
 
       <DocProps

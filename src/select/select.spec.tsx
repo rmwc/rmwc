@@ -128,7 +128,7 @@ describe('Select', () => {
     );
     expect(
       container.getElementsByClassName('rmwc-select__native-control')[0]
-    ).toHaveAttribute('tabindex', '1');
+    ).toHaveAttribute('tabIndex', '1');
   });
 
   it('can have custom rootProps', () => {

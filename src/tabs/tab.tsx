@@ -44,9 +44,9 @@ export interface TabProps {
 
 export type TabApi = {
   getActive: () => boolean;
-  activate: (computeIndicatorClientRect: ClientRect) => void;
+  activate: (computeIndicatorClientRect: DOMRect) => void;
   deactivate: () => void;
-  computeIndicatorClientRect: () => ClientRect;
+  computeIndicatorClientRect: () => DOMRect;
   computeDimensions: MDCTabFoundation['computeDimensions'];
   focus: () => void;
   id: string;

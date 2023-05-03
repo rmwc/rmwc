@@ -1,4 +1,4 @@
-# Tooltips `RMWC ADDON`
+# Tooltips
 
 Tooltips display informative text when users hover over, focus on, or tap an element.
 
@@ -7,6 +7,7 @@ Tooltips display informative text when users hover over, focus on, or tap an ele
   - Using CSS Loader
     - import '@rmwc/tooltip/styles';
   - Or include stylesheets
+    - **'@material/tooltip/dist/mdc.tooltip.css'**
     - **'@rmwc/tooltip/tooltip.css'**
 
 
@@ -17,7 +18,7 @@ Wrap any component in a `Tooltip` and provide the content attribute. The only re
 ```jsx
 <>
   <Tooltip content="Cookies">
-    <IconButton icon="star_border" />
+    <IconButton icon="star_border" aria-describedby="tooltip-id" />
   </Tooltip>
 
   <Tooltip content="Pizza">
@@ -53,7 +54,7 @@ Wrap any component in a `Tooltip` and provide the content attribute. The only re
         size="large"
         name="Steve Rogers"
       />
-      <div style={{ marginLeft: '0.5rem' }}>
+      <div style={{ marginLeft: '0.5rem', width: '100px' }}>
         <b>Captain America</b>
         <div>Steve Rogers</div>
       </div>
@@ -66,7 +67,7 @@ Wrap any component in a `Tooltip` and provide the content attribute. The only re
 
 ```jsx
 <Tooltip
-  /** You make something like a popover window by just styling your inner content. */
+  // You make something like a popover window by just styling your inner content.
   content={
     <div
       style={{
@@ -81,11 +82,14 @@ Wrap any component in a `Tooltip` and provide the content attribute. The only re
         margin: '0 -3px'
       }}
     >
-      Hello World!
+      <Button onClick={() => console.log('Popover was clicked')}>
+        Click me
+      </Button>
     </div>
   }
+  isPersistent
 >
-  <span role="button">Popover Window</span>
+  <span role="button">Popover Window with clickable content</span>
 </Tooltip>
 ```
 
@@ -155,7 +159,6 @@ The RMWCProvider allows you to specify global defaults for your tooltips.
   tooltip={{
     align: 'right',
     activateOn: 'hover',
-    showArrow: true,
     leaveDelay: 500,
     enterDelay: 0
   }}
@@ -175,10 +178,12 @@ A Tooltip component for displaying informative popover information.
 |------|------|-------------|
 | `activateOn` | `TooltipActivationT \| TooltipActivationT[]` | Activate the tooltip through one or more interactions. Defaults to `['hover', 'focus']`. |
 | `align` | `TooltipAlignT` | How to align the tooltip. Defaults to `top`. |
+| `anchorBoundaryType` | `AnchorBoundaryType` | Specify whether the anchor element is bounded (element has an identifiable boundary such as a button) or unbounded (element does not have a visually declared boundary such as a text link). |
 | `children` | `React.ReactChild` | The children that the tooltip belongs to. Must be a single React.child. |
 | `className` | `undefined \| string` | Custom className to add to the tooltip overlay container. |
 | `content` | `React.ReactNode` | The overlay content for the tooltip. |
 | `enterDelay` | `undefined \| number` | Delay in milliseconds before showing the tooltip when interacting via touch or mouse. |
+| `isPersistent` | `undefined \| false \| true` | Specify whether tooltip should be persistent. Persistent tooltip are triggered by clicks. |
 | `leaveDelay` | `undefined \| number` | Delay in milliseconds before hiding the tooltip when interacting via touch or mouse. |
 | `open` | `undefined \| false \| true` | Manually control the open state |
 | `showArrow` | `undefined \| false \| true` | Whether or not to show an arrow on the Tooltip. Defaults to `false`. |

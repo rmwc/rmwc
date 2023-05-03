@@ -51,7 +51,7 @@ export const useTabBarFoundation = (
             foundation.adapter.notifyTabActivated(index);
           }
         },
-        activateTabAtIndex: (index: number, clientRect: ClientRect) => {
+        activateTabAtIndex: (index: number, clientRect: DOMRect) => {
           tabListRef.current[index] &&
             tabListRef.current[index].activate(clientRect);
         },
@@ -137,7 +137,7 @@ export const useTabBarFoundation = (
     const previousActiveIndex = adapter.getPreviousActiveTabIndex();
 
     // @ts-ignore private method access
-    if (!foundation.indexIsInRange_(index) || index === previousActiveIndex) {
+    if (!foundation.indexIsInRange(index) || index === previousActiveIndex) {
       return;
     }
 

@@ -35,7 +35,7 @@ export default function Readme() {
           return (
             <Switch
               checked={checked}
-              onChange={(evt) => setChecked(!!evt.currentTarget.checked)}
+              onClick={(evt) => setChecked((c) => !c)}
               label="Cookies"
             />
           );
