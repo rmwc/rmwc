@@ -65,6 +65,7 @@
     "@rmwc/provider": "^8.0.7",
     "@rmwc/radio": "^8.0.7",
     "@rmwc/ripple": "^8.0.7",
+    "@rmwc/segmented-button": "^8.0.7",
     "@rmwc/select": "^8.0.7",
     "@rmwc/slider": "^8.0.7",
     "@rmwc/snackbar": "^8.0.7",
