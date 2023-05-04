@@ -18,18 +18,18 @@ export default function Readme() {
       module="@rmwc/circular-progress"
       styles={['@rmwc/circular-progress/circular-progress.css']}
       examples={examples}
-      addon
     >
       <DocsSubtitle>Basic Usage</DocsSubtitle>
 
       <DocsExample label="Indeterminate">
         <CircularProgress />
       </DocsExample>
-      <DocsExample label="Progress">
+      <DocsExample label="Determinate">
         <>
           <CircularProgress progress={0.3} />
           <CircularProgress progress={0.6} />
           <CircularProgress progress={0.9} />
+          <CircularProgress progress={1} />
         </>
       </DocsExample>
 
@@ -37,12 +37,9 @@ export default function Readme() {
 
       <DocsExample label="Sizes">
         <>
-          <CircularProgress size="xsmall" />
           <CircularProgress size="small" />
           <CircularProgress size="medium" />
           <CircularProgress size="large" />
-          <CircularProgress size="xlarge" />
-          <CircularProgress size={72} />
         </>
       </DocsExample>
 

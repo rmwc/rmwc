@@ -18,12 +18,8 @@ export const useCircularProgressFoundation = (props: CircularProgressProps) => {
         setAttribute: (name: string, value: string) => {
           rootEl.setProp(name as any, value);
         },
-        setDeterminateCircleAttribute: (
-          attributeName: string,
-          value: string
-        ) => {
-          determinateCircleEl.ref?.setAttribute(attributeName, value);
-        }
+        setDeterminateCircleAttribute: (attributeName: string, value: string) =>
+          determinateCircleEl.ref?.setAttribute(attributeName, value)
       });
     }
   });

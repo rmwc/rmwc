@@ -64,9 +64,10 @@ exports[`CircularProgress renders 1`] = `
             <circle
               cx="12"
               cy="12"
-              r="10"
-              stroke-dashoffset="56.549"
-              stroke-width="4"
+              r="8.75"
+              stroke-dasharray="54.978"
+              stroke-dashoffset="27.489"
+              stroke-width="2.5"
             />
           </svg>
         </div>
@@ -80,9 +81,10 @@ exports[`CircularProgress renders 1`] = `
             <circle
               cx="12"
               cy="12"
-              r="10"
-              stroke-dashoffset="56.549"
-              stroke-width="3.2"
+              r="8.75"
+              stroke-dasharray="54.978"
+              stroke-dashoffset="27.489"
+              stroke-width="2"
             />
           </svg>
         </div>
@@ -96,9 +98,10 @@ exports[`CircularProgress renders 1`] = `
             <circle
               cx="12"
               cy="12"
-              r="10"
-              stroke-dashoffset="56.549"
-              stroke-width="4"
+              r="8.75"
+              stroke-dasharray="54.978"
+              stroke-dashoffset="27.489"
+              stroke-width="2.5"
             />
           </svg>
         </div>

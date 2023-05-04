@@ -3,16 +3,17 @@ import * as RMWC from '@rmwc/types';
 import React from 'react';
 import { useClassNames, Tag, createComponent } from '@rmwc/base';
 import { useCircularProgressFoundation } from './foundation';
+import {
+  CX_CY_MAP,
+  R_MAP,
+  SIZE_MAP,
+  STROKE_DASHARRAY_MAP,
+  STROKE_DASHOFFSET_MAP,
+  STROKE_WIDTH_GAP_MAP,
+  STROKE_WIDTH_MAP
+} from './constants';
 
-const SIZE_MAP: { [key: string]: number } = {
-  xsmall: 18,
-  small: 20,
-  medium: 24,
-  large: 36,
-  xlarge: 48
-};
-
-type Size = 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | number;
+type Size = 'small' | 'medium' | 'large';
 
 /** A Circular Progress indicator. */
 export interface CircularProgressProps {
@@ -32,7 +33,7 @@ export const CircularProgress = createComponent<CircularProgressProps>(
   function CircularProgress(props, ref) {
     const {
       closed,
-      size = 'medium',
+      size = 'small',
       max = 1,
       min = 0,
       progress,
@@ -75,6 +76,17 @@ export const CircularProgress = createComponent<CircularProgressProps>(
             height: `${size}px`
           }
         : undefined;
+    };
+
+    const circleProps = (size: number) => {
+      return {
+        cx: CX_CY_MAP[size],
+        cy: CX_CY_MAP[size],
+        r: R_MAP[size],
+        'stroke-dasharray': STROKE_DASHARRAY_MAP[size],
+        'stroke-dashoffset': STROKE_DASHOFFSET_MAP[size],
+        'stroke-width': STROKE_WIDTH_MAP[size]
+      };
     };
 
     return (
@@ -123,14 +135,7 @@ export const CircularProgress = createComponent<CircularProgressProps>(
                   className="mdc-circular-progress__indeterminate-circle-graphic"
                   viewBox={`0 0 ${_size} ${_size}`}
                 >
-                  <circle
-                    style={circularStyle(_size)}
-                    cx={_size / 2}
-                    cy={_size / 2}
-                    r={_size / 2.4}
-                    strokeDashoffset="56.549"
-                    strokeWidth="4"
-                  />
+                  <circle {...circleProps(_size)} />
                 </svg>
               </div>
               <div className="mdc-circular-progress__gap-patch">
@@ -139,12 +144,8 @@ export const CircularProgress = createComponent<CircularProgressProps>(
                   viewBox={`0 0 ${_size} ${_size}`}
                 >
                   <circle
-                    style={circularStyle(_size)}
-                    cx={_size / 2}
-                    cy={_size / 2}
-                    r={_size / 2.4}
-                    strokeDashoffset="56.549"
-                    strokeWidth="3.2"
+                    {...circleProps(_size)}
+                    strokeWidth={STROKE_WIDTH_GAP_MAP[_size]}
                   />
                 </svg>
               </div>
@@ -153,14 +154,7 @@ export const CircularProgress = createComponent<CircularProgressProps>(
                   className="mdc-circular-progress__indeterminate-circle-graphic"
                   viewBox={`0 0 ${_size} ${_size}`}
                 >
-                  <circle
-                    style={circularStyle(_size)}
-                    cx={_size / 2}
-                    cy={_size / 2}
-                    r={_size / 2.4}
-                    strokeDashoffset="56.549"
-                    strokeWidth="4"
-                  />
+                  <circle {...circleProps(_size)} />
                 </svg>
               </div>
             </div>

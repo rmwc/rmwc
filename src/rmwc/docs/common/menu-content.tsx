@@ -112,7 +112,7 @@ const Loading = () => (
       boxSizing: 'border-box'
     }}
   >
-    <CircularProgress size="xlarge" />
+    <CircularProgress size="large" />
   </div>
 );
 
