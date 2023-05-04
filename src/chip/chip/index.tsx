@@ -33,9 +33,9 @@ export interface ChipProps {
   /** makes the Chip appear selected. */
   selected?: boolean;
   /** Instance of an Icon Component. */
-  icon?: RMWC.IconPropT;
+  icon?: React.ReactNode;
   /** Instance of an Icon Component. */
-  trailingIcon?: RMWC.IconPropT;
+  trailingIcon?: React.ReactNode;
   /** Defaults to true. Set this to false if your trailing icon is something other than a remove button. */
   trailingIconRemovesChip?: boolean;
   /** An optional chip ID that will be included in callback evt.detail. If this is not passed, RMWC will attempt to use the "key" prop if present.  */

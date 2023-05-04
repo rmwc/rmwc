@@ -15,7 +15,7 @@ export interface SegmentProps extends RMWC.WithRippleProps {
   /** Content specified as children. */
   children?: React.ReactNode;
   /** An Icon for the Button */
-  icon?: RMWC.IconPropT;
+  icon?: React.ReactNode;
   /** A trailing icon for the Button */
   trailingIcon?: RMWC.IconPropT;
   /** Determines whether the button has been selected. */

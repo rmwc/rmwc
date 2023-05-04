@@ -22,6 +22,7 @@ export default function Readme() {
       examples={examples}
     >
       <DocsExample label="Default Multiple Select">
+        {/* @ts-ignore */}
         {function Example() {
           const [selected, setSelected] = React.useState({
             cookies: false,
@@ -59,6 +60,7 @@ export default function Readme() {
       </DocsExample>
 
       <DocsExample label="Single selectable">
+        {/* @ts-ignore */}
         {function Example() {
           const [selected, setSelected] = React.useState('icecream');
           return (

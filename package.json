@@ -23,7 +23,7 @@
 		"build": "npm run clean && npm run build:docs && npm run build:code",
 		"pretest": "node scripts/pretest.js",
 		"test": "node scripts/test.js",
-		"test:watch": "react-app-rewired test",
+		"test:watch": "react-app-rewired test --transformIgnorePatterns \"node_modules/(?!@material/segmented-button)/\"",
 		"test:coverage": "react-app-rewired test --coverage --watchAll=false",
 		"release:patch": "lerna version patch --force-publish --yes",
 		"release:minor": "lerna version minor --force-publish --yes",

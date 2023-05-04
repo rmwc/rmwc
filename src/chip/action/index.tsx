@@ -7,7 +7,6 @@ import {
   MDCChipPrimaryActionFoundation,
   MDCChipTrailingActionFoundation
 } from '@material/chips';
-import { IconPropT } from '@rmwc/types';
 import { usePrimaryActionFoundation } from './foundation';
 import { ChipOnInteractionEventT } from '../chip';
 
@@ -28,7 +27,7 @@ export interface PrimaryActionProps {
   apiRef?: (api: PrimaryActionApi | null) => void;
   deletable?: boolean;
   href?: string;
-  icon?: IconPropT;
+  icon?: React.ReactNode;
   label?: string;
   selectable?: boolean;
   onInteraction?: (evt: ChipOnInteractionEventT) => void;
@@ -111,7 +110,7 @@ export interface TrailingActionApi {
 
 export interface TrailingActionProps {
   apiRef?: (api: TrailingActionApi | null) => void;
-  icon?: RMWC.IconPropT;
+  icon?: React.ReactNode;
   remove?: () => void;
   onInteraction?: (evt: ChipOnInteractionEventT) => void;
 }

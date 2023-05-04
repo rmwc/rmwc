@@ -33,25 +33,27 @@ export default function Readme() {
         </ChipSet>
       </DocsExample>
       <DocsExample label="Event Handling">
-        {function Example() {
-          const [selected, setSelected] = React.useState(false);
-          return (
-            <ChipSet>
-              <Chip
-                key="my-chip"
-                label="Click Me"
-                checkmark
-                selected={selected}
-                onRemove={(evt) => console.log('onRemove', evt.detail)}
-                onInteraction={(evt) => {
-                  console.log('onInteraction', evt.detail);
-                  setSelected(!selected);
-                }}
-                trailingIcon="close"
-              />
-            </ChipSet>
-          );
-        }}
+        <>
+          {function Example() {
+            const [selected, setSelected] = React.useState(false);
+            return (
+              <ChipSet>
+                <Chip
+                  key="my-chip"
+                  label="Click Me"
+                  checkmark
+                  selected={selected}
+                  onRemove={(evt) => console.log('onRemove', evt.detail)}
+                  onInteraction={(evt) => {
+                    console.log('onInteraction', evt.detail);
+                    setSelected(!selected);
+                  }}
+                  trailingIcon="close"
+                />
+              </ChipSet>
+            );
+          }}
+        </>
       </DocsExample>
       <DocsExample label="Disabled">
         <ChipSet>
@@ -81,13 +83,6 @@ export default function Readme() {
               pizza: false,
               icecream: false
             });
-            //@ts-ignore
-            const toggleSelected = (key) =>
-              setSelected({
-                ...selected,
-                //@ts-ignore
-                [key]: !selected[key]
-              });
             //@ts-ignore
             const toggleSelected = (key) =>
               setSelected({
@@ -132,13 +127,6 @@ export default function Readme() {
               pizza: false,
               icecream: false
             });
-            //@ts-ignore
-            const toggleSelected = (key) =>
-              setSelected({
-                ...selected,
-                //@ts-ignore
-                [key]: !selected[key]
-              });
             //@ts-ignore
             const toggleSelected = (key) =>
               setSelected({

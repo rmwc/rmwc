@@ -33,14 +33,15 @@ export default function Readme() {
           {function Example() {
             const [checked, setChecked] = React.useState(false);
 
-          return (
-            <Switch
-              checked={checked}
-              onClick={(evt) => setChecked((c) => !c)}
-              label="Cookies"
-            />
-          );
-        }}
+            return (
+              <Switch
+                checked={checked}
+                onClick={(evt) => setChecked((c) => !c)}
+                label="Cookies"
+              />
+            );
+          }}
+        </>
       </DocsExample>
 
       <DocsExample label="Label as Child">
