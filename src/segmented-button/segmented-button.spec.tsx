@@ -1,7 +1,8 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { Segment, SegmentedButton } from './';
+import { SegmentedButton } from './segmented-button';
+import { Segment } from './segment';
 
 describe('Segmented Button', () => {
   it('renders', () => {
@@ -15,7 +16,7 @@ describe('Segmented Button', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('handles onClick', () => {
+  it('handles onClick', async () => {
     const onClick = jest.fn();
     render(
       <SegmentedButton selectType="single">
@@ -23,7 +24,8 @@ describe('Segmented Button', () => {
       </SegmentedButton>
     );
     userEvent.click(screen.getByText('Cookies'));
-    expect(onClick).toHaveBeenCalledTimes(1);
+
+    await waitFor(() => expect(onClick).toHaveBeenCalledTimes(1));
   });
 
   it('can be selected', () => {
@@ -32,7 +34,7 @@ describe('Segmented Button', () => {
         <Segment label="Cookies" value="cookies" selected />
       </SegmentedButton>
     );
-    expect(screen.getByText('Cookies')).toHaveClass(
+    expect(screen.getByText('Cookies').parentElement).toHaveClass(
       'mdc-segmented-button__segment--selected'
     );
   });
@@ -48,11 +50,13 @@ describe('Segmented Button', () => {
   });
 
   it('can have custom classnames', () => {
-    const { container } = render(
+    render(
       <SegmentedButton>
-        <Segment className={'my-custom-classname'} />
+        <Segment className={'my-custom-classname'}>Cookies</Segment>
       </SegmentedButton>
     );
-    expect(container.firstChild).toHaveClass('my-custom-classname');
+    expect(screen.getByText('Cookies').parentElement).toHaveClass(
+      'my-custom-classname'
+    );
   });
 });
