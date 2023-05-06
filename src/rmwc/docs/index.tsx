@@ -1,20 +1,22 @@
 import React from 'react';
-import * as ReactDOM from 'react-dom';
 import './styles';
 import { BrowserRouter } from 'react-router-dom';
 import App from './views/app';
 import { Analytics } from './common/analytics';
 import { RMWCProvider } from '@rmwc/provider';
+import { createRoot } from 'react-dom/client';
+
+const container = document.getElementById('root');
+const root = createRoot(container!);
 
 const renderApp = (Component: React.ComponentType<any>) => {
-  ReactDOM.render(
+  root.render(
     <RMWCProvider>
       <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Analytics />
         <Component location={window.location.href} />
       </BrowserRouter>
-    </RMWCProvider>,
-    document.getElementById('root')
+    </RMWCProvider>
   );
 };
 

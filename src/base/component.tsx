@@ -75,7 +75,7 @@ export const handleRef = <T extends any>(
 export function createComponent<
   P extends {},
   ElementP extends {} = React.HTMLProps<HTMLElement>
->(Component: React.RefForwardingComponent<any, P & ElementP>) {
+>(Component: React.ForwardRefRenderFunction<any, P & ElementP>) {
   const ForwardComponent = React.forwardRef<
     any,
     RMWC.ComponentProps<P, ElementP, any>
@@ -100,7 +100,7 @@ export function createComponent<
 export function createMemoComponent<
   P extends {},
   ElementP extends {} = React.HTMLProps<HTMLDivElement>
->(Component: React.RefForwardingComponent<any, P & ElementP>) {
+>(Component: React.ForwardRefRenderFunction<any, P & ElementP>) {
   const Comp = createComponent<P, ElementP>(Component);
   return React.memo(Comp) as typeof Comp;
 }

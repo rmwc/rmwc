@@ -46,26 +46,28 @@ To use as a toggle, specify an additional toggled on state using 'onIcon'.
 ```
 
 ```jsx
-function Controlled() {
-  const [isChecked, setIsChecked] = React.useState(false);
-  return (
-    <>
-      <IconButton
-        checked={isChecked}
-        onClick={() => setIsChecked(!isChecked)}
-        onIcon="star"
-        icon="star_border"
-      />
+<>
+  {function Controlled() {
+    const [isChecked, setIsChecked] = React.useState(false);
+    return (
+      <>
+        <IconButton
+          checked={isChecked}
+          onClick={() => setIsChecked(!isChecked)}
+          onIcon="star"
+          icon="star_border"
+        />
 
-      <IconButton
-        checked={isChecked}
-        onClick={() => setIsChecked(!isChecked)}
-        onIcon="images/icons/twitter.png"
-        icon="images/icons/facebook.png"
-      />
-    </>
-  );
-}
+        <IconButton
+          checked={isChecked}
+          onClick={() => setIsChecked(!isChecked)}
+          onIcon="images/icons/twitter.png"
+          icon="images/icons/facebook.png"
+        />
+      </>
+    );
+  }}
+</>
 ```
 
 ```jsx

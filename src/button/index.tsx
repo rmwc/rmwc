@@ -3,6 +3,7 @@ import React from 'react';
 
 import { withRipple } from '@rmwc/ripple';
 import { Icon, IconProps } from '@rmwc/icon';
+import { useIsWrappedTouchTarget } from '@rmwc/touch-target';
 import {
   Tag,
   useClassNames,
@@ -32,6 +33,8 @@ export interface ButtonProps extends RMWC.WithRippleProps {
   danger?: boolean;
   /** Content specified as a label prop. */
   label?: React.ReactNode | any;
+  /** Makes the button more touch friendly. This will automatically be set true if used inside of TouchTargetWrapper.*/
+  touch?: boolean;
   /** Content specified as children. */
   children?: React.ReactNode;
   /** An Icon for the Button */
@@ -63,8 +66,11 @@ export const Button: RMWC.ComponentType<
       label,
       trailingIcon,
       children,
+      touch,
       ...rest
     } = props;
+
+    const isTouch = useIsWrappedTouchTarget(touch);
 
     const className = useClassNames(props, [
       'mdc-button',
@@ -72,7 +78,8 @@ export const Button: RMWC.ComponentType<
         'mdc-button--dense': dense,
         'mdc-button--raised': raised,
         'mdc-button--unelevated': unelevated,
-        'mdc-button--outlined': outlined
+        'mdc-button--outlined': outlined,
+        'mdc-button--touch': isTouch
       }
     ]);
 
@@ -91,7 +98,10 @@ export const Button: RMWC.ComponentType<
     return (
       <Tag tag="button" {...rest} ref={ref} className={className}>
         <ButtonRipple />
+        <ButtonTouch />
+        <ButtonFocusRing />
         {!!icon && <ButtonIcon icon={icon} />}
+
         <span className="mdc-button__label">
           {label}
           {children}
@@ -105,6 +115,14 @@ export const Button: RMWC.ComponentType<
 /*********************************************************************
  * Bits
  *********************************************************************/
+
+const ButtonTouch = React.memo(function ButtonTouch() {
+  return <div className="mdc-button__touch"></div>;
+});
+
+const ButtonFocusRing = React.memo(function ButtonFocusRing() {
+  return <div className="mdc-button__focus-ring"></div>;
+});
 
 const ButtonRipple = React.memo(function ButtonRipple() {
   return <div className="mdc-button__ripple"></div>;

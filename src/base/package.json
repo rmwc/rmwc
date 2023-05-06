@@ -36,13 +36,13 @@
     "react-dom": ">=16.8.x"
   },
   "dependencies": {
-    "@material/dom": "^8.0.0",
+    "@material/dom": "^14.0.0",
     "@rmwc/types": "^8.0.7",
     "@types/classnames": "^2.3.1",
     "classnames": "^2.3.1",
     "hyperform": "^0.11.0",
     "mutation-observer": "^1.0.3",
-    "tslib": "^2.3.0"
+    "tslib": "^2.4.0"
   },
   "gitHead": "bf098adc2571ee1641ef20d79f38fb64e9ff186e"
 }

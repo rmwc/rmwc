@@ -35,16 +35,18 @@ export default function Readme() {
       </DocsP>
 
       <DocsExample label="Default">
-        {function App() {
-          return (
-            <PortalProvider>
-              <div>
-                {/* Other components here */}
-                <Portal />
-              </div>
-            </PortalProvider>
-          );
-        }}
+        <>
+          {function App() {
+            return (
+              <PortalProvider>
+                <div>
+                  {/* Other components here */}
+                  <Portal />
+                </div>
+              </PortalProvider>
+            );
+          }}
+        </>
       </DocsExample>
 
       <DocsP>

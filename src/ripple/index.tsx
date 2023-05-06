@@ -29,9 +29,37 @@ export interface RippleProps {
 const RippleSurfaceContext = React.createContext({});
 
 /** A component for adding Ripples to other components. */
+const withDomNode =
+  () =>
+  <P extends any>(
+    Component: React.ComponentType<P>
+  ): React.ComponentType<P & { domNode?: Element }> => {
+    // @ts-ignore
+    return class extends React.Component<
+      { children: React.ReactNode } & P & { domNode?: Element }
+    > {
+      state = { domNode: null };
 
-export function Ripple(
-  props: RippleProps & RMWC.HTMLProps
+      componentDidMount() {
+        this.setState({ domNode: ReactDOM.findDOMNode(this) as Element });
+      }
+
+      componentDidUpdate() {
+        const rootRippleElement = ReactDOM.findDOMNode(this) as Element;
+
+        if (rootRippleElement !== this.state.domNode) {
+          this.setState({ rootRippleElement });
+        }
+      }
+
+      render() {
+        return <Component {...this.props} domNode={this.state.domNode} />;
+      }
+    };
+  };
+
+export const Ripple = withDomNode()(function Ripple(
+  props: RippleProps & RMWC.HTMLProps & { domNode?: Element }
 ) {
   const {
     children,
@@ -134,13 +162,15 @@ interface WithRippleOpts {
 /**
  * HOC that adds ripples to any component
  */
-export const withRipple = ({
-  unbounded: defaultUnbounded,
-  accent: defaultAccent,
-  surface: defaultSurface
-}: WithRippleOpts = {}) => <P extends any, C extends React.ComponentType<P>>(
-  Component: C
-): C => {
+export const withRipple =
+  ({
+    unbounded: defaultUnbounded,
+    accent: defaultAccent,
+    surface: defaultSurface
+  }: WithRippleOpts = {}) =>
+  <P extends any, C extends React.ComponentType<P>>(
+    Component: React.ComponentType<P>
+  ): C => {
     const WithRippleComponent = React.forwardRef<any, P & RMWC.WithRippleProps>(
       ({ ripple, ...rest }: any, ref) => {
         const providerContext = useProviderContext();
@@ -164,7 +194,9 @@ export const withRipple = ({
       }
     );
 
-    WithRippleComponent.displayName = `withRipple(${Component.displayName || Component.constructor.name || 'Unknown'})`;
+    WithRippleComponent.displayName = `withRipple(${
+      Component.displayName || Component.constructor.name || 'Unknown'
+    })`;
 
     return WithRippleComponent as any;
   };
