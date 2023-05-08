@@ -186,7 +186,9 @@ function NativeMenu(
   );
 }
 
-const SelectedTextEl = withRipple({ surface: false })(Tag);
+const AnchorEl = withRipple({ surface: false })(function (props: any) {
+  return <Tag {...props} />;
+});
 
 interface EnhancedMenuProps extends MenuProps {
   selectOptions: FormattedOption[];

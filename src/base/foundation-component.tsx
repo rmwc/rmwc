@@ -2,7 +2,6 @@
 import * as RMWC from '@rmwc/types';
 import { SpecificEventListener } from '@material/base/types';
 import React, { useEffect, useState, useRef, useMemo } from 'react';
-//@ts-ignore
 import classNames from 'classnames';
 import { eventsMap } from './utils/events-map';
 import { toCamel } from './utils/strings';

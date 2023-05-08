@@ -1,6 +1,5 @@
 import * as RMWC from '@rmwc/types';
 import React from 'react';
-//@ts-ignore
 import classNamesFunc from 'classnames';
 import { parseThemeOptions } from './with-theme';
 import { FoundationElement } from './foundation-component';
