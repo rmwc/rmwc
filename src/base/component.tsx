@@ -1,5 +1,6 @@
 import * as RMWC from '@rmwc/types';
 import React from 'react';
+//@ts-ignore
 import classNamesFunc from 'classnames';
 import { parseThemeOptions } from './with-theme';
 import { FoundationElement } from './foundation-component';
@@ -29,7 +30,7 @@ export const Tag = React.forwardRef<
   } & RMWC.HTMLProps<any, any>
 >(function Tag({ tag: TagEl = 'div', theme, element, ...rest }, ref) {
   const finalProps = element ? element.props(rest) : rest;
-  const finalRef = element ? mergeRefs(ref, element.setRef) : ref;
+  const finalRef = element ? mergeRefs(ref, element.reactRef) : ref;
 
   return <TagEl {...finalProps} ref={finalRef} />;
 });

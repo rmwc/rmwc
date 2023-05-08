@@ -1,6 +1,5 @@
 import * as RMWC from '@rmwc/types';
 import React from 'react';
-import * as ReactDOM from 'react-dom';
 import { MDCRippleFoundation } from '@material/ripple';
 import { classNames } from '@rmwc/base';
 import { useProviderContext } from '@rmwc/provider';
@@ -69,7 +68,6 @@ export const Ripple = withDomNode()(function Ripple(
     accent,
     unbounded,
     surface,
-    domNode,
     foundationRef,
     ...rest
   } = props;
@@ -120,6 +118,7 @@ export const Ripple = withDomNode()(function Ripple(
 
   // do some crazy props merging...
   const content = React.cloneElement(child, {
+    ref: rootEl.reactRef,
     ...child.props,
     ...unboundedProp,
     ...rootEl.props({
@@ -127,7 +126,7 @@ export const Ripple = withDomNode()(function Ripple(
       style: child.props.style,
       ...rippleSurfaceProps,
       className: finalClassNames
-    })
+    }),
   });
 
   return (
@@ -137,7 +136,7 @@ export const Ripple = withDomNode()(function Ripple(
       {content}
     </RippleSurfaceContext.Provider>
   );
-});
+};
 
 export const RippleSurface = ({
   className,
@@ -190,6 +189,18 @@ export const withRipple =
             </Ripple>
           );
         }
+        if (ripple) {
+          return (
+            <Ripple
+              {...rest}
+              accent={rippleOptions.accent || defaultAccent}
+              unbounded={rippleOptions.unbounded || defaultUnbounded}
+              surface={rippleOptions.surface || defaultSurface}
+            >
+              <Component {...(rest as any)} ref={ref} />
+            </Ripple>
+          );
+        }
 
         return <Component {...(rest as any)} ref={ref} />;
       }
@@ -199,5 +210,7 @@ export const withRipple =
       Component.displayName || Component.constructor.name || 'Unknown'
     })`;
 
+    return WithRippleComponent as any;
+  };
     return WithRippleComponent as any;
   };

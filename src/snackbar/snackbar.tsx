@@ -90,8 +90,8 @@ export const Snackbar: RMWC.ComponentType<
   const actions: SnackbarProps['action'][] = Array.isArray(action)
     ? action
     : action
-    ? [action]
-    : [];
+      ? [action]
+      : [];
 
   return (
     <Tag
@@ -120,7 +120,7 @@ export const Snackbar: RMWC.ComponentType<
            * Fixes bug https://github.com/jamesmfriedman/rmwc/issues/418
            * Wrapping the content for accessibility so it can be announced for screen readers
            */}
-          <div style={{ display: 'none' }} ref={labelEl.setRef} />
+          <div style={{ display: 'none' }} ref={labelEl.reactRef as React.Ref<HTMLDivElement>} />
         </SnackbarLabel>
 
         <SnackbarActions>

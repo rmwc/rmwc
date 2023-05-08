@@ -29,7 +29,7 @@ export const NotchedOutline = createComponent<NotchedOutlineProps>(
           {...notchedEl.props({
             className: 'mdc-notched-outline__notch'
           })}
-          ref={notchedEl.setRef}
+          ref={notchedEl.reactRef}
         >
           {children}
         </div>

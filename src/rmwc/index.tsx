@@ -1,3 +1,7 @@
+import rmwc from '@rmwc/base/package.json';
+const RMWC_VERSION = rmwc.version;
+
+export { RMWC_VERSION };
 export * from '@rmwc/avatar';
 export * from '@rmwc/base';
 export * from '@rmwc/badge';
