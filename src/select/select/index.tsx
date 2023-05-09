@@ -200,8 +200,6 @@ interface EnhancedMenuProps extends MenuProps {
   children?: React.ReactNode;
 }
 
-//TODO: string | ((instance: HTMLElement | null) => void) | RefObject<HTMLElement> | null | undefined
-
 const EnhancedMenu = React.forwardRef(
   (props: EnhancedMenuProps & SelectHTMLProps, ref: React.Ref<HTMLElement>) => {
     const {
