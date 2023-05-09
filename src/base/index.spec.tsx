@@ -1,4 +1,4 @@
-import React, { LegacyRef, useState } from 'react';
+import React, { useState } from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import {
   withTheme,
@@ -45,7 +45,7 @@ describe('FoundationElement', () => {
       root: new FoundationElement(() => {})
     };
 
-    render(<div ref={inst.root.reactRef as LegacyRef<HTMLDivElement>} />);
+    render(<div ref={inst.root.reactRef as React.Ref<HTMLDivElement>} />);
 
     expect(inst.root.ref instanceof HTMLDivElement).toBe(true);
   });
