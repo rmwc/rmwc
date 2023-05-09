@@ -16,7 +16,6 @@ export class FoundationElement<Props extends {}, ElementType = HTMLElement> {
   private _events: { [key: string]: (evt: Event) => void } = {};
   private _style: { [key: string]: string | number | null } = {};
   private _props: Partial<Props> = {};
-  private _ref = null;
   _onChange: (() => void) | null = null;
 
   constructor(onChange: () => void) {
@@ -31,7 +30,6 @@ export class FoundationElement<Props extends {}, ElementType = HTMLElement> {
     this.setStyle = this.setStyle.bind(this);
     this.addEventListener = this.addEventListener.bind(this);
     this.removeEventListener = this.removeEventListener.bind(this);
-    this.setRef = this.setRef.bind(this);
   }
 
   onChange() {
@@ -44,10 +42,6 @@ export class FoundationElement<Props extends {}, ElementType = HTMLElement> {
     this._style = {};
     this._props = {};
     this._classes = new Set();
-
-    setTimeout(() => {
-      this._ref = null;
-    });
   }
 
   /**************************************************
@@ -171,14 +165,9 @@ export class FoundationElement<Props extends {}, ElementType = HTMLElement> {
   /**************************************************
    * Refs
    **************************************************/
-  setRef(el: any) {
-    if (el) {
-      this._ref = el;
-    }
-  }
-
+  readonly reactRef = React.createRef<ElementType>();
   get ref(): ElementType | null {
-    return this._ref;
+    return this.reactRef.current;
   }
 }
 
