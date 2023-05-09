@@ -200,85 +200,95 @@ interface EnhancedMenuProps extends MenuProps {
   children?: React.ReactNode;
 }
 
-const EnhancedMenu = React.forwardRef((props: EnhancedMenuProps & SelectHTMLProps, ref: React.Ref<HTMLElement>) => {
-  const {
-    selectOptions,
-    menuApiRef,
-    value,
-    placeholder,
-    children,
-    selectedIndex,
-    ...rest
-  } = props;
+//TODO: string | ((instance: HTMLElement | null) => void) | RefObject<HTMLElement> | null | undefined
 
-  let currentIndex = 0;
+const EnhancedMenu = React.forwardRef(
+  (props: EnhancedMenuProps & SelectHTMLProps, ref: React.Ref<HTMLElement>) => {
+    const {
+      selectOptions,
+      menuApiRef,
+      value,
+      placeholder,
+      children,
+      selectedIndex,
+      ...rest
+    } = props;
 
-  const className = useClassNames(props, ['mdc-select__menu']);
+    let currentIndex = 0;
 
-  const renderOption = ({
-    label,
-    option
-  }: {
-    label: React.ReactNode;
-    option: FormattedOption;
-  }) => {
-    currentIndex += 1;
+    const className = useClassNames(props, ['mdc-select__menu']);
+
+    const renderOption = ({
+      label,
+      option
+    }: {
+      label: React.ReactNode;
+      option: FormattedOption;
+    }) => {
+      currentIndex += 1;
+
+      return (
+        <MenuItem
+          key={`${label}-${option.value}`}
+          activated={
+            value !== undefined
+              ? option.value === value
+              : currentIndex - 1 === selectedIndex
+          }
+          {...option}
+          data-value={option.value}
+        >
+          <span className="mdc-list-item__text">{label}</span>
+        </MenuItem>
+      );
+    };
 
     return (
-      <MenuItem
-        key={`${label}-${option.value}`}
-        activated={
-          value !== undefined
-            ? option.value === value
-            : currentIndex - 1 === selectedIndex
-        }
-        {...option}
-        data-value={option.value}
+      <Menu
+        {...rest}
+        ref={ref}
+        apiRef={menuApiRef}
+        className={className}
+        focusOnOpen
       >
-        <span className="mdc-list-item__text">{label}</span>
-      </MenuItem>
-    );
-  };
+        {!!props.placeholder && (
+          <MenuItem
+            selected={currentIndex - 1 === selectedIndex}
+            data-value=""
+            theme="textDisabledOnBackground"
+          >
+            <span className="mdc-list-item__text">{placeholder}</span>
+          </MenuItem>
+        )}
 
-  return (
-    <Menu {...rest} ref={ref} apiRef={menuApiRef} className={className} focusOnOpen>
-      {!!props.placeholder && (
-        <MenuItem
-          selected={currentIndex - 1 === selectedIndex}
-          data-value=""
-          theme="textDisabledOnBackground"
-        >
-          <span className="mdc-list-item__text">{placeholder}</span>
-        </MenuItem>
-      )}
-
-      {selectOptions.map(
-        ({ label, options, ...option }: FormattedOption, i: number) => {
-          if (options) {
-            return (
-              <ListGroup key={i}>
-                {label && (
-                  <ListGroupSubheader theme="textDisabledOnBackground">
-                    {label}
-                  </ListGroupSubheader>
-                )}
-                <MenuItems>
-                  {options.map(({ label, ...option }) =>
-                    renderOption({ label, option: option as FormattedOption })
+        {selectOptions.map(
+          ({ label, options, ...option }: FormattedOption, i: number) => {
+            if (options) {
+              return (
+                <ListGroup key={i}>
+                  {label && (
+                    <ListGroupSubheader theme="textDisabledOnBackground">
+                      {label}
+                    </ListGroupSubheader>
                   )}
-                </MenuItems>
-                {i < selectOptions.length - 1 && <ListDivider />}
-              </ListGroup>
-            );
-          }
+                  <MenuItems>
+                    {options.map(({ label, ...option }) =>
+                      renderOption({ label, option: option as FormattedOption })
+                    )}
+                  </MenuItems>
+                  {i < selectOptions.length - 1 && <ListDivider />}
+                </ListGroup>
+              );
+            }
 
-          return renderOption({ label, option: option as FormattedOption });
-        }
-      )}
-      {children}
-    </Menu>
-  );
-}
+            return renderOption({ label, option: option as FormattedOption });
+          }
+        )}
+        {children}
+      </Menu>
+    );
+  }
+);
 
 export const Select: RMWC.ComponentType<
   SelectProps,
@@ -432,6 +442,7 @@ export const Select: RMWC.ComponentType<
           <EnhancedMenu
             {...rest}
             {...enhancedMenuProps}
+            ref={ref}
             anchorCorner="bottomStart"
             defaultValue={defaultValue}
             placeholder={placeholder}
