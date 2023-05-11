@@ -75,7 +75,7 @@ export const Checkbox: RMWC.ComponentType<
         indeterminate,
         ...toggleRootProps
       })}
-      ref={mergeRefs(rootEl.setRef, ref)}
+      ref={mergeRefs(rootEl.reactRef, ref)}
     >
       <input
         {...checkboxEl.props({
@@ -83,7 +83,7 @@ export const Checkbox: RMWC.ComponentType<
           className: 'mdc-checkbox__native-control'
         })}
         type="checkbox"
-        ref={mergeRefs(checkboxEl.setRef, inputRef)}
+        ref={mergeRefs(checkboxEl.reactRef, inputRef)}
         id={id}
       />
       <CheckboxBackground />

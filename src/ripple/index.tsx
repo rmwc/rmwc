@@ -1,6 +1,6 @@
 import * as RMWC from '@rmwc/types';
-import React from 'react';
 import * as ReactDOM from 'react-dom';
+import React from 'react';
 import { MDCRippleFoundation } from '@material/ripple';
 import { classNames } from '@rmwc/base';
 import { useProviderContext } from '@rmwc/provider';
@@ -30,38 +30,8 @@ export interface RippleProps {
 const RippleSurfaceContext = React.createContext({});
 
 /** A component for adding Ripples to other components. */
-const withDomNode =
-  () =>
-  <P extends any>(
-    Component: React.ComponentType<P>
-  ): React.ComponentType<P & { domNode?: Element }> => {
-    // @ts-ignore
-    return class extends React.Component<
-      { children: React.ReactNode } & P & { domNode?: Element }
-    > {
-      state = { domNode: null };
 
-      componentDidMount() {
-        this.setState({ domNode: ReactDOM.findDOMNode(this) as Element });
-      }
-
-      componentDidUpdate() {
-        const rootRippleElement = ReactDOM.findDOMNode(this) as Element;
-
-        if (rootRippleElement !== this.state.domNode) {
-          this.setState({ rootRippleElement });
-        }
-      }
-
-      render() {
-        return <Component {...this.props} domNode={this.state.domNode} />;
-      }
-    };
-  };
-
-export const Ripple = withDomNode()(function Ripple(
-  props: RippleProps & RMWC.HTMLProps & { domNode?: Element }
-) {
+export function Ripple(props: RippleProps & RMWC.HTMLProps) {
   const {
     children,
     className,
@@ -69,7 +39,6 @@ export const Ripple = withDomNode()(function Ripple(
     accent,
     unbounded,
     surface,
-    domNode,
     foundationRef,
     ...rest
   } = props;
@@ -120,6 +89,7 @@ export const Ripple = withDomNode()(function Ripple(
 
   // do some crazy props merging...
   const content = React.cloneElement(child, {
+    ref: rootEl.reactRef,
     ...child.props,
     ...unboundedProp,
     ...rootEl.props({
@@ -137,7 +107,7 @@ export const Ripple = withDomNode()(function Ripple(
       {content}
     </RippleSurfaceContext.Provider>
   );
-});
+}
 
 export const RippleSurface = ({
   className,

@@ -105,7 +105,7 @@ export const Tooltip = createComponent<TooltipProps>(function Tooltip(
       <RichTooltip>
         {React.cloneElement(child, {
           ...anchorEl.props(child.props),
-          ref: anchorEl.setRef,
+          ref: anchorEl.reactRef,
           'aria-describedby': 'tooltip-id',
           'data-tooltip-id': 'tooltip-id'
         })}
@@ -145,7 +145,7 @@ export const Tooltip = createComponent<TooltipProps>(function Tooltip(
       </Tag>
       {React.cloneElement(child, {
         ...anchorEl.props(child.props),
-        ref: anchorEl.setRef,
+        ref: anchorEl.reactRef,
         'aria-describedby': 'tooltip-id',
         'data-tooltip-id': 'tooltip-id'
       })}

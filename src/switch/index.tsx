@@ -40,7 +40,7 @@ export const Switch: RMWC.ComponentType<SwitchProps, SwitchHTMLProps, 'input'> =
           ...toggleRootProps,
           className: rootClassName
         })}
-        ref={mergeRefs(rootEl.setRef, ref)}
+        ref={mergeRefs(rootEl.reactRef, ref)}
         disabled={disabled}
         tag="button"
         type="button"
