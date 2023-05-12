@@ -59,7 +59,7 @@
 		"@storybook/manager-webpack5": "^6.5.10",
 		"@storybook/preset-create-react-app": "4.1.2",
 		"@storybook/react": "^6.5.10",
-		"@testing-library/dom": "^7.31.2",
+		"@testing-library/dom": "^9.3.0",
 		"@testing-library/jest-dom": "^5.16.4",
 		"@testing-library/react": "^11.2.7",
 		"@testing-library/user-event": "^14.2.0",
