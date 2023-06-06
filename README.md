@@ -38,8 +38,7 @@ Features:
 
 ## Recent updates
 
-v8.0.6 is here! This release includes a bug fix for this issue: Disabled MenuItems are expected to not be interactable
-[847](https://github.com/rmwc/rmwc/issues/847).
+v8.0.8 is here! This release includes somes improvements for portal.
 
 - `npm i rmwc@latest` or `npm i @rmwc/button@latest`.
 - React 17 now usable as a peer dep
