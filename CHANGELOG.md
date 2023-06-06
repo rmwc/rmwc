@@ -1,3 +1,9 @@
+#### 8.0.8 (2023-06-06)
+
+##### Continuous Integration
+
+* **rmwc:**  release of 8.0.8 (5a2b627e)
+
 #### 8.0.7 (2023-03-20)
 
 ##### Build System / Dependencies
