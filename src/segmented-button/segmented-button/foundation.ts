@@ -24,6 +24,12 @@ export const useSegmentedButtonFoundation = (
     }
   );
 
+  const getSegmentDetail = (index: string | number) =>
+    mappedSegments.find(
+      (detail: SegmentDetail) =>
+        detail.index === index || detail.segmentId === index
+    );
+
   const { foundation, ...elements } = useFoundation({
     props,
     elements: { rootEl: true },
@@ -33,26 +39,16 @@ export const useSegmentedButtonFoundation = (
           return rootEl.hasClass(className);
         },
         getSegments: () => {
-          console.log({ mappedSegments });
           return mappedSegments;
         },
         selectSegment: (indexOrSegmentId) => {
-          const segmentDetail = mappedSegments.find(
-            (detail: SegmentDetail) =>
-              detail.index === indexOrSegmentId ||
-              detail.segmentId === indexOrSegmentId
-          );
-          console.log({ segmentDetail });
+          const segmentDetail = getSegmentDetail(indexOrSegmentId);
           if (segmentDetail) {
             segmentsList.current[segmentDetail.index].setSelected();
           }
         },
         unselectSegment: (indexOrSegmentId) => {
-          const segmentDetail = mappedSegments.find(
-            (detail: SegmentDetail) =>
-              detail.index === indexOrSegmentId ||
-              detail.segmentId === indexOrSegmentId
-          );
+          const segmentDetail = getSegmentDetail(indexOrSegmentId);
           if (segmentDetail) {
             segmentsList.current[segmentDetail.index].setUnselected();
           }

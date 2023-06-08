@@ -146,6 +146,9 @@ export const Slider: RMWC.ComponentType<SliderProps, SliderHTMLProps, 'input'> =
         {range && (
           <input
             {...rest}
+            aria-label="Slider start value"
+            aria-valuemax={safeNum(max)}
+            aria-valuenow={valueStart as any}
             className="mdc-slider__input"
             disabled={disabled}
             max={safeNum(max)}
@@ -162,6 +165,9 @@ export const Slider: RMWC.ComponentType<SliderProps, SliderHTMLProps, 'input'> =
           />
         )}
         <input
+          aria-label="Slider value"
+          aria-valuemax={safeNum(max)}
+          aria-valuenow={value as any}
           className="mdc-slider__input"
           disabled={disabled}
           max={safeNum(max)}

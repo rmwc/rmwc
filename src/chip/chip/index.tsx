@@ -30,7 +30,7 @@ export type ChipOnRemoveEventT = RMWC.CustomEventT<{ chipId: string }>;
 export interface ChipProps {
   /** Text for your Chip. */
   label?: string;
-  /** makes the Chip appear selected. */
+  /** Makes the Chip appear selected. */
   selected?: boolean;
   /** Instance of an Icon Component. */
   icon?: React.ReactNode;

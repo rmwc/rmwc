@@ -44,13 +44,12 @@ export const useToolTipFoundation = (
         getViewportWidth: () => window.innerWidth,
         getViewportHeight: () => window.innerHeight,
         getTooltipSize: () => {
-          if (rootEl.ref === null) {
-            return { width: 0, height: 0 };
-          }
-          return {
-            width: (rootEl.ref as HTMLElement).offsetWidth,
-            height: (rootEl.ref as HTMLElement).offsetHeight
-          };
+          return rootEl.ref === null
+            ? { width: 0, height: 0 }
+            : {
+                width: (rootEl.ref as HTMLElement).offsetWidth,
+                height: (rootEl.ref as HTMLElement).offsetHeight
+              };
         },
         getAnchorBoundingRect: () => {
           return anchorEl.ref ? anchorEl.ref?.getBoundingClientRect() : null;

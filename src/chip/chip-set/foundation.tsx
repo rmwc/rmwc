@@ -1,5 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import * as RMWC from '@rmwc/types';
 import { ChipSetHTMLProps, ChipSetProps } from './';
 import { useFoundation } from '@rmwc/base';
 import {

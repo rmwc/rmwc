@@ -53,10 +53,7 @@ export const useSliderFoundation = (
         },
         getInputAttribute: (attribute, thumb: Thumb) => {
           const input = getInput(thumb);
-          if (input !== undefined) {
-            return input.getAttribute(attribute);
-          }
-          return null;
+          return input ? input.getAttribute(attribute) : null;
         },
         setInputAttribute: (attribute, value, thumb: Thumb) => {
           getInput(thumb)?.setAttribute(attribute, value);
@@ -157,18 +154,6 @@ export const useSliderFoundation = (
             });
           }
         },
-        // emitDragStartEvent: (_, thumb: Thumb) => {
-        //   // Emitting event is not yet implemented. See issue:
-        //   // https://github.com/material-components/material-components-web/issues/6448
-
-        //   getRipple(thumb)?.activate();
-        // },
-        // emitDragEndEvent: (_, thumb: Thumb) => {
-        //   // Emitting event is not yet implemented. See issue:
-        //   // https://github.com/material-components/material-components-web/issues/6448
-
-        //   getRipple(thumb)?.deactivate();
-        // },
         registerEventHandler: (evtType, handler) => {
           rootEl.addEventListener(evtType, handler);
         },
@@ -354,18 +339,15 @@ export const useSliderFoundation = (
   }, [props.displayMarkers, foundation]);
 
   // bugfix
-  // useEffect(() => {
-  //   // Fixes an issue where synthetic events were being
-  //   // accessed in the Foundation and causing an error
-  //   // @ts-ignore unsafe private access
-  //   const existinghandleDown_ = foundation.handleDown.bind(foundation);
+  useEffect(() => {
+    // Fixes an issue where synthetic events were being
+    // accessed in the Foundation and causing an error
+    const existinghandleDown_ = foundation.handleDown.bind(foundation);
 
-  //   // @ts-ignore unsafe private access
-  //   foundation.handleDown = (evt: PointerEvent | MouseEvent | TouchEvent) => {
-  //     // evt.persist();
-  //     existinghandleDown_(evt);
-  //   };
-  // }, [foundation]);
+    foundation.handleDown = (evt: PointerEvent | MouseEvent | TouchEvent) => {
+      existinghandleDown_(evt);
+    };
+  }, [foundation]);
 
   return {
     setInputsRef,
