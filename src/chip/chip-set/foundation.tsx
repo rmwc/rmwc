@@ -1,5 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import * as RMWC from '@rmwc/types';
 import { ChipSetHTMLProps, ChipSetProps } from './';
 import { useFoundation } from '@rmwc/base';
 import {
@@ -96,17 +94,14 @@ export const useChipSetFoundation = (
   };
 
   const handleChipAnimation = (event: ChipAnimationEvent) => {
-    console.log('animation');
     foundation.handleChipAnimation(event);
   };
 
   const handleChipInteraction = (event: ChipInteractionEvent) => {
-    console.log('interaction');
     foundation.handleChipInteraction(event);
   };
 
   const handleChipNavigation = (event: ChipNavigationEvent) => {
-    console.log('navigation');
     foundation.handleChipNavigation(event);
   };
 

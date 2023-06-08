@@ -143,12 +143,13 @@ export const useChipFoundation = (props: ChipProps & ChipHTMLProps) => {
   const { onClick, onKeyDown, onInteraction } = props;
 
   const setAction = (action: ActionApi) => {
-    if (action.actionType === MDCChipActionType.TRAILING) {
-      return trailingAction.current;
-    } else if (action.actionType === MDCChipActionType.PRIMARY) {
-      return primaryAction.current;
-    } else {
-      return null;
+    switch (action.actionType) {
+      case MDCChipActionType.TRAILING:
+        return trailingAction.current;
+      case MDCChipActionType.PRIMARY:
+        return primaryAction.current;
+      default:
+        return null;
     }
   };
 

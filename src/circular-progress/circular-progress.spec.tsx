@@ -9,7 +9,7 @@ describe('CircularProgress', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('can be xsmall', () => {
+  it('can be small', () => {
     const { container, rerender } = render(<CircularProgress size="small" />);
     expect(
       container.getElementsByClassName(

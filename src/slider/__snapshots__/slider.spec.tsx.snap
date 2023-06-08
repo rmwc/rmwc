@@ -7,6 +7,8 @@ exports[`Slider can be a range slider 1`] = `
     tabindex="0"
   >
     <input
+      aria-label="Slider start value"
+      aria-valuemax="100"
       class="mdc-slider__input"
       max="100"
       min="0"
@@ -15,6 +17,8 @@ exports[`Slider can be a range slider 1`] = `
       value=""
     />
     <input
+      aria-label="Slider value"
+      aria-valuemax="100"
       class="mdc-slider__input"
       max="100"
       min="0"
@@ -61,6 +65,8 @@ exports[`Slider renders uncontrolled 1`] = `
     tabindex="0"
   >
     <input
+      aria-label="Slider value"
+      aria-valuemax="100"
       class="mdc-slider__input"
       max="100"
       min="0"
@@ -100,6 +106,9 @@ exports[`Slider renders with all props 1`] = `
     tabindex="0"
   >
     <input
+      aria-label="Slider value"
+      aria-valuemax="100"
+      aria-valuenow="50"
       class="mdc-slider__input"
       disabled=""
       max="100"
