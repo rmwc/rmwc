@@ -226,7 +226,7 @@
           "kind": "property",
           "name": "enhanced",
           "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/select/select/index.tsx#L52",
-          "type": "boolean | MenuProps"
+          "type": "boolean | any"
         },
         {
           "documentation": {
@@ -539,7 +539,7 @@
       },
       "kind": "interface",
       "name": "SelectHelperTextProps",
-      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/select/select/index.tsx#L458",
+      "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/select/select/index.tsx#L467",
       "methods": [],
       "properties": [
         {
@@ -563,7 +563,7 @@
           },
           "kind": "property",
           "name": "persistent",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/select/select/index.tsx#L460",
+          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/select/select/index.tsx#L469",
           "type": "undefined | false | true"
         },
         {
@@ -587,7 +587,7 @@
           },
           "kind": "property",
           "name": "validationMsg",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/select/select/index.tsx#L462",
+          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/select/select/index.tsx#L471",
           "type": "undefined | false | true"
         }
       ]
