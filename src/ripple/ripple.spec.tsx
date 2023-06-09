@@ -36,6 +36,15 @@ describe('Ripple', () => {
     expect(container.firstChild).toHaveClass('mdc-ripple-surface--accent');
   });
 
+  it('can be surface', () => {
+    const { container } = render(
+      <Ripple surface>
+        <div />
+      </Ripple>
+    );
+    expect(container.firstChild).toHaveClass('mdc-ripple-surface');
+  });
+
   it('can be unbounded', () => {
     const { container } = render(
       <Ripple unbounded>

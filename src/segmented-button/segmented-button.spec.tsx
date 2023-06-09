@@ -49,6 +49,19 @@ describe('Segmented Button', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
+  it('can have a trailing icon', () => {
+    const { asFragment } = render(
+      <SegmentedButton>
+        <Segment trailingIcon="favorite">Segment</Segment>
+      </SegmentedButton>
+    );
+    expect(screen.getByRole('group').firstChild).toHaveAttribute(
+      'trailingicon',
+      'favorite'
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
   it('can have custom classnames', () => {
     render(
       <SegmentedButton>
@@ -57,6 +70,28 @@ describe('Segmented Button', () => {
     );
     expect(screen.getByText('Cookies').parentElement).toHaveClass(
       'my-custom-classname'
+    );
+  });
+
+  it('can be disabled', () => {
+    render(
+      <SegmentedButton>
+        <Segment disabled={true}>Segment</Segment>
+      </SegmentedButton>
+    );
+    expect(screen.getByText('Segment').parentElement).toHaveAttribute(
+      'disabled'
+    );
+  });
+
+  it('can be touch', () => {
+    render(
+      <SegmentedButton>
+        <Segment touch>Segment</Segment>
+      </SegmentedButton>
+    );
+    expect(screen.getByText('Segment').parentElement).toHaveClass(
+      'mdc-segmented-button--touch'
     );
   });
 });

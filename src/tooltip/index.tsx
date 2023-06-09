@@ -44,9 +44,7 @@ export interface TooltipProps {
   /** The overlay content for the tooltip. */
   content: React.ReactNode;
   /** The children that the tooltip belongs to. Must be a single React element. */
-  children:
-    | React.ReactElement<any, string | React.JSXElementConstructor<any>>
-    | undefined;
+  children: React.ReactNode;
   /** Activate the tooltip through one or more interactions. Defaults to `['hover', 'focus']`. */
   activateOn?: TooltipActivationT | TooltipActivationT[];
   /** Custom className to add to the tooltip overlay container. */

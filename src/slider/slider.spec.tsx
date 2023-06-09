@@ -46,4 +46,12 @@ describe('Slider', () => {
     expect(container.firstChild).toHaveClass('mdc-slider--range');
     expect(asFragment()).toMatchSnapshot();
   });
+
+  it('renders with range slider props', () => {
+    const { asFragment } = render(
+      <Slider range value={9} valueStart={2} min={1} max={10} minRange={1} />
+    );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
 });

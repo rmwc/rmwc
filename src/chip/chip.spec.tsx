@@ -99,4 +99,35 @@ describe('Chip', () => {
 
     expect(onClick).not.toHaveBeenCalled();
   });
+
+  it('can be overlow', () => {
+    const { container } = render(
+      <ChipSet overflow>
+        <Chip label="Cookie" id="1" />
+      </ChipSet>
+    );
+    expect(container.firstChild).toHaveClass('mdc-evolution-chip-set--overlow');
+  });
+
+  it('can be role grid', () => {
+    const { container } = render(
+      <ChipSet role="grid">
+        <Chip label="Cookie" id="1" />
+      </ChipSet>
+    );
+    expect(container.firstChild).toHaveAttribute('role', 'grid');
+  });
+
+  it('can be role listbox and receive prop aria-orientation', () => {
+    const { container } = render(
+      <ChipSet role="listbox">
+        <Chip label="Cookie" id="1" />
+      </ChipSet>
+    );
+    expect(container.firstChild).toHaveAttribute('role', 'listbox');
+    expect(container.firstChild).toHaveAttribute(
+      'aria-orientation',
+      'horizontal'
+    );
+  });
 });

@@ -17,3 +17,57 @@ exports[`FormField renders 1`] = `
   </div>
 </DocumentFragment>
 `;
+
+exports[`FormField renders with alignEnd 1`] = `
+<DocumentFragment>
+  <div
+    class="mdc-form-field mdc-form-field--align-end"
+  >
+    <input
+      id="input"
+      type="checkbox"
+    />
+    <label
+      for="input"
+    >
+      Input Label
+    </label>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`FormField renders with noWrap 1`] = `
+<DocumentFragment>
+  <div
+    class="mdc-form-field mdc-form-field--nowrap"
+  >
+    <input
+      id="input"
+      type="checkbox"
+    />
+    <label
+      for="input"
+    >
+      Input Label
+    </label>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`FormField renders with spaceBetween 1`] = `
+<DocumentFragment>
+  <div
+    class="mdc-form-field mdc-form-field--space-between"
+  >
+    <input
+      id="input"
+      type="checkbox"
+    />
+    <label
+      for="input"
+    >
+      Input Label
+    </label>
+  </div>
+</DocumentFragment>
+`;

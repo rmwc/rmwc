@@ -53,7 +53,157 @@ exports[`Collapsible List renders 1`] = `
 </DocumentFragment>
 `;
 
-exports[`List SimpleListItem renders 1`] = `
+exports[`List can be avatarList 1`] = `
+<DocumentFragment>
+  <ul
+    class="mdc-deprecated-list mdc-deprecated-list--avatar-list"
+  >
+    <li
+      class="mdc-deprecated-list-item"
+      tabindex="0"
+    >
+      <div
+        class="mdc-deprecated-list-item__ripple "
+      />
+      <span
+        class="mdc-deprecated-list-item__primary-text"
+      >
+        Cookies
+      </span>
+    </li>
+  </ul>
+</DocumentFragment>
+`;
+
+exports[`List can be dense 1`] = `
+<DocumentFragment>
+  <ul
+    class="mdc-deprecated-list mdc-deprecated-list--dense"
+  >
+    <li
+      class="mdc-deprecated-list-item"
+      tabindex="0"
+    >
+      <div
+        class="mdc-deprecated-list-item__ripple "
+      />
+      <span
+        class="mdc-deprecated-list-item__primary-text"
+      >
+        Cookies
+      </span>
+    </li>
+  </ul>
+</DocumentFragment>
+`;
+
+exports[`List can be nonInteractive 1`] = `
+<DocumentFragment>
+  <ul
+    class="mdc-deprecated-list mdc-deprecated-list--non-interactive"
+  >
+    <li
+      class="mdc-deprecated-list-item"
+      tabindex="0"
+    >
+      <div
+        class="mdc-deprecated-list-item__ripple "
+      />
+      <span
+        class="mdc-deprecated-list-item__primary-text"
+      >
+        Cookies
+      </span>
+    </li>
+  </ul>
+</DocumentFragment>
+`;
+
+exports[`List can be twoLine 1`] = `
+<DocumentFragment>
+  <ul
+    class="mdc-deprecated-list mdc-deprecated-list--two-line"
+  >
+    <li
+      class="mdc-deprecated-list-item"
+      tabindex="0"
+    >
+      <div
+        class="mdc-deprecated-list-item__ripple "
+      />
+      <span
+        class="mdc-deprecated-list-item__primary-text"
+      >
+        Cookies
+      </span>
+    </li>
+    <li
+      class="mdc-deprecated-list-item"
+      tabindex="0"
+    >
+      <div
+        class="mdc-deprecated-list-item__ripple "
+      />
+      <span
+        class="mdc-deprecated-list-item__primary-text"
+      >
+        Pancakes
+      </span>
+    </li>
+  </ul>
+</DocumentFragment>
+`;
+
+exports[`List renders 1`] = `
+<DocumentFragment>
+  <ul
+    class="mdc-deprecated-list"
+  >
+    <li
+      class="mdc-deprecated-list-item"
+      tabindex="0"
+    >
+      <div
+        class="mdc-deprecated-list-item__ripple "
+      />
+      <i
+        aria-hidden="true"
+        class="rmwc-icon rmwc-icon--ligature material-icons mdc-deprecated-list-item__graphic"
+      />
+      <span
+        class="mdc-deprecated-list-item__primary-text"
+      >
+        Cookies
+      </span>
+      <div
+        class="mdc-deprecated-list-item__meta"
+      />
+    </li>
+    <li
+      class="mdc-deprecated-list-item"
+      tabindex="0"
+    >
+      <div
+        class="mdc-deprecated-list-item__ripple "
+      />
+      <i
+        aria-hidden="true"
+        class="rmwc-icon rmwc-icon--ligature material-icons mdc-deprecated-list-item__graphic"
+      />
+      <span
+        class="mdc-deprecated-list-item__primary-text"
+      >
+        Cookies
+      </span>
+      <div
+        class="mdc-deprecated-list-item__meta"
+      />
+    </li>
+  </ul>
+</DocumentFragment>
+`;
+
+exports[`SimpleListItem SimpleListItem renders 1`] = `
 <DocumentFragment>
   <ul
     class="mdc-deprecated-list"
@@ -142,55 +292,6 @@ exports[`List SimpleListItem renders 1`] = `
       >
         info
       </div>
-    </li>
-  </ul>
-</DocumentFragment>
-`;
-
-exports[`List renders 1`] = `
-<DocumentFragment>
-  <ul
-    class="mdc-deprecated-list"
-  >
-    <li
-      class="mdc-deprecated-list-item"
-      tabindex="0"
-    >
-      <div
-        class="mdc-deprecated-list-item__ripple "
-      />
-      <i
-        aria-hidden="true"
-        class="rmwc-icon rmwc-icon--ligature material-icons mdc-deprecated-list-item__graphic"
-      />
-      <span
-        class="mdc-deprecated-list-item__primary-text"
-      >
-        Cookies
-      </span>
-      <div
-        class="mdc-deprecated-list-item__meta"
-      />
-    </li>
-    <li
-      class="mdc-deprecated-list-item"
-      tabindex="0"
-    >
-      <div
-        class="mdc-deprecated-list-item__ripple "
-      />
-      <i
-        aria-hidden="true"
-        class="rmwc-icon rmwc-icon--ligature material-icons mdc-deprecated-list-item__graphic"
-      />
-      <span
-        class="mdc-deprecated-list-item__primary-text"
-      >
-        Cookies
-      </span>
-      <div
-        class="mdc-deprecated-list-item__meta"
-      />
     </li>
   </ul>
 </DocumentFragment>

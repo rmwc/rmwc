@@ -24,6 +24,99 @@ exports[`Tooltip align 1`] = `
 </DocumentFragment>
 `;
 
+exports[`Tooltip can be rich 1`] = `
+<DocumentFragment>
+  <div
+    class="mdc-tooltip-wrapper--rich"
+  >
+    <span
+      aria-describedby="tooltip-id"
+      class=""
+      data-tooltip-id="tooltip-id"
+    >
+      test
+    </span>
+    <div
+      aria-hidden="true"
+      class="mdc-tooltip--rich mdc-tooltip"
+      id="tooltip-id"
+      role="tooltip"
+    >
+      <div
+        class="mdc-tooltip__surface mdc-tooltip__surface-animation"
+      >
+        <p
+          class="mdc-tooltip__content"
+        />
+        <div>
+          tooltip
+        </div>
+        <p />
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Tooltip can be rich and persistent 1`] = `
+<DocumentFragment>
+  <div
+    class="mdc-tooltip-wrapper--rich"
+  >
+    <span
+      aria-describedby="tooltip-id"
+      class=""
+      data-tooltip-id="tooltip-id"
+    >
+      test
+    </span>
+    <div
+      aria-hidden="true"
+      class="mdc-tooltip--rich mdc-tooltip"
+      data-mdc-tooltip-persistent="true"
+      id="tooltip-id"
+      role="tooltip"
+    >
+      <div
+        class="mdc-tooltip__surface mdc-tooltip__surface-animation"
+      >
+        <p
+          class="mdc-tooltip__content"
+        />
+        <div>
+          tooltip
+        </div>
+        <p />
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Tooltip can display arrow 1`] = `
+<DocumentFragment>
+  <div
+    aria-hidden="true"
+    class="mdc-tooltip rmwc-tooltip--show-arrow"
+    id="tooltip-id"
+    role="tooltip"
+  >
+    <div
+      class="mdc-tooltip__surface mdc-tooltip__surface-animation"
+    >
+      tooltip
+    </div>
+  </div>
+  <span
+    aria-describedby="tooltip-id"
+    class=""
+    data-tooltip-id="tooltip-id"
+  >
+    test
+  </span>
+</DocumentFragment>
+`;
+
 exports[`Tooltip renders 1`] = `
 <DocumentFragment>
   <div

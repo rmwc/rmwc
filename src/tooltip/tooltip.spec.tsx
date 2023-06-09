@@ -66,4 +66,54 @@ describe('Tooltip', () => {
       </RMWCProvider>
     );
   });
+
+  it('can display arrow', () => {
+    const { asFragment } = render(
+      <RMWCProvider tooltip={{}}>
+        <Tooltip content="tooltip" showArrow>
+          <span>test</span>
+        </Tooltip>
+      </RMWCProvider>
+    );
+
+    expect(screen.getByText('tooltip').parentElement).toHaveClass(
+      'rmwc-tooltip--show-arrow'
+    );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('can be rich', () => {
+    const { asFragment } = render(
+      <RMWCProvider tooltip={{}}>
+        {
+          // @ts-ignore
+          <Tooltip content={<div>tooltip</div>}>
+            <span>test</span>
+          </Tooltip>
+        }
+      </RMWCProvider>
+    );
+
+    expect(screen.getByText('test').parentElement).toHaveClass(
+      'mdc-tooltip-wrapper--rich'
+    );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('can be rich and persistent', () => {
+    const { asFragment } = render(
+      <RMWCProvider tooltip={{}}>
+        {
+          // @ts-ignore
+          <Tooltip content={<div>tooltip</div>} isPersistent>
+            <span>test</span>
+          </Tooltip>
+        }
+      </RMWCProvider>
+    );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
 });

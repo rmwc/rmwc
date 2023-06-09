@@ -115,6 +115,28 @@ describe('DataTable', () => {
     );
   });
 
+  it('can be numeric', () => {
+    render(
+      <DataTable>
+        <DataTableContent>
+          <DataTableHead>
+            <DataTableRow>
+              <DataTableHeadCell isNumeric>1</DataTableHeadCell>
+            </DataTableRow>
+          </DataTableHead>
+          <DataTableBody>
+            <DataTableRow>
+              <DataTableCell>2</DataTableCell>
+            </DataTableRow>
+          </DataTableBody>
+        </DataTableContent>
+      </DataTable>
+    );
+    expect(screen.getByRole('columnheader')).toHaveClass(
+      'mdc-data-table__header-cell--numeric'
+    );
+  });
+
   it('can have have selected row', () => {
     render(
       <DataTable>

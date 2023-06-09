@@ -9,6 +9,27 @@ describe('Typography', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
+  it('renders with each type', () => {
+    const { asFragment } = render(
+      <>
+        <Typography use="headline1" />
+        <Typography use="headline2" />
+        <Typography use="headline3" />
+        <Typography use="headline4" />
+        <Typography use="headline5" />
+        <Typography use="headline6" />
+        <Typography use="subtitle1" />
+        <Typography use="subtitle2" />
+        <Typography use="body1" />
+        <Typography use="body2" />
+        <Typography use="caption" />
+        <Typography use="button" />
+        <Typography use="button" />
+      </>
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
   it('can have custom classnames', () => {
     const { container } = render(
       <Typography use="body1" className={'my-custom-classname'} />

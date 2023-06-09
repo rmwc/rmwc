@@ -97,6 +97,21 @@ describe('Select', () => {
     expect(container.firstChild).toHaveClass('mdc-select--outlined');
   });
 
+  it('can be invalid', () => {
+    const { container } = render(<Select invalid />);
+    expect(container.firstChild).toHaveClass('mdc-select--invalid');
+  });
+
+  it('can be required', () => {
+    const { container } = render(<Select required />);
+    expect(container.firstChild).toHaveClass('mdc-select--required');
+  });
+
+  it('can have icon', () => {
+    render(<Select icon="favorite" />);
+    expect(screen.getByText('favorite')).toBeInTheDocument();
+  });
+
   it('can accept formatted options array', () => {
     const { asFragment } = render(
       <Select

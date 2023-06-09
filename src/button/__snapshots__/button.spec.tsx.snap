@@ -22,6 +22,34 @@ exports[`Button can be danger 1`] = `
 </DocumentFragment>
 `;
 
+exports[`Button can have a trailing icon 1`] = `
+<DocumentFragment>
+  <button
+    class="mdc-button"
+  >
+    <div
+      class="mdc-button__ripple"
+    />
+    <div
+      class="mdc-button__touch"
+    />
+    <div
+      class="mdc-button__focus-ring"
+    />
+    <span
+      class="mdc-button__label"
+    >
+      Button
+    </span>
+    <i
+      class="rmwc-icon rmwc-icon--ligature material-icons mdc-button__icon"
+    >
+      favorite
+    </i>
+  </button>
+</DocumentFragment>
+`;
+
 exports[`Button can have an icon 1`] = `
 <DocumentFragment>
   <button

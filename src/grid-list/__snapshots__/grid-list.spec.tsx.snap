@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`GridList can be headerCaption 1`] = `
+exports[`GridList can be tileAspect undefined 1`] = `
 <DocumentFragment>
   <div
-    class="mdc-grid-list mdc-grid-list--with-icon-align-start mdc-grid-list--tile-aspect-1x1"
+    class="mdc-grid-list mdc-grid-list--tile-aspect-1x1"
   >
     <ul
       class="mdc-grid-list__tiles"
@@ -12,10 +12,10 @@ exports[`GridList can be headerCaption 1`] = `
 </DocumentFragment>
 `;
 
-exports[`GridList can be tileAspect undefined 1`] = `
+exports[`GridList can be withIconAlignStart 1`] = `
 <DocumentFragment>
   <div
-    class="mdc-grid-list mdc-grid-list--tile-aspect-1x1"
+    class="mdc-grid-list mdc-grid-list--with-icon-align-start mdc-grid-list--tile-aspect-1x1"
   >
     <ul
       class="mdc-grid-list__tiles"

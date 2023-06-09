@@ -7,3 +7,11 @@ exports[`FloatingLabel renders 1`] = `
   />
 </DocumentFragment>
 `;
+
+exports[`FloatingLabel renders with float 1`] = `
+<DocumentFragment>
+  <span
+    class="mdc-floating-label mdc-floating-label--float-above"
+  />
+</DocumentFragment>
+`;

@@ -193,3 +193,64 @@ exports[`Slider renders with all props 1`] = `
   </div>
 </DocumentFragment>
 `;
+
+exports[`Slider renders with range slider props 1`] = `
+<DocumentFragment>
+  <div
+    class="mdc-slider mdc-slider--range"
+    data-min-range="1"
+    tabindex="0"
+  >
+    <input
+      aria-label="Slider start value"
+      aria-valuemax="10"
+      aria-valuenow="2"
+      class="mdc-slider__input"
+      max="10"
+      min="1"
+      name="rangeStart"
+      type="range"
+      value="2"
+    />
+    <input
+      aria-label="Slider value"
+      aria-valuemax="10"
+      aria-valuenow="9"
+      class="mdc-slider__input"
+      max="10"
+      min="1"
+      name="rangeEnd"
+      type="range"
+      value="9"
+    />
+    <div
+      class="mdc-slider__track"
+    >
+      <div
+        class="mdc-slider__track--inactive"
+      />
+      <div
+        class="mdc-slider__track--active"
+      >
+        <div
+          class="mdc-slider__track--active_fill"
+        />
+      </div>
+    </div>
+    <div
+      class="mdc-slider__thumb"
+    >
+      <div
+        class="mdc-slider__thumb-knob"
+      />
+    </div>
+    <div
+      class="mdc-slider__thumb"
+    >
+      <div
+        class="mdc-slider__thumb-knob"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
