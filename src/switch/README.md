@@ -19,17 +19,19 @@ Switches are identical in function to the Checkbox component, they just present 
 ```
 
 ```jsx
-function Example() {
-  const [checked, setChecked] = React.useState(false);
+<>
+  {function Example() {
+    const [checked, setChecked] = React.useState(false);
 
-  return (
-    <Switch
-      checked={checked}
-      onClick={(evt) => setChecked((c) => !c)}
-      label="Cookies"
-    />
-  );
-}
+    return (
+      <Switch
+        checked={checked}
+        onClick={(evt) => setChecked((c) => !c)}
+        label="Cookies"
+      />
+    );
+  }}
+</>
 ```
 
 ```jsx

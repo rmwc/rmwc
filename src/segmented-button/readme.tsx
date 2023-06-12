@@ -22,71 +22,73 @@ export default function Readme() {
       examples={examples}
     >
       <DocsExample label="Default Multiple Select">
-        {/* @ts-ignore */}
-        {function Example() {
-          const [selected, setSelected] = React.useState({
-            cookies: false,
-            pizza: false,
-            icecream: false
-          });
-          //@ts-ignore
-          const toggleSelected = (key) =>
+        <>
+          {function Example() {
+            const [selected, setSelected] = React.useState({
+              cookies: false,
+              pizza: false,
+              icecream: false
+            });
             //@ts-ignore
-            setSelected({ ...selected, [key]: !selected[key] });
-          return (
-            <SegmentedButton>
-              <Segment
-                icon="favorite"
-                value="cookies"
-                onClick={() => toggleSelected('cookies')}
-                selected={selected.cookies}
-              />
-              <Segment
-                label="Button"
-                value="pizza"
-                onClick={() => toggleSelected('pizza')}
-                selected={selected.pizza}
-              />
-              <Segment
-                icon="favorite"
-                label="Button"
-                value="icecream"
-                onClick={() => toggleSelected('icecream')}
-                selected={selected.icecream}
-              />
-            </SegmentedButton>
-          );
-        }}
+            const toggleSelected = (key) =>
+              //@ts-ignore
+              setSelected({ ...selected, [key]: !selected[key] });
+            return (
+              <SegmentedButton>
+                <Segment
+                  icon="favorite"
+                  value="cookies"
+                  onClick={() => toggleSelected('cookies')}
+                  selected={selected.cookies}
+                />
+                <Segment
+                  label="Button"
+                  value="pizza"
+                  onClick={() => toggleSelected('pizza')}
+                  selected={selected.pizza}
+                />
+                <Segment
+                  icon="favorite"
+                  label="Button"
+                  value="icecream"
+                  onClick={() => toggleSelected('icecream')}
+                  selected={selected.icecream}
+                />
+              </SegmentedButton>
+            );
+          }}
+        </>
       </DocsExample>
 
       <DocsExample label="Single selectable">
-        {/* @ts-ignore */}
-        {function Example() {
-          const [selected, setSelected] = React.useState('icecream');
-          return (
-            <SegmentedButton selectType="single">
-              <Segment
-                icon="favorite"
-                value="cookies"
-                onClick={(evt) => setSelected(evt.currentTarget.value)}
-                selected={selected === 'cookies'}
-              />
-              <Segment
-                label="Button"
-                value="pizza"
-                onClick={(evt) => setSelected(evt.currentTarget.value)}
-                selected={selected === 'pizza'}
-              />
-              <Segment
-                icon="favorite"
-                label="Button"
-                value="icecream"
-                onClick={(evt) => setSelected(evt.currentTarget.value)}
-                selected={selected === 'icecream'}
-              />
-            </SegmentedButton>
-          );
-        }}
+        <>
+          {function Example() {
+            const [selected, setSelected] = React.useState('icecream');
+            return (
+              <SegmentedButton selectType="single">
+                <Segment
+                  icon="favorite"
+                  value="cookies"
+                  onClick={(evt) => setSelected(evt.currentTarget.value)}
+                  selected={selected === 'cookies'}
+                />
+                <Segment
+                  label="Button"
+                  value="pizza"
+                  onClick={(evt) => setSelected(evt.currentTarget.value)}
+                  selected={selected === 'pizza'}
+                />
+                <Segment
+                  icon="favorite"
+                  label="Button"
+                  value="icecream"
+                  onClick={(evt) => setSelected(evt.currentTarget.value)}
+                  selected={selected === 'icecream'}
+                />
+              </SegmentedButton>
+            );
+          }}
+        </>
       </DocsExample>
 
       <DocsExample label="Touch Target Wrapper">

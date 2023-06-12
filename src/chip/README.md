@@ -27,25 +27,27 @@ Chips represent complex entities in small blocks, such as a contact.
 ```
 
 ```jsx
-function Example() {
-  const [selected, setSelected] = React.useState(false);
-  return (
-    <ChipSet>
-      <Chip
-        key="my-chip"
-        label="Click Me"
-        checkmark
-        selected={selected}
-        onRemove={(evt) => console.log('onRemove', evt.detail)}
-        onInteraction={(evt) => {
-          console.log('onInteraction', evt.detail);
-          setSelected(!selected);
-        }}
-        trailingIcon="close"
-      />
-    </ChipSet>
-  );
-}
+<>
+  {function Example() {
+    const [selected, setSelected] = React.useState(false);
+    return (
+      <ChipSet>
+        <Chip
+          key="my-chip"
+          label="Click Me"
+          checkmark
+          selected={selected}
+          onRemove={(evt) => console.log('onRemove', evt.detail)}
+          onInteraction={(evt) => {
+            console.log('onInteraction', evt.detail);
+            setSelected(!selected);
+          }}
+          trailingIcon="close"
+        />
+      </ChipSet>
+    );
+  }}
+</>
 ```
 
 ```jsx
