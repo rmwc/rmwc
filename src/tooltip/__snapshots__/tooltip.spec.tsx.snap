@@ -14,20 +14,8 @@ exports[`Tooltip align 1`] = `
       tooltip
     </div>
   </div>
-  <span
-    aria-describedby="tooltip-id"
+  <fragment
     class=""
-    data-tooltip-id="tooltip-id"
-  >
-    test
-  </span>
-</DocumentFragment>
-`;
-
-exports[`Tooltip can be rich 1`] = `
-<DocumentFragment>
-  <div
-    class="mdc-tooltip-wrapper--rich"
   >
     <span
       aria-describedby="tooltip-id"
@@ -36,6 +24,26 @@ exports[`Tooltip can be rich 1`] = `
     >
       test
     </span>
+  </fragment>
+</DocumentFragment>
+`;
+
+exports[`Tooltip can be rich 1`] = `
+<DocumentFragment>
+  <div
+    class="mdc-tooltip-wrapper--rich"
+  >
+    <div
+      class=""
+    >
+      <span
+        aria-describedby="tooltip-id"
+        class=""
+        data-tooltip-id="tooltip-id"
+      >
+        test
+      </span>
+    </div>
     <div
       aria-hidden="true"
       class="mdc-tooltip--rich mdc-tooltip"
@@ -45,13 +53,13 @@ exports[`Tooltip can be rich 1`] = `
       <div
         class="mdc-tooltip__surface mdc-tooltip__surface-animation"
       >
-        <p
+        <div
           class="mdc-tooltip__content"
-        />
-        <div>
-          tooltip
+        >
+          <div>
+            tooltip
+          </div>
         </div>
-        <p />
       </div>
     </div>
   </div>
@@ -63,13 +71,17 @@ exports[`Tooltip can be rich and persistent 1`] = `
   <div
     class="mdc-tooltip-wrapper--rich"
   >
-    <span
-      aria-describedby="tooltip-id"
+    <div
       class=""
-      data-tooltip-id="tooltip-id"
     >
-      test
-    </span>
+      <span
+        aria-describedby="tooltip-id"
+        class=""
+        data-tooltip-id="tooltip-id"
+      >
+        test
+      </span>
+    </div>
     <div
       aria-hidden="true"
       class="mdc-tooltip--rich mdc-tooltip"
@@ -80,13 +92,13 @@ exports[`Tooltip can be rich and persistent 1`] = `
       <div
         class="mdc-tooltip__surface mdc-tooltip__surface-animation"
       >
-        <p
+        <div
           class="mdc-tooltip__content"
-        />
-        <div>
-          tooltip
+        >
+          <div>
+            tooltip
+          </div>
         </div>
-        <p />
       </div>
     </div>
   </div>
@@ -107,13 +119,17 @@ exports[`Tooltip can display arrow 1`] = `
       tooltip
     </div>
   </div>
-  <span
-    aria-describedby="tooltip-id"
+  <fragment
     class=""
-    data-tooltip-id="tooltip-id"
   >
-    test
-  </span>
+    <span
+      aria-describedby="tooltip-id"
+      class=""
+      data-tooltip-id="tooltip-id"
+    >
+      test
+    </span>
+  </fragment>
 </DocumentFragment>
 `;
 
@@ -134,12 +150,16 @@ exports[`Tooltip renders 1`] = `
       tooltip
     </div>
   </div>
-  <span
-    aria-describedby="tooltip-id"
+  <fragment
     class=""
-    data-tooltip-id="tooltip-id"
   >
-    test
-  </span>
+    <span
+      aria-describedby="tooltip-id"
+      class=""
+      data-tooltip-id="tooltip-id"
+    >
+      test
+    </span>
+  </fragment>
 </DocumentFragment>
 `;

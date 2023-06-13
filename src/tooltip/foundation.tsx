@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect } from 'react';
 import { MDCTooltipFoundation, CssClasses, events } from '@material/tooltip';
 import { useFoundation } from '@rmwc/base';
-import { ALIGN_MAP, TooltipActivationT, TooltipProps } from '.';
+import { TooltipActivationT, TooltipProps } from '.';
 
 export const useToolTipFoundation = (
   props: TooltipProps & React.HTMLProps<any>
@@ -178,7 +178,6 @@ export const useToolTipFoundation = (
   }, [rootEl.ref]);
 
   const {
-    align,
     isPersistent,
     onClick,
     onFocus,
@@ -281,11 +280,6 @@ export const useToolTipFoundation = (
     handleTouchend,
     open
   ]);
-
-  // set position
-  useEffect(() => {
-    align && foundation.setTooltipPosition(ALIGN_MAP[align]);
-  }, [align, foundation]);
 
   // set anchorBoundary
   useEffect(() => {

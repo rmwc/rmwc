@@ -48,15 +48,6 @@ describe('Tooltip', () => {
     );
   });
 
-  it('align', () => {
-    const { asFragment } = render(
-      <Tooltip content="tooltip" align="bottom">
-        <span>test</span>
-      </Tooltip>
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-
   it('works with provider', () => {
     render(
       <RMWCProvider tooltip={{}}>
@@ -95,7 +86,7 @@ describe('Tooltip', () => {
       </RMWCProvider>
     );
 
-    expect(screen.getByText('test').parentElement).toHaveClass(
+    expect(screen.getByText('test').parentElement?.parentElement).toHaveClass(
       'mdc-tooltip-wrapper--rich'
     );
 

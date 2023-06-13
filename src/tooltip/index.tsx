@@ -2,49 +2,18 @@ import React from 'react';
 import { classNames, createComponent, Tag } from '@rmwc/base';
 import { useProviderContext } from '@rmwc/provider';
 import { useToolTipFoundation } from './foundation';
-import {
-  AnchorBoundaryType,
-  CssClasses,
-  PositionWithCaret,
-  XPosition,
-  YPosition
-} from '@material/tooltip';
+import { AnchorBoundaryType, CssClasses } from '@material/tooltip';
 
 export type TooltipActivationT = 'hover' | 'click' | 'focus';
-
-export type TooltipAlignT =
-  | 'left'
-  | 'right'
-  | 'top'
-  | 'bottom'
-  | 'topLeft'
-  | 'topRight'
-  | 'bottomLeft'
-  | 'bottomRight';
-
-export const ALIGN_MAP: {
-  [key: string]: {
-    xPos?: XPosition | undefined;
-    yPos?: YPosition | undefined;
-    withCaretPos?: PositionWithCaret | undefined;
-  };
-} = {
-  left: { withCaretPos: PositionWithCaret.CENTER_SIDE_START },
-  right: { withCaretPos: PositionWithCaret.CENTER_SIDE_END },
-  bottom: { xPos: XPosition.CENTER, yPos: YPosition.BELOW },
-  bottomLeft: { xPos: XPosition.START, yPos: YPosition.BELOW },
-  bottomRight: { xPos: XPosition.END, yPos: YPosition.BELOW },
-  top: { xPos: XPosition.CENTER, yPos: YPosition.ABOVE },
-  topLeft: { xPos: XPosition.START, yPos: YPosition.ABOVE },
-  topRight: { xPos: XPosition.END, yPos: YPosition.ABOVE }
-};
 
 /** A Tooltip component for displaying informative popover information. */
 export interface TooltipProps {
   /** The overlay content for the tooltip. */
   content: React.ReactNode;
   /** The children that the tooltip belongs to. Must be a single React element. */
-  children: React.ReactNode;
+  children:
+    | React.ReactElement<any, string | React.JSXElementConstructor<any>>
+    | undefined;
   /** Activate the tooltip through one or more interactions. Defaults to `['hover', 'focus']`. */
   activateOn?: TooltipActivationT | TooltipActivationT[];
   /** Custom className to add to the tooltip overlay container. */
@@ -53,8 +22,6 @@ export interface TooltipProps {
   enterDelay?: number;
   /** Delay in milliseconds before hiding the tooltip when interacting via touch or mouse. */
   leaveDelay?: number;
-  /** How to align the tooltip. Defaults to `top`. */
-  align?: TooltipAlignT;
   /** Manually control the open state */
   open?: boolean;
   /** Whether or not to show an arrow on the Tooltip. Defaults to `false`. */
@@ -101,12 +68,13 @@ export const Tooltip = createComponent<TooltipProps>(function Tooltip(
   if (isRich) {
     return (
       <RichTooltip>
-        {React.cloneElement(child, {
-          ...anchorEl.props(child.props),
-          ref: anchorEl.reactRef,
-          'aria-describedby': 'tooltip-id',
-          'data-tooltip-id': 'tooltip-id'
-        })}
+        <Tag element={anchorEl} ref={anchorEl.reactRef}>
+          {React.cloneElement(child, {
+            ...anchorEl.props(child.props),
+            'aria-describedby': 'tooltip-id',
+            'data-tooltip-id': 'tooltip-id'
+          })}
+        </Tag>
         <Tag
           tag="div"
           className={`${CssClasses.RICH} mdc-tooltip`}
@@ -118,7 +86,7 @@ export const Tooltip = createComponent<TooltipProps>(function Tooltip(
           data-mdc-tooltip-persistent={isPersistent && true}
         >
           <div className="mdc-tooltip__surface mdc-tooltip__surface-animation">
-            <p className="mdc-tooltip__content">{props.content}</p>
+            <div className="mdc-tooltip__content">{props.content}</div>
           </div>
         </Tag>
       </RichTooltip>
@@ -141,12 +109,13 @@ export const Tooltip = createComponent<TooltipProps>(function Tooltip(
           {props.content}
         </div>
       </Tag>
-      {React.cloneElement(child, {
-        ...anchorEl.props(child.props),
-        ref: anchorEl.reactRef,
-        'aria-describedby': 'tooltip-id',
-        'data-tooltip-id': 'tooltip-id'
-      })}
+      <Tag tag="fragment" element={anchorEl} ref={anchorEl.reactRef}>
+        {React.cloneElement(child, {
+          ...anchorEl.props(child.props),
+          'aria-describedby': 'tooltip-id',
+          'data-tooltip-id': 'tooltip-id'
+        })}
+      </Tag>
     </>
   );
 });

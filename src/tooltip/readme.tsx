@@ -4,7 +4,7 @@ import { Docs, DocsExample, DocProps, DocsSubtitle, DocsP } from '@doc-utils';
 import propsSrc from './generated-props.json';
 import examples from './generated-examples.json';
 
-import { Tooltip, TooltipAlignT } from '.';
+import { Tooltip } from '.';
 import { IconButton } from '../icon-button';
 import { Button } from '../button';
 import { Avatar } from '../avatar';
@@ -52,7 +52,7 @@ export default function Readme() {
         </Tooltip>
       </DocsExample>
       <DocsExample label="Controlled / Always open">
-        <Tooltip content="Hello" align="right" open={true}>
+        <Tooltip content="Hello" open={true}>
           <IconButton icon="mood" />
         </Tooltip>
       </DocsExample>
@@ -117,30 +117,6 @@ export default function Readme() {
           <Tooltip content="Icecream" enterDelay={1000} leaveDelay={1000}>
             <Button label="Both" />
           </Tooltip>
-        </>
-      </DocsExample>
-      <DocsExample label="Alignment">
-        <>
-          {function AlignmentExample() {
-            return [
-              'left',
-              'right',
-              'top',
-              'bottom',
-              'topLeft',
-              'topRight',
-              'bottomLeft',
-              'bottomRight'
-            ].map((align) => (
-              <Tooltip
-                key={align}
-                content={`Align: ${align}`}
-                align={align as TooltipAlignT}
-              >
-                <IconButton icon="trip_origin" />
-              </Tooltip>
-            ));
-          }}
         </>
       </DocsExample>
 
