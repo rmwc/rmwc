@@ -41,22 +41,21 @@ export default function Readme() {
       </DocsExample>
 
       <DocsExample label="Controlled">
-        <>
-          {function Example() {
-            const [value, setValue] = React.useState(50);
-            // onInput is required and will fire continuously.
-            // onChange is optional and fires at the end of the interaction
-            return (
-              <Slider
-                value={value}
-                onChange={(evt) => setValue(evt.detail.value)}
-                onInput={(evt) => setValue(evt.detail.value)}
-                discrete
-                step={10}
-              />
-            );
-          }}
-        </>
+        {/* @ts-ignore */}
+        {function Example() {
+          const [value, setValue] = React.useState(50);
+          // onInput is required and will fire continuously.
+          // onChange is optional and fires at the end of the interaction
+          return (
+            <Slider
+              value={value}
+              onChange={(evt) => setValue(evt.detail.value)}
+              onInput={(evt) => setValue(evt.detail.value)}
+              discrete
+              step={10}
+            />
+          );
+        }}
       </DocsExample>
 
       <DocsExample label="With min and max">
@@ -68,22 +67,21 @@ export default function Readme() {
       </DocsExample>
 
       <DocsExample label="Range">
-        <>
-          {function Example() {
-            const [value, setValue] = React.useState(80);
-            const [startValue, setStartValue] = React.useState(20);
-            return (
-              <Slider
-                range
-                discrete
-                valueStart={startValue}
-                value={value}
-                onChange={(evt) => setValue(evt.detail.value)}
-                onChangeValueStart={(evt) => setStartValue(evt.detail.value)}
-              ></Slider>
-            );
-          }}
-        </>
+        {/* @ts-ignore */}
+        {function Example() {
+          const [value, setValue] = React.useState(80);
+          const [startValue, setStartValue] = React.useState(20);
+          return (
+            <Slider
+              range
+              discrete
+              valueStart={startValue}
+              value={value}
+              onChange={(evt) => setValue(evt.detail.value)}
+              onChangeValueStart={(evt) => setStartValue(evt.detail.value)}
+            ></Slider>
+          );
+        }}
       </DocsExample>
 
       <DocProps

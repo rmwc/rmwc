@@ -33,36 +33,35 @@ export default function Readme() {
       <DocsSubtitle>Standard Usage</DocsSubtitle>
 
       <DocsExample>
-        <>
-          {function Example() {
-            const [open, setOpen] = React.useState(false);
-            return (
-              <>
-                <Dialog
-                  open={open}
-                  onClose={(evt) => {
-                    console.log(evt.detail.action);
-                    setOpen(false);
-                  }}
-                  onClosed={(evt) => console.log(evt.detail.action)}
-                >
-                  <DialogTitle>Dialog Title</DialogTitle>
-                  <DialogContent>This is a standard dialog.</DialogContent>
-                  <DialogActions>
-                    <DialogButton action="close">Cancel</DialogButton>
-                    <DialogButton action="accept" isDefaultAction>
-                      Sweet!
-                    </DialogButton>
-                  </DialogActions>
-                </Dialog>
+        {/* @ts-ignore */}
+        {function Example() {
+          const [open, setOpen] = React.useState(false);
+          return (
+            <>
+              <Dialog
+                open={open}
+                onClose={(evt) => {
+                  console.log(evt.detail.action);
+                  setOpen(false);
+                }}
+                onClosed={(evt) => console.log(evt.detail.action)}
+              >
+                <DialogTitle>Dialog Title</DialogTitle>
+                <DialogContent>This is a standard dialog.</DialogContent>
+                <DialogActions>
+                  <DialogButton action="close">Cancel</DialogButton>
+                  <DialogButton action="accept" isDefaultAction>
+                    Sweet!
+                  </DialogButton>
+                </DialogActions>
+              </Dialog>
 
-                <Button raised onClick={() => setOpen(true)}>
-                  Open standard Dialog
-                </Button>
-              </>
-            );
-          }}
-        </>
+              <Button raised onClick={() => setOpen(true)}>
+                Open standard Dialog
+              </Button>
+            </>
+          );
+        }}
       </DocsExample>
 
       <DocsSubtitle>Simplified Usage</DocsSubtitle>
@@ -74,28 +73,27 @@ export default function Readme() {
         standard and simple dialog usage.
       </DocsP>
       <DocsExample>
-        <>
-          {function Example() {
-            const [open, setOpen] = React.useState(false);
-            return (
-              <>
-                <SimpleDialog
-                  title="This is a simple dialog"
-                  body="You can pass the body prop or children."
-                  open={open}
-                  onClose={(evt) => {
-                    console.log(evt.detail.action);
-                    setOpen(false);
-                  }}
-                />
+        {/* @ts-ignore */}
+        {function Example() {
+          const [open, setOpen] = React.useState(false);
+          return (
+            <>
+              <SimpleDialog
+                title="This is a simple dialog"
+                body="You can pass the body prop or children."
+                open={open}
+                onClose={(evt) => {
+                  console.log(evt.detail.action);
+                  setOpen(false);
+                }}
+              />
 
-                <Button raised onClick={() => setOpen(true)}>
-                  Open Simple Dialog
-                </Button>
-              </>
-            );
-          }}
-        </>
+              <Button raised onClick={() => setOpen(true)}>
+                Open Simple Dialog
+              </Button>
+            </>
+          );
+        }}
       </DocsExample>
 
       <DocsSubtitle>Usage with DialogQueue</DocsSubtitle>
@@ -277,57 +275,56 @@ export default function Readme() {
       </DocsP>
 
       <DocsExample>
-        <>
-          {function Example() {
-            const [renderToPortal, setRenderToPortal] = React.useState(true);
-            const [open, setOpen] = React.useState(false);
-            return (
-              <>
-                <div
-                  id="dialog-portal-example"
-                  style={{
-                    transform: 'translateZ(0)',
-                    height: '20rem',
-                    overflow: 'hidden'
+        {/* @ts-ignore */}
+        {function Example() {
+          const [renderToPortal, setRenderToPortal] = React.useState(true);
+          const [open, setOpen] = React.useState(false);
+          return (
+            <>
+              <div
+                id="dialog-portal-example"
+                style={{
+                  transform: 'translateZ(0)',
+                  height: '20rem',
+                  overflow: 'hidden'
+                }}
+              >
+                <SimpleDialog
+                  title={`This is a ${
+                    renderToPortal ? 'working!' : 'broken :/'
+                  }`}
+                  renderToPortal={renderToPortal}
+                  body="Use `renderToPortal` to get around `overflow:hidden` and layout issues."
+                  open={open}
+                  onClose={(evt) => {
+                    console.log(evt.detail.action);
+                    setOpen(false);
+                  }}
+                />
+
+                <Button
+                  raised
+                  onClick={() => {
+                    setRenderToPortal(false);
+                    setOpen(true);
                   }}
                 >
-                  <SimpleDialog
-                    title={`This is a ${
-                      renderToPortal ? 'working!' : 'broken :/'
-                    }`}
-                    renderToPortal={renderToPortal}
-                    body="Use `renderToPortal` to get around `overflow:hidden` and layout issues."
-                    open={open}
-                    onClose={(evt) => {
-                      console.log(evt.detail.action);
-                      setOpen(false);
-                    }}
-                  />
+                  Open Broken :/
+                </Button>
 
-                  <Button
-                    raised
-                    onClick={() => {
-                      setRenderToPortal(false);
-                      setOpen(true);
-                    }}
-                  >
-                    Open Broken :/
-                  </Button>
-
-                  <Button
-                    raised
-                    onClick={() => {
-                      setRenderToPortal(true);
-                      setOpen(true);
-                    }}
-                  >
-                    Open in Portal
-                  </Button>
-                </div>
-              </>
-            );
-          }}
-        </>
+                <Button
+                  raised
+                  onClick={() => {
+                    setRenderToPortal(true);
+                    setOpen(true);
+                  }}
+                >
+                  Open in Portal
+                </Button>
+              </div>
+            </>
+          );
+        }}
       </DocsExample>
 
       <DocProps

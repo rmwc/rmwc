@@ -90,19 +90,18 @@ export default function Readme() {
         be both controlled and uncontrolled.
       </DocsP>
       <DocsExample label="Controlled">
-        <>
-          {function () {
-            const [value, setValue] = React.useState('Cookies');
-            return (
-              <Select
-                label="Controlled"
-                options={['Cookies', 'Pizza', 'Icecream']}
-                value={value}
-                onChange={(evt) => setValue(evt.currentTarget.value)}
-              />
-            );
-          }}
-        </>
+        {/* @ts-ignore */}
+        {function () {
+          const [value, setValue] = React.useState('Cookies');
+          return (
+            <Select
+              label="Controlled"
+              options={['Cookies', 'Pizza', 'Icecream']}
+              value={value}
+              onChange={(evt) => setValue(evt.currentTarget.value)}
+            />
+          );
+        }}
       </DocsExample>
       <DocsExample label="Uncontrolled">
         <Select
@@ -123,31 +122,30 @@ export default function Readme() {
       </DocsP>
 
       <DocsExample label="Formatted Options">
-        <>
-          {function Example() {
-            // A controlled select Using a formatted array of options
-            const options = [
-              {
-                label: 'Cookies',
-                value: '1'
-              },
-              {
-                label: 'Pizza',
-                value: '2',
-                /** Any additional items will be passed to the
+        {/* @ts-ignore */}
+        {function Example() {
+          // A controlled select Using a formatted array of options
+          const options = [
+            {
+              label: 'Cookies',
+              value: '1'
+            },
+            {
+              label: 'Pizza',
+              value: '2',
+              /** Any additional items will be passed to the
                  child ListItem as props */
-                'aria-disabled': true,
-                tabIndex: -1
-              },
-              {
-                label: 'Icecream',
-                value: '3'
-              }
-            ];
+              'aria-disabled': true,
+              tabIndex: -1
+            },
+            {
+              label: 'Icecream',
+              value: '3'
+            }
+          ];
 
-            return <Select label="Array" options={options} />;
-          }}
-        </>
+          return <Select label="Array" options={options} />;
+        }}
       </DocsExample>
 
       <DocsExample label="Value => Label Map">

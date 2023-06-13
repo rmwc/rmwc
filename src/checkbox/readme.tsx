@@ -21,18 +21,17 @@ export default function Readme() {
       examples={examples}
     >
       <DocsExample label="Controlled">
-        <>
-          {function Example() {
-            const [checked, setChecked] = React.useState(false);
-            return (
-              <Checkbox
-                label="Cookies"
-                checked={checked}
-                onChange={(evt) => setChecked(!!evt.currentTarget.checked)}
-              />
-            );
-          }}
-        </>
+        {/* @ts-ignore */}
+        {function Example() {
+          const [checked, setChecked] = React.useState(false);
+          return (
+            <Checkbox
+              label="Cookies"
+              checked={checked}
+              onChange={(evt) => setChecked(!!evt.currentTarget.checked)}
+            />
+          );
+        }}
       </DocsExample>
       <DocsExample label="Uncontrolled">
         <Checkbox label="Pizza" />

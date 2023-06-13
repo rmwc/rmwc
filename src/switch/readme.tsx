@@ -29,19 +29,18 @@ export default function Readme() {
         <Switch defaultChecked label="Pizza" />
       </DocsExample>
       <DocsExample label="Controlled">
-        <>
-          {function Example() {
-            const [checked, setChecked] = React.useState(false);
+        {/* @ts-ignore */}
+        {function Example() {
+          const [checked, setChecked] = React.useState(false);
 
-            return (
-              <Switch
-                checked={checked}
-                onClick={(evt) => setChecked((c) => !c)}
-                label="Cookies"
-              />
-            );
-          }}
-        </>
+          return (
+            <Switch
+              checked={checked}
+              onClick={(evt) => setChecked((c) => !c)}
+              label="Cookies"
+            />
+          );
+        }}
       </DocsExample>
 
       <DocsExample label="Label as Child">

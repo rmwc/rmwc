@@ -33,27 +33,26 @@ export default function Readme() {
         </ChipSet>
       </DocsExample>
       <DocsExample label="Event Handling">
-        <>
-          {function Example() {
-            const [selected, setSelected] = React.useState(false);
-            return (
-              <ChipSet>
-                <Chip
-                  key="my-chip"
-                  label="Click Me"
-                  checkmark
-                  selected={selected}
-                  onRemove={(evt) => console.log('onRemove', evt.detail)}
-                  onInteraction={(evt) => {
-                    console.log('onInteraction', evt.detail);
-                    setSelected(!selected);
-                  }}
-                  trailingIcon="close"
-                />
-              </ChipSet>
-            );
-          }}
-        </>
+        {/* @ts-ignore */}
+        {function Example() {
+          const [selected, setSelected] = React.useState(false);
+          return (
+            <ChipSet>
+              <Chip
+                key="my-chip"
+                label="Click Me"
+                checkmark
+                selected={selected}
+                onRemove={(evt) => console.log('onRemove', evt.detail)}
+                onInteraction={(evt) => {
+                  console.log('onInteraction', evt.detail);
+                  setSelected(!selected);
+                }}
+                trailingIcon="close"
+              />
+            </ChipSet>
+          );
+        }}
       </DocsExample>
       <DocsExample label="Disabled">
         <ChipSet>
@@ -76,88 +75,86 @@ export default function Readme() {
       </DocsP>
 
       <DocsExample label="Grid">
-        <>
-          {function Example() {
-            const [selected, setSelected] = React.useState({
-              cookies: false,
-              pizza: false,
-              icecream: false
+        {/* @ts-ignore */}
+        {function Example() {
+          const [selected, setSelected] = React.useState({
+            cookies: false,
+            pizza: false,
+            icecream: false
+          });
+          //@ts-ignore
+          const toggleSelected = (key) =>
+            setSelected({
+              ...selected,
+              //@ts-ignore
+              [key]: !selected[key]
             });
-            //@ts-ignore
-            const toggleSelected = (key) =>
-              setSelected({
-                ...selected,
-                //@ts-ignore
-                [key]: !selected[key]
-              });
 
-            return (
-              <ChipSet role="grid">
-                <Chip
-                  selected={selected.cookies}
-                  checkmark
-                  onInteraction={() => toggleSelected('cookies')}
-                  label="Cookies"
-                />
-                <Chip
-                  selected={selected.pizza}
-                  checkmark
-                  onInteraction={() => toggleSelected('pizza')}
-                  icon="local_pizza"
-                  label="Pizza"
-                />
-                <Chip
-                  selected={selected.icecream}
-                  checkmark
-                  onInteraction={() => toggleSelected('icecream')}
-                  icon="favorite_border"
-                  label="Icecream"
-                />
-              </ChipSet>
-            );
-          }}
-        </>
+          return (
+            <ChipSet role="grid">
+              <Chip
+                selected={selected.cookies}
+                checkmark
+                onInteraction={() => toggleSelected('cookies')}
+                label="Cookies"
+              />
+              <Chip
+                selected={selected.pizza}
+                checkmark
+                onInteraction={() => toggleSelected('pizza')}
+                icon="local_pizza"
+                label="Pizza"
+              />
+              <Chip
+                selected={selected.icecream}
+                checkmark
+                onInteraction={() => toggleSelected('icecream')}
+                icon="favorite_border"
+                label="Icecream"
+              />
+            </ChipSet>
+          );
+        }}
       </DocsExample>
 
       <DocsExample label="Listbox">
-        <>
-          {function Example() {
-            const [selected, setSelected] = React.useState({
-              cookies: false,
-              pizza: false,
-              icecream: false
+        {/* @ts-ignore */}
+        {function Example() {
+          const [selected, setSelected] = React.useState({
+            cookies: false,
+            pizza: false,
+            icecream: false
+          });
+          //@ts-ignore
+          const toggleSelected = (key) =>
+            setSelected({
+              ...selected,
+              //@ts-ignore
+              [key]: !selected[key]
             });
-            //@ts-ignore
-            const toggleSelected = (key) =>
-              setSelected({
-                ...selected,
-                //@ts-ignore
-                [key]: !selected[key]
-              });
 
-            return (
-              <ChipSet role="listbox">
-                <Chip
-                  selected={selected.cookies}
-                  onInteraction={() => toggleSelected('cookies')}
-                  label="Cookies"
-                />
-                <Chip
-                  selected={selected.pizza}
-                  onInteraction={() => toggleSelected('pizza')}
-                  icon="local_pizza"
-                  label="Pizza"
-                />
-                <Chip
-                  selected={selected.icecream}
-                  onInteraction={() => toggleSelected('icecream')}
-                  icon="favorite_border"
-                  label="Icecream"
-                />
-              </ChipSet>
-            );
-          }}
-        </>
+          return (
+            <ChipSet role="listbox">
+              <Chip
+                selected={selected.cookies}
+                onInteraction={() => toggleSelected('cookies')}
+                label="Cookies"
+              />
+              <Chip
+                selected={selected.pizza}
+                onInteraction={() => toggleSelected('pizza')}
+                icon="local_pizza"
+                label="Pizza"
+              />
+              <Chip
+                selected={selected.icecream}
+                onInteraction={() => toggleSelected('icecream')}
+                icon="favorite_border"
+                label="Icecream"
+              />
+            </ChipSet>
+          );
+        }}
       </DocsExample>
 
       <DocProps

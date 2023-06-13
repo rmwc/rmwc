@@ -31,34 +31,33 @@ export default function Readme() {
         You can render a snackbar in your UI and control its open state.
       </DocsP>
       <DocsExample label="Default">
-        <>
-          {function Example() {
-            const [open, setOpen] = React.useState(false);
+        {/* @ts-ignore */}
+        {function Example() {
+          const [open, setOpen] = React.useState(false);
 
-            return (
-              <>
-                <Snackbar
-                  open={open}
-                  onClose={(evt) => setOpen(false)}
-                  message="This is a new message"
-                  dismissesOnAction
-                  action={
-                    <SnackbarAction
-                      label="Dismiss"
-                      onClick={() => console.log('Click Me')}
-                    />
-                  }
-                />
+          return (
+            <>
+              <Snackbar
+                open={open}
+                onClose={(evt) => setOpen(false)}
+                message="This is a new message"
+                dismissesOnAction
+                action={
+                  <SnackbarAction
+                    label="Dismiss"
+                    onClick={() => console.log('Click Me')}
+                  />
+                }
+              />
 
-                <Button
-                  raised
-                  label="Show snackbar"
-                  onClick={(evt) => setOpen(!open)}
-                />
-              </>
-            );
-          }}
-        </>
+              <Button
+                raised
+                label="Show snackbar"
+                onClick={(evt) => setOpen(!open)}
+              />
+            </>
+          );
+        }}
       </DocsExample>
 
       <DocsExample label="Start Aligned">

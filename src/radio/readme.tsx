@@ -23,39 +23,38 @@ export default function Readme() {
       <DocsSubtitle>Controlled Usage</DocsSubtitle>
 
       <DocsExample>
-        <>
-          {function Example() {
-            const [value, setValue] = React.useState('cookies');
+        {/* @ts-ignore */}
+        {function Example() {
+          const [value, setValue] = React.useState('cookies');
 
-            return (
-              <>
-                <Radio
-                  value="cookies"
-                  checked={value === 'cookies'}
-                  onChange={(evt) => setValue(String(evt.currentTarget.value))}
-                >
-                  Cookies
-                </Radio>
+          return (
+            <>
+              <Radio
+                value="cookies"
+                checked={value === 'cookies'}
+                onChange={(evt) => setValue(String(evt.currentTarget.value))}
+              >
+                Cookies
+              </Radio>
 
-                <Radio
-                  value="pizza"
-                  checked={value === 'pizza'}
-                  onChange={(evt) => setValue(String(evt.currentTarget.value))}
-                >
-                  Pizza
-                </Radio>
+              <Radio
+                value="pizza"
+                checked={value === 'pizza'}
+                onChange={(evt) => setValue(String(evt.currentTarget.value))}
+              >
+                Pizza
+              </Radio>
 
-                <Radio
-                  value="icecream"
-                  checked={value === 'icecream'}
-                  onChange={(evt) => setValue(String(evt.currentTarget.value))}
-                >
-                  Icecream
-                </Radio>
-              </>
-            );
-          }}
-        </>
+              <Radio
+                value="icecream"
+                checked={value === 'icecream'}
+                onChange={(evt) => setValue(String(evt.currentTarget.value))}
+              >
+                Icecream
+              </Radio>
+            </>
+          );
+        }}
       </DocsExample>
 
       <DocsSubtitle>Uncontrolled Usage</DocsSubtitle>

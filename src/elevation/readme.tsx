@@ -29,22 +29,21 @@ export default function Readme() {
       </DocsExample>
 
       <DocsExample label="Transition">
-        <>
-          {function Example() {
-            const [elevation, setElevation] = React.useState(0);
+        {/* @ts-ignore */}
+        {function Example() {
+          const [elevation, setElevation] = React.useState(0);
 
-            return (
-              <Elevation
-                z={elevation}
-                transition
-                onMouseOver={() => setElevation(24)}
-                onMouseOut={() => setElevation(0)}
-              >
-                Hover Me {elevation}dp
-              </Elevation>
-            );
-          }}
-        </>
+          return (
+            <Elevation
+              z={elevation}
+              transition
+              onMouseOver={() => setElevation(24)}
+              onMouseOut={() => setElevation(0)}
+            >
+              Hover Me {elevation}dp
+            </Elevation>
+          );
+        }}
       </DocsExample>
 
       <DocsSubtitle>Wrapping Children</DocsSubtitle>
