@@ -83,9 +83,9 @@ export const CircularProgress = createComponent<CircularProgressProps>(
         cx: CX_CY_MAP[size],
         cy: CX_CY_MAP[size],
         r: R_MAP[size],
-        'stroke-dasharray': STROKE_DASHARRAY_MAP[size],
-        'stroke-dashoffset': STROKE_DASHOFFSET_MAP[size],
-        'stroke-width': STROKE_WIDTH_MAP[size]
+        strokeDasharray: STROKE_DASHARRAY_MAP[size],
+        strokeDashoffset: STROKE_DASHOFFSET_MAP[size],
+        strokeWidth: STROKE_WIDTH_MAP[size]
       };
     };
 
