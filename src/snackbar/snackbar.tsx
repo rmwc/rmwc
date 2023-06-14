@@ -90,8 +90,8 @@ export const Snackbar: RMWC.ComponentType<
   const actions: SnackbarProps['action'][] = Array.isArray(action)
     ? action
     : action
-      ? [action]
-      : [];
+    ? [action]
+    : [];
 
   return (
     <Tag
@@ -120,7 +120,10 @@ export const Snackbar: RMWC.ComponentType<
            * Fixes bug https://github.com/jamesmfriedman/rmwc/issues/418
            * Wrapping the content for accessibility so it can be announced for screen readers
            */}
-          <div style={{ display: 'none' }} ref={labelEl.reactRef as React.Ref<HTMLDivElement>} />
+          <div
+            style={{ display: 'none' }}
+            ref={labelEl.reactRef as React.Ref<HTMLDivElement>}
+          />
         </SnackbarLabel>
 
         <SnackbarActions>
@@ -172,10 +175,8 @@ export const SnackbarAction: RMWC.ComponentType<
 > = createComponent<SnackbarActionProps, SnackbarHTMLProps>(
   function SnackbarAction(props, ref) {
     const className = useClassNames(props, ['mdc-snackbar__action']);
-    const {
-      action = MDCSnackbarFoundation.strings.REASON_ACTION,
-      ...rest
-    } = props;
+    const { action = MDCSnackbarFoundation.strings.REASON_ACTION, ...rest } =
+      props;
     return (
       <Button
         {...rest}
@@ -188,5 +189,5 @@ export const SnackbarAction: RMWC.ComponentType<
 );
 
 function SnackbarDismiss(props: IconButtonProps) {
-  return <IconButton {...props} className="mdc-snackbar__dismiss" />;
+  return <IconButton {...props} className="rmwc-snackbar__dismiss" />;
 }

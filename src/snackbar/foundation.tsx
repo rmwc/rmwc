@@ -67,7 +67,7 @@ export function useSnackbarFoundation(
           // @ts-ignore
           el.dataset.mdcSnackbarAction
         );
-      } else if (el.classList.contains('mdc-snackbar__dismiss')) {
+      } else if (el.classList.contains('rmwc-snackbar__dismiss')) {
         foundation.handleActionIconClick(evt as MouseEvent);
       }
     }
