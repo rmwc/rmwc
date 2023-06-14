@@ -52,7 +52,7 @@ export const IconButton: RMWC.ComponentType<
     return <IconButtonToggle {...rest} ref={ref} />;
   }
 
-  return <IconButtonRoot tag="button" {...rest} ref={ref} />;
+  return <IconButtonRoot {...rest} ref={ref} />;
 });
 
 const IconButtonToggle = createComponent<IconButtonProps>(
@@ -84,7 +84,7 @@ const IconButtonRoot = withRipple({
   unbounded: true
 })(
   createComponent<IconButtonProps>(function IconButtonRoot(props, ref) {
-    const { checked, label, foundationRef, children, ...rest } = props;
+    const { checked, label, foundationRef, children, icon, ...rest } = props;
     const className = useClassNames(props, [
       'mdc-icon-button',
       {
@@ -92,7 +92,8 @@ const IconButtonRoot = withRipple({
       }
     ]);
     return (
-      <Icon
+      <Tag
+        tag="button"
         role="button"
         tabIndex={0}
         aria-label={label}
@@ -101,8 +102,8 @@ const IconButtonRoot = withRipple({
         ref={ref}
       >
         <div className="mdc-icon-button__ripple"></div>
-        {children}
-      </Icon>
+        <Icon icon={icon} {...rest} />
+      </Tag>
     );
   })
 );
