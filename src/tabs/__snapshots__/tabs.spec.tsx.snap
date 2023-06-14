@@ -2,8 +2,9 @@
 
 exports[`Tabs Can be stacked 1`] = `
 <DocumentFragment>
-  <nav
+  <div
     class="mdc-tab-bar"
+    role="tablist"
   >
     <div
       class="mdc-tab-scroller"
@@ -42,14 +43,15 @@ exports[`Tabs Can be stacked 1`] = `
         </div>
       </div>
     </div>
-  </nav>
+  </div>
 </DocumentFragment>
 `;
 
 exports[`Tabs Can have icon 1`] = `
 <DocumentFragment>
-  <nav
+  <div
     class="mdc-tab-bar"
+    role="tablist"
   >
     <div
       class="mdc-tab-scroller"
@@ -93,14 +95,15 @@ exports[`Tabs Can have icon 1`] = `
         </div>
       </div>
     </div>
-  </nav>
+  </div>
 </DocumentFragment>
 `;
 
 exports[`Tabs Can have label 1`] = `
 <DocumentFragment>
-  <nav
+  <div
     class="mdc-tab-bar"
+    role="tablist"
   >
     <div
       class="mdc-tab-scroller"
@@ -139,14 +142,15 @@ exports[`Tabs Can have label 1`] = `
         </div>
       </div>
     </div>
-  </nav>
+  </div>
 </DocumentFragment>
 `;
 
 exports[`Tabs Can have restrictIndicator 1`] = `
 <DocumentFragment>
-  <nav
+  <div
     class="mdc-tab-bar"
+    role="tablist"
   >
     <div
       class="mdc-tab-scroller"
@@ -190,14 +194,15 @@ exports[`Tabs Can have restrictIndicator 1`] = `
         </div>
       </div>
     </div>
-  </nav>
+  </div>
 </DocumentFragment>
 `;
 
 exports[`Tabs TabBar renders 1`] = `
 <DocumentFragment>
-  <nav
+  <div
     class="mdc-tab-bar"
+    role="tablist"
   >
     <div
       class="mdc-tab-scroller"
@@ -236,14 +241,15 @@ exports[`Tabs TabBar renders 1`] = `
         </div>
       </div>
     </div>
-  </nav>
+  </div>
 </DocumentFragment>
 `;
 
 exports[`Tabs can have no tabs 1`] = `
 <DocumentFragment>
-  <nav
+  <div
     class="mdc-tab-bar"
+    role="tablist"
   >
     <div
       class="mdc-tab-scroller"
@@ -257,6 +263,6 @@ exports[`Tabs can have no tabs 1`] = `
         />
       </div>
     </div>
-  </nav>
+  </div>
 </DocumentFragment>
 `;
