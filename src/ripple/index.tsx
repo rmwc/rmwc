@@ -72,7 +72,9 @@ export function Ripple(props: RippleProps & RMWC.HTMLProps) {
       'mdc-ripple-surface':
         typeof surface === 'boolean' ? surface : surface === undefined,
       'mdc-ripple-surface--primary': primary,
-      'mdc-ripple-surface--accent': accent
+      'rmwc-ripple-surface--primary': primary,
+      'mdc-ripple-surface--accent': accent,
+      'rmwc-ripple-surface--accent': accent
     }
   );
 

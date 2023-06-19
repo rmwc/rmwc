@@ -25,6 +25,7 @@ describe('Ripple', () => {
       </Ripple>
     );
     expect(container.firstChild).toHaveClass('mdc-ripple-surface--primary');
+    expect(container.firstChild).toHaveClass('rmwc-ripple-surface--primary');
   });
 
   it('can be accent', () => {
@@ -34,6 +35,7 @@ describe('Ripple', () => {
       </Ripple>
     );
     expect(container.firstChild).toHaveClass('mdc-ripple-surface--accent');
+    expect(container.firstChild).toHaveClass('rmwc-ripple-surface--accent');
   });
 
   it('can be surface', () => {
