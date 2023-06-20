@@ -191,48 +191,47 @@ export default function Readme() {
       </DocsExample>
 
       <DocsExample label="Inline Example">
-        <>
-          {() => {
-            const { dialogs, alert, confirm, prompt } = createDialogQueue();
+        {/* @ts-ignore */}
+        {() => {
+          const { dialogs, alert, confirm, prompt } = createDialogQueue();
 
-            function App() {
-              const [response, setResponse] = React.useState('____________');
+          function App() {
+            const [response, setResponse] = React.useState('____________');
 
-              const fireAlert = () =>
-                alert({ title: 'Hello!' }).then((res) => setResponse(res));
+            const fireAlert = () =>
+              alert({ title: 'Hello!' }).then((res) => setResponse(res));
 
-              const fireConfirm = () =>
-                confirm({}).then((res) => setResponse(res));
+            const fireConfirm = () =>
+              confirm({}).then((res) => setResponse(res));
 
-              const firePrompt = () =>
-                prompt({ inputProps: { outlined: true } }).then((res) =>
-                  setResponse(res)
-                );
-
-              return (
-                <div>
-                  <Button label="Alert" onClick={fireAlert} />
-                  <Button label="Confirm" onClick={fireConfirm} />
-                  <Button label="Prompt" onClick={firePrompt} />
-                  <Button
-                    label="In Sequence"
-                    onClick={() => {
-                      fireAlert();
-                      fireConfirm();
-                      firePrompt();
-                    }}
-                  />
-
-                  <p>
-                    Response: <b>{String(response)}</b>
-                  </p>
-                  <DialogQueue dialogs={dialogs} />
-                </div>
+            const firePrompt = () =>
+              prompt({ inputProps: { outlined: true } }).then((res) =>
+                setResponse(res)
               );
-            }
-            return <App />;
-          }}
-        </>
+
+            return (
+              <div>
+                <Button label="Alert" onClick={fireAlert} />
+                <Button label="Confirm" onClick={fireConfirm} />
+                <Button label="Prompt" onClick={firePrompt} />
+                <Button
+                  label="In Sequence"
+                  onClick={() => {
+                    fireAlert();
+                    fireConfirm();
+                    firePrompt();
+                  }}
+                />
+
+                <p>
+                  Response: <b>{String(response)}</b>
+                </p>
+                <DialogQueue dialogs={dialogs} />
+              </div>
+            );
+          }
+          return <App />;
+        }}
       </DocsExample>
 
       <DocsSubtitle>Rendering through Portals</DocsSubtitle>
