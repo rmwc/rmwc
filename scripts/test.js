@@ -10,7 +10,7 @@ fs.readdir('react-versions', function (err, files) {
     console.log('Running tests for', versionNum);
     childProcess.execSync(
       //prettier-ignore
-      `export REACT_TEST_VERSION=${versionNum} CI=true && react-app-rewired test --transformIgnorePatterns \"node_modules/(?!@material/segmented-button)/\" --env=jsdom ${isFirstRun ? '--coverage' : ''}`,
+      `export REACT_TEST_VERSION=${versionNum} CI=true && react-app-rewired test --env=jsdom ${isFirstRun ? '--coverage' : ''}`,
       { stdio: [0, 1, 2] }
     );
   });
