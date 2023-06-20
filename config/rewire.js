@@ -79,7 +79,7 @@ const jestResolver = (config) => {
 
 const jestIgnore = (config) => {
   config.transformIgnorePatterns = ['<rootDir>/node_modules/(?!@material.*)/'];
-  config.modulePathIgnorePatterns = ['dist/*'];
+  config.modulePathIgnorePatterns = ['dist/*', 'next/*'];
   return config;
 };
 
