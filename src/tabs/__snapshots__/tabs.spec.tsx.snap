@@ -39,6 +39,9 @@ exports[`Tabs Can be stacked 1`] = `
             <div
               class="mdc-tab__ripple "
             />
+            <div
+              class="mdc-tab__focus-ring"
+            />
           </button>
         </div>
       </div>
@@ -91,6 +94,9 @@ exports[`Tabs Can have icon 1`] = `
             <div
               class="mdc-tab__ripple "
             />
+            <div
+              class="mdc-tab__focus-ring"
+            />
           </button>
         </div>
       </div>
@@ -137,6 +143,9 @@ exports[`Tabs Can have label 1`] = `
             </span>
             <div
               class="mdc-tab__ripple "
+            />
+            <div
+              class="mdc-tab__focus-ring"
             />
           </button>
         </div>
@@ -190,6 +199,9 @@ exports[`Tabs Can have restrictIndicator 1`] = `
             <div
               class="mdc-tab__ripple "
             />
+            <div
+              class="mdc-tab__focus-ring"
+            />
           </button>
         </div>
       </div>
@@ -236,6 +248,9 @@ exports[`Tabs TabBar renders 1`] = `
             </span>
             <div
               class="mdc-tab__ripple "
+            />
+            <div
+              class="mdc-tab__focus-ring"
             />
           </button>
         </div>

@@ -212,36 +212,35 @@ export default function Readme() {
       </DocsExample>
 
       <DocsExample label="Inline Example">
-        <>
-          {() => {
-            const { messages, notify } = createSnackbarQueue();
+        {/* @ts-ignore */}
+        {() => {
+          const { messages, notify } = createSnackbarQueue();
 
-            function App() {
-              return (
-                <div>
-                  <Button
-                    label="Notify"
-                    onClick={() =>
-                      notify({
-                        title: <b>Success</b>,
-                        body: 'You have selected pizza!',
-                        dismissesOnAction: true,
-                        icon: 'check',
-                        actions: [
-                          {
-                            title: 'Dismiss'
-                          }
-                        ]
-                      })
-                    }
-                  />
-                  <SnackbarQueue messages={messages} />
-                </div>
-              );
-            }
-            return <App />;
-          }}
-        </>
+          function App() {
+            return (
+              <div>
+                <Button
+                  label="Notify"
+                  onClick={() =>
+                    notify({
+                      title: <b>Success</b>,
+                      body: 'You have selected pizza!',
+                      dismissesOnAction: true,
+                      icon: 'check',
+                      actions: [
+                        {
+                          title: 'Dismiss'
+                        }
+                      ]
+                    })
+                  }
+                />
+                <SnackbarQueue messages={messages} />
+              </div>
+            );
+          }
+          return <App />;
+        }}
       </DocsExample>
 
       <DocProps

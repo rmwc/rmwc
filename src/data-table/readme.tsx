@@ -45,6 +45,15 @@ export default function Readme() {
         {/* @ts-ignore */}
         {function Example() {
           const [sortDir, setSortDir] = React.useState(null);
+          const items = [
+            { item: 'Cookies', quantity: 25, price: '$2.90' },
+            { item: 'Pizza', quantity: 50, price: '$1.25' },
+            { item: 'Icecream', quantity: 10, price: '$2.35' }
+          ];
+          const sortedItems =
+            sortDir === 1
+              ? items.sort((a, b) => a.quantity - b.quantity)
+              : items.sort((a, b) => b.quantity - a.quantity);
           return (
             <DataTable>
               <DataTableContent>
@@ -66,21 +75,13 @@ export default function Readme() {
                   </DataTableRow>
                 </DataTableHead>
                 <DataTableBody>
-                  <DataTableRow>
-                    <DataTableCell>Cookies</DataTableCell>
-                    <DataTableCell alignEnd>25</DataTableCell>
-                    <DataTableCell alignEnd>$2.90</DataTableCell>
-                  </DataTableRow>
-                  <DataTableRow selected>
-                    <DataTableCell>Pizza</DataTableCell>
-                    <DataTableCell alignEnd>50</DataTableCell>
-                    <DataTableCell alignEnd>$1.25</DataTableCell>
-                  </DataTableRow>
-                  <DataTableRow>
-                    <DataTableCell>Icecream</DataTableCell>
-                    <DataTableCell alignEnd>10</DataTableCell>
-                    <DataTableCell alignEnd>$2.35</DataTableCell>
-                  </DataTableRow>
+                  {sortedItems.map((item) => (
+                    <DataTableRow key={item.item}>
+                      <DataTableCell>{item.item}</DataTableCell>
+                      <DataTableCell alignEnd>{item.quantity}</DataTableCell>
+                      <DataTableCell alignEnd>{item.price}</DataTableCell>
+                    </DataTableRow>
+                  ))}
                 </DataTableBody>
               </DataTableContent>
             </DataTable>
