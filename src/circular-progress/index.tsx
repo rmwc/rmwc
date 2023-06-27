@@ -13,7 +13,7 @@ import {
   STROKE_WIDTH_MAP
 } from './constants';
 
-type Size = 'small' | 'medium' | 'large';
+type Size = 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge';
 
 /** A Circular Progress indicator. */
 export interface CircularProgressProps {
@@ -26,14 +26,14 @@ export interface CircularProgressProps {
   /** Value for determinate progress bars. */
   progress?: number;
   /** The size of the loader you would like to render. */
-  size?: Size;
+  size?: Size | number;
 }
 
 export const CircularProgress = createComponent<CircularProgressProps>(
   function CircularProgress(props, ref) {
     const {
       closed,
-      size = 'small',
+      size = 'small' as Size,
       max = 1,
       min = 0,
       progress,
@@ -45,6 +45,7 @@ export const CircularProgress = createComponent<CircularProgressProps>(
 
     const className = useClassNames(props, [
       'mdc-circular-progress',
+      `rmwc-circular-progress--${size}`,
       {
         'mdc-circular-progress--closed': closed
       }
@@ -52,13 +53,18 @@ export const CircularProgress = createComponent<CircularProgressProps>(
 
     const isDeterminate = progress !== undefined;
 
-    const _size = SIZE_MAP[size] || Number(size);
-    const style = {
-      ...rest.style,
-      fontSize: _size,
-      width: `${_size}px`,
-      height: `${_size}px`
-    };
+    const isSizeNumber = typeof size === 'number';
+
+    const _size = SIZE_MAP[isSizeNumber ? 'medium' : size];
+
+    const style = isSizeNumber
+      ? {
+          ...rest.style,
+          fontSize: `${size}px`,
+          width: `${size}px`,
+          height: `${size}px`
+        }
+      : { ...rest.style };
 
     const calculateRatio = (value: number) => {
       if (value < min) return 0;

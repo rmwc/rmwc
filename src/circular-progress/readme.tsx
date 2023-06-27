@@ -37,9 +37,12 @@ export default function Readme() {
 
       <DocsExample label="Sizes">
         <>
+          <CircularProgress size="xsmall" />
           <CircularProgress size="small" />
           <CircularProgress size="medium" />
           <CircularProgress size="large" />
+          <CircularProgress size="xlarge" />
+          <CircularProgress size={72} />
         </>
       </DocsExample>
 
@@ -57,7 +60,7 @@ export default function Readme() {
             <SimpleListItem graphic="favorite" text="Icecream" />
           </List>
 
-          <Chip icon={<CircularProgress />} label="Donuts" />
+          <Chip icon={<CircularProgress size="xsmall" />} label="Donuts" />
         </>
       </DocsExample>
 

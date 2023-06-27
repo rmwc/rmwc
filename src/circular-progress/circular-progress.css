@@ -1,0 +1,29 @@
+.rmwc-circular-progress--xsmall {
+  font-size: 18px;
+  height: 18px;
+  width: 18px;
+}
+
+.rmwc-circular-progress--small {
+  font-size: 24px;
+  height: 24px;
+  width: 24px;
+}
+
+.rmwc-circular-progress--medium {
+  font-size: 32px;
+  height: 32px;
+  width: 32px;
+}
+
+.rmwc-circular-progress--large {
+  font-size: 48px;
+  height: 48px;
+  width: 48px;
+}
+
+.rmwc-circular-progress--xlarge {
+  font-size: 62px;
+  height: 62px;
+  width: 62px;
+}

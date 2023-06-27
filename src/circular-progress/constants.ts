@@ -1,7 +1,9 @@
 export const SIZE_MAP: { [key: string]: number } = {
+  xsmall: 24,
   small: 24,
   medium: 32,
-  large: 48
+  large: 48,
+  xlarge: 48
 };
 
 export const CX_CY_MAP: { [key: string]: number } = {
