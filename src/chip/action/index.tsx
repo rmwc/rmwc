@@ -9,6 +9,7 @@ import {
 } from '@material/chips';
 import { usePrimaryActionFoundation } from './foundation';
 import { ChipOnInteractionEventT } from '../chip';
+import { Icon } from '@rmwc/icon';
 
 /*********************************************************************
  * Primary Action
@@ -71,9 +72,10 @@ export const PrimaryAction = createComponent<
       {shouldShowGraphic && (
         <span className="mdc-evolution-chip__graphic">
           {!!props.icon && (
-            <span className="mdc-evolution-chip__icon mdc-evolution-chip__icon--primary material-icons">
-              {props.icon}
-            </span>
+            <Icon
+              className="mdc-evolution-chip__icon mdc-evolution-chip__icon--primary"
+              icon={props.icon}
+            />
           )}
           {props.selectable && (
             <span className="mdc-evolution-chip__checkmark">
@@ -132,9 +134,10 @@ export const TrailingAction = createComponent<
       type="button"
     >
       <span className="mdc-evolution-chip__ripple mdc-evolution-chip__ripple--trailing"></span>
-      <span className="mdc-evolution-chip__icon mdc-evolution-chip__icon--trailing material-icons">
-        {props.icon ?? 'close'}
-      </span>
+      <Icon
+        className="mdc-evolution-chip__icon mdc-evolution-chip__icon--trailing"
+        icon={props.icon ?? 'close'}
+      />
     </Tag>
   );
 });

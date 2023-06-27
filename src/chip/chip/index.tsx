@@ -106,7 +106,8 @@ export const Chip: RMWC.ComponentType<ChipProps, ChipHTMLProps, 'div'> =
         'mdc-evolution-chip',
         {
           'mdc-evolution-chip--selected': selected,
-          'mdc-evolution-chip--disabled': disabled
+          'mdc-evolution-chip--disabled': disabled,
+          'rmwc-chip': !!trailingIcon
         }
       ]);
 

@@ -11,7 +11,7 @@ exports[`Chip renders 1`] = `
       role="presentation"
     >
       <span
-        class="mdc-ripple-surface mdc-evolution-chip"
+        class="mdc-ripple-surface mdc-evolution-chip rmwc-chip"
         role="row"
       >
         <span
@@ -31,11 +31,11 @@ exports[`Chip renders 1`] = `
             <span
               class="mdc-evolution-chip__graphic"
             >
-              <span
-                class="mdc-evolution-chip__icon mdc-evolution-chip__icon--primary material-icons"
+              <i
+                class="rmwc-icon rmwc-icon--ligature material-icons mdc-evolution-chip__icon mdc-evolution-chip__icon--primary"
               >
                 favorite
-              </span>
+              </i>
             </span>
             <span
               class="mdc-evolution-chip__text-label"
@@ -57,11 +57,11 @@ exports[`Chip renders 1`] = `
             <span
               class="mdc-evolution-chip__ripple mdc-evolution-chip__ripple--trailing"
             />
-            <span
-              class="mdc-evolution-chip__icon mdc-evolution-chip__icon--trailing material-icons"
+            <i
+              class="rmwc-icon rmwc-icon--ligature material-icons mdc-evolution-chip__icon mdc-evolution-chip__icon--trailing"
             >
               close
-            </span>
+            </i>
           </button>
         </span>
       </span>
