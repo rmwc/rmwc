@@ -114,13 +114,13 @@ export const useSelectFoundation = (
           addMenuClass: (className: string) => {
             return menu.current
               ?.getSurfaceElement()
-              ?.querySelector('.mdc-list-item--activated')
+              ?.querySelector('.mdc-deprecated-list-item--activated')
               ?.classList.add(className);
           },
           removeMenuClass: (className: string) => {
             return menu.current
               ?.getSurfaceElement()
-              ?.querySelector('.mdc-list-item--activated')
+              ?.querySelector('.mdc-deprecated-list-item--activated')
               ?.classList.remove(className);
           },
           getSelectedIndex: () => {

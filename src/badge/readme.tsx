@@ -137,36 +137,35 @@ export default function Readme() {
       </DocsP>
 
       <DocsExample center>
-        <>
-          {function Example() {
-            const [label, setLabel] = React.useState<any>(undefined);
+        {/* @ts-ignore */}
+        {function Example() {
+          const [label, setLabel] = React.useState<any>(undefined);
 
-            React.useEffect(() => {
-              const timeout = setTimeout(() => {
-                switch (label) {
-                  case '99+':
-                    setLabel(undefined);
-                    break;
-                  case '':
-                    setLabel('99+');
-                    break;
-                  case undefined:
-                    setLabel('');
-                    break;
-                }
-              }, 1800);
+          React.useEffect(() => {
+            const timeout = setTimeout(() => {
+              switch (label) {
+                case '99+':
+                  setLabel(undefined);
+                  break;
+                case '':
+                  setLabel('99+');
+                  break;
+                case undefined:
+                  setLabel('');
+                  break;
+              }
+            }, 1800);
 
-              return () => clearTimeout(timeout);
-            }, [label]);
+            return () => clearTimeout(timeout);
+          }, [label]);
 
-            return (
-              <BadgeAnchor>
-                <Button raised label="Button" />
-                <Badge label={label} exited={label === undefined} />
-              </BadgeAnchor>
-            );
-          }}
-        </>
+          return (
+            <BadgeAnchor>
+              <Button raised label="Button" />
+              <Badge label={label} exited={label === undefined} />
+            </BadgeAnchor>
+          );
+        }}
       </DocsExample>
 
       <DocProps

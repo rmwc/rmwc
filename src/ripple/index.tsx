@@ -1,5 +1,4 @@
 import * as RMWC from '@rmwc/types';
-import * as ReactDOM from 'react-dom';
 import React from 'react';
 import { MDCRippleFoundation } from '@material/ripple';
 import { classNames } from '@rmwc/base';
@@ -73,7 +72,9 @@ export function Ripple(props: RippleProps & RMWC.HTMLProps) {
       'mdc-ripple-surface':
         typeof surface === 'boolean' ? surface : surface === undefined,
       'mdc-ripple-surface--primary': primary,
-      'mdc-ripple-surface--accent': accent
+      'rmwc-ripple-surface--primary': primary,
+      'mdc-ripple-surface--accent': accent,
+      'rmwc-ripple-surface--accent': accent
     }
   );
 

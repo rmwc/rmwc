@@ -32,33 +32,57 @@ export default function Readme() {
         internally. If you are using something below React 16.4, you will see
         unknown attribute errors, however the slider should still work.
       </DocsP>
+
       <DocsExample label="Uncontrolled">
         <Slider
           onInput={(evt) => console.log(evt)}
           onChange={(evt) => console.log(evt)}
         />
       </DocsExample>
+
       <DocsExample label="Controlled">
-        <>
-          {function Example() {
-            const [value, setValue] = React.useState(50);
-            // onInput is required and will fire continuously.
-            // onChange is optional and fires at the end of the interaction
-            return (
-              <Slider
-                value={value}
-                onChange={(evt) => setValue(evt.detail.value)}
-                onInput={(evt) => setValue(evt.detail.value)}
-                discrete
-                step={1}
-              />
-            );
-          }}
-        </>
+        {/* @ts-ignore */}
+        {function Example() {
+          const [value, setValue] = React.useState(50);
+          // onInput is required and will fire continuously.
+          // onChange is optional and fires at the end of the interaction
+          return (
+            <Slider
+              value={value}
+              onChange={(evt) => setValue(evt.detail.value)}
+              onInput={(evt) => setValue(evt.detail.value)}
+              discrete
+              step={10}
+            />
+          );
+        }}
       </DocsExample>
-      {/* <DocsExample label="With Markers">
-        <Slider discrete displayMarkers min={100} max={200} step={5} />
-      </DocsExample> */}
+
+      <DocsExample label="With min and max">
+        <Slider discrete min={0} max={200} step={10} />
+      </DocsExample>
+
+      <DocsExample label="With markers">
+        <Slider discrete displayMarkers step={10} />
+      </DocsExample>
+
+      <DocsExample label="Range">
+        {/* @ts-ignore */}
+        {function Example() {
+          const [value, setValue] = React.useState(80);
+          const [startValue, setStartValue] = React.useState(20);
+          return (
+            <Slider
+              range
+              discrete
+              valueStart={startValue}
+              value={value}
+              onChange={(evt) => setValue(evt.detail.value)}
+              onChangeValueStart={(evt) => setStartValue(evt.detail.value)}
+            ></Slider>
+          );
+        }}
+      </DocsExample>
 
       <DocProps
         src={propsSrc}

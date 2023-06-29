@@ -72,7 +72,7 @@ export const useMenuFoundation = (props: MenuProps & React.HTMLProps<any>) => {
     (evt: React.MouseEvent) => {
       onClick?.(evt);
       // fixes an issue with nested span element on list items
-      const el = closest(evt.target, '.mdc-list-item');
+      const el = closest(evt.target, '.mdc-deprecated-list-item');
       el && foundation.handleItemAction(el);
     },
     [foundation, onClick]

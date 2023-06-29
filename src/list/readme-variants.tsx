@@ -147,84 +147,81 @@ export default function Readme() {
       </DocsP>
 
       <DocsExample label="Checkboxes">
-        <>
-          {function Example() {
-            const [checked, setChecked] = React.useState<any>({
-              Cookies: false,
-              Pizza: false,
-              Icecream: false
-            });
+        {/* @ts-ignore */}
+        {function Example() {
+          const [checked, setChecked] = React.useState<any>({
+            Cookies: false,
+            Pizza: false,
+            Icecream: false
+          });
 
-            return (
-              <List>
-                {['Cookies', 'Pizza', 'Icecream'].map((key) => (
-                  <ListItem
-                    key={key}
-                    onClick={() =>
-                      setChecked({ ...checked, [key]: !checked[key] })
-                    }
-                  >
-                    {key}
-                    <ListItemMeta>
-                      <Checkbox checked={checked[key]} readOnly />
-                    </ListItemMeta>
-                  </ListItem>
-                ))}
-              </List>
-            );
-          }}
-        </>
+          return (
+            <List>
+              {['Cookies', 'Pizza', 'Icecream'].map((key) => (
+                <ListItem
+                  key={key}
+                  onClick={() =>
+                    setChecked({ ...checked, [key]: !checked[key] })
+                  }
+                >
+                  {key}
+                  <ListItemMeta>
+                    <Checkbox checked={checked[key]} readOnly />
+                  </ListItemMeta>
+                </ListItem>
+              ))}
+            </List>
+          );
+        }}
       </DocsExample>
 
       <DocsExample label="Switches">
-        <>
-          {function Example() {
-            const [checked, setChecked] = React.useState<any>({
-              Cookies: false,
-              Pizza: false,
-              Icecream: false
-            });
+        {/* @ts-ignore */}
+        {function Example() {
+          const [checked, setChecked] = React.useState<any>({
+            Cookies: false,
+            Pizza: false,
+            Icecream: false
+          });
 
-            return (
-              <List>
-                {['Cookies', 'Pizza', 'Icecream'].map((key) => (
-                  <ListItem
-                    key={key}
-                    onClick={() =>
-                      setChecked({ ...checked, [key]: !checked[key] })
-                    }
-                  >
-                    {key}
-                    <ListItemMeta>
-                      <Switch checked={checked[key]} readOnly />
-                    </ListItemMeta>
-                  </ListItem>
-                ))}
-              </List>
-            );
-          }}
-        </>
+          return (
+            <List>
+              {['Cookies', 'Pizza', 'Icecream'].map((key) => (
+                <ListItem
+                  key={key}
+                  onClick={() =>
+                    setChecked({ ...checked, [key]: !checked[key] })
+                  }
+                >
+                  {key}
+                  <ListItemMeta>
+                    <Switch checked={checked[key]} readOnly />
+                  </ListItemMeta>
+                </ListItem>
+              ))}
+            </List>
+          );
+        }}
       </DocsExample>
 
       <DocsExample label="Radios">
-        <>
-          {function Example() {
-            const [checked, setChecked] = React.useState('Cookies');
+        {/* @ts-ignore */}
+        {function Example() {
+          const [checked, setChecked] = React.useState('Cookies');
 
-            return (
-              <List>
-                {['Cookies', 'Pizza', 'Icecream'].map((key) => (
-                  <ListItem key={key} onClick={() => setChecked(key)}>
-                    {key}
-                    <ListItemMeta>
-                      <Radio checked={checked === key} readOnly />
-                    </ListItemMeta>
-                  </ListItem>
-                ))}
-              </List>
-            );
-          }}
-        </>
+          return (
+            <List>
+              {['Cookies', 'Pizza', 'Icecream'].map((key) => (
+                <ListItem key={key} onClick={() => setChecked(key)}>
+                  {key}
+                  <ListItemMeta>
+                    <Radio checked={checked === key} readOnly />
+                  </ListItemMeta>
+                </ListItem>
+              ))}
+            </List>
+          );
+        }}
       </DocsExample>
 
       <DocProps

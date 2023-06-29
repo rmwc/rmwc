@@ -42,51 +42,51 @@ export default function Readme() {
       </DocsP>
 
       <DocsExample>
-        <>
-          {function Example() {
-            const [sortDir, setSortDir] = React.useState(null);
-            return (
-              <DataTable>
-                <DataTableContent>
-                  <DataTableHead>
-                    <DataTableRow>
-                      <DataTableHeadCell>Item</DataTableHeadCell>
-                      <DataTableHeadCell
-                        alignEnd
-                        sort={sortDir}
-                        onSortChange={(sortDir) => {
-                          // @ts-ignore
-                          setSortDir(sortDir);
-                          console.log(sortDir);
-                        }}
-                      >
-                        Quantity (Click Me)
-                      </DataTableHeadCell>
-                      <DataTableHeadCell alignEnd>Unit price</DataTableHeadCell>
+        {/* @ts-ignore */}
+        {function Example() {
+          const [sortDir, setSortDir] = React.useState(null);
+          const items = [
+            { item: 'Cookies', quantity: 25, price: '$2.90' },
+            { item: 'Pizza', quantity: 50, price: '$1.25' },
+            { item: 'Icecream', quantity: 10, price: '$2.35' }
+          ];
+          const sortedItems =
+            sortDir === 1
+              ? items.sort((a, b) => a.quantity - b.quantity)
+              : items.sort((a, b) => b.quantity - a.quantity);
+          return (
+            <DataTable>
+              <DataTableContent>
+                <DataTableHead>
+                  <DataTableRow>
+                    <DataTableHeadCell>Item</DataTableHeadCell>
+                    <DataTableHeadCell
+                      alignEnd
+                      sort={sortDir}
+                      onSortChange={(sortDir) => {
+                        // @ts-ignore
+                        setSortDir(sortDir);
+                        console.log(sortDir);
+                      }}
+                    >
+                      Quantity (Click Me)
+                    </DataTableHeadCell>
+                    <DataTableHeadCell alignEnd>Unit price</DataTableHeadCell>
+                  </DataTableRow>
+                </DataTableHead>
+                <DataTableBody>
+                  {sortedItems.map((item) => (
+                    <DataTableRow key={item.item}>
+                      <DataTableCell>{item.item}</DataTableCell>
+                      <DataTableCell alignEnd>{item.quantity}</DataTableCell>
+                      <DataTableCell alignEnd>{item.price}</DataTableCell>
                     </DataTableRow>
-                  </DataTableHead>
-                  <DataTableBody>
-                    <DataTableRow>
-                      <DataTableCell>Cookies</DataTableCell>
-                      <DataTableCell alignEnd>25</DataTableCell>
-                      <DataTableCell alignEnd>$2.90</DataTableCell>
-                    </DataTableRow>
-                    <DataTableRow selected>
-                      <DataTableCell>Pizza</DataTableCell>
-                      <DataTableCell alignEnd>50</DataTableCell>
-                      <DataTableCell alignEnd>$1.25</DataTableCell>
-                    </DataTableRow>
-                    <DataTableRow>
-                      <DataTableCell>Icecream</DataTableCell>
-                      <DataTableCell alignEnd>10</DataTableCell>
-                      <DataTableCell alignEnd>$2.35</DataTableCell>
-                    </DataTableRow>
-                  </DataTableBody>
-                </DataTableContent>
-              </DataTable>
-            );
-          }}
-        </>
+                  ))}
+                </DataTableBody>
+              </DataTableContent>
+            </DataTable>
+          );
+        }}
       </DocsExample>
 
       <DocsSubtitle>Scrollable / Sticky Rows and Columns</DocsSubtitle>
@@ -98,64 +98,63 @@ export default function Readme() {
       </DocsP>
 
       <DocsExample>
-        <>
-          {function Example() {
-            const [rows, setRows] = React.useState(0);
-            const [cols, setCols] = React.useState(0);
-            const sampleColumns = Array(7).fill(undefined);
-            const sampleRows = Array(50).fill(undefined);
+        {/* @ts-ignore */}
+        {function Example() {
+          const [rows, setRows] = React.useState(0);
+          const [cols, setCols] = React.useState(0);
+          const sampleColumns = Array(7).fill(undefined);
+          const sampleRows = Array(50).fill(undefined);
 
-            return (
-              <>
-                <DataTable
-                  style={{ height: '300px', width: '375px' }}
-                  stickyRows={rows}
-                  stickyColumns={cols}
-                >
-                  <DataTableContent>
-                    <DataTableHead>
-                      <DataTableRow>
-                        <DataTableHeadCell>Label</DataTableHeadCell>
-                        {sampleColumns.map((v, i) => (
-                          <DataTableHeadCell key={i}>Header</DataTableHeadCell>
-                        ))}
-                      </DataTableRow>
-                    </DataTableHead>
-                    <DataTableBody>
-                      {sampleRows.map((v, i) => (
-                        <DataTableRow key={i}>
-                          <DataTableCell>Label</DataTableCell>
-                          <DataTableCell>R{i} C1</DataTableCell>
-                          <DataTableCell>R{i} C2</DataTableCell>
-                          <DataTableCell>R{i} C3</DataTableCell>
-                          <DataTableCell>R{i} C4</DataTableCell>
-                          <DataTableCell>R{i} C5</DataTableCell>
-                          <DataTableCell>R{i} C6</DataTableCell>
-                          <DataTableCell>R{i} C7</DataTableCell>
-                        </DataTableRow>
+          return (
+            <>
+              <DataTable
+                style={{ height: '300px', width: '375px' }}
+                stickyRows={rows}
+                stickyColumns={cols}
+              >
+                <DataTableContent>
+                  <DataTableHead>
+                    <DataTableRow>
+                      <DataTableHeadCell>Label</DataTableHeadCell>
+                      {sampleColumns.map((v, i) => (
+                        <DataTableHeadCell key={i}>Header</DataTableHeadCell>
                       ))}
-                    </DataTableBody>
-                  </DataTableContent>
-                </DataTable>
+                    </DataTableRow>
+                  </DataTableHead>
+                  <DataTableBody>
+                    {sampleRows.map((v, i) => (
+                      <DataTableRow key={i}>
+                        <DataTableCell>Label</DataTableCell>
+                        <DataTableCell>R{i} C1</DataTableCell>
+                        <DataTableCell>R{i} C2</DataTableCell>
+                        <DataTableCell>R{i} C3</DataTableCell>
+                        <DataTableCell>R{i} C4</DataTableCell>
+                        <DataTableCell>R{i} C5</DataTableCell>
+                        <DataTableCell>R{i} C6</DataTableCell>
+                        <DataTableCell>R{i} C7</DataTableCell>
+                      </DataTableRow>
+                    ))}
+                  </DataTableBody>
+                </DataTableContent>
+              </DataTable>
 
-                <div className="doc-controls">
-                  <Select
-                    label="Sticky Rows"
-                    options={['0', '1']}
-                    value={String(rows)}
-                    onChange={(evt) => setRows(Number(evt.currentTarget.value))}
-                  />
-                  <Select
-                    label="Sticky Cols"
-                    options={['0', '1']}
-                    value={String(cols)}
-                    onChange={(evt) => setCols(Number(evt.currentTarget.value))}
-                  />
-                </div>
-              </>
-            );
-          }}
-        </>
+              <div className="doc-controls">
+                <Select
+                  label="Sticky Rows"
+                  options={['0', '1']}
+                  value={String(rows)}
+                  onChange={(evt) => setRows(Number(evt.currentTarget.value))}
+                />
+                <Select
+                  label="Sticky Cols"
+                  options={['0', '1']}
+                  value={String(cols)}
+                  onChange={(evt) => setCols(Number(evt.currentTarget.value))}
+                />
+              </div>
+            </>
+          );
+        }}
       </DocsExample>
 
       <DocsSubtitle>Form Controls</DocsSubtitle>
@@ -166,59 +165,58 @@ export default function Readme() {
       </DocsP>
 
       <DocsExample>
-        <>
-          {function Example() {
-            const [checked, setChecked] = React.useState({});
-            const sampleRows = new Array(5).fill(undefined);
+        {/* @ts-ignore */}
+        {function Example() {
+          const [checked, setChecked] = React.useState({});
+          const sampleRows = new Array(5).fill(undefined);
 
-            return (
-              <DataTable>
-                <DataTableContent>
-                  <DataTableHead>
-                    <DataTableRow>
-                      <DataTableHeadCell hasFormControl>
-                        <Checkbox />
-                      </DataTableHeadCell>
-                      <DataTableHeadCell>Label</DataTableHeadCell>
-                      <DataTableHeadCell>Header</DataTableHeadCell>
-                      <DataTableHeadCell>Header</DataTableHeadCell>
-                      <DataTableHeadCell>Toggle</DataTableHeadCell>
-                    </DataTableRow>
-                  </DataTableHead>
-                  <DataTableBody>
-                    {sampleRows.map((v, i) => (
-                      // @ts-ignore
-                      <DataTableRow key={i} selected={checked[i]}>
-                        <DataTableCell hasFormControl>
-                          <Checkbox
+          return (
+            <DataTable>
+              <DataTableContent>
+                <DataTableHead>
+                  <DataTableRow>
+                    <DataTableHeadCell hasFormControl>
+                      <Checkbox />
+                    </DataTableHeadCell>
+                    <DataTableHeadCell>Label</DataTableHeadCell>
+                    <DataTableHeadCell>Header</DataTableHeadCell>
+                    <DataTableHeadCell>Header</DataTableHeadCell>
+                    <DataTableHeadCell>Toggle</DataTableHeadCell>
+                  </DataTableRow>
+                </DataTableHead>
+                <DataTableBody>
+                  {sampleRows.map((v, i) => (
+                    // @ts-ignore
+                    <DataTableRow key={i} selected={checked[i]}>
+                      <DataTableCell hasFormControl>
+                        <Checkbox
+                          // @ts-ignore
+                          checked={checked[i]}
+                          onChange={(evt) => {
                             // @ts-ignore
-                            checked={checked[i]}
-                            onChange={(evt) => {
-                              // @ts-ignore
-                              checked[i] = evt.currentTarget.checked;
-                              setChecked({ ...checked });
-                            }}
-                          />
-                        </DataTableCell>
-                        <DataTableCell>Label</DataTableCell>
-                        <DataTableCell>
-                          <Select
-                            placeholder="--Select--"
-                            options={['Cookies', 'Pizza', 'Icecream']}
-                          />
-                        </DataTableCell>
-                        <DataTableCell>R{i} C3</DataTableCell>
-                        <DataTableCell>
-                          <Switch />
-                        </DataTableCell>
-                      </DataTableRow>
-                    ))}
-                  </DataTableBody>
-                </DataTableContent>
-              </DataTable>
-            );
-          }}
-        </>
+                            checked[i] = evt.currentTarget.checked;
+                            setChecked({ ...checked });
+                          }}
+                        />
+                      </DataTableCell>
+                      <DataTableCell>Label</DataTableCell>
+                      <DataTableCell>
+                        <Select
+                          placeholder="--Select--"
+                          options={['Cookies', 'Pizza', 'Icecream']}
+                        />
+                      </DataTableCell>
+                      <DataTableCell>R{i} C3</DataTableCell>
+                      <DataTableCell>
+                        <Switch />
+                      </DataTableCell>
+                    </DataTableRow>
+                  ))}
+                </DataTableBody>
+              </DataTableContent>
+            </DataTable>
+          );
+        }}
       </DocsExample>
 
       <DocsSubtitle>Simplified Usage</DocsSubtitle>

@@ -26,7 +26,7 @@ Switches are identical in function to the Checkbox component, they just present 
     return (
       <Switch
         checked={checked}
-        onChange={(evt) => setChecked(!!evt.currentTarget.checked)}
+        onClick={(evt) => setChecked((c) => !c)}
         label="Cookies"
       />
     );
@@ -46,7 +46,11 @@ Switches are identical in function to the Checkbox component, they just present 
 ```
 
 ## Switch
+
 A Switch component.
 
+### Props
 
-
+| Name         | Type                         | Description |
+| ------------ | ---------------------------- | ----------- |
+| `processing` | `undefined \| false \| true` |             |

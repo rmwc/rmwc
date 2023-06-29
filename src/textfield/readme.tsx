@@ -49,6 +49,9 @@ export default function Readme() {
           />
         </>
       </DocsExample>
+      <DocsExample label="Fullwidth">
+        <TextField fullwidth label="fullwidth..." />
+      </DocsExample>
 
       <DocsSubtitle>Textareas</DocsSubtitle>
       <DocsP>

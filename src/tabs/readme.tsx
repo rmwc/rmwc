@@ -38,22 +38,21 @@ export default function Readme() {
       </DocsExample>
 
       <DocsExample label="Controlled">
-        <>
-          {function Example() {
-            const [activeTab, setActiveTab] = React.useState(0);
+        {/* @ts-ignore */}
+        {function Example() {
+          const [activeTab, setActiveTab] = React.useState(0);
 
-            return (
-              <TabBar
-                activeTabIndex={activeTab}
-                onActivate={(evt) => setActiveTab(evt.detail.index)}
-              >
-                <Tab>Cookies</Tab>
-                <Tab>Pizza</Tab>
-                <Tab>Icecream</Tab>
-              </TabBar>
-            );
-          }}
-        </>
+          return (
+            <TabBar
+              activeTabIndex={activeTab}
+              onActivate={(evt) => setActiveTab(evt.detail.index)}
+            >
+              <Tab>Cookies</Tab>
+              <Tab>Pizza</Tab>
+              <Tab>Icecream</Tab>
+            </TabBar>
+          );
+        }}
       </DocsExample>
 
       <DocsSubtitle>Variants</DocsSubtitle>

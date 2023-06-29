@@ -185,6 +185,12 @@ describe('TextField', () => {
     render(<TextField suffix="USD" />);
     expect(screen.getByText('USD')).toBeInTheDocument();
   });
+
+  it('can be fullwidth', () => {
+    const { container } = render(<TextField fullwidth />);
+
+    expect(container.firstChild).toHaveClass('rmwc-text-field--fullwidth');
+  });
 });
 
 describe('TextFieldHelperText', () => {

@@ -97,6 +97,21 @@ describe('Select', () => {
     expect(container.firstChild).toHaveClass('mdc-select--outlined');
   });
 
+  it('can be invalid', () => {
+    const { container } = render(<Select invalid />);
+    expect(container.firstChild).toHaveClass('mdc-select--invalid');
+  });
+
+  it('can be required', () => {
+    const { container } = render(<Select required />);
+    expect(container.firstChild).toHaveClass('mdc-select--required');
+  });
+
+  it('can have icon', () => {
+    render(<Select icon="favorite" />);
+    expect(screen.getByText('favorite')).toBeInTheDocument();
+  });
+
   it('can accept formatted options array', () => {
     const { asFragment } = render(
       <Select
@@ -128,7 +143,7 @@ describe('Select', () => {
     );
     expect(
       container.getElementsByClassName('rmwc-select__native-control')[0]
-    ).toHaveAttribute('tabindex', '1');
+    ).toHaveAttribute('tabIndex', '1');
   });
 
   it('can have custom rootProps', () => {

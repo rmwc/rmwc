@@ -68,7 +68,7 @@ module.exports = (libraryTarget, filename = 'rmwc') => ({
     library: 'rmwc',
     libraryTarget: 'umd',
     // Point sourcemap entries to original disk location (format as URL on Windows)
-    devtoolModuleFilenameTemplate: info =>
+    devtoolModuleFilenameTemplate: (info) =>
       path.relative(appLib, info.absoluteResourcePath).replace(/\\/g, '/')
   },
   externals: [
@@ -109,7 +109,7 @@ module.exports = (libraryTarget, filename = 'rmwc') => ({
       'textfield',
       'theme',
       'typography'
-    ].map(name => {
+    ].map((name) => {
       const parts = name.split('-');
       const upperName =
         parts.length > 1

@@ -35,29 +35,60 @@ Sliders will automatically layout themselves on window resize. If you need to ma
         onChange={(evt) => setValue(evt.detail.value)}
         onInput={(evt) => setValue(evt.detail.value)}
         discrete
-        step={1}
+        step={10}
       />
     );
   }}
 </>
 ```
 
+```jsx
+<Slider discrete min={0} max={200} step={10} />
+```
+
+```jsx
+<Slider discrete displayMarkers step={10} />
+```
+
+```jsx
+<>
+  {function Example() {
+    const [value, setValue] = React.useState(80);
+    const [startValue, setStartValue] = React.useState(20);
+    return (
+      <Slider
+        range
+        discrete
+        valueStart={startValue}
+        value={value}
+        onChange={(evt) => setValue(evt.detail.value)}
+        onChangeValueStart={(evt) => setStartValue(evt.detail.value)}
+      ></Slider>
+    );
+  }}
+</>
+```
+
 ## Slider
+
 A Slider component.
 
 ### Props
 
-| Name | Type | Description |
-|------|------|-------------|
-| `disabled` | `undefined \| false \| true` | Disables the control. |
-| `discrete` | `undefined \| false \| true` | Displays the exact value of the Slider on the knob. |
-| `displayMarkers` | `undefined \| false \| true` | Displays the individual step markers on the Slider track. |
-| `foundationRef` | `React.Ref<MDCSliderFoundation>` | Advanced: A reference to the MDCFoundation. |
-| `max` | `number \| string` | The maximum value of the Slider. |
-| `min` | `number \| string` | The minimum value of the Slider. |
-| `onChange` | `undefined \| (evt: SliderOnChangeEventT) => void` | A callback that fires when the Slider stops sliding which takes an event with event.detail.value set to the Slider's value. evt.detail = { value: number;} |
-| `onInput` | `undefined \| (evt: SliderOnInputEventT) => void` | A callback that fires continuously while the Slider is sliding that takes an event with event.detail.value set to the Slider's value. evt.detail = { value: number;} |
-| `step` | `number \| string` | A step to quantize values by. |
-| `value` | `number \| string` | The value of the Slider. |
-
-
+| Name                 | Type                                               | Description                                                                                                                                                               |
+| -------------------- | -------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `disabled`           | `undefined \| false \| true`                       | Disables the control.                                                                                                                                                     |
+| `discrete`           | `undefined \| false \| true`                       | Displays the exact value of the Slider on the knob.                                                                                                                       |
+| `displayMarkers`     | `undefined \| false \| true`                       | Displays the individual step markers on the Slider track.                                                                                                                 |
+| `foundationRef`      | `React.Ref<MDCSliderFoundation>`                   | Advanced: A reference to the MDCFoundation.                                                                                                                               |
+| `max`                | `number \| string`                                 | The maximum value of the Slider.                                                                                                                                          |
+| `min`                | `number \| string`                                 | The minimum value of the Slider.                                                                                                                                          |
+| `minRange`           | `number \| string`                                 | The minimum gap between two thumbs for range sliders.                                                                                                                     |
+| `onChange`           | `undefined \| (evt: SliderOnChangeEventT) => void` | A callback that fires when the Slider stops sliding which takes an event with event.detail.value set to the Slider's value. evt.detail = { value: number;}                |
+| `onChangeValueStart` | `undefined \| (evt: SliderOnChangeEventT) => void` | A callback that fires when the Slider stops sliding which takes an event with event.detail.value set to the Slider's valueStart. evt.detail = { value: number;}           |
+| `onInput`            | `undefined \| (evt: SliderOnInputEventT) => void`  | A callback that fires continuously while the Slider is sliding that takes an event with event.detail.value set to the Slider's value. evt.detail = { value: number;}      |
+| `onInputValueStart`  | `undefined \| (evt: SliderOnInputEventT) => void`  | A callback that fires continuously while the Slider is sliding that takes an event with event.detail.value set to the Slider's valueStart. evt.detail = { value: number;} |
+| `range`              | `undefined \| false \| true`                       | Makes the slider a range slider.                                                                                                                                          |
+| `step`               | `number \| string`                                 | A step to quantize values by.                                                                                                                                             |
+| `value`              | `number \| string`                                 | The value of the Slider. When Slider is of type range, value becomes the end value.                                                                                       |
+| `valueStart`         | `undefined \| number`                              | The start value of the Slider range.                                                                                                                                      |

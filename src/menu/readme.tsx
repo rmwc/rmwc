@@ -43,97 +43,93 @@ export default function Readme() {
       </DocsP>
 
       <DocsExample>
-        <>
-          {function Example() {
-            const [open, setOpen] = React.useState(false);
+        {/* @ts-ignore */}
+        {function Example() {
+          const [open, setOpen] = React.useState(false);
 
-            return (
-              <MenuSurfaceAnchor>
-                <Menu
-                  open={open}
-                  onSelect={(evt) => console.log(evt.detail.index)}
-                  onClose={(evt) => setOpen(false)}
-                >
-                  <MenuItem>Cookies</MenuItem>
-                  <MenuItem>Pizza</MenuItem>
-                  {/** MenuItem is just a ListItem, so you can intermingle other List components */}
-                  <ListDivider />
-                  <MenuItem>Icecream</MenuItem>
-                </Menu>
+          return (
+            <MenuSurfaceAnchor>
+              <Menu
+                open={open}
+                onSelect={(evt) => console.log(evt.detail.index)}
+                onClose={(evt) => setOpen(false)}
+              >
+                <MenuItem>Cookies</MenuItem>
+                <MenuItem>Pizza</MenuItem>
+                {/** MenuItem is just a ListItem, so you can intermingle other List components */}
+                <ListDivider />
+                <MenuItem>Icecream</MenuItem>
+              </Menu>
 
-                <Button raised onClick={(evt) => setOpen(!open)}>
-                  Menu
-                </Button>
-              </MenuSurfaceAnchor>
-            );
-          }}
-        </>
+              <Button raised onClick={(evt) => setOpen(!open)}>
+                Menu
+              </Button>
+            </MenuSurfaceAnchor>
+          );
+        }}
       </DocsExample>
 
       <DocsExample>
-        <>
-          {function Example() {
-            const [open, setOpen] = React.useState(false);
+        {/* @ts-ignore */}
+        {function Example() {
+          const [open, setOpen] = React.useState(false);
 
-            return (
-              <MenuSurfaceAnchor>
-                <MenuSurface open={open} onClose={(evt) => setOpen(false)}>
-                  <div style={{ padding: '1rem', width: '8rem' }}>
-                    Make the content whatever you want.
-                  </div>
-                </MenuSurface>
+          return (
+            <MenuSurfaceAnchor>
+              <MenuSurface open={open} onClose={(evt) => setOpen(false)}>
+                <div style={{ padding: '1rem', width: '8rem' }}>
+                  Make the content whatever you want.
+                </div>
+              </MenuSurface>
 
-                <Button raised onClick={(evt) => setOpen(!open)}>
-                  Menu Surface
-                </Button>
-              </MenuSurfaceAnchor>
-            );
-          }}
-        </>
+              <Button raised onClick={(evt) => setOpen(!open)}>
+                Menu Surface
+              </Button>
+            </MenuSurfaceAnchor>
+          );
+        }}
       </DocsExample>
 
       <DocsExample>
-        <>
-          {function Example() {
-            const [open, setOpen] = React.useState(false);
+        {/* @ts-ignore */}
+        {function Example() {
+          const [open, setOpen] = React.useState(false);
 
-            return (
-              <MenuSurfaceAnchor>
-                <MenuSurface open={open} onClose={(evt) => setOpen(false)}>
-                  <div style={{ padding: '1rem', width: '8rem' }}>Menu</div>
-                </MenuSurface>
-                {/** The handle can be any component you want */}
-                <IconButton icon="menu" onClick={(evt) => setOpen(!open)} />
-              </MenuSurfaceAnchor>
-            );
-          }}
-        </>
+          return (
+            <MenuSurfaceAnchor>
+              <MenuSurface open={open} onClose={(evt) => setOpen(false)}>
+                <div style={{ padding: '1rem', width: '8rem' }}>Menu</div>
+              </MenuSurface>
+              {/** The handle can be any component you want */}
+              <IconButton icon="menu" onClick={(evt) => setOpen(!open)} />
+            </MenuSurfaceAnchor>
+          );
+        }}
       </DocsExample>
 
       <DocsExample>
-        <>
-          {function Example() {
-            const [open, setOpen] = React.useState(false);
+        {/* @ts-ignore */}
+        {function Example() {
+          const [open, setOpen] = React.useState(false);
 
-            return (
-              <MenuSurfaceAnchor>
-                <Menu
-                  open={open}
-                  onSelect={(evt) => console.log(evt.detail.index)}
-                  onClose={(evt) => setOpen(false)}
-                >
-                  <MenuItem>Item One</MenuItem>
-                  <MenuItem disabled>Item Two (disabled)</MenuItem>
-                  <MenuItem>Item Three</MenuItem>
-                </Menu>
+          return (
+            <MenuSurfaceAnchor>
+              <Menu
+                open={open}
+                onSelect={(evt) => console.log(evt.detail.index)}
+                onClose={(evt) => setOpen(false)}
+              >
+                <MenuItem>Item One</MenuItem>
+                <MenuItem disabled>Item Two (disabled)</MenuItem>
+                <MenuItem>Item Three</MenuItem>
+              </Menu>
 
-                <Button raised onClick={() => setOpen(!open)}>
-                  Menu
-                </Button>
-              </MenuSurfaceAnchor>
-            );
-          }}
-        </>
+              <Button raised onClick={() => setOpen(!open)}>
+                Menu
+              </Button>
+            </MenuSurfaceAnchor>
+          );
+        }}
       </DocsExample>
 
       <DocsSubtitle>Simplified usage</DocsSubtitle>
@@ -165,41 +161,40 @@ export default function Readme() {
       </DocsP>
 
       <DocsExample>
-        <>
-          {function Example() {
-            const [anchorCorner, setAnchorCorner] =
-              React.useState<any>('topLeft');
+        {/* @ts-ignore */}
+        {function Example() {
+          const [anchorCorner, setAnchorCorner] =
+            React.useState<any>('topLeft');
 
-            return (
-              <>
-                <MenuSurfaceAnchor>
-                  <MenuSurface anchorCorner={anchorCorner} open={true}>
-                    <div style={{ padding: '1rem', width: '8rem' }}>
-                      anchorCorner: {anchorCorner}
-                    </div>
-                  </MenuSurface>
-                  <Button raised label="Anchored Menu" />
-                </MenuSurfaceAnchor>
+          return (
+            <>
+              <MenuSurfaceAnchor>
+                <MenuSurface anchorCorner={anchorCorner} open={true}>
+                  <div style={{ padding: '1rem', width: '8rem' }}>
+                    anchorCorner: {anchorCorner}
+                  </div>
+                </MenuSurface>
+                <Button raised label="Anchored Menu" />
+              </MenuSurfaceAnchor>
 
-                <Select
-                  value={anchorCorner}
-                  label="anchorCorner"
-                  onChange={(evt) => setAnchorCorner(evt.currentTarget.value)}
-                  options={[
-                    'topLeft',
-                    'topRight',
-                    'bottomLeft',
-                    'bottomRight',
-                    'topStart',
-                    'topEnd',
-                    'bottomStart',
-                    'bottomEnd'
-                  ]}
-                />
-              </>
-            );
-          }}
-        </>
+              <Select
+                value={anchorCorner}
+                label="anchorCorner"
+                onChange={(evt) => setAnchorCorner(evt.currentTarget.value)}
+                options={[
+                  'topLeft',
+                  'topRight',
+                  'bottomLeft',
+                  'bottomRight',
+                  'topStart',
+                  'topEnd',
+                  'bottomStart',
+                  'bottomEnd'
+                ]}
+              />
+            </>
+          );
+        }}
       </DocsExample>
 
       <DocsSubtitle>Rendering through Portals</DocsSubtitle>
@@ -242,46 +237,43 @@ export default function Readme() {
       </DocsP>
 
       <DocsExample>
-        <>
-          {function Example() {
-            const [renderToPortal, setRenderToPortal] = React.useState(true);
-            const [menuIsOpen, setMenuIsOpen] = React.useState(false);
-            const options = ['Cookies', 'Pizza', 'Icecream'];
-            return (
-              <>
-                <div
-                  style={{
-                    marginBottom: '10rem',
-                    height: '3.5rem',
-                    overflow: 'hidden'
-                  }}
-                >
-                  <MenuSurfaceAnchor>
-                    <Button raised onClick={() => setMenuIsOpen(!menuIsOpen)}>
-                      Open Menu
-                    </Button>
-                    <Menu
-                      open={menuIsOpen}
-                      onClose={() => setMenuIsOpen(false)}
-                      renderToPortal={renderToPortal}
-                    >
-                      {options.map((o) => (
-                        <MenuItem key={o}>{o}</MenuItem>
-                      ))}
-                    </Menu>
-                  </MenuSurfaceAnchor>
-                </div>
-                <Checkbox
-                  checked={renderToPortal}
-                  onChange={(evt) =>
-                    setRenderToPortal(evt.currentTarget.checked)
-                  }
-                  label="renderToPortal"
-                />
-              </>
-            );
-          }}
-        </>
+        {/* @ts-ignore */}
+        {function Example() {
+          const [renderToPortal, setRenderToPortal] = React.useState(true);
+          const [menuIsOpen, setMenuIsOpen] = React.useState(false);
+          const options = ['Cookies', 'Pizza', 'Icecream'];
+          return (
+            <>
+              <div
+                style={{
+                  marginBottom: '10rem',
+                  height: '3.5rem',
+                  overflow: 'hidden'
+                }}
+              >
+                <MenuSurfaceAnchor>
+                  <Button raised onClick={() => setMenuIsOpen(!menuIsOpen)}>
+                    Open Menu
+                  </Button>
+                  <Menu
+                    open={menuIsOpen}
+                    onClose={() => setMenuIsOpen(false)}
+                    renderToPortal={renderToPortal}
+                  >
+                    {options.map((o) => (
+                      <MenuItem key={o}>{o}</MenuItem>
+                    ))}
+                  </Menu>
+                </MenuSurfaceAnchor>
+              </div>
+              <Checkbox
+                checked={renderToPortal}
+                onChange={(evt) => setRenderToPortal(evt.currentTarget.checked)}
+                label="renderToPortal"
+              />
+            </>
+          );
+        }}
       </DocsExample>
 
       <DocProps
@@ -305,14 +297,26 @@ export const galleryExample = (
     className="mdc-menu  mdc-menu-surface--open mdc-menu-surface"
     style={{ position: 'static' }}
   >
-    <div role="menu" className="mdc-list mdc-menu__items mdc-list">
-      <div role="menuitem" className="mdc-ripple-upgraded mdc-list-item">
+    <div
+      role="menu"
+      className="mdc-deprecated-list mdc-menu__items mdc-deprecated-list"
+    >
+      <div
+        role="menuitem"
+        className="mdc-ripple-upgraded mdc-deprecated-list-item"
+      >
         Cookies
       </div>
-      <div role="menuitem" className="mdc-ripple-upgraded mdc-list-item">
+      <div
+        role="menuitem"
+        className="mdc-ripple-upgraded mdc-deprecated-list-item"
+      >
         Pizza
       </div>
-      <div role="menuitem" className="mdc-ripple-upgraded mdc-list-item">
+      <div
+        role="menuitem"
+        className="mdc-ripple-upgraded mdc-deprecated-list-item"
+      >
         Icecream
       </div>
     </div>

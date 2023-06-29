@@ -56,12 +56,20 @@ exports[` renders with icon as JSX 1`] = `
 <DocumentFragment>
   <button
     aria-label="Tweet it!"
-    class="rmwc-icon rmwc-icon--component material-icons mdc-ripple-upgraded--unbounded mdc-icon-button"
+    class="mdc-ripple-upgraded--unbounded mdc-icon-button"
     data-mdc-ripple-is-unbounded="true"
     role="button"
     tabindex="0"
   >
-    <div />
+    <div
+      class="mdc-icon-button__ripple"
+    />
+    <i
+      class="rmwc-icon rmwc-icon--component material-icons mdc-ripple-upgraded--unbounded"
+      data-mdc-ripple-is-unbounded="true"
+    >
+      <div />
+    </i>
   </button>
 </DocumentFragment>
 `;
@@ -69,14 +77,18 @@ exports[` renders with icon as JSX 1`] = `
 exports[` renders with icon as path 1`] = `
 <DocumentFragment>
   <button
-    class="rmwc-icon rmwc-icon--url material-icons mdc-ripple-upgraded--unbounded mdc-icon-button"
+    class="mdc-ripple-upgraded--unbounded mdc-icon-button"
     data-mdc-ripple-is-unbounded="true"
     role="button"
-    style="background-image: url(images/icons/twitter.png);"
     tabindex="0"
   >
     <div
       class="mdc-icon-button__ripple"
+    />
+    <i
+      class="rmwc-icon rmwc-icon--url material-icons mdc-ripple-upgraded--unbounded"
+      data-mdc-ripple-is-unbounded="true"
+      style="background-image: url(images/icons/twitter.png);"
     />
   </button>
 </DocumentFragment>
@@ -86,12 +98,20 @@ exports[` renders with icon as string 1`] = `
 <DocumentFragment>
   <button
     aria-label="Rate this!"
-    class="rmwc-icon rmwc-icon--ligature material-icons mdc-ripple-upgraded--unbounded mdc-icon-button"
+    class="mdc-ripple-upgraded--unbounded mdc-icon-button"
     data-mdc-ripple-is-unbounded="true"
     role="button"
     tabindex="0"
   >
-    star
+    <div
+      class="mdc-icon-button__ripple"
+    />
+    <i
+      class="rmwc-icon rmwc-icon--ligature material-icons mdc-ripple-upgraded--unbounded"
+      data-mdc-ripple-is-unbounded="true"
+    >
+      star
+    </i>
   </button>
 </DocumentFragment>
 `;

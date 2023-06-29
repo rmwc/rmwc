@@ -29,13 +29,8 @@ export interface TabBarProps {
 }
 
 export const TabBar = createComponent<TabBarProps>(function TabBar(props, ref) {
-  const {
-    children,
-    activeTabIndex,
-    onActivate,
-    foundationRef,
-    ...rest
-  } = props;
+  const { children, activeTabIndex, onActivate, foundationRef, ...rest } =
+    props;
 
   const {
     rootEl,
@@ -57,7 +52,14 @@ export const TabBar = createComponent<TabBarProps>(function TabBar(props, ref) {
 
   return (
     <TabBarContext.Provider value={contextApi.current}>
-      <Tag tag="nav" element={rootEl} {...rest} className={className} ref={ref}>
+      <Tag
+        tag="div"
+        role="tablist"
+        element={rootEl}
+        {...rest}
+        className={className}
+        ref={ref}
+      >
         <TabScroller apiRef={setTabScrollerApi}>{children}</TabScroller>
       </Tag>
     </TabBarContext.Provider>

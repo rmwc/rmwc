@@ -17,6 +17,33 @@ MDC Form Field provides an mdc-formfield helper class for easily making theme-aw
 </FormField>
 ```
 
+## Align end
+
+```jsx
+<FormField alignEnd>
+  <input type="checkbox" id="input" />
+  <label htmlFor="input">Input Label</label>
+</FormField>
+```
+
+## No wrap
+
+```jsx
+<FormField noWrap>
+  <input type="checkbox" id="input" />
+  <label htmlFor="input">Input Label</label>
+</FormField>
+```
+
+## Space between
+
+```jsx
+<FormField spaceBetween>
+  <input type="checkbox" id="input" />
+  <label htmlFor="input">Input Label</label>
+</FormField>
+```
+
 ## FormField
 A FormField component.
 
@@ -26,5 +53,7 @@ A FormField component.
 |------|------|-------------|
 | `alignEnd` | `undefined \| false \| true` | Position the input after the label. |
 | `foundationRef` | `React.Ref<MDCFormFieldFoundation>` | Advanced: A reference to the MDCFoundation. |
+| `noWrap` | `undefined \| false \| true` | Forces text to stay on a single line. |
+| `spaceBetween` | `undefined \| false \| true` | Adds space between content. |
 
 

@@ -54,6 +54,87 @@ describe('List', () => {
     await waitFor(() => expect(clickedIndex).toEqual({ index: 0 }));
   });
 
+  it('can be dense', async () => {
+    const { asFragment } = render(
+      <List dense>
+        <ListItem>
+          <ListItemPrimaryText>Cookies</ListItemPrimaryText>
+        </ListItem>
+      </List>
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('can be twoLine', async () => {
+    const { asFragment } = render(
+      <List twoLine>
+        <ListItem>
+          <ListItemPrimaryText>Cookies</ListItemPrimaryText>
+        </ListItem>
+        <ListItem>
+          <ListItemPrimaryText>Pancakes</ListItemPrimaryText>
+        </ListItem>
+      </List>
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('can be avatarList', async () => {
+    const { asFragment } = render(
+      <List avatarList>
+        <ListItem>
+          <ListItemPrimaryText>Cookies</ListItemPrimaryText>
+        </ListItem>
+      </List>
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('can be nonInteractive', async () => {
+    const { asFragment } = render(
+      <List nonInteractive>
+        <ListItem>
+          <ListItemPrimaryText>Cookies</ListItemPrimaryText>
+        </ListItem>
+      </List>
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('can have custom classnames', () => {
+    [List, ListItem, ListItemPrimaryText].forEach(
+      (Component: React.ComponentType<any>) => {
+        const { container } = render(
+          <Component className={'my-custom-classname'} />
+        );
+        expect(container.firstChild).toHaveClass('my-custom-classname');
+      }
+    );
+  });
+
+  it('can be activated', () => {
+    const { container } = render(<ListItem activated />);
+    expect(container.firstChild).toHaveClass(
+      'mdc-deprecated-list-item--activated'
+    );
+  });
+
+  it('can be selected', () => {
+    const { container } = render(<ListItem selected />);
+    expect(container.firstChild).toHaveClass(
+      'mdc-deprecated-list-item--selected'
+    );
+  });
+
+  it('can be disabled', () => {
+    const { container } = render(<ListItem disabled />);
+    expect(container.firstChild).toHaveClass(
+      'mdc-deprecated-list-item--disabled'
+    );
+  });
+});
+
+describe('SimpleListItem', () => {
   it('SimpleListItem renders', () => {
     const { asFragment } = render(
       <List>
@@ -87,27 +168,6 @@ describe('List', () => {
       </SimpleListItem>
     );
     expect(screen.getByText('Test')).toBeInTheDocument();
-  });
-
-  it('can have custom classnames', () => {
-    [List, ListItem, ListItemPrimaryText].forEach(
-      (Component: React.ComponentType<any>) => {
-        const { container } = render(
-          <Component className={'my-custom-classname'} />
-        );
-        expect(container.firstChild).toHaveClass('my-custom-classname');
-      }
-    );
-  });
-
-  it('can be activated', () => {
-    const { container } = render(<ListItem activated />);
-    expect(container.firstChild).toHaveClass('mdc-list-item--activated');
-  });
-
-  it('can be selected', () => {
-    const { container } = render(<ListItem selected />);
-    expect(container.firstChild).toHaveClass('mdc-list-item--selected');
   });
 });
 

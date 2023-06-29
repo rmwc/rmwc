@@ -58,28 +58,27 @@ export default function Readme() {
       </DocsExample>
 
       <DocsExample label="Controlled">
-        <>
-          {function Controlled() {
-            const [isChecked, setIsChecked] = React.useState(false);
-            return (
-              <>
-                <IconButton
-                  checked={isChecked}
-                  onClick={() => setIsChecked(!isChecked)}
-                  onIcon="star"
-                  icon="star_border"
-                />
+        {/* @ts-ignore */}
+        {function Controlled() {
+          const [isChecked, setIsChecked] = React.useState(false);
+          return (
+            <>
+              <IconButton
+                checked={isChecked}
+                onClick={() => setIsChecked(!isChecked)}
+                onIcon="star"
+                icon="star_border"
+              />
 
-                <IconButton
-                  checked={isChecked}
-                  onClick={() => setIsChecked(!isChecked)}
-                  onIcon="images/icons/twitter.png"
-                  icon="images/icons/facebook.png"
-                />
-              </>
-            );
-          }}
-        </>
+              <IconButton
+                checked={isChecked}
+                onClick={() => setIsChecked(!isChecked)}
+                onIcon="images/icons/twitter.png"
+                icon="images/icons/facebook.png"
+              />
+            </>
+          );
+        }}
       </DocsExample>
 
       <DocsExample label="Component as Icon">

@@ -14,6 +14,14 @@ describe('Button', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
+  it('can have a trailing icon', () => {
+    const { asFragment } = render(
+      <Button trailingIcon="favorite">Button</Button>
+    );
+    expect(screen.getByText('favorite')).toBeInTheDocument();
+    expect(asFragment()).toMatchSnapshot();
+  });
+
   it('can be raised', () => {
     const { container } = render(<Button raised />);
     expect(container.firstChild).toHaveClass('mdc-button--raised');
@@ -52,5 +60,10 @@ describe('Button', () => {
   it('can have custom classnames', () => {
     const { container } = render(<Button className={'my-custom-classname'} />);
     expect(container.firstChild).toHaveClass('my-custom-classname');
+  });
+
+  it('can have a label', () => {
+    render(<Button label="cookie" />);
+    expect(screen.getByText('cookie')).toBeInTheDocument();
   });
 });

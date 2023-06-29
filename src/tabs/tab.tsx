@@ -44,9 +44,9 @@ export interface TabProps {
 
 export type TabApi = {
   getActive: () => boolean;
-  activate: (computeIndicatorClientRect: ClientRect) => void;
+  activate: (computeIndicatorClientRect: DOMRect) => void;
   deactivate: () => void;
-  computeIndicatorClientRect: () => ClientRect;
+  computeIndicatorClientRect: () => DOMRect;
   computeDimensions: MDCTabFoundation['computeDimensions'];
   focus: () => void;
   id: string;
@@ -106,7 +106,10 @@ export const Tab = createComponent<TabProps>(function Tab(props, ref) {
 
   return (
     <TabRoot element={rootEl} stacked={stacked} {...rest} ref={ref}>
-      <div className="mdc-tab__content" ref={contentEl.reactRef as React.Ref<HTMLDivElement>}>
+      <div
+        className="mdc-tab__content"
+        ref={contentEl.reactRef as React.Ref<HTMLDivElement>}
+      >
         {!!icon && <TabIcon icon={icon} />}
         {(children !== undefined || label !== undefined) && (
           <span className="mdc-tab__text-label">
@@ -118,6 +121,7 @@ export const Tab = createComponent<TabProps>(function Tab(props, ref) {
       </div>
       {!restrictIndicator && tabIndicator}
       <RippleSurface className="mdc-tab__ripple" />
+      <div className="mdc-tab__focus-ring"></div>
     </TabRoot>
   );
 });

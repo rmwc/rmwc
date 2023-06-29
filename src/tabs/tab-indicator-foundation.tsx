@@ -40,7 +40,7 @@ export const useTabIndicatorFoundation = (props: TabIndicatorProps) => {
       foundation: MDCTabIndicatorFoundation;
     }): TabIndicatorApi => {
       return {
-        activate: (previousIndicatorClientRect?: ClientRect) => {
+        activate: (previousIndicatorClientRect?: DOMRect) => {
           foundation.activate(previousIndicatorClientRect);
         },
         deactivate: () => {

@@ -4,7 +4,6 @@ The Portal component will let you render components to a portal.
 
 - Module **@rmwc/base**
 
-
 ## Portal
 
 ```jsx
@@ -43,4 +42,3 @@ The PortalProvider component does not accept any props.
 The Portal component only needs to be a descendent of PortalProvider for it to be functional.
 
 Unlike ThemeProvider or TypographyProvider, the PortalProvider component should only be used once in your application or component tree. (If you include multiple instances of PortalProvider, the context will only grab the context values from the first PortalProvider parent and the solution will break.)
-

@@ -24,7 +24,6 @@ export interface ListProps {
   foundationRef?: React.Ref<MDCListFoundation | null>;
   /** Sets the list to allow the up arrow on the first element to focus the
    * last element of the list and vice versa. Defaults to true */
-
   wrapFocus?: boolean;
   /** Sets the lists vertical orientation. Defaults to true */
   vertical?: boolean;
@@ -64,12 +63,12 @@ export const List = createComponent<ListProps>(function List(props, ref) {
     wrapFocus
   });
   const className = useClassNames(props, [
-    'mdc-list',
+    'mdc-deprecated-list',
     {
-      'mdc-list--dense': dense,
-      'mdc-list--two-line': twoLine,
-      'mdc-list--avatar-list': avatarList,
-      'mdc-list--non-interactive': nonInteractive
+      'mdc-deprecated-list--dense': dense,
+      'mdc-deprecated-list--two-line': twoLine,
+      'mdc-deprecated-list--avatar-list': avatarList,
+      'mdc-deprecated-list--non-interactive': nonInteractive
     }
   ]);
   return (

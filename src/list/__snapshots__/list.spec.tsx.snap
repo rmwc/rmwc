@@ -3,14 +3,14 @@
 exports[`Collapsible List renders 1`] = `
 <DocumentFragment>
   <ul
-    class="mdc-list"
+    class="mdc-deprecated-list"
   >
     <li
-      class="mdc-list-item"
+      class="mdc-deprecated-list-item"
       tabindex="0"
     >
       <div
-        class="mdc-list-item__ripple "
+        class="mdc-deprecated-list-item__ripple "
       />
       One
     </li>
@@ -21,11 +21,11 @@ exports[`Collapsible List renders 1`] = `
         class="rmwc-collapsible-list__handle"
       >
         <li
-          class="mdc-list-item"
+          class="mdc-deprecated-list-item"
           tabindex="0"
         >
           <div
-            class="mdc-list-item__ripple "
+            class="mdc-deprecated-list-item__ripple "
           />
           Handle
         </li>
@@ -38,11 +38,11 @@ exports[`Collapsible List renders 1`] = `
           class="rmwc-collapsible-list__children-inner"
         >
           <li
-            class="mdc-list-item"
+            class="mdc-deprecated-list-item"
             tabindex="0"
           >
             <div
-              class="mdc-list-item__ripple "
+              class="mdc-deprecated-list-item__ripple "
             />
             Two
           </li>
@@ -53,95 +53,102 @@ exports[`Collapsible List renders 1`] = `
 </DocumentFragment>
 `;
 
-exports[`List SimpleListItem renders 1`] = `
+exports[`List can be avatarList 1`] = `
 <DocumentFragment>
   <ul
-    class="mdc-list"
+    class="mdc-deprecated-list mdc-deprecated-list--avatar-list"
   >
     <li
-      class="mdc-list-item"
+      class="mdc-deprecated-list-item"
       tabindex="0"
     >
       <div
-        class="mdc-list-item__ripple "
+        class="mdc-deprecated-list-item__ripple "
       />
-      <div
-        class="mdc-list-item__ripple "
-      />
-      <i
-        aria-hidden="true"
-        class="rmwc-icon rmwc-icon--ligature material-icons mdc-list-item__graphic"
-      >
-        star_border
-      </i>
-      Cookies
-    </li>
-    <li
-      class="mdc-list-item"
-      tabindex="0"
-    >
-      <div
-        class="mdc-list-item__ripple "
-      />
-      <div
-        class="mdc-list-item__ripple "
-      />
-      <i
-        aria-hidden="true"
-        class="rmwc-icon rmwc-icon--ligature material-icons mdc-list-item__graphic"
-      >
-        star_border
-      </i>
       <span
-        class="mdc-list-item__text"
+        class="mdc-deprecated-list-item__primary-text"
       >
-        <span
-          class="mdc-list-item__primary-text"
-        >
-          Cookies
-        </span>
-        <span
-          class="mdc-list-item__secondary-text"
-        >
-          Chocolate chip
-        </span>
+        Cookies
+      </span>
+    </li>
+  </ul>
+</DocumentFragment>
+`;
+
+exports[`List can be dense 1`] = `
+<DocumentFragment>
+  <ul
+    class="mdc-deprecated-list mdc-deprecated-list--dense"
+  >
+    <li
+      class="mdc-deprecated-list-item"
+      tabindex="0"
+    >
+      <div
+        class="mdc-deprecated-list-item__ripple "
+      />
+      <span
+        class="mdc-deprecated-list-item__primary-text"
+      >
+        Cookies
+      </span>
+    </li>
+  </ul>
+</DocumentFragment>
+`;
+
+exports[`List can be nonInteractive 1`] = `
+<DocumentFragment>
+  <ul
+    class="mdc-deprecated-list mdc-deprecated-list--non-interactive"
+  >
+    <li
+      class="mdc-deprecated-list-item"
+      tabindex="0"
+    >
+      <div
+        class="mdc-deprecated-list-item__ripple "
+      />
+      <span
+        class="mdc-deprecated-list-item__primary-text"
+      >
+        Cookies
+      </span>
+    </li>
+  </ul>
+</DocumentFragment>
+`;
+
+exports[`List can be twoLine 1`] = `
+<DocumentFragment>
+  <ul
+    class="mdc-deprecated-list mdc-deprecated-list--two-line"
+  >
+    <li
+      class="mdc-deprecated-list-item"
+      tabindex="0"
+    >
+      <div
+        class="mdc-deprecated-list-item__ripple "
+      />
+      <span
+        class="mdc-deprecated-list-item__primary-text"
+      >
+        Cookies
       </span>
     </li>
     <li
-      class="mdc-list-item"
+      class="mdc-deprecated-list-item"
       tabindex="0"
     >
       <div
-        class="mdc-list-item__ripple "
+        class="mdc-deprecated-list-item__ripple "
       />
-      <div
-        class="mdc-list-item__ripple "
-      />
-      <i
-        aria-hidden="true"
-        class="rmwc-icon rmwc-icon--ligature material-icons mdc-list-item__graphic"
-      >
-        star_border
-      </i>
       <span
-        class="mdc-list-item__text"
+        class="mdc-deprecated-list-item__primary-text"
       >
-        <span
-          class="mdc-list-item__primary-text"
-        >
-          Cookies
-        </span>
-        <span
-          class="mdc-list-item__secondary-text"
-        >
-          Chocolate chip
-        </span>
+        Pancakes
       </span>
-      <div
-        class="mdc-list-item__meta"
-      >
-        info
-      </div>
     </li>
   </ul>
 </DocumentFragment>
@@ -150,47 +157,141 @@ exports[`List SimpleListItem renders 1`] = `
 exports[`List renders 1`] = `
 <DocumentFragment>
   <ul
-    class="mdc-list"
+    class="mdc-deprecated-list"
   >
     <li
-      class="mdc-list-item"
+      class="mdc-deprecated-list-item"
       tabindex="0"
     >
       <div
-        class="mdc-list-item__ripple "
+        class="mdc-deprecated-list-item__ripple "
       />
       <i
         aria-hidden="true"
-        class="rmwc-icon rmwc-icon--ligature material-icons mdc-list-item__graphic"
+        class="rmwc-icon rmwc-icon--ligature material-icons mdc-deprecated-list-item__graphic"
       />
       <span
-        class="mdc-list-item__primary-text"
+        class="mdc-deprecated-list-item__primary-text"
       >
         Cookies
       </span>
       <div
-        class="mdc-list-item__meta"
+        class="mdc-deprecated-list-item__meta"
       />
     </li>
     <li
-      class="mdc-list-item"
+      class="mdc-deprecated-list-item"
       tabindex="0"
     >
       <div
-        class="mdc-list-item__ripple "
+        class="mdc-deprecated-list-item__ripple "
       />
       <i
         aria-hidden="true"
-        class="rmwc-icon rmwc-icon--ligature material-icons mdc-list-item__graphic"
+        class="rmwc-icon rmwc-icon--ligature material-icons mdc-deprecated-list-item__graphic"
       />
       <span
-        class="mdc-list-item__primary-text"
+        class="mdc-deprecated-list-item__primary-text"
       >
         Cookies
       </span>
       <div
-        class="mdc-list-item__meta"
+        class="mdc-deprecated-list-item__meta"
       />
+    </li>
+  </ul>
+</DocumentFragment>
+`;
+
+exports[`SimpleListItem SimpleListItem renders 1`] = `
+<DocumentFragment>
+  <ul
+    class="mdc-deprecated-list"
+  >
+    <li
+      class="mdc-deprecated-list-item"
+      tabindex="0"
+    >
+      <div
+        class="mdc-deprecated-list-item__ripple "
+      />
+      <div
+        class="mdc-deprecated-list-item__ripple "
+      />
+      <i
+        aria-hidden="true"
+        class="rmwc-icon rmwc-icon--ligature material-icons mdc-deprecated-list-item__graphic"
+      >
+        star_border
+      </i>
+      Cookies
+    </li>
+    <li
+      class="mdc-deprecated-list-item"
+      tabindex="0"
+    >
+      <div
+        class="mdc-deprecated-list-item__ripple "
+      />
+      <div
+        class="mdc-deprecated-list-item__ripple "
+      />
+      <i
+        aria-hidden="true"
+        class="rmwc-icon rmwc-icon--ligature material-icons mdc-deprecated-list-item__graphic"
+      >
+        star_border
+      </i>
+      <span
+        class="mdc-deprecated-list-item__text"
+      >
+        <span
+          class="mdc-deprecated-list-item__primary-text"
+        >
+          Cookies
+        </span>
+        <span
+          class="mdc-deprecated-list-item__secondary-text"
+        >
+          Chocolate chip
+        </span>
+      </span>
+    </li>
+    <li
+      class="mdc-deprecated-list-item"
+      tabindex="0"
+    >
+      <div
+        class="mdc-deprecated-list-item__ripple "
+      />
+      <div
+        class="mdc-deprecated-list-item__ripple "
+      />
+      <i
+        aria-hidden="true"
+        class="rmwc-icon rmwc-icon--ligature material-icons mdc-deprecated-list-item__graphic"
+      >
+        star_border
+      </i>
+      <span
+        class="mdc-deprecated-list-item__text"
+      >
+        <span
+          class="mdc-deprecated-list-item__primary-text"
+        >
+          Cookies
+        </span>
+        <span
+          class="mdc-deprecated-list-item__secondary-text"
+        >
+          Chocolate chip
+        </span>
+      </span>
+      <div
+        class="mdc-deprecated-list-item__meta"
+      >
+        info
+      </div>
     </li>
   </ul>
 </DocumentFragment>
