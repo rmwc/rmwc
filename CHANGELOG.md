@@ -1,3 +1,9 @@
+#### 9.0.0-alpha.0 (2023-07-06)
+
+##### Other Changes
+
+* **feature:**  Release new major (d462dd67)
+
 #### 8.0.7 (2023-03-20)
 
 ##### Build System / Dependencies
