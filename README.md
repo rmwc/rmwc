@@ -38,12 +38,10 @@ Features:
 
 ## Recent updates
 
-v8.0.6 is here! This release includes a bug fix for this issue: Disabled MenuItems are expected to not be interactable
-[847](https://github.com/rmwc/rmwc/issues/847).
+v14.0.0 is here! This release includes:
 
-- `npm i rmwc@latest` or `npm i @rmwc/button@latest`.
-- React 17 now usable as a peer dep
-- Updated lerna & other dependencies
+- support for material v14
+- support for react 18
 
 _View all release notes_ 👉 https://opencollective.com/rmwc/updates
 
