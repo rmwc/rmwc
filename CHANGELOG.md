@@ -1,3 +1,97 @@
+#### 13.0.0 (2023-07-06)
+
+##### Build System / Dependencies
+
+* **deps:**
+  *  bump nunjucks from 3.2.3 to 3.2.4 (e8728b25)
+  *  bump terser from 5.12.1 to 5.17.0 (d2393b77)
+  *  bump minimatch and recursive-readdir (b4830694)
+  *  bump tslib from 2.4.0 to 2.5.0 (#882) (ead6be65)
+* **deps-dev:**
+  *  bump @testing-library/jest-dom from 5.16.4 to 5.16.5 (56a7523c)
+  *  bump @storybook/manager-webpack5 from 6.5.10 to 6.5.16 (#893) (50717826)
+  *  bump @babel/core from 7.17.9 to 7.21.4 (#885) (0c216918)
+  *  bump @types/react-router from 5.1.18 to 5.1.20 (#875) (c21b8152)
+  *  bump @storybook/preset-create-react-app (#879) (7e4560c8)
+* **github:**
+  *  Using automerge to get Dependabot PR's merged (89f42b84)
+  *  Updated gh command to bypass branch protection rules for Dependabot (86b79869)
+  *  Removed wrong labels (46da54b0)
+  *  Added PR approve step (70aafb2b)
+  *  Dependabot updated to ignore some deps (c3d4f735)
+  *  Added Dependabot configuration including automerge (e37216b0)
+
+##### Chores
+
+* **all:**  Bump to v14 and fix build errors (ed28f529)
+* **fab:**  upgrade fab to v14 (#821) (c4d0a89c)
+* **typography:**  upgrade to version 14 (0f7112a0)
+* **ripple:**  Upgrade to v14 (0d0f1034)
+* **floating-label:**  Upgrade to v14 (5522d058)
+* **icon-button:**  Upgrade to v14 (1ee9da2b)
+* **image-list:**  Upgrade to v14 (4dd61ae1)
+* **elevation:**  Upgrade to v14 (50e49449)
+* **line-ripple:**  Upgrade to v14 (5d50c523)
+* **notched-outline:**  Upgrade to v14 (0306f435)
+
+##### Continuous Integration
+
+* **site:**  Ran build (5dc73a29)
+
+##### New Features
+
+* **segmented-button:**  Added segmented-button (#907) (b793b282)
+* **form-field:**  Support nowrap and spacebetween (867c1a2b)
+* **rmwc:**  Support React 18 (#923) (7322aac8)
+* **portal:**  Support Portal in a ShadowDom by using PortalContext (#855) (721eec5c)
+
+##### Bug Fixes
+
+* **chip:**
+  *  Add more alignment to trailingIcon (b2343072)
+  *  Fix code smell (949078e1)
+* **icon-button:**
+  *  Fix HTML tag of icon (63e23381)
+  *  Fix ripple bug (f0dca9da)
+* **data-table:**  Revert reverse of sorting arrow (b260fd3e)
+* **ripple:**
+  *  Support primary and accent color (c1936698)
+  *  Support primary and accent color (e82416a0)
+* **card:**
+  *  Fix icon-button alignment (af113158)
+  *  Fix icon-button alignment (6fbeff73)
+* **tab:**
+  *  Use correct tag and role (3e0fae89)
+  *  Use correct tag and role (7a1a5d7c)
+* **snackbar:**  Fix icon-button dismiss bug (aa9fefdf)
+* **tooltip:**
+  *  Correctly display tooltip (582af4e6)
+  *  Support material v14 (cd4fcc68)
+* **Select:**  forward ref to enhanced menu #723 (#932) (2b48ad64)
+* **chips:**
+  *  Handle interaction (d3ab60eb)
+  *  support material v14 (8f930f08)
+* **tests:**  fix few failing tests (4e4353e0)
+* **slider:**
+  *  Support range slider (08e823d1)
+  *  Support material v14 (ae1cf639)
+* **circular-progress:**  Support material v14 (1d5576c7)
+* **menu-surface:**  support material v14 (3ef0ef5e)
+* **switch:**  Support material v14 (ac329238)
+
+##### Other Changes
+
+* **textfield:**  Support fullwidth (c3fc0285)
+* **circular-progress:**
+  *  support sizes (3446c95b)
+  *  Support v14 (5bde24ed)
+* //github.com/rmwc/rmwc into v14/all-components-healthy (afcf60ce)
+* //github.com/rmwc/rmwc into v14/all-components-healthy (debaefd0)
+* //github.com/rmwc/rmwc into v14/all-components-healthy (d07808f0)
+* //github.com/jamesmfriedman/rmwc into rtl-rewrite-avatar (a3db450f)
+* //github.com/jamesmfriedman/rmwc into rtl-rewrite-avatar (8e61edf1)
+* **typography:**  upgrade to version 14 (b69c05e8)
+
 #### 8.0.7 (2023-03-20)
 
 ##### Build System / Dependencies
