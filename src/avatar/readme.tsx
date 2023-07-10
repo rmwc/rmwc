@@ -2,6 +2,7 @@ import React from 'react';
 
 import { Docs, DocsExample, DocProps, DocsSubtitle, DocsP } from '@doc-utils';
 import propsSrc from './generated-props.json';
+import propsSrcv2 from './generated-props-v2.json';
 import examples from './generated-examples.json';
 
 import { Avatar, AvatarGroup, AvatarCount } from '.';
@@ -10,6 +11,8 @@ import { Chip } from '../chip';
 import { TextField } from '../textfield';
 
 export default function Readme() {
+  console.log(propsSrc);
+  console.log(propsSrcv2);
   return (
     <Docs
       title="Avatars"
@@ -162,6 +165,7 @@ export default function Readme() {
 
       <DocProps
         src={propsSrc}
+        srcv2={propsSrcv2}
         components={[
           { displayName: 'Avatar', component: Avatar },
           { displayName: 'AvatarGroup', component: AvatarGroup },

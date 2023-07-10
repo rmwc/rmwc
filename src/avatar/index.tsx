@@ -9,7 +9,6 @@ import {
   createMemoComponent
 } from '@rmwc/base';
 
-/** An Avatar component for displaying users in a system. */
 export interface AvatarProps extends RMWC.WithRippleProps {
   /** The url for the image. This gets passed to the Icon component. */
   src?: string;
@@ -82,7 +81,6 @@ const AvatarRoot = withRipple()(
 );
 AvatarRoot.displayName = 'AvatarRoot';
 
-/** A container for groups of Avatars */
 export interface AvatarGroupProps {
   /** Makes the list dense */
   dense?: boolean;
@@ -90,7 +88,7 @@ export interface AvatarGroupProps {
 
 /** A container for groups of Avatars */
 export const AvatarGroup = createComponent<AvatarGroupProps>(
-  function AvatarGroup(props, ref) {
+  function AvatarGroup(props: AvatarGroupProps, ref) {
     const { dense, ...rest } = props;
 
     const className = useClassNames(props, [
@@ -106,7 +104,14 @@ export const AvatarGroup = createComponent<AvatarGroupProps>(
 
 /** An Avatar component for displaying users in a system. */
 export const Avatar = createComponent<AvatarProps>(function Avatar(
-  { src, size, name = '', interactive = false, contain = false, ...rest },
+  {
+    src,
+    size,
+    name = '',
+    interactive = false,
+    contain = false,
+    ...rest
+  }: AvatarProps,
   ref
 ) {
   const initials = getInitialsForName(name);
@@ -142,7 +147,6 @@ export const Avatar = createComponent<AvatarProps>(function Avatar(
 });
 Avatar.displayName = 'Avatar';
 
-/** An Avatar count for displaying list overflow. */
 export interface AvatarCountProps {
   /** The number of users. */
   value: number;
@@ -159,7 +163,7 @@ export interface AvatarCountProps {
 /** An Avatar count for displaying list overflow. */
 export const AvatarCount = createMemoComponent<AvatarCountProps>(
   function AvatarCount(
-    { value, overflow, size, interactive = false, ...rest },
+    { value, overflow, size, interactive = false, ...rest }: AvatarCountProps,
     ref
   ) {
     const smallerText = String(value).length > 2;

@@ -8,6 +8,7 @@ import * as rmwc from './rmwc';
 
 interface DocumentComponentProps {
   docs: { [key: string]: any };
+  docsv2?: any;
   displayName: string;
 }
 
@@ -16,6 +17,9 @@ class DocumentComponent extends React.Component<DocumentComponentProps> {
 
   getComponentDef(displayName: string) {
     const propsDef: any = this.props.docs[displayName + 'Props'];
+    const propsDefv2: any = this.props.docsv2[displayName];
+
+    console.log(propsDefv2);
 
     const def: {
       name: string;
@@ -107,14 +111,18 @@ class DocumentComponent extends React.Component<DocumentComponentProps> {
 
 export interface DocPropsI {
   src: any;
+  srcv2?: any;
   components: Array<{
     displayName: string;
     component: React.ComponentType<any>;
   }>;
+  foo?: Object;
 }
 
 export class DocProps extends React.Component<DocPropsI> {
   docs: { [key: string]: any } = this.props.src.typescript;
+  docsv2: any = this.props.srcv2;
+  foo: Object = {};
 
   shouldComponentUpdate() {
     return false;
@@ -122,11 +130,30 @@ export class DocProps extends React.Component<DocPropsI> {
 
   render() {
     const { components } = this.props;
+
+    const propertyName = Object.keys(this.docsv2)[0]; // Get the property name dynamically
+    const convertedArray = Object.entries(this.docsv2[propertyName]).reduce(
+      (acc, [key, value]) => {
+        // @ts-ignore
+        const displayName = value.displayName;
+        // @ts-ignore
+        acc[displayName] = value;
+        return acc;
+      },
+      {}
+    );
+    console.log(convertedArray);
+
     return components.map((c) => {
       let name = c.displayName || '';
       name = name.includes('(') ? name.replace(/.+?\((.+?)\)/g, '$1') : name;
       return (
-        <DocumentComponent key={name} displayName={name} docs={this.docs} />
+        <DocumentComponent
+          key={name}
+          displayName={name}
+          docs={this.docs}
+          docsv2={convertedArray}
+        />
       );
     });
   }
