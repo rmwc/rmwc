@@ -1,9 +1,10 @@
 name: Unit Tests
 
 on:
+  pull_request:
+  workflow_dispatch:
   push:
     branches: [master, next]
-  pull_request:
 
 permissions:
   contents: read
