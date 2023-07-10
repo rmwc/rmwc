@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/drawer",
-  "version": "8.0.7",
+  "version": "13.0.0",
   "description": "RMWC Drawer component",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -37,8 +37,8 @@
   },
   "dependencies": {
     "@material/drawer": "^14.0.0",
-    "@rmwc/base": "^8.0.7",
-    "@rmwc/types": "^8.0.7"
+    "@rmwc/base": "^13.0.0",
+    "@rmwc/types": "^13.0.0"
   },
   "gitHead": "bf098adc2571ee1641ef20d79f38fb64e9ff186e"
 }
