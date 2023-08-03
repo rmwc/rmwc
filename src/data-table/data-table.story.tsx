@@ -1,6 +1,5 @@
 import React from 'react';
 
-import { storiesOf } from '@storybook/react';
 import { Select } from '@rmwc/select';
 import { Switch } from '@rmwc/switch';
 import { Checkbox } from '@rmwc/checkbox';
@@ -117,53 +116,65 @@ function ControlledSortedDataTable() {
   );
 }
 
-storiesOf('DataTable', module)
-  .add('Simple table', () => (
-    <DataTable>
-      <DataTableContent>
-        <DataTableHead>
-          <DataTableRow>
-            <DataTableHeadCell alignStart>Item</DataTableHeadCell>
-            <DataTableHeadCell alignMiddle>
-              Quantity (Click Me)
-            </DataTableHeadCell>
-            <DataTableHeadCell alignEnd>Unit price</DataTableHeadCell>
-          </DataTableRow>
-        </DataTableHead>
-        <DataTableBody>
-          <DataTableRow>
-            <DataTableCell alignStart>Cookies</DataTableCell>
-            <DataTableCell alignMiddle>25</DataTableCell>
-            <DataTableCell alignEnd>$2.90</DataTableCell>
-          </DataTableRow>
-        </DataTableBody>
-      </DataTableContent>
-    </DataTable>
-  ))
-  .add('Controlled prop mutating sort', () => <ControlledSortedDataTable />)
-  .add('With Form Controls', () => (
-    <FormControllsDataTaTable></FormControllsDataTaTable>
-  ))
-  .add('Simplified Usage', () => (
-    <SimpleDataTable
-      getRowProps={(row) => {
-        return row[1] > 100 ? { activated: true } : {};
-      }}
-      getCellProps={(cell, index, isHead) => {
-        const props = { isNumeric: index > 0, style: undefined };
+export default {
+  title: 'DataTable'
+};
 
-        return !isHead && index === 2 && !cell.includes('$')
-          ? { ...props, style: { color: 'red' } }
-          : props;
-      }}
-      headers={[['Item', 'Quantity', 'Value']]}
-      data={[
-        ['Cookies', 25, '$12.40'],
-        ['Pizza', 11, '$10.43'],
-        ['Icecream', 3, '1.43'],
-        ['Candy', 72, '$22.45'],
-        ['Cakes', 101, '$215.05'],
-        ['Muffins', 3, '$5.97']
-      ]}
-    />
-  ));
+export const SimpleTable = () => (
+  <DataTable>
+    <DataTableContent>
+      <DataTableHead>
+        <DataTableRow>
+          <DataTableHeadCell alignStart>Item</DataTableHeadCell>
+          <DataTableHeadCell alignMiddle>Quantity (Click Me)</DataTableHeadCell>
+          <DataTableHeadCell alignEnd>Unit price</DataTableHeadCell>
+        </DataTableRow>
+      </DataTableHead>
+      <DataTableBody>
+        <DataTableRow>
+          <DataTableCell alignStart>Cookies</DataTableCell>
+          <DataTableCell alignMiddle>25</DataTableCell>
+          <DataTableCell alignEnd>$2.90</DataTableCell>
+        </DataTableRow>
+      </DataTableBody>
+    </DataTableContent>
+  </DataTable>
+);
+
+SimpleTable.story = {
+  name: 'Simple table'
+};
+
+export const ControlledPropMutatingSort = () => <ControlledSortedDataTable />;
+
+ControlledPropMutatingSort.story = {
+  name: 'Controlled prop mutating sort'
+};
+
+export const WithFormControls = () => (
+  <FormControllsDataTaTable></FormControllsDataTaTable>
+);
+
+export const SimplifiedUsage = () => (
+  <SimpleDataTable
+    getRowProps={(row) => {
+      return row[1] > 100 ? { activated: true } : {};
+    }}
+    getCellProps={(cell, index, isHead) => {
+      const props = { isNumeric: index > 0, style: undefined };
+
+      return !isHead && index === 2 && !cell.includes('$')
+        ? { ...props, style: { color: 'red' } }
+        : props;
+    }}
+    headers={[['Item', 'Quantity', 'Value']]}
+    data={[
+      ['Cookies', 25, '$12.40'],
+      ['Pizza', 11, '$10.43'],
+      ['Icecream', 3, '1.43'],
+      ['Candy', 72, '$22.45'],
+      ['Cakes', 101, '$215.05'],
+      ['Muffins', 3, '$5.97']
+    ]}
+  />
+);

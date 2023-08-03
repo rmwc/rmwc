@@ -1,11 +1,14 @@
 import React from 'react';
 
-import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { boolean } from '@storybook/addon-knobs';
 import { Button } from './';
 
-storiesOf('Buttons', module).add('Button', () => (
+export default {
+  title: 'Buttons'
+};
+
+export const _Button = () => (
   <Button
     unelevated={boolean('unelevated', false)}
     outlined={boolean('outlined', false)}
@@ -17,4 +20,4 @@ storiesOf('Buttons', module).add('Button', () => (
   >
     Button
   </Button>
-));
+);

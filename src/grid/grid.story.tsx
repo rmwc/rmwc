@@ -1,6 +1,5 @@
 import React from 'react';
 
-import { storiesOf } from '@storybook/react';
 import { number } from '@storybook/addon-knobs';
 import { Grid, GridCell } from './';
 
@@ -10,7 +9,11 @@ const cellStyle = {
   backgroundColor: '#f2f2f2'
 };
 
-storiesOf('Grids', module).add('Grid', () => {
+export default {
+  title: 'Grids'
+};
+
+export const _Grid = () => {
   const span = number('span', 4);
   return (
     <Grid>
@@ -21,4 +24,4 @@ storiesOf('Grids', module).add('Grid', () => {
       ))}
     </Grid>
   );
-});
+};

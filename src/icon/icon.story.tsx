@@ -1,10 +1,13 @@
 import React from 'react';
 
-import { storiesOf } from '@storybook/react';
 import { Icon } from './';
 import { RMWCProvider } from '@rmwc/provider';
 
-storiesOf('Icons', module).add('Icon', () => (
+export default {
+  title: 'Icons'
+};
+
+export const _Icon = () => (
   <ul>
     <li>
       Ligature child: <Icon>favorite</Icon>
@@ -97,4 +100,4 @@ storiesOf('Icons', module).add('Icon', () => (
       </RMWCProvider>
     </li>
   </ul>
-));
+);

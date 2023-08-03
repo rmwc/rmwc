@@ -1,6 +1,5 @@
 import React from 'react';
 
-import { storiesOf } from '@storybook/react';
 import { boolean, text, number } from '@storybook/addon-knobs';
 import { TextField } from './';
 
@@ -47,44 +46,58 @@ class TextFieldUncontrolledStory extends React.Component {
   }
 }
 
-storiesOf('TextField', module)
-  .add('TextField (Controlled)', () => <TextFieldStory />)
-  .add('TextField (Uncontrolled)', () => <TextFieldUncontrolledStory />)
-  .add('autoFocus', () => <TextField label="Hello" autoFocus />)
-  .add('Character Count', () => (
-    <>
-      <TextField
-        textarea
-        label="textarea..."
-        rows={8}
-        maxLength={20}
-        characterCount
-        resizeable
-        helpText={{
-          persistent: true,
-          validationMsg: true,
-          children: 'The field is required'
-        }}
-      />
+export default {
+  title: 'TextField'
+};
 
-      <TextField label="Textfield" rows={8} maxLength={20} characterCount />
-    </>
-  ))
-  .add('Changing', function () {
-    const [value, setValue] = React.useState('');
+export const TextFieldControlled = () => <TextFieldStory />;
 
-    React.useEffect(() => {
-      setInterval(() => {
-        setValue((val) => (val === '' ? 'Hello World' : ''));
-      }, 2000);
-    }, []);
+TextFieldControlled.story = {
+  name: 'TextField (Controlled)'
+};
 
-    return (
-      <TextField
-        label="Controlled"
-        value={value}
-        outlined
-        onChange={() => {}}
-      />
-    );
-  });
+export const TextFieldUncontrolled = () => <TextFieldUncontrolledStory />;
+
+TextFieldUncontrolled.story = {
+  name: 'TextField (Uncontrolled)'
+};
+
+export const AutoFocus = () => <TextField label="Hello" autoFocus />;
+
+AutoFocus.story = {
+  name: 'autoFocus'
+};
+
+export const CharacterCount = () => (
+  <>
+    <TextField
+      textarea
+      label="textarea..."
+      rows={8}
+      maxLength={20}
+      characterCount
+      resizeable
+      helpText={{
+        persistent: true,
+        validationMsg: true,
+        children: 'The field is required'
+      }}
+    />
+
+    <TextField label="Textfield" rows={8} maxLength={20} characterCount />
+  </>
+);
+
+export const Changing = function () {
+  const [value, setValue] = React.useState('');
+
+  React.useEffect(() => {
+    setInterval(() => {
+      setValue((val) => (val === '' ? 'Hello World' : ''));
+    }, 2000);
+  }, []);
+
+  return (
+    <TextField label="Controlled" value={value} outlined onChange={() => {}} />
+  );
+};

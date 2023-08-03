@@ -1,6 +1,5 @@
 import React from 'react';
 
-import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { Switch } from './';
 import { useKnob } from '../base/utils/use-knob';
@@ -28,4 +27,8 @@ function SwitchStory() {
   );
 }
 
-storiesOf('Inputs and Controls', module).add('Switch', () => <SwitchStory />);
+export default {
+  title: 'Inputs and Controls'
+};
+
+export const _Switch = () => <SwitchStory />;

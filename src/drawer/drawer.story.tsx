@@ -1,6 +1,5 @@
 import React from 'react';
 
-import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { boolean } from '@storybook/addon-knobs';
 import {
@@ -31,7 +30,11 @@ const ListItems = (props: any) => (
   </>
 );
 
-storiesOf('Drawers', module).add('Drawer', function () {
+export default {
+  title: 'Drawers'
+};
+
+export const _Drawer = function () {
   const [open, setOpen] = useKnob('boolean', 'open', true);
   return (
     <div style={{ margin: '-24px' }}>
@@ -57,4 +60,4 @@ storiesOf('Drawers', module).add('Drawer', function () {
       </Drawer>
     </div>
   );
-});
+};

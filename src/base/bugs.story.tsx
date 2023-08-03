@@ -2,7 +2,6 @@ import React from 'react';
 
 import { Link, BrowserRouter } from 'react-router-dom';
 
-import { storiesOf } from '@storybook/react';
 import {
   TextField,
   Button,
@@ -171,10 +170,42 @@ function Hz8pr() {
   );
 }
 
-storiesOf('Bugs', module)
-  .add('#538', Bug538)
-  .add('#515', Bug515)
-  .add('#560', Bug560)
-  .add('#567', Bug567)
-  .add('#594', Bug594)
-  .add('Hz8pr', Hz8pr);
+export default {
+  title: 'Bugs'
+};
+
+export const _538 = Bug538;
+
+_538.story = {
+  name: '#538'
+};
+
+export const _515 = Bug515;
+
+_515.story = {
+  name: '#515'
+};
+
+export const _560 = Bug560;
+
+_560.story = {
+  name: '#560'
+};
+
+export const _567 = Bug567;
+
+_567.story = {
+  name: '#567'
+};
+
+export const _594 = Bug594;
+
+_594.story = {
+  name: '#594'
+};
+
+export const Hz8Pr = Hz8pr;
+
+Hz8Pr.story = {
+  name: 'Hz8pr'
+};

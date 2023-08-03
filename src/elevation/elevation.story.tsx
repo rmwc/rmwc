@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Elevation } from './';
 import { Link, BrowserRouter } from 'react-router-dom';
 
@@ -32,40 +31,44 @@ class HoverElevation extends React.Component {
   }
 }
 
-storiesOf('Elevation', module)
-  .add('Elevation', () => (
-    <div>
-      <HoverElevation />
+export default {
+  title: 'Elevation'
+};
 
-      {Array(25)
-        .fill(undefined)
-        .map((val, i) => (
-          <Elevation z={i} key={i} style={elevationStyle}>
-            {i}dp
-          </Elevation>
-        ))}
-    </div>
-  ))
-  .add('Component Test', () => {
-    return (
-      <>
-        <Elevation z={10} style={elevationStyle}>
-          Box
+export const _Elevation = () => (
+  <div>
+    <HoverElevation />
+
+    {Array(25)
+      .fill(undefined)
+      .map((val, i) => (
+        <Elevation z={i} key={i} style={elevationStyle}>
+          {i}dp
         </Elevation>
+      ))}
+  </div>
+);
 
-        <Elevation
-          z={10}
-          style={elevationStyle}
-          ref={(el: any) => console.log(el)}
-        >
-          Ref
+export const ComponentTest = () => {
+  return (
+    <>
+      <Elevation z={10} style={elevationStyle}>
+        Box
+      </Elevation>
+
+      <Elevation
+        z={10}
+        style={elevationStyle}
+        ref={(el: any) => console.log(el)}
+      >
+        Ref
+      </Elevation>
+
+      <BrowserRouter>
+        <Elevation z={10} style={elevationStyle} tag={Link} to="#">
+          Tag
         </Elevation>
-
-        <BrowserRouter>
-          <Elevation z={10} style={elevationStyle} tag={Link} to="#">
-            Tag
-          </Elevation>
-        </BrowserRouter>
-      </>
-    );
-  });
+      </BrowserRouter>
+    </>
+  );
+};

@@ -1,6 +1,5 @@
 import React from 'react';
 
-import { storiesOf } from '@storybook/react';
 import {
   List,
   ListItem,
@@ -11,7 +10,11 @@ import {
   ListItemMeta
 } from './';
 
-storiesOf('Lists', module).add('List', () => (
+export default {
+  title: 'Lists'
+};
+
+export const _List = () => (
   <List twoLine foundationRef={console.log}>
     <ListItem>
       <ListItemGraphic icon="star_border" />
@@ -38,4 +41,4 @@ storiesOf('Lists', module).add('List', () => (
       <ListItemMeta>Winner!</ListItemMeta>
     </ListItem>
   </List>
-));
+);

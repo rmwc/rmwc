@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { Link, BrowserRouter as Router } from 'react-router-dom';
-import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { Tab, TabBar } from './';
 import { Button } from '../button';
@@ -126,72 +125,99 @@ class TabBarStory extends React.Component {
   }
 }
 
-storiesOf('Tabs', module)
-  .add('TabBar', () => <TabBarStory />)
-  .add('TabBar Scrolls', () => {
-    const [tabIndex, setTabIndex] = React.useState(0);
+export default {
+  title: 'Tabs'
+};
 
-    return (
-      <TabBar
-        activeTabIndex={tabIndex}
-        onActivate={(evt) => setTabIndex(evt.detail.index)}
-      >
-        {/* Tabs automatically scroll with lots of content. */}
-        <Tab>Cookies</Tab>
-        <Tab>Pizza</Tab>
-        <Tab>Icecream</Tab>
-        <Tab>Chocolate</Tab>
-        <Tab>Fishsticks</Tab>
-        <Tab>Ratatouille</Tab>
-        <Tab>Bread</Tab>
-        <Tab>Rolls</Tab>
-        <Tab>Sushi</Tab>
-        <Tab>Cupcake</Tab>
-        <Tab>Cheesecake</Tab>
-      </TabBar>
-    );
-  })
-  .add('TabBar', () => <TabBarStory />)
-  .add('TabBar Icon Indicators', () => (
-    <TabBar>
-      <Tab
-        label="Cookies"
-        iconIndicator={{
-          icon: 'star',
-          style: {
-            transformOrigin: 'center center',
-            transform: 'translateY(1rem) scale(0.5)'
-          }
-        }}
-      />
-      <Tab
-        label="Pizza"
-        iconIndicator={{
-          icon: 'favorite',
-          style: {
-            transformOrigin: 'center center',
-            transform: 'translateY(1rem) scale(0.5)'
-          }
-        }}
-      />
-      <Tab
-        label="Icecream"
-        iconIndicator={{
-          icon: 'mood',
-          style: {
-            transformOrigin: 'center center',
-            transform: 'translateY(1rem) scale(0.5)'
-          }
-        }}
-      />
+export const _TabBar = () => <TabBarStory />;
+
+_TabBar.story = {
+  name: 'TabBar'
+};
+
+export const TabBarScrolls = () => {
+  const [tabIndex, setTabIndex] = React.useState(0);
+
+  return (
+    <TabBar
+      activeTabIndex={tabIndex}
+      onActivate={(evt) => setTabIndex(evt.detail.index)}
+    >
+      {/* Tabs automatically scroll with lots of content. */}
+      <Tab>Cookies</Tab>
+      <Tab>Pizza</Tab>
+      <Tab>Icecream</Tab>
+      <Tab>Chocolate</Tab>
+      <Tab>Fishsticks</Tab>
+      <Tab>Ratatouille</Tab>
+      <Tab>Bread</Tab>
+      <Tab>Rolls</Tab>
+      <Tab>Sushi</Tab>
+      <Tab>Cupcake</Tab>
+      <Tab>Cheesecake</Tab>
     </TabBar>
-  ))
-  .add('TabBar Links', () => (
-    <Router>
-      <TabBar>
-        <Tab icon="stars" tag={Link} {...{ to: '' }} />
-        <Tab icon="groups" tag={Link} {...{ to: '' }} />
-        <Tab icon="settings" tag={Link} {...{ to: '' }} />
-      </TabBar>
-    </Router>
-  ));
+  );
+};
+
+TabBarScrolls.story = {
+  name: 'TabBar Scrolls'
+};
+
+export const __TabBar = () => <TabBarStory />;
+
+__TabBar.story = {
+  name: 'TabBar'
+};
+
+export const TabBarIconIndicators = () => (
+  <TabBar>
+    <Tab
+      label="Cookies"
+      iconIndicator={{
+        icon: 'star',
+        style: {
+          transformOrigin: 'center center',
+          transform: 'translateY(1rem) scale(0.5)'
+        }
+      }}
+    />
+    <Tab
+      label="Pizza"
+      iconIndicator={{
+        icon: 'favorite',
+        style: {
+          transformOrigin: 'center center',
+          transform: 'translateY(1rem) scale(0.5)'
+        }
+      }}
+    />
+    <Tab
+      label="Icecream"
+      iconIndicator={{
+        icon: 'mood',
+        style: {
+          transformOrigin: 'center center',
+          transform: 'translateY(1rem) scale(0.5)'
+        }
+      }}
+    />
+  </TabBar>
+);
+
+TabBarIconIndicators.story = {
+  name: 'TabBar Icon Indicators'
+};
+
+export const TabBarLinks = () => (
+  <Router>
+    <TabBar>
+      <Tab icon="stars" tag={Link} {...{ to: '' }} />
+      <Tab icon="groups" tag={Link} {...{ to: '' }} />
+      <Tab icon="settings" tag={Link} {...{ to: '' }} />
+    </TabBar>
+  </Router>
+);
+
+TabBarLinks.story = {
+  name: 'TabBar Links'
+};

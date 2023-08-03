@@ -1,6 +1,5 @@
 import React from 'react';
 
-import { storiesOf } from '@storybook/react';
 import { Chip, ChipSet } from '.';
 
 class ChipFiltering extends React.Component {
@@ -46,34 +45,57 @@ class ChipFiltering extends React.Component {
   }
 }
 
-storiesOf('Chips', module)
-  .add('Chip', () => (
-    <ChipSet>
-      <Chip label="Cookies" foundationRef={console.log} />
-      <Chip label="Pizza" />
-      <Chip label="Icecream" />
-    </ChipSet>
-  ))
-  .add('Chip selected', () => (
-    <ChipSet>
-      <Chip label="Cookies" selected checkmark />
-      <Chip label="Pizza" />
-      <Chip label="Icecream" />
-    </ChipSet>
-  ))
-  .add('Chip with icons', () => (
-    <ChipSet>
-      <Chip icon="star_border" trailingIcon="close" label="Cookies" selected />
-      <Chip icon="favorite_border" trailingIcon="close" label="Pizza" />
-      <Chip icon="mood" trailingIcon="close" label="Icecream" />
-    </ChipSet>
-  ))
-  .add('Chip filtering', () => <ChipFiltering />)
-  .add('Chip: New Foundation', () => (
-    <Chip
-      label="Cookies"
-      trailingIcon="close"
-      onRemove={() => console.log('onRemove')}
-      onTrailingIconInteraction={() => console.log('onTrailingIconInteraction')}
-    />
-  ));
+export default {
+  title: 'Chips'
+};
+
+export const _Chip = () => (
+  <ChipSet>
+    <Chip label="Cookies" foundationRef={console.log} />
+    <Chip label="Pizza" />
+    <Chip label="Icecream" />
+  </ChipSet>
+);
+
+export const ChipSelected = () => (
+  <ChipSet>
+    <Chip label="Cookies" selected checkmark />
+    <Chip label="Pizza" />
+    <Chip label="Icecream" />
+  </ChipSet>
+);
+
+ChipSelected.story = {
+  name: 'Chip selected'
+};
+
+export const ChipWithIcons = () => (
+  <ChipSet>
+    <Chip icon="star_border" trailingIcon="close" label="Cookies" selected />
+    <Chip icon="favorite_border" trailingIcon="close" label="Pizza" />
+    <Chip icon="mood" trailingIcon="close" label="Icecream" />
+  </ChipSet>
+);
+
+ChipWithIcons.story = {
+  name: 'Chip with icons'
+};
+
+export const _ChipFiltering = () => <ChipFiltering />;
+
+_ChipFiltering.story = {
+  name: 'Chip filtering'
+};
+
+export const ChipNewFoundation = () => (
+  <Chip
+    label="Cookies"
+    trailingIcon="close"
+    onRemove={() => console.log('onRemove')}
+    onTrailingIconInteraction={() => console.log('onTrailingIconInteraction')}
+  />
+);
+
+ChipNewFoundation.story = {
+  name: 'Chip: New Foundation'
+};

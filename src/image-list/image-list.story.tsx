@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { boolean } from '@storybook/addon-knobs';
 
 import {
@@ -29,43 +28,55 @@ const images = [
   'https://material-components-web.appspot.com/images/photos/2x3/7.jpg'
 ];
 
-storiesOf('ImageList', module)
-  .add('default', () => (
-    <ImageList withTextProtection={boolean('withTextProtection', false)}>
-      {images.map((src) => (
-        <ImageListItem
-          key={src}
-          style={{ margin: '2px', width: 'calc(100% / 5 - 4.2px)' }}
+export default {
+  title: 'ImageList'
+};
+
+export const Default = () => (
+  <ImageList withTextProtection={boolean('withTextProtection', false)}>
+    {images.map((src) => (
+      <ImageListItem
+        key={src}
+        style={{ margin: '2px', width: 'calc(100% / 5 - 4.2px)' }}
+      >
+        <ImageListImageAspectContainer
+          style={{ paddingBottom: 'calc(100% / 1.5)' }}
         >
-          <ImageListImageAspectContainer
-            style={{ paddingBottom: 'calc(100% / 1.5)' }}
-          >
-            <ImageListImage src={src} />
-          </ImageListImageAspectContainer>
-          <ImageListSupporting>
-            <ImageListLabel>Text label</ImageListLabel>
-          </ImageListSupporting>
-        </ImageListItem>
-      ))}
-    </ImageList>
-  ))
-  .add('masonry', () => (
-    <ImageList
-      masonry
-      withTextProtection={boolean('withTextProtection', false)}
-      style={{
-        columnCount: 5,
-        columnGap: '16px',
-        maxWidth: '1000px'
-      }}
-    >
-      {images.map((src) => (
-        <ImageListItem key={src} style={{ marginBottom: '16px' }}>
           <ImageListImage src={src} />
-          <ImageListSupporting>
-            <ImageListLabel>Text label</ImageListLabel>
-          </ImageListSupporting>
-        </ImageListItem>
-      ))}
-    </ImageList>
-  ));
+        </ImageListImageAspectContainer>
+        <ImageListSupporting>
+          <ImageListLabel>Text label</ImageListLabel>
+        </ImageListSupporting>
+      </ImageListItem>
+    ))}
+  </ImageList>
+);
+
+Default.story = {
+  name: 'default'
+};
+
+export const Masonry = () => (
+  <ImageList
+    masonry
+    withTextProtection={boolean('withTextProtection', false)}
+    style={{
+      columnCount: 5,
+      columnGap: '16px',
+      maxWidth: '1000px'
+    }}
+  >
+    {images.map((src) => (
+      <ImageListItem key={src} style={{ marginBottom: '16px' }}>
+        <ImageListImage src={src} />
+        <ImageListSupporting>
+          <ImageListLabel>Text label</ImageListLabel>
+        </ImageListSupporting>
+      </ImageListItem>
+    ))}
+  </ImageList>
+);
+
+Masonry.story = {
+  name: 'masonry'
+};

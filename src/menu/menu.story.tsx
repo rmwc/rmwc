@@ -1,6 +1,5 @@
 import React from 'react';
 
-import { storiesOf } from '@storybook/react';
 import { select } from '@storybook/addon-knobs';
 import { Menu, MenuItem, MenuSurfaceAnchor, SimpleMenu, MenuSurface } from './';
 import { Button } from '../button';
@@ -127,14 +126,11 @@ function MenuHoist() {
         <Menu
           open={open}
           renderToPortal={hoisted}
-          onSelect={evt => setSelected(evt.detail.index)}
+          onSelect={(evt) => setSelected(evt.detail.index)}
           onClose={() => setOpen(false)}
         >
           {options.map((o: string, index: number) => (
-            <MenuItem
-              key={o}
-              activated={selected === index}
-            >
+            <MenuItem key={o} activated={selected === index}>
               {o}
             </MenuItem>
           ))}
@@ -144,29 +140,51 @@ function MenuHoist() {
   );
 }
 
-storiesOf('Menus', module)
-  .add('Menu', () => <MenuStory />)
-  .add('MenuSurface', () => <MenuSurfaceStory />)
-  .add('Menu: Always Open', () => {
-    const [open] = useKnob('boolean', 'open', true);
-    return (
-      <Menu open={open}>
-        <MenuItem>Cookies</MenuItem>
-        <MenuItem>Pizza</MenuItem>
-        <MenuItem>Icecream</MenuItem>
-      </Menu>
-    );
-  })
-  .add('Menu: hoistToBody', () => (
-    <>
-      <MenuHoist />
-      <MenuHoist />
-    </>
-  ))
-  .add('SimpleMenu', () => (
-    <SimpleMenu handle={<Button raised>Open Simple Menu</Button>}>
+export default {
+  title: 'Menus'
+};
+
+export const _Menu = () => <MenuStory />;
+export const _MenuSurface = () => <MenuSurfaceStory />;
+
+_MenuSurface.story = {
+  name: 'MenuSurface'
+};
+
+export const MenuAlwaysOpen = () => {
+  const [open] = useKnob('boolean', 'open', true);
+  return (
+    <Menu open={open}>
       <MenuItem>Cookies</MenuItem>
       <MenuItem>Pizza</MenuItem>
       <MenuItem>Icecream</MenuItem>
-    </SimpleMenu>
-  ));
+    </Menu>
+  );
+};
+
+MenuAlwaysOpen.story = {
+  name: 'Menu: Always Open'
+};
+
+export const MenuHoistToBody = () => (
+  <>
+    <MenuHoist />
+    <MenuHoist />
+  </>
+);
+
+MenuHoistToBody.story = {
+  name: 'Menu: hoistToBody'
+};
+
+export const _SimpleMenu = () => (
+  <SimpleMenu handle={<Button raised>Open Simple Menu</Button>}>
+    <MenuItem>Cookies</MenuItem>
+    <MenuItem>Pizza</MenuItem>
+    <MenuItem>Icecream</MenuItem>
+  </SimpleMenu>
+);
+
+_SimpleMenu.story = {
+  name: 'SimpleMenu'
+};

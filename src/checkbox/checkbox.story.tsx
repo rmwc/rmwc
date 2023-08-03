@@ -1,6 +1,5 @@
 import React from 'react';
 
-import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { Checkbox } from './';
 import { useKnob } from '@rmwc/base/utils/use-knob';
@@ -30,6 +29,8 @@ function CheckboxStory() {
   );
 }
 
-storiesOf('Inputs and Controls', module).add('Checkbox', () => (
-  <CheckboxStory />
-));
+export default {
+  title: 'Inputs and Controls'
+};
+
+export const _Checkbox = () => <CheckboxStory />;

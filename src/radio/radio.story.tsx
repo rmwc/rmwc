@@ -1,6 +1,5 @@
 import React from 'react';
 
-import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { Radio } from './';
 import { useKnob } from '@rmwc/base/utils/use-knob';
@@ -28,4 +27,8 @@ function RadioStory() {
   );
 }
 
-storiesOf('Inputs and Controls', module).add('Radio', () => <RadioStory />);
+export default {
+  title: 'Inputs and Controls'
+};
+
+export const _Radio = () => <RadioStory />;
