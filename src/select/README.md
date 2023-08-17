@@ -222,7 +222,7 @@ A Select Component
 | Name | Type | Description |
 |------|------|-------------|
 | `disabled` | `undefined \| false \| true` | Makes the Select disabled. |
-| `enhanced` | `boolean \| MenuProps` | Renders a non native / enhanced dropdown |
+| `enhanced` | `boolean \| any` | Renders a non native / enhanced dropdown |
 | `foundationRef` | `React.Ref<MDCSelectFoundation>` | Advanced: A reference to the MDCFoundation. |
 | `helpText` | `React.ReactNode \| SelectHelperTextProps` | Adds help text to the field |
 | `icon` | `RMWC.IconPropT` | Add a leading icon. |
