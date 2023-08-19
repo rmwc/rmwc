@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/touch-target",
-  "version": "14.0.0-alpha.0",
+  "version": "15.0.0-alpha.0",
   "description": "RMWC Touch Target components",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -37,7 +37,7 @@
   },
   "dependencies": {
     "@material/touch-target": "^14.0.0",
-    "@rmwc/base": "^14.0.0-alpha.0"
+    "@rmwc/base": "^15.0.0-alpha.0"
   },
   "gitHead": "d9befec0e3b258864b71686eecd16c16feb43cf1"
 }
