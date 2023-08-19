@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/grid",
-  "version": "14.0.0-alpha.0",
+  "version": "15.0.0-alpha.0",
   "description": "RMWC Grid component",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -37,8 +37,8 @@
   },
   "dependencies": {
     "@material/layout-grid": "^14.0.0",
-    "@rmwc/base": "^14.0.0-alpha.0",
-    "@rmwc/types": "^14.0.0-alpha.0"
+    "@rmwc/base": "^15.0.0-alpha.0",
+    "@rmwc/types": "^15.0.0-alpha.0"
   },
   "gitHead": "bf098adc2571ee1641ef20d79f38fb64e9ff186e"
 }
