@@ -16,6 +16,7 @@ jobs:
       - uses: actions/checkout@v3
         with:
           ref: ${{ github.head_ref }}
+          token: ${{ secrets.DEPENDABOT_TOKEN }}
       - name: Setup Git
         run: | 
           git config --global user.email "ci@rmwc.io"
