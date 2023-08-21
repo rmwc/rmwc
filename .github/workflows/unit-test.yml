@@ -4,12 +4,12 @@ on:
   pull_request:
   workflow_dispatch:
   push:
-    branches: 
-      - 'master'
-      - 'next'
-      - 'releases/**'
+    branches: [master, next]
     paths-ignore:
       - 'docs/**'
+  workflow_run:
+    workflows: [Release]
+    types: [completed]
 
 permissions:
   contents: read
