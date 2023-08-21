@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/icon",
-  "version": "13.0.0",
+  "version": "14.0.0-alpha.0",
   "description": "RMWC Icon component",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -36,9 +36,9 @@
     "react-dom": ">=16.8.x"
   },
   "dependencies": {
-    "@rmwc/base": "^13.0.0",
-    "@rmwc/provider": "^13.0.0",
-    "@rmwc/types": "^13.0.0"
+    "@rmwc/base": "^14.0.0-alpha.0",
+    "@rmwc/provider": "^14.0.0-alpha.0",
+    "@rmwc/types": "^14.0.0-alpha.0"
   },
   "gitHead": "bf098adc2571ee1641ef20d79f38fb64e9ff186e"
 }
