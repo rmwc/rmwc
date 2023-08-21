@@ -38,7 +38,7 @@ Features:
 
 ## Recent updates
 
-v14.0.0 is here! This release includes:
+v13.0.0 is here! This release includes:
 
 - support for material v14
 - support for react 18
