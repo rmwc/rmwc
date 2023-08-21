@@ -8,8 +8,7 @@ on:
     paths-ignore:
       - 'docs/**'
   workflow_run:
-    workflows: ["Release"]
-    branches: ['release/**']
+    workflows: [Release]
     types: [completed]
 
 permissions:
