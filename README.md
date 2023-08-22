@@ -38,14 +38,14 @@ Features:
 
 ## Recent updates
 
-v13.0.0 is here! This release includes:
+v14.0.0 is here! This release includes:
 
 - support for material v14
 - support for react 18
 
 _View all release notes_ 👉 https://opencollective.com/rmwc/updates
 
-View the changelog for detailed updates: [https://github.com/jamesmfriedman/rmwc/blob/master/CHANGELOG.md](https://github.com/jamesmfriedman/rmwc/blob/master/CHANGELOG.md)
+View the changelog for detailed updates: [https://github.com/rmwc/rmwc/blob/master/CHANGELOG.md](https://github.com/rmwc/rmwc/blob/master/CHANGELOG.md)
 
 ## Goals
 
@@ -83,7 +83,7 @@ Read the docs on [Methodology](https://rmwc.io/methodology)
 
 ## To run the docs / contribute
 
-- `git clone https://github.com/jamesmfriedman/rmwc.git`
+- `git clone https://github.com/rmwc/rmwc.git`
 - `cd rmwc`
 - `npm install`
 - `npm start`
@@ -91,7 +91,7 @@ Read the docs on [Methodology](https://rmwc.io/methodology)
 ## Contributions
 
 This project exists thanks to all the people who contribute. [[Contribute](CONTRIBUTING.md)].
-<a href="https://github.com/jamesmfriedman/rmwc/graphs/contributors"><img src="https://opencollective.com/rmwc/contributors.svg?width=890&button=false" /></a>
+<a href="https://github.com/rmwc/rmwc/graphs/contributors"><img src="https://opencollective.com/rmwc/contributors.svg?width=890&button=false" /></a>
 
 ### Backers
 
