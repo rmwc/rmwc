@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FormEvent } from 'react';
 
 import { Docs, DocsExample, DocProps, DocsSubtitle, DocsP } from '@doc-utils';
 import propsSrc from './generated-props.json';
@@ -7,6 +7,7 @@ import examples from './generated-examples.json';
 import {
   Menu,
   MenuItem,
+  MenuOnSelectEventT,
   MenuSurface,
   MenuSurfaceAnchor,
   SimpleMenu,
@@ -51,8 +52,10 @@ export default function Readme() {
             <MenuSurfaceAnchor>
               <Menu
                 open={open}
-                onSelect={(evt) => console.log(evt.detail.index)}
-                onClose={(evt) => setOpen(false)}
+                onSelect={(evt: MenuOnSelectEventT) =>
+                  console.log(evt.detail.index)
+                }
+                onClose={() => setOpen(false)}
               >
                 <MenuItem>Cookies</MenuItem>
                 <MenuItem>Pizza</MenuItem>
@@ -61,7 +64,7 @@ export default function Readme() {
                 <MenuItem>Icecream</MenuItem>
               </Menu>
 
-              <Button raised onClick={(evt) => setOpen(!open)}>
+              <Button raised onClick={() => setOpen(!open)}>
                 Menu
               </Button>
             </MenuSurfaceAnchor>
@@ -97,11 +100,11 @@ export default function Readme() {
 
           return (
             <MenuSurfaceAnchor>
-              <MenuSurface open={open} onClose={(evt) => setOpen(false)}>
+              <MenuSurface open={open} onClose={() => setOpen(false)}>
                 <div style={{ padding: '1rem', width: '8rem' }}>Menu</div>
               </MenuSurface>
               {/** The handle can be any component you want */}
-              <IconButton icon="menu" onClick={(evt) => setOpen(!open)} />
+              <IconButton icon="menu" onClick={() => setOpen(!open)} />
             </MenuSurfaceAnchor>
           );
         }}
@@ -116,7 +119,9 @@ export default function Readme() {
             <MenuSurfaceAnchor>
               <Menu
                 open={open}
-                onSelect={(evt) => console.log(evt.detail.index)}
+                onSelect={(evt: MenuOnSelectEventT) =>
+                  console.log(evt.detail.index)
+                }
                 onClose={(evt) => setOpen(false)}
               >
                 <MenuItem>Item One</MenuItem>
@@ -180,7 +185,9 @@ export default function Readme() {
               <Select
                 value={anchorCorner}
                 label="anchorCorner"
-                onChange={(evt) => setAnchorCorner(evt.currentTarget.value)}
+                onChange={(evt: FormEvent<HTMLSelectElement>) =>
+                  setAnchorCorner(evt.currentTarget.value)
+                }
                 options={[
                   'topLeft',
                   'topRight',
@@ -268,7 +275,9 @@ export default function Readme() {
               </div>
               <Checkbox
                 checked={renderToPortal}
-                onChange={(evt) => setRenderToPortal(evt.currentTarget.checked)}
+                onChange={(evt: FormEvent<HTMLInputElement>) =>
+                  setRenderToPortal(evt.currentTarget.checked)
+                }
                 label="renderToPortal"
               />
             </>

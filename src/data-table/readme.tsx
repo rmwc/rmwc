@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FormEvent } from 'react';
 
 import { Docs, DocsExample, DocsSubtitle, DocProps, DocsP } from '@doc-utils';
 import propsSrc from './generated-props.json';
@@ -143,13 +143,17 @@ export default function Readme() {
                   label="Sticky Rows"
                   options={['0', '1']}
                   value={String(rows)}
-                  onChange={(evt) => setRows(Number(evt.currentTarget.value))}
+                  onChange={(evt: FormEvent<HTMLSelectElement>) =>
+                    setRows(Number(evt.currentTarget.value))
+                  }
                 />
                 <Select
                   label="Sticky Cols"
                   options={['0', '1']}
                   value={String(cols)}
-                  onChange={(evt) => setCols(Number(evt.currentTarget.value))}
+                  onChange={(evt: FormEvent<HTMLSelectElement>) =>
+                    setCols(Number(evt.currentTarget.value))
+                  }
                 />
               </div>
             </>
@@ -192,7 +196,7 @@ export default function Readme() {
                         <Checkbox
                           // @ts-ignore
                           checked={checked[i]}
-                          onChange={(evt) => {
+                          onChange={(evt: FormEvent<HTMLInputElement>) => {
                             // @ts-ignore
                             checked[i] = evt.currentTarget.checked;
                             setChecked({ ...checked });

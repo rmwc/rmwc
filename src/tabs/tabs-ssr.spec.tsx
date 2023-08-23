@@ -8,7 +8,7 @@ import { TabBar, Tab } from './';
 describe('TabBar SSR', () => {
   it('TabBar renders', () => {
     mount(
-      <TabBar activeTabIndex={0} onChange={(evt) => {}}>
+      <TabBar activeTabIndex={0} onChange={() => {}}>
         <Tab>Test</Tab>
       </TabBar>
     );

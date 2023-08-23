@@ -3,11 +3,10 @@ export const closest = (
   selector: string
 ): HTMLElement | null => {
   if (element instanceof Element) {
-    /* istanbul ignore else  */
     if (element && element.closest) {
       return element.closest(selector) as HTMLElement | null;
     } else {
-      let el: HTMLElement | null = element;
+      let el: HTMLElement | null = element as HTMLElement;
       while (el) {
         if (matches(el, selector)) {
           return el;

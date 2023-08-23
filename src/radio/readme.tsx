@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FormEvent } from 'react';
 
 import { Docs, DocsExample, DocProps, DocsSubtitle, DocsP } from '@doc-utils';
 import propsSrc from './generated-props.json';
@@ -32,7 +32,9 @@ export default function Readme() {
               <Radio
                 value="cookies"
                 checked={value === 'cookies'}
-                onChange={(evt) => setValue(String(evt.currentTarget.value))}
+                onChange={(evt: FormEvent<HTMLInputElement>) =>
+                  setValue(String(evt.currentTarget.value))
+                }
               >
                 Cookies
               </Radio>
@@ -40,7 +42,9 @@ export default function Readme() {
               <Radio
                 value="pizza"
                 checked={value === 'pizza'}
-                onChange={(evt) => setValue(String(evt.currentTarget.value))}
+                onChange={(evt: FormEvent<HTMLInputElement>) =>
+                  setValue(String(evt.currentTarget.value))
+                }
               >
                 Pizza
               </Radio>
@@ -48,7 +52,9 @@ export default function Readme() {
               <Radio
                 value="icecream"
                 checked={value === 'icecream'}
-                onChange={(evt) => setValue(String(evt.currentTarget.value))}
+                onChange={(evt: FormEvent<HTMLInputElement>) =>
+                  setValue(String(evt.currentTarget.value))
+                }
               >
                 Icecream
               </Radio>
@@ -70,21 +76,27 @@ export default function Readme() {
             label="Cookies"
             value="cookies"
             name="myRadioGroup"
-            onChange={(evt) => console.log(evt.currentTarget.value)}
+            onChange={(evt: FormEvent<HTMLInputElement>) =>
+              console.log(evt.currentTarget.value)
+            }
           />
 
           <Radio
             label="Pizza"
             value="pizza"
             name="myRadioGroup"
-            onChange={(evt) => console.log(evt.currentTarget.value)}
+            onChange={(evt: FormEvent<HTMLInputElement>) =>
+              console.log(evt.currentTarget.value)
+            }
           />
 
           <Radio
             label="Icecream"
             value="icecream"
             name="myRadioGroup"
-            onChange={(evt) => console.log(evt.currentTarget.value)}
+            onChange={(evt: FormEvent<HTMLInputElement>) =>
+              console.log(evt.currentTarget.value)
+            }
           />
         </>
       </DocsExample>
