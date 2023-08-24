@@ -111,7 +111,7 @@ exports[`Menu SimpleMenu renders 1`] = `
   >
     <div
       aria-hidden="false"
-      class="mdc-menu mdc-menu-surface mdc-menu-surface--animating-open mdc-menu-surface--is-open-below mdc-menu-surface--open"
+      class="mdc-menu mdc-menu-surface mdc-menu-surface--is-open-below mdc-menu-surface--open"
       style="transform-origin: left top; left: 0px; top: 0px; max-height: 736px;"
     >
       <ul
@@ -150,7 +150,10 @@ exports[`Menu SimpleMenu renders 1`] = `
         </li>
       </ul>
     </div>
-    <button>
+    <button
+      aria-invalid="false"
+      class="hf-validated hf-valid hf-in-range hf-user-valid"
+    >
       Test
     </button>
   </div>
@@ -163,7 +166,7 @@ exports[`Menu SimpleMenuSurface renders 1`] = `
     class="mdc-menu-surface--anchor"
   >
     <div
-      class="mdc-menu-surface mdc-menu-surface--animating-open mdc-menu-surface--is-open-below mdc-menu-surface--open"
+      class="mdc-menu-surface mdc-menu-surface--is-open-below mdc-menu-surface--open"
       style="transform-origin: left top; left: 0px; top: 0px; max-height: 736px;"
     >
       <div>

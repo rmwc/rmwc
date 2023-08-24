@@ -104,7 +104,7 @@ export class ThemePicker extends React.Component<{
           }}
         >
           <ListGroupSubheader>Themes</ListGroupSubheader>
-          {Object.keys(THEMES).map(themeName => {
+          {Object.keys(THEMES).map((themeName) => {
             const theme: { [key: string]: string } = getTheme(themeName);
             return (
               <ListItem
@@ -140,10 +140,10 @@ export class ThemePicker extends React.Component<{
             );
           })}
           <TabBar
-            onClick={evt => this.setState({ open: true })}
+            onClick={() => this.setState({ open: true })}
             style={{ margin: '1rem auto -1rem auto' }}
             activeTabIndex={this.state.activeTabIndex}
-            onActivate={evt =>
+            onActivate={(evt) =>
               this.setState({ activeTabIndex: evt.detail.index })
             }
           >
