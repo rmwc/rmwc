@@ -51,7 +51,7 @@
     "@action-validator/cli": "^0.5.3",
     "@action-validator/core": "^0.5.3",
     "@babel/core": "^7.22.10",
-    "@storybook/addon-actions": "^6.5.10",
+    "@storybook/addon-actions": "^7.3.2",
     "@storybook/addon-essentials": "^6.5.10",
     "@storybook/addon-knobs": "^7.0.0",
     "@storybook/addon-links": "^6.5.10",
