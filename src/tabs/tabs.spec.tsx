@@ -12,7 +12,7 @@ describe('Tabs', () => {
 
   it('TabBar renders', () => {
     const { asFragment } = render(
-      <TabBar activeTabIndex={0} onActivate={(evt) => {}}>
+      <TabBar activeTabIndex={0} onActivate={() => {}}>
         <Tab>Test</Tab>
       </TabBar>
     );

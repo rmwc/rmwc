@@ -11,6 +11,7 @@ export const useTabScrollerFoundation = (
   props: TabScrollerProps & React.HTMLProps<any>
 ) => {
   const { foundation, ...elements } = useFoundation({
+    // @ts-ignore
     props,
     api: ({ foundation, contentEl }): TabScrollerApi => {
       const f = foundation as MDCTabScrollerFoundation;
@@ -65,12 +66,14 @@ export const useTabScrollerFoundation = (
   const { areaEl, contentEl } = elements;
 
   const handleInteraction = () => {
+    // @ts-ignore
     foundation.handleInteraction();
   };
 
   const handleTransitionEnd = (
     evt: React.TransitionEvent | TransitionEvent
   ) => {
+    // @ts-ignore
     foundation.handleTransitionEnd(evt as TransitionEvent);
   };
 

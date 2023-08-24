@@ -1,11 +1,16 @@
-import React, { useRef, useState } from 'react';
+import React, { FormEvent, useRef, useState } from 'react';
 
 import { useNavigate } from 'react-router';
 import { Link } from 'react-router-dom';
 
 import { CircularProgress } from '@rmwc/circular-progress';
 import { SimpleListItem } from '@rmwc/list';
-import { Menu, MenuItems, MenuSurfaceAnchor } from '@rmwc/menu';
+import {
+  Menu,
+  MenuItems,
+  MenuOnSelectEventT,
+  MenuSurfaceAnchor
+} from '@rmwc/menu';
 import { TextField } from '@rmwc/textfield';
 import { IconPropT } from '@rmwc/types';
 
@@ -150,7 +155,9 @@ export function SiteSearch() {
         outlined
         className={styles.siteSearch}
         value={searchVal}
-        onChange={(evt) => setSearchVal(evt.currentTarget.value)}
+        onChange={(evt: FormEvent<HTMLInputElement>) =>
+          setSearchVal(evt.currentTarget.value)
+        }
         onFocus={() => setIsSearching(true)}
         onKeyDown={(evt) => {
           if (evt.which === 40) {
@@ -173,7 +180,7 @@ export function SiteSearch() {
         onClose={() => {
           setIsSearching(false);
         }}
-        onSelect={(evt) => {
+        onSelect={(evt: MenuOnSelectEventT) => {
           window.scrollTo(0, 0);
           navigate(
             (evt.detail.item as HTMLAnchorElement).href.split('/').pop() || '/'

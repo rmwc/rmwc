@@ -237,7 +237,7 @@ it('Sorted columns can have an onClick', async () => {
             <DataTableHeadCell>Item</DataTableHeadCell>
             <DataTableHeadCell
               sort={null}
-              onClick={(evt) => (value = 1)}
+              onClick={() => (value = 1)}
               onSortChange={(d) => {}}
             >
               Quantity (Click Me)

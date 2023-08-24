@@ -38,19 +38,15 @@ describe('Typography', () => {
   });
 
   it('supports refs', () => {
-    let myRef = null;
+    const myRef = React.createRef<HTMLElement>();
+
     render(
-      <Typography
-        use="body1"
-        ref={(el) => {
-          myRef = el;
-        }}
-      >
+      <Typography use="body1" ref={myRef}>
         Hello
       </Typography>
     );
 
-    expect(myRef).toBeTruthy();
+    expect(myRef.current).toBeTruthy();
   });
 
   it('works with RMWCProvider', () => {
