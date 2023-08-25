@@ -18,6 +18,7 @@ exports[`Tabs Can be stacked 1`] = `
         >
           <button
             class="mdc-tab mdc-tab--stacked"
+            role="tab"
           >
             <div
               class="mdc-tab__content"
@@ -68,6 +69,7 @@ exports[`Tabs Can have icon 1`] = `
         >
           <button
             class="mdc-tab"
+            role="tab"
           >
             <div
               class="mdc-tab__content"
@@ -123,6 +125,7 @@ exports[`Tabs Can have label 1`] = `
         >
           <button
             class="mdc-tab"
+            role="tab"
           >
             <div
               class="mdc-tab__content"
@@ -173,6 +176,7 @@ exports[`Tabs Can have restrictIndicator 1`] = `
         >
           <button
             class="mdc-tab"
+            role="tab"
           >
             <div
               class="mdc-tab__content"
@@ -228,6 +232,7 @@ exports[`Tabs TabBar renders 1`] = `
         >
           <button
             class="mdc-tab"
+            role="tab"
           >
             <div
               class="mdc-tab__content"

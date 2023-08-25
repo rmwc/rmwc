@@ -68,7 +68,9 @@ const TabRoot = withRipple({ surface: false })(
         'mdc-tab--min-width': minWidth
       }
     ]);
-    return <Tag tag="button" {...rest} className={className} ref={ref} />;
+    return (
+      <Tag tag="button" role="tab" {...rest} className={className} ref={ref} />
+    );
   })
 );
 
