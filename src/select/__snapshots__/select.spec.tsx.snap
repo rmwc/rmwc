@@ -283,3 +283,53 @@ exports[`Select renders 1`] = `
   </div>
 </DocumentFragment>
 `;
+
+exports[`Select: Lifecycle Select matches snapshot when enhanced and renderToPortal 1`] = `
+<DocumentFragment>
+  <div
+    class="mdc-menu-surface--anchor"
+  >
+    <div
+      class="mdc-select mdc-select--filled mdc-select--no-label"
+    >
+      <div
+        aria-disabled="false"
+        aria-haspopup="listbox"
+        class="mdc-select__anchor"
+        role="button"
+        tabindex="0"
+      >
+        <span
+          class="mdc-line-ripple mdc-line-ripple--deactivating"
+          style="transform-origin: 0px center;"
+        />
+        <span
+          class="mdc-floating-label"
+          for="select-test"
+        />
+        <span
+          class="mdc-select__selected-text-container"
+        >
+          <span
+            class="mdc-select__selected-text"
+          />
+        </span>
+        <span
+          class="mdc-select__dropdown-icon"
+        >
+          <i
+            class="rmwc-icon rmwc-icon--ligature material-icons mdc-select__dropdown-icon-inactive"
+          >
+            arrow_drop_down
+          </i>
+          <i
+            class="rmwc-icon rmwc-icon--ligature material-icons mdc-select__dropdown-icon-active"
+          >
+            arrow_drop_up
+          </i>
+        </span>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
