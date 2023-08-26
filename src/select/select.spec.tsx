@@ -274,4 +274,15 @@ describe('Select: Lifecycle', () => {
       'mdc-select__selected-text'
     );
   });
+
+  it('Select matches snapshot when enhanced and renderToPortal', () => {
+    const { asFragment } = render(
+      <Select
+        enhanced={{ renderToPortal: true }}
+        options={['Cookies', 'Pizza', 'Icecream']}
+        defaultValue="Cookies"
+      />
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
 });
