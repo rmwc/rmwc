@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/snackbar",
-  "version": "8.0.8",
+  "version": "14.0.0-alpha.0",
   "description": "RMWC Snackbar component",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -36,12 +36,12 @@
     "react-dom": ">=16.8.x"
   },
   "dependencies": {
-    "@material/snackbar": "^8.0.0",
-    "@rmwc/base": "^8.0.8",
-    "@rmwc/button": "^8.0.8",
-    "@rmwc/icon": "^8.0.8",
-    "@rmwc/icon-button": "^8.0.8",
-    "@rmwc/types": "^8.0.8"
+    "@material/snackbar": "^14.0.0",
+    "@rmwc/base": "^14.0.0-alpha.0",
+    "@rmwc/button": "^14.0.0-alpha.0",
+    "@rmwc/icon": "^14.0.0-alpha.0",
+    "@rmwc/icon-button": "^14.0.0-alpha.0",
+    "@rmwc/types": "^14.0.0-alpha.0"
   },
   "gitHead": "d9befec0e3b258864b71686eecd16c16feb43cf1"
 }

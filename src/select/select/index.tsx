@@ -12,7 +12,8 @@ import {
   MenuItems,
   MenuProps,
   MenuApi,
-  MenuOnSelectEventT
+  MenuOnSelectEventT,
+  MenuSurfaceAnchor
 } from '@rmwc/menu';
 import { ListGroup, ListGroupSubheader, ListDivider } from '@rmwc/list';
 import { withRipple } from '@rmwc/ripple';
@@ -27,6 +28,10 @@ export interface FormattedOption
   value?: string;
   options?: FormattedOption[];
 }
+
+export type EnhancedType =
+  | boolean
+  | (MenuProps & { ref?: React.Ref<HTMLElement> });
 
 /** A Select Component */
 export interface SelectProps {
@@ -49,7 +54,7 @@ export interface SelectProps {
   /** Makes the Select required.  */
   required?: boolean;
   /** Renders a non native / enhanced dropdown */
-  enhanced?: boolean | (MenuProps & { ref?: React.Ref<HTMLElement> });
+  enhanced?: EnhancedType;
   /** Props for the root element. By default, additional props spread to the native select element.  */
   rootProps?: Object;
   /** A reference to the native select element. Not applicable when `enhanced` is true. */
@@ -236,7 +241,7 @@ const EnhancedMenu = React.forwardRef(
           {...option}
           data-value={option.value}
         >
-          <span className="mdc-list-item__text">{label}</span>
+          <span className="mdc-deprecated-list-item__text">{label}</span>
         </MenuItem>
       );
     };
@@ -255,7 +260,9 @@ const EnhancedMenu = React.forwardRef(
             data-value=""
             theme="textDisabledOnBackground"
           >
-            <span className="mdc-list-item__text">{placeholder}</span>
+            <span className="mdc-deprecated-list-item__text">
+              {placeholder}
+            </span>
           </MenuItem>
         )}
 
@@ -271,7 +278,10 @@ const EnhancedMenu = React.forwardRef(
                   )}
                   <MenuItems>
                     {options.map(({ label, ...option }) =>
-                      renderOption({ label, option: option as FormattedOption })
+                      renderOption({
+                        label,
+                        option: option as FormattedOption
+                      })
                     )}
                   </MenuItems>
                   {i < selectOptions.length - 1 && <ListDivider />}
@@ -287,6 +297,19 @@ const EnhancedMenu = React.forwardRef(
     );
   }
 );
+
+const EnhancedMenuWrapper = ({
+  enhanced,
+  children
+}: {
+  enhanced?: EnhancedType;
+  children?: React.ReactNode;
+}) =>
+  enhanced ? (
+    <MenuSurfaceAnchor>{children}</MenuSurfaceAnchor>
+  ) : (
+    <>{children}</>
+  );
 
 export const Select: RMWC.ComponentType<
   SelectProps,
@@ -377,12 +400,12 @@ export const Select: RMWC.ComponentType<
     return helpText && shouldSpread ? (
       <SelectHelperText {...(helpText as any)} />
     ) : (
-      <SelectHelperText>{helpText}</SelectHelperText>
+      <SelectHelperText>{helpText as any}</SelectHelperText>
     );
   };
 
   return (
-    <>
+    <EnhancedMenuWrapper enhanced={enhanced}>
       <Tag {...rootProps} element={rootEl} ref={ref} className={className}>
         <AnchorEl
           className="mdc-select__anchor"
@@ -459,7 +482,7 @@ export const Select: RMWC.ComponentType<
         )}
       </Tag>
       {renderHelpText()}
-    </>
+    </EnhancedMenuWrapper>
   );
 });
 
@@ -469,6 +492,8 @@ export interface SelectHelperTextProps {
   persistent?: boolean;
   /** Make the help a validation message style */
   validationMsg?: boolean;
+  /** Content for the help text */
+  children: React.ReactNode;
 }
 
 /** A help text component */

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FormEvent } from 'react';
 
 import { Docs, DocsExample, DocProps, DocsSubtitle, DocsP } from '@doc-utils';
 import propsSrc from './generated-props.json';
@@ -7,6 +7,7 @@ import examples from './generated-examples.json';
 import {
   Menu,
   MenuItem,
+  MenuOnSelectEventT,
   MenuSurface,
   MenuSurfaceAnchor,
   SimpleMenu,
@@ -43,6 +44,7 @@ export default function Readme() {
       </DocsP>
 
       <DocsExample>
+        {/* @ts-ignore */}
         {function Example() {
           const [open, setOpen] = React.useState(false);
 
@@ -50,8 +52,10 @@ export default function Readme() {
             <MenuSurfaceAnchor>
               <Menu
                 open={open}
-                onSelect={(evt) => console.log(evt.detail.index)}
-                onClose={(evt) => setOpen(false)}
+                onSelect={(evt: MenuOnSelectEventT) =>
+                  console.log(evt.detail.index)
+                }
+                onClose={() => setOpen(false)}
               >
                 <MenuItem>Cookies</MenuItem>
                 <MenuItem>Pizza</MenuItem>
@@ -60,7 +64,7 @@ export default function Readme() {
                 <MenuItem>Icecream</MenuItem>
               </Menu>
 
-              <Button raised onClick={(evt) => setOpen(!open)}>
+              <Button raised onClick={() => setOpen(!open)}>
                 Menu
               </Button>
             </MenuSurfaceAnchor>
@@ -69,6 +73,7 @@ export default function Readme() {
       </DocsExample>
 
       <DocsExample>
+        {/* @ts-ignore */}
         {function Example() {
           const [open, setOpen] = React.useState(false);
 
@@ -89,22 +94,24 @@ export default function Readme() {
       </DocsExample>
 
       <DocsExample>
+        {/* @ts-ignore */}
         {function Example() {
           const [open, setOpen] = React.useState(false);
 
           return (
             <MenuSurfaceAnchor>
-              <MenuSurface open={open} onClose={(evt) => setOpen(false)}>
+              <MenuSurface open={open} onClose={() => setOpen(false)}>
                 <div style={{ padding: '1rem', width: '8rem' }}>Menu</div>
               </MenuSurface>
               {/** The handle can be any component you want */}
-              <IconButton icon="menu" onClick={(evt) => setOpen(!open)} />
+              <IconButton icon="menu" onClick={() => setOpen(!open)} />
             </MenuSurfaceAnchor>
           );
         }}
       </DocsExample>
 
       <DocsExample>
+        {/* @ts-ignore */}
         {function Example() {
           const [open, setOpen] = React.useState(false);
 
@@ -112,7 +119,9 @@ export default function Readme() {
             <MenuSurfaceAnchor>
               <Menu
                 open={open}
-                onSelect={(evt) => console.log(evt.detail.index)}
+                onSelect={(evt: MenuOnSelectEventT) =>
+                  console.log(evt.detail.index)
+                }
                 onClose={(evt) => setOpen(false)}
               >
                 <MenuItem>Item One</MenuItem>
@@ -157,6 +166,7 @@ export default function Readme() {
       </DocsP>
 
       <DocsExample>
+        {/* @ts-ignore */}
         {function Example() {
           const [anchorCorner, setAnchorCorner] =
             React.useState<any>('topLeft');
@@ -175,7 +185,9 @@ export default function Readme() {
               <Select
                 value={anchorCorner}
                 label="anchorCorner"
-                onChange={(evt) => setAnchorCorner(evt.currentTarget.value)}
+                onChange={(evt: FormEvent<HTMLSelectElement>) =>
+                  setAnchorCorner(evt.currentTarget.value)
+                }
                 options={[
                   'topLeft',
                   'topRight',
@@ -232,6 +244,7 @@ export default function Readme() {
       </DocsP>
 
       <DocsExample>
+        {/* @ts-ignore */}
         {function Example() {
           const [renderToPortal, setRenderToPortal] = React.useState(true);
           const [menuIsOpen, setMenuIsOpen] = React.useState(false);
@@ -262,7 +275,9 @@ export default function Readme() {
               </div>
               <Checkbox
                 checked={renderToPortal}
-                onChange={(evt) => setRenderToPortal(evt.currentTarget.checked)}
+                onChange={(evt: FormEvent<HTMLInputElement>) =>
+                  setRenderToPortal(evt.currentTarget.checked)
+                }
                 label="renderToPortal"
               />
             </>
@@ -291,14 +306,26 @@ export const galleryExample = (
     className="mdc-menu  mdc-menu-surface--open mdc-menu-surface"
     style={{ position: 'static' }}
   >
-    <div role="menu" className="mdc-list mdc-menu__items mdc-list">
-      <div role="menuitem" className="mdc-ripple-upgraded mdc-list-item">
+    <div
+      role="menu"
+      className="mdc-deprecated-list mdc-menu__items mdc-deprecated-list"
+    >
+      <div
+        role="menuitem"
+        className="mdc-ripple-upgraded mdc-deprecated-list-item"
+      >
         Cookies
       </div>
-      <div role="menuitem" className="mdc-ripple-upgraded mdc-list-item">
+      <div
+        role="menuitem"
+        className="mdc-ripple-upgraded mdc-deprecated-list-item"
+      >
         Pizza
       </div>
-      <div role="menuitem" className="mdc-ripple-upgraded mdc-list-item">
+      <div
+        role="menuitem"
+        className="mdc-ripple-upgraded mdc-deprecated-list-item"
+      >
         Icecream
       </div>
     </div>

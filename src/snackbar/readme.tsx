@@ -31,6 +31,7 @@ export default function Readme() {
         You can render a snackbar in your UI and control its open state.
       </DocsP>
       <DocsExample label="Default">
+        {/* @ts-ignore */}
         {function Example() {
           const [open, setOpen] = React.useState(false);
 
@@ -60,6 +61,7 @@ export default function Readme() {
       </DocsExample>
 
       <DocsExample label="Start Aligned">
+        {/* @ts-ignore */}
         {function Example() {
           const [open, setOpen] = React.useState(false);
 
@@ -82,6 +84,31 @@ export default function Readme() {
               <Button
                 raised
                 label="Show start-aligned"
+                onClick={(evt) => setOpen(!open)}
+              />
+            </>
+          );
+        }}
+      </DocsExample>
+
+      <DocsExample label="With dismiss icon">
+        {/* @ts-ignore */}
+        {function Example() {
+          const [open, setOpen] = React.useState(false);
+
+          return (
+            <>
+              <Snackbar
+                open={open}
+                onClose={(evt) => setOpen(false)}
+                message="This is a new message"
+                dismissesOnAction
+                dismissIcon="close"
+                timeout={-1}
+              />
+              <Button
+                raised
+                label="Show snackbar"
                 onClick={(evt) => setOpen(!open)}
               />
             </>
@@ -185,6 +212,7 @@ export default function Readme() {
       </DocsExample>
 
       <DocsExample label="Inline Example">
+        {/* @ts-ignore */}
         {() => {
           const { messages, notify } = createSnackbarQueue();
 

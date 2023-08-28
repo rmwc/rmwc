@@ -118,78 +118,84 @@ When using the `twoLine` prop, you have to wrap the contents of the `ListItem` i
 Checkboxes and Radios can be included as part of `ListItemMeta`. It is recommended when using these that you are using controlled components, and that you put your interaction handler on the `ListItem` itself. Notice the `readOnly` prop is also set on the individual form elements.
 
 ```jsx
-function Example() {
-  const [checked, setChecked] = React.useState({
-    Cookies: false,
-    Pizza: false,
-    Icecream: false
-  });
+<>
+  {function Example() {
+    const [checked, setChecked] = React.useState({
+      Cookies: false,
+      Pizza: false,
+      Icecream: false
+    });
 
-  return (
-    <List>
-      {['Cookies', 'Pizza', 'Icecream'].map((key) => (
-        <ListItem
-          key={key}
-          onClick={() =>
-            setChecked({ ...checked, [key]: !checked[key] })
-          }
-        >
-          {key}
-          <ListItemMeta>
-            <Checkbox checked={checked[key]} readOnly />
-          </ListItemMeta>
-        </ListItem>
-      ))}
-    </List>
-  );
-}
+    return (
+      <List>
+        {['Cookies', 'Pizza', 'Icecream'].map((key) => (
+          <ListItem
+            key={key}
+            onClick={() =>
+              setChecked({ ...checked, [key]: !checked[key] })
+            }
+          >
+            {key}
+            <ListItemMeta>
+              <Checkbox checked={checked[key]} readOnly />
+            </ListItemMeta>
+          </ListItem>
+        ))}
+      </List>
+    );
+  }}
+</>
 ```
 
 ```jsx
-function Example() {
-  const [checked, setChecked] = React.useState({
-    Cookies: false,
-    Pizza: false,
-    Icecream: false
-  });
+<>
+  {function Example() {
+    const [checked, setChecked] = React.useState({
+      Cookies: false,
+      Pizza: false,
+      Icecream: false
+    });
 
-  return (
-    <List>
-      {['Cookies', 'Pizza', 'Icecream'].map((key) => (
-        <ListItem
-          key={key}
-          onClick={() =>
-            setChecked({ ...checked, [key]: !checked[key] })
-          }
-        >
-          {key}
-          <ListItemMeta>
-            <Switch checked={checked[key]} readOnly />
-          </ListItemMeta>
-        </ListItem>
-      ))}
-    </List>
-  );
-}
+    return (
+      <List>
+        {['Cookies', 'Pizza', 'Icecream'].map((key) => (
+          <ListItem
+            key={key}
+            onClick={() =>
+              setChecked({ ...checked, [key]: !checked[key] })
+            }
+          >
+            {key}
+            <ListItemMeta>
+              <Switch checked={checked[key]} readOnly />
+            </ListItemMeta>
+          </ListItem>
+        ))}
+      </List>
+    );
+  }}
+</>
 ```
 
 ```jsx
-function Example() {
-  const [checked, setChecked] = React.useState('Cookies');
+<>
+  {function Example() {
+    const [checked, setChecked] = React.useState('Cookies');
 
-  return (
-    <List>
-      {['Cookies', 'Pizza', 'Icecream'].map((key) => (
-        <ListItem key={key} onClick={() => setChecked(key)}>
-          {key}
-          <ListItemMeta>
-            <Radio checked={checked === key} readOnly />
-          </ListItemMeta>
-        </ListItem>
-      ))}
-    </List>
-  );
-}
+    return (
+      <List>
+        {['Cookies', 'Pizza', 'Icecream'].map((key) => (
+          <ListItem key={key} onClick={() => setChecked(key)}>
+            {key}
+            <ListItemMeta>
+              <Radio checked={checked === key} readOnly />
+            </ListItemMeta>
+          </ListItem>
+        ))}
+      </List>
+    );
+  }}
+</>
 ```
 
 ## List

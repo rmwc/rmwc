@@ -2,17 +2,23 @@
 import * as RMWC from '@rmwc/types';
 import React from 'react';
 import { useClassNames, Tag, createComponent } from '@rmwc/base';
+import { useCircularProgressFoundation } from './foundation';
+import {
+  CX_CY_MAP,
+  R_MAP,
+  SIZE_MAP,
+  STROKE_DASHARRAY_MAP,
+  STROKE_DASHOFFSET_MAP,
+  STROKE_WIDTH_GAP_MAP,
+  STROKE_WIDTH_MAP
+} from './constants';
 
-const SIZE_MAP: { [key: string]: number } = {
-  xsmall: 18,
-  small: 20,
-  medium: 24,
-  large: 36,
-  xlarge: 48
-};
+type Size = 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge';
 
 /** A Circular Progress indicator. */
 export interface CircularProgressProps {
+  /** Hides the progress bar. Adding / removing this prop will trigger an animation in or out.  */
+  closed?: boolean;
   /** Max value for determinate progress bars. */
   max?: number;
   /** Min value for determinate progress bars. */
@@ -20,28 +26,45 @@ export interface CircularProgressProps {
   /** Value for determinate progress bars. */
   progress?: number;
   /** The size of the loader you would like to render. */
-  size?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | number;
+  size?: Size | number;
 }
 
 export const CircularProgress = createComponent<CircularProgressProps>(
   function CircularProgress(props, ref) {
-    const { size = 'medium', max = 1, min = 0, progress, ...rest } = props;
+    const {
+      closed,
+      size = 'small' as Size,
+      max = 1,
+      min = 0,
+      progress,
+      ...rest
+    } = props;
+
+    const { rootEl, determinateCircleEl } =
+      useCircularProgressFoundation(props);
 
     const className = useClassNames(props, [
-      'rmwc-circular-progress',
+      'mdc-circular-progress',
+      `rmwc-circular-progress--${size}`,
       {
-        [`rmwc-circular-progress--size-${props.size}`]:
-          typeof props.size === 'string',
-        'rmwc-circular-progress--indeterminate': progress === undefined,
-        'rmwc-circular-progress--thickerstroke':
-          !!props.size && (SIZE_MAP[size] || Number(size)) > 36
+        'mdc-circular-progress--closed': closed
       }
     ]);
 
-    const style = !SIZE_MAP[size]
-      ? { ...rest.style, fontSize: Number(size) }
-      : rest.style;
-    const _size = SIZE_MAP[size] || Number(size);
+    const isDeterminate = progress !== undefined;
+
+    const isSizeNumber = typeof size === 'number';
+
+    const _size = SIZE_MAP[isSizeNumber ? 'medium' : size];
+
+    const style = isSizeNumber
+      ? {
+          ...rest.style,
+          fontSize: `${size}px`,
+          width: `${size}px`,
+          height: `${size}px`
+        }
+      : { ...rest.style };
 
     const calculateRatio = (value: number) => {
       if (value < min) return 0;
@@ -54,9 +77,22 @@ export const CircularProgress = createComponent<CircularProgressProps>(
         ? {
             strokeDasharray: `${
               2 * Math.PI * (size / 2.4) * calculateRatio(progress)
-            }, 666.66%`
+            }, 666.66%`,
+            width: `${size}px`,
+            height: `${size}px`
           }
         : undefined;
+    };
+
+    const circleProps = (size: number) => {
+      return {
+        cx: CX_CY_MAP[size],
+        cy: CX_CY_MAP[size],
+        r: R_MAP[size],
+        strokeDasharray: STROKE_DASHARRAY_MAP[size],
+        strokeDashoffset: STROKE_DASHOFFSET_MAP[size],
+        strokeWidth: STROKE_WIDTH_MAP[size]
+      };
     };
 
     return (
@@ -67,20 +103,69 @@ export const CircularProgress = createComponent<CircularProgressProps>(
         {...rest}
         style={style}
         className={className}
+        element={rootEl}
         ref={ref}
+        role="progressbar"
       >
-        <svg
-          className="rmwc-circular-progress__circle"
-          viewBox={`0 0 ${_size} ${_size}`}
-        >
-          <circle
-            className="rmwc-circular-progress__path"
-            style={circularStyle(_size)}
-            cx={_size / 2}
-            cy={_size / 2}
-            r={_size / 2.4}
-          />
-        </svg>
+        {isDeterminate ? (
+          <div className="mdc-circular-progress__determinate-container">
+            <svg
+              className="mdc-circular-progress__determinate-circle-graphic"
+              viewBox={`0 0 ${_size} ${_size}`}
+            >
+              <circle
+                className="mdc-circular-progress__determinate-track"
+                cx={_size / 2}
+                cy={_size / 2}
+                r={_size / 2.4}
+                strokeWidth="4"
+              />
+              <Tag
+                tag="circle"
+                className="mdc-circular-progress__determinate-circle"
+                style={circularStyle(_size)}
+                cx={_size / 2}
+                cy={_size / 2}
+                r={_size / 2.4}
+                element={determinateCircleEl}
+                strokeDashoffset="113.097"
+                strokeWidth="4"
+              />
+            </svg>
+          </div>
+        ) : (
+          <div className="mdc-circular-progress__indeterminate-container">
+            <div className="mdc-circular-progress__spinner-layer">
+              <div className="mdc-circular-progress__circle-clipper mdc-circular-progress__circle-left">
+                <svg
+                  className="mdc-circular-progress__indeterminate-circle-graphic"
+                  viewBox={`0 0 ${_size} ${_size}`}
+                >
+                  <circle {...circleProps(_size)} />
+                </svg>
+              </div>
+              <div className="mdc-circular-progress__gap-patch">
+                <svg
+                  className="mdc-circular-progress__indeterminate-circle-graphic"
+                  viewBox={`0 0 ${_size} ${_size}`}
+                >
+                  <circle
+                    {...circleProps(_size)}
+                    strokeWidth={STROKE_WIDTH_GAP_MAP[_size]}
+                  />
+                </svg>
+              </div>
+              <div className="mdc-circular-progress__circle-clipper mdc-circular-progress__circle-right">
+                <svg
+                  className="mdc-circular-progress__indeterminate-circle-graphic"
+                  viewBox={`0 0 ${_size} ${_size}`}
+                >
+                  <circle {...circleProps(_size)} />
+                </svg>
+              </div>
+            </div>
+          </div>
+        )}
       </Tag>
     );
   }

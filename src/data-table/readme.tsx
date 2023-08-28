@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FormEvent } from 'react';
 
 import { Docs, DocsExample, DocsSubtitle, DocProps, DocsP } from '@doc-utils';
 import propsSrc from './generated-props.json';
@@ -42,8 +42,18 @@ export default function Readme() {
       </DocsP>
 
       <DocsExample>
+        {/* @ts-ignore */}
         {function Example() {
           const [sortDir, setSortDir] = React.useState(null);
+          const items = [
+            { item: 'Cookies', quantity: 25, price: '$2.90' },
+            { item: 'Pizza', quantity: 50, price: '$1.25' },
+            { item: 'Icecream', quantity: 10, price: '$2.35' }
+          ];
+          const sortedItems =
+            sortDir === 1
+              ? items.sort((a, b) => a.quantity - b.quantity)
+              : items.sort((a, b) => b.quantity - a.quantity);
           return (
             <DataTable>
               <DataTableContent>
@@ -65,21 +75,13 @@ export default function Readme() {
                   </DataTableRow>
                 </DataTableHead>
                 <DataTableBody>
-                  <DataTableRow>
-                    <DataTableCell>Cookies</DataTableCell>
-                    <DataTableCell alignEnd>25</DataTableCell>
-                    <DataTableCell alignEnd>$2.90</DataTableCell>
-                  </DataTableRow>
-                  <DataTableRow selected>
-                    <DataTableCell>Pizza</DataTableCell>
-                    <DataTableCell alignEnd>50</DataTableCell>
-                    <DataTableCell alignEnd>$1.25</DataTableCell>
-                  </DataTableRow>
-                  <DataTableRow>
-                    <DataTableCell>Icecream</DataTableCell>
-                    <DataTableCell alignEnd>10</DataTableCell>
-                    <DataTableCell alignEnd>$2.35</DataTableCell>
-                  </DataTableRow>
+                  {sortedItems.map((item) => (
+                    <DataTableRow key={item.item}>
+                      <DataTableCell>{item.item}</DataTableCell>
+                      <DataTableCell alignEnd>{item.quantity}</DataTableCell>
+                      <DataTableCell alignEnd>{item.price}</DataTableCell>
+                    </DataTableRow>
+                  ))}
                 </DataTableBody>
               </DataTableContent>
             </DataTable>
@@ -96,6 +98,7 @@ export default function Readme() {
       </DocsP>
 
       <DocsExample>
+        {/* @ts-ignore */}
         {function Example() {
           const [rows, setRows] = React.useState(0);
           const [cols, setCols] = React.useState(0);
@@ -140,13 +143,17 @@ export default function Readme() {
                   label="Sticky Rows"
                   options={['0', '1']}
                   value={String(rows)}
-                  onChange={(evt) => setRows(Number(evt.currentTarget.value))}
+                  onChange={(evt: FormEvent<HTMLSelectElement>) =>
+                    setRows(Number(evt.currentTarget.value))
+                  }
                 />
                 <Select
                   label="Sticky Cols"
                   options={['0', '1']}
                   value={String(cols)}
-                  onChange={(evt) => setCols(Number(evt.currentTarget.value))}
+                  onChange={(evt: FormEvent<HTMLSelectElement>) =>
+                    setCols(Number(evt.currentTarget.value))
+                  }
                 />
               </div>
             </>
@@ -162,6 +169,7 @@ export default function Readme() {
       </DocsP>
 
       <DocsExample>
+        {/* @ts-ignore */}
         {function Example() {
           const [checked, setChecked] = React.useState({});
           const sampleRows = new Array(5).fill(undefined);
@@ -188,7 +196,7 @@ export default function Readme() {
                         <Checkbox
                           // @ts-ignore
                           checked={checked[i]}
-                          onChange={(evt) => {
+                          onChange={(evt: FormEvent<HTMLInputElement>) => {
                             // @ts-ignore
                             checked[i] = evt.currentTarget.checked;
                             setChecked({ ...checked });

@@ -35,6 +35,7 @@ export default function Readme() {
       </DocsP>
 
       <DocsExample label="Default">
+        {/* @ts-ignore */}
         {function App() {
           return (
             <PortalProvider>

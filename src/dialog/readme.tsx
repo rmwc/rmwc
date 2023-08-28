@@ -33,6 +33,7 @@ export default function Readme() {
       <DocsSubtitle>Standard Usage</DocsSubtitle>
 
       <DocsExample>
+        {/* @ts-ignore */}
         {function Example() {
           const [open, setOpen] = React.useState(false);
           return (
@@ -72,6 +73,7 @@ export default function Readme() {
         standard and simple dialog usage.
       </DocsP>
       <DocsExample>
+        {/* @ts-ignore */}
         {function Example() {
           const [open, setOpen] = React.useState(false);
           return (
@@ -189,6 +191,7 @@ export default function Readme() {
       </DocsExample>
 
       <DocsExample label="Inline Example">
+        {/* @ts-ignore */}
         {() => {
           const { dialogs, alert, confirm, prompt } = createDialogQueue();
 
@@ -271,6 +274,7 @@ export default function Readme() {
       </DocsP>
 
       <DocsExample>
+        {/* @ts-ignore */}
         {function Example() {
           const [renderToPortal, setRenderToPortal] = React.useState(true);
           const [open, setOpen] = React.useState(false);

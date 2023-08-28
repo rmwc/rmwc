@@ -137,6 +137,7 @@ export default function Readme() {
       </DocsP>
 
       <DocsExample center>
+        {/* @ts-ignore */}
         {function Example() {
           const [label, setLabel] = React.useState<any>(undefined);
 

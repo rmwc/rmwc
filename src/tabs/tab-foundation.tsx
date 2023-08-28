@@ -24,7 +24,7 @@ export const useTabFoundation = (props: TabProps & React.HTMLProps<any>) => {
           addClass: (className: string) => rootEl.addClass(className),
           removeClass: (className: string) => rootEl.removeClass(className),
           hasClass: (className: string) => rootEl.hasClass(className),
-          activateIndicator: (previousIndicatorClientRect: ClientRect) =>
+          activateIndicator: (previousIndicatorClientRect: DOMRect) =>
             tabIndicatorApi.current?.activate(previousIndicatorClientRect),
           deactivateIndicator: () => tabIndicatorApi.current?.deactivate(),
           notifyInteracted: () => {
@@ -54,7 +54,7 @@ export const useTabFoundation = (props: TabProps & React.HTMLProps<any>) => {
   const tabApi = useMemo<TabApi>(() => {
     return {
       getActive: () => foundation.isActive(),
-      activate: (computeIndicatorClientRect: ClientRect) =>
+      activate: (computeIndicatorClientRect: DOMRect) =>
         foundation.activate(computeIndicatorClientRect),
       deactivate: () => foundation.deactivate(),
       computeIndicatorClientRect: () =>

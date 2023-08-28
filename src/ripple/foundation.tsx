@@ -13,7 +13,7 @@ type ActivateEventTypes<S> =
   | React.FocusEvent<S>;
 
 export const useRippleFoundation = (
-  props: RippleProps & React.HTMLProps<any> & { domNode?: Element }
+  props: RippleProps & React.HTMLProps<any>
 ) => {
   const isTouched = useRef(false);
 
@@ -25,8 +25,29 @@ export const useRippleFoundation = (
     },
     foundation: ({ rootEl, surfaceEl, getProps }) => {
       return new MDCRippleFoundation({
+        addClass: (className: string) => {
+          surfaceEl.addClass(className);
+        },
         browserSupportsCssVars: () => util.supportsCssVariables(window),
-        isUnbounded: () => !!getProps().unbounded,
+        computeBoundingRect: () =>
+          rootEl.ref ? rootEl.ref.getBoundingClientRect() : emptyClientRect,
+        containsEventTarget: (target: HTMLElement) =>
+          !!rootEl.ref && rootEl.ref.contains(target),
+        deregisterDocumentInteractionHandler: <K extends EventType>(
+          evtType: K,
+          handler: SpecificEventListener<K>
+        ) => document.documentElement.removeEventListener(evtType, handler),
+        deregisterInteractionHandler: <K extends EventType>(
+          evtType: K,
+          handler: SpecificEventListener<K>
+        ): void => {},
+        deregisterResizeHandler: (
+          handler: SpecificEventListener<'resize'>
+        ): void => window.removeEventListener('resize', handler),
+        getWindowPageOffset: () => ({
+          x: window.pageXOffset,
+          y: window.pageYOffset
+        }),
         isSurfaceActive: () => {
           if (rootEl.ref) {
             return matches(rootEl.ref, ':active');
@@ -34,22 +55,10 @@ export const useRippleFoundation = (
           return false;
         },
         isSurfaceDisabled: () => !!getProps().disabled,
-        addClass: (className: string) => {
-          surfaceEl.addClass(className);
-        },
         removeClass: (className: string) => {
           surfaceEl.removeClass(className);
         },
-        containsEventTarget: (target: HTMLElement) =>
-          !!rootEl.ref && rootEl.ref.contains(target),
-        registerInteractionHandler: <K extends EventType>(
-          evtType: K,
-          handler: SpecificEventListener<K>
-        ): void => {},
-        deregisterInteractionHandler: <K extends EventType>(
-          evtType: K,
-          handler: SpecificEventListener<K>
-        ): void => {},
+        isUnbounded: () => !!getProps().unbounded,
         registerDocumentInteractionHandler: <K extends EventType>(
           evtType: K,
           handler: SpecificEventListener<K>
@@ -57,24 +66,15 @@ export const useRippleFoundation = (
           document.documentElement.addEventListener(evtType, handler, {
             passive: true
           }),
-        deregisterDocumentInteractionHandler: <K extends EventType>(
+        registerInteractionHandler: <K extends EventType>(
           evtType: K,
           handler: SpecificEventListener<K>
-        ) => document.documentElement.removeEventListener(evtType, handler),
+        ): void => {},
         registerResizeHandler: (
           handler: SpecificEventListener<'resize'>
         ): void => window.addEventListener('resize', handler),
-        deregisterResizeHandler: (
-          handler: SpecificEventListener<'resize'>
-        ): void => window.removeEventListener('resize', handler),
         updateCssVariable: (varName: string, value: string) =>
-          surfaceEl.setStyle(varName, value),
-        computeBoundingRect: () =>
-          rootEl.ref ? rootEl.ref.getBoundingClientRect() : emptyClientRect,
-        getWindowPageOffset: () => ({
-          x: window.pageXOffset,
-          y: window.pageYOffset
-        })
+          surfaceEl.setStyle(varName, value)
       });
     }
   });
@@ -184,10 +184,6 @@ export const useRippleFoundation = (
   rootEl.setProp('onTouchEnd', handleTouchEnd, true);
   rootEl.setProp('onKeyDown', handleKeyDown, true);
   rootEl.setProp('onKeyUp', handleKeyUp, true);
-
-  useEffect(() => {
-    rootEl.setRef(props.domNode);
-  }, [rootEl, props.domNode]);
 
   useEffect(() => {
     foundation.setUnbounded(!!props.unbounded);

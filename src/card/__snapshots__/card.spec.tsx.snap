@@ -25,8 +25,11 @@ exports[`Card renders 1`] = `
           Visit ten places on our planet that are undergoing the biggest changes today.
         </div>
       </div>
+      <div
+        class="mdc-card__ripple"
+      />
     </div>
-    <section
+    <div
       class="mdc-card__actions"
     >
       <div
@@ -37,6 +40,12 @@ exports[`Card renders 1`] = `
         >
           <div
             class="mdc-button__ripple"
+          />
+          <div
+            class="mdc-button__touch"
+          />
+          <div
+            class="mdc-button__focus-ring"
           />
           <span
             class="mdc-button__label"
@@ -50,6 +59,12 @@ exports[`Card renders 1`] = `
           <div
             class="mdc-button__ripple"
           />
+          <div
+            class="mdc-button__touch"
+          />
+          <div
+            class="mdc-button__focus-ring"
+          />
           <span
             class="mdc-button__label"
           >
@@ -62,6 +77,12 @@ exports[`Card renders 1`] = `
           <div
             class="mdc-button__ripple"
           />
+          <div
+            class="mdc-button__touch"
+          />
+          <div
+            class="mdc-button__focus-ring"
+          />
           <span
             class="mdc-button__label"
           >
@@ -73,20 +94,31 @@ exports[`Card renders 1`] = `
         class="mdc-card__action-icons"
       >
         <button
-          class="rmwc-icon rmwc-icon--ligature material-icons mdc-ripple-upgraded--unbounded mdc-card__action mdc-card__action--icon mdc-icon-button"
+          class="mdc-ripple-upgraded--unbounded mdc-card__action mdc-card__action--icon mdc-icon-button--display-flex mdc-icon-button"
           data-mdc-ripple-is-unbounded="true"
           role="button"
           tabindex="0"
         >
-          favorite_border
+          <div
+            class="mdc-icon-button__ripple"
+          />
+          <i
+            class="rmwc-icon rmwc-icon--ligature material-icons mdc-ripple-upgraded--unbounded mdc-card__action mdc-card__action--icon mdc-icon-button--display-flex"
+            data-mdc-ripple-is-unbounded="true"
+          >
+            favorite_border
+          </i>
         </button>
         <button
           aria-pressed="false"
-          class="mdc-ripple-upgraded--unbounded mdc-card__action mdc-card__action--icon mdc-icon-button"
+          class="mdc-ripple-upgraded--unbounded mdc-card__action mdc-card__action--icon mdc-icon-button--display-flex mdc-icon-button"
           data-mdc-ripple-is-unbounded="true"
           role="button"
           tabindex="0"
         >
+          <div
+            class="mdc-icon-button__ripple"
+          />
           <i
             class="rmwc-icon rmwc-icon--ligature material-icons mdc-icon-button__icon"
           >
@@ -99,23 +131,39 @@ exports[`Card renders 1`] = `
           </i>
         </button>
         <button
-          class="rmwc-icon rmwc-icon--ligature material-icons mdc-ripple-upgraded--unbounded mdc-card__action mdc-card__action--icon mdc-icon-button"
+          class="mdc-ripple-upgraded--unbounded mdc-card__action mdc-card__action--icon mdc-icon-button--display-flex mdc-icon-button"
           data-mdc-ripple-is-unbounded="true"
           role="button"
           tabindex="0"
         >
-          share
+          <div
+            class="mdc-icon-button__ripple"
+          />
+          <i
+            class="rmwc-icon rmwc-icon--ligature material-icons mdc-ripple-upgraded--unbounded mdc-card__action mdc-card__action--icon mdc-icon-button--display-flex"
+            data-mdc-ripple-is-unbounded="true"
+          >
+            share
+          </i>
         </button>
         <button
-          class="rmwc-icon rmwc-icon--ligature material-icons mdc-ripple-upgraded--unbounded mdc-card__action mdc-card__action--icon mdc-icon-button"
+          class="mdc-ripple-upgraded--unbounded mdc-card__action mdc-card__action--icon mdc-icon-button--display-flex mdc-icon-button"
           data-mdc-ripple-is-unbounded="true"
           role="button"
           tabindex="0"
         >
-          more_vert
+          <div
+            class="mdc-icon-button__ripple"
+          />
+          <i
+            class="rmwc-icon rmwc-icon--ligature material-icons mdc-ripple-upgraded--unbounded mdc-card__action mdc-card__action--icon mdc-icon-button--display-flex"
+            data-mdc-ripple-is-unbounded="true"
+          >
+            more_vert
+          </i>
         </button>
       </div>
-    </section>
+    </div>
   </div>
 </DocumentFragment>
 `;

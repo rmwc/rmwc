@@ -9,34 +9,37 @@ describe('CircularProgress', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('can be sizes', () => {
+  it('can be different sizes', () => {
     const { container, rerender } = render(<CircularProgress size="xsmall" />);
-    expect(container.firstChild).toHaveClass(
-      'rmwc-circular-progress--size-xsmall'
-    );
+    expect(
+      container.getElementsByClassName('rmwc-circular-progress--xsmall')[0]
+    ).toBeInTheDocument();
 
     rerender(<CircularProgress size="small" />);
-    expect(container.firstChild).toHaveClass(
-      'rmwc-circular-progress--size-small'
-    );
+
+    expect(
+      container.getElementsByClassName('rmwc-circular-progress--small')[0]
+    ).toBeInTheDocument();
 
     rerender(<CircularProgress size="medium" />);
-    expect(container.firstChild).toHaveClass(
-      'rmwc-circular-progress--size-medium'
-    );
+    expect(
+      container.getElementsByClassName('rmwc-circular-progress--medium')[0]
+    ).toBeInTheDocument();
 
     rerender(<CircularProgress size="large" />);
-    expect(container.firstChild).toHaveClass(
-      'rmwc-circular-progress--size-large'
-    );
+    expect(
+      container.getElementsByClassName('rmwc-circular-progress--large')[0]
+    ).toBeInTheDocument();
 
     rerender(<CircularProgress size="xlarge" />);
-    expect(container.firstChild).toHaveClass(
-      'rmwc-circular-progress--size-xlarge'
-    );
+    expect(
+      container.getElementsByClassName('rmwc-circular-progress--xlarge')[0]
+    ).toBeInTheDocument();
+  });
 
-    rerender(<CircularProgress size={72} />);
-    expect(container).toMatchSnapshot();
+  it('can have number as size', () => {
+    const { asFragment } = render(<CircularProgress size={72} />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('can be determinate', () => {

@@ -2,11 +2,12 @@
 
 exports[`LinearProgress can be closed 1`] = `
 <DocumentFragment>
-  <nav
+  <div
+    aria-hidden="true"
     aria-label="Progress Bar"
     aria-valuemax="1"
     aria-valuemin="0"
-    class="mdc-linear-progress mdc-linear-progress--closed mdc-linear-progress--indeterminate mdc-linear-progress--closed"
+    class="mdc-linear-progress mdc-linear-progress--indeterminate mdc-linear-progress--closed mdc-linear-progress--animation-ready mdc-linear-progress--indeterminate mdc-linear-progress--closed"
     role="progressbar"
   >
     <div
@@ -35,17 +36,57 @@ exports[`LinearProgress can be closed 1`] = `
         class="mdc-linear-progress__bar-inner"
       />
     </div>
-  </nav>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`LinearProgress can be reversed 1`] = `
+<DocumentFragment>
+  <div
+    aria-label="Progress Bar"
+    aria-valuemax="1"
+    aria-valuemin="0"
+    class="mdc-linear-progress mdc-linear-progress--indeterminate mdc-linear-progress--animation-ready mdc-linear-progress--indeterminate"
+    dir="rtl"
+    role="progressbar"
+  >
+    <div
+      class="mdc-linear-progress__buffer"
+    >
+      <div
+        class="mdc-linear-progress__buffer-bar"
+        style="flex-basis: 100%;"
+      />
+      <div
+        class="mdc-linear-progress__buffer-dots"
+      />
+    </div>
+    <div
+      class="mdc-linear-progress__bar mdc-linear-progress__primary-bar"
+      style="transform: scaleX(1);"
+    >
+      <div
+        class="mdc-linear-progress__bar-inner"
+      />
+    </div>
+    <div
+      class="mdc-linear-progress__bar mdc-linear-progress__secondary-bar"
+    >
+      <div
+        class="mdc-linear-progress__bar-inner"
+      />
+    </div>
+  </div>
 </DocumentFragment>
 `;
 
 exports[`LinearProgress can buffer 1`] = `
 <DocumentFragment>
-  <nav
+  <div
     aria-label="Progress Bar"
     aria-valuemax="1"
     aria-valuemin="0"
-    class="mdc-linear-progress mdc-linear-progress--indeterminate"
+    class="mdc-linear-progress mdc-linear-progress--indeterminate mdc-linear-progress--animation-ready mdc-linear-progress--indeterminate"
     role="progressbar"
   >
     <div
@@ -74,18 +115,18 @@ exports[`LinearProgress can buffer 1`] = `
         class="mdc-linear-progress__bar-inner"
       />
     </div>
-  </nav>
+  </div>
 </DocumentFragment>
 `;
 
 exports[`LinearProgress renders 1`] = `
 <DocumentFragment>
-  <nav
+  <div
     aria-label="Progress Bar"
     aria-valuemax="1"
     aria-valuemin="0"
     aria-valuenow="0.5"
-    class="mdc-linear-progress"
+    class="mdc-linear-progress mdc-linear-progress--animation-ready"
     role="progressbar"
   >
     <div
@@ -114,6 +155,6 @@ exports[`LinearProgress renders 1`] = `
         class="mdc-linear-progress__bar-inner"
       />
     </div>
-  </nav>
+  </div>
 </DocumentFragment>
 `;

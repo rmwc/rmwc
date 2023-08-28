@@ -55,6 +55,7 @@ export default function Readme() {
       </DocsP>
 
       <DocsExample>
+        {/* @ts-ignore */}
         {function Example() {
           const [open, setOpen] = React.useState(false);
 
@@ -102,6 +103,7 @@ export default function Readme() {
       </DocsP>
 
       <DocsExample>
+        {/* @ts-ignore */}
         {function Example() {
           const [open, setOpen] = React.useState(false);
 
@@ -139,6 +141,7 @@ export default function Readme() {
       </DocsP>
 
       <DocsExample>
+        {/* @ts-ignore */}
         {function Example() {
           const [open, setOpen] = React.useState(false);
 

@@ -1,4 +1,4 @@
-import React, { createContext, ReactNode, useState } from 'react';
+import React, { createContext, useState } from 'react';
 
 export interface PortalContextData {
   portalElement: HTMLDivElement | null;
@@ -14,7 +14,9 @@ export const PortalContext = createContext<PortalContextData>(
   portalContextDefaultValues
 );
 
-export const PortalProvider: React.FC<ReactNode> = ({ children }) => {
+export const PortalProvider: React.FC<React.PropsWithChildren> = ({
+  children
+}) => {
   const [element, setElement] = useState<HTMLDivElement | null>(null);
 
   return (

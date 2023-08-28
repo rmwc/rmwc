@@ -23,15 +23,8 @@ export interface FabProps extends RMWC.WithRippleProps {
 /** A floating action button component */
 export const Fab = withRipple({ surface: false })(
   createComponent<FabProps>(function Fab(props, ref) {
-    const {
-      children,
-      label,
-      icon,
-      trailingIcon,
-      mini,
-      exited,
-      ...rest
-    } = props;
+    const { children, label, icon, trailingIcon, mini, exited, ...rest } =
+      props;
 
     const className = useClassNames(props, [
       'mdc-fab',

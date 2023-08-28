@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/image-list",
-  "version": "8.0.8",
+  "version": "14.0.0-alpha.0",
   "description": "RMWC ImageList component",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -36,9 +36,9 @@
     "react-dom": ">=16.8.x"
   },
   "dependencies": {
-    "@material/image-list": "^8.0.0",
-    "@rmwc/base": "^8.0.8",
-    "@rmwc/types": "^8.0.8"
+    "@material/image-list": "^14.0.0",
+    "@rmwc/base": "^14.0.0-alpha.0",
+    "@rmwc/types": "^14.0.0-alpha.0"
   },
   "gitHead": "bf098adc2571ee1641ef20d79f38fb64e9ff186e"
 }

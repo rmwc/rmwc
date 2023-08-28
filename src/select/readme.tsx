@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FormEvent } from 'react';
 
 import { Docs, DocsExample, DocProps, DocsSubtitle, DocsP } from '@doc-utils';
 import propsSrc from './generated-props.json';
@@ -51,6 +51,14 @@ export default function Readme() {
         />
       </DocsExample>
 
+      <DocsExample label="Enhanced renderToPortal">
+        <Select
+          label="Enhanced"
+          enhanced={{ renderToPortal: true, anchorCorner: 'topLeft' }}
+          options={['Cookies', 'Pizza', 'Icecream']}
+        />
+      </DocsExample>
+
       <DocsExample label="With Options">
         <Select
           label="With Icon"
@@ -90,6 +98,7 @@ export default function Readme() {
         be both controlled and uncontrolled.
       </DocsP>
       <DocsExample label="Controlled">
+        {/* @ts-ignore */}
         {function () {
           const [value, setValue] = React.useState('Cookies');
           return (
@@ -97,7 +106,9 @@ export default function Readme() {
               label="Controlled"
               options={['Cookies', 'Pizza', 'Icecream']}
               value={value}
-              onChange={(evt) => setValue(evt.currentTarget.value)}
+              onChange={(evt: FormEvent<HTMLSelectElement>) =>
+                setValue(evt.currentTarget.value)
+              }
             />
           );
         }}
@@ -107,7 +118,9 @@ export default function Readme() {
           label="Uncontrolled"
           options={['Cookies', 'Pizza', 'Icecream']}
           defaultValue="Cookies"
-          onChange={(evt) => console.log(evt.currentTarget.value)}
+          onChange={(evt: FormEvent<HTMLSelectElement>) =>
+            console.log(evt.currentTarget.value)
+          }
         />
       </DocsExample>
 
@@ -121,6 +134,7 @@ export default function Readme() {
       </DocsP>
 
       <DocsExample label="Formatted Options">
+        {/* @ts-ignore */}
         {function Example() {
           // A controlled select Using a formatted array of options
           const options = [

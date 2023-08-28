@@ -115,6 +115,28 @@ describe('DataTable', () => {
     );
   });
 
+  it('can be numeric', () => {
+    render(
+      <DataTable>
+        <DataTableContent>
+          <DataTableHead>
+            <DataTableRow>
+              <DataTableHeadCell isNumeric>1</DataTableHeadCell>
+            </DataTableRow>
+          </DataTableHead>
+          <DataTableBody>
+            <DataTableRow>
+              <DataTableCell>2</DataTableCell>
+            </DataTableRow>
+          </DataTableBody>
+        </DataTableContent>
+      </DataTable>
+    );
+    expect(screen.getByRole('columnheader')).toHaveClass(
+      'mdc-data-table__header-cell--numeric'
+    );
+  });
+
   it('can have have selected row', () => {
     render(
       <DataTable>
@@ -215,7 +237,7 @@ it('Sorted columns can have an onClick', async () => {
             <DataTableHeadCell>Item</DataTableHeadCell>
             <DataTableHeadCell
               sort={null}
-              onClick={(evt) => (value = 1)}
+              onClick={() => (value = 1)}
               onSortChange={(d) => {}}
             >
               Quantity (Click Me)

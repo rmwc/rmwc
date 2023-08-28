@@ -58,6 +58,7 @@ export default function Readme() {
       </DocsExample>
 
       <DocsExample label="Controlled">
+        {/* @ts-ignore */}
         {function Controlled() {
           const [isChecked, setIsChecked] = React.useState(false);
           return (

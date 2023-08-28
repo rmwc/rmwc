@@ -33,7 +33,7 @@ describe('GridList', () => {
     expect(container.firstChild).toHaveClass('mdc-grid-list--tile-gutter-1');
   });
 
-  it('can be headerCaption', () => {
+  it('can be withIconAlignStart', () => {
     const { asFragment } = render(<GridList withIconAlignStart />);
     expect(asFragment()).toMatchSnapshot();
   });

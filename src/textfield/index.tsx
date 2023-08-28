@@ -44,6 +44,8 @@ export interface TextFieldProps extends RMWC.WithRippleProps {
   floatLabel?: boolean;
   /** Makes a multiline TextField. */
   textarea?: boolean;
+  /** Makes the TextField fullwidth. */
+  fullwidth?: boolean;
   /** Add a leading icon. */
   icon?: RMWC.IconPropT;
   /** Add a trailing icon. */
@@ -88,6 +90,7 @@ export const TextField: RMWC.ComponentType<
     helpText,
     children,
     textarea,
+    fullwidth,
     inputRef,
     characterCount,
     icon,
@@ -132,7 +135,8 @@ export const TextField: RMWC.ComponentType<
       'mdc-text-field--with-trailing-icon': !!trailingIcon,
       'mdc-text-field--no-label': !label,
       'mdc-text-field--end-aligned': align === 'end',
-      'mdc-text-field--with-internal-counter': textarea && characterCount
+      'mdc-text-field--with-internal-counter': textarea && characterCount,
+      'rmwc-text-field--fullwidth': fullwidth
     }
   ]);
 
@@ -168,7 +172,7 @@ export const TextField: RMWC.ComponentType<
         {helpText && shouldSpread ? (
           <TextFieldHelperText {...(helpText as any)} />
         ) : (
-          <TextFieldHelperText>{helpText}</TextFieldHelperText>
+          <TextFieldHelperText>{helpText as any}</TextFieldHelperText>
         )}
         {!textarea && renderedCharacterCounter}
       </div>

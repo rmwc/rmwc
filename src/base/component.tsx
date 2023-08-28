@@ -29,7 +29,7 @@ export const Tag = React.forwardRef<
   } & RMWC.HTMLProps<any, any>
 >(function Tag({ tag: TagEl = 'div', theme, element, ...rest }, ref) {
   const finalProps = element ? element.props(rest) : rest;
-  const finalRef = element ? mergeRefs(ref, element.setRef) : ref;
+  const finalRef = element ? mergeRefs(ref, element.reactRef) : ref;
 
   return <TagEl {...finalProps} ref={finalRef} />;
 });
@@ -74,7 +74,7 @@ export const handleRef = <T extends any>(
 export function createComponent<
   P extends {},
   ElementP extends {} = React.HTMLProps<HTMLElement>
->(Component: React.RefForwardingComponent<any, P & ElementP>) {
+>(Component: React.ForwardRefRenderFunction<any, P & ElementP>) {
   const ForwardComponent = React.forwardRef<
     any,
     RMWC.ComponentProps<P, ElementP, any>
@@ -99,7 +99,7 @@ export function createComponent<
 export function createMemoComponent<
   P extends {},
   ElementP extends {} = React.HTMLProps<HTMLDivElement>
->(Component: React.RefForwardingComponent<any, P & ElementP>) {
+>(Component: React.ForwardRefRenderFunction<any, P & ElementP>) {
   const Comp = createComponent<P, ElementP>(Component);
   return React.memo(Comp) as typeof Comp;
 }

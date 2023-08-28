@@ -1,5 +1,9 @@
 import { useEffect, useState } from 'react';
-import { MDCLinearProgressFoundation } from '@material/linear-progress';
+import {
+  MDCLinearProgressFoundation,
+  MDCResizeObserverCallback,
+  WithMDCResizeObserver
+} from '@material/linear-progress';
 import { useFoundation } from '@rmwc/base';
 import { LinearProgressProps } from '.';
 
@@ -20,7 +24,7 @@ export const useLinearProgressFoundation = (props: LinearProgressProps) => {
     foundation: ({ rootEl }) => {
       return new MDCLinearProgressFoundation({
         addClass: (className: string) => rootEl.addClass(className),
-        forceLayout: () => rootEl.ref?.offsetWidth,
+        forceLayout: () => rootEl.ref?.getBoundingClientRect(),
         hasClass: (className: string) => rootEl.hasClass(className),
         removeClass: (className: string) => rootEl.removeClass(className),
         setBufferBarStyle: (styleProperty: string, value: string | null) => {
@@ -42,7 +46,22 @@ export const useLinearProgressFoundation = (props: LinearProgressProps) => {
         setAttribute: (name: string, value: string) => {
           rootEl.setProp(name as any, value);
         },
-        removeAttribute: (name: string) => rootEl.removeProp(name as any)
+        removeAttribute: (name: string) => rootEl.removeProp(name as any),
+        setStyle: (name: string, value: string) => {
+          (rootEl.ref as HTMLElement).style.setProperty(name, value);
+        },
+        attachResizeObserver: (callback: MDCResizeObserverCallback) => {
+          const RO = (window as unknown as WithMDCResizeObserver)
+            .ResizeObserver;
+          if (RO) {
+            const ro = new RO(callback);
+            ro.observe(rootEl.ref as Element);
+            return ro;
+          }
+
+          return null;
+        },
+        getWidth: () => (rootEl.ref as HTMLElement).offsetWidth
       });
     }
   });
@@ -66,11 +85,6 @@ export const useLinearProgressFoundation = (props: LinearProgressProps) => {
   useEffect(() => {
     foundation.setBuffer(props.buffer || 0);
   }, [props.buffer, foundation]);
-
-  // reversed
-  useEffect(() => {
-    foundation.setReverse(!!props.reversed);
-  }, [props.reversed, foundation]);
 
   // closed
   useEffect(() => {

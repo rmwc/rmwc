@@ -44,9 +44,9 @@ export interface TabProps {
 
 export type TabApi = {
   getActive: () => boolean;
-  activate: (computeIndicatorClientRect: ClientRect) => void;
+  activate: (computeIndicatorClientRect: DOMRect) => void;
   deactivate: () => void;
-  computeIndicatorClientRect: () => ClientRect;
+  computeIndicatorClientRect: () => DOMRect;
   computeDimensions: MDCTabFoundation['computeDimensions'];
   focus: () => void;
   id: string;
@@ -68,7 +68,9 @@ const TabRoot = withRipple({ surface: false })(
         'mdc-tab--min-width': minWidth
       }
     ]);
-    return <Tag tag="button" {...rest} className={className} ref={ref} />;
+    return (
+      <Tag tag="button" role="tab" {...rest} className={className} ref={ref} />
+    );
   })
 );
 
@@ -106,7 +108,10 @@ export const Tab = createComponent<TabProps>(function Tab(props, ref) {
 
   return (
     <TabRoot element={rootEl} stacked={stacked} {...rest} ref={ref}>
-      <div className="mdc-tab__content" ref={contentEl.setRef}>
+      <div
+        className="mdc-tab__content"
+        ref={contentEl.reactRef as React.Ref<HTMLDivElement>}
+      >
         {!!icon && <TabIcon icon={icon} />}
         {(children !== undefined || label !== undefined) && (
           <span className="mdc-tab__text-label">
@@ -118,6 +123,7 @@ export const Tab = createComponent<TabProps>(function Tab(props, ref) {
       </div>
       {!restrictIndicator && tabIndicator}
       <RippleSurface className="mdc-tab__ripple" />
+      <div className="mdc-tab__focus-ring"></div>
     </TabRoot>
   );
 });

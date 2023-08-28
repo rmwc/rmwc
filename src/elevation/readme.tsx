@@ -29,6 +29,7 @@ export default function Readme() {
       </DocsExample>
 
       <DocsExample label="Transition">
+        {/* @ts-ignore */}
         {function Example() {
           const [elevation, setElevation] = React.useState(0);
 

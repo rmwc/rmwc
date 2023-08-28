@@ -7,4 +7,8 @@ describe('FloatingLabel', () => {
     const { asFragment } = render(<FloatingLabel />);
     expect(asFragment()).toMatchSnapshot();
   });
+  it('renders with float', () => {
+    const { asFragment } = render(<FloatingLabel float />);
+    expect(asFragment()).toMatchSnapshot();
+  });
 });

@@ -28,8 +28,9 @@ describe('LinearProgress', () => {
   });
 
   it('can be reversed', () => {
-    const { container } = render(<LinearProgress reversed />);
-    expect(container.firstChild).toHaveClass('mdc-linear-progress--reversed');
+    const { asFragment, container } = render(<LinearProgress reversed />);
+    expect(container.firstChild).toHaveAttribute('dir', 'rtl');
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('can have custom classnames', () => {

@@ -45,7 +45,7 @@ describe('FoundationElement', () => {
       root: new FoundationElement(() => {})
     };
 
-    render(<div ref={inst.root.setRef} />);
+    render(<div ref={inst.root.reactRef as React.Ref<HTMLDivElement>} />);
 
     expect(inst.root.ref instanceof HTMLDivElement).toBe(true);
   });

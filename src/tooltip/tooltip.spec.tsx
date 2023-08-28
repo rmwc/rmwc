@@ -7,7 +7,7 @@ import { RMWCProvider } from '../provider';
 describe('Tooltip', () => {
   it('renders', async () => {
     const { asFragment } = render(
-      <Tooltip content="tooltip">
+      <Tooltip content="tooltip" open>
         <span>test</span>
       </Tooltip>
     );
@@ -22,15 +22,6 @@ describe('Tooltip', () => {
         <span>test</span>
       </Tooltip>
     );
-  });
-
-  it('showArrow', () => {
-    const { asFragment } = render(
-      <Tooltip content="tooltip" showArrow>
-        <span>test</span>
-      </Tooltip>
-    );
-    expect(asFragment()).toMatchSnapshot();
   });
 
   it('className', () => {
@@ -57,15 +48,6 @@ describe('Tooltip', () => {
     );
   });
 
-  it('align', () => {
-    const { asFragment } = render(
-      <Tooltip content="tooltip" align="bottom">
-        <span>test</span>
-      </Tooltip>
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-
   it('works with provider', () => {
     render(
       <RMWCProvider tooltip={{}}>
@@ -74,5 +56,55 @@ describe('Tooltip', () => {
         </Tooltip>
       </RMWCProvider>
     );
+  });
+
+  it('can display arrow', () => {
+    const { asFragment } = render(
+      <RMWCProvider tooltip={{}}>
+        <Tooltip content="tooltip" showArrow>
+          <span>test</span>
+        </Tooltip>
+      </RMWCProvider>
+    );
+
+    expect(screen.getByText('tooltip').parentElement).toHaveClass(
+      'rmwc-tooltip--show-arrow'
+    );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('can be rich', () => {
+    const { asFragment } = render(
+      <RMWCProvider tooltip={{}}>
+        {
+          // @ts-ignore
+          <Tooltip content={<div>tooltip</div>}>
+            <span>test</span>
+          </Tooltip>
+        }
+      </RMWCProvider>
+    );
+
+    expect(screen.getByText('test').parentElement?.parentElement).toHaveClass(
+      'mdc-tooltip-wrapper--rich'
+    );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('can be rich and persistent', () => {
+    const { asFragment } = render(
+      <RMWCProvider tooltip={{}}>
+        {
+          // @ts-ignore
+          <Tooltip content={<div>tooltip</div>} isPersistent>
+            <span>test</span>
+          </Tooltip>
+        }
+      </RMWCProvider>
+    );
+
+    expect(asFragment()).toMatchSnapshot();
   });
 });

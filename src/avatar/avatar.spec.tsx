@@ -40,4 +40,22 @@ describe('Avatar', () => {
 
     expect(screen.getByText('J')).toBeInTheDocument();
   });
+
+  it('can have different size', () => {
+    const { asFragment } = render(<Avatar src="test" size="large" />);
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('can be square', () => {
+    const { asFragment } = render(<Avatar src="test" square />);
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('can be interactive', () => {
+    const { asFragment } = render(<Avatar src="test" interactive />);
+
+    expect(asFragment()).toMatchSnapshot();
+  });
 });

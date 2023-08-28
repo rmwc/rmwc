@@ -147,6 +147,7 @@ export default function Readme() {
       </DocsP>
 
       <DocsExample label="Checkboxes">
+        {/* @ts-ignore */}
         {function Example() {
           const [checked, setChecked] = React.useState<any>({
             Cookies: false,
@@ -175,6 +176,7 @@ export default function Readme() {
       </DocsExample>
 
       <DocsExample label="Switches">
+        {/* @ts-ignore */}
         {function Example() {
           const [checked, setChecked] = React.useState<any>({
             Cookies: false,
@@ -203,6 +205,7 @@ export default function Readme() {
       </DocsExample>
 
       <DocsExample label="Radios">
+        {/* @ts-ignore */}
         {function Example() {
           const [checked, setChecked] = React.useState('Cookies');
 

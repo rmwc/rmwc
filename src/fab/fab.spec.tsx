@@ -29,6 +29,16 @@ describe('Fab', () => {
     expect(screen.getByText('test-label')).toBeInTheDocument();
   });
 
+  it('can have icon', () => {
+    render(<Fab label="test-label" icon="favorite" />);
+    expect(screen.getByText('favorite')).toBeInTheDocument();
+  });
+
+  it('can have trailingIcon', () => {
+    render(<Fab label="test-label" trailingIcon="favorite" />);
+    expect(screen.getByText('favorite')).toBeInTheDocument();
+  });
+
   it('can have custom classnames', () => {
     const { container } = render(<Fab className={'my-custom-classname'} />);
     expect(container.firstChild).toHaveClass('my-custom-classname');

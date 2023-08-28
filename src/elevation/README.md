@@ -23,20 +23,22 @@ Elevation is the relative distance between two surfaces along the z-axis.
 ```
 
 ```jsx
-function Example() {
-  const [elevation, setElevation] = React.useState(0);
+<>
+  {function Example() {
+    const [elevation, setElevation] = React.useState(0);
 
-  return (
-    <Elevation
-      z={elevation}
-      transition
-      onMouseOver={() => setElevation(24)}
-      onMouseOut={() => setElevation(0)}
-    >
-      Hover Me {elevation}dp
-    </Elevation>
-  );
-}
+    return (
+      <Elevation
+        z={elevation}
+        transition
+        onMouseOver={() => setElevation(24)}
+        onMouseOut={() => setElevation(0)}
+      >
+        Hover Me {elevation}dp
+      </Elevation>
+    );
+  }}
+</>
 ```
 
 ## Wrapping Children

@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/fab",
-  "version": "8.0.8",
+  "version": "14.0.0-alpha.0",
   "description": "RMWC Floating Action Button component",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -36,12 +36,12 @@
     "react-dom": ">=16.8.x"
   },
   "dependencies": {
-    "@material/fab": "^8.0.0",
-    "@rmwc/base": "^8.0.8",
-    "@rmwc/icon": "^8.0.8",
-    "@rmwc/provider": "^8.0.8",
-    "@rmwc/ripple": "^8.0.8",
-    "@rmwc/types": "^8.0.8"
+    "@material/fab": "^14.0.0",
+    "@rmwc/base": "^14.0.0-alpha.0",
+    "@rmwc/icon": "^14.0.0-alpha.0",
+    "@rmwc/provider": "^14.0.0-alpha.0",
+    "@rmwc/ripple": "^14.0.0-alpha.0",
+    "@rmwc/types": "^14.0.0-alpha.0"
   },
   "gitHead": "d9befec0e3b258864b71686eecd16c16feb43cf1"
 }

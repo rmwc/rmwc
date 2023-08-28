@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FormEvent } from 'react';
 
 import { Docs, DocsExample, DocProps } from '@doc-utils';
 import propsSrc from './generated-props.json';
@@ -29,6 +29,7 @@ export default function Readme() {
       examples={examples}
     >
       <DocsExample>
+        {/* @ts-ignore */}
         {function Example() {
           const [state, setState] = React.useState({
             tileGutter1: false,
@@ -75,7 +76,7 @@ export default function Readme() {
                 <Checkbox
                   key={key}
                   label={key}
-                  onChange={(evt) =>
+                  onChange={(evt: FormEvent<HTMLInputElement>) =>
                     setState({ ...state, [key]: evt.currentTarget.checked })
                   }
                 />
@@ -83,7 +84,7 @@ export default function Readme() {
 
               <Select
                 value={state.tileAspect}
-                onChange={(evt) =>
+                onChange={(evt: FormEvent<HTMLSelectElement>) =>
                   setState({
                     ...state,
                     tileAspect: String(evt.currentTarget.value)

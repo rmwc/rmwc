@@ -1,3 +1,7 @@
+import rmwc from '@rmwc/base/package.json';
+const RMWC_VERSION = rmwc.version;
+
+export { RMWC_VERSION };
 export * from '@rmwc/avatar';
 export * from '@rmwc/base';
 export * from '@rmwc/badge';
@@ -26,6 +30,7 @@ export * from '@rmwc/notched-outline';
 export * from '@rmwc/provider';
 export * from '@rmwc/radio';
 export * from '@rmwc/ripple';
+export * from '@rmwc/segmented-button';
 export * from '@rmwc/select';
 export * from '@rmwc/slider';
 export * from '@rmwc/snackbar';
@@ -36,4 +41,5 @@ export * from '@rmwc/theme';
 export * from '@rmwc/toggleable';
 export * from '@rmwc/tooltip';
 export * from '@rmwc/top-app-bar';
+export * from '@rmwc/touch-target';
 export * from '@rmwc/typography';

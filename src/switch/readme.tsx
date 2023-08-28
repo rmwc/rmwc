@@ -29,13 +29,14 @@ export default function Readme() {
         <Switch defaultChecked label="Pizza" />
       </DocsExample>
       <DocsExample label="Controlled">
+        {/* @ts-ignore */}
         {function Example() {
           const [checked, setChecked] = React.useState(false);
 
           return (
             <Switch
               checked={checked}
-              onChange={(evt) => setChecked(!!evt.currentTarget.checked)}
+              onClick={(evt) => setChecked((c) => !c)}
               label="Cookies"
             />
           );

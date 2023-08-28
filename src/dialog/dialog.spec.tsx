@@ -47,6 +47,44 @@ describe('Dialog', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
+  it('triggers onOpen', () => {
+    const onOpen = jest.fn();
+    render(
+      <SimpleDialog title="This is a simple dialog" open onOpen={onOpen}>
+        Hello
+      </SimpleDialog>
+    );
+
+    expect(onOpen).toHaveBeenCalled();
+  });
+
+  it('triggers onClose', () => {
+    const onClose = jest.fn();
+    const { rerender } = render(
+      <SimpleDialog
+        title="This is a simple dialog"
+        open={true}
+        onClose={onClose}
+      >
+        Hello
+      </SimpleDialog>
+    );
+
+    expect(onClose).not.toHaveBeenCalled();
+
+    rerender(
+      <SimpleDialog
+        title="This is a simple dialog"
+        open={false}
+        onClose={onClose}
+      >
+        Hello
+      </SimpleDialog>
+    );
+
+    expect(onClose).toHaveBeenCalled();
+  });
+
   it('standard Dialog renders', () => {
     const el = render(
       <Dialog open onClose={(evt) => {}}>

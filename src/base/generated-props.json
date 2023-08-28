@@ -31,7 +31,7 @@
           },
           "kind": "method",
           "name": "addClass",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/base/foundation-component.tsx#L56",
+          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/base/foundation-component.tsx#L50",
           "signatures": [
             {
               "documentation": {
@@ -44,7 +44,7 @@
               "fileName": "src/base/foundation-component.tsx",
               "kind": "signature",
               "name": "addClass",
-              "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/base/foundation-component.tsx#L56",
+              "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/base/foundation-component.tsx#L50",
               "parameters": [
                 {
                   "flags": {
@@ -81,7 +81,7 @@
           },
           "kind": "method",
           "name": "addEventListener",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/base/foundation-component.tsx#L155",
+          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/base/foundation-component.tsx#L149",
           "signatures": [
             {
               "documentation": {
@@ -94,7 +94,7 @@
               "fileName": "src/base/foundation-component.tsx",
               "kind": "signature",
               "name": "addEventListener",
-              "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/base/foundation-component.tsx#L155",
+              "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/base/foundation-component.tsx#L149",
               "parameters": [
                 {
                   "flags": {
@@ -146,13 +146,13 @@
           },
           "kind": "method",
           "name": "destroy",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/base/foundation-component.tsx#L41",
+          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/base/foundation-component.tsx#L39",
           "signatures": [
             {
               "fileName": "src/base/foundation-component.tsx",
               "kind": "signature",
               "name": "destroy",
-              "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/base/foundation-component.tsx#L41",
+              "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/base/foundation-component.tsx#L39",
               "parameters": [],
               "returnType": "void",
               "type": "() => void"
@@ -173,13 +173,13 @@
           },
           "kind": "method",
           "name": "getProp",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/base/foundation-component.tsx#L84",
+          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/base/foundation-component.tsx#L78",
           "signatures": [
             {
               "fileName": "src/base/foundation-component.tsx",
               "kind": "signature",
               "name": "getProp",
-              "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/base/foundation-component.tsx#L84",
+              "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/base/foundation-component.tsx#L78",
               "parameters": [
                 {
                   "flags": {
@@ -216,13 +216,13 @@
           },
           "kind": "method",
           "name": "hasClass",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/base/foundation-component.tsx#L70",
+          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/base/foundation-component.tsx#L64",
           "signatures": [
             {
               "fileName": "src/base/foundation-component.tsx",
               "kind": "signature",
               "name": "hasClass",
-              "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/base/foundation-component.tsx#L70",
+              "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/base/foundation-component.tsx#L64",
               "parameters": [
                 {
                   "flags": {
@@ -259,13 +259,13 @@
           },
           "kind": "method",
           "name": "onChange",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/base/foundation-component.tsx#L37",
+          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/base/foundation-component.tsx#L35",
           "signatures": [
             {
               "fileName": "src/base/foundation-component.tsx",
               "kind": "signature",
               "name": "onChange",
-              "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/base/foundation-component.tsx#L37",
+              "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/base/foundation-component.tsx#L35",
               "parameters": [],
               "returnType": "void",
               "type": "() => void"
@@ -286,13 +286,13 @@
           },
           "kind": "method",
           "name": "props",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/base/foundation-component.tsx#L95",
+          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/base/foundation-component.tsx#L89",
           "signatures": [
             {
               "fileName": "src/base/foundation-component.tsx",
               "kind": "signature",
               "name": "props",
-              "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/base/foundation-component.tsx#L95",
+              "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/base/foundation-component.tsx#L89",
               "parameters": [
                 {
                   "flags": {
@@ -329,13 +329,13 @@
           },
           "kind": "method",
           "name": "removeClass",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/base/foundation-component.tsx#L63",
+          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/base/foundation-component.tsx#L57",
           "signatures": [
             {
               "fileName": "src/base/foundation-component.tsx",
               "kind": "signature",
               "name": "removeClass",
-              "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/base/foundation-component.tsx#L63",
+              "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/base/foundation-component.tsx#L57",
               "parameters": [
                 {
                   "flags": {
@@ -372,13 +372,13 @@
           },
           "kind": "method",
           "name": "removeEventListener",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/base/foundation-component.tsx#L163",
+          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/base/foundation-component.tsx#L157",
           "signatures": [
             {
               "fileName": "src/base/foundation-component.tsx",
               "kind": "signature",
               "name": "removeEventListener",
-              "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/base/foundation-component.tsx#L163",
+              "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/base/foundation-component.tsx#L157",
               "parameters": [
                 {
                   "flags": {
@@ -430,13 +430,13 @@
           },
           "kind": "method",
           "name": "removeProp",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/base/foundation-component.tsx#L88",
+          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/base/foundation-component.tsx#L82",
           "signatures": [
             {
               "fileName": "src/base/foundation-component.tsx",
               "kind": "signature",
               "name": "removeProp",
-              "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/base/foundation-component.tsx#L88",
+              "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/base/foundation-component.tsx#L82",
               "parameters": [
                 {
                   "flags": {
@@ -473,7 +473,7 @@
           },
           "kind": "method",
           "name": "setProp",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/base/foundation-component.tsx#L77",
+          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/base/foundation-component.tsx#L71",
           "signatures": [
             {
               "documentation": {
@@ -486,7 +486,7 @@
               "fileName": "src/base/foundation-component.tsx",
               "kind": "signature",
               "name": "setProp",
-              "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/base/foundation-component.tsx#L77",
+              "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/base/foundation-component.tsx#L71",
               "parameters": [
                 {
                   "flags": {
@@ -553,58 +553,8 @@
             "isStatic": false
           },
           "kind": "method",
-          "name": "setRef",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/base/foundation-component.tsx#L174",
-          "signatures": [
-            {
-              "documentation": {
-                "contents": [
-                  "<p>Refs</p>\n"
-                ],
-                "contentsRaw": "Refs",
-                "metadata": {}
-              },
-              "fileName": "src/base/foundation-component.tsx",
-              "kind": "signature",
-              "name": "setRef",
-              "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/base/foundation-component.tsx#L174",
-              "parameters": [
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "el",
-                  "type": "any"
-                }
-              ],
-              "returnType": "void",
-              "type": "(el: any) => void"
-            }
-          ]
-        },
-        {
-          "fileName": "src/base/foundation-component.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": false,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
           "name": "setStyle",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/base/foundation-component.tsx#L141",
+          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/base/foundation-component.tsx#L135",
           "signatures": [
             {
               "documentation": {
@@ -617,7 +567,7 @@
               "fileName": "src/base/foundation-component.tsx",
               "kind": "signature",
               "name": "setStyle",
-              "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/base/foundation-component.tsx#L141",
+              "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/base/foundation-component.tsx#L135",
               "parameters": [
                 {
                   "flags": {
@@ -671,9 +621,34 @@
           },
           "kind": "property",
           "name": "_onChange",
-          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/base/foundation-component.tsx#L20",
+          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/base/foundation-component.tsx#L19",
           "defaultValue": " null",
           "type": "() => void | null"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Refs</p>\n"
+            ],
+            "contentsRaw": "Refs",
+            "metadata": {}
+          },
+          "fileName": "src/base/foundation-component.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "reactRef",
+          "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/base/foundation-component.tsx#L168",
+          "defaultValue": " React.createRef<ElementType>()",
+          "type": "RefObject<ElementType>"
         }
       ],
       "constructorType": {
@@ -690,13 +665,13 @@
         },
         "kind": "constructor",
         "name": "constructor",
-        "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/base/foundation-component.tsx#L20",
+        "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/base/foundation-component.tsx#L19",
         "signatures": [
           {
             "fileName": "src/base/foundation-component.tsx",
             "kind": "signature",
             "name": "new FoundationElement",
-            "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/base/foundation-component.tsx#L20",
+            "sourceUrl": "https://github.com/rmwc/rmwc/blob/master/src/base/foundation-component.tsx#L19",
             "parameters": [
               {
                 "flags": {
