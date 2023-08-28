@@ -1,4 +1,4 @@
-import React, { FormEvent } from 'react';
+import React from 'react';
 
 import { Docs, DocsExample, DocProps, DocsSubtitle, DocsP } from '@doc-utils';
 import propsSrc from './generated-props.json';
@@ -106,9 +106,7 @@ export default function Readme() {
               label="Controlled"
               options={['Cookies', 'Pizza', 'Icecream']}
               value={value}
-              onChange={(evt: FormEvent<HTMLSelectElement>) =>
-                setValue(evt.currentTarget.value)
-              }
+              onChange={(evt) => setValue(evt.currentTarget.value)}
             />
           );
         }}
@@ -118,9 +116,7 @@ export default function Readme() {
           label="Uncontrolled"
           options={['Cookies', 'Pizza', 'Icecream']}
           defaultValue="Cookies"
-          onChange={(evt: FormEvent<HTMLSelectElement>) =>
-            console.log(evt.currentTarget.value)
-          }
+          onChange={(evt) => console.log(evt.currentTarget.value)}
         />
       </DocsExample>
 
