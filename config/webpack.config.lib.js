@@ -101,6 +101,7 @@ module.exports = (libraryTarget, filename = 'rmwc') => ({
       'radio',
       'ripple',
       'rtl',
+      'segmented-button',
       'select',
       'slider',
       'snackbar',
