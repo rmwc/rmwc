@@ -104,7 +104,6 @@ export default function Readme() {
       <DocsExample label="Persistent">
         <Tooltip
           // You make something like a popover window by just styling your inner overlay.
-          // @ts-ignore
           overlay={
             <div style={{ display: 'flex' }}>
               <Avatar

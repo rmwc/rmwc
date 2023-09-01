@@ -91,7 +91,7 @@
     "react-router-dom": "^6.3.0",
     "react-scripts": "^5.0.1",
     "sass": "^1.54.4",
-    "typescript": "4.3.5"
+    "typescript": "4.8.4"
   },
   "eslintIgnore": [
     "node_modules"
