@@ -2,6 +2,7 @@ import React, { useCallback, useEffect } from 'react';
 import { MDCTooltipFoundation, CssClasses, events } from '@material/tooltip';
 import { useFoundation } from '@rmwc/base';
 import { TooltipActivationT, TooltipProps } from '.';
+import crypto from 'crypto';
 
 export const useToolTipFoundation = (
   props: TooltipProps & React.HTMLProps<any>
@@ -160,22 +161,9 @@ export const useToolTipFoundation = (
     open
   } = props;
 
-  const { rootEl, anchorEl } = elements;
+  const { anchorEl } = elements;
 
-  useEffect(() => {
-    const tooltipId = rootEl.ref?.getAttribute('id');
-    if (!tooltipId) {
-      throw new Error('MDCTooltip: Tooltip component must have an id.');
-    }
-    const anchorElem =
-      document.querySelector<HTMLElement>(`[data-tooltip-id="${tooltipId}"]`) ||
-      document.querySelector<HTMLElement>(`[aria-describedby="${tooltipId}"]`);
-    if (!anchorElem) {
-      throw new Error(
-        'MDCTooltip: Tooltip component requires an anchor element annotated with [aria-describedby] or [data-tooltip-id].'
-      );
-    }
-  }, [rootEl.ref]);
+  const uniqueId = crypto.randomUUID();
 
   const {
     isPersistent,
@@ -310,5 +298,5 @@ export const useToolTipFoundation = (
     open && foundation.show();
   }, [foundation, open]);
 
-  return { foundation, ...elements };
+  return { foundation, ...elements, uniqueId };
 };

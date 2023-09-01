@@ -24,22 +24,22 @@ export default function Readme() {
     >
       <DocsSubtitle>Basic Usage</DocsSubtitle>
       <DocsP>
-        Wrap any component in a `Tooltip` and provide the content attribute. The
+        Wrap any component in a `Tooltip` and provide the overlay attribute. The
         only requirement is that is has a single React child, and that the child
         can accept `onMouseEnter`, `onMouseLeave`, `onFocus`, and `onClick`
         props.
       </DocsP>
       <DocsExample label="Default">
         <>
-          <Tooltip content="Cookies">
+          <Tooltip overlay="Cookies">
             <IconButton icon="star_border" aria-describedby="tooltip-id" />
           </Tooltip>
 
-          <Tooltip content="Pizza">
+          <Tooltip overlay="Pizza">
             <IconButton icon="favorite_border" />
           </Tooltip>
 
-          <Tooltip content="Icecream">
+          <Tooltip overlay="Icecream">
             <IconButton icon="mood" />
           </Tooltip>
         </>
@@ -47,19 +47,18 @@ export default function Readme() {
 
       <DocsSubtitle>Variants</DocsSubtitle>
       <DocsExample label="With Arrow">
-        <Tooltip content="Cake" showArrow>
+        <Tooltip overlay="Cake" showArrow>
           <IconButton icon="cake" />
         </Tooltip>
       </DocsExample>
       <DocsExample label="Controlled / Always open">
-        <Tooltip content="Hello" open={true}>
+        <Tooltip overlay="Hello" open={true}>
           <IconButton icon="mood" />
         </Tooltip>
       </DocsExample>
-      <DocsExample label="Rich Content">
+      <DocsExample label="Rich overlay">
         <Tooltip
-          // @ts-ignore
-          content={
+          overlay={
             <div style={{ display: 'flex' }}>
               <Avatar
                 src="images/avatars/captainamerica.png"
@@ -76,11 +75,10 @@ export default function Readme() {
           <span role="button">S. Rogers</span>
         </Tooltip>
       </DocsExample>
-      <DocsExample label="Styled content">
+      <DocsExample label="Styled overlay">
         <Tooltip
-          // You make something like a popover window by just styling your inner content.
-          // @ts-ignore
-          content={
+          // You make something like a popover window by just styling your inner overlay.
+          overlay={
             <div
               style={{
                 display: 'flex',
@@ -99,22 +97,43 @@ export default function Readme() {
               </Button>
             </div>
           }
+        >
+          <span role="button">Popover Window with clickable overlay</span>
+        </Tooltip>
+      </DocsExample>
+      <DocsExample label="Persistent">
+        <Tooltip
+          // You make something like a popover window by just styling your inner overlay.
+          // @ts-ignore
+          overlay={
+            <div style={{ display: 'flex' }}>
+              <Avatar
+                src="images/avatars/captainamerica.png"
+                size="large"
+                name="Steve Rogers"
+              />
+              <div style={{ marginLeft: '0.5rem', width: '100px' }}>
+                <b>Captain America</b>
+                <div>Steve Rogers</div>
+              </div>
+            </div>
+          }
           isPersistent
         >
-          <span role="button">Popover Window with clickable content</span>
+          <span role="button">Popover when I am clicked</span>
         </Tooltip>
       </DocsExample>
       <DocsExample label="Delay">
         <>
-          <Tooltip content="Cookies" enterDelay={1000}>
+          <Tooltip overlay="Cookies" enterDelay={1000}>
             <Button label="Enter Delay" />
           </Tooltip>
 
-          <Tooltip content="Pizza" leaveDelay={1000}>
+          <Tooltip overlay="Pizza" leaveDelay={1000}>
             <Button label="Leave Delay" />
           </Tooltip>
 
-          <Tooltip content="Icecream" enterDelay={1000} leaveDelay={1000}>
+          <Tooltip overlay="Icecream" enterDelay={1000} leaveDelay={1000}>
             <Button label="Both" />
           </Tooltip>
         </>
@@ -128,17 +147,17 @@ export default function Readme() {
 
       <DocsExample label="Default">
         <>
-          <Tooltip content="Cookies" activateOn="hover">
+          <Tooltip overlay="Cookies" activateOn="hover">
             <Button label="Hover" />
           </Tooltip>
           ''
-          <Tooltip content="Pizza" activateOn="click">
+          <Tooltip overlay="Pizza" activateOn="click">
             <Button label="Click" />
           </Tooltip>
-          <Tooltip content="Icecream" activateOn="focus">
+          <Tooltip overlay="Icecream" activateOn="focus">
             <Button label="Focus" />
           </Tooltip>
-          <Tooltip content="Cake" activateOn={['hover', 'focus']}>
+          <Tooltip overlay="Cake" activateOn={['hover', 'focus']}>
             <Button label="Multiple" />
           </Tooltip>
         </>
@@ -159,7 +178,7 @@ export default function Readme() {
             enterDelay: 0
           }}
         >
-          <Tooltip content="Hello World!">
+          <Tooltip overlay="Hello World!">
             <Button label="With Provider" />
           </Tooltip>
         </RMWCProvider>
@@ -175,7 +194,7 @@ export default function Readme() {
 
 export const galleryExample = (
   <>
-    <Tooltip content="Favorite RMWC!" open>
+    <Tooltip overlay="Favorite RMWC!" open>
       <IconButton icon="favorite_outline" />
     </Tooltip>
   </>
