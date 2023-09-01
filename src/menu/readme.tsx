@@ -1,4 +1,4 @@
-import React, { FormEvent } from 'react';
+import React from 'react';
 
 import { Docs, DocsExample, DocProps, DocsSubtitle, DocsP } from '@doc-utils';
 import propsSrc from './generated-props.json';
@@ -7,7 +7,6 @@ import examples from './generated-examples.json';
 import {
   Menu,
   MenuItem,
-  MenuOnSelectEventT,
   MenuSurface,
   MenuSurfaceAnchor,
   SimpleMenu,
@@ -52,9 +51,7 @@ export default function Readme() {
             <MenuSurfaceAnchor>
               <Menu
                 open={open}
-                onSelect={(evt: MenuOnSelectEventT) =>
-                  console.log(evt.detail.index)
-                }
+                onSelect={(evt) => console.log(evt.detail.index)}
                 onClose={() => setOpen(false)}
               >
                 <MenuItem>Cookies</MenuItem>
@@ -119,10 +116,8 @@ export default function Readme() {
             <MenuSurfaceAnchor>
               <Menu
                 open={open}
-                onSelect={(evt: MenuOnSelectEventT) =>
-                  console.log(evt.detail.index)
-                }
-                onClose={(evt) => setOpen(false)}
+                onSelect={(evt) => console.log(evt.detail.index)}
+                onClose={() => setOpen(false)}
               >
                 <MenuItem>Item One</MenuItem>
                 <MenuItem disabled>Item Two (disabled)</MenuItem>
@@ -185,9 +180,7 @@ export default function Readme() {
               <Select
                 value={anchorCorner}
                 label="anchorCorner"
-                onChange={(evt: FormEvent<HTMLSelectElement>) =>
-                  setAnchorCorner(evt.currentTarget.value)
-                }
+                onChange={(evt) => setAnchorCorner(evt.currentTarget.value)}
                 options={[
                   'topLeft',
                   'topRight',
@@ -275,9 +268,7 @@ export default function Readme() {
               </div>
               <Checkbox
                 checked={renderToPortal}
-                onChange={(evt: FormEvent<HTMLInputElement>) =>
-                  setRenderToPortal(evt.currentTarget.checked)
-                }
+                onChange={(evt) => setRenderToPortal(evt.currentTarget.checked)}
                 label="renderToPortal"
               />
             </>

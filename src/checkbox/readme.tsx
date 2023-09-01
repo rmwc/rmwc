@@ -1,4 +1,4 @@
-import React, { FormEvent } from 'react';
+import React from 'react';
 
 import { Docs, DocsExample, DocProps } from '@doc-utils';
 import propsSrc from './generated-props.json';
@@ -28,9 +28,7 @@ export default function Readme() {
             <Checkbox
               label="Cookies"
               checked={checked}
-              onChange={(evt: FormEvent<HTMLInputElement>) =>
-                setChecked(!!evt.currentTarget.checked)
-              }
+              onChange={(evt) => setChecked(!!evt.currentTarget.checked)}
             />
           );
         }}
