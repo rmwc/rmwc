@@ -8,7 +8,7 @@ import { Tooltip } from './';
 describe('Tooltip SSR', () => {
   it('renders', () => {
     mount(
-      <Tooltip content="tooltip">
+      <Tooltip overlay="tooltip">
         <span>test</span>
       </Tooltip>
     );

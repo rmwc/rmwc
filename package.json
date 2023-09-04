@@ -51,6 +51,7 @@
     "@action-validator/cli": "^0.5.3",
     "@action-validator/core": "^0.5.3",
     "@babel/core": "^7.22.10",
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@storybook/addon-actions": "^6.5.10",
     "@storybook/addon-essentials": "^6.5.10",
     "@storybook/addon-knobs": "^7.0.0",
@@ -91,7 +92,7 @@
     "react-router-dom": "^6.3.0",
     "react-scripts": "^5.0.1",
     "sass": "^1.54.4",
-    "typescript": "4.3.5"
+    "typescript": "4.8.4"
   },
   "eslintIgnore": [
     "node_modules"

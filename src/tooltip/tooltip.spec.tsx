@@ -7,7 +7,7 @@ import { RMWCProvider } from '../provider';
 describe('Tooltip', () => {
   it('renders', async () => {
     const { asFragment } = render(
-      <Tooltip content="tooltip" open>
+      <Tooltip overlay="tooltip" open>
         <span>test</span>
       </Tooltip>
     );
@@ -18,7 +18,7 @@ describe('Tooltip', () => {
 
   it('activateOn', () => {
     render(
-      <Tooltip content="tooltip" activateOn="click">
+      <Tooltip overlay="tooltip" activateOn="click">
         <span>test</span>
       </Tooltip>
     );
@@ -26,7 +26,7 @@ describe('Tooltip', () => {
 
   it('className', () => {
     render(
-      <Tooltip content="tooltip" className="my-custom-classname">
+      <Tooltip overlay="tooltip" className="my-custom-classname">
         <span>test</span>
       </Tooltip>
     );
@@ -34,7 +34,7 @@ describe('Tooltip', () => {
 
   it('enterDelay', () => {
     render(
-      <Tooltip content="tooltip" enterDelay={1000}>
+      <Tooltip overlay="tooltip" enterDelay={1000}>
         <span>test</span>
       </Tooltip>
     );
@@ -42,7 +42,7 @@ describe('Tooltip', () => {
 
   it('leaveDelay', () => {
     render(
-      <Tooltip content="tooltip" leaveDelay={1000}>
+      <Tooltip overlay="tooltip" leaveDelay={1000}>
         <span>test</span>
       </Tooltip>
     );
@@ -51,7 +51,7 @@ describe('Tooltip', () => {
   it('works with provider', () => {
     render(
       <RMWCProvider tooltip={{}}>
-        <Tooltip content="tooltip">
+        <Tooltip overlay="tooltip">
           <span>test</span>
         </Tooltip>
       </RMWCProvider>
@@ -61,7 +61,7 @@ describe('Tooltip', () => {
   it('can display arrow', () => {
     const { asFragment } = render(
       <RMWCProvider tooltip={{}}>
-        <Tooltip content="tooltip" showArrow>
+        <Tooltip overlay="tooltip" showArrow>
           <span>test</span>
         </Tooltip>
       </RMWCProvider>
@@ -78,15 +78,14 @@ describe('Tooltip', () => {
     const { asFragment } = render(
       <RMWCProvider tooltip={{}}>
         {
-          // @ts-ignore
-          <Tooltip content={<div>tooltip</div>}>
+          <Tooltip overlay={<div>tooltip</div>}>
             <span>test</span>
           </Tooltip>
         }
       </RMWCProvider>
     );
 
-    expect(screen.getByText('test').parentElement?.parentElement).toHaveClass(
+    expect(screen.getByText('test').parentElement).toHaveClass(
       'mdc-tooltip-wrapper--rich'
     );
 
@@ -97,8 +96,7 @@ describe('Tooltip', () => {
     const { asFragment } = render(
       <RMWCProvider tooltip={{}}>
         {
-          // @ts-ignore
-          <Tooltip content={<div>tooltip</div>} isPersistent>
+          <Tooltip overlay={<div>tooltip</div>} isPersistent>
             <span>test</span>
           </Tooltip>
         }

@@ -5,7 +5,7 @@ import { Tag } from '@rmwc/base';
 import { useTabScrollerFoundation } from './tab-scroller-foundation';
 
 export interface TabScrollerProps {
-  apiRef: (api: TabScrollerApi) => void;
+  apiRef: (api: TabScrollerApi | null) => void;
 }
 
 export type TabScrollerApi = {

@@ -1,4 +1,4 @@
-import React, { FormEvent } from 'react';
+import React from 'react';
 
 import { Docs, DocsExample, DocProps } from '@doc-utils';
 import propsSrc from './generated-props.json';
@@ -76,7 +76,7 @@ export default function Readme() {
                 <Checkbox
                   key={key}
                   label={key}
-                  onChange={(evt: FormEvent<HTMLInputElement>) =>
+                  onChange={(evt) =>
                     setState({ ...state, [key]: evt.currentTarget.checked })
                   }
                 />
@@ -84,7 +84,7 @@ export default function Readme() {
 
               <Select
                 value={state.tileAspect}
-                onChange={(evt: FormEvent<HTMLSelectElement>) =>
+                onChange={(evt) =>
                   setState({
                     ...state,
                     tileAspect: String(evt.currentTarget.value)

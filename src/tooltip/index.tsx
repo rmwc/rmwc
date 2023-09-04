@@ -1,4 +1,5 @@
 import React from 'react';
+import * as RMWC from '@rmwc/types';
 import { classNames, createComponent, Tag } from '@rmwc/base';
 import { useProviderContext } from '@rmwc/provider';
 import { useToolTipFoundation } from './foundation';
@@ -8,12 +9,10 @@ export type TooltipActivationT = 'hover' | 'click' | 'focus';
 
 /** A Tooltip component for displaying informative popover information. */
 export interface TooltipProps {
-  /** The overlay content for the tooltip. */
-  content: React.ReactNode;
+  /** The overlay for the tooltip. */
+  overlay: React.ReactNode;
   /** The children that the tooltip belongs to. Must be a single React element. */
-  children:
-    | React.ReactElement<any, string | React.JSXElementConstructor<any>>
-    | undefined;
+  children: React.ReactNode;
   /** Activate the tooltip through one or more interactions. Defaults to `['hover', 'focus']`. */
   activateOn?: TooltipActivationT | TooltipActivationT[];
   /** Custom className to add to the tooltip overlay container. */
@@ -32,26 +31,33 @@ export interface TooltipProps {
   isPersistent?: boolean;
 }
 
+export type TooltipHTMLProps = RMWC.HTMLProps<HTMLDivElement>;
+
 /** A Tooltip component for displaying informative popover information. */
-export const Tooltip = createComponent<TooltipProps>(function Tooltip(
+export const Tooltip: RMWC.ComponentType<
+  TooltipProps,
+  TooltipHTMLProps,
+  'div'
+> = createComponent<TooltipProps, TooltipHTMLProps>(function Tooltip(
   props,
   ref
 ) {
   const providerContext = useProviderContext();
 
-  const { anchorEl, rootEl } = useToolTipFoundation(props);
+  const { anchorEl, rootEl, uniqueId } = useToolTipFoundation(props);
 
   // merge together provider options
   const {
     isPersistent,
     showArrow = false,
-    open
+    open,
+    overlay
   } = {
     ...providerContext.tooltip,
     ...props
   };
 
-  const isRich = typeof props.content !== 'string';
+  const isRich = typeof overlay !== 'string';
 
   const className = classNames('mdc-tooltip', {
     'mdc-tooltip--shown': open,
@@ -67,29 +73,28 @@ export const Tooltip = createComponent<TooltipProps>(function Tooltip(
 
   if (isRich) {
     return (
-      <RichTooltip>
-        <Tag element={anchorEl} ref={anchorEl.reactRef}>
-          {React.cloneElement(child, {
-            ...anchorEl.props(child.props),
-            'aria-describedby': 'tooltip-id',
-            'data-tooltip-id': 'tooltip-id'
-          })}
-        </Tag>
+      <Tag tag="div" className="mdc-tooltip-wrapper--rich">
+        {React.cloneElement(child, {
+          ...anchorEl.props(child.props),
+          ref: anchorEl.reactRef,
+          'aria-describedby': uniqueId,
+          'data-tooltip-id': uniqueId
+        })}
         <Tag
           tag="div"
           className={`${CssClasses.RICH} mdc-tooltip`}
-          id="tooltip-id"
+          id={uniqueId}
           role="tooltip"
           aria-hidden="true"
           ref={ref}
           element={rootEl}
-          data-mdc-tooltip-persistent={isPersistent && true}
+          data-mdc-tooltip-persistent={isPersistent}
         >
           <div className="mdc-tooltip__surface mdc-tooltip__surface-animation">
-            <div className="mdc-tooltip__content">{props.content}</div>
+            <div className="mdc-tooltip__content">{overlay}</div>
           </div>
         </Tag>
-      </RichTooltip>
+      </Tag>
     );
   }
 
@@ -98,7 +103,7 @@ export const Tooltip = createComponent<TooltipProps>(function Tooltip(
       <Tag
         tag="div"
         className={className}
-        id="tooltip-id"
+        id={uniqueId}
         role="tooltip"
         aria-hidden="true"
         ref={ref}
@@ -106,33 +111,16 @@ export const Tooltip = createComponent<TooltipProps>(function Tooltip(
         data-mdc-tooltip-persistent={open}
       >
         <div className="mdc-tooltip__surface mdc-tooltip__surface-animation">
-          {props.content}
+          {overlay}
         </div>
       </Tag>
       <Tag tag="fragment" element={anchorEl} ref={anchorEl.reactRef}>
         {React.cloneElement(child, {
           ...anchorEl.props(child.props),
-          'aria-describedby': 'tooltip-id',
-          'data-tooltip-id': 'tooltip-id'
+          'aria-describedby': uniqueId,
+          'data-tooltip-id': uniqueId
         })}
       </Tag>
     </>
-  );
-});
-
-const RichTooltip = React.forwardRef(function RichTooltip(
-  props: any,
-  ref: React.Ref<any>
-) {
-  return (
-    <Tag
-      {...props}
-      ref={ref}
-      element={props.element}
-      className="mdc-tooltip-wrapper--rich"
-      tag="div"
-    >
-      {props.children}
-    </Tag>
   );
 });

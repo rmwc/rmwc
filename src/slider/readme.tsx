@@ -4,7 +4,7 @@ import { Docs, DocsExample, DocProps, DocsP } from '@doc-utils';
 import propsSrc from './generated-props.json';
 import examples from './generated-examples.json';
 
-import { Slider, SliderOnChangeEventT } from '.';
+import { Slider } from '.';
 
 export default function Readme() {
   return (
@@ -35,8 +35,8 @@ export default function Readme() {
 
       <DocsExample label="Uncontrolled">
         <Slider
-          onInput={(evt: SliderOnChangeEventT) => console.log(evt)}
-          onChange={(evt: SliderOnChangeEventT) => console.log(evt)}
+          onInput={(evt) => console.log(evt)}
+          onChange={(evt) => console.log(evt)}
         />
       </DocsExample>
 
@@ -49,12 +49,8 @@ export default function Readme() {
           return (
             <Slider
               value={value}
-              onChange={(evt: SliderOnChangeEventT) =>
-                setValue(evt.detail.value)
-              }
-              onInput={(evt: SliderOnChangeEventT) =>
-                setValue(evt.detail.value)
-              }
+              onChange={(evt) => setValue(evt.detail.value)}
+              onInput={(evt) => setValue(evt.detail.value)}
               discrete
               step={10}
             />
@@ -81,9 +77,7 @@ export default function Readme() {
               discrete
               valueStart={startValue}
               value={value}
-              onChange={(evt: SliderOnChangeEventT) =>
-                setValue(evt.detail.value)
-              }
+              onChange={(evt) => setValue(evt.detail.value)}
               onChangeValueStart={(evt) => setStartValue(evt.detail.value)}
             ></Slider>
           );

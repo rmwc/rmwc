@@ -12,19 +12,19 @@ Tooltips display informative text when users hover over, focus on, or tap an ele
 
 ## Basic Usage
 
-Wrap any component in a `Tooltip` and provide the content attribute. The only requirement is that is has a single React child, and that the child can accept `onMouseEnter`, `onMouseLeave`, `onFocus`, and `onClick` props.
+Wrap any component in a `Tooltip` and provide the overlay attribute. The only requirement is that is has a single React child, and that the child can accept `onMouseEnter`, `onMouseLeave`, `onFocus`, and `onClick` props.
 
 ```jsx
 <>
-  <Tooltip content="Cookies">
+  <Tooltip overlay="Cookies">
     <IconButton icon="star_border" aria-describedby="tooltip-id" />
   </Tooltip>
 
-  <Tooltip content="Pizza">
+  <Tooltip overlay="Pizza">
     <IconButton icon="favorite_border" />
   </Tooltip>
 
-  <Tooltip content="Icecream">
+  <Tooltip overlay="Icecream">
     <IconButton icon="mood" />
   </Tooltip>
 </>
@@ -33,20 +33,20 @@ Wrap any component in a `Tooltip` and provide the content attribute. The only re
 ## Variants
 
 ```jsx
-<Tooltip content="Cake" showArrow>
+<Tooltip overlay="Cake" showArrow>
   <IconButton icon="cake" />
 </Tooltip>
 ```
 
 ```jsx
-<Tooltip content="Hello" align="right" open={true}>
+<Tooltip overlay="Hello" align="right" open={true}>
   <IconButton icon="mood" />
 </Tooltip>
 ```
 
 ```jsx
 <Tooltip
-  content={
+  overlay={
     <div style={{ display: 'flex' }}>
       <Avatar
         src="images/avatars/captainamerica.png"
@@ -67,7 +67,7 @@ Wrap any component in a `Tooltip` and provide the content attribute. The only re
 ```jsx
 <Tooltip
   // You make something like a popover window by just styling your inner content.
-  content={
+  overlay={
     <div
       style={{
         display: 'flex',
@@ -94,15 +94,15 @@ Wrap any component in a `Tooltip` and provide the content attribute. The only re
 
 ```jsx
 <>
-  <Tooltip content="Cookies" enterDelay={1000}>
+  <Tooltip overlay="Cookies" enterDelay={1000}>
     <Button label="Enter Delay" />
   </Tooltip>
 
-  <Tooltip content="Pizza" leaveDelay={1000}>
+  <Tooltip overlay="Pizza" leaveDelay={1000}>
     <Button label="Leave Delay" />
   </Tooltip>
 
-  <Tooltip content="Icecream" enterDelay={1000} leaveDelay={1000}>
+  <Tooltip overlay="Icecream" enterDelay={1000} leaveDelay={1000}>
     <Button label="Both" />
   </Tooltip>
 </>
@@ -123,7 +123,7 @@ Wrap any component in a `Tooltip` and provide the content attribute. The only re
     ].map((align) => (
       <Tooltip
         key={align}
-        content={`Align: ${align}`}
+        overlay={`Align: ${align}`}
         align={align as TooltipAlignT}
       >
         <IconButton icon="trip_origin" />
@@ -139,17 +139,17 @@ By default, tooltips will activate on hover and focus. You can change this behav
 
 ```jsx
 <>
-  <Tooltip content="Cookies" activateOn="hover">
+  <Tooltip overlay="Cookies" activateOn="hover">
     <Button label="Hover" />
   </Tooltip>
   ''
-  <Tooltip content="Pizza" activateOn="click">
+  <Tooltip overlay="Pizza" activateOn="click">
     <Button label="Click" />
   </Tooltip>
-  <Tooltip content="Icecream" activateOn="focus">
+  <Tooltip overlay="Icecream" activateOn="focus">
     <Button label="Focus" />
   </Tooltip>
-  <Tooltip content="Cake" activateOn={['hover', 'focus']}>
+  <Tooltip overlay="Cake" activateOn={['hover', 'focus']}>
     <Button label="Multiple" />
   </Tooltip>
 </>
@@ -168,7 +168,7 @@ The RMWCProvider allows you to specify global defaults for your tooltips.
     enterDelay: 0
   }}
 >
-  <Tooltip content="Hello World!">
+  <Tooltip overlay="Hello World!">
     <Button label="With Provider" />
   </Tooltip>
 </RMWCProvider>
@@ -187,7 +187,7 @@ A Tooltip component for displaying informative popover information.
 | `anchorBoundaryType` | `AnchorBoundaryType`                         | Specify whether the anchor element is bounded (element has an identifiable boundary such as a button) or unbounded (element does not have a visually declared boundary such as a text link). |
 | `children`           | `React.ReactChild`                           | The children that the tooltip belongs to. Must be a single React.child.                                                                                                                      |
 | `className`          | `undefined \| string`                        | Custom className to add to the tooltip overlay container.                                                                                                                                    |
-| `content`            | `React.ReactNode`                            | The overlay content for the tooltip.                                                                                                                                                         |
+| `overlay`            | `React.ReactNode`                            | The overlay content for the tooltip.                                                                                                                                                         |
 | `enterDelay`         | `undefined \| number`                        | Delay in milliseconds before showing the tooltip when interacting via touch or mouse.                                                                                                        |
 | `isPersistent`       | `undefined \| false \| true`                 | Specify whether tooltip should be persistent. Persistent tooltip are triggered by clicks.                                                                                                    |
 | `leaveDelay`         | `undefined \| number`                        | Delay in milliseconds before hiding the tooltip when interacting via touch or mouse.                                                                                                         |

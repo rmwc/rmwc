@@ -11,7 +11,6 @@ export const useTabScrollerFoundation = (
   props: TabScrollerProps & React.HTMLProps<any>
 ) => {
   const { foundation, ...elements } = useFoundation({
-    // @ts-ignore
     props,
     api: ({ foundation, contentEl }): TabScrollerApi => {
       const f = foundation as MDCTabScrollerFoundation;
