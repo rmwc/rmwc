@@ -2,7 +2,6 @@ import React, { useCallback, useEffect } from 'react';
 import { MDCTooltipFoundation, CssClasses, events } from '@material/tooltip';
 import { useFoundation } from '@rmwc/base';
 import { TooltipActivationT, TooltipProps } from '.';
-import crypto from 'crypto';
 
 export const useToolTipFoundation = (
   props: TooltipProps & React.HTMLProps<any>

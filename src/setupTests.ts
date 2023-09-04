@@ -3,6 +3,12 @@ import React from 'react';
 import rmwcTestPolyfill from './base/test-polyfill';
 import '@testing-library/jest-dom/extend-expect';
 
+Object.defineProperty(global, 'crypto', {
+  value: {
+    randomUUID: () => 123456
+  }
+});
+
 rmwcTestPolyfill();
 
 const consoleError = console.error;

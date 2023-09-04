@@ -4,10 +4,6 @@ import userEvent from '@testing-library/user-event';
 import { Tooltip } from './';
 import { RMWCProvider } from '../provider';
 
-jest.mock('crypto', () => ({
-  randomUUID: jest.fn().mockReturnValue(123456)
-}));
-
 describe('Tooltip', () => {
   it('renders', async () => {
     const { asFragment } = render(
