@@ -12,8 +12,8 @@ export const useTabBarFoundation = (
   const [activeTabIndex, setActiveTabIndex] = useState(
     props.activeTabIndex || 0
   );
-  const tabScrollerApi = useRef<TabScrollerApi>();
-  const setTabScrollerApi = (api: TabScrollerApi) =>
+  const tabScrollerApi = useRef<TabScrollerApi | null>();
+  const setTabScrollerApi = (api: TabScrollerApi | null) =>
     (tabScrollerApi.current = api);
 
   const tabListRef = useRef<TabApi[]>([]);
