@@ -36,7 +36,7 @@ Check out his other work at https://github.com/jamesmfriedman.
 
 v14.0.0 is here! This release includes:
 
-- support for material v14
+- support for material-components-web v14
 - support for react 18
 
 _View all release notes_ 👉 https://opencollective.com/rmwc/updates
