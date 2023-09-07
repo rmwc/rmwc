@@ -1,0 +1,50 @@
+{
+  "name": "@rmwc/data-table",
+  "version": "14.0.1-alpha.6",
+  "description": "RMWC Data Table Component",
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.js"
+    },
+    "./styles": {
+      "import": "./styles.js",
+      "require": "./styles.css"
+    }
+  },
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rmwc/rmwc.git"
+  },
+  "keywords": [
+    "rmwc"
+  ],
+  "author": "rmwc",
+  "private": false,
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rmwc/rmwc/issues"
+  },
+  "homepage": "https://github.com/rmwc/rmwc/tree/master/packages/readme/data-table",
+  "peerDependencies": {
+    "@material/data-table": "^14.0.0",
+    "react": ">=16.8.x",
+    "react-dom": ">=16.8.x"
+  },
+  "dependencies": {
+    "@rmwc/base": "workspace:*",
+    "@rmwc/checkbox": "workspace:*",
+    "@rmwc/icon": "workspace:*",
+    "@rmwc/select": "workspace:*",
+    "@rmwc/switch": "workspace:*",
+    "@rmwc/types": "workspace:*"
+  }
+}

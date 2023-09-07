@@ -1,0 +1,42 @@
+{
+  "name": "@rmwc/base",
+  "version": "14.0.1-alpha.6",
+  "description": "RMWC base module",
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.js"
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rmwc/rmwc.git"
+  },
+  "keywords": [
+    "rmwc"
+  ],
+  "author": "rmwc",
+  "private": false,
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rmwc/rmwc/issues"
+  },
+  "homepage": "https://github.com/rmwc/rmwc/tree/master/packages/readme/base#readme",
+  "peerDependencies": {
+    "@material/dom": "^14.0.0",
+    "react": ">=16.8.x",
+    "react-dom": ">=16.8.x"
+  },
+  "dependencies": {
+    "@rmwc/types": "workspace:*",
+    "classnames": "^2.3.1",
+    "hyperform": "^0.11.0",
+    "mutation-observer": "^1.0.3",
+    "tslib": "^2.4.0"
+  }
+}

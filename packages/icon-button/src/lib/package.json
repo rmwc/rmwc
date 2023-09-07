@@ -1,0 +1,46 @@
+{
+  "name": "@rmwc/icon-button",
+  "version": "14.0.1-alpha.0",
+  "description": "RMWC IconButton component",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "module": "next/index.js",
+  "sideEffects": [
+    "./styles.tsx",
+    "./styles.js",
+    "*.css"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "publish:dist": "npm publish dist --access=public",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rmwc/rmwc.git"
+  },
+  "keywords": [
+    "rmwc"
+  ],
+  "author": "rmwc",
+  "private": false,
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rmwc/rmwc/issues"
+  },
+  "homepage": "https://github.com/rmwc/rmwc/tree/master/src/icon-button#readme",
+  "peerDependencies": {
+    "react": ">=16.8.x",
+    "react-dom": ">=16.8.x"
+  },
+  "dependencies": {
+    "@material/icon-button": "^14.0.0",
+    "@rmwc/base": "workspace:*",
+    "@rmwc/icon": "workspace:*",
+    "@rmwc/ripple": "workspace:*",
+    "@rmwc/types": "workspace:*"
+  },
+  "gitHead": "d9befec0e3b258864b71686eecd16c16feb43cf1"
+}

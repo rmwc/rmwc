@@ -1,0 +1,13 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Fab > renders 1`] = `
+<div>
+  <button
+    class="mdc-fab"
+  >
+    <div
+      class="mdc-fab__ripple"
+    />
+  </button>
+</div>
+`;

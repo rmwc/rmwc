@@ -1,19 +1,27 @@
 const path = require('path');
 const fs = require('fs');
-const getAllPackages = require('./get-all-packages');
 
-const genDocExample = (packageName) => {
-  const readmeFiles = fs
-    .readdirSync(path.resolve('src', packageName))
-    .filter((fName) => fName.startsWith('readme') && fName.endsWith('.tsx'));
+const generateDocExamples = () => {
+  const readmeFiles = fs.readdirSync(
+    path.resolve('packages', 'readme', 'src', 'readmes')
+  );
 
   readmeFiles.forEach((fName) => {
-    const docsExamplePath = path.resolve('src', packageName, fName);
-    const examplesFilename =
-      fName === 'readme.tsx'
-        ? 'generated-examples.json'
-        : `generated-examples-${fName.slice(7, -4)}.json`;
-    const examplePath = path.resolve('src', packageName, examplesFilename);
+    const docsExamplePath = path.resolve(
+      'packages',
+      'readme',
+      'src',
+      'readmes',
+      fName
+    );
+    const exampleFileName = `${path.parse(fName).name}.json`;
+    const exampleFilePath = path.resolve(
+      'packages',
+      'readme',
+      'src',
+      'generated-examples',
+      exampleFileName
+    );
 
     if (fs.existsSync(docsExamplePath)) {
       const code = fs.readFileSync(docsExamplePath).toString();
@@ -48,20 +56,16 @@ const genDocExample = (packageName) => {
         return cleaned;
       });
 
-      fs.writeFile(examplePath, JSON.stringify(formattedMatches), () => {});
+      console.log(`Writing ${exampleFilePath}`);
+      fs.writeFile(exampleFilePath, JSON.stringify(formattedMatches), () => {});
     } else {
-      fs.writeFile(examplePath, JSON.stringify([]), () => {});
+      fs.writeFile(exampleFilePath, JSON.stringify([]), () => {});
     }
   });
 };
 
 try {
-  getAllPackages()
-    .filter((name) => !['rmwc', '@types'].includes(name))
-    .forEach((d) => {
-      console.log(`Generating Examples For: ${d}`);
-      genDocExample(d);
-    });
+  generateDocExamples();
 } catch (err) {
   console.error(err.toString());
 }

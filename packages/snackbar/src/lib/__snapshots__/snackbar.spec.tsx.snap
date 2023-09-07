@@ -1,0 +1,34 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Snackbar > renders 1`] = `
+<DocumentFragment>
+  <div
+    aria-atomic="true"
+    aria-hidden="true"
+    aria-live="assertive"
+    class="mdc-snackbar mdc-snackbar--opening"
+  >
+    <div
+      class="mdc-snackbar__surface"
+    >
+      <div
+        aria-live="polite"
+        class="mdc-snackbar__label"
+        role="status"
+      >
+        This is a new message
+        <div
+          style="display: none;"
+        />
+      </div>
+      <div
+        class="mdc-snackbar__actions"
+      >
+        <div />
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`SnackbarQueue > renders 1`] = `[Function]`;

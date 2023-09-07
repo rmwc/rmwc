@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="google-site-verification"
+      content="zArJNTXiV31Ctcf8DTTd9DHQxIcRv5j67mRvpyMN8VE"
+    />
+    <meta
+      name="description"
+      content="RMWC is a React UI Kit built on Google's official Material Components
+      Web library."
+    />
+    <meta
+      name="keywords"
+      content="RMWC, Material, Design, Components, Web, React, material-components-web"
+    />
+    <!--
+      manifest.json provides metadata used when your web app is added to the
+      homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
+    -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="%PUBLIC_URL%/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="%PUBLIC_URL%/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="%PUBLIC_URL%/favicon-16x16.png"
+    />
+    <link
+      rel="mask-icon"
+      href="%PUBLIC_URL%/safari-pinned-tab.svg"
+      color="#5bbad5"
+    />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="theme-color" content="#ffffff" />
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>RMWC | React Material Web Components</title>
+
+    <style>
+      .app-loading-shim {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        font-family: sans-serif;
+        font-size: 32px;
+        opacity: 0.4;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        justify-content: center;
+      }
+
+      .app-loading-shim small {
+        font-size: 16px;
+        display: block;
+        margin-top: 8px;
+      }
+    </style>
+
+    <script type="text/javascript">
+      if (window.location.search.indexOf('p=') !== -1) {
+        const params = window.location.search
+          .slice(1)
+          .split('&')
+          .reduce((acc, part) => {
+            const [key, val] = part.split('=', 2);
+            acc[key] = val;
+            return acc;
+          }, {});
+        if (params.p) {
+          window.history.replaceState(null, null, params.p);
+        }
+      }
+    </script>
+  </head>
+
+  <body class="mdc-typography mdc-theme--background">
+    <noscript>
+      You need to enable JavaScript to run this app.
+    </noscript>
+    <div id="root">
+      <div class="app-loading-shim">
+        RMWC
+        <small>Loading...</small>
+      </div>
+    </div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  </body>
+</html>
