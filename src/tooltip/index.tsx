@@ -3,14 +3,17 @@ import * as RMWC from '@rmwc/types';
 import { classNames, createComponent, Tag } from '@rmwc/base';
 import { useProviderContext } from '@rmwc/provider';
 import { useToolTipFoundation } from './foundation';
-import { AnchorBoundaryType, CssClasses } from '@material/tooltip';
+import { AnchorBoundaryType } from '@material/tooltip';
+import { TooltipAlignT } from './types';
 
 export type TooltipActivationT = 'hover' | 'click' | 'focus';
 
 /** A Tooltip component for displaying informative popover information. */
 export interface TooltipProps {
+  /** How to align the tooltip. */
+  align?: TooltipAlignT;
   /** The overlay for the tooltip. */
-  overlay: React.ReactNode;
+  overlay?: React.ReactNode;
   /** The children that the tooltip belongs to. Must be a single React element. */
   children: React.ReactNode;
   /** Activate the tooltip through one or more interactions. Defaults to `['hover', 'focus']`. */
@@ -23,12 +26,14 @@ export interface TooltipProps {
   leaveDelay?: number;
   /** Manually control the open state */
   open?: boolean;
-  /** Whether or not to show an arrow on the Tooltip. Defaults to `false`. */
-  showArrow?: boolean;
   /** Specify whether the anchor element is bounded (element has an identifiable boundary such as a button) or unbounded (element does not have a visually declared boundary such as a text link). */
   anchorBoundaryType?: AnchorBoundaryType;
   /** Specify whether tooltip should be persistent. Persistent tooltip are triggered by clicks. */
   isPersistent?: boolean;
+  /** MCW comes with default styling for rich tooltips. This prop specifies whether to disable such default styling. */
+  disableRichStyling?: boolean;
+  /** Control whether to stay open on hover. This is useful for interactive tooltips. */
+  stayOpenOnHover?: boolean;
 }
 
 export type TooltipHTMLProps = RMWC.HTMLProps<HTMLDivElement>;
@@ -44,12 +49,12 @@ export const Tooltip: RMWC.ComponentType<
 ) {
   const providerContext = useProviderContext();
 
-  const { anchorEl, rootEl, uniqueId } = useToolTipFoundation(props);
+  const { anchorEl, rootEl, isShown, surfaceEl } = useToolTipFoundation(props);
 
   // merge together provider options
   const {
+    disableRichStyling = false,
     isPersistent,
-    showArrow = false,
     open,
     overlay
   } = {
@@ -57,12 +62,13 @@ export const Tooltip: RMWC.ComponentType<
     ...props
   };
 
+  const uniqueId = crypto.randomUUID();
+
   const isRich = typeof overlay !== 'string';
 
   const className = classNames('mdc-tooltip', {
-    'mdc-tooltip--shown': open,
-    'mdc-tooltip--rich': isRich,
-    'rmwc-tooltip--show-arrow': showArrow
+    'mdc-tooltip--rich': isRich && !disableRichStyling,
+    'rmwc-tooltip': disableRichStyling
   });
 
   const child = React.Children.only(props.children);
@@ -81,17 +87,18 @@ export const Tooltip: RMWC.ComponentType<
           'data-tooltip-id': uniqueId
         })}
         <Tag
+          tabIndex={isPersistent && -1}
           tag="div"
-          className={`${CssClasses.RICH} mdc-tooltip`}
+          className={className}
           id={uniqueId}
-          role="tooltip"
-          aria-hidden="true"
+          role={isRich ? 'dialog' : 'tooltip'}
+          aria-hidden={isShown}
           ref={ref}
           element={rootEl}
           data-mdc-tooltip-persistent={isPersistent}
         >
           <div className="mdc-tooltip__surface mdc-tooltip__surface-animation">
-            <div className="mdc-tooltip__content">{overlay}</div>
+            {overlay}
           </div>
         </Tag>
       </Tag>
@@ -105,22 +112,65 @@ export const Tooltip: RMWC.ComponentType<
         className={className}
         id={uniqueId}
         role="tooltip"
-        aria-hidden="true"
+        aria-hidden={isShown}
         ref={ref}
         element={rootEl}
-        data-mdc-tooltip-persistent={open}
+        data-mdc-tooltip-persistent={open || isPersistent}
       >
-        <div className="mdc-tooltip__surface mdc-tooltip__surface-animation">
+        <Tag
+          tag="div"
+          element={surfaceEl}
+          className="mdc-tooltip__surface mdc-tooltip__surface-animation"
+        >
           {overlay}
-        </div>
+        </Tag>
       </Tag>
-      <Tag tag="fragment" element={anchorEl} ref={anchorEl.reactRef}>
-        {React.cloneElement(child, {
-          ...anchorEl.props(child.props),
-          'aria-describedby': uniqueId,
-          'data-tooltip-id': uniqueId
-        })}
-      </Tag>
+      {React.cloneElement(child, {
+        ...anchorEl.props(child.props),
+        element: anchorEl,
+        ref: anchorEl.reactRef,
+        'aria-describedby': uniqueId,
+        'data-tooltip-id': uniqueId
+      })}
     </>
   );
 });
+
+export interface RichTooltipTitleProps {}
+
+export const RichTooltipTitle = createComponent<RichTooltipTitleProps>(
+  function RichTooltipTitle(props, ref) {
+    const { children } = props;
+    return (
+      <Tag {...props} tag="h2" className="mdc-tooltip__title" ref={ref}>
+        {children}
+      </Tag>
+    );
+  }
+);
+
+export interface RichTooltipContentProps {}
+
+export const RichTooltipContent = createComponent<RichTooltipContentProps>(
+  function RichTooltipContent(props, ref) {
+    const { children } = props;
+    return (
+      <Tag {...props} tag="p" className="mdc-tooltip__content" ref={ref}>
+        {children}
+      </Tag>
+    );
+  }
+);
+
+export interface RichTooltipActionsProps {}
+
+export const RichTooltipActions = createComponent<RichTooltipActionsProps>(
+  function RichTooltipActions(props, ref) {
+    const { children } = props;
+    return (
+      <Tag {...props} tag="p" className="mdc-tooltip--rich-actions" ref={ref}>
+        {children}
+      </Tag>
+    );
+  }
+);

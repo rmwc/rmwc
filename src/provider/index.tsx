@@ -13,7 +13,7 @@ type TooltipAlignT =
   | 'bottomLeft'
   | 'bottomRight';
 
-type TooltipOptions = {
+export type TooltipOptions = {
   /** How to align the tooltip. Defaults to `top`. */
   align?: TooltipAlignT;
   /** Activate the tooltip through one or more interactions. Defaults to `['hover', 'focus']`. */

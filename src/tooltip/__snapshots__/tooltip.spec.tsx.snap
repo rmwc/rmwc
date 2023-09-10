@@ -13,20 +13,16 @@ exports[`Tooltip can be rich 1`] = `
       test
     </span>
     <div
-      aria-hidden="true"
-      class="mdc-tooltip--rich mdc-tooltip"
+      aria-hidden="false"
+      class="mdc-tooltip mdc-tooltip--rich"
       id="123456"
-      role="tooltip"
+      role="dialog"
     >
       <div
         class="mdc-tooltip__surface mdc-tooltip__surface-animation"
       >
-        <div
-          class="mdc-tooltip__content"
-        >
-          <div>
-            tooltip
-          </div>
+        <div>
+          tooltip
         </div>
       </div>
     </div>
@@ -47,21 +43,18 @@ exports[`Tooltip can be rich and persistent 1`] = `
       test
     </span>
     <div
-      aria-hidden="true"
-      class="mdc-tooltip--rich mdc-tooltip"
+      aria-hidden="false"
+      class="mdc-tooltip mdc-tooltip--rich"
       data-mdc-tooltip-persistent="true"
       id="123456"
-      role="tooltip"
+      role="dialog"
+      tabindex="-1"
     >
       <div
         class="mdc-tooltip__surface mdc-tooltip__surface-animation"
       >
-        <div
-          class="mdc-tooltip__content"
-        >
-          <div>
-            tooltip
-          </div>
+        <div>
+          tooltip
         </div>
       </div>
     </div>
@@ -69,22 +62,10 @@ exports[`Tooltip can be rich and persistent 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Tooltip can display arrow 1`] = `
+exports[`Tooltip can be rich with default rich styling disabled 1`] = `
 <DocumentFragment>
   <div
-    aria-hidden="true"
-    class="mdc-tooltip rmwc-tooltip--show-arrow"
-    id="123456"
-    role="tooltip"
-  >
-    <div
-      class="mdc-tooltip__surface mdc-tooltip__surface-animation"
-    >
-      tooltip
-    </div>
-  </div>
-  <fragment
-    class=""
+    class="mdc-tooltip-wrapper--rich"
   >
     <span
       aria-describedby="123456"
@@ -93,7 +74,21 @@ exports[`Tooltip can display arrow 1`] = `
     >
       test
     </span>
-  </fragment>
+    <div
+      aria-hidden="false"
+      class="mdc-tooltip rmwc-tooltip"
+      id="123456"
+      role="dialog"
+    >
+      <div
+        class="mdc-tooltip__surface mdc-tooltip__surface-animation"
+      >
+        <div>
+          tooltip
+        </div>
+      </div>
+    </div>
+  </div>
 </DocumentFragment>
 `;
 
@@ -101,7 +96,7 @@ exports[`Tooltip renders 1`] = `
 <DocumentFragment>
   <div
     aria-hidden="true"
-    class="mdc-tooltip mdc-tooltip--shown mdc-tooltip--showing"
+    class="mdc-tooltip mdc-tooltip--showing"
     data-mdc-tooltip-persistent="true"
     id="123456"
     role="tooltip"
@@ -114,16 +109,13 @@ exports[`Tooltip renders 1`] = `
       tooltip
     </div>
   </div>
-  <fragment
+  <span
+    aria-describedby="123456"
     class=""
+    data-tooltip-id="123456"
+    element="[object Object]"
   >
-    <span
-      aria-describedby="123456"
-      class=""
-      data-tooltip-id="123456"
-    >
-      test
-    </span>
-  </fragment>
+    test
+  </span>
 </DocumentFragment>
 `;

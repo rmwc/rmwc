@@ -58,22 +58,6 @@ describe('Tooltip', () => {
     );
   });
 
-  it('can display arrow', () => {
-    const { asFragment } = render(
-      <RMWCProvider tooltip={{}}>
-        <Tooltip overlay="tooltip" showArrow>
-          <span>test</span>
-        </Tooltip>
-      </RMWCProvider>
-    );
-
-    expect(screen.getByText('tooltip').parentElement).toHaveClass(
-      'rmwc-tooltip--show-arrow'
-    );
-
-    expect(asFragment()).toMatchSnapshot();
-  });
-
   it('can be rich', () => {
     const { asFragment } = render(
       <RMWCProvider tooltip={{}}>
@@ -87,6 +71,16 @@ describe('Tooltip', () => {
 
     expect(screen.getByText('test').parentElement).toHaveClass(
       'mdc-tooltip-wrapper--rich'
+    );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('can be rich with default rich styling disabled', () => {
+    const { asFragment } = render(
+      <Tooltip overlay={<div>tooltip</div>} disableRichStyling>
+        <span>test</span>
+      </Tooltip>
     );
 
     expect(asFragment()).toMatchSnapshot();
