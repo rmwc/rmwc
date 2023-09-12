@@ -38,6 +38,7 @@ v14.0.0 is here! This release includes:
 
 - support for material-components-web v14
 - support for react 18
+- new and updated tooltip that follow material design principles (with minimum breaking changes as possible)
 
 _View all release notes_ 👉 https://opencollective.com/rmwc/updates
 
