@@ -71,7 +71,7 @@ The `ThemeProvider` is an optional component that allows you to specify theme co
 
 You don't have to pass in all options. The `ThemeProvider` will automatically adjust some of the values like `onSurface` white or black text depending on colors contrast ratio.
 
-Theming in `material-components-web` isn't perfect, but a few basic options will get you most of the way. Try using the ThemePicker at the top and selecting "Shrine". You'll see that most things are colored appropriately, but the defaults provided for things like Buttons and tabs still have to have their colors overridden.
+Theming in `material-components-web` isn't perfect, but a few basic options will get you most of the way. Try using the ThemePicker at the top and selecting "Miami". You'll see that most things are colored appropriately, but the defaults provided for things like Buttons and tabs still have to have their colors overridden.
 
 ```jsx
 <>
@@ -116,9 +116,7 @@ The Theme component allows you to apply theme colors to RMWC components, or comp
 ```jsx
 <Theme use={['primaryBg', 'onPrimary']} wrap>
   {/* Add Theme colors to your own components. */}
-  <div style={{ width: '4rem', height: '4rem', padding: '1rem' }}>
-    Cookies
-  </div>
+  <div style={{ width: '4rem', height: '4rem', padding: '1rem' }}>Cookies</div>
 </Theme>
 ```
 
@@ -137,33 +135,31 @@ The Theme component allows you to apply theme colors to RMWC components, or comp
 <>
   {/* Text is one of the cases where `wrap` is not required. By default `Theme` will insert `span` tags. */}
   <h3>
-    I <Theme use="primary">Want</Theme>{' '}
-    <Theme use="secondary">Icecream</Theme>
+    I <Theme use="primary">Want</Theme> <Theme use="secondary">Icecream</Theme>
   </h3>
 </>
 ```
 
 ## ThemeProvider
+
 A ThemeProvider. This sets theme colors for its child tree.
 
 ### Props
 
-| Name | Type | Description |
-|------|------|-------------|
-| `children` | `React.ReactNode` | Children to render |
-| `options` | `{ [key: string]: string }` | Any theme option pointing to a valid CSS value. |
-| `style` | `Object` | Additional standard inline styles that will be merged into the style tag. |
-| `wrap` | `undefined \| false \| true` | Instead of injecting a div tag, wrap a child component by merging the theme styles directly onto it. Useful when you don't want to mess with layout. |
-
+| Name       | Type                         | Description                                                                                                                                          |
+| ---------- | ---------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `children` | `React.ReactNode`            | Children to render                                                                                                                                   |
+| `options`  | `{ [key: string]: string }`  | Any theme option pointing to a valid CSS value.                                                                                                      |
+| `style`    | `Object`                     | Additional standard inline styles that will be merged into the style tag.                                                                            |
+| `wrap`     | `undefined \| false \| true` | Instead of injecting a div tag, wrap a child component by merging the theme styles directly onto it. Useful when you don't want to mess with layout. |
 
 ## Theme
+
 A Theme Component.
 
 ### Props
 
-| Name | Type | Description |
-|------|------|-------------|
-| `use` | `RMWC.ThemePropT` | A theme option as a string, a space separated string for multiple values, or an array of valid theme options. |
+| Name   | Type                         | Description                                                                                                                                                                   |
+| ------ | ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `use`  | `RMWC.ThemePropT`            | A theme option as a string, a space separated string for multiple values, or an array of valid theme options.                                                                 |
 | `wrap` | `undefined \| false \| true` | Collapse the styles directly onto the child component. This eliminates the need for a wrapping `span` element and may be required for applying things like background-colors. |
-
-
