@@ -80,7 +80,7 @@
     "eslint-plugin-babel": "^5.3.1",
     "generate-changelog": "^1.8.0",
     "husky": "^8.0.3",
-    "lerna": "^6.6.1",
+    "lerna": "^7.3.0",
     "module-alias": "^2.2.2",
     "prettier": "2.3.1",
     "react": "^18.2.0",
