@@ -218,7 +218,7 @@ exports[`Slider > renders with range slider props 1`] = `
       aria-valuenow="9"
       class="mdc-slider__input"
       max="10"
-      min="1"
+      min="2"
       name="rangeEnd"
       type="range"
       value="9"
@@ -247,6 +247,97 @@ exports[`Slider > renders with range slider props 1`] = `
     <div
       class="mdc-slider__thumb"
     >
+      <div
+        class="mdc-slider__thumb-knob"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Slider renders with tick marks 1`] = `
+<DocumentFragment>
+  <div
+    class="mdc-slider mdc-slider--discrete mdc-slider--tick-marks"
+    tabindex="0"
+  >
+    <input
+      aria-label="Slider value"
+      aria-valuemax="100"
+      class="mdc-slider__input"
+      max="100"
+      min="0"
+      name="rangeEnd"
+      step="10"
+      type="range"
+      value=""
+    />
+    <div
+      class="mdc-slider__track"
+    >
+      <div
+        class="mdc-slider__track--inactive"
+      />
+      <div
+        class="mdc-slider__track--active"
+      >
+        <div
+          class="mdc-slider__track--active_fill"
+        />
+      </div>
+      <div
+        class="mdc-slider__tick-marks"
+      >
+        <div
+          class="mdc-slider__tick-mark--active"
+        />
+        <div
+          class="mdc-slider__tick-mark--inactive"
+        />
+        <div
+          class="mdc-slider__tick-mark--inactive"
+        />
+        <div
+          class="mdc-slider__tick-mark--inactive"
+        />
+        <div
+          class="mdc-slider__tick-mark--inactive"
+        />
+        <div
+          class="mdc-slider__tick-mark--inactive"
+        />
+        <div
+          class="mdc-slider__tick-mark--inactive"
+        />
+        <div
+          class="mdc-slider__tick-mark--inactive"
+        />
+        <div
+          class="mdc-slider__tick-mark--inactive"
+        />
+        <div
+          class="mdc-slider__tick-mark--inactive"
+        />
+        <div
+          class="mdc-slider__tick-mark--inactive"
+        />
+      </div>
+    </div>
+    <div
+      class="mdc-slider__thumb"
+    >
+      <div
+        aria-hidden="true"
+        class="mdc-slider__value-indicator-container"
+      >
+        <div
+          class="mdc-slider__value-indicator"
+        >
+          <span
+            class="mdc-slider__value-indicator-text"
+          />
+        </div>
+      </div>
       <div
         class="mdc-slider__thumb-knob"
       />
