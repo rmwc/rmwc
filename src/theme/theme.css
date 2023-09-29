@@ -111,3 +111,11 @@ body .mdc-chip__text__primary-action:focus {
 .mdc-linear-progress {
   text-align: left;
 }
+
+/****************************************************************
+ * Range input
+ ****************************************************************/
+/** Corrects missing range slider input background bar */
+input[type='range'] {
+  appearance: auto;
+}
