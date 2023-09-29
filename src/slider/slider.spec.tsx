@@ -32,6 +32,11 @@ describe('Slider', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
+  it('renders with tick marks', async () => {
+    const { asFragment } = render(<Slider discrete displayMarkers step={10} />);
+    expect(asFragment()).toMatchSnapshot();
+  });
+
   it('handles min > 100', () => {
     render(<Slider min={101} max={200} value={102} />);
   });

@@ -68,22 +68,34 @@ export const useSliderFoundation = (
           getInput(thumb) === document.activeElement,
         shouldHideFocusStylesForPointerEvents: () => false,
         getThumbKnobWidth: (thumb: Thumb) => {
-          const thumbKnob = getThumbEl(thumb)?.querySelector<HTMLElement>(
-            `.${cssClasses.THUMB_KNOB}`
-          )!;
-          return thumbKnob.getBoundingClientRect().width;
+          const thumbEl = getThumbEl(thumb);
+          if (thumbEl) {
+            const thumbKnob = thumbEl.querySelector<HTMLElement>(
+              `.${cssClasses.THUMB_KNOB}`
+            )!;
+            return thumbKnob.getBoundingClientRect().width;
+          }
+          return emptyClientRect.width;
         },
         getThumbBoundingClientRect: (thumb: Thumb) => {
           return getThumbEl(thumb)?.getBoundingClientRect() ?? emptyClientRect;
         },
         getBoundingClientRect: () => {
-          return rootEl.ref?.getBoundingClientRect() ?? emptyClientRect;
+          return rootEl.ref
+            ? rootEl.ref.getBoundingClientRect()
+            : emptyClientRect;
         },
         getValueIndicatorContainerWidth: (thumb: Thumb) => {
-          const thumbKnob = getThumbEl(thumb)?.querySelector<HTMLElement>(
-            `.${cssClasses.VALUE_INDICATOR_CONTAINER}`
-          )!;
-          return thumbKnob.getBoundingClientRect().width;
+          const thumbKnob = getThumbEl(thumb);
+
+          if (thumbKnob) {
+            const valueIndicatorContainer =
+              thumbKnob.querySelector<HTMLElement>(
+                `.${cssClasses.VALUE_INDICATOR_CONTAINER}`
+              )!;
+            return valueIndicatorContainer.getBoundingClientRect().width;
+          }
+          return emptyClientRect.width;
         },
         isRTL: () =>
           !!rootEl.ref && getComputedStyle(rootEl.ref).direction === 'rtl',
@@ -100,10 +112,14 @@ export const useSliderFoundation = (
           trackActiveEl.setStyle(propertyName, null);
         },
         setValueIndicatorText: (value: number, thumb: Thumb) => {
-          const valueIndicatorEl = getThumbEl(
-            thumb
-          )?.querySelector<HTMLElement>(`.${cssClasses.VALUE_INDICATOR_TEXT}`);
-          valueIndicatorEl!.textContent = String(value);
+          const thumbKnob = getThumbEl(thumb);
+          if (thumbKnob) {
+            const valueIndicatorEl = thumbKnob.querySelector<HTMLElement>(
+              `.${cssClasses.VALUE_INDICATOR_TEXT}`
+            );
+            valueIndicatorEl!.textContent = String(value);
+          }
+          return '';
         },
         getValueToAriaValueTextFn: () => valueToAriaValueTextFn,
         updateTickMarks: (tickMarks: TickMark[]) => {
@@ -116,14 +132,16 @@ export const useSliderFoundation = (
             const track = rootEl.ref?.querySelector<HTMLElement>(
               `.${cssClasses.TRACK}`
             );
-            track!.appendChild(tickMarksContainer);
+            if (track) {
+              track.appendChild(tickMarksContainer);
+            }
           }
 
           if (tickMarks.length !== tickMarksContainer.children.length) {
             while (tickMarksContainer.firstChild) {
               tickMarksContainer.removeChild(tickMarksContainer.firstChild);
             }
-            addTickMarks(tickMarksContainer, tickMarks);
+            addTickMarks(tickMarks);
           } else {
             updateTickMarks(tickMarksContainer, tickMarks);
           }
@@ -197,17 +215,14 @@ export const useSliderFoundation = (
   const getInput = (thumb: Thumb) => {
     return thumb === Thumb.END
       ? inputsRef.current?.[inputsRef.current.length - 1]
-      : inputsRef.current[0];
+      : inputsRef.current?.[0];
   };
 
   const [tickMarks, setTickMarks] = React.useState<
     Array<{ className: string }>
   >([]);
 
-  const addTickMarks = (
-    tickMarkContainer: HTMLElement,
-    tickMarks: TickMark[]
-  ) => {
+  const addTickMarks = (tickMarks: TickMark[]) => {
     const nextTickMarks = [];
     for (let i = 0; i < tickMarks.length; i++) {
       const tickMarkClass =
@@ -234,6 +249,10 @@ export const useSliderFoundation = (
       }
     }
   };
+
+  useEffect(() => {
+    foundation.layout();
+  }, [foundation]);
 
   // range
   useEffect(() => {
@@ -294,9 +313,7 @@ export const useSliderFoundation = (
         );
         valueStart = max;
       }
-
-      // there seems to be a timing issue with setValueStart. Hence wrapped in requestAnimationFrame
-      window.requestAnimationFrame(() => foundation.setValueStart(valueStart));
+      foundation.setValueStart(valueStart);
     }
   }, [props.range, props.valueStart, foundation]);
 
