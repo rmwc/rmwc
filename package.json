@@ -94,7 +94,8 @@
     "preversion": "npm run clean && npm run docgen && npm run build:docsite && git add --all && git commit --allow-empty -m 'Generating Props'",
     "version": "node scripts/fix-package-version && npm run changelog && git add CHANGELOG.md && git commit --allow-empty -m 'Updating Changelog'",
     "prepare": "husky install",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "validate:actions": "action-validator .github/workflows/automerge.yml && action-validator .github/workflows/codeql-analysis.yml && action-validator .github/workflows/publish.yml && action-validator .github/workflows/unit-test.yml && action-validator .github/workflows/version.yml"
   },
   "devDependencies": {
     "@action-validator/cli": "^0.5.3",
