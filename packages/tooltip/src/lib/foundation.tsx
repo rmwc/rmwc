@@ -1,6 +1,7 @@
 import { CssClasses, MDCTooltipFoundation, events } from '@material/tooltip';
 import { useFoundation } from '@rmwc/base';
-import React, { useCallback, useEffect } from 'react';
+import { useCallback, useEffect } from 'react';
+import { ALIGN_MAP } from './constants';
 import { TooltipActivationT, TooltipProps } from './tooltip';
 
 export const useToolTipFoundation = (
@@ -8,8 +9,8 @@ export const useToolTipFoundation = (
 ) => {
   const { foundation, ...elements } = useFoundation({
     props,
-    elements: { anchorEl: true, rootEl: true },
-    foundation: ({ anchorEl, emit, rootEl }) => {
+    elements: { anchorEl: true, rootEl: true, surfaceEl: true },
+    foundation: ({ anchorEl, emit, rootEl, surfaceEl }) => {
       return new MDCTooltipFoundation({
         getAttribute: (attr) => rootEl.ref?.getAttribute(attr) as string | null,
         setAttribute: (attr, value) => {
@@ -19,27 +20,23 @@ export const useToolTipFoundation = (
           rootEl.removeProp(attr as any);
         },
         addClass: (className) => {
-          return rootEl.addClass(className);
+          rootEl.ref?.classList.add(className);
         },
-        hasClass: (className) => {
-          return rootEl.ref ? rootEl.ref?.classList.contains(className) : false;
-        },
+        hasClass: (className) =>
+          rootEl.ref ? rootEl.ref?.classList.contains(className) : false,
         removeClass: (className) => {
-          rootEl.removeClass(className);
+          rootEl.ref?.classList.remove(className);
         },
         getComputedStyleProperty: (propertyName) => {
-          return !!rootEl.ref
+          return rootEl.ref
             ? window.getComputedStyle(rootEl.ref).getPropertyValue(propertyName)
             : '';
         },
         setStyleProperty: (propertyName, value) => {
-          (rootEl.ref as HTMLElement).style.setProperty(propertyName, value);
+          rootEl.setStyle(propertyName, value);
         },
         setSurfaceAnimationStyleProperty: (propertyName, value) => {
-          const surface = rootEl.ref?.querySelector<HTMLElement>(
-            `.${CssClasses.SURFACE_ANIMATION}`
-          );
-          surface?.style.setProperty(propertyName, value);
+          surfaceEl.setStyle(propertyName, value);
         },
         getViewportWidth: () => window.innerWidth,
         getViewportHeight: () => window.innerHeight,
@@ -47,31 +44,28 @@ export const useToolTipFoundation = (
           return rootEl.ref === null
             ? { width: 0, height: 0 }
             : {
-                width: (rootEl.ref as HTMLElement).offsetWidth,
-                height: (rootEl.ref as HTMLElement).offsetHeight
+                width: rootEl.ref.offsetWidth,
+                height: rootEl.ref.offsetHeight
               };
         },
         getAnchorBoundingRect: () => {
-          return anchorEl.ref ? anchorEl.ref?.getBoundingClientRect() : null;
+          return anchorEl.ref?.getBoundingClientRect() ?? null;
         },
         getParentBoundingRect: () => {
           return rootEl.ref?.parentElement?.getBoundingClientRect() ?? null;
         },
         getAnchorAttribute: (attr) => {
-          return anchorEl.ref
-            ? (anchorEl.ref?.getAttribute(attr) as string | null)
-            : null;
+          return anchorEl.ref?.getAttribute(attr) ?? null;
         },
-        setAnchorAttribute: (attr, value) => {
-          anchorEl?.setProp(attr as any, value);
-        },
+        setAnchorAttribute: (attr, value) =>
+          anchorEl?.setProp(attr as any, value),
         isRTL: () =>
           !!rootEl.ref && getComputedStyle(rootEl.ref).direction === 'rtl',
         anchorContainsElement: (element) => {
           return !!anchorEl.ref?.contains(element);
         },
         tooltipContainsElement: (element) => {
-          return rootEl.ref?.contains(element) ?? false;
+          return !!rootEl.ref?.contains(element);
         },
         focusAnchorElement: () => {
           anchorEl.ref?.focus();
@@ -87,12 +81,16 @@ export const useToolTipFoundation = (
           }
         },
         registerAnchorEventHandler: (evt, handler) => {
-          anchorEl.ref?.addEventListener(evt, handler);
+          anchorEl.addEventListener(evt, handler);
         },
         deregisterAnchorEventHandler: (evt, handler) => {
-          anchorEl.ref?.removeEventListener(evt, handler);
+          anchorEl.removeEventListener(evt, handler);
         },
         registerDocumentEventHandler: (evt, handler) => {
+          if (props.open) {
+            // to support open we need to disable event listeners for document
+            return;
+          }
           document.body.addEventListener(evt, handler);
         },
         deregisterDocumentEventHandler: (evt, handler) => {
@@ -154,25 +152,26 @@ export const useToolTipFoundation = (
 
   const {
     anchorBoundaryType,
+    align,
     activateOn = ['hover', 'focus'],
     enterDelay,
     leaveDelay,
     open
   } = props;
 
-  const { anchorEl } = elements;
+  const { anchorEl, rootEl } = elements;
 
-  const uniqueId = crypto.randomUUID();
+  const isShown = foundation.isShown();
 
   const {
-    isPersistent,
     onClick,
     onFocus,
     onMouseEnter,
     onMouseLeave,
     onTouchEnd,
     onTouchStart,
-    onTransitionEnd
+    onTransitionEnd,
+    stayOpenOnHover
   } = props;
 
   const handleMouseEnter = useCallback(
@@ -237,26 +236,25 @@ export const useToolTipFoundation = (
         ? activateOn.includes(type)
         : activateOn === type;
 
-    if (foundation.isRich() && foundation.isPersistent()) {
-      anchorEl.addEventListener('onClick', handleClick);
+    if (foundation.isPersistent()) {
+      anchorEl.addEventListener('click', handleClick);
     } else {
       calculateActivationType('click') &&
-        anchorEl.addEventListener('onClick', handleClick);
+        anchorEl.addEventListener('click', handleClick);
       calculateActivationType('hover') &&
-        !open &&
-        anchorEl.addEventListener('onMouseEnter', handleMouseEnter);
+        anchorEl.addEventListener('mouseenter', handleMouseEnter);
       calculateActivationType('focus') &&
-        anchorEl.addEventListener('onFocus', handleFocus);
+        anchorEl.addEventListener('focus', handleFocus);
       calculateActivationType('hover') &&
         !open &&
-        anchorEl.addEventListener('onMouseLeave', handleMouseLeave);
+        anchorEl.addEventListener('mouseleave', handleMouseLeave);
       anchorEl.addEventListener('onTouchStart', handleTouchstart);
       anchorEl.addEventListener('onTouchEnd', handleTouchend);
+      rootEl.addEventListener('transitionend', handleTransitionEnd);
     }
   }, [
     activateOn,
     anchorEl,
-    isPersistent,
     foundation,
     handleMouseEnter,
     handleMouseLeave,
@@ -265,30 +263,40 @@ export const useToolTipFoundation = (
     handleClick,
     handleTouchstart,
     handleTouchend,
-    open
+    open,
+    rootEl
   ]);
+
+  // handle align
+  useEffect(() => {
+    if (!align) {
+      return;
+    }
+    if (align) {
+      const position = ALIGN_MAP[align];
+      foundation.setTooltipPosition(position);
+    }
+  }, [foundation, align]);
 
   // set anchorBoundary
   useEffect(() => {
     anchorBoundaryType && foundation.setAnchorBoundaryType(anchorBoundaryType);
   }, [anchorBoundaryType, foundation]);
 
-  // set hide delay
-  useEffect(() => {
-    leaveDelay && foundation.setHideDelay(leaveDelay);
-  }, [foundation, leaveDelay]);
-
   // set show delay
   useEffect(() => {
     enterDelay && foundation.setShowDelay(enterDelay);
   }, [foundation, enterDelay]);
 
+  // set hide delay
+  useEffect(() => {
+    leaveDelay && foundation.setHideDelay(leaveDelay);
+  }, [foundation, leaveDelay]);
+
   // handle hide
   useEffect(() => {
-    if (open !== undefined && open === false) {
+    if (!open) {
       foundation.hide();
-      anchorEl.removeEventListener('onMouseEnter', handleMouseEnter);
-      anchorEl.removeEventListener('onMouseLeave', handleMouseLeave);
     }
   }, [foundation, open, anchorEl, handleMouseEnter, handleMouseLeave]);
 
@@ -297,5 +305,15 @@ export const useToolTipFoundation = (
     open && foundation.show();
   }, [foundation, open]);
 
-  return { foundation, ...elements, uniqueId };
+  // handle persistance of interactive rich tooltip
+  useEffect(() => {
+    stayOpenOnHover &&
+      rootEl.addEventListener('mouseover', () => foundation.show());
+  }, [stayOpenOnHover, foundation, rootEl]);
+
+  return {
+    foundation,
+    isShown,
+    ...elements
+  };
 };

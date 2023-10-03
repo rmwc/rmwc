@@ -14,7 +14,12 @@ import { Avatar } from '@rmwc/avatar';
 import { Button } from '@rmwc/button';
 import { IconButton } from '@rmwc/icon-button';
 import { RMWCProvider } from '@rmwc/provider';
-import { Tooltip } from '@rmwc/tooltip';
+import {
+  RichTooltipActions,
+  RichTooltipContent,
+  RichTooltipTitle,
+  Tooltip
+} from '@rmwc/tooltip';
 
 export default function Readme() {
   return (
@@ -52,17 +57,12 @@ export default function Readme() {
       </DocsExample>
 
       <DocsSubtitle>Variants</DocsSubtitle>
-      <DocsExample label="With Arrow">
-        <Tooltip overlay="Cake" showArrow>
-          <IconButton icon="cake" />
-        </Tooltip>
-      </DocsExample>
       <DocsExample label="Controlled / Always open">
         <Tooltip overlay="Hello" open={true}>
           <IconButton icon="mood" />
         </Tooltip>
       </DocsExample>
-      <DocsExample label="Rich overlay">
+      <DocsExample label="Elements as overlay">
         <Tooltip
           overlay={
             <div style={{ display: 'flex' }}>
@@ -77,13 +77,13 @@ export default function Readme() {
               </div>
             </div>
           }
+          disableRichStyling
         >
           <span role="button">S. Rogers</span>
         </Tooltip>
       </DocsExample>
-      <DocsExample label="Styled overlay">
+      <DocsExample label="Styled Content">
         <Tooltip
-          // You make something like a popover window by just styling your inner overlay.
           overlay={
             <div
               style={{
@@ -98,30 +98,48 @@ export default function Readme() {
                 margin: '0 -3px'
               }}
             >
-              <Button onClick={() => console.log('Popover was clicked')}>
-                Click me
-              </Button>
+              Hello world
             </div>
           }
+          disableRichStyling
         >
-          <span role="button">Popover Window with clickable overlay</span>
+          <span role="button">Popover Window</span>
+        </Tooltip>
+      </DocsExample>
+      <DocsExample label="Rich overlay with clickable content">
+        <Tooltip
+          overlay={
+            <>
+              <RichTooltipTitle>Hello</RichTooltipTitle>
+              <RichTooltipContent>
+                I am the content of the interactive rich tooltip
+              </RichTooltipContent>
+              <RichTooltipActions>
+                <Button>Click me</Button>
+              </RichTooltipActions>
+            </>
+          }
+          stayOpenOnHover
+        >
+          <span role="button">Popover with clickable content</span>
         </Tooltip>
       </DocsExample>
       <DocsExample label="Persistent">
         <Tooltip
-          // You make something like a popover window by just styling your inner overlay.
           overlay={
-            <div style={{ display: 'flex' }}>
-              <Avatar
-                src="images/avatars/captainamerica.png"
-                size="large"
-                name="Steve Rogers"
-              />
-              <div style={{ marginLeft: '0.5rem', width: '100px' }}>
-                <b>Captain America</b>
-                <div>Steve Rogers</div>
+            <RichTooltipContent>
+              <div style={{ display: 'flex' }}>
+                <Avatar
+                  src="images/avatars/blackwidow.png"
+                  size="large"
+                  name="Margaret Schmidt"
+                />
+                <div style={{ marginLeft: '0.5rem', width: '100px' }}>
+                  <b>Captain America</b>
+                  <div>Margaret Schmidt</div>
+                </div>
               </div>
-            </div>
+            </RichTooltipContent>
           }
           isPersistent
         >
@@ -144,6 +162,26 @@ export default function Readme() {
         </>
       </DocsExample>
 
+      <DocsExample label="Alignment">
+        <>
+          <Tooltip overlay="Align start" align="start">
+            <IconButton icon="trip_origin" />
+          </Tooltip>
+          <Tooltip overlay="Align center" align="center">
+            <IconButton icon="trip_origin" />
+          </Tooltip>
+          <Tooltip overlay="Align end" align="end">
+            <IconButton icon="trip_origin" />
+          </Tooltip>
+          <Tooltip overlay="Align above" align="above">
+            <IconButton icon="trip_origin" />
+          </Tooltip>
+          <Tooltip overlay="Align below" align="below">
+            <IconButton icon="trip_origin" />
+          </Tooltip>
+        </>
+      </DocsExample>
+
       <DocsSubtitle>Activation</DocsSubtitle>
       <DocsP>
         By default, tooltips will activate on hover and focus. You can change
@@ -155,8 +193,7 @@ export default function Readme() {
           <Tooltip overlay="Cookies" activateOn="hover">
             <Button label="Hover" />
           </Tooltip>
-          ''
-          <Tooltip overlay="Pizza" activateOn="click">
+          <Tooltip overlay="Pizza" activateOn="click" isPersistent>
             <Button label="Click" />
           </Tooltip>
           <Tooltip overlay="Icecream" activateOn="focus">
