@@ -19,11 +19,18 @@
   "targetDefaults": {
     "build": {
       "dependsOn": [
-        "^build"
+        "^build",
+        "bootstrap"
       ],
       "inputs": [
         "production",
         "^production"
+      ]
+    },
+    "serve": {
+      "dependsOn": [
+        "^bootstrap",
+        "bootstrap"
       ]
     },
     "test": {

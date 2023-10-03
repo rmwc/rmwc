@@ -2,10 +2,10 @@
 
 ## Missing
 
-- Publish to npm
-- Make newest docs available on rmwc.io (put it in public folder)
+- Publish to npm (potentially done)
 - Make Github Actions use nx affected
 - Cleanup scripts
+- Run multiple versions of React in testing
 
 ## Porting to nx
 

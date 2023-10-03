@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`TextField can be disabled 1`] = `
+exports[`TextField > can be disabled 1`] = `
 <DocumentFragment>
   <label
     aria-labelledby="textfield-test-label"
@@ -21,7 +21,7 @@ exports[`TextField can be disabled 1`] = `
 </DocumentFragment>
 `;
 
-exports[`TextField can be have icon 1`] = `
+exports[`TextField > can be have icon 1`] = `
 <DocumentFragment>
   <label
     aria-labelledby="textfield-test-label"
@@ -46,7 +46,7 @@ exports[`TextField can be have icon 1`] = `
 </DocumentFragment>
 `;
 
-exports[`TextField can be have trailingIcon 1`] = `
+exports[`TextField > can be have trailingIcon 1`] = `
 <DocumentFragment>
   <label
     aria-labelledby="textfield-test-label"
@@ -72,7 +72,7 @@ exports[`TextField can be have trailingIcon 1`] = `
 </DocumentFragment>
 `;
 
-exports[`TextField can be invalid 1`] = `
+exports[`TextField > can be invalid 1`] = `
 <DocumentFragment>
   <label
     aria-labelledby="textfield-test-label"
@@ -92,7 +92,7 @@ exports[`TextField can be invalid 1`] = `
 </DocumentFragment>
 `;
 
-exports[`TextField can be outlined 1`] = `
+exports[`TextField > can be outlined 1`] = `
 <DocumentFragment>
   <label
     aria-labelledby="textfield-test-label"
@@ -121,7 +121,7 @@ exports[`TextField can be outlined 1`] = `
 </DocumentFragment>
 `;
 
-exports[`TextField can be textarea 1`] = `
+exports[`TextField > can be textarea 1`] = `
 <DocumentFragment>
   <label
     aria-labelledby="textfield-test-label"
@@ -145,7 +145,7 @@ exports[`TextField can be textarea 1`] = `
 </DocumentFragment>
 `;
 
-exports[`TextField can have children 1`] = `
+exports[`TextField > can have children 1`] = `
 <DocumentFragment>
   <label
     aria-labelledby="textfield-test-label"
@@ -169,7 +169,7 @@ exports[`TextField can have children 1`] = `
 </DocumentFragment>
 `;
 
-exports[`TextField renders 1`] = `
+exports[`TextField > renders 1`] = `
 <DocumentFragment>
   <label
     aria-labelledby="textfield-test-label"
@@ -196,7 +196,7 @@ exports[`TextField renders 1`] = `
 </DocumentFragment>
 `;
 
-exports[`TextFieldHelperText renders 1`] = `
+exports[`TextFieldHelperText > renders 1`] = `
 <DocumentFragment>
   <div
     class="mdc-text-field-helper-text"

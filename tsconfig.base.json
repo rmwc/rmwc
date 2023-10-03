@@ -92,6 +92,7 @@
       "@rmwc/switch/styles": ["packages/switch/src/styles.ts"],
       "@rmwc/tabs": ["packages/tabs/src/index.ts"],
       "@rmwc/tabs/styles": ["packages/tabs/src/styles.ts"],
+      "@rmwc/testing-utils": ["packages/testing-utils/src/index.ts"],
       "@rmwc/textfield": ["packages/textfield/src/index.ts"],
       "@rmwc/textfield/styles": ["packages/textfield/src/styles.ts"],
       "@rmwc/theme": ["packages/theme/src/index.ts"],

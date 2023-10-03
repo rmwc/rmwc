@@ -1,4 +1,5 @@
-import { wait } from '@rmwc/test-utils';
+// eslint-disable-next-line @nx/enforce-module-boundaries
+import { wait } from '@rmwc/testing-utils';
 import { fireEvent, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { TextField, TextFieldHelperText } from './textfield';
