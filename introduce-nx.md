@@ -2,9 +2,6 @@
 
 ## Missing
 
-- Publish to npm (potentially done)
-- Make Github Actions use nx affected
-- Cleanup scripts
 - Run multiple versions of React in testing
 
 ## Porting to nx
@@ -19,3 +16,4 @@
 ## New features
 
 - Integrate with nx cloud
+- Make Github Actions use nx affected

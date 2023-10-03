@@ -63,6 +63,7 @@
   },
   "scripts": {
     "start": "nx serve docs",
+    "build:docs": "nx build docs",
     "build:components": "nx run-many -t build --projects=tag:publishable",
     "pretest": "node scripts/pretest.js",
     "test": "node scripts/test.js",
@@ -74,14 +75,9 @@
     "alpha:minor": "nx version workspace --releaseAs=preminor --preid=alpha && npm run deploy:packages",
     "alpha:major": "nx version workspace --releaseAs=premajor --preid=alpha && npm run deploy:packages",
     "publish:packages": "nx run-many -t npm-deploy",
-    "publish:docs": "npm run build:docsite && git add docs -f && git commit --allow-empty -m 'Deploying docs' && git push --force && npm run clean",
+    "publish:docs": "npm run build:docs && git add docs -f && git commit --allow-empty -m 'Deploying docs' && git push --force",
     "changelog": "changelog || echo 'No Changes'",
-    "storybook": "start-storybook -p 6006",
-    "storybook:update": "npm i -D @storybook/addon-actions@latest @storybook/addon-knobs@latest @storybook/react@latest",
-    "preversion": "npm run clean && npm run docgen && npm run build:docsite && git add --all && git commit --allow-empty -m 'Generating Props'",
-    "version": "node scripts/fix-package-version && npm run changelog && git add CHANGELOG.md && git commit --allow-empty -m 'Updating Changelog'",
     "prepare": "husky install",
-    "build-storybook": "build-storybook",
     "validate:actions": "action-validator .github/workflows/automerge.yml && action-validator .github/workflows/codeql-analysis.yml && action-validator .github/workflows/publish.yml && action-validator .github/workflows/unit-test.yml && action-validator .github/workflows/version.yml"
   },
   "devDependencies": {

@@ -19,15 +19,13 @@ jobs:
           cache: 'npm'
       - name: 'Install Dependencies'
         run: npm ci --ignore-scripts
-      - name: 'Build'
-        run: npm run build
       - name: 'Publish'
-        run: npx lerna exec -- npm publish --tag latest
+        run: npx nx run-many -t npm-deploy --tag latest
         if: github.base_ref == 'master'
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: 'Prerelease Publish'
-        run: npx lerna exec -- npm publish --tag next
+        run: npx nx run-many -t npm-deploy --tag next
         if: github.base_ref == 'next'
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
