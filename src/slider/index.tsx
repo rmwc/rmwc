@@ -142,6 +142,7 @@ export const Slider: RMWC.ComponentType<SliderProps, SliderHTMLProps, 'input'> =
         tag="div"
         element={rootEl}
         data-min-range={minRange}
+        ref={ref}
       >
         {range && (
           <input
