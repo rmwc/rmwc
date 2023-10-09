@@ -1,9 +1,5 @@
 # Introduce nx
 
-## Missing
-
-- Run multiple versions of React in testing
-
 ## Porting to nx
 
 - Support README.md in each package (fix docgen-markdown.js)
