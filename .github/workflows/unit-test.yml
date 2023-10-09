@@ -15,6 +15,17 @@ permissions:
 
 jobs:
   test:
+    strategy:
+      matrix:
+        react: [16, 17, 18]
+        include:
+          - react: 16
+            reactTestingLibrary: 12
+          - react: 17
+            reactTestingLibrary: 12
+          - react: 18
+            reactTestingLibrary: 14
+            coverage: true
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -24,9 +35,10 @@ jobs:
           node-version: 16.x
           registry-url: 'https://registry.npmjs.org'
           cache: 'npm'
-      - run: npm ci --ignore-scripts
-      - run: npm test
+      - run: npm i react@${{ matrix.react }} react-dom@${{ matrix.react }} @testing-library/react@${{ matrix.reactTestingLibrary }}
+      - run: npm test --coverage
         env:
           CI: true
-      - name: Codecov
+      - if: ${{matrix.coverage}}
+        name: Codecov
         uses: codecov/codecov-action@v3
