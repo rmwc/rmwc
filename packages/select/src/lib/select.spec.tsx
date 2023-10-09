@@ -1,23 +1,15 @@
-import { act, fireEvent, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { Select } from './select';
 
-test('renders learn react link', (done) => {
+test('renders learn react link', async () => {
   const onChange = vi.fn();
-  const { container } = render(
+  render(
     <Select label="myLabel" onChange={onChange} options={['cookie', 'pizza']} />
   );
 
-  const select = container.children[0].querySelector('select');
-
-  fireEvent.change(container);
-
-  act(() => {
-    window.requestAnimationFrame(() => {
-      fireEvent.change(select!);
-      expect(onChange).toHaveBeenCalled();
-      done();
-    });
-  });
+  await userEvent.selectOptions(screen.getByRole('combobox'), 'pizza');
+  expect(onChange).toHaveBeenCalled();
 });
 
 describe('Select', () => {
