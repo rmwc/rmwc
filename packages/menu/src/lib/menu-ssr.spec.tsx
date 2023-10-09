@@ -1,9 +1,7 @@
-/**
- * @jest-environment node
- */
+// @vitest-environment node
 import React from 'react';
 import { renderToString as mount } from 'react-dom/server';
-import { MenuSurfaceAnchor, Menu, MenuItem, SimpleMenu } from './';
+import { Menu, MenuItem, MenuSurfaceAnchor, SimpleMenu } from './';
 
 describe('Menu', () => {
   it('renders', () => {

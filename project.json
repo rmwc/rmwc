@@ -2,6 +2,9 @@
   "name": "workspace",
   "$schema": "node_modules/nx/schemas/project-schema.json",
   "targets": {
+    "test": {
+      "executor": "nx:noop"
+    },
     "version": {
       "executor": "@jscutlery/semver:version",
       "options": {

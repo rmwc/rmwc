@@ -1,7 +1,4 @@
-/**
- * @jest-environment node
- */
-import React from 'react';
+// @vitest-environment node
 import { renderToString as mount } from 'react-dom/server';
 import { Avatar, AvatarCount, AvatarGroup } from './';
 

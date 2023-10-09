@@ -1,6 +1,4 @@
-/**
- * @jest-environment node
- */
+// @vitest-environment node
 import React from 'react';
 import { renderToString as mount } from 'react-dom/server';
 import { FormField } from './form-field';
