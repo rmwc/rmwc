@@ -145,16 +145,17 @@ describe('Utils', () => {
     process.env.NODE_ENV = 'test';
   });
 
-  it('debounce', (done) => {
-    let val = 0;
-    const foo = () => val++;
-    const debouncedFoo = debounce(foo, 100);
-    debouncedFoo();
-    setTimeout(() => {
-      expect(val).toBe(1);
-      done();
-    }, 150);
-  });
+  it('debounce', () =>
+    new Promise<void>((done) => {
+      let val = 0;
+      const foo = () => val++;
+      const debouncedFoo = debounce(foo, 100);
+      debouncedFoo();
+      setTimeout(() => {
+        expect(val).toBe(1);
+        done();
+      }, 150);
+    }));
 
   it('closest', () => {
     const parent = document.createElement('div');
