@@ -255,7 +255,7 @@ exports[`Slider > renders with range slider props 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Slider renders with tick marks 1`] = `
+exports[`Slider > renders with tick marks 1`] = `
 <DocumentFragment>
   <div
     class="mdc-slider mdc-slider--discrete mdc-slider--tick-marks"
