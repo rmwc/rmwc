@@ -3,12 +3,12 @@ const fs = require('fs');
 
 const generateDocExamples = () => {
   const readmeFiles = fs.readdirSync(
-    path.resolve('packages', 'readme', 'src', 'readmes')
+    path.resolve('utils', 'readme', 'src', 'readmes')
   );
 
   readmeFiles.forEach((fName) => {
     const docsExamplePath = path.resolve(
-      'packages',
+      'utils',
       'readme',
       'src',
       'readmes',
@@ -16,7 +16,7 @@ const generateDocExamples = () => {
     );
     const exampleFileName = `${path.parse(fName).name}.json`;
     const exampleFilePath = path.resolve(
-      'packages',
+      'utils',
       'readme',
       'src',
       'generated-examples',

@@ -1,39 +1,28 @@
 {
   "name": "readme",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "packages/readme/src",
+  "sourceRoot": "utils/readme/src",
   "projectType": "library",
-  "implicitDependencies": [
-    "tag:readme"
-  ],
+  "implicitDependencies": ["tag:readme"],
   "tags": [],
   "targets": {
     "bootstrap": {
       "executor": "nx:noop",
-      "dependsOn": [
-        "generate-examples",
-        "generate-props"
-      ]
+      "dependsOn": ["generate-examples", "generate-props"]
     },
     "lint": {
       "executor": "@nx/linter:eslint",
-      "outputs": [
-        "{options.outputFile}"
-      ],
+      "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": [
-          "packages/readme/**/*.{ts,tsx,js,jsx}"
-        ]
+        "lintFilePatterns": ["utils/readme/**/*.{ts,tsx,js,jsx}"]
       }
     },
     "test": {
       "executor": "@nx/vite:test",
-      "outputs": [
-        "{options.reportsDirectory}"
-      ],
+      "outputs": ["{options.reportsDirectory}"],
       "options": {
         "passWithNoTests": true,
-        "reportsDirectory": "../../coverage/packages/readme"
+        "reportsDirectory": "../../coverage/utils/readme"
       }
     },
     "generate-props": {

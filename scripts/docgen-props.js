@@ -5,7 +5,7 @@ try {
   getPackages(['readme']).forEach((d) => {
     console.log(`Building Docs For: ${d}`);
     const proc = exec(
-      `documentalist "./packages/${d}/**/!(spec|story).tsx" --no-css --no-md > ./packages/readme/src/generated-props/${d}.json`
+      `documentalist "./packages/${d}/**/!(spec|story).tsx" --no-css --no-md > ./utils/readme/src/generated-props/${d}.json`
     );
 
     proc.stdout.on('data', (data) => {

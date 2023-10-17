@@ -1,10 +1,5 @@
 # Introduce nx
 
-## Missing
-
-- utils directory
-- Name CSS files in packages with package name
-
 ## Porting to nx
 
 - Support README.md in each package (fix docgen-markdown.js)

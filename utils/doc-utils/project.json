@@ -1,29 +1,23 @@
 {
   "name": "doc-utils",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "packages/doc-utils/src",
+  "sourceRoot": "utils/doc-utils/src",
   "projectType": "library",
   "tags": [],
   "targets": {
     "lint": {
       "executor": "@nx/linter:eslint",
-      "outputs": [
-        "{options.outputFile}"
-      ],
+      "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": [
-          "packages/doc-utils/**/*.{ts,tsx,js,jsx}"
-        ]
+        "lintFilePatterns": ["utils/doc-utils/**/*.{ts,tsx,js,jsx}"]
       }
     },
     "test": {
       "executor": "@nx/vite:test",
-      "outputs": [
-        "{options.reportsDirectory}"
-      ],
+      "outputs": ["{options.reportsDirectory}"],
       "options": {
         "passWithNoTests": true,
-        "reportsDirectory": "../../coverage/packages/doc-utils"
+        "reportsDirectory": "../../coverage/utils/doc-utils"
       }
     }
   }
