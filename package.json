@@ -52,7 +52,7 @@
     "@action-validator/core": "^0.5.3",
     "@babel/core": "^7.22.10",
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-    "@storybook/addon-actions": "^6.5.10",
+    "@storybook/addon-actions": "^7.5.0",
     "@storybook/addon-essentials": "^6.5.10",
     "@storybook/addon-knobs": "^7.0.0",
     "@storybook/addon-links": "^6.5.10",
