@@ -1,6 +1,6 @@
 // eslint-disable-next-line @nx/enforce-module-boundaries
 import { wait } from '@rmwc/testing-utils';
-import { fireEvent, render, screen } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { TextField, TextFieldHelperText } from './textfield';
 
@@ -115,7 +115,7 @@ describe('TextField', () => {
 
   it('can be required', async () => {
     const { container } = render(
-      <TextField value="" onChange={() => {}} required />
+      <TextField value="" onChange={vi.fn()} required />
     );
     const getValid = () =>
       container.getElementsByClassName('mdc-text-field--invalid').length === 0;
@@ -126,9 +126,8 @@ describe('TextField', () => {
     fireEvent.focus(screen.getByRole('textbox'));
     await wait(20);
     fireEvent.blur(screen.getByRole('textbox'));
-    await wait(20);
 
-    expect(getValid()).toBe(false);
+    await waitFor(() => expect(getValid()).toBe(false));
   });
 
   it('can be have icon', () => {
@@ -166,14 +165,17 @@ describe('TextField', () => {
     const { container } = render(
       <TextField label="test" value="" onChange={() => {}} />
     );
-    expect(
-      container.getElementsByClassName('mdc-floating-label--float-above')
-    ).toHaveLength(0);
+    await waitFor(() =>
+      expect(
+        container.getElementsByClassName('mdc-floating-label--float-above')
+      ).toHaveLength(0)
+    );
     userEvent.type(screen.getByRole('textbox'), 'foo');
-    await wait(100);
-    expect(
-      container.getElementsByClassName('mdc-floating-label--float-above')
-    ).toHaveLength(1);
+    await waitFor(() =>
+      expect(
+        container.getElementsByClassName('mdc-floating-label--float-above')
+      ).toHaveLength(1)
+    );
   });
 
   it('can have a prefix', () => {
