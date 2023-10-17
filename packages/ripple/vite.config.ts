@@ -50,9 +50,15 @@ export default defineConfig({
       output: {
         outro: (chunk) => {
           if (chunk.isEntry && chunk.name === 'styles') {
-            return "import './styles.css'";
+            return "import './ripple.css'";
           }
           return '';
+        },
+        assetFileNames: (chunk) => {
+          if (chunk.name === 'styles.css') {
+            return 'ripple.css';
+          }
+          return '[name].[ext]';
         }
       }
     }

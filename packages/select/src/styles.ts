@@ -5,4 +5,4 @@ import '@rmwc/list/styles';
 import '@rmwc/menu/styles';
 import '@rmwc/notched-outline/styles';
 import '@rmwc/ripple/styles';
-import './styles.css';
+import './select.css';

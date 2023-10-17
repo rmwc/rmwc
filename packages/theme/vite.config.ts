@@ -49,9 +49,15 @@ export default defineConfig({
       output: {
         outro: (chunk) => {
           if (chunk.isEntry && chunk.name === 'styles') {
-            return "import './styles.css'";
+            return "import './theme.css'";
           }
           return '';
+        },
+        assetFileNames: (chunk) => {
+          if (chunk.name === 'styles.css') {
+            return 'theme.css';
+          }
+          return '[name].[ext]';
         }
       }
     }

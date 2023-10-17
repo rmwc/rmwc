@@ -1,5 +1,10 @@
 # Introduce nx
 
+## Missing
+
+- utils directory
+- Name CSS files in packages with package name
+
 ## Porting to nx
 
 - Support README.md in each package (fix docgen-markdown.js)
@@ -13,3 +18,10 @@
 
 - Integrate with nx cloud
 - Make Github Actions use nx affected
+
+## To be done (not related to nx necessarily)
+
+- Prettier with Husky
+- documentalist
+- Add readme to rmwc package
+- Improve documentation site's version handeling
