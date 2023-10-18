@@ -6,6 +6,10 @@ const generateDocExamples = () => {
     path.resolve('utils', 'readme', 'src', 'readmes')
   );
 
+  fs.mkdirSync(path.resolve('utils', 'readme', 'src', 'generated-examples'), {
+    recursive: true
+  });
+
   readmeFiles.forEach((fName) => {
     const docsExamplePath = path.resolve(
       'utils',

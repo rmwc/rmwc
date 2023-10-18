@@ -1,9 +1,14 @@
 const { exec } = require('child_process');
 const getPackages = require('./get-packages');
+const path = require('path');
+const fs = require('fs');
 
 try {
   getPackages(['readme']).forEach((d) => {
     console.log(`Building Docs For: ${d}`);
+    fs.mkdirSync(path.resolve('utils', 'readme', 'src', 'generated-props'), {
+      recursive: true
+    });
     const proc = exec(
       `documentalist "./packages/${d}/**/!(spec|story).tsx" --no-css --no-md > ./utils/readme/src/generated-props/${d}.json`
     );
