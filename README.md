@@ -74,8 +74,6 @@ Read the docs on [Methodology](https://rmwc.io/methodology)
 
 ## To run the tests
 
-- On MacOS Sierra and higher, install watchman to fix a filesystem issue with
-  Jest. `brew install watchman`
 - `npm test`
 
 ## To run the docs / contribute
