@@ -106,8 +106,8 @@
     "@typescript-eslint/eslint-plugin": "^5.60.1",
     "@typescript-eslint/parser": "^5.60.1",
     "@vitejs/plugin-react": "~4.0.0",
-    "@vitest/coverage-v8": "^0.34.6",
-    "@vitest/ui": "^0.34.6",
+    "@vitest/coverage-v8": "^0.33.0",
+    "@vitest/ui": "^0.33.0",
     "chokidar-cli": "^3.0.0",
     "colors": "^1.4.0",
     "concurrently": "^8.2.1",
@@ -129,10 +129,9 @@
     "ngx-deploy-npm": "^7.0.1",
     "nx": "16.8.0",
     "prettier": "^2.6.2",
-    "sass": "^1.54.4",
     "typescript": "4.8.4",
     "vite": "~4.4.9",
     "vite-plugin-dts": "~2.3.0",
-    "vitest": "^0.34.6"
+    "vitest": "^0.33.0"
   }
 }
