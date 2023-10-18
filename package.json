@@ -114,7 +114,7 @@
     "copyfiles": "^2.4.1",
     "cross-env": "^7.0.3",
     "documentalist": "^1.6.0",
-    "eslint": "~8.46.0",
+    "eslint": "~8.51.0",
     "eslint-config-prettier": "8.1.0",
     "eslint-plugin-import": "2.27.5",
     "eslint-plugin-jsx-a11y": "6.7.1",
