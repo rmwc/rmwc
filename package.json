@@ -87,7 +87,7 @@
     "@commitlint/cli": "^17.0.0",
     "@commitlint/config-conventional": "^17.0.0",
     "@jscutlery/semver": "^3.1.0",
-    "@nx/eslint-plugin": "16.8.0",
+    "@nx/eslint-plugin": "16.10.0",
     "@nx/js": "16.8.0",
     "@nx/linter": "16.8.0",
     "@nx/react": "16.8.0",
