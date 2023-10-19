@@ -9,12 +9,6 @@
       "outputs": [
         "{options.outputPath}"
       ],
-      "dependsOn": [
-        {
-          "projects": "readme",
-          "target": "bootstrap"
-        }
-      ],
       "defaultConfiguration": "production",
       "options": {
         "outputPath": "docs"
