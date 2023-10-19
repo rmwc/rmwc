@@ -9,7 +9,6 @@
       "executor": "@jscutlery/semver:version",
       "options": {
         "syncVersions": true,
-        "baseBranch": "next",
         "preset": "conventional",
         "skipProjectChangelog": true
       }
