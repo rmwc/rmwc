@@ -17,8 +17,10 @@ jobs:
         with:
           ref: ${{ github.head_ref }}
           token: ${{ secrets.VERSIONING_TOKEN }}
+      - name: Fetch last tag
+        run: git fetch origin $(git describe --tags --abbrev=0)
       - name: Setup Git
-        run: | 
+        run: |
           git config --global user.email "ci@rmwc.io"
           git config --global user.name "RMWC CI"
       - name: Use Node.js
