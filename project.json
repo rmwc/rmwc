@@ -11,10 +11,7 @@
         "syncVersions": true,
         "baseBranch": "next",
         "preset": "conventional",
-        "skipProjectChangelog": true,
-        "postTargets": [
-          "workspace:github-release"
-        ]
+        "skipProjectChangelog": true
       }
     },
     "github-release": {
