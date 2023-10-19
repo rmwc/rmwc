@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/badge",
-  "version": "14.0.2-alpha.0",
+  "version": "8.0.8-alpha.0",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {

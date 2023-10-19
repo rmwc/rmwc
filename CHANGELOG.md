@@ -1,3 +1,15 @@
+# Changelog
+
+This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
+
+## [8.0.8-alpha.0](https://github.com/rmwc/rmwc/compare/v14.0.2-alpha.0...v8.0.8-alpha.0) (2023-10-19)
+
+
+### Bug Fixes
+
+* **slider:** correct foundation methods ([a9bb9b7](https://github.com/rmwc/rmwc/commit/a9bb9b7394a8cd55886ef8da82756fc672cc7288))
+* version should not publish ([4d372a5](https://github.com/rmwc/rmwc/commit/4d372a519ae281830c518d4c64b22596dccec9d6))
+
 #### 14.0.2-alpha.0 (2023-09-12)
 
 #### 14.0.1-alpha.0 (2023-09-05)
