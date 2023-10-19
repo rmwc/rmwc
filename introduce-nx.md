@@ -20,3 +20,4 @@
 - documentalist
 - Add readme to rmwc package
 - Improve documentation site's version handeling
+- Run github-release task on publish
