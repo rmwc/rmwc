@@ -53,5 +53,7 @@ jobs:
       - name: 'Aplpha Prerelease'
         run: npm run -- prerelease:alpha
         if: contains(github.head_ref, '/alpha') && github.base_ref == 'next'
+      - name: 'Push'
+        run: git push
       - name: 'Build Docs'
         run: npm run build:docs
