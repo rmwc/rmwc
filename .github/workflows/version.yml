@@ -54,6 +54,6 @@ jobs:
         run: npm run -- prerelease:alpha
         if: contains(github.head_ref, '/alpha') && github.base_ref == 'next'
       - name: 'Push'
-        run: git push
+        run: git push --follow-tags
       - name: 'Build Docs'
         run: npm run build:docs
