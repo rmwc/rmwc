@@ -111,7 +111,7 @@
     "@vitest/ui": "^0.34.6",
     "chokidar-cli": "^3.0.0",
     "colors": "^1.4.0",
-    "concurrently": "^8.2.1",
+    "concurrently": "^8.2.2",
     "copyfiles": "^2.4.1",
     "cross-env": "^7.0.3",
     "documentalist": "^1.6.0",
