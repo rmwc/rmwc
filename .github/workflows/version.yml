@@ -16,7 +16,6 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          fetch-tags: true
           token: ${{ secrets.VERSIONING_TOKEN }}
       - name: Setup Git
         run: |
