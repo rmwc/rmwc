@@ -18,7 +18,7 @@ try {
     });
 
     proc.stderr.on('data', (data) => {
-      console.log('Error: ' + data.toString());
+      console.log('Error: Command "' + proc.spawnargs + '" failed with:  ' + data.toString());
     });
 
     proc.on('exit', (code) => {});
