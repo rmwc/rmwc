@@ -4,7 +4,7 @@ module.exports = {
   gitrevision: 'master',
   exclude: ['**/*.spec.tsx', '**/*.story.tsx', '**/docs.tsx', 'node_modules'],
   mode: 'modules',
-  ignoreCompilerErrors: true,
+  ignoreCompilerErrors: false,
   excludeExternals: true,
   excludeNotExported: true,
   excludePrivate: true,
