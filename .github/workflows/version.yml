@@ -30,28 +30,28 @@ jobs:
           cache: 'npm'
       - run: npm ci --ignore-scripts
       - name: 'Patch Release'
-        run: npm run release:patch
+        run: npm run -- release:patch
         if: contains(github.head_ref, '/patch') && github.base_ref == 'master'
       - name: 'Minor Release'
-        run: npm run release:minor
+        run: npm run -- release:minor
         if: contains(github.head_ref, '/minor') && github.base_ref == 'master'
       - name: 'Major Release'
-        run: npm run release:major
+        run: npm run -- release:major
         if: contains(github.head_ref, '/major') && github.base_ref == 'master'
       - name: 'Aplpha Release'
-        run: npm run release:alpha
+        run: npm run -- release:alpha
         if: contains(github.head_ref, '/alpha') && github.base_ref == 'master'
       - name: 'Patch Prerelease'
-        run: npm run prerelease:patch
+        run: npm run -- prerelease:patch
         if: contains(github.head_ref, '/patch') && github.base_ref == 'next'
       - name: 'Minor Prerelease'
-        run: npm run prerelease:minor
+        run: npm run -- prerelease:minor
         if: contains(github.head_ref, '/minor') && github.base_ref == 'next'
       - name: 'Major Prerelease'
-        run: npm run prerelease:major
+        run: npm run -- prerelease:major
         if: contains(github.head_ref, '/major') && github.base_ref == 'next'
       - name: 'Aplpha Prerelease'
-        run: npm run prerelease:alpha
+        run: npm run -- prerelease:alpha
         if: contains(github.head_ref, '/alpha') && github.base_ref == 'next'
       - name: 'Build Docs'
         run: npm run build:docs
