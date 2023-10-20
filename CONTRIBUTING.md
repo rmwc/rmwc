@@ -152,11 +152,11 @@ This is mainly a cheat sheet for the maintainers. Its a manual process, but only
 
 Releases are handled by Github Actions based on PR conventions and pull request targets. You can do a release without ever leaving the Github Web UI.
 
-- Create a new branch from `master` or `next` with the convention of `release/patch-YYYY-MM-DD`, `release/minor-YYYY-MM-DD`, `release/major-YYYY-MM-DD` or `alpha/major-YYYY-MM-DD`. There isn't any auto-magic looking at the changelog, so determine what category this release falls in. If there are any breaking changes, it's a major release.
+- Create a new branch from `master` or `next` with the convention of `release/patch-YYYY-MM-DD`, `release/minor-YYYY-MM-DD`, `release/major-YYYY-MM-DD` or `release/alpha-YYYY-MM-DD`. There isn't any auto-magic looking at the changelog, so determine what category this release falls in. If there are any breaking changes, it's a major release.
   - Patch release example `release/patch-2022-03-05`
   - Minor release example `release/minor-2022-03-05`
   - Major release example `release/major-2022-03-05`
-  - Alpha release example `alpha/major-2022-03-05`
+  - Alpha release example `release/alpha-2022-03-05`
 - You can't open a PR without at least one change, so this is actually a good time to go update the Readme with the changes you're making. If you need to force a build, the hacky way around this is to just add a space somewhere in the Readme. Make your changes and commit the file.
 - Create your PR to either `master` or `next`. Depending on what branch you choose, it will either be a standard npm release `@latest` or a pre-release `@next`.
 - On open of your PR, CI will run tests across all React Versions, and run a version script for either patch, minor, or major. When the script is done, it will commit the changes back to the PR branch.
