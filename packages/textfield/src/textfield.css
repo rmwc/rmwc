@@ -1,0 +1,7 @@
+.mdc-text-field__input::-webkit-calendar-picker-indicator {
+  display: initial;
+}
+
+.rmwc-text-field--fullwidth {
+  width: 100%;
+}

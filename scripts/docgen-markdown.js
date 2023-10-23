@@ -8,7 +8,7 @@ moduleAlias.addAlias('@doc-utils', root + '/build/dist/doc-utils-markdown');
 
 const { execSync } = require('child_process');
 const fs = require('fs');
-const getChangedPackages = require('./get-changed-packages');
+const getPackages = require('./get-packages');
 
 const getMarkdown = (packageName) => {
   const readmeFiles = fs
@@ -46,12 +46,10 @@ try {
 
   execSync(`./node_modules/.bin/copyfiles --up 1 src/**/*.json build/dist`);
 
-  const promises = getChangedPackages()
-    .filter((name) => !['rmwc', '@types'].includes(name))
-    .map((d) => {
-      console.log(`Generating Markdown For: ${d}`);
-      return getMarkdown(d);
-    });
+  const promises = getPackages(['readme']).map((d) => {
+    console.log(`Generating Markdown For: ${d}`);
+    return getMarkdown(d);
+  });
 
   Promise.all(promises).then(() => {
     execSync(`rm -rf build`);

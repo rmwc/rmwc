@@ -1,0 +1,207 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`TextField > can be disabled 1`] = `
+<DocumentFragment>
+  <label
+    aria-labelledby="textfield-test-label"
+    class="mdc-text-field mdc-text-field--upgraded mdc-text-field--filled mdc-text-field--disabled mdc-text-field--no-label"
+  >
+    <span
+      class="mdc-text-field__ripple"
+    />
+    <input
+      class="mdc-text-field__input"
+      disabled=""
+    />
+    <span
+      class="mdc-line-ripple mdc-line-ripple--deactivating"
+      style="transform-origin: 0px center;"
+    />
+  </label>
+</DocumentFragment>
+`;
+
+exports[`TextField > can be have icon 1`] = `
+<DocumentFragment>
+  <label
+    aria-labelledby="textfield-test-label"
+    class="mdc-text-field mdc-text-field--upgraded mdc-text-field--filled mdc-text-field--with-leading-icon mdc-text-field--no-label"
+  >
+    <i
+      class="rmwc-icon rmwc-icon--ligature material-icons mdc-text-field__icon mdc-text-field__icon--leading"
+    >
+      favorite
+    </i>
+    <span
+      class="mdc-text-field__ripple"
+    />
+    <input
+      class="mdc-text-field__input"
+    />
+    <span
+      class="mdc-line-ripple mdc-line-ripple--deactivating"
+      style="transform-origin: 0px center;"
+    />
+  </label>
+</DocumentFragment>
+`;
+
+exports[`TextField > can be have trailingIcon 1`] = `
+<DocumentFragment>
+  <label
+    aria-labelledby="textfield-test-label"
+    class="mdc-text-field mdc-text-field--upgraded mdc-text-field--filled mdc-text-field--with-trailing-icon mdc-text-field--no-label"
+  >
+    <span
+      class="mdc-text-field__ripple"
+    />
+    <input
+      class="mdc-text-field__input"
+    />
+    <i
+      class="rmwc-icon rmwc-icon--ligature material-icons mdc-text-field__icon mdc-text-field__icon--trailing"
+      tabindex="0"
+    >
+      favorite
+    </i>
+    <span
+      class="mdc-line-ripple mdc-line-ripple--deactivating"
+      style="transform-origin: 0px center;"
+    />
+  </label>
+</DocumentFragment>
+`;
+
+exports[`TextField > can be invalid 1`] = `
+<DocumentFragment>
+  <label
+    aria-labelledby="textfield-test-label"
+    class="mdc-text-field mdc-text-field--upgraded mdc-text-field--filled mdc-text-field--invalid mdc-text-field--no-label"
+  >
+    <span
+      class="mdc-text-field__ripple"
+    />
+    <input
+      class="mdc-text-field__input"
+    />
+    <span
+      class="mdc-line-ripple mdc-line-ripple--deactivating"
+      style="transform-origin: 0px center;"
+    />
+  </label>
+</DocumentFragment>
+`;
+
+exports[`TextField > can be outlined 1`] = `
+<DocumentFragment>
+  <label
+    aria-labelledby="textfield-test-label"
+    class="mdc-text-field mdc-text-field--upgraded mdc-text-field--outlined mdc-text-field--no-label"
+  >
+    <span
+      class="mdc-text-field__ripple"
+    />
+    <input
+      class="mdc-text-field__input"
+    />
+    <div
+      class="mdc-notched-outline mdc-notched-outline--no-label"
+    >
+      <div
+        class="mdc-notched-outline__leading"
+      />
+      <div
+        class="mdc-notched-outline__notch"
+      />
+      <div
+        class="mdc-notched-outline__trailing"
+      />
+    </div>
+  </label>
+</DocumentFragment>
+`;
+
+exports[`TextField > can be textarea 1`] = `
+<DocumentFragment>
+  <label
+    aria-labelledby="textfield-test-label"
+    class="mdc-text-field mdc-text-field--upgraded mdc-text-field--filled mdc-text-field--textarea mdc-text-field--no-label"
+  >
+    <span
+      class="mdc-text-field__ripple"
+    />
+    <textarea
+      aria-invalid="false"
+      class="mdc-text-field__input hf-validated hf-valid hf-in-range"
+      placeholder="test"
+    >
+      hello world
+    </textarea>
+    <span
+      class="mdc-line-ripple mdc-line-ripple--deactivating"
+      style="transform-origin: 0px center;"
+    />
+  </label>
+</DocumentFragment>
+`;
+
+exports[`TextField > can have children 1`] = `
+<DocumentFragment>
+  <label
+    aria-labelledby="textfield-test-label"
+    class="mdc-text-field mdc-text-field--upgraded mdc-text-field--filled mdc-text-field--no-label"
+  >
+    <div>
+      Child
+    </div>
+    <span
+      class="mdc-text-field__ripple"
+    />
+    <input
+      class="mdc-text-field__input"
+      placeholder="test"
+    />
+    <span
+      class="mdc-line-ripple mdc-line-ripple--deactivating"
+      style="transform-origin: 0px center;"
+    />
+  </label>
+</DocumentFragment>
+`;
+
+exports[`TextField > renders 1`] = `
+<DocumentFragment>
+  <label
+    aria-labelledby="textfield-test-label"
+    class="mdc-text-field mdc-text-field--upgraded mdc-text-field--filled"
+  >
+    <span
+      class="mdc-text-field__ripple"
+    />
+    <input
+      class="mdc-text-field__input"
+      placeholder="test"
+    />
+    <span
+      class="mdc-floating-label"
+      id="textfield-test-label"
+    >
+      test
+    </span>
+    <span
+      class="mdc-line-ripple mdc-line-ripple--deactivating"
+      style="transform-origin: 0px center;"
+    />
+  </label>
+</DocumentFragment>
+`;
+
+exports[`TextFieldHelperText > renders 1`] = `
+<DocumentFragment>
+  <div
+    class="mdc-text-field-helper-text"
+  >
+    Hello
+  </div>
+</DocumentFragment>
+`;

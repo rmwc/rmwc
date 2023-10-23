@@ -1,0 +1,12 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ThemeProvider > renders 1`] = `
+<DocumentFragment>
+  <div
+    class=""
+    style="--mdc-theme-on-primary: rgba(255, 255, 255, 1); --mdc-theme-on-surface: rgba(255, 255, 255, 1); --mdc-theme-on-secondary: rgba(0, 0, 0, 0.87); --mdc-theme-primary: red; --mdc-theme-secondary: #fff; --mdc-theme-surface: #000000;"
+  >
+    <div />
+  </div>
+</DocumentFragment>
+`;

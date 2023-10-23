@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`FloatingLabel renders 1`] = `
-<DocumentFragment>
-  <span
-    class="mdc-floating-label"
-  />
-</DocumentFragment>
-`;

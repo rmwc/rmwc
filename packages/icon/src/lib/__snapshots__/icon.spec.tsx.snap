@@ -1,0 +1,60 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Icon > does not crash when custom render returns a string 1`] = `<DocumentFragment />`;
+
+exports[`Icon > renders Url 1`] = `
+<DocumentFragment>
+  <i
+    class="rmwc-icon rmwc-icon--url material-icons"
+    style="background-image: url(images/icons/twitter.png);"
+  />
+</DocumentFragment>
+`;
+
+exports[`Icon > renders className 1`] = `
+<DocumentFragment>
+  <i
+    class="rmwc-icon rmwc-icon--className icon ion-ionic"
+  />
+</DocumentFragment>
+`;
+
+exports[`Icon > renders custom 1`] = `
+<DocumentFragment>
+  <div>
+    Customized-CUSTOM
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Icon > renders ligature 1`] = `
+<DocumentFragment>
+  <i
+    class="rmwc-icon rmwc-icon--ligature material-icons"
+  >
+    favorite
+  </i>
+</DocumentFragment>
+`;
+
+exports[`Icon > renders svg 1`] = `
+<DocumentFragment>
+  <svg
+    class="rmwc-icon rmwc-icon--component material-icons"
+  >
+    <path />
+  </svg>
+</DocumentFragment>
+`;
+
+exports[`Icon > renders with JSX 1`] = `
+<DocumentFragment>
+  <i
+    class="rmwc-icon rmwc-icon--component material-icons"
+  >
+    <div
+      style="background: purple; width: 24px; height: 24px;"
+    />
+  </i>
+</DocumentFragment>
+`;

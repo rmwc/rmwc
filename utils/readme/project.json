@@ -1,0 +1,43 @@
+{
+  "name": "readme",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "utils/readme/src",
+  "projectType": "library",
+  "implicitDependencies": ["tag:readme"],
+  "tags": [],
+  "targets": {
+    "bootstrap": {
+      "executor": "nx:noop",
+      "dependsOn": ["generate-examples", "generate-props"]
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["utils/readme/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nx/vite:test",
+      "outputs": ["{options.reportsDirectory}"],
+      "options": {
+        "passWithNoTests": true,
+        "reportsDirectory": "../../coverage/utils/readme"
+      }
+    },
+    "generate-props": {
+      "executor": "nx:run-commands",
+      "outputs": [],
+      "options": {
+        "command": "node ./scripts/docgen-props.js"
+      }
+    },
+    "generate-examples": {
+      "executor": "nx:run-commands",
+      "outputs": [],
+      "options": {
+        "command": "node ./scripts/docgen-examples.js"
+      }
+    }
+  }
+}

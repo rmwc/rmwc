@@ -1,0 +1,9 @@
+.rmwc-ripple-surface--primary::before,
+.rmwc-ripple-surface--primary::after {
+  background-color: var(--mdc-theme-primary);
+}
+
+.rmwc-ripple-surface--accent::before,
+.rmwc-ripple-surface--accent::after {
+  background-color: var(--mdc-theme-secondary);
+}

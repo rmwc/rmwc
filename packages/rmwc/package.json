@@ -1,0 +1,88 @@
+{
+  "name": "rmwc",
+  "version": "14.0.2-alpha.1",
+  "description": "RMWC is a React UI Kit built on Google's official Material Components Web library.",
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.js"
+    },
+    "./styles": {
+      "import": "./styles/index.mjs",
+      "require": "./styles/index.js"
+    }
+  },
+  "sideEffects": true,
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rmwc/rmwc.git"
+  },
+  "keywords": [
+    "rmwc",
+    "react",
+    "react-material",
+    "material-design",
+    "react-mdc",
+    "react-material-design"
+  ],
+  "author": "rmwc",
+  "private": false,
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rmwc/rmwc/issues"
+  },
+  "homepage": "https://github.com/rmwc/rmwc#readme",
+  "peerDependencies": {
+    "react": ">=16.8.x",
+    "react-dom": ">=16.8.x"
+  },
+  "dependencies": {
+    "@rmwc/avatar": "workspace:*",
+    "@rmwc/badge": "workspace:*",
+    "@rmwc/base": "workspace:*",
+    "@rmwc/button": "workspace:*",
+    "@rmwc/card": "workspace:*",
+    "@rmwc/checkbox": "workspace:*",
+    "@rmwc/chip": "workspace:*",
+    "@rmwc/circular-progress": "workspace:*",
+    "@rmwc/data-table": "workspace:*",
+    "@rmwc/dialog": "workspace:*",
+    "@rmwc/drawer": "workspace:*",
+    "@rmwc/elevation": "workspace:*",
+    "@rmwc/fab": "workspace:*",
+    "@rmwc/floating-label": "workspace:*",
+    "@rmwc/formfield": "workspace:*",
+    "@rmwc/grid": "workspace:*",
+    "@rmwc/grid-list": "workspace:*",
+    "@rmwc/icon": "workspace:*",
+    "@rmwc/icon-button": "workspace:*",
+    "@rmwc/image-list": "workspace:*",
+    "@rmwc/line-ripple": "workspace:*",
+    "@rmwc/linear-progress": "workspace:*",
+    "@rmwc/list": "workspace:*",
+    "@rmwc/menu": "workspace:*",
+    "@rmwc/notched-outline": "workspace:*",
+    "@rmwc/provider": "workspace:*",
+    "@rmwc/radio": "workspace:*",
+    "@rmwc/ripple": "workspace:*",
+    "@rmwc/segmented-button": "workspace:*",
+    "@rmwc/select": "workspace:*",
+    "@rmwc/slider": "workspace:*",
+    "@rmwc/snackbar": "workspace:*",
+    "@rmwc/switch": "workspace:*",
+    "@rmwc/tabs": "workspace:*",
+    "@rmwc/textfield": "workspace:*",
+    "@rmwc/theme": "workspace:*",
+    "@rmwc/toggleable": "workspace:*",
+    "@rmwc/tooltip": "workspace:*",
+    "@rmwc/top-app-bar": "workspace:*",
+    "@rmwc/types": "workspace:*",
+    "@rmwc/typography": "workspace:*",
+    "material-components-web": "^14.0.0"
+  }
+}

@@ -1,0 +1,29 @@
+export const closest = (
+  element: HTMLElement | EventTarget | null,
+  selector: string
+): HTMLElement | null => {
+  if (element instanceof Element) {
+    if (element && element.closest) {
+      return element.closest(selector) as HTMLElement | null;
+    } else {
+      let el: HTMLElement | null = element as HTMLElement;
+      while (el) {
+        if (matches(el, selector)) {
+          return el;
+        }
+        el = el.parentElement;
+      }
+    }
+  }
+  return null;
+};
+
+export const matches = (element: HTMLElement, selector: string) => {
+  /* istanbul ignore next  */
+  const nativeMatches =
+    element.matches ||
+    element.webkitMatchesSelector ||
+    // @ts-ignore
+    element.msMatchesSelector;
+  return nativeMatches.call(element, selector);
+};

@@ -1,0 +1,17 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`FloatingLabel > renders 1`] = `
+<DocumentFragment>
+  <span
+    class="mdc-floating-label"
+  />
+</DocumentFragment>
+`;
+
+exports[`FloatingLabel > renders with float 1`] = `
+<DocumentFragment>
+  <span
+    class="mdc-floating-label mdc-floating-label--float-above"
+  />
+</DocumentFragment>
+`;

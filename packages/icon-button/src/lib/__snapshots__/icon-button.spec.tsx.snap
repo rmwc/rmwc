@@ -1,0 +1,117 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`renders as toggle 1`] = `
+<DocumentFragment>
+  <button
+    aria-pressed="false"
+    class="mdc-ripple-upgraded--unbounded mdc-icon-button"
+    data-mdc-ripple-is-unbounded="true"
+    role="button"
+    tabindex="0"
+  >
+    <div
+      class="mdc-icon-button__ripple"
+    />
+    <i
+      class="rmwc-icon rmwc-icon--ligature material-icons mdc-icon-button__icon"
+    >
+      favorite_border
+    </i>
+    <i
+      class="rmwc-icon rmwc-icon--ligature material-icons mdc-icon-button__icon mdc-icon-button__icon--on"
+    >
+      favorite
+    </i>
+  </button>
+</DocumentFragment>
+`;
+
+exports[`renders controlled 1`] = `
+<DocumentFragment>
+  <button
+    aria-pressed="true"
+    class="mdc-ripple-upgraded--unbounded mdc-icon-button--on mdc-icon-button mdc-icon-button--on"
+    data-mdc-ripple-is-unbounded="true"
+    role="button"
+    tabindex="0"
+  >
+    <div
+      class="mdc-icon-button__ripple"
+    />
+    <i
+      class="rmwc-icon rmwc-icon--ligature material-icons mdc-icon-button__icon"
+    >
+      star_border
+    </i>
+    <i
+      class="rmwc-icon rmwc-icon--ligature material-icons mdc-icon-button__icon mdc-icon-button__icon--on"
+    >
+      star
+    </i>
+  </button>
+</DocumentFragment>
+`;
+
+exports[`renders with icon as JSX 1`] = `
+<DocumentFragment>
+  <button
+    aria-label="Tweet it!"
+    class="mdc-ripple-upgraded--unbounded mdc-icon-button"
+    data-mdc-ripple-is-unbounded="true"
+    role="button"
+    tabindex="0"
+  >
+    <div
+      class="mdc-icon-button__ripple"
+    />
+    <i
+      class="rmwc-icon rmwc-icon--component material-icons mdc-ripple-upgraded--unbounded"
+      data-mdc-ripple-is-unbounded="true"
+    >
+      <div />
+    </i>
+  </button>
+</DocumentFragment>
+`;
+
+exports[`renders with icon as path 1`] = `
+<DocumentFragment>
+  <button
+    class="mdc-ripple-upgraded--unbounded mdc-icon-button"
+    data-mdc-ripple-is-unbounded="true"
+    role="button"
+    tabindex="0"
+  >
+    <div
+      class="mdc-icon-button__ripple"
+    />
+    <i
+      class="rmwc-icon rmwc-icon--url material-icons mdc-ripple-upgraded--unbounded"
+      data-mdc-ripple-is-unbounded="true"
+      style="background-image: url(images/icons/twitter.png);"
+    />
+  </button>
+</DocumentFragment>
+`;
+
+exports[`renders with icon as string 1`] = `
+<DocumentFragment>
+  <button
+    aria-label="Rate this!"
+    class="mdc-ripple-upgraded--unbounded mdc-icon-button"
+    data-mdc-ripple-is-unbounded="true"
+    role="button"
+    tabindex="0"
+  >
+    <div
+      class="mdc-icon-button__ripple"
+    />
+    <i
+      class="rmwc-icon rmwc-icon--ligature material-icons mdc-ripple-upgraded--unbounded"
+      data-mdc-ripple-is-unbounded="true"
+    >
+      star
+    </i>
+  </button>
+</DocumentFragment>
+`;
