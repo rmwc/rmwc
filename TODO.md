@@ -22,3 +22,8 @@ Below you will find a to-do list of what remains to be done.
 ## Components
 
 - Migrate from mdc-deprecated-list-item to new mdc-list-item
+
+## Testing
+
+- Tests are falling randomly due to changes in snapshost
+- Testing for accessability should be added using https://www.deque.com/axe/
