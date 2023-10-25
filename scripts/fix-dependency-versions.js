@@ -12,6 +12,8 @@ const root = path.resolve(__dirname, '../');
 const rootPackagePath = path.resolve(root, 'package.json');
 const rootPackageJson = JSON.parse(fs.readFileSync(rootPackagePath, 'utf8'));
 
+let logVerbose = process.argv.includes('--verbose');
+
 // Read all package.json files in dist/packages
 const packagesPath = path.resolve(root, 'dist/packages');
 const packages = fs.readdirSync(packagesPath);
@@ -24,10 +26,9 @@ packages.forEach((packageName) => {
   }
   const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8'));
 
-  if (packageName !== 'base') {
-    return;
+  if (logVerbose) {
+    console.log(`Updating ${packageName}...`);
   }
-  console.log(`Updating ${packageName}...`);
   updateDependencies(packageJson.dependencies);
   updateDependencies(packageJson.devDependencies);
   updateDependencies(packageJson.peerDependencies);
@@ -37,8 +38,12 @@ packages.forEach((packageName) => {
     JSON.stringify(packageJson, null, 2),
     'utf8'
   );
-  console.log(`Updated ${packageName}!`);
+  if (logVerbose) {
+    console.log(`Updated ${packageName}!`);
+  }
 });
+
+console.log('Fixed dependency versions!');
 
 function updateDependencies(dependencies) {
   if (!dependencies) {
