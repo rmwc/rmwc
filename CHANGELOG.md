@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [14.0.2-alpha.2](https://github.com/rmwc/rmwc/compare/v14.0.2-alpha.1...v14.0.2-alpha.2) (2023-10-25)
+
+
+### Bug Fixes
+
+* publish step should change dependency versions ([a84dc3c](https://github.com/rmwc/rmwc/commit/a84dc3c78b0884dd5d7975d6f7ddd228ace3d0af))
+
 ## [14.0.2-alpha.1](https://github.com/rmwc/rmwc/compare/v14.0.2-alpha.0...v14.0.2-alpha.1) (2023-10-20)
 
 
