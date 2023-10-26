@@ -49,5 +49,8 @@
     "@rmwc/provider": "workspace:*",
     "@rmwc/ripple": "workspace:*",
     "@rmwc/types": "workspace:*"
-  }
+  },
+  "files": [
+    "*.css"
+  ]
 }

@@ -45,5 +45,8 @@
     "@rmwc/icon": "workspace:*",
     "@rmwc/icon-button": "workspace:*",
     "@rmwc/types": "workspace:*"
-  }
+  },
+  "files": [
+    "*.css"
+  ]
 }

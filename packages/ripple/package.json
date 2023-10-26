@@ -43,5 +43,8 @@
     "@rmwc/base": "workspace:*",
     "@rmwc/provider": "workspace:*",
     "@rmwc/types": "workspace:*"
-  }
+  },
+  "files": [
+    "*.css"
+  ]
 }

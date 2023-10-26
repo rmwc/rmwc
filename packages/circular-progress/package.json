@@ -41,5 +41,8 @@
   "dependencies": {
     "@rmwc/base": "workspace:*",
     "@rmwc/types": "workspace:*"
-  }
+  },
+  "files": [
+    "*.css"
+  ]
 }

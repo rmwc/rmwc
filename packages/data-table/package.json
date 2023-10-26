@@ -46,5 +46,8 @@
     "@rmwc/select": "workspace:*",
     "@rmwc/switch": "workspace:*",
     "@rmwc/types": "workspace:*"
-  }
+  },
+  "files": [
+    "*.css"
+  ]
 }
