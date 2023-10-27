@@ -12,7 +12,8 @@
     "./styles": {
       "import": "./styles.mjs",
       "require": "./styles.js"
-    }
+    },
+    "./data-table.css": "./data-table.css"
   },
   "sideEffects": [
     "**/*.css"

@@ -16,7 +16,9 @@
     "./collapsible-list": {
       "import": "./collapsible-list.mjs",
       "require": "./collapsible-list.js"
-    }
+    },
+    "./collapsible-list.css": "./collapsible-list.css",
+    "./list-item.css": "./list-item.css"
   },
   "sideEffects": [
     "**/*.css"

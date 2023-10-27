@@ -12,7 +12,8 @@
     "./styles": {
       "import": "./styles.mjs",
       "require": "./styles.js"
-    }
+    },
+    "./chip.css": "./chip.css"
   },
   "sideEffects": [
     "**/*.css"
