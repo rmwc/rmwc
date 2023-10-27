@@ -39,7 +39,7 @@ v14.0.0 is here! This release includes:
 - support for material-components-web v14
 - support for react 18
 - a new and improved tooltip adhering to the Material Design principles, with minimal breaking changes
-- migrated from Lerna to Nx and Vite
+- migrated from Lerna to Nx and Vite ⚡
 
 _View all release notes_ 👉 https://opencollective.com/rmwc/updates
 
