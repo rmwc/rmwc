@@ -12,7 +12,8 @@
     "./styles": {
       "import": "./styles.mjs",
       "require": "./styles.js"
-    }
+    },
+    "./select.css": "./select.css"
   },
   "sideEffects": [
     "**/*.css"

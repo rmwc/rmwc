@@ -12,7 +12,8 @@
     "./styles": {
       "import": "./styles.mjs",
       "require": "./styles.js"
-    }
+    },
+    "./ripple.css": "./ripple.css"
   },
   "sideEffects": [
     "**/*.css"

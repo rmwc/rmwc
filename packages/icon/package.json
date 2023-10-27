@@ -12,7 +12,8 @@
     "./styles": {
       "import": "./styles.mjs",
       "require": "./styles.js"
-    }
+    },
+    "./icon.css": "./icon.css"
   },
   "sideEffects": [
     "**/*.css"
