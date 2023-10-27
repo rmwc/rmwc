@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/segmented-button",
-  "version": "14.0.2-alpha.3",
+  "version": "14.0.2-alpha.4",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {

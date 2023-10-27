@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/grid-list",
-  "version": "14.0.2-alpha.3",
+  "version": "14.0.2-alpha.4",
   "description": "RMWC GridList component",
   "main": "./index.js",
   "types": "./index.d.ts",
