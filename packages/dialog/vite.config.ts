@@ -28,9 +28,10 @@ export default defineConfig({
   build: {
     lib: {
       // Could also be a dictionary or array of multiple entry points.
-      entry: 'src/index.ts',
-      name: 'dialog',
-      fileName: 'index',
+      entry: {
+        index: 'src/index.ts',
+        styles: 'src/styles.ts'
+      },
       // Change this to the formats you want to support.
       // Don't forget to update your package.json as well.
       formats: ['es', 'cjs']
