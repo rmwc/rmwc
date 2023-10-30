@@ -22,7 +22,7 @@ describe('TextField', () => {
 
   it('can have children', () => {
     const { asFragment } = render(
-      <TextField placeholder="test">
+      <TextField label="test" placeholder="test">
         <div>Child</div>
       </TextField>
     );
@@ -81,6 +81,7 @@ describe('TextField', () => {
   it('can be textarea', () => {
     const { asFragment } = render(
       <TextField
+        label="test"
         placeholder="test"
         value="hello world"
         textarea
@@ -99,17 +100,17 @@ describe('TextField', () => {
   });
 
   it('can be invalid', () => {
-    const { asFragment } = render(<TextField invalid />);
+    const { asFragment } = render(<TextField label="test" invalid />);
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('can be outlined', () => {
-    const { asFragment } = render(<TextField outlined />);
+    const { asFragment } = render(<TextField label="test" outlined />);
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('can be disabled', () => {
-    const { asFragment } = render(<TextField disabled />);
+    const { asFragment } = render(<TextField label="test" disabled />);
     expect(asFragment()).toMatchSnapshot();
   });
 
@@ -131,13 +132,15 @@ describe('TextField', () => {
   });
 
   it('can be have icon', () => {
-    const { asFragment } = render(<TextField icon="favorite" />);
+    const { asFragment } = render(<TextField label="test" icon="favorite" />);
     expect(screen.getByText('favorite')).toBeInTheDocument();
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('can be have trailingIcon', () => {
-    const { asFragment } = render(<TextField trailingIcon="favorite" />);
+    const { asFragment } = render(
+      <TextField label="test" trailingIcon="favorite" />
+    );
     expect(screen.getByText('favorite')).toBeInTheDocument();
     expect(asFragment()).toMatchSnapshot();
   });

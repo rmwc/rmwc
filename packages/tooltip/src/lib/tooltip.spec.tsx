@@ -6,7 +6,7 @@ import { Tooltip } from './tooltip';
 describe('Tooltip', () => {
   it('renders', async () => {
     const { asFragment } = render(
-      <Tooltip overlay="tooltip" open>
+      <Tooltip label="test" overlay="tooltip" open>
         <span>test</span>
       </Tooltip>
     );
@@ -61,7 +61,7 @@ describe('Tooltip', () => {
     const { asFragment } = render(
       <RMWCProvider tooltip={{}}>
         {
-          <Tooltip overlay={<div>tooltip</div>}>
+          <Tooltip label="test" overlay={<div>tooltip</div>}>
             <span>test</span>
           </Tooltip>
         }
@@ -77,7 +77,7 @@ describe('Tooltip', () => {
 
   it('can be rich with default rich styling disabled', () => {
     const { asFragment } = render(
-      <Tooltip overlay={<div>tooltip</div>} disableRichStyling>
+      <Tooltip label="test" overlay={<div>tooltip</div>} disableRichStyling>
         <span>test</span>
       </Tooltip>
     );
@@ -89,7 +89,7 @@ describe('Tooltip', () => {
     const { asFragment } = render(
       <RMWCProvider tooltip={{}}>
         {
-          <Tooltip overlay={<div>tooltip</div>} isPersistent>
+          <Tooltip label="test" overlay={<div>tooltip</div>} isPersistent>
             <span>test</span>
           </Tooltip>
         }

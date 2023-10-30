@@ -5,7 +5,7 @@ import { Checkbox } from './checkbox';
 
 describe('Checkbox', () => {
   test('renders', () => {
-    const { asFragment } = render(<Checkbox />);
+    const { asFragment } = render(<Checkbox label="test" />);
     expect(asFragment()).toMatchSnapshot();
   });
 
