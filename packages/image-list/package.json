@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/image-list",
-  "version": "14.0.2-alpha.5",
+  "version": "14.0.2-alpha.6",
   "description": "RMWC ImageList component",
   "main": "./index.js",
   "types": "./index.d.ts",
