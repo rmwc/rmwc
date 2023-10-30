@@ -6,16 +6,16 @@ exports[`Tooltip > can be rich 1`] = `
     class="mdc-tooltip-wrapper--rich"
   >
     <span
-      aria-describedby="123456"
+      aria-describedby="tooltip-test"
       class=""
-      data-tooltip-id="123456"
+      data-tooltip-id="tooltip-test"
     >
       test
     </span>
     <div
       aria-hidden="false"
       class="mdc-tooltip mdc-tooltip--rich"
-      id="123456"
+      id="tooltip-test"
       role="dialog"
     >
       <div
@@ -36,9 +36,9 @@ exports[`Tooltip > can be rich and persistent 1`] = `
     class="mdc-tooltip-wrapper--rich"
   >
     <span
-      aria-describedby="123456"
+      aria-describedby="tooltip-test"
       class=""
-      data-tooltip-id="123456"
+      data-tooltip-id="tooltip-test"
     >
       test
     </span>
@@ -46,7 +46,7 @@ exports[`Tooltip > can be rich and persistent 1`] = `
       aria-hidden="false"
       class="mdc-tooltip mdc-tooltip--rich"
       data-mdc-tooltip-persistent="true"
-      id="123456"
+      id="tooltip-test"
       role="dialog"
       tabindex="-1"
     >
@@ -68,16 +68,16 @@ exports[`Tooltip > can be rich with default rich styling disabled 1`] = `
     class="mdc-tooltip-wrapper--rich"
   >
     <span
-      aria-describedby="123456"
+      aria-describedby="tooltip-test"
       class=""
-      data-tooltip-id="123456"
+      data-tooltip-id="tooltip-test"
     >
       test
     </span>
     <div
       aria-hidden="false"
       class="mdc-tooltip rmwc-tooltip"
-      id="123456"
+      id="tooltip-test"
       role="dialog"
     >
       <div
@@ -98,7 +98,7 @@ exports[`Tooltip > renders 1`] = `
     aria-hidden="true"
     class="mdc-tooltip mdc-tooltip--showing"
     data-mdc-tooltip-persistent="true"
-    id="123456"
+    id="tooltip-test"
     role="tooltip"
     style="top: 4px; left: 0px;"
   >
@@ -110,9 +110,9 @@ exports[`Tooltip > renders 1`] = `
     </div>
   </div>
   <span
-    aria-describedby="123456"
+    aria-describedby="tooltip-test"
     class=""
-    data-tooltip-id="123456"
+    data-tooltip-id="tooltip-test"
     element="[object Object]"
   >
     test

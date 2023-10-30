@@ -1,6 +1,6 @@
 import React from 'react';
 import * as RMWC from '@rmwc/types';
-import { classNames, createComponent, Tag } from '@rmwc/base';
+import { classNames, createComponent, Tag, useId } from '@rmwc/base';
 import { useProviderContext } from '@rmwc/provider';
 import { useToolTipFoundation } from './foundation';
 import { AnchorBoundaryType } from '@material/tooltip';
@@ -62,7 +62,7 @@ export const Tooltip: RMWC.ComponentType<
     ...props
   };
 
-  const uniqueId = crypto.randomUUID();
+  const uniqueId = useId('tooltip', props);
 
   const isRich = typeof overlay !== 'string';
 
