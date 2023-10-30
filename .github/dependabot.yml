@@ -15,4 +15,8 @@ updates:
     ignore:
       - dependency-name: "@material/*"
       - dependency-name: "material-components-web"
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: daily
  
