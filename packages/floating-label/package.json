@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/floating-label",
-  "version": "14.0.2-alpha.6",
+  "version": "14.0.2-alpha.7",
   "description": "RMWC FloatingLabel component",
   "main": "./index.js",
   "types": "./index.d.ts",
