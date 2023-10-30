@@ -2,6 +2,14 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [14.0.2-alpha.5](https://github.com/rmwc/rmwc/compare/v14.0.2-alpha.4...v14.0.2-alpha.5) (2023-10-30)
+
+
+### Bug Fixes
+
+* **dialog:** fix code that throws when els = null ([5b9b2e2](https://github.com/rmwc/rmwc/commit/5b9b2e26392e1c901b33a13d33866d33de2d1ffa))
+* **tooltip:** use correct unique id ([e644e8d](https://github.com/rmwc/rmwc/commit/e644e8dbaebf9ebbcfaf1e4fe142e14787118e54))
+
 ## [14.0.2-alpha.4](https://github.com/rmwc/rmwc/compare/v14.0.2-alpha.3...v14.0.2-alpha.4) (2023-10-27)
 
 
