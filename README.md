@@ -4,8 +4,6 @@
 [![npm](https://img.shields.io/npm/dm/@rmwc/base.svg)](https://www.npmjs.com/package/rmwc)
 [![npm](https://img.shields.io/npm/l/rmwc.svg)](https://github.com/rmwc/rmwc/blob/master/LICENSE)
 [![Chat](https://img.shields.io/discord/490680848979591168.svg)](https://discord.gg/4BSUxCW)
-[![Backers on Open Collective](https://opencollective.com/rmwc/backers/badge.svg)](#backers)
-[![Sponsors on Open Collective](https://opencollective.com/rmwc/sponsors/badge.svg)](#sponsors)
 
 # RMWC - React Material Web Components
 
