@@ -10,8 +10,8 @@
       "require": "./index.js"
     },
     "./styles": {
-      "import": "./styles/index.mjs",
-      "require": "./styles/index.js"
+      "import": "./styles.mjs",
+      "require": "./styles.js"
     }
   },
   "sideEffects": true,
