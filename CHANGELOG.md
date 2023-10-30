@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [14.0.2-alpha.7](https://github.com/rmwc/rmwc/compare/v14.0.2-alpha.6...v14.0.2-alpha.7) (2023-10-30)
+
+
+### Bug Fixes
+
+* ensure styles are exported correctly ([4b17422](https://github.com/rmwc/rmwc/commit/4b174229b58fcc8a8a0268e4075a2be7664b698e))
+
 ## [14.0.2-alpha.6](https://github.com/rmwc/rmwc/compare/v14.0.2-alpha.5...v14.0.2-alpha.6) (2023-10-30)
 
 
