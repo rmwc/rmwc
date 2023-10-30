@@ -47,6 +47,11 @@
         "{workspaceRoot}/.eslintignore",
         "{workspaceRoot}/eslint.config.js"
       ]
+    },
+    "npm-deploy": {
+      "options": {
+        "noBuild": true
+      }
     }
   },
   "namedInputs": {
