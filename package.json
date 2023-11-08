@@ -128,7 +128,7 @@
     "jsdom": "~22.1.0",
     "module-alias": "^2.2.2",
     "ngx-deploy-npm": "^7.0.1",
-    "nx": "17.0.1",
+    "nx": "17.0.3",
     "prettier": "^3.0.3",
     "typescript": "4.8.4",
     "vite": "~4.4.9",
