@@ -102,7 +102,7 @@
     "@testing-library/user-event": "^14.4.3",
     "@types/classnames": "^2.3.1",
     "@types/node": "^20.8.7",
-    "@types/react": "^18.2.21",
+    "@types/react": "^18.2.37",
     "@types/react-dom": "^18.2.14",
     "@typescript-eslint/eslint-plugin": "^5.60.1",
     "@typescript-eslint/parser": "^5.60.1",
