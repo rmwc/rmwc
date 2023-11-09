@@ -7,8 +7,8 @@ import {
   DocsP,
   DocsSubtitle
 } from '@rmwc/doc-utils';
-import examples from '../generated-examples/rc-toolrip.json';
-import propsSrc from '../generated-props/rc-toolrip.json';
+import examples from '../generated-examples/rc-tooltip.json';
+import propsSrc from '../generated-props/rc-tooltip.json';
 
 import { Tooltip } from '@rmwc/rc-tooltip';
 
@@ -20,10 +20,10 @@ import { RMWCProvider } from '@rmwc/provider';
 export default function Readme() {
   return (
     <Docs
-      title="Tooltips"
+      title="RC Tooltips"
       lead="Tooltips display informative text when users hover over, focus on, or tap an element."
-      module="@rmwc/tooltip"
-      styles={['@rmwc/tooltip/tooltip.css']}
+      module="@rmwc/rc-tooltip"
+      styles={['@rmwc/rc-tooltip/tooltip.css']}
       examples={examples}
       addon
     >
