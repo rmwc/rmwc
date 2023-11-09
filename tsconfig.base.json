@@ -100,6 +100,8 @@
       "@rmwc/toggleable": ["packages/toggleable/src/index.ts"],
       "@rmwc/tooltip": ["packages/tooltip/src/index.ts"],
       "@rmwc/tooltip/styles": ["packages/tooltip/src/styles.ts"],
+      "@rmwc/rc-tooltip": ["packages/tooltip/src/index.ts"],
+      "@rmwc/rc-tooltip/styles": ["packages/tooltip/src/styles.ts"],
       "@rmwc/top-app-bar": ["packages/top-app-bar/src/index.ts"],
       "@rmwc/top-app-bar/styles": ["packages/top-app-bar/src/styles.ts"],
       "@rmwc/touch-target": ["packages/touch-target/src/index.ts"],

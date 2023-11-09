@@ -1,0 +1,26 @@
+Unable to connect to the daemon process.
+
+Messages from the log:
+
+To fix this, set a unique name for each project in a project.json inside the project's root. If the project does not currently have a project.json, you can create one that contains only a name.
+Error: The following projects are defined in multiple locations:
+- tooltip: 
+  - packages/rc-tooltip
+  - packages/tooltip
+
+To fix this, set a unique name for each project in a project.json inside the project's root. If the project does not currently have a project.json, you can create one that contains only a name.
+    at readProjectConfigurationsFromRootMap (/home/jenc/projects/rmwc/node_modules/nx/src/project-graph/utils/project-configuration-utils.js:97:15)
+    at buildProjectsConfigurationsFromProjectPathsAndPlugins (/home/jenc/projects/rmwc/node_modules/nx/src/project-graph/utils/project-configuration-utils.js:70:19)
+    at createProjectConfigurations (/home/jenc/projects/rmwc/node_modules/nx/src/project-graph/utils/retrieve-workspace-files.js:131:129)
+    at WorkspaceContext.<anonymous> (/home/jenc/projects/rmwc/node_modules/nx/src/project-graph/utils/retrieve-workspace-files.js:82:39)
+    at getProjectConfigurationsFromContext (/home/jenc/projects/rmwc/node_modules/nx/src/utils/workspace-context.js:26:29)
+    at _retrieveProjectConfigurations (/home/jenc/projects/rmwc/node_modules/nx/src/project-graph/utils/retrieve-workspace-files.js:81:72)
+    at retrieveProjectConfigurations (/home/jenc/projects/rmwc/node_modules/nx/src/project-graph/utils/retrieve-workspace-files.js:58:12)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async processCollectedUpdatedAndDeletedFiles (/home/jenc/projects/rmwc/node_modules/nx/src/daemon/server/project-graph-incremental-recomputation.js:129:34)
+    at async processFilesAndCreateAndSerializeProjectGraph (/home/jenc/projects/rmwc/node_modules/nx/src/daemon/server/project-graph-incremental-recomputation.js:165:17)
+[NX Daemon Server] - 2023-11-08T11:48:14.257Z - Done responding to the client null
+
+
+
+More information: /home/jenc/projects/rmwc/.nx/cache/d/daemon.log

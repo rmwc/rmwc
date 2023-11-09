@@ -1,5 +1,5 @@
 {
-  "name": "tooltip",
+  "name": "rc-tooltip",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "packages/rc-tooltip/src",
   "projectType": "library",
