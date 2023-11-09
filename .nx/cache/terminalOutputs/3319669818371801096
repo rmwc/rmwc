@@ -1,0 +1,13 @@
+
+[7m[1m[36m RUN [39m[22m[27m [36mv0.33.0[39m [90m/home/jenc/projects/rmwc/packages/icon[39m
+
+[90mstderr[2m | src/lib/icon.spec.tsx[2m > [22m[2mIcon[2m > [22m[2mErrors when bad strategy is passed[22m[39m
+Icon: rendering not implemented for error.
+
+ [32m✓[39m src/lib/icon.spec.tsx [2m ([22m[2m12 tests[22m[2m)[22m[33m 362[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m1 passed[39m[22m[90m (1)[39m
+[2m      Tests [22m [1m[32m12 passed[39m[22m[90m (12)[39m
+[2m   Start at [22m 12:37:22
+[2m   Duration [22m 7.50s[2m (transform 1.33s, setup 578ms, collect 1.35s, tests 362ms, environment 1.50s, prepare 1.60s)[22m
+

@@ -1237,9 +1237,9 @@
       "type": "npm",
       "name": "npm:@babel/runtime",
       "data": {
-        "version": "7.23.1",
+        "version": "7.23.2",
         "packageName": "@babel/runtime",
-        "hash": "sha512-hC2v6p8ZSI/W0HUzh3V8C5g+NwSKzKPtJwSpTjwl0o297GP9+ZLQSkdvHz46CM3LqyoXxq+5G9komY+eSqSO0g=="
+        "hash": "sha512-mM8eg4yl5D6i3lu2QKPuPH4FArvJ8KhTofbE7jwMUv9KX5mBvwPAqnV3MlyBNqdp9RyRKP6Yck8TrfYrPvX3bg=="
       }
     },
     "npm:@babel/template": {
@@ -3384,6 +3384,24 @@
         "hash": "sha512-C16M+IYz0rgRhWZdCmK+h58JMv8vijAA61gmz2rspCSwKwzBebpdcsiUmwrtJRdphuY30i6BSLEOP8ppbNLyLg=="
       }
     },
+    "npm:@rc-component/portal": {
+      "type": "npm",
+      "name": "npm:@rc-component/portal",
+      "data": {
+        "version": "1.1.2",
+        "packageName": "@rc-component/portal",
+        "hash": "sha512-6f813C0IsasTZms08kfA8kPAGxbbkYToa8ALaiDIGGECU4i9hj8Plgbx0sNJDrey3EtHO30hmdaxtT0138xZcg=="
+      }
+    },
+    "npm:@rc-component/trigger": {
+      "type": "npm",
+      "name": "npm:@rc-component/trigger",
+      "data": {
+        "version": "1.18.1",
+        "packageName": "@rc-component/trigger",
+        "hash": "sha512-bAcxJJ1Y+EJVgn8BRik7d8JjjAPND5zKkHQ3159zeR0gVoG4Z0RgEDAiXFFoie3/WpoJ9dRJyjrIpnH4Ef7PEg=="
+      }
+    },
     "npm:@remix-run/router": {
       "type": "npm",
       "name": "npm:@remix-run/router",
@@ -4156,6 +4174,15 @@
         "version": "15.7.8",
         "packageName": "@types/prop-types",
         "hash": "sha512-kMpQpfZKSCBqltAJwskgePRaYRFukDkm1oItcAbC3gNELR20XIBcN9VRgg4+m8DKsTfkWeA4m4Imp4DDuWy7FQ=="
+      }
+    },
+    "npm:@types/rc-tooltip": {
+      "type": "npm",
+      "name": "npm:@types/rc-tooltip",
+      "data": {
+        "version": "3.7.10",
+        "packageName": "@types/rc-tooltip",
+        "hash": "sha512-s23GlQbvlu9vDknxyNSTONuZuqiNpWJaccfDDnLojd3lOn1gQRCd8H53zcjOX4HA0qab+lwDI5nnVtekkw9+9w=="
       }
     },
     "npm:@types/react": {
@@ -10089,6 +10116,42 @@
         "hash": "sha512-vYl3iOX+4CKUWuxGi9Ukhie6fsqXqS9FE2Zaic4tNFD2N2QQaXOMFbuKK4QmDHC0JO6B1Zp41J0LpT0oR68amQ=="
       }
     },
+    "npm:rc-motion": {
+      "type": "npm",
+      "name": "npm:rc-motion",
+      "data": {
+        "version": "2.9.0",
+        "packageName": "rc-motion",
+        "hash": "sha512-XIU2+xLkdIr1/h6ohPZXyPBMvOmuyFZQ/T0xnawz+Rh+gh4FINcnZmMT5UTIj6hgI0VLDjTaPeRd+smJeSPqiQ=="
+      }
+    },
+    "npm:rc-resize-observer": {
+      "type": "npm",
+      "name": "npm:rc-resize-observer",
+      "data": {
+        "version": "1.4.0",
+        "packageName": "rc-resize-observer",
+        "hash": "sha512-PnMVyRid9JLxFavTjeDXEXo65HCRqbmLBw9xX9gfC4BZiSzbLXKzW3jPz+J0P71pLbD5tBMTT+mkstV5gD0c9Q=="
+      }
+    },
+    "npm:rc-tooltip": {
+      "type": "npm",
+      "name": "npm:rc-tooltip",
+      "data": {
+        "version": "6.1.2",
+        "packageName": "rc-tooltip",
+        "hash": "sha512-89zwvybvCxGJu3+gGF8w5AXd4HHk6hIN7K0vZbkzjilVaEAIWPqc1fcyeUeP71n3VCcw7pTL9LyFupFbrx8gHw=="
+      }
+    },
+    "npm:rc-util": {
+      "type": "npm",
+      "name": "npm:rc-util",
+      "data": {
+        "version": "5.38.1",
+        "packageName": "rc-util",
+        "hash": "sha512-e4ZMs7q9XqwTuhIK7zBIVFltUtMSjphuPPQXHoHlzRzNdOwUxDejo0Zls5HYaJfRKNURcsS/ceKVULlhjBrxng=="
+      }
+    },
     "npm:react": {
       "type": "npm",
       "name": "npm:react",
@@ -10312,6 +10375,15 @@
         "version": "1.0.0",
         "packageName": "requires-port",
         "hash": "sha512-KigOCHcocU3XODJxsu8i/j8T9tzT4adHiecwORRQ0ZZFcp7ahwXuRU1m+yuO90C5ZUyGeGfocHDI14M3L3yDAQ=="
+      }
+    },
+    "npm:resize-observer-polyfill": {
+      "type": "npm",
+      "name": "npm:resize-observer-polyfill",
+      "data": {
+        "version": "1.5.1",
+        "packageName": "resize-observer-polyfill",
+        "hash": "sha512-LwZrotdHOo12nQuZlHEmtuXdqGoOD0OhaxopaNFxWzInpEgaLWoVuAMbTzixuosCx2nEG58ngzW3vxdWoxIgdg=="
       }
     },
     "npm:resolve-alpn": {
@@ -18217,6 +18289,71 @@
       "type": "static"
     },
     {
+      "source": "npm:@rc-component/portal",
+      "target": "npm:react",
+      "type": "static"
+    },
+    {
+      "source": "npm:@rc-component/portal",
+      "target": "npm:react-dom",
+      "type": "static"
+    },
+    {
+      "source": "npm:@rc-component/portal",
+      "target": "npm:@babel/runtime",
+      "type": "static"
+    },
+    {
+      "source": "npm:@rc-component/portal",
+      "target": "npm:classnames",
+      "type": "static"
+    },
+    {
+      "source": "npm:@rc-component/portal",
+      "target": "npm:rc-util",
+      "type": "static"
+    },
+    {
+      "source": "npm:@rc-component/trigger",
+      "target": "npm:react",
+      "type": "static"
+    },
+    {
+      "source": "npm:@rc-component/trigger",
+      "target": "npm:react-dom",
+      "type": "static"
+    },
+    {
+      "source": "npm:@rc-component/trigger",
+      "target": "npm:@babel/runtime",
+      "type": "static"
+    },
+    {
+      "source": "npm:@rc-component/trigger",
+      "target": "npm:@rc-component/portal",
+      "type": "static"
+    },
+    {
+      "source": "npm:@rc-component/trigger",
+      "target": "npm:classnames",
+      "type": "static"
+    },
+    {
+      "source": "npm:@rc-component/trigger",
+      "target": "npm:rc-motion",
+      "type": "static"
+    },
+    {
+      "source": "npm:@rc-component/trigger",
+      "target": "npm:rc-resize-observer",
+      "type": "static"
+    },
+    {
+      "source": "npm:@rc-component/trigger",
+      "target": "npm:rc-util",
+      "type": "static"
+    },
+    {
       "source": "npm:@rollup/pluginutils",
       "target": "npm:rollup",
       "type": "static"
@@ -19059,6 +19196,11 @@
     {
       "source": "npm:@types/node",
       "target": "npm:undici-types",
+      "type": "static"
+    },
+    {
+      "source": "npm:@types/rc-tooltip",
+      "target": "npm:@types/react",
       "type": "static"
     },
     {
@@ -25464,6 +25606,106 @@
     {
       "source": "npm:randombytes",
       "target": "npm:safe-buffer",
+      "type": "static"
+    },
+    {
+      "source": "npm:rc-motion",
+      "target": "npm:react",
+      "type": "static"
+    },
+    {
+      "source": "npm:rc-motion",
+      "target": "npm:react-dom",
+      "type": "static"
+    },
+    {
+      "source": "npm:rc-motion",
+      "target": "npm:@babel/runtime",
+      "type": "static"
+    },
+    {
+      "source": "npm:rc-motion",
+      "target": "npm:classnames",
+      "type": "static"
+    },
+    {
+      "source": "npm:rc-motion",
+      "target": "npm:rc-util",
+      "type": "static"
+    },
+    {
+      "source": "npm:rc-resize-observer",
+      "target": "npm:react",
+      "type": "static"
+    },
+    {
+      "source": "npm:rc-resize-observer",
+      "target": "npm:react-dom",
+      "type": "static"
+    },
+    {
+      "source": "npm:rc-resize-observer",
+      "target": "npm:@babel/runtime",
+      "type": "static"
+    },
+    {
+      "source": "npm:rc-resize-observer",
+      "target": "npm:classnames",
+      "type": "static"
+    },
+    {
+      "source": "npm:rc-resize-observer",
+      "target": "npm:rc-util",
+      "type": "static"
+    },
+    {
+      "source": "npm:rc-resize-observer",
+      "target": "npm:resize-observer-polyfill",
+      "type": "static"
+    },
+    {
+      "source": "npm:rc-tooltip",
+      "target": "npm:react",
+      "type": "static"
+    },
+    {
+      "source": "npm:rc-tooltip",
+      "target": "npm:react-dom",
+      "type": "static"
+    },
+    {
+      "source": "npm:rc-tooltip",
+      "target": "npm:@babel/runtime",
+      "type": "static"
+    },
+    {
+      "source": "npm:rc-tooltip",
+      "target": "npm:@rc-component/trigger",
+      "type": "static"
+    },
+    {
+      "source": "npm:rc-tooltip",
+      "target": "npm:classnames",
+      "type": "static"
+    },
+    {
+      "source": "npm:rc-util",
+      "target": "npm:react",
+      "type": "static"
+    },
+    {
+      "source": "npm:rc-util",
+      "target": "npm:react-dom",
+      "type": "static"
+    },
+    {
+      "source": "npm:rc-util",
+      "target": "npm:@babel/runtime",
+      "type": "static"
+    },
+    {
+      "source": "npm:rc-util",
+      "target": "npm:react-is@18.2.0",
       "type": "static"
     },
     {

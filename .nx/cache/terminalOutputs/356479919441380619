@@ -1,0 +1,56 @@
+
+[7m[1m[36m RUN [39m[22m[27m [36mv0.33.0[39m [90m/home/jenc/projects/rmwc/packages/rc-tooltip[39m
+
+ [32m✓[39m src/lib/tooltip-ssr.spec.tsx [2m ([22m[2m1 test[22m[2m)[22m[90m 38[2mms[22m[39m
+ [33m❯[39m src/lib/tooltip.spec.tsx [2m ([22m[2m8 tests[22m [2m|[22m [31m1 failed[39m[2m)[22m[33m 361[2mms[22m[39m
+[31m   [33m❯[31m src/lib/tooltip.spec.tsx[2m > [22mTooltip[2m > [22mrenders[39m
+[31m     → Unable to find an element with the text: tooltip. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m<body>[31m
+  [36m<div>[31m
+    [36m<span>[31m
+      [0mtest[0m
+    [36m</span>[31m
+  [36m</div>[31m
+[36m</body>[31m[39m
+
+[31m⎯⎯⎯⎯⎯⎯⎯[1m[7m Failed Tests 1 [27m[22m⎯⎯⎯⎯⎯⎯⎯[39m
+
+[31m[1m[7m FAIL [27m[22m[39m src/lib/tooltip.spec.tsx[2m > [22mTooltip[2m > [22mrenders
+[31m[1mTestingLibraryElementError[22m: Unable to find an element with the text: tooltip. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m<body>[31m
+  [36m<div>[31m
+    [36m<span>[31m
+      [0mtest[0m
+    [36m</span>[31m
+  [36m</div>[31m
+[36m</body>[31m[39m
+[90m [2m❯[22m Object.getElementError ../../node_modules/@testing-library/dom/dist/config.js:[2m37:19[22m[39m
+[90m [2m❯[22m ../../node_modules/@testing-library/dom/dist/query-helpers.js:[2m76:38[22m[39m
+[90m [2m❯[22m ../../node_modules/@testing-library/dom/dist/query-helpers.js:[2m52:17[22m[39m
+[90m [2m❯[22m ../../node_modules/@testing-library/dom/dist/query-helpers.js:[2m95:19[22m[39m
+[36m [2m❯[22m src/lib/tooltip.spec.tsx:[2m14:19[22m[39m
+    [90m 12| [39m    );
+    [90m 13| [39m    userEvent.hover(screen.getByText('test'));
+    [90m 14| [39m    expect(screen.getByText('tooltip')).toBeInTheDocument();
+    [90m   | [39m                  [31m^[39m
+    [90m 15| [39m    expect(asFragment()).toMatchSnapshot();
+    [90m 16| [39m  });
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯[22m[39m
+
+[2m  Snapshots [22m [1m[32m2 written[39m[22m
+[2m            [22m [1m[33m3 obsolete[39m[22m
+[2m            [22m [90m↳[39m [2msrc/lib/[22m[1mtooltip[22m[2m.spec.tsx[22m
+[2m            [22m   [90m·[39m Tooltip align 1
+[2m            [22m   [90m·[39m Tooltip renders 1
+[2m            [22m   [90m·[39m Tooltip showArrow 1
+
+[2m Test Files [22m [1m[31m1 failed[39m[22m[2m | [22m[1m[32m1 passed[39m[22m[90m (2)[39m
+[2m      Tests [22m [1m[31m1 failed[39m[22m[2m | [22m[1m[32m8 passed[39m[22m[90m (9)[39m
+[2m   Start at [22m 12:38:37
+[2m   Duration [22m 5.97s[2m (transform 455ms, setup 1.04s, collect 2.10s, tests 399ms, environment 1.43s, prepare 2.26s)[22m
+

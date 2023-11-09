@@ -1,14 +1,21 @@
 import React from 'react';
 
-import { Docs, DocsExample, DocProps, DocsSubtitle, DocsP } from '@doc-utils';
-import propsSrc from './generated-props.json';
-import examples from './generated-examples.json';
+import {
+  DocProps,
+  Docs,
+  DocsExample,
+  DocsP,
+  DocsSubtitle
+} from '@rmwc/doc-utils';
+import examples from '../generated-examples/rc-toolrip.json';
+import propsSrc from '../generated-props/rc-toolrip.json';
 
-import { Tooltip } from '.';
-import { IconButton } from '../icon-button';
-import { Button } from '../button';
-import { Avatar } from '../avatar';
-import { RMWCProvider } from '../provider';
+import { Tooltip } from '@rmwc/rc-tooltip';
+
+import { IconButton } from '@rmwc/icon-button';
+import { Button } from '@rmwc/button';
+import { Avatar } from '@rmwc/avatar';
+import { RMWCProvider } from '@rmwc/provider';
 
 export default function Readme() {
   return (

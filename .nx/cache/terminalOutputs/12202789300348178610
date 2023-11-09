@@ -1,0 +1,9 @@
+[36mvite v4.4.9 [32mbuilding for production...[36m[39m
+[2K[1Gtransforming (1) [2msrc/index.ts[22m[2K[1G[32m✓[39m 2 modules transformed.
+[2K[1Grendering chunks (1)...[2K[1G[2K[1Gcomputing gzip size (0)...[2K[1Gcomputing gzip size (1)...[2K[1G[2m../../dist/packages/toggleable/[22m[36mindex.mjs  [39m[1m[2m0.69 kB[22m[1m[22m[2m │ gzip: 0.38 kB[22m
+[2K[1Grendering chunks (1)...[2K[1G[2K[1Gcomputing gzip size (1)...[2K[1G[2m../../dist/packages/toggleable/[22m[36mindex.js  [39m[1m[2m0.56 kB[22m[1m[22m[2m │ gzip: 0.35 kB[22m
+[32m
+[36m[vite:dts][32m Start generate declaration files...[39m
+[32m✓ built in 8.05s[39m
+[32m[36m[vite:dts][32m Declaration files built in 7686ms.
+[39m

@@ -80,6 +80,7 @@
     "@rmwc/theme": "workspace:*",
     "@rmwc/toggleable": "workspace:*",
     "@rmwc/tooltip": "workspace:*",
+    "@rmwc/rc-tooltip": "workspace:*",
     "@rmwc/top-app-bar": "workspace:*",
     "@rmwc/types": "workspace:*",
     "@rmwc/typography": "workspace:*",

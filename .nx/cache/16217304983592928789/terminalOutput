@@ -1,0 +1,11 @@
+
+[7m[1m[36m RUN [39m[22m[27m [36mv0.33.0[39m [90m/home/jenc/projects/rmwc/packages/switch[39m
+
+ [32m✓[39m src/lib/switch-ssr.spec.tsx [2m ([22m[2m1 test[22m[2m)[22m[90m 26[2mms[22m[39m
+ [32m✓[39m src/lib/switch.spec.tsx [2m ([22m[2m6 tests[22m[2m)[22m[33m 636[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m2 passed[39m[22m[90m (2)[39m
+[2m      Tests [22m [1m[32m7 passed[39m[22m[90m (7)[39m
+[2m   Start at [22m 12:38:13
+[2m   Duration [22m 5.54s[2m (transform 706ms, setup 979ms, collect 1.89s, tests 662ms, environment 1.14s, prepare 1.73s)[22m
+

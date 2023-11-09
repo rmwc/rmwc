@@ -41,10 +41,10 @@
   },
   "dependencies": {
     "@rmwc/base": "workspace:*",
-    "@rmwc/provider": "workspace:*"
-    "rc-tooltip": "3.7.3"
+    "@rmwc/provider": "workspace:*",
+    "rc-tooltip": "6.1.2"
   },
   "devDependencies": {
-    "@types/rc-tooltip": "3.7.1"
+    "@types/rc-tooltip": "3.7.10"
   }
 }

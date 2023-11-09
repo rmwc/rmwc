@@ -1,0 +1,11 @@
+[36mvite v4.4.9 [32mbuilding for production...[36m[39m
+[2K[1Gtransforming (1) [2msrc/index.ts[22m[2K[1G[32m✓[39m 3 modules transformed.
+[2K[1Grendering chunks (1)...[2K[1Grendering chunks (2)...[2K[1G[2K[1Gcomputing gzip size (0)...[2K[1Gcomputing gzip size (1)...[2K[1Gcomputing gzip size (2)...[2K[1G[2m../../dist/packages/card/[22m[36mstyles.mjs  [39m[1m[2m0.11 kB[22m[1m[22m[2m │ gzip: 0.09 kB[22m
+[2m../../dist/packages/card/[22m[36mindex.mjs   [39m[1m[2m2.36 kB[22m[1m[22m[2m │ gzip: 0.68 kB[22m
+[2K[1Grendering chunks (1)...[2K[1Grendering chunks (2)...[2K[1G[2K[1Gcomputing gzip size (1)...[2K[1Gcomputing gzip size (2)...[2K[1G[2m../../dist/packages/card/[22m[36mstyles.js  [39m[1m[2m0.13 kB[22m[1m[22m[2m │ gzip: 0.10 kB[22m
+[2m../../dist/packages/card/[22m[36mindex.js   [39m[1m[2m2.04 kB[22m[1m[22m[2m │ gzip: 0.60 kB[22m
+[32m
+[36m[vite:dts][32m Start generate declaration files...[39m
+[32m✓ built in 9.55s[39m
+[32m[36m[vite:dts][32m Declaration files built in 9108ms.
+[39m

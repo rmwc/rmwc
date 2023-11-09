@@ -1,4 +1,20 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Tooltip > align 1`] = `
+<DocumentFragment>
+  <span>
+    test
+  </span>
+</DocumentFragment>
+`;
+
+exports[`Tooltip > showArrow 1`] = `
+<DocumentFragment>
+  <span>
+    test
+  </span>
+</DocumentFragment>
+`;
 
 exports[`Tooltip align 1`] = `
 <DocumentFragment>

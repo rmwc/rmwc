@@ -1,0 +1,11 @@
+
+[7m[1m[36m RUN [39m[22m[27m [36mv0.33.0[39m [90m/home/jenc/projects/rmwc/packages/dialog[39m
+
+ [32m✓[39m src/lib/dialog-ssr.spec.tsx [2m ([22m[2m2 tests[22m[2m)[22m[90m 71[2mms[22m[39m
+ [32m✓[39m src/lib/dialog.spec.tsx [2m ([22m[2m18 tests[22m[2m)[22m[33m 2079[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m2 passed[39m[22m[90m (2)[39m
+[2m      Tests [22m [1m[32m20 passed[39m[22m[90m (20)[39m
+[2m   Start at [22m 12:38:56
+[2m   Duration [22m 7.15s[2m (transform 935ms, setup 833ms, collect 2.54s, tests 2.15s, environment 1.09s, prepare 1.39s)[22m
+

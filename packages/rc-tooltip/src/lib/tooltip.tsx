@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { JSXElementConstructor, ReactElement } from 'react';
 import { classNames } from '@rmwc/base';
 import ReactTooltip from 'rc-tooltip';
 import { useProviderContext } from '@rmwc/provider';
@@ -20,7 +20,8 @@ export interface TooltipProps {
   /** The overlay content for the tooltip. */
   content: React.ReactNode;
   /** The children that the tooltip belongs to. Must be a single React.child. */
-  children: React.ReactChild;
+  children: ReactElement<any, string | JSXElementConstructor<any>>;
+  //children: React.ReactNode;
   /** Activate the tooltip through one or more interactions. Defaults to `['hover', 'focus']`. */
   activateOn?: TooltipActivationT | TooltipActivationT[];
   /** Whether or not to show an arrow on the Tooltip. Defaults to `false`. */
