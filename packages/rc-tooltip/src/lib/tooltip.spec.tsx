@@ -10,7 +10,7 @@ describe('Tooltip', () => {
         <span>test</span>
       </Tooltip>
     );
-    userEvent.hover(screen.getByText('test'));
+    await userEvent.hover(screen.getByText('test'));
     expect(screen.getByText('tooltip')).toBeInTheDocument();
     expect(asFragment()).toMatchSnapshot();
   });
