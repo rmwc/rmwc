@@ -86,7 +86,7 @@
     "@action-validator/core": "^0.5.3",
     "@babel/core": "^7.23.2",
     "@babel/preset-react": "^7.14.5",
-    "@commitlint/cli": "^18.1.0",
+    "@commitlint/cli": "^18.4.0",
     "@commitlint/config-conventional": "^18.1.0",
     "@jscutlery/semver": "^3.1.0",
     "@nx/eslint-plugin": "17.0.1",
