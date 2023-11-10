@@ -1,5 +1,5 @@
 [36mvite v4.4.9 [32mbuilding for production...[36m[39m
-[2K[1Gtransforming (1) [2msrc/index.ts[22m[2K[1Gtransforming (4) [2msrc/lib/constants.ts[22m[2K[1G[32m✓[39m 6 modules transformed.
+[2K[1Gtransforming (1) [2msrc/index.ts[22m[2K[1Gtransforming (3) [2msrc/lib/circular-progress.tsx[22m[2K[1Gtransforming (4) [2msrc/lib/constants.ts[22m[2K[1G[32m✓[39m 6 modules transformed.
 [2K[1Grendering chunks (1)...[2K[1Grendering chunks (2)...[2K[1G[2K[1Gcomputing gzip size (0)...[2K[1Gcomputing gzip size (1)...[2K[1Gcomputing gzip size (2)...[2K[1Gcomputing gzip size (3)...[2K[1G[2m../../dist/packages/circular-progress/[22m[35mcircular-progress.css  [39m[1m[2m0.35 kB[22m[1m[22m[2m │ gzip: 0.15 kB[22m
 [2m../../dist/packages/circular-progress/[22m[36mstyles.mjs             [39m[1m[2m0.10 kB[22m[1m[22m[2m │ gzip: 0.08 kB[22m
 [2m../../dist/packages/circular-progress/[22m[36mindex.mjs              [39m[1m[2m5.42 kB[22m[1m[22m[2m │ gzip: 1.50 kB[22m
@@ -8,6 +8,6 @@
 [2m../../dist/packages/circular-progress/[22m[36mindex.js               [39m[1m[2m3.32 kB[22m[1m[22m[2m │ gzip: 1.24 kB[22m
 [32m
 [36m[vite:dts][32m Start generate declaration files...[39m
-[32m✓ built in 7.28s[39m
-[32m[36m[vite:dts][32m Declaration files built in 6862ms.
+[32m✓ built in 11.45s[39m
+[32m[36m[vite:dts][32m Declaration files built in 10669ms.
 [39m

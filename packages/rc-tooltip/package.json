@@ -34,7 +34,7 @@
   "bugs": {
     "url": "https://github.com/rmwc/rmwc/issues"
   },
-  "homepage": "https://github.com/rmwc/rmwc/tree/master/src/rc-tooltip",
+  "homepage": "https://github.com/rmwc/rmwc/tree/master/packages/rc-tooltip",
   "peerDependencies": {
     "react": ">=16.8.x",
     "react-dom": ">=16.8.x"

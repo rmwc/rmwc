@@ -1,0 +1,16 @@
+[4m[34mutils/readme/src/readmes/rc-tooltip.tsx:124:19[39m[24m - [31m[1merror[22m[39m [90mTS2322[39m: Type '() => Element[]' is not assignable to type 'ReactNode'.
+
+[0m [90m 122 | [39m      [33m<[39m[33m/[39m[33mDocsExample[39m[33m>[39m[0m
+[0m [90m 123 | [39m      [33m<[39m[33mDocsExample[39m label[33m=[39m[32m"Alignment"[39m[33m>[39m[0m
+[0m[31m[1m>[22m[39m[90m 124 | [39m        {[36mfunction[39m [33mAlignmentExample[39m() {[0m
+[0m [90m     | [39m                  [31m[1m^[22m[39m[0m
+[0m [90m 125 | [39m          [36mreturn[39m [[0m
+[0m [90m 126 | [39m            [32m'left'[39m[33m,[39m[0m
+[0m [90m 127 | [39m            [32m'right'[39m[33m,[39m[0m
+
+Found 1 error.
+
+ [31m>[39m [0m[7m[1m[31m NX [39m[22m[27m[0m  [31mFound type errors. See above.[39m
+
+   Pass --verbose to see the stacktrace.
+

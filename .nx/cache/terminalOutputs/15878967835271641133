@@ -1,0 +1,13 @@
+[36mvite v4.4.9 [32mbuilding for production...[36m[39m
+[2K[1Gtransforming (1) [2msrc/index.ts[22m[2K[1Gtransforming (3) [2msrc/lib/tooltip.tsx[22m[2K[1Gtransforming (7) [2m../../node_modules/@rc-component/trigger/es/index.js[22m[2K[1Gtransforming (11) [2m../../node_modules/@babel/runtime/helpers/esm/objectSpread2.js[22m[2K[1Gtransforming (31) [2m../../node_modules/@rc-component/trigger/es/util.js[22m[2K[1Gtransforming (47) [2m../../node_modules/rc-util/es/ref.js[22m[2K[1Gtransforming (62) [2m../../node_modules/@babel/runtime/helpers/esm/typeof.js[22m[2K[1Gtransforming (85) [2m../../node_modules/rc-motion/es/hooks/useStepQueue.js[22m[2K[1Gtransforming (95) [2m../../node_modules/rc-util/es/hooks/useState.js[22m[2K[1G[32m✓[39m 99 modules transformed.
+[2K[1Grendering chunks (1)...[2K[1Grendering chunks (2)...[2K[1G[2K[1Gcomputing gzip size (0)...[2K[1Gcomputing gzip size (1)...[2K[1Gcomputing gzip size (2)...[2K[1Gcomputing gzip size (3)...[2K[1G[2m../../dist/packages/rc-tooltip/[22m[35mtooltip.css  [39m[1m[2m 4.49 kB[22m[1m[22m[2m │ gzip:  0.89 kB[22m
+[2m../../dist/packages/rc-tooltip/[22m[36mstyles.mjs   [39m[1m[2m 0.02 kB[22m[1m[22m[2m │ gzip:  0.04 kB[22m
+[2m../../dist/packages/rc-tooltip/[22m[36mindex.mjs    [39m[1m[2m87.00 kB[22m[1m[22m[2m │ gzip: 25.49 kB[22m
+[2K[1Grendering chunks (1)...[2K[1Grendering chunks (2)...[2K[1G[2K[1Gcomputing gzip size (1)...[2K[1Gcomputing gzip size (2)...[2K[1Gcomputing gzip size (3)...[2K[1G[2m../../dist/packages/rc-tooltip/[22m[35mtooltip.css  [39m[1m[2m 4.49 kB[22m[1m[22m[2m │ gzip:  0.89 kB[22m
+[2m../../dist/packages/rc-tooltip/[22m[36mstyles.js    [39m[1m[2m 0.05 kB[22m[1m[22m[2m │ gzip:  0.07 kB[22m
+[2m../../dist/packages/rc-tooltip/[22m[36mindex.js     [39m[1m[2m63.69 kB[22m[1m[22m[2m │ gzip: 22.55 kB[22m
+[32m
+[36m[vite:dts][32m Start generate declaration files...[39m
+[32m✓ built in 12.23s[39m
+[32m[36m[vite:dts][32m Declaration files built in 9144ms.
+[39m

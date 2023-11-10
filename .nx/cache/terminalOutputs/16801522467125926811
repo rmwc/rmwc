@@ -1,11 +1,11 @@
 [36mvite v4.4.9 [32mbuilding for production...[36m[39m
-[2K[1Gtransforming (1) [2msrc/index.ts[22m[2K[1G[32m✓[39m 3 modules transformed.
+[2K[1Gtransforming (1) [2msrc/index.ts[22m[2K[1Gtransforming (3) [2msrc/lib/grid.tsx[22m[2K[1G[32m✓[39m 3 modules transformed.
 [2K[1Grendering chunks (1)...[2K[1Grendering chunks (2)...[2K[1G[2K[1Gcomputing gzip size (0)...[2K[1Gcomputing gzip size (1)...[2K[1Gcomputing gzip size (2)...[2K[1G[2m../../dist/packages/grid/[22m[36mstyles.mjs  [39m[1m[2m0.06 kB[22m[1m[22m[2m │ gzip: 0.07 kB[22m
 [2m../../dist/packages/grid/[22m[36mindex.mjs   [39m[1m[2m1.42 kB[22m[1m[22m[2m │ gzip: 0.55 kB[22m
 [2K[1Grendering chunks (1)...[2K[1Grendering chunks (2)...[2K[1G[2K[1Gcomputing gzip size (1)...[2K[1Gcomputing gzip size (2)...[2K[1G[2m../../dist/packages/grid/[22m[36mstyles.js  [39m[1m[2m0.07 kB[22m[1m[22m[2m │ gzip: 0.08 kB[22m
 [2m../../dist/packages/grid/[22m[36mindex.js   [39m[1m[2m1.23 kB[22m[1m[22m[2m │ gzip: 0.51 kB[22m
 [32m
 [36m[vite:dts][32m Start generate declaration files...[39m
-[32m✓ built in 6.73s[39m
-[32m[36m[vite:dts][32m Declaration files built in 6278ms.
+[32m✓ built in 12.29s[39m
+[32m[36m[vite:dts][32m Declaration files built in 11505ms.
 [39m
