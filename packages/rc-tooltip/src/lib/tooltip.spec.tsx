@@ -1,14 +1,14 @@
 import { RMWCProvider } from '@rmwc/provider';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { Tooltip } from './tooltip';
+import { RCTooltip } from './rc-tooltip';
 
 describe('Tooltip', () => {
   it('renders', async () => {
     const { asFragment } = render(
-      <Tooltip content="tooltip">
+      <RCTooltip content="tooltip">
         <span>test</span>
-      </Tooltip>
+      </RCTooltip>
     );
     await userEvent.hover(screen.getByText('test'));
     expect(screen.getByText('tooltip')).toBeInTheDocument();
@@ -17,50 +17,50 @@ describe('Tooltip', () => {
 
   it('activateOn', () => {
     render(
-      <Tooltip content="tooltip" activateOn="click">
+      <RCTooltip content="tooltip" activateOn="click">
         <span>test</span>
-      </Tooltip>
+      </RCTooltip>
     );
   });
 
   it('showArrow', () => {
     const { asFragment } = render(
-      <Tooltip content="tooltip" showArrow>
+      <RCTooltip content="tooltip" showArrow>
         <span>test</span>
-      </Tooltip>
+      </RCTooltip>
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('className', () => {
     render(
-      <Tooltip content="tooltip" className="my-custom-classname">
+      <RCTooltip content="tooltip" className="my-custom-classname">
         <span>test</span>
-      </Tooltip>
+      </RCTooltip>
     );
   });
 
   it('enterDelay', () => {
     render(
-      <Tooltip content="tooltip" enterDelay={1000}>
+      <RCTooltip content="tooltip" enterDelay={1000}>
         <span>test</span>
-      </Tooltip>
+      </RCTooltip>
     );
   });
 
   it('leaveDelay', () => {
     render(
-      <Tooltip content="tooltip" leaveDelay={1000}>
+      <RCTooltip content="tooltip" leaveDelay={1000}>
         <span>test</span>
-      </Tooltip>
+      </RCTooltip>
     );
   });
 
   it('align', () => {
     const { asFragment } = render(
-      <Tooltip content="tooltip" align="bottom">
+      <RCTooltip content="tooltip" align="bottom">
         <span>test</span>
-      </Tooltip>
+      </RCTooltip>
     );
     expect(asFragment()).toMatchSnapshot();
   });
@@ -68,9 +68,9 @@ describe('Tooltip', () => {
   it('works with provider', () => {
     render(
       <RMWCProvider tooltip={{}}>
-        <Tooltip content="tooltip">
+        <RCTooltip content="tooltip">
           <span>test</span>
-        </Tooltip>
+        </RCTooltip>
       </RMWCProvider>
     );
   });

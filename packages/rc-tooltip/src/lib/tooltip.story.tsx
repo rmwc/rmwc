@@ -2,18 +2,18 @@ import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 import { Avatar } from '../avatar';
-import { Tooltip } from './tooltip';
+import { RCTooltip } from './rc-tooltip';
 
-storiesOf('Tooltips', module)
-  .add('Tooltip', () => (
-    <Tooltip content="Test Tooltip">
+storiesOf('RCTooltips', module)
+  .add('RCTooltip', () => (
+    <RCTooltip content="Test Tooltip">
       <a href="#" style={{ margin: '4rem', display: 'inline-block' }}>
         hover
       </a>
-    </Tooltip>
+    </RCTooltip>
   ))
-  .add('Tooltip with rich content', () => (
-    <Tooltip
+  .add('RCTooltip with rich content', () => (
+    <RCTooltip
       content={
         <div>
           <Avatar size="xsmall" name="James Friedman" /> James Friedman
@@ -23,5 +23,5 @@ storiesOf('Tooltips', module)
       <a href="#" style={{ margin: '4rem', display: 'inline-block' }}>
         Rich Content
       </a>
-    </Tooltip>
+    </RCTooltip>
   ));

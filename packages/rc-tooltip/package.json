@@ -13,7 +13,7 @@
       "import": "./styles.mjs",
       "require": "./styles.js"
     },
-    "./tooltip.css": "./tooltip.css"
+    "./tooltip.css": "./rc-tooltip.css"
   },
   "sideEffects": [
     "**/*.css"

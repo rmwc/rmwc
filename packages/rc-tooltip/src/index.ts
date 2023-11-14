@@ -1,1 +1,1 @@
-export * from './lib/tooltip';
+export * from './lib/rc-tooltip';

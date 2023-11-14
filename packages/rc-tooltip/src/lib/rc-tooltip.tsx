@@ -3,9 +3,11 @@ import { classNames } from '@rmwc/base';
 import ReactTooltip from 'rc-tooltip';
 import { useProviderContext } from '@rmwc/provider';
 
-export type TooltipActivationT = 'hover' | 'click' | 'focus';
+import "../rc-tooltip.css";
 
-export type TooltipAlignT =
+export type RCTooltipActivationT = 'hover' | 'click' | 'focus';
+
+export type RCTooltipAlignT =
   | 'left'
   | 'right'
   | 'top'
@@ -16,13 +18,13 @@ export type TooltipAlignT =
   | 'bottomRight';
 
 /** A Tooltip component for displaying informative popover information. */
-export interface TooltipProps {
+export interface RCTooltipProps {
   /** The overlay content for the tooltip. */
   content: React.ReactNode;
   /** The children that the tooltip belongs to. Must be a ReactElement. */
   children: React.ReactElement;
   /** Activate the tooltip through one or more interactions. Defaults to `['hover', 'focus']`. */
-  activateOn?: TooltipActivationT | TooltipActivationT[];
+  activateOn?: RCTooltipActivationT | RCTooltipActivationT[];
   /** Whether or not to show an arrow on the Tooltip. Defaults to `false`. */
   showArrow?: boolean;
   /** Custom className to add to the tooltip overlay container. */
@@ -32,19 +34,19 @@ export interface TooltipProps {
   /** Delay in milliseconds before hiding the tooltip when interacting via touch or mouse. */
   leaveDelay?: number;
   /** How to align the tooltip. Defaults to `top`. */
-  align?: TooltipAlignT;
+  align?: RCTooltipAlignT;
   /** Manually control the open state */
   open?: boolean;
 }
 
 /** A Tooltip component for displaying informative popover information. */
-export const Tooltip = function Tooltip({
+export const RCTooltip = function RCTooltip({
   children,
   content,
   className,
   open,
   ...rest
-}: TooltipProps) {
+}: RCTooltipProps) {
   const providerContext = useProviderContext();
 
   // merge together provider options
@@ -53,7 +55,7 @@ export const Tooltip = function Tooltip({
     enterDelay = 0,
     leaveDelay = 0,
     align = 'top',
-    activateOn = ['hover', 'focus'] as TooltipActivationT[]
+    activateOn = ['hover', 'focus'] as RCTooltipActivationT[]
   } = {
     ...providerContext.tooltip,
     ...rest
@@ -63,14 +65,14 @@ export const Tooltip = function Tooltip({
     <ReactTooltip
       {...(open !== undefined ? { visible: open } : {})}
       trigger={Array.isArray(activateOn) ? activateOn : [activateOn]}
-      prefixCls="rmwc-tooltip"
+      prefixCls="rmwc-rc-tooltip"
       placement={align}
-      transitionName="rmwc-tooltip-zoom"
+      transitionName="rmwc-rc-tooltip-zoom"
       mouseEnterDelay={enterDelay / 1000}
       mouseLeaveDelay={leaveDelay / 1000}
       overlay={content}
       overlayClassName={classNames(className, {
-        'rmwc-tooltip--show-arrow': showArrow
+        'rmwc-rc-tooltip--show-arrow': showArrow
       })}
       destroyTooltipOnHide
     >

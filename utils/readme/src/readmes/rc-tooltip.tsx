@@ -10,7 +10,7 @@ import {
 import examples from '../generated-examples/rc-tooltip.json';
 import propsSrc from '../generated-props/rc-tooltip.json';
 
-import { Tooltip } from '@rmwc/rc-tooltip';
+import { RCTooltip } from '@rmwc/rc-tooltip';
 
 import { IconButton } from '@rmwc/icon-button';
 import { Button } from '@rmwc/button';
@@ -29,41 +29,41 @@ export default function Readme() {
     >
       <DocsSubtitle>Basic Usage</DocsSubtitle>
       <DocsP>
-        Wrap any component in a `Tooltip` and provide the content attribute. The
+        Wrap any component in a `RCTooltip` and provide the content attribute. The
         only requirement is that is has a single React child, and that the child
         can accept `onMouseEnter`, `onMouseLeave`, `onFocus`, and `onClick`
         props.
       </DocsP>
       <DocsExample label="Default">
         <>
-          <Tooltip content="Cookies">
+          <RCTooltip content="Cookies">
             <IconButton icon="star_border" />
-          </Tooltip>
+          </RCTooltip>
 
-          <Tooltip content="Pizza">
+          <RCTooltip content="Pizza">
             <IconButton icon="favorite_border" />
-          </Tooltip>
+          </RCTooltip>
 
-          <Tooltip content="Icecream">
+          <RCTooltip content="Icecream">
             <IconButton icon="mood" />
-          </Tooltip>
+          </RCTooltip>
         </>
       </DocsExample>
 
       <DocsSubtitle>Variants</DocsSubtitle>
       <DocsExample label="With Arrow">
-        <Tooltip content="Cake" showArrow>
+        <RCTooltip content="Cake" showArrow>
           <IconButton icon="cake" />
-        </Tooltip>
+        </RCTooltip>
       </DocsExample>
 
       <DocsExample label="Controlled / Always open">
-        <Tooltip content="Hello" align="right" open={true}>
+        <RCTooltip content="Hello" align="right" open={true}>
           <IconButton icon="mood" />
-        </Tooltip>
+        </RCTooltip>
       </DocsExample>
       <DocsExample label="Rich Content">
-        <Tooltip
+        <RCTooltip
           content={
             <div style={{ display: 'flex' }}>
               <Avatar
@@ -79,10 +79,10 @@ export default function Readme() {
           }
         >
           <span role="button">S. Rogers</span>
-        </Tooltip>
+        </RCTooltip>
       </DocsExample>
       <DocsExample label="Styled content">
-        <Tooltip
+        <RCTooltip
           /** You make something like a popover window by just styling your inner content. */
           content={
             <div
@@ -103,24 +103,25 @@ export default function Readme() {
           }
         >
           <span role="button">Popover Window</span>
-        </Tooltip>
+        </RCTooltip>
       </DocsExample>
       <DocsExample label="Delay">
         <>
-          <Tooltip content="Cookies" enterDelay={1000}>
+          <RCTooltip content="Cookies" enterDelay={1000}>
             <Button label="Enter Delay" />
-          </Tooltip>
+          </RCTooltip>
 
-          <Tooltip content="Pizza" leaveDelay={1000}>
+          <RCTooltip content="Pizza" leaveDelay={1000}>
             <Button label="Leave Delay" />
-          </Tooltip>
+          </RCTooltip>
 
-          <Tooltip content="Icecream" enterDelay={1000} leaveDelay={1000}>
+          <RCTooltip content="Icecream" enterDelay={1000} leaveDelay={1000}>
             <Button label="Both" />
-          </Tooltip>
+          </RCTooltip>
         </>
       </DocsExample>
       <DocsExample label="Alignment">
+        {/* @ts-ignore */}
         {function AlignmentExample() {
           return [
             'left',
@@ -133,9 +134,9 @@ export default function Readme() {
             'bottomRight'
           ].map((align) => (
             //@ts-ignore
-            <Tooltip key={align} content={`Align: ${align}`} align={align}>
+            <RCTooltip key={align} content={`Align: ${align}`} align={align}>
               <IconButton icon="trip_origin" />
-            </Tooltip>
+            </RCTooltip>
           ));
         }}
       </DocsExample>
@@ -148,19 +149,19 @@ export default function Readme() {
 
       <DocsExample label="Default">
         <>
-          <Tooltip content="Cookies" activateOn="hover">
+          <RCTooltip content="Cookies" activateOn="hover">
             <Button label="Hover" />
-          </Tooltip>
+          </RCTooltip>
           ''
-          <Tooltip content="Pizza" activateOn="click">
+          <RCTooltip content="Pizza" activateOn="click">
             <Button label="Click" />
-          </Tooltip>
-          <Tooltip content="Icecream" activateOn="focus">
+          </RCTooltip>
+          <RCTooltip content="Icecream" activateOn="focus">
             <Button label="Focus" />
-          </Tooltip>
-          <Tooltip content="Cake" activateOn={['hover', 'focus']}>
+          </RCTooltip>
+          <RCTooltip content="Cake" activateOn={['hover', 'focus']}>
             <Button label="Multiple" />
-          </Tooltip>
+          </RCTooltip>
         </>
       </DocsExample>
 
@@ -180,15 +181,15 @@ export default function Readme() {
             enterDelay: 0
           }}
         >
-          <Tooltip content="Hello World!">
+          <RCTooltip content="Hello World!">
             <Button label="With Provider" />
-          </Tooltip>
+          </RCTooltip>
         </RMWCProvider>
       </DocsExample>
 
       <DocProps
         src={propsSrc}
-        components={[{ displayName: 'Tooltip', component: Tooltip }]}
+        components={[{ displayName: 'Tooltip', component: RCTooltip }]}
       />
     </Docs>
   );
@@ -196,8 +197,8 @@ export default function Readme() {
 
 export const galleryExample = (
   <>
-    <Tooltip content="Favorite RMWC!" open>
+    <RCTooltip content="Favorite RMWC!" open>
       <IconButton icon="favorite_outline" />
-    </Tooltip>
+    </RCTooltip>
   </>
 );

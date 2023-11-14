@@ -1,1 +1,1 @@
-import './tooltip.css';
+import './rc-tooltip.css';

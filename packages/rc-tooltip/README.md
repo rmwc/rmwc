@@ -2,12 +2,12 @@
 
 Tooltips display informative text when users hover over, focus on, or tap an element.
 
-- Module **@rmwc/tooltip**
+- Module **@rmwc/rc-tooltip**
 - Import styles:
   - Using CSS Loader
-    - import '@rmwc/tooltip/styles';
+    - import '@rmwc/rc-tooltip/styles';
   - Or include stylesheets
-    - **'@rmwc/tooltip/tooltip.css'**
+    - **'@rmwc/rc-tooltip/tooltip.css'**
 
 
 ## Basic Usage
@@ -16,36 +16,36 @@ Wrap any component in a `Tooltip` and provide the content attribute. The only re
 
 ```jsx
 <>
-  <Tooltip content="Cookies">
+  <RCTooltip content="Cookies">
     <IconButton icon="star_border" />
-  </Tooltip>
+  </RCTooltip>
 
-  <Tooltip content="Pizza">
+  <RCTooltip content="Pizza">
     <IconButton icon="favorite_border" />
-  </Tooltip>
+  </RCTooltip>
 
-  <Tooltip content="Icecream">
+  <RCTooltip content="Icecream">
     <IconButton icon="mood" />
-  </Tooltip>
+  </RCTooltip>
 </>
 ```
 
 ## Variants
 
 ```jsx
-<Tooltip content="Cake" showArrow>
+<RCTooltip content="Cake" showArrow>
   <IconButton icon="cake" />
-</Tooltip>
+</RCTooltip>
 ```
 
 ```jsx
-<Tooltip content="Hello" align="right" open={true}>
+<RCTooltip content="Hello" align="right" open={true}>
   <IconButton icon="mood" />
-</Tooltip>
+</RCTooltip>
 ```
 
 ```jsx
-<Tooltip
+<RCTooltip
   content={
     <div style={{ display: 'flex' }}>
       <Avatar
@@ -61,11 +61,11 @@ Wrap any component in a `Tooltip` and provide the content attribute. The only re
   }
 >
   <span role="button">S. Rogers</span>
-</Tooltip>
+</RCTooltip>
 ```
 
 ```jsx
-<Tooltip
+<RCTooltip
   /** You make something like a popover window by just styling your inner content. */
   content={
     <div
@@ -86,22 +86,22 @@ Wrap any component in a `Tooltip` and provide the content attribute. The only re
   }
 >
   <span role="button">Popover Window</span>
-</Tooltip>
+</RCTooltip>
 ```
 
 ```jsx
 <>
-  <Tooltip content="Cookies" enterDelay={1000}>
+  <RCTooltip content="Cookies" enterDelay={1000}>
     <Button label="Enter Delay" />
-  </Tooltip>
+  </RCTooltip>
 
-  <Tooltip content="Pizza" leaveDelay={1000}>
+  <RCTooltip content="Pizza" leaveDelay={1000}>
     <Button label="Leave Delay" />
-  </Tooltip>
+  </RCTooltip>
 
-  <Tooltip content="Icecream" enterDelay={1000} leaveDelay={1000}>
+  <RCTooltip content="Icecream" enterDelay={1000} leaveDelay={1000}>
     <Button label="Both" />
-  </Tooltip>
+  </RCTooltip>
 </>
 ```
 
@@ -117,9 +117,9 @@ function AlignmentExample() {
     'bottomLeft',
     'bottomRight'
   ].map((align) => (
-    <Tooltip key={align} content={`Align: ${align}`} align={align}>
+    <RCTooltip key={align} content={`Align: ${align}`} align={align}>
       <IconButton icon="trip_origin" />
-    </Tooltip>
+    </RCTooltip>
   ));
 }
 ```
@@ -130,19 +130,19 @@ By default, tooltips will activate on hover and focus. You can change this behav
 
 ```jsx
 <>
-  <Tooltip content="Cookies" activateOn="hover">
+  <RCTooltip content="Cookies" activateOn="hover">
     <Button label="Hover" />
-  </Tooltip>
+  </RCTooltip>
   ''
-  <Tooltip content="Pizza" activateOn="click">
+  <RCTooltip content="Pizza" activateOn="click">
     <Button label="Click" />
-  </Tooltip>
-  <Tooltip content="Icecream" activateOn="focus">
+  </RCTooltip>
+  <RCTooltip content="Icecream" activateOn="focus">
     <Button label="Focus" />
-  </Tooltip>
-  <Tooltip content="Cake" activateOn={['hover', 'focus']}>
+  </RCTooltip>
+  <RCTooltip content="Cake" activateOn={['hover', 'focus']}>
     <Button label="Multiple" />
-  </Tooltip>
+  </RCTooltip>
 </>
 ```
 
@@ -160,9 +160,9 @@ The RMWCProvider allows you to specify global defaults for your tooltips.
     enterDelay: 0
   }}
 >
-  <Tooltip content="Hello World!">
+  <RCTooltip content="Hello World!">
     <Button label="With Provider" />
-  </Tooltip>
+  </RCTooltip>
 </RMWCProvider>
 ```
 
