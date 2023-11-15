@@ -49,13 +49,13 @@ export default defineConfig({
       output: {
         outro: (chunk) => {
           if (chunk.isEntry && chunk.name === 'styles') {
-            return "import './tooltip.css'";
+            return "import './rc-tooltip.css'";
           }
           return '';
         },
         assetFileNames: (chunk) => {
           if (chunk.name === 'styles.css') {
-            return 'tooltip.css';
+            return 'rc-tooltip.css';
           }
           return '[name].[ext]';
         }

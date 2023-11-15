@@ -29,10 +29,12 @@ export default function Readme() {
     >
       <DocsSubtitle>Basic Usage</DocsSubtitle>
       <DocsP>
-        Wrap any component in a `RCTooltip` and provide the content attribute. The
-        only requirement is that is has a single React child, and that the child
-        can accept `onMouseEnter`, `onMouseLeave`, `onFocus`, and `onClick`
-        props.
+        Wrap any component in a `RCTooltip` and provide the content attribute.
+        The only requirement is that is has a single React child, and that the
+        child can accept `onMouseEnter`, `onMouseLeave`, `onFocus`, and
+        `onClick` props. This is not the standard Google Material for the web
+        component, it is here for backwards compability. Use `Tooltip` to use
+        the standard Google Material for the web component.
       </DocsP>
       <DocsExample label="Default">
         <>
