@@ -1,23 +1,15 @@
 import React from 'react';
 import { classNames } from '@rmwc/base';
 import ReactTooltip from 'rc-tooltip';
-import { useProviderContext } from '@rmwc/provider';
+import {
+  useProviderContext,
+  TooltipActivationT,
+  RCTooltipAlignT
+} from '@rmwc/provider';
 
 import '../rc-tooltip.css';
 
-export type RCTooltipActivationT = 'hover' | 'click' | 'focus';
-
-export type RCTooltipAlignT =
-  | 'left'
-  | 'right'
-  | 'top'
-  | 'bottom'
-  | 'topLeft'
-  | 'topRight'
-  | 'bottomLeft'
-  | 'bottomRight';
-
-const tooltipAlignValues = [
+const TOOLTIP_ALIGN_VALUES = [
   'left',
   'right',
   'top',
@@ -26,7 +18,7 @@ const tooltipAlignValues = [
   'topRight',
   'bottomLeft',
   'bottomRight'
-] as (string | undefined)[];
+];
 
 /** A Tooltip component for displaying informative popover information. */
 export interface RCTooltipProps {
@@ -35,7 +27,7 @@ export interface RCTooltipProps {
   /** The children that the tooltip belongs to. Must be a ReactElement. */
   children: React.ReactElement;
   /** Activate the tooltip through one or more interactions. Defaults to `['hover', 'focus']`. */
-  activateOn?: RCTooltipActivationT | RCTooltipActivationT[];
+  activateOn?: TooltipActivationT | TooltipActivationT[];
   /** Whether or not to show an arrow on the Tooltip. Defaults to `false`. */
   showArrow?: boolean;
   /** Custom className to add to the tooltip overlay container. */
@@ -60,15 +52,12 @@ export const RCTooltip = function RCTooltip({
 }: RCTooltipProps) {
   const providerContext = useProviderContext();
 
-  if (
-    providerContext.tooltip &&
-    providerContext.tooltip.align &&
-    !tooltipAlignValues.includes(providerContext?.tooltip?.align)
-  ) {
+  const { tooltip } = providerContext;
+  if (tooltip?.align && !TOOLTIP_ALIGN_VALUES.includes(tooltip.align)) {
     console.warn(
-      `The RC Tooltip does not support the align value ${providerContext.tooltip.align} from the provider context`
+      `The RC Tooltip does not support the align value ${tooltip.align} from the provider context`
     );
-    providerContext.tooltip.align = undefined;
+    tooltip.align = undefined;
   }
 
   // merge together provider options
@@ -77,7 +66,7 @@ export const RCTooltip = function RCTooltip({
     enterDelay = 0,
     leaveDelay = 0,
     align = 'top',
-    activateOn = ['hover', 'focus'] as RCTooltipActivationT[]
+    activateOn = ['hover', 'focus'] as TooltipActivationT[]
   } = {
     ...providerContext.tooltip,
     ...rest

@@ -1,9 +1,9 @@
 import React from 'react';
 import * as RMWC from '@rmwc/types';
 
-type TooltipActivationT = 'hover' | 'click' | 'focus';
+export type TooltipActivationT = 'hover' | 'click' | 'focus';
 
-type RCTooltipAlignT =
+export type RCTooltipAlignT =
   | 'left'
   | 'right'
   | 'top'
@@ -13,7 +13,7 @@ type RCTooltipAlignT =
   | 'bottomLeft'
   | 'bottomRight';
 
-type TooltipAlignT =
+export type TooltipAlignT =
   | 'start'
   | 'center'
   | 'end'

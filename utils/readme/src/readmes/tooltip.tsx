@@ -38,7 +38,11 @@ export default function Readme() {
         Wrap any component in a `Tooltip` and provide the overlay attribute. The
         only requirement is that is has a single React child, and that the child
         can accept `onMouseEnter`, `onMouseLeave`, `onFocus`, and `onClick`
-        props.
+        props. This component is not backwards compatible with the tooltip from
+        RMWC version 8.x. For a compatible version us the `RCTooltip` component.
+        The `RCTooltip` uses the `ReactTooltip` from 'rc-tooltip' package. This
+        tooltip uses the standard tooltip component from Google Material for the
+        web.
       </DocsP>
       <DocsExample label="Default">
         <>

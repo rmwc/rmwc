@@ -3,7 +3,7 @@ import * as RMWC from '@rmwc/types';
 import { classNames, createComponent, Tag, useId } from '@rmwc/base';
 import { useToolTipFoundation } from './foundation';
 import { AnchorBoundaryType } from '@material/tooltip';
-import { TooltipAlignT } from './types';
+import { TooltipAlignT } from '@rmwc/provider';
 
 export type TooltipActivationT = 'hover' | 'click' | 'focus';
 
