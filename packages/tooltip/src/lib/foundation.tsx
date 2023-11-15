@@ -3,6 +3,8 @@ import { useFoundation } from '@rmwc/base';
 import { useCallback, useEffect } from 'react';
 import { ALIGN_MAP } from './constants';
 import { TooltipActivationT, TooltipProps } from './tooltip';
+import { useProviderContext } from '@rmwc/provider';
+import { tooltipAlignValues } from './types';
 
 export const useToolTipFoundation = (
   props: TooltipProps & React.HTMLProps<any>
@@ -150,6 +152,19 @@ export const useToolTipFoundation = (
     }
   });
 
+  const providerContext = useProviderContext();
+
+  if (
+    providerContext.tooltip &&
+    providerContext.tooltip.align &&
+    !tooltipAlignValues.includes(providerContext?.tooltip?.align)
+  ) {
+    console.warn(
+      `The Tooltip does not support the align value ${providerContext.tooltip.align} from the provider context`
+    );
+    providerContext.tooltip.align = undefined;
+  }
+
   const {
     anchorBoundaryType,
     align,
@@ -157,7 +172,10 @@ export const useToolTipFoundation = (
     enterDelay,
     leaveDelay,
     open
-  } = props;
+  } = {
+    ...providerContext.tooltip,
+    ...props
+  };
 
   const { anchorEl, rootEl } = elements;
 

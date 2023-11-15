@@ -1,7 +1,6 @@
 import React from 'react';
 import * as RMWC from '@rmwc/types';
 import { classNames, createComponent, Tag, useId } from '@rmwc/base';
-import { useProviderContext } from '@rmwc/provider';
 import { useToolTipFoundation } from './foundation';
 import { AnchorBoundaryType } from '@material/tooltip';
 import { TooltipAlignT } from './types';
@@ -43,98 +42,95 @@ export const Tooltip: RMWC.ComponentType<
   TooltipProps,
   TooltipHTMLProps,
   'div'
-> = createComponent<TooltipProps, TooltipHTMLProps>(function Tooltip(
-  props,
-  ref
-) {
-  const providerContext = useProviderContext();
+> = createComponent<TooltipProps, TooltipHTMLProps>(
+  function Tooltip(props, ref) {
+    const { anchorEl, rootEl, isShown, surfaceEl } =
+      useToolTipFoundation(props);
 
-  const { anchorEl, rootEl, isShown, surfaceEl } = useToolTipFoundation(props);
+    // merge together provider options
+    const {
+      disableRichStyling = false,
+      isPersistent,
+      open,
+      overlay
+    } = {
+      ...props
+    };
 
-  // merge together provider options
-  const {
-    disableRichStyling = false,
-    isPersistent,
-    open,
-    overlay
-  } = {
-    ...providerContext.tooltip,
-    ...props
-  };
+    const uniqueId = useId('tooltip', props);
 
-  const uniqueId = useId('tooltip', props);
+    const isRich = typeof overlay !== 'string';
 
-  const isRich = typeof overlay !== 'string';
+    const className = classNames('mdc-tooltip', {
+      'mdc-tooltip--rich': isRich && !disableRichStyling,
+      'rmwc-tooltip': disableRichStyling
+    });
 
-  const className = classNames('mdc-tooltip', {
-    'mdc-tooltip--rich': isRich && !disableRichStyling,
-    'rmwc-tooltip': disableRichStyling
-  });
+    const child = React.Children.only(props.children);
 
-  const child = React.Children.only(props.children);
+    if (!React.isValidElement<React.HTMLProps<any>>(child)) {
+      return null;
+    }
 
-  if (!React.isValidElement<React.HTMLProps<any>>(child)) {
-    return null;
-  }
+    if (isRich) {
+      return (
+        <Tag tag="div" className="mdc-tooltip-wrapper--rich">
+          {React.cloneElement(child, {
+            ...anchorEl.props(child.props),
+            ref: anchorEl.reactRef,
+            'aria-describedby': uniqueId,
+            'data-tooltip-id': uniqueId
+          })}
+          <Tag
+            tabIndex={isPersistent && -1}
+            tag="div"
+            className={className}
+            id={uniqueId}
+            role={isRich ? 'dialog' : 'tooltip'}
+            aria-hidden={isShown}
+            ref={ref}
+            element={rootEl}
+            data-mdc-tooltip-persistent={isPersistent}
+          >
+            <div className="mdc-tooltip__surface mdc-tooltip__surface-animation">
+              {overlay}
+            </div>
+          </Tag>
+        </Tag>
+      );
+    }
 
-  if (isRich) {
     return (
-      <Tag tag="div" className="mdc-tooltip-wrapper--rich">
+      <>
+        <Tag
+          tag="div"
+          className={className}
+          id={uniqueId}
+          role="tooltip"
+          aria-hidden={isShown}
+          ref={ref}
+          element={rootEl}
+          data-mdc-tooltip-persistent={open || isPersistent}
+        >
+          <Tag
+            tag="div"
+            element={surfaceEl}
+            className="mdc-tooltip__surface mdc-tooltip__surface-animation"
+          >
+            {overlay}
+          </Tag>
+        </Tag>
         {React.cloneElement(child, {
           ...anchorEl.props(child.props),
+          element: anchorEl,
           ref: anchorEl.reactRef,
           'aria-describedby': uniqueId,
           'data-tooltip-id': uniqueId
         })}
-        <Tag
-          tabIndex={isPersistent && -1}
-          tag="div"
-          className={className}
-          id={uniqueId}
-          role={isRich ? 'dialog' : 'tooltip'}
-          aria-hidden={isShown}
-          ref={ref}
-          element={rootEl}
-          data-mdc-tooltip-persistent={isPersistent}
-        >
-          <div className="mdc-tooltip__surface mdc-tooltip__surface-animation">
-            {overlay}
-          </div>
-        </Tag>
-      </Tag>
+      </>
     );
   }
-
-  return (
-    <>
-      <Tag
-        tag="div"
-        className={className}
-        id={uniqueId}
-        role="tooltip"
-        aria-hidden={isShown}
-        ref={ref}
-        element={rootEl}
-        data-mdc-tooltip-persistent={open || isPersistent}
-      >
-        <Tag
-          tag="div"
-          element={surfaceEl}
-          className="mdc-tooltip__surface mdc-tooltip__surface-animation"
-        >
-          {overlay}
-        </Tag>
-      </Tag>
-      {React.cloneElement(child, {
-        ...anchorEl.props(child.props),
-        element: anchorEl,
-        ref: anchorEl.reactRef,
-        'aria-describedby': uniqueId,
-        'data-tooltip-id': uniqueId
-      })}
-    </>
-  );
-});
+);
 
 export interface RichTooltipTitleProps {}
 

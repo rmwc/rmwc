@@ -3,7 +3,7 @@ import * as RMWC from '@rmwc/types';
 
 type TooltipActivationT = 'hover' | 'click' | 'focus';
 
-type TooltipAlignT =
+type RCTooltipAlignT =
   | 'left'
   | 'right'
   | 'top'
@@ -13,12 +13,25 @@ type TooltipAlignT =
   | 'bottomLeft'
   | 'bottomRight';
 
+type TooltipAlignT =
+  | 'start'
+  | 'center'
+  | 'end'
+  | 'above'
+  | 'below'
+  | 'startAbove'
+  | 'startBelow'
+  | 'centerAbove'
+  | 'centerBelow'
+  | 'endAbove'
+  | 'endBelow';
+
 export type TooltipOptions = {
-  /** How to align the tooltip. Defaults to `top`. */
-  align?: TooltipAlignT;
+  /** How to align the tooltip. This affects both RCTooltip and Tooltip, but only if the given alignment is supported by the component. Defaults to `top`. */
+  align?: RCTooltipAlignT | TooltipAlignT;
   /** Activate the tooltip through one or more interactions. Defaults to `['hover', 'focus']`. */
   activateOn?: TooltipActivationT | TooltipActivationT[];
-  /** Whether or not to show an arrow on the Tooltip. Defaults to `false`. */
+  /** Whether or not to show an arrow on the Tooltip. Only supported by RCTooltip. Defaults to `false`. */
   showArrow?: boolean;
   /** Delay in milliseconds before showing the tooltip when interacting via touch or mouse. */
   enterDelay?: number;

@@ -3,7 +3,7 @@ import { classNames } from '@rmwc/base';
 import ReactTooltip from 'rc-tooltip';
 import { useProviderContext } from '@rmwc/provider';
 
-import "../rc-tooltip.css";
+import '../rc-tooltip.css';
 
 export type RCTooltipActivationT = 'hover' | 'click' | 'focus';
 
@@ -16,6 +16,17 @@ export type RCTooltipAlignT =
   | 'topRight'
   | 'bottomLeft'
   | 'bottomRight';
+
+const tooltipAlignValues = [
+  'left',
+  'right',
+  'top',
+  'bottom',
+  'topLeft',
+  'topRight',
+  'bottomLeft',
+  'bottomRight'
+] as (string | undefined)[];
 
 /** A Tooltip component for displaying informative popover information. */
 export interface RCTooltipProps {
@@ -48,6 +59,17 @@ export const RCTooltip = function RCTooltip({
   ...rest
 }: RCTooltipProps) {
   const providerContext = useProviderContext();
+
+  if (
+    providerContext.tooltip &&
+    providerContext.tooltip.align &&
+    !tooltipAlignValues.includes(providerContext?.tooltip?.align)
+  ) {
+    console.warn(
+      `The RC Tooltip does not support the align value ${providerContext.tooltip.align} from the provider context`
+    );
+    providerContext.tooltip.align = undefined;
+  }
 
   // merge together provider options
   const {

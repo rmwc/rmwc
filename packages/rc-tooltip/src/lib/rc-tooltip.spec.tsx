@@ -74,4 +74,28 @@ describe('Tooltip', () => {
       </RMWCProvider>
     );
   });
+
+  it('accepts allowed align value from provider context', () => {
+    vi.spyOn(console, 'warn');
+    render(
+      <RMWCProvider tooltip={{ align: 'bottom' }}>
+        <RCTooltip content="tooltip">
+          <span>test</span>
+        </RCTooltip>
+      </RMWCProvider>
+    );
+    expect(console.warn).not.toBeCalled();
+  });
+
+  it('warn against wrong align value from provider context', () => {
+    vi.spyOn(console, 'warn');
+    render(
+      <RMWCProvider tooltip={{ align: 'start' }}>
+        <RCTooltip content="tooltip">
+          <span>test</span>
+        </RCTooltip>
+      </RMWCProvider>
+    );
+    expect(console.warn).toBeCalled();
+  });
 });
