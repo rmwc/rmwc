@@ -1,0 +1,1 @@
+import './rc-tooltip.css';

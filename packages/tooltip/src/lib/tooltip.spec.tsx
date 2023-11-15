@@ -98,4 +98,32 @@ describe('Tooltip', () => {
 
     expect(asFragment()).toMatchSnapshot();
   });
+
+  it('accepts allowed align value from provider context', () => {
+    vi.spyOn(console, 'warn');
+    render(
+      <RMWCProvider tooltip={{ align: 'start' }}>
+        {
+          <Tooltip label="test">
+            <span>test</span>
+          </Tooltip>
+        }
+      </RMWCProvider>
+    );
+    expect(console.warn).not.toBeCalled();
+  });
+
+  it('warn against wrong align value from provider context', () => {
+    vi.spyOn(console, 'warn');
+    render(
+      <RMWCProvider tooltip={{ align: 'bottom' }}>
+        {
+          <Tooltip label="test">
+            <span>test</span>
+          </Tooltip>
+        }
+      </RMWCProvider>
+    );
+    expect(console.warn).toBeCalled();
+  });
 });

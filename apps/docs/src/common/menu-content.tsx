@@ -45,6 +45,7 @@ import {
   textfield,
   theme,
   tooltip,
+  rcTooltip,
   topAppBar,
   typography
 } from '@rmwc/readme';
@@ -353,9 +354,20 @@ export const menuContent: MenuItemT[] = [
       },
       {
         label: 'Tooltips',
-        url: `/tooltips`,
-        gallery: tooltip.galleryExample,
-        component: Loadable(tooltip.default)
+        options: [
+          {
+            label: 'Tooltips',
+            url: `/tooltips`,
+            gallery: tooltip.galleryExample,
+            component: Loadable(tooltip.default)
+          },
+          {
+            label: 'RC Tooltips',
+            url: `/rc-tooltips`,
+            gallery: rcTooltip.galleryExample,
+            component: Loadable(rcTooltip.default)
+          }
+        ]
       },
       {
         label: 'Top App Bar',
