@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/textfield",
-  "version": "14.0.2-alpha.1",
+  "version": "14.0.2-alpha.7",
   "description": "RMWC TextField component",
   "main": "./index.js",
   "types": "./index.d.ts",
@@ -12,7 +12,8 @@
     "./styles": {
       "import": "./styles.mjs",
       "require": "./styles.js"
-    }
+    },
+    "./textfield.css": "./textfield.css"
   },
   "sideEffects": [
     "**/*.css"

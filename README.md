@@ -39,8 +39,6 @@ v14.0.0 is here! This release includes:
 - a new and improved tooltip adhering to the Material Design principles, with minimal breaking changes
 - migrated from Lerna to Nx and Vite
 
-_View all release notes_ 👉 https://opencollective.com/rmwc/updates
-
 View the changelog for detailed updates: [https://github.com/rmwc/rmwc/blob/master/CHANGELOG.md](https://github.com/rmwc/rmwc/blob/master/CHANGELOG.md)
 
 ## Goals

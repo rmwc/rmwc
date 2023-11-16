@@ -16,7 +16,7 @@ You'll need a recent version of [nodejs](https://nodejs.org/en/) to work on RMWC
 Once node is installed, simply clone our repo (or your fork of it) and run `npm install`.
 
 ```
-git@github.com:jamesmfriedman/rmwc.git # or a path to your fork
+git clone https://github.com/rmwc/rmwc.git # or a path to your fork
 cd rmwc && npm i
 ```
 
@@ -48,15 +48,14 @@ class DocsExample {
 
 - `npm install` - does all of the installing and setup
 - `npm start` - run the docs site
-- `npm run storybook` - develop components in storybook
-- `npm run test:watch` - run the tests in watch mode while developing
-- `npm run docgen` - generates the prop types for the docs. This is a very heavy process that gets run automatically on release. Only run this manually if you're trying to check to see if you updated the docs correctly.
+- `npm run test` - run the tests
+- `npm run build:docs` - build the doc site
+- `npm run build:components` - build the RMWC components
 
 ## Typings
 
 - As of V5, RMWC has been rewritten in Typescript.
 - V4 and below supported Flow. Some remnants may remain in the codebase, but they are no longer used.
-- We still want to support Flow! If you know a way forward, please comment on this issue https://github.com/jamesmfriedman/rmwc/issues/407
 
 ### Building New Components
 
@@ -64,13 +63,17 @@ Each component requires the following items in order to be complete:
 
 - A **index.tsx** file containing the bulk of the component code. This makes importing easier.
 - A **story.tsx** file using Storybook. This is where the component can be developed in isolation.
-- A **test.spec.tsx** file using enzyme
-- A **test-ssr.spec.tsx** file using enzyme testing server side rendering
-- A **readme.tsx** file.
+- A **test.spec.tsx** file using Vitest
+- A **test-ssr.spec.tsx** file using Vitest testing server side rendering
+- A **readme.tsx** file. This files should be placed in the util/readme/src/readmes folder
 - A **package.json** file with the appropriate dependencies listed
-- It needs to be added to the src/rmwc/package.json
+- A Nx **project.json** file
+- A **vite.config.js** file for configuring Vite and Vitest
+- A **tsconfig.json** and **tsconfig.lib.json** file to configure TypeScript
+- It needs to be added to the packages/rmwc/package.json
 - It needs to be re-exported from rmwc/index for people using the RMWC global
-- Its css exports should be added to src/rmwc/styles.tsx
+- Its css exports should be added to packages/rmwc/styles.tsx
+- It should be added to the doc site menu in apps/docs/src/common/menu-content.tsx
 
 ### Running development server
 
@@ -78,7 +81,7 @@ Each component requires the following items in order to be complete:
 
 ```
 npm run start
-open http://localhost:3000
+open http://localhost:4200
 ```
 
 ### Building RMWC
@@ -86,7 +89,7 @@ open http://localhost:3000
 To "build" the library for distribution
 
 ```
-npm run build
+npm run build:components
 ```
 
 To build the docs
@@ -100,7 +103,7 @@ npm run build:docs
 Make sure you have the devDependencies installed and then just use `npm test`. This will do a single run of the entire test suite in all supported versions of React. For development, you can use `npm run test:watch`.
 
 ```
-npm test OR npm run test:watch
+npm test
 ```
 
 ### Coding Style
@@ -130,10 +133,6 @@ If you've done some experimental work on your branch/fork and committed these vi
 Finally, it helps to make sure that your branch/fork is up to date with what's currently on master. You can ensure this by running `git pull --rebase origin master` on your branch.
 
 > **NOTE**: Please do _not merge_ master into your branch. _Always_ `pull --rebase` instead. This ensures a linear history by always putting the work you've done after the work that's already on master, regardless of the date in which those commits were made.
-
-### Other considerations
-
-- After you install a dependency you need to rerun `npm install`. It’s a quirk of using Lerna. It needs to rebootstrap anytime the dependencies change.
 
 ### Archiving older versions of the docs
 

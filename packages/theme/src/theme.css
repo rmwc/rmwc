@@ -106,7 +106,7 @@ body .mdc-chip__text__primary-action:focus {
  ****************************************************************/
 /**
   * Corrects an issue where anything other than text-align left breaks layout
-  * https://github.com/jamesmfriedman/rmwc/issues/590
+  * https://github.com/rmwc/rmwc/issues/590
   */
 .mdc-linear-progress {
   text-align: left;

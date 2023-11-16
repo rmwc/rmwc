@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/theme",
-  "version": "14.0.2-alpha.1",
+  "version": "14.0.2-alpha.7",
   "description": "RMWC Theme component",
   "main": "./index.js",
   "types": "./index.d.ts",
@@ -12,7 +12,8 @@
     "./styles": {
       "import": "./styles.mjs",
       "require": "./styles.js"
-    }
+    },
+    "./theme.css": "./theme.css"
   },
   "sideEffects": [
     "**/*.css"

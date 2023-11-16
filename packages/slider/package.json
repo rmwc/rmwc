@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/slider",
-  "version": "14.0.2-alpha.1",
+  "version": "14.0.2-alpha.7",
   "description": "RMWC Slider component",
   "main": "./index.js",
   "types": "./index.d.ts",

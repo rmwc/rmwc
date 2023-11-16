@@ -91,7 +91,7 @@ function AppBar({
             {children}
             <TopAppBarActionItem
               tag="a"
-              href="https://github.com/jamesmfriedman/rmwc"
+              href="https://github.com/rmwc/rmwc"
               icon={<GithubSvg />}
             />
           </TopAppBarSection>
