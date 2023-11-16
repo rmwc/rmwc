@@ -185,7 +185,7 @@ export const useToolTipFoundation = (
     onTouchEnd,
     onTouchStart,
     onTransitionEnd,
-    stayOpenOnHover
+    stayOpenOnHover = true
   } = props;
 
   const handleMouseEnter = useCallback(
@@ -323,6 +323,8 @@ export const useToolTipFoundation = (
   useEffect(() => {
     stayOpenOnHover &&
       rootEl.addEventListener('mouseover', () => foundation.show());
+    stayOpenOnHover &&
+      rootEl.addEventListener('mouseleave', () => foundation.hide());
   }, [stayOpenOnHover, foundation, rootEl]);
 
   return {

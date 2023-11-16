@@ -29,10 +29,10 @@ export interface TooltipProps {
   anchorBoundaryType?: AnchorBoundaryType;
   /** Specify whether tooltip should be persistent. Persistent tooltip are triggered by clicks. */
   isPersistent?: boolean;
-  /** MCW comes with default styling for rich tooltips. This prop specifies whether to disable such default styling. */
-  disableRichStyling?: boolean;
   /** Control whether to stay open on hover. This is useful for interactive tooltips. */
   stayOpenOnHover?: boolean;
+  /** Manually disable a tooltip being rich. This is useful when a custom overlay is needed. Defaults to true when content is a ReactNode. */
+  rich?: boolean;
 }
 
 export type TooltipHTMLProps = RMWC.HTMLProps<HTMLDivElement>;
@@ -47,23 +47,17 @@ export const Tooltip: RMWC.ComponentType<
     const { anchorEl, rootEl, isShown, surfaceEl } =
       useToolTipFoundation(props);
 
-    // merge together provider options
-    const {
-      disableRichStyling = false,
-      isPersistent,
-      open,
-      overlay
-    } = {
+    const { isPersistent, open, overlay, rich } = {
       ...props
     };
 
     const uniqueId = useId('tooltip', props);
 
-    const isRich = typeof overlay !== 'string';
+    const isRich = rich !== undefined ? rich : typeof overlay !== 'string';
 
     const className = classNames('mdc-tooltip', {
-      'mdc-tooltip--rich': isRich && !disableRichStyling,
-      'rmwc-tooltip': disableRichStyling
+      'mdc-tooltip--rich': isRich,
+      'rmwc-tooltip': rich === false
     });
 
     const child = React.Children.only(props.children);
@@ -72,45 +66,25 @@ export const Tooltip: RMWC.ComponentType<
       return null;
     }
 
-    if (isRich) {
-      return (
-        <Tag tag="div" className="mdc-tooltip-wrapper--rich">
-          {React.cloneElement(child, {
-            ...anchorEl.props(child.props),
-            ref: anchorEl.reactRef,
-            'aria-describedby': uniqueId,
-            'data-tooltip-id': uniqueId
-          })}
-          <Tag
-            tabIndex={isPersistent && -1}
-            tag="div"
-            className={className}
-            id={uniqueId}
-            role={isRich ? 'dialog' : 'tooltip'}
-            aria-hidden={isShown}
-            ref={ref}
-            element={rootEl}
-            data-mdc-tooltip-persistent={isPersistent}
-          >
-            <div className="mdc-tooltip__surface mdc-tooltip__surface-animation">
-              {overlay}
-            </div>
-          </Tag>
-        </Tag>
-      );
-    }
-
-    return (
+    const tooltipRoot = () => (
       <>
+        {React.cloneElement(child, {
+          ...anchorEl.props(child.props),
+          element: anchorEl,
+          ref: anchorEl.reactRef,
+          'aria-describedby': uniqueId,
+          'data-tooltip-id': uniqueId
+        })}
         <Tag
           tag="div"
           className={className}
           id={uniqueId}
-          role="tooltip"
+          role={isRich ? 'dialog' : 'tooltip'}
           aria-hidden={isShown}
           ref={ref}
           element={rootEl}
           data-mdc-tooltip-persistent={open || isPersistent}
+          tabIndex={isPersistent && -1}
         >
           <Tag
             tag="div"
@@ -120,15 +94,18 @@ export const Tooltip: RMWC.ComponentType<
             {overlay}
           </Tag>
         </Tag>
-        {React.cloneElement(child, {
-          ...anchorEl.props(child.props),
-          element: anchorEl,
-          ref: anchorEl.reactRef,
-          'aria-describedby': uniqueId,
-          'data-tooltip-id': uniqueId
-        })}
       </>
     );
+
+    if (isRich) {
+      return (
+        <Tag tag="div" className="mdc-tooltip-wrapper--rich">
+          {tooltipRoot()}
+        </Tag>
+      );
+    }
+
+    return tooltipRoot();
   }
 );
 
@@ -138,7 +115,7 @@ export const RichTooltipTitle = createComponent<RichTooltipTitleProps>(
   function RichTooltipTitle(props, ref) {
     const { children } = props;
     return (
-      <Tag {...props} tag="h2" className="mdc-tooltip__title" ref={ref}>
+      <Tag tag="h2" className="mdc-tooltip__title" {...props} ref={ref}>
         {children}
       </Tag>
     );
@@ -149,9 +126,9 @@ export interface RichTooltipContentProps {}
 
 export const RichTooltipContent = createComponent<RichTooltipContentProps>(
   function RichTooltipContent(props, ref) {
-    const { children } = props;
+    const { children, ...rest } = props;
     return (
-      <Tag {...props} tag="p" className="mdc-tooltip__content" ref={ref}>
+      <Tag tag="p" className="mdc-tooltip__content" {...rest} ref={ref}>
         {children}
       </Tag>
     );
@@ -162,11 +139,47 @@ export interface RichTooltipActionsProps {}
 
 export const RichTooltipActions = createComponent<RichTooltipActionsProps>(
   function RichTooltipActions(props, ref) {
-    const { children } = props;
+    const { children, ...rest } = props;
     return (
-      <Tag {...props} tag="p" className="mdc-tooltip--rich-actions" ref={ref}>
+      <Tag tag="p" className="mdc-tooltip--rich-actions" {...rest} ref={ref}>
         {children}
       </Tag>
+    );
+  }
+);
+
+export const RichTooltipLink = createComponent(
+  function RichTooltipLink(props, ref) {
+    const { href, children, ...rest } = props;
+    return (
+      <Tag
+        tag="a"
+        className="mdc-tooltip__content-link"
+        href={href}
+        {...rest}
+        ref={ref}
+      >
+        {children}
+      </Tag>
+    );
+  }
+);
+
+export interface SimpleRichTooltipProps {
+  title?: string;
+  body?: React.ReactNode;
+  actions?: React.ReactNode;
+}
+
+export const SimpleRichTooltip = createComponent<SimpleRichTooltipProps>(
+  function RichTooltipActions(props, ref) {
+    const { title, body, actions } = props;
+    return (
+      <>
+        {title && <RichTooltipTitle>{title}</RichTooltipTitle>}
+        {body && <RichTooltipContent>{body}</RichTooltipContent>}
+        {actions && <RichTooltipActions>{actions}</RichTooltipActions>}
+      </>
     );
   }
 );
