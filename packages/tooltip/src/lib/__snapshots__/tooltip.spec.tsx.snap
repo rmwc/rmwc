@@ -9,6 +9,7 @@ exports[`Tooltip > can be rich 1`] = `
       aria-describedby="tooltip-test"
       class=""
       data-tooltip-id="tooltip-test"
+      element="[object Object]"
     >
       test
     </span>
@@ -39,6 +40,7 @@ exports[`Tooltip > can be rich and persistent 1`] = `
       aria-describedby="tooltip-test"
       class=""
       data-tooltip-id="tooltip-test"
+      element="[object Object]"
     >
       test
     </span>
@@ -62,7 +64,34 @@ exports[`Tooltip > can be rich and persistent 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Tooltip > can be rich with default rich styling disabled 1`] = `
+exports[`Tooltip > can have ReactNode as overlay with rich styling disabled 1`] = `
+<DocumentFragment>
+  <span
+    aria-describedby="tooltip-test"
+    class=""
+    data-tooltip-id="tooltip-test"
+    element="[object Object]"
+  >
+    test
+  </span>
+  <div
+    aria-hidden="false"
+    class="mdc-tooltip rmwc-tooltip"
+    id="tooltip-test"
+    role="tooltip"
+  >
+    <div
+      class="mdc-tooltip__surface mdc-tooltip__surface-animation"
+    >
+      <div>
+        tooltip
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Tooltip > can use SimpleRichTooltip 1`] = `
 <DocumentFragment>
   <div
     class="mdc-tooltip-wrapper--rich"
@@ -71,21 +100,31 @@ exports[`Tooltip > can be rich with default rich styling disabled 1`] = `
       aria-describedby="tooltip-test"
       class=""
       data-tooltip-id="tooltip-test"
+      element="[object Object]"
     >
       test
     </span>
     <div
       aria-hidden="false"
-      class="mdc-tooltip rmwc-tooltip"
+      class="mdc-tooltip mdc-tooltip--rich"
+      data-mdc-tooltip-persistent="true"
       id="tooltip-test"
       role="dialog"
+      tabindex="-1"
     >
       <div
         class="mdc-tooltip__surface mdc-tooltip__surface-animation"
       >
-        <div>
-          tooltip
-        </div>
+        <h2
+          class="mdc-tooltip__title"
+        >
+          My title
+        </h2>
+        <p
+          class="mdc-tooltip__content"
+        >
+          This is my content
+        </p>
       </div>
     </div>
   </div>
@@ -94,6 +133,14 @@ exports[`Tooltip > can be rich with default rich styling disabled 1`] = `
 
 exports[`Tooltip > renders 1`] = `
 <DocumentFragment>
+  <span
+    aria-describedby="tooltip-test"
+    class=""
+    data-tooltip-id="tooltip-test"
+    element="[object Object]"
+  >
+    test
+  </span>
   <div
     aria-hidden="true"
     class="mdc-tooltip mdc-tooltip--showing"
@@ -109,13 +156,5 @@ exports[`Tooltip > renders 1`] = `
       tooltip
     </div>
   </div>
-  <span
-    aria-describedby="tooltip-test"
-    class=""
-    data-tooltip-id="tooltip-test"
-    element="[object Object]"
-  >
-    test
-  </span>
 </DocumentFragment>
 `;

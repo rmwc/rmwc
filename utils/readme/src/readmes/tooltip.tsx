@@ -17,7 +17,9 @@ import { RMWCProvider } from '@rmwc/provider';
 import {
   RichTooltipActions,
   RichTooltipContent,
+  RichTooltipLink,
   RichTooltipTitle,
+  SimpleRichTooltip,
   Tooltip
 } from '@rmwc/tooltip';
 
@@ -66,28 +68,79 @@ export default function Readme() {
           <IconButton icon="mood" />
         </Tooltip>
       </DocsExample>
-      <DocsExample label="Elements as overlay">
+
+      <DocsExample label="Rich overlay with clickable content">
         <Tooltip
           overlay={
-            <div style={{ display: 'flex' }}>
-              <Avatar
-                src="images/avatars/captainamerica.png"
-                size="large"
-                name="Steve Rogers"
-              />
-              <div style={{ marginLeft: '0.5rem', width: '100px' }}>
-                <b>Captain America</b>
-                <div>Steve Rogers</div>
-              </div>
-            </div>
+            <>
+              <RichTooltipTitle>Hello</RichTooltipTitle>
+              <RichTooltipContent>
+                I am the content of the interactive rich tooltip
+              </RichTooltipContent>
+              <RichTooltipActions>
+                <Button>Click me</Button>
+              </RichTooltipActions>
+            </>
           }
-          disableRichStyling
         >
-          <span role="button">S. Rogers</span>
+          <span role="button">
+            Popover with clickable content that stays open on hover
+          </span>
         </Tooltip>
       </DocsExample>
+
+      <DocsExample label="SimpleRichTooltip">
+        <Tooltip
+          overlay={
+            <SimpleRichTooltip
+              title="My title"
+              body="I am the content"
+              actions={<Button>Click me</Button>}
+            />
+          }
+        >
+          <span role="button">Usage of SimpleRichTooltip</span>
+        </Tooltip>
+      </DocsExample>
+
+      <DocsExample label="With links">
+        <Tooltip
+          overlay={
+            <SimpleRichTooltip
+              title="My title"
+              body={
+                <RichTooltipLink href="/" target="_blank">
+                  Link
+                </RichTooltipLink>
+              }
+            />
+          }
+        >
+          <span role="button">With links</span>
+        </Tooltip>
+      </DocsExample>
+
+      <DocsExample label="Persistent">
+        <Tooltip
+          overlay={<RichTooltipContent>I am persistent</RichTooltipContent>}
+          isPersistent
+        >
+          <span role="button">Popover when I am clicked</span>
+        </Tooltip>
+      </DocsExample>
+
+      <DocsExample label="Disable staying open on hover">
+        <Tooltip
+          overlay={<RichTooltipContent>I don't stay open</RichTooltipContent>}
+          stayOpenOnHover={false}
+        >
+          <span role="button">I don't stay open</span>
+        </Tooltip>
+      </DocsExample>
+
       <DocsExample label="Styled Content">
         <Tooltip
+          rich={false}
           overlay={
             <div
               style={{
@@ -105,51 +158,11 @@ export default function Readme() {
               Hello world
             </div>
           }
-          disableRichStyling
         >
           <span role="button">Popover Window</span>
         </Tooltip>
       </DocsExample>
-      <DocsExample label="Rich overlay with clickable content">
-        <Tooltip
-          overlay={
-            <>
-              <RichTooltipTitle>Hello</RichTooltipTitle>
-              <RichTooltipContent>
-                I am the content of the interactive rich tooltip
-              </RichTooltipContent>
-              <RichTooltipActions>
-                <Button>Click me</Button>
-              </RichTooltipActions>
-            </>
-          }
-          stayOpenOnHover
-        >
-          <span role="button">Popover with clickable content</span>
-        </Tooltip>
-      </DocsExample>
-      <DocsExample label="Persistent">
-        <Tooltip
-          overlay={
-            <RichTooltipContent>
-              <div style={{ display: 'flex' }}>
-                <Avatar
-                  src="images/avatars/blackwidow.png"
-                  size="large"
-                  name="Margaret Schmidt"
-                />
-                <div style={{ marginLeft: '0.5rem', width: '100px' }}>
-                  <b>Captain America</b>
-                  <div>Margaret Schmidt</div>
-                </div>
-              </div>
-            </RichTooltipContent>
-          }
-          isPersistent
-        >
-          <span role="button">Popover when I am clicked</span>
-        </Tooltip>
-      </DocsExample>
+
       <DocsExample label="Delay">
         <>
           <Tooltip overlay="Cookies" enterDelay={1000}>
