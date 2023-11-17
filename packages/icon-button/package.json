@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/icon-button",
-  "version": "9.0.0-alpha.0",
+  "version": "9.0.0",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
