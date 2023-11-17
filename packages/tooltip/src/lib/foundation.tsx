@@ -2,8 +2,12 @@ import { CssClasses, MDCTooltipFoundation, events } from '@material/tooltip';
 import { useFoundation } from '@rmwc/base';
 import { useCallback, useEffect } from 'react';
 import { ALIGN_MAP, TOOLTIP_ALIGN_VALUES } from './constants';
-import { TooltipActivationT, TooltipProps } from './tooltip';
-import { useProviderContext } from '@rmwc/provider';
+import { TooltipProps } from './tooltip';
+import {
+  TooltipActivationT,
+  TooltipAlignT,
+  useProviderContext
+} from '@rmwc/provider';
 
 export const useToolTipFoundation = (
   props: TooltipProps & React.HTMLProps<any>
@@ -287,7 +291,7 @@ export const useToolTipFoundation = (
       return;
     }
     if (align) {
-      const position = ALIGN_MAP[align];
+      const position = ALIGN_MAP[align as TooltipAlignT];
       foundation.setTooltipPosition(position);
     }
   }, [foundation, align]);

@@ -3,9 +3,7 @@ import * as RMWC from '@rmwc/types';
 import { classNames, createComponent, Tag, useId } from '@rmwc/base';
 import { useToolTipFoundation } from './foundation';
 import { AnchorBoundaryType } from '@material/tooltip';
-import { TooltipAlignT } from '@rmwc/provider';
-
-export type TooltipActivationT = 'hover' | 'click' | 'focus';
+import { TooltipActivationT, TooltipAlignT } from '@rmwc/provider';
 
 /** A Tooltip component for displaying informative popover information. */
 export interface TooltipProps {
