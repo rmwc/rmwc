@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/data-table",
-  "version": "14.0.2-alpha.7",
+  "version": "13.0.0",
   "description": "RMWC Data Table Component",
   "main": "./index.js",
   "types": "./index.d.ts",
