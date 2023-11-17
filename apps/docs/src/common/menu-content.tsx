@@ -12,6 +12,7 @@ import UsageMD from '../markdown/README-USAGE.md';
 import {
   avatar,
   badge,
+  base,
   button,
   card,
   checkbox,
@@ -76,12 +77,11 @@ const Loading = () => (
   </div>
 );
 
-const Loadable = (Component: any) => () =>
-  (
-    <React.Suspense fallback={<Loading />}>
-      <Component />
-    </React.Suspense>
-  );
+const Loadable = (Component: any) => () => (
+  <React.Suspense fallback={<Loading />}>
+    <Component />
+  </React.Suspense>
+);
 
 export type MenuItemT = {
   label: string;
@@ -395,7 +395,7 @@ export const menuContent: MenuItemT[] = [
       {
         label: 'Portal',
         url: `/portal`,
-        component: Loadable(provider.default)
+        component: Loadable(base.default)
       }
     ]
   }
