@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [9.0.0-alpha.0](https://github.com/rmwc/rmwc/compare/v14.0.2-alpha.7...v9.0.0-alpha.0) (2023-11-17)
+
+
+### Features
+
+* **rc-tooltip:** add tooltip from v8.0.8 as rc-tooltip ([f9e27a4](https://github.com/rmwc/rmwc/commit/f9e27a4bdb83a19802b5c6a9fbc1cb61d4f81c8f))
+
 ## [14.0.2-alpha.7](https://github.com/rmwc/rmwc/compare/v14.0.2-alpha.6...v14.0.2-alpha.7) (2023-10-30)
 
 
