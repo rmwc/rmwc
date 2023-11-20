@@ -3,9 +3,9 @@ export type DeprecateT = {
 };
 
 export const deprecationWarning = (message: string) => {
-  if (!import.meta.env.PROD) {
-    console.warn(`RMWC Deprecation Warning: ${message}`);
-  }
+  //if (!import.meta.env.PROD) {
+  //  console.warn(`RMWC Deprecation Warning: ${message}`);
+  //}
 };
 
 export const handleDeprecations = (
