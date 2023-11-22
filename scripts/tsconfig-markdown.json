@@ -7,7 +7,7 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
-    "module": "CommonJS",
+    "module": "es2022",
     "importHelpers": true,
     "moduleResolution": "node",
     "resolveJsonModule": true,
