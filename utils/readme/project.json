@@ -3,23 +3,55 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "utils/readme/src",
   "projectType": "library",
-  "implicitDependencies": ["tag:readme"],
+  "implicitDependencies": [
+    "tag:readme"
+  ],
   "tags": [],
   "targets": {
     "bootstrap": {
       "executor": "nx:noop",
-      "dependsOn": ["generate-examples", "generate-props"]
+      "dependsOn": [
+        "generate-examples",
+        "generate-props"
+      ]
     },
     "lint": {
       "executor": "@nx/linter:eslint",
-      "outputs": ["{options.outputFile}"],
+      "outputs": [
+        "{options.outputFile}"
+      ],
       "options": {
-        "lintFilePatterns": ["utils/readme/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": [
+          "utils/readme/**/*.{ts,tsx,js,jsx}"
+        ]
       }
+    },
+    "build": {
+      "executor": "@nx/vite:build",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/readmes"
+      },
+      "configurations": {
+        "development": {
+          "mode": "development"
+        },
+        "production": {
+          "mode": "production"
+        }
+      },
+      "dependsOn": [
+        "bootstrap"
+      ]
     },
     "test": {
       "executor": "@nx/vite:test",
-      "outputs": ["{options.reportsDirectory}"],
+      "outputs": [
+        "{options.reportsDirectory}"
+      ],
       "options": {
         "passWithNoTests": true,
         "reportsDirectory": "../../coverage/utils/readme"
@@ -38,6 +70,16 @@
       "options": {
         "command": "node ./scripts/docgen-examples.js"
       }
+    },
+    "generate-markdown": {
+      "executor": "nx:run-commands",
+      "outputs": [],
+      "options": {
+        "command": "node ./scripts/docgen-markdown.mjs"
+      },
+      "dependsOn": [
+        "build"
+      ]
     }
   }
 }

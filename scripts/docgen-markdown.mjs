@@ -4,7 +4,6 @@ import * as path from 'path';
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
 import * as fs from 'fs';
-import { execSync } from 'child_process';
 import getPackages from './get-packages.js';
 import { default as TurndownService } from 'turndown';
 
@@ -16,7 +15,7 @@ const turndownService = TurndownService({ codeBlockStyle: 'fenced' });
 turndownService.addRule('code', {
   filter: ['pre'],
   replacement: function (content) {
-    return '```' + content + '```';
+    return '```js' + content + '```';
   }
 });
 
@@ -36,8 +35,8 @@ const getMarkdown = async (packageName) => {
 
   const promises = readmeFiles.map(async (fName) => {
     const docPath = path.resolve(distPath, fName);
-    const markdownOutputName = path.basename(fName).toUpperCase() + '.md';
-    const htmlOutputName = path.basename(fName) + '.html';
+    const markdownOutputName = packageName.toUpperCase() + '.md';
+    const htmlOutputName = packageName + '.html';
     const { default: Component } = await import(docPath);
     const htmlContent = renderToStaticMarkup(React.createElement(Component));
     const markdown = turndownService.turndown(htmlContent);
@@ -55,13 +54,6 @@ const getMarkdown = async (packageName) => {
 };
 
 try {
-  execSync(
-    `./node_modules/.bin/vite --config ${root}/scripts/vite.config.ts build `,
-    {
-      stdio: [0, 1, 2]
-    }
-  );
-
   const promises = getPackages(['readme']).map((d) => {
     console.log(`Generating Markdown For: ${d}`);
     return getMarkdown(d);
