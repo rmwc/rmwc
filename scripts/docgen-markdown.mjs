@@ -6,45 +6,46 @@ import { fileURLToPath } from 'url';
 import * as fs from 'fs';
 import { execSync } from 'child_process';
 import getPackages from './get-packages.js';
+import { default as TurndownService } from 'turndown';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, '../');
 
+const turndownService = TurndownService({ codeBlockStyle: 'fenced' });
+
+turndownService.addRule('code', {
+  filter: ['pre'],
+  replacement: function (content) {
+    return '```' + content + '```';
+  }
+});
+
+const distPath = path.resolve(
+  'dist',
+  'readmes',
+  'utils',
+  'readme',
+  'src',
+  'readmes'
+);
+
 const getMarkdown = async (packageName) => {
   const readmeFiles = fs
-    .readdirSync(
-      path.resolve('dist', 'readmes', 'utils', 'readme', 'src', 'readmes')
-    )
+    .readdirSync(distPath)
     .filter((fName) => fName.startsWith(packageName) && fName.endsWith('.mjs'));
 
   const promises = readmeFiles.map(async (fName) => {
-    const docPath = path.resolve(
-      'dist',
-      'readmes',
-      'utils',
-      'readme',
-      'src',
-      'readmes',
-      fName
-    );
-    const fileOutputName = path.basename(fName, '.js').toUpperCase() + '.md';
-    const outputPath = path.resolve(
-      'dist',
-      'readmes',
-      'utils',
-      'readme',
-      'src',
-      'readmes',
-      fileOutputName
-    );
+    const docPath = path.resolve(distPath, fName);
+    const markdownOutputName = path.basename(fName).toUpperCase() + '.md';
+    const htmlOutputName = path.basename(fName) + '.html';
     const { default: Component } = await import(docPath);
-    const content = renderToStaticMarkup(React.createElement(Component))
-      .replace(/&gt;/g, '>')
-      .replace(/&lt;/g, '<')
-      .replace(/&#x27;/g, "'")
-      .replace(/&quot;/g, '"');
+    const htmlContent = renderToStaticMarkup(React.createElement(Component));
+    const markdown = turndownService.turndown(htmlContent);
     return new Promise((resolve) => {
-      fs.writeFile(outputPath, content, () => {
+      fs.writeFile(path.resolve(distPath, htmlOutputName), htmlContent, () => {
+        resolve();
+      });
+      fs.writeFile(path.resolve(distPath, markdownOutputName), markdown, () => {
         resolve();
       });
     });
@@ -55,14 +56,11 @@ const getMarkdown = async (packageName) => {
 
 try {
   execSync(
-    //`./node_modules/.bin/tsc --project ${root}/scripts/tsconfig-markdown.json`,
     `./node_modules/.bin/vite --config ${root}/scripts/vite.config.ts build `,
     {
       stdio: [0, 1, 2]
     }
   );
-
-  //execSync(`./node_modules/.bin/copyfiles --up 1 src/**/*.json build/dist`);
 
   const promises = getPackages(['readme']).map((d) => {
     console.log(`Generating Markdown For: ${d}`);

@@ -133,6 +133,7 @@
     "ngx-deploy-npm": "^7.0.1",
     "nx": "17.0.3",
     "prettier": "^3.0.3",
+    "turndown": "^7.1.2",
     "typescript": "4.8.4",
     "vite": "~4.5.0",
     "vite-plugin-dts": "~2.3.0",
