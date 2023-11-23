@@ -1,18 +1,16 @@
-Drawers
-=======
+# Drawers
 
 > A navigation drawer slides in from the left and contains the navigation destinations for your app.
 
-*   Module **@rmwc/drawer**
-*   Import styles:
-    *   Using CSS Loader
-        *   import **'@rmwc/drawer/styles';**
-    *   Or include stylesheets
-        *   **'@material/drawer/dist/mdc.drawer.css'**;
-*   MDC Docs: [https://material.io/develop/web/components/drawers/](https://material.io/develop/web/components/drawers/)
+-   Module __@rmwc/drawer__
+-   Import styles:
+    -   Using CSS Loader
+        -   import __'@rmwc/drawer/styles';__
+    -   Or include stylesheets
+        -   __'@material/drawer/dist/mdc.drawer.css'__;
+-   MDC Docs: [https://material.io/develop/web/components/drawers/](https://material.io/develop/web/components/drawers/)
 
-Permanent
----------
+## Permanent
 
 These are drawers that are permanently fixed inside of a view.
 
@@ -47,8 +45,7 @@ These are drawers that are permanently fixed inside of a view.
 
 ```
 
-Dismissible
------------
+## Dismissible
 
 These are drawers that can be toggled to an open or closed state inside of a view, but still takes up viewable space when closed.
 
@@ -127,8 +124,7 @@ function Example() {
 
 ```
 
-Modal
------
+## Modal
 
 These are drawers that can be temporarily displayed fixed on the side of the entire viewport.
 
@@ -183,8 +179,7 @@ function Example() {
 
 ```
 
-Right Side Drawers
-------------------
+## Right Side Drawers
 
 `material-components-web` doesn't directly support right hand drawers, but it respects the `dir` attribute on DOM elements. This simple hack will allow you to get drawers that appear from the right hand side of your app. As an aside, the `dir` attribute can be used to invert many other behaviors where the element is anchored on the left.
 
@@ -253,20 +248,14 @@ function Example() {
 
 ```
 
-Drawer
-------
+## Drawer
 
-DrawerHeader
-------------
+## DrawerHeader
 
-DrawerTitle
------------
+## DrawerTitle
 
-DrawerSubtitle
---------------
+## DrawerSubtitle
 
-DrawerContent
--------------
+## DrawerContent
 
-DrawerAppContent
-----------------
+## DrawerAppContent

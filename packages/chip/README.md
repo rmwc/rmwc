@@ -1,17 +1,16 @@
-Chips
-=====
+# Chips
 
 > Chips represent complex entities in small blocks, such as a contact.
 
-*   Module **@rmwc/chip**
-*   Import styles:
-    *   Using CSS Loader
-        *   import **'@rmwc/chip/styles';**
-    *   Or include stylesheets
-        *   **'@material/chips/dist/mdc.chips.css'**;
-        *   **'@rmwc/icon/icon.css'**;
-        *   **'@material/ripple/dist/mdc.ripple.css'**;
-*   MDC Docs: [https://material.io/develop/web/components/chips/](https://material.io/develop/web/components/chips/)
+-   Module __@rmwc/chip__
+-   Import styles:
+    -   Using CSS Loader
+        -   import __'@rmwc/chip/styles';__
+    -   Or include stylesheets
+        -   __'@material/chips/dist/mdc.chips.css'__;
+        -   __'@rmwc/icon/icon.css'__;
+        -   __'@material/ripple/dist/mdc.ripple.css'__;
+-   MDC Docs: [https://material.io/develop/web/components/chips/](https://material.io/develop/web/components/chips/)
 
 Default
 
@@ -101,8 +100,7 @@ Disabled
 
 ```
 
-Layout grid chip sets / Listbox chip sets
------------------------------------------
+## Layout grid chip sets / Listbox chip sets
 
 Chip sets have two varieties: layout grid chip sets and listbox chip sets.
 
@@ -262,8 +260,6 @@ function Example() {
 
 ```
 
-Chip
-----
+## Chip
 
-ChipSet
--------
+## ChipSet

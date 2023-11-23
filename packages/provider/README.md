@@ -1,9 +1,8 @@
-Provider
-========
+# Provider
 
 > A component that provides global configuration for RMWC.
 
-*   Module **@rmwc/provider**
+-   Module __@rmwc/provider__
 
 You can wrap your top level App component with RMWC provider to set global configuration options. Just pass the options in as props.
 
@@ -75,5 +74,4 @@ You can wrap your top level App component with RMWC provider to set global confi
 
 ```
 
-RMWCProvider
-------------
+## RMWCProvider

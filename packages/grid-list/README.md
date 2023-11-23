@@ -1,15 +1,14 @@
-Grid Lists
-==========
+# Grid Lists
 
 > Grid lists are an alternative to standard list views. Note that as of Material Components Web 6.0.0, this component is deprecated.
 
-*   Module **@rmwc/grid-list**
-*   Import styles:
-    *   Using CSS Loader
-        *   import **'@rmwc/grid-list/styles';**
-    *   Or include stylesheets
-        *   **'@material/grid-list/dist/mdc.grid-list.css'**;
-*   MDC Docs: [https://material.io/components/web/catalog/grid-lists/](https://material.io/components/web/catalog/grid-lists/)
+-   Module __@rmwc/grid-list__
+-   Import styles:
+    -   Using CSS Loader
+        -   import __'@rmwc/grid-list/styles';__
+    -   Or include stylesheets
+        -   __'@material/grid-list/dist/mdc.grid-list.css'__;
+-   MDC Docs: [https://material.io/components/web/catalog/grid-lists/](https://material.io/components/web/catalog/grid-lists/)
 
 ```js
 
@@ -140,23 +139,16 @@ function Example() {
 
 ```
 
-GridList
---------
+## GridList
 
-GridTile
---------
+## GridTile
 
-GridTileIcon
-------------
+## GridTileIcon
 
-GridTilePrimary
----------------
+## GridTilePrimary
 
-GridTileSecondary
------------------
+## GridTileSecondary
 
-GridTileTitleSupportText
-------------------------
+## GridTileTitleSupportText
 
-GridTileTitle
--------------
+## GridTileTitle

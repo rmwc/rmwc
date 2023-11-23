@@ -10,7 +10,13 @@ import { default as TurndownService } from 'turndown';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, '../');
 
-const turndownService = TurndownService({ codeBlockStyle: 'fenced' });
+const turndownService = TurndownService({
+  headingStyle: 'atx',
+  bulletListMarker: '-',
+  preformattedCode: true,
+  strongDelimiter: '__',
+  codeBlockStyle: 'fenced'
+});
 
 turndownService.addRule('code', {
   filter: ['pre'],

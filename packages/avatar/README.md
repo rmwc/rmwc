@@ -1,16 +1,15 @@
-Avatars`RMWC ADDON`
-===================
+# Avatars`RMWC ADDON`
 
 > Avatars are virtual representations of users in a system.
 
-*   Module **@rmwc/avatar**
-*   Import styles:
-    *   Using CSS Loader
-        *   import **'@rmwc/avatar/styles';**
-    *   Or include stylesheets
-        *   **'@rmwc/avatar/avatar.css'**;
-        *   **'@rmwc/icon/icon.css'**;
-        *   **'@material/ripple/dist/mdc.ripple.css'**;
+-   Module __@rmwc/avatar__
+-   Import styles:
+    -   Using CSS Loader
+        -   import __'@rmwc/avatar/styles';__
+    -   Or include stylesheets
+        -   __'@rmwc/avatar/avatar.css'__;
+        -   __'@rmwc/icon/icon.css'__;
+        -   __'@material/ripple/dist/mdc.ripple.css'__;
 
 Images
 
@@ -134,8 +133,7 @@ Contained
 
 ```
 
-Avatar Groups
--------------
+## Avatar Groups
 
 This is for Avatars that are displayed in a corellated grouping or list.
 
@@ -213,8 +211,7 @@ Dense
 
 ```
 
-Usage with other components
----------------------------
+## Usage with other components
 
 The avatar component has been designed to work nicely in any of the places you would use an icon.
 
@@ -281,11 +278,8 @@ The avatar component has been designed to work nicely in any of the places you w
 
 ```
 
-Avatar
-------
+## Avatar
 
-AvatarGroup
------------
+## AvatarGroup
 
-AvatarCount
------------
+## AvatarCount

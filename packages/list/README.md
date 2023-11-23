@@ -1,47 +1,24 @@
-Lists
-=====
+# Lists
 
 > Lists are continuous, vertical indexes of text or images.
 
-*   Module **@rmwc/list**
-*   Import styles:
-    *   Using CSS Loader
-        *   import **'@rmwc/list/styles';**
-    *   Or include stylesheets
-        *   **'@material/list/dist/mdc.list.css'**;
-        *   **'@material/ripple/dist/mdc.ripple.css'**;
-        *   **'@rmwc/icon/icon.css'**;
-*   MDC Docs: [https://material.io/develop/web/components/lists/](https://material.io/develop/web/components/lists/)
+-   Module __@rmwc/list__
+-   Import styles:
+    -   Using CSS Loader
+        -   import __'@rmwc/list/styles';__
+    -   Or include stylesheets
+        -   __'@material/list/dist/mdc.list.css'__;
+-   MDC Docs: [https://material.io/develop/web/components/lists/](https://material.io/develop/web/components/lists/)
 
-Basic Usage
------------
+## Two Line
 
-Default
-
-```js
-
-<List\>
-
-  <ListItem\>Cookies</ListItem\>
-
-  <ListItem\>Pizza</ListItem\>
-
-  <ListItem\>Icecream</ListItem\>
-
-</List\>
-
-
-```
-
-Fully Featured
+When using the `twoLine` prop, you have to wrap the contents of the `ListItem` in `ListItemText`.
 
 ```js
 
 <List twoLine\>
 
   <ListItem\>
-
-    <ListItemGraphic icon\="star\_border" />
 
     <ListItemText\>
 
@@ -51,13 +28,9 @@ Fully Featured
 
     </ListItemText\>
 
-    <ListItemMeta icon\="info" />
-
   </ListItem\>
 
   <ListItem\>
-
-    <ListItemGraphic icon\="local\_pizza" />
 
     <ListItemText\>
 
@@ -67,13 +40,9 @@ Fully Featured
 
     </ListItemText\>
 
-    <ListItemMeta icon\="info" />
-
   </ListItem\>
 
-  <ListItem activated\>
-
-    <ListItemGraphic icon\="mood" />
+  <ListItem\>
 
     <ListItemText\>
 
@@ -83,7 +52,52 @@ Fully Featured
 
     </ListItemText\>
 
-    <ListItemMeta\>Winner!</ListItemMeta\>
+  </ListItem\>
+
+</List\>
+
+
+```
+
+## Leading and Trailing Icons
+
+```js
+
+<List\>
+
+  <ListItem\>
+
+    <ListItemGraphic icon\="favorite" />
+
+    Leading
+
+  </ListItem\>
+
+  <ListItem\>
+
+    Trailing
+
+    <ListItemMeta icon\="star" />
+
+  </ListItem\>
+
+  <ListItem\>
+
+    <ListItemGraphic icon\="wifi" />
+
+    Leading and Trailing
+
+    <ListItemMeta icon\="info" />
+
+  </ListItem\>
+
+  <ListItem\>
+
+    <ListItemGraphic icon\="wifi" />
+
+    Leading with Trailing Text
+
+    <ListItemMeta\>HELLO!</ListItemMeta\>
 
   </ListItem\>
 
@@ -92,89 +106,85 @@ Fully Featured
 
 ```
 
-Simplified Usage
-----------------
-
-While there are siutations where you would need / want to compose the entire list yourself, it can be quite verbose. `SimpleListItem` provides a compact syntax that allows you to pass all options as props. The following example is roughly equivalent to the one above.
-
-Simple
+## Avatar List with Dividers
 
 ```js
 
-<List twoLine\>
+<List twoLine avatarList\>
 
-  <SimpleListItem
+  <ListGroup\>
 
-    graphic\="star\_border"
+    <ListItem\>
 
-    text\="Cookies"
+      <ListItemGraphic
 
-    secondaryText\="Chocolate chip"
+        icon\={
 
-    metaIcon\="info"
+          <Avatar
 
-  />
+            src\="images/avatars/blackwidow.png"
 
-  <SimpleListItem
+            size\="xsmall"
 
-    graphic\="local\_pizza"
+            name\="Natalia Alianovna Romanova"
 
-    text\="Pizza"
+          />
 
-    secondaryText\="Pepperoni"
+        }
 
-    metaIcon\="info"
+      />
 
-  />
+      Natalia Alianovna Romanova
 
-  <SimpleListItem
+      <ListItemMeta icon\="info" />
 
-    activated
+    </ListItem\>
 
-    graphic\="mood"
+    <ListItem\>
 
-    text\="Icecream"
+      <ListItemGraphic
 
-    secondaryText\="Chocolate cookie dough"
+        icon\={
 
-    meta\="Winner!"
+          <Avatar
 
-  />
+            src\="images/avatars/hulk.png"
 
-</List\>
+            size\="small"
 
+            name\="Bruce Banner"
 
-```
+          />
 
-List
-----
+        }
 
-ListItem
---------
+      />
 
-ListItemPrimaryText
--------------------
+      Bruce Banner
 
-ListItemSecondaryText
----------------------
+      <ListItemMeta icon\="info" />
 
-ListItemGraphic
----------------
+    </ListItem\>
 
-ListItemMeta
-------------
+  </ListGroup\>
 
-ListDivider
------------
+  <ListDivider />
 
-ListGroup
----------
+  <ListGroup\>
 
-ListGroupSubheader
-------------------
+    <ListItem\>
 
-SimpleListItem
---------------e\="Thor Odinson"
+      <ListItemGraphic
+
+        icon\={
+
+          <Avatar
+
+            src\="images/avatars/thor.png"
+
+            size\="medium"
+
+            name\="Thor Odinson"
 
           />
 
@@ -195,8 +205,7 @@ SimpleListItem
 
 ```
 
-Selectable
-----------
+## Selectable
 
 Checkboxes and Radios can be included as part of `ListItemMeta`. It is recommended when using these that you are using controlled components, and that you put your interaction handler on the `ListItem` itself. Notice the `readOnly` prop is also set on the individual form elements.
 
@@ -347,32 +356,22 @@ function Example() {
 
 ```
 
-List
-----
+## List
 
-ListItem
---------
+## ListItem
 
-ListItemPrimaryText
--------------------
+## ListItemPrimaryText
 
-ListItemSecondaryText
----------------------
+## ListItemSecondaryText
 
-ListItemGraphic
----------------
+## ListItemGraphic
 
-ListItemMeta
-------------
+## ListItemMeta
 
-ListDivider
------------
+## ListDivider
 
-ListGroup
----------
+## ListGroup
 
-ListGroupSubheader
-------------------
+## ListGroupSubheader
 
-SimpleListItem
---------------
+## SimpleListItem

@@ -1,20 +1,18 @@
-Icon Buttons
-============
+# Icon Buttons
 
 > Icon buttons allow users to take actions, and make choices, with a single tap.
 
-*   Module **@rmwc/icon-button**
-*   Import styles:
-    *   Using CSS Loader
-        *   import **'@rmwc/icon-button/styles';**
-    *   Or include stylesheets
-        *   **'@material/icon-button/dist/mdc.icon-button.css'**;
-        *   **'@rmwc/icon/icon.css'**;
-        *   **'@material/ripple/dist/mdc.ripple.css'**;
-*   MDC Docs: [https://material.io/develop/web/components/buttons/icon-buttons/](https://material.io/develop/web/components/buttons/icon-buttons/)
+-   Module __@rmwc/icon-button__
+-   Import styles:
+    -   Using CSS Loader
+        -   import __'@rmwc/icon-button/styles';__
+    -   Or include stylesheets
+        -   __'@material/icon-button/dist/mdc.icon-button.css'__;
+        -   __'@rmwc/icon/icon.css'__;
+        -   __'@material/ripple/dist/mdc.ripple.css'__;
+-   MDC Docs: [https://material.io/develop/web/components/buttons/icon-buttons/](https://material.io/develop/web/components/buttons/icon-buttons/)
 
-Basic Usage
------------
+## Basic Usage
 
 `IconButton` inherits from the `Icon` component and can be passed icons in the same way.
 
@@ -51,8 +49,7 @@ Default
 
 ```
 
-Usage as a Toggle
------------------
+## Usage as a Toggle
 
 To use as a toggle, specify an additional toggled on state using 'onIcon'.
 
@@ -165,5 +162,4 @@ Component as Icon
 
 ```
 
-IconButton
-----------
+## IconButton

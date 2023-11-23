@@ -1,23 +1,21 @@
-Tabs
-====
+# Tabs
 
 > Tabs make it easy to explore and switch between different views.
 
-*   Module **@rmwc/tabs**
-*   Import styles:
-    *   Using CSS Loader
-        *   import **'@rmwc/tabs/styles';**
-    *   Or include stylesheets
-        *   **'@material/tab-bar/dist/mdc.tab-bar.css'**;
-        *   **'@material/tab/dist/mdc.tab.css'**;
-        *   **'@material/tab-scroller/dist/mdc.tab-scroller.css'**;
-        *   **'@material/tab-indicator/dist/mdc.tab-indicator.css'**;
-        *   **'@material/ripple/dist/mdc.ripple.css'**;
-        *   **'@rmwc/icon/icon.css'**;
-*   MDC Docs: [https://material.io/develop/web/components/tabs/tab-bar/](https://material.io/develop/web/components/tabs/tab-bar/)
+-   Module __@rmwc/tabs__
+-   Import styles:
+    -   Using CSS Loader
+        -   import __'@rmwc/tabs/styles';__
+    -   Or include stylesheets
+        -   __'@material/tab-bar/dist/mdc.tab-bar.css'__;
+        -   __'@material/tab/dist/mdc.tab.css'__;
+        -   __'@material/tab-scroller/dist/mdc.tab-scroller.css'__;
+        -   __'@material/tab-indicator/dist/mdc.tab-indicator.css'__;
+        -   __'@material/ripple/dist/mdc.ripple.css'__;
+        -   __'@rmwc/icon/icon.css'__;
+-   MDC Docs: [https://material.io/develop/web/components/tabs/tab-bar/](https://material.io/develop/web/components/tabs/tab-bar/)
 
-Basic Usage
------------
+## Basic Usage
 
 Tabs can be either controlled or uncontrolled just like inputs. Use the `activeTabIndex` and `onActivate` callback for controlled components.
 
@@ -71,8 +69,7 @@ function Example() {
 
 ```
 
-Variants
---------
+## Variants
 
 Basic
 
@@ -194,8 +191,7 @@ Scrollable
 
 ```
 
-Transitions
------------
+## Transitions
 
 Slide (Default)
 
@@ -214,8 +210,7 @@ Slide (Default)
 
 ```
 
-Icons as Indicators
--------------------
+## Icons as Indicators
 
 `material-components-web` has some light support for using icons as indicators (it's buried in their docs but there are no working examples or demos). Support has been added to RMWC, but your mileage may vary since it will require quite a bit of manual positioning and styling. By default, the icons appear full size at the center of the tab, effectively making them overlay images.
 
@@ -309,8 +304,6 @@ Manually Positioned
 
 ```
 
-TabBar
-------
+## TabBar
 
-Tab
----
+## Tab

@@ -1,26 +1,24 @@
-Select Menus
-============
+# Select Menus
 
 > Menus display a list of choices on a transient sheet of material.
 
-*   Module **@rmwc/select**
-*   Import styles:
-    *   Using CSS Loader
-        *   import **'@rmwc/select/styles';**
-    *   Or include stylesheets
-        *   **'@rmwc/select/select.css'**;
-        *   **'@material/select/dist/mdc.select.css'**;
-        *   **'@material/floating-label/dist/mdc.floating-label.css'**;
-        *   **'@material/notched-outline/dist/mdc.notched-outline.css'**;
-        *   **'@material/line-ripple/dist/mdc.line-ripple.css'**;
-        *   **'@material/list/dist/mdc.list.css'**;
-        *   **'@material/menu/dist/mdc.menu.css'**;
-        *   **'@material/menu-surface/dist/mdc.menu-surface.css'**;
-        *   **'@material/ripple/dist/mdc.ripple.css'**;
-*   MDC Docs: [https://material.io/develop/web/components/input-controls/select-menus/](https://material.io/develop/web/components/input-controls/select-menus/)
+-   Module __@rmwc/select__
+-   Import styles:
+    -   Using CSS Loader
+        -   import __'@rmwc/select/styles';__
+    -   Or include stylesheets
+        -   __'@rmwc/select/select.css'__;
+        -   __'@material/select/dist/mdc.select.css'__;
+        -   __'@material/floating-label/dist/mdc.floating-label.css'__;
+        -   __'@material/notched-outline/dist/mdc.notched-outline.css'__;
+        -   __'@material/line-ripple/dist/mdc.line-ripple.css'__;
+        -   __'@material/list/dist/mdc.list.css'__;
+        -   __'@material/menu/dist/mdc.menu.css'__;
+        -   __'@material/menu-surface/dist/mdc.menu-surface.css'__;
+        -   __'@material/ripple/dist/mdc.ripple.css'__;
+-   MDC Docs: [https://material.io/develop/web/components/input-controls/select-menus/](https://material.io/develop/web/components/input-controls/select-menus/)
 
-Select Styles
--------------
+## Select Styles
 
 Selects come in three different styles: standard,outlined, and enhanced.
 
@@ -105,8 +103,7 @@ With Options
 
 ```
 
-Validation
-----------
+## Validation
 
 Required
 
@@ -159,8 +156,7 @@ Disabled
 
 ```
 
-Controlled / Uncontrolled
--------------------------
+## Controlled / Uncontrolled
 
 The Select component has the same behaviors as a native HTML select and be both controlled and uncontrolled.
 
@@ -212,8 +208,7 @@ Uncontrolled
 
 ```
 
-Data Driven Selects
--------------------
+## Data Driven Selects
 
 To fit common use cases, RMWC Select provides a data driven method for rendering select menus. There are multiple formats you can pass data in, use the one that best fits your requirements. To make your label not float by default and to have an unselected blank value, set the `placeholder` prop to a blank string.
 
@@ -300,8 +295,7 @@ Array
 
 ```
 
-Manually Building the List
---------------------------
+## Manually Building the List
 
 If you want full control over the child `ListItems`, you can manually build the list yourself.
 
@@ -322,8 +316,7 @@ Manually Built
 
 ```
 
-Option Groups
--------------
+## Option Groups
 
 Both native and enhanced Selects can contain option groups. Just nest additional options arrays in your data.
 
@@ -415,5 +408,4 @@ Options Groups: Manually Built
 
 ```
 
-Select
-------
+## Select

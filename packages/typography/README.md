@@ -1,18 +1,16 @@
-Typography
-==========
+# Typography
 
 > Material Design’s text sizes and styles were developed to balance content density and reading comfort under typical usage conditions.
 
-*   Module **@rmwc/typography**
-*   Import styles:
-    *   Using CSS Loader
-        *   import **'@rmwc/typography/styles';**
-    *   Or include stylesheets
-        *   **'@material/typography/dist/mdc.typography.css'**;
-*   MDC Docs: [https://material.io/develop/web/components/typography/](https://material.io/develop/web/components/typography/)
+-   Module __@rmwc/typography__
+-   Import styles:
+    -   Using CSS Loader
+        -   import __'@rmwc/typography/styles';__
+    -   Or include stylesheets
+        -   __'@material/typography/dist/mdc.typography.css'__;
+-   MDC Docs: [https://material.io/develop/web/components/typography/](https://material.io/develop/web/components/typography/)
 
-Basic Usage
------------
+## Basic Usage
 
 ```js
 
@@ -62,8 +60,7 @@ Specify tag
 
 ```
 
-Provider Setup
---------------
+## Provider Setup
 
 You can globally map specify type classes to HTML tags for semantics, or specify a default to be used instead of `span`.
 
@@ -116,5 +113,4 @@ Specify tag
 
 ```
 
-Typography
-----------
+## Typography

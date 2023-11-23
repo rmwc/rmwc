@@ -1,20 +1,18 @@
-Snackbars
-=========
+# Snackbars
 
 > Snackbars provide brief feedback about an operation through a message at the bottom of the screen.
 
-*   Module **@rmwc/snackbar**
-*   Import styles:
-    *   Using CSS Loader
-        *   import **'@rmwc/snackbar/styles';**
-    *   Or include stylesheets
-        *   **'@material/snackbar/dist/mdc.snackbar.css'**;
-        *   **'@material/button/dist/mdc.button.css'**;
-        *   **'@material/ripple/dist/mdc.ripple.css'**;
-*   MDC Docs: [https://material.io/develop/web/components/snackbars/](https://material.io/develop/web/components/snackbars/)
+-   Module __@rmwc/snackbar__
+-   Import styles:
+    -   Using CSS Loader
+        -   import __'@rmwc/snackbar/styles';__
+    -   Or include stylesheets
+        -   __'@material/snackbar/dist/mdc.snackbar.css'__;
+        -   __'@material/button/dist/mdc.button.css'__;
+        -   __'@material/ripple/dist/mdc.ripple.css'__;
+-   MDC Docs: [https://material.io/develop/web/components/snackbars/](https://material.io/develop/web/components/snackbars/)
 
-Basic Usage
------------
+## Basic Usage
 
 You can render a snackbar in your UI and control its open state.
 
@@ -177,8 +175,7 @@ function Example() {
 
 ```
 
-Usage with SnackbarQueue
-------------------------
+## Usage with SnackbarQueue
 
 While rendering the Snackbar inline works for simple cases, you'll likely have a notification system, or want to send notifications from anywhere in your app. The `SnackbarQueue` exists as a convenient interface for handling these cases and rendering the snackbar messages for you. If you've used the `DialogQueue`, the `SnackbarQueue` is very similar.
 
@@ -366,8 +363,6 @@ Inline Example
 
 ```
 
-Snackbar
---------
+## Snackbar
 
-SnackbarAction
---------------
+## SnackbarAction

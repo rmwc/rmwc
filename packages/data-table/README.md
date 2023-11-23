@@ -1,19 +1,17 @@
-Data Tables
-===========
+# Data Tables
 
 > Data tables display sets of data.
 
-*   Module **@rmwc/data-table**
-*   Import styles:
-    *   Using CSS Loader
-        *   import **'@rmwc/data-table/styles';**
-    *   Or include stylesheets
-        *   **'@material/data-table/dist/mdc.data-table.css'**;
-        *   **'@rmwc/data-table/data-table.css'**;
-        *   **'@rmwc/icon/icon.css'**;
+-   Module __@rmwc/data-table__
+-   Import styles:
+    -   Using CSS Loader
+        -   import __'@rmwc/data-table/styles';__
+    -   Or include stylesheets
+        -   __'@material/data-table/dist/mdc.data-table.css'__;
+        -   __'@rmwc/data-table/data-table.css'__;
+        -   __'@rmwc/icon/icon.css'__;
 
-Standard Table
---------------
+## Standard Table
 
 The DataTable components are intended to be flexible, properly styled, Material compliant HTML tables. Because of the complexities of working with datasets (especially large ones), the DataTable component DOES NOT handle pagination, data fetching, sorting, or performance of long lists.
 
@@ -108,8 +106,7 @@ function Example() {
 
 ```
 
-Scrollable / Sticky Rows and Columns
-------------------------------------
+## Scrollable / Sticky Rows and Columns
 
 You can set a fixed sized for your table container to make it scrollable. Additionally, you can specify `stickyRows` or `stickyColumns` to affix rows or columns. Currently, only 1 row / column is supported but more may be supported in a future release.
 
@@ -226,8 +223,7 @@ function Example() {
 
 ```
 
-Form Controls
--------------
+## Form Controls
 
 DataTables play nice with the rest of the RMWC form controls. You are responsible for scripting your own selection behavior.
 
@@ -330,8 +326,7 @@ function Example() {
 
 ```
 
-Simplified Usage
-----------------
+## Simplified Usage
 
 If you just need to throw a table on the screen, you can pass an array of data to SimpleDataTable.
 
@@ -380,23 +375,16 @@ If you just need to throw a table on the screen, you can pass an array of data t
 
 ```
 
-DataTable
----------
+## DataTable
 
-DataTableRow
-------------
+## DataTableRow
 
-DataTableCell
--------------
+## DataTableCell
 
-DataTableHead
--------------
+## DataTableHead
 
-DataTableBody
--------------
+## DataTableBody
 
-DataTableHeadCell
------------------
+## DataTableHeadCell
 
-SimpleDataTable
----------------
+## SimpleDataTable

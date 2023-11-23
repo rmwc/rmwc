@@ -1,12 +1,10 @@
-Portal
-======
+# Portal
 
 > The Portal component will let you render components to a portal.
 
-*   Module **@rmwc/base**
+-   Module __@rmwc/base__
 
-Portal
-------
+## Portal
 
 Default
 
@@ -17,8 +15,7 @@ Default
 
 ```
 
-PortalProvider (optional)
--------------------------
+## PortalProvider (optional)
 
 The PortalProvider component is an optional component that provides a global context for the Portal element in the RMWC library. This context is used by the Portal component to retrieve the Portal element without relying on document.getElementById, which doesn't work inside a Shadow DOM.
 
@@ -55,8 +52,7 @@ In this example, the PortalProvider component is used to wrap the Portal compone
 
 The PortalProvider component is optional for most users. If you are using the RMWC library in a Shadow DOM and the Portal component is not rendering inside the correct Portal element, then you can use the PortalProvider component to ensure that the Portal element is retrieved using the PortalContext.
 
-Notes
------
+## Notes
 
 The PortalProvider component does not accept any props.
 

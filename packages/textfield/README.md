@@ -1,23 +1,21 @@
-Text Fields
-===========
+# Text Fields
 
 > Text fields allow users to input, edit, and select text.
 
-*   Module **@rmwc/textfield**
-*   Import styles:
-    *   Using CSS Loader
-        *   import **'@rmwc/textfield/styles';**
-    *   Or include stylesheets
-        *   **'@material/textfield/dist/mdc.textfield.css'**;
-        *   **'@material/floating-label/dist/mdc.floating-label.css'**;
-        *   **'@material/notched-outline/dist/mdc.notched-outline.css'**;
-        *   **'@material/line-ripple/dist/mdc.line-ripple.css'**;
-        *   **'@material/ripple/dist/mdc.ripple.css'**;
-        *   **'@rmwc/icon/icon.css'**;
-*   MDC Docs: [https://material.io/develop/web/components/input-controls/text-field/](https://material.io/develop/web/components/input-controls/text-field/)
+-   Module __@rmwc/textfield__
+-   Import styles:
+    -   Using CSS Loader
+        -   import __'@rmwc/textfield/styles';__
+    -   Or include stylesheets
+        -   __'@material/textfield/dist/mdc.textfield.css'__;
+        -   __'@material/floating-label/dist/mdc.floating-label.css'__;
+        -   __'@material/notched-outline/dist/mdc.notched-outline.css'__;
+        -   __'@material/line-ripple/dist/mdc.line-ripple.css'__;
+        -   __'@material/ripple/dist/mdc.ripple.css'__;
+        -   __'@rmwc/icon/icon.css'__;
+-   MDC Docs: [https://material.io/develop/web/components/input-controls/text-field/](https://material.io/develop/web/components/input-controls/text-field/)
 
-TextField Variants
-------------------
+## TextField Variants
 
 Standard
 
@@ -88,8 +86,7 @@ Fullwidth
 
 ```
 
-Textareas
----------
+## Textareas
 
 You can make the TextField a textarea. Make sure to include `outlined` for proper styling You can optionally make help text always visible by passing an object as props with persistent set to true. Textareas can also have an optional character counter which will work with the maxLength property.
 
@@ -128,8 +125,7 @@ You can make the TextField a textarea. Make sure to include `outlined` for prope
 
 ```
 
-Validation
-----------
+## Validation
 
 Disabled
 
@@ -177,8 +173,7 @@ Validation Pattern
 
 ```
 
-HTML Input Types
-----------------
+## HTML Input Types
 
 A preview of how `material-components-web` handles styling input types for your browser.
 
@@ -207,5 +202,4 @@ A preview of how `material-components-web` handles styling input types for your 
 
 ```
 
-TextField
----------
+## TextField

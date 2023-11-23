@@ -1,17 +1,16 @@
-Buttons
-=======
+# Buttons
 
 > Buttons communicate the action that will occur when the user touches them.
 
-*   Module **@rmwc/button**
-*   Import styles:
-    *   Using CSS Loader
-        *   import **'@rmwc/button/styles';**
-    *   Or include stylesheets
-        *   **'@material/button/dist/mdc.button.css'**;
-        *   **'@rmwc/@rmwc/icon/icon.css'**;
-        *   **'@material/ripple/dist/mdc.ripple.css'**;
-*   MDC Docs: [https://material.io/develop/web/components/buttons/](https://material.io/develop/web/components/buttons/)
+-   Module __@rmwc/button__
+-   Import styles:
+    -   Using CSS Loader
+        -   import __'@rmwc/button/styles';__
+    -   Or include stylesheets
+        -   __'@material/button/dist/mdc.button.css'__;
+        -   __'@rmwc/@rmwc/icon/icon.css'__;
+        -   __'@material/ripple/dist/mdc.ripple.css'__;
+-   MDC Docs: [https://material.io/develop/web/components/buttons/](https://material.io/develop/web/components/buttons/)
 
 Default
 
@@ -142,5 +141,4 @@ Touch Target Wrapper
 
 ```
 
-Button
-------
+## Button

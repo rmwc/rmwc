@@ -1,18 +1,16 @@
-Tooltips
-========
+# Tooltips
 
 > Tooltips display informative text when users hover over, focus on, or tap an element.
 
-*   Module **@rmwc/tooltip**
-*   Import styles:
-    *   Using CSS Loader
-        *   import **'@rmwc/tooltip/styles';**
-    *   Or include stylesheets
-        *   **'@material/tooltip/dist/mdc.tooltip.css'**;
-        *   **'@rmwc/tooltip/tooltip.css'**;
+-   Module __@rmwc/tooltip__
+-   Import styles:
+    -   Using CSS Loader
+        -   import __'@rmwc/tooltip/styles';__
+    -   Or include stylesheets
+        -   __'@material/tooltip/dist/mdc.tooltip.css'__;
+        -   __'@rmwc/tooltip/tooltip.css'__;
 
-Basic Usage
------------
+## Basic Usage
 
 Wrap any component in a `Tooltip` and provide the overlay attribute. The only requirement is that is has a single React child, and that the child can accept `onMouseEnter`, `onMouseLeave`, `onFocus`, and `onClick` props. This component is not backwards compatible with the tooltip from RMWC version 8.x. For a compatible version us the `RCTooltip` component. The `RCTooltip` uses the `ReactTooltip` from 'rc-tooltip' package. This tooltip uses the standard tooltip component from Google Material for the web.
 
@@ -45,8 +43,7 @@ Default
 
 ```
 
-Variants
---------
+## Variants
 
 Controlled / Always open
 
@@ -325,8 +322,7 @@ Alignment
 
 ```
 
-Activation
-----------
+## Activation
 
 By default, tooltips will activate on hover and focus. You can change this behavior by passing one or more options to the `activateOn` prop.
 
@@ -365,8 +361,7 @@ Default
 
 ```
 
-Usage with RMWCProvider
------------------------
+## Usage with RMWCProvider
 
 The RMWCProvider allows you to specify global defaults for your tooltips.
 
@@ -401,5 +396,4 @@ Using Provider
 
 ```
 
-Tooltip
--------
+## Tooltip

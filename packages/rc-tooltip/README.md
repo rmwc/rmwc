@@ -1,17 +1,15 @@
-RC Tooltips`RMWC ADDON`
-=======================
+# RC Tooltips`RMWC ADDON`
 
 > Tooltips display informative text when users hover over, focus on, or tap an element.
 
-*   Module **@rmwc/rc-tooltip**
-*   Import styles:
-    *   Using CSS Loader
-        *   import **'@rmwc/rc-tooltip/styles';**
-    *   Or include stylesheets
-        *   **'@rmwc/rc-tooltip/tooltip.css'**;
+-   Module __@rmwc/rc-tooltip__
+-   Import styles:
+    -   Using CSS Loader
+        -   import __'@rmwc/rc-tooltip/styles';__
+    -   Or include stylesheets
+        -   __'@rmwc/rc-tooltip/tooltip.css'__;
 
-Basic Usage
------------
+## Basic Usage
 
 Wrap any component in a `RCTooltip` and provide the content attribute. The only requirement is that is has a single React child, and that the child can accept `onMouseEnter`, `onMouseLeave`, `onFocus`, and `onClick` props. This is not the standard Google Material for the web component, it is here for backwards compability. Use `Tooltip` to use the standard Google Material for the web component.
 
@@ -44,8 +42,7 @@ Default
 
 ```
 
-Variants
---------
+## Variants
 
 With Arrow
 
@@ -233,8 +230,7 @@ function AlignmentExample() {
 
 ```
 
-Activation
-----------
+## Activation
 
 By default, tooltips will activate on hover and focus. You can change this behavior by passing one or more options to the `activateOn` prop.
 
@@ -275,8 +271,7 @@ Default
 
 ```
 
-Usage with RMWCProvider
------------------------
+## Usage with RMWCProvider
 
 The RMWCProvider allows you to specify global defaults for your tooltips.
 
@@ -313,5 +308,4 @@ Using Provider
 
 ```
 
-Tooltip
--------
+## Tooltip

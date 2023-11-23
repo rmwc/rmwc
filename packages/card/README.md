@@ -1,20 +1,18 @@
-Cards
-=====
+# Cards
 
 > Cards contain content and actions about a single subject.
 
-*   Module **@rmwc/card**
-*   Import styles:
-    *   Using CSS Loader
-        *   import **'@rmwc/card/styles';**
-    *   Or include stylesheets
-        *   **'@material/card/dist/mdc.card.css'**;
-        *   **'@material/button/dist/mdc.button.css'**;
-        *   **'@material/icon-button/dist/mdc.icon-button.css'**;
-*   MDC Docs: [https://material.io/develop/web/components/cards/](https://material.io/develop/web/components/cards/)
+-   Module __@rmwc/card__
+-   Import styles:
+    -   Using CSS Loader
+        -   import __'@rmwc/card/styles';__
+    -   Or include stylesheets
+        -   __'@material/card/dist/mdc.card.css'__;
+        -   __'@material/button/dist/mdc.button.css'__;
+        -   __'@material/icon-button/dist/mdc.icon-button.css'__;
+-   MDC Docs: [https://material.io/develop/web/components/cards/](https://material.io/develop/web/components/cards/)
 
-Fully Featured Example
-----------------------
+## Fully Featured Example
 
 ```js
 
@@ -105,8 +103,7 @@ Fully Featured Example
 
 ```
 
-Article Preview Example
------------------------
+## Article Preview Example
 
 ```js
 
@@ -219,8 +216,7 @@ Article Preview Example
 
 ```
 
-Mini Card Example
------------------
+## Mini Card Example
 
 ```js
 
@@ -299,29 +295,20 @@ Mini Card Example
 
 ```
 
-Card
-----
+## Card
 
-CardPrimaryAction
------------------
+## CardPrimaryAction
 
-CardMedia
----------
+## CardMedia
 
-CardMediaContent
-----------------
+## CardMediaContent
 
-CardActions
------------
+## CardActions
 
-CardActionButtons
------------------
+## CardActionButtons
 
-CardActionIcons
----------------
+## CardActionIcons
 
-CardActionIcon
---------------
+## CardActionIcon
 
-CardActionButton
-----------------
+## CardActionButton

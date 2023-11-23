@@ -1,19 +1,17 @@
-Theming
-=======
+# Theming
 
 > MDC Theme is a foundational module that themes MDC Web components.
 
-*   Module **@rmwc/theme**
-*   Import styles:
-    *   Using CSS Loader
-        *   import **'@rmwc/theme/styles';**
-    *   Or include stylesheets
-        *   **'@material/theme/dist/mdc.theme.css'**;
-        *   **'@rmwc/theme/theme.css'**;
-*   MDC Docs: [https://material.io/develop/web/components/theme/](https://material.io/develop/web/components/theme/)
+-   Module __@rmwc/theme__
+-   Import styles:
+    -   Using CSS Loader
+        -   import __'@rmwc/theme/styles';__
+    -   Or include stylesheets
+        -   __'@material/theme/dist/mdc.theme.css'__;
+        -   __'@rmwc/theme/theme.css'__;
+-   MDC Docs: [https://material.io/develop/web/components/theme/](https://material.io/develop/web/components/theme/)
 
-Theme Options
--------------
+## Theme Options
 
 The Theme module fully embraces using CSS variables for runtime theming. This allows for some really powerful usecases like a built in dark mode, custom palettes for your clients, or dynamic configuration for accessibility.
 
@@ -112,8 +110,7 @@ Support for theming inside of `material-components-web` is not without issue, so
 
 ```
 
-ThemeProvider
--------------
+## ThemeProvider
 
 The `ThemeProvider` is an optional component that allows you to specify theme colors and settings for all of its subtree. This is useful to use once at the top of your app, or in parts of your app where the styles or color scheme differ.
 
@@ -196,8 +193,7 @@ More Options
 
 ```
 
-Theme Component
----------------
+## Theme Component
 
 The Theme component allows you to apply theme colors to RMWC components, or components of your own. Almost every component in RMWC has a `theme` prop that you can use that takes the same options as the `Theme` component's `use` prop.
 
@@ -262,8 +258,6 @@ Typography
 
 ```
 
-ThemeProvider
--------------
+## ThemeProvider
 
-Theme
------
+## Theme

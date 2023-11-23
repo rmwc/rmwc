@@ -1,14 +1,13 @@
-Badges`RMWC ADDON`
-==================
+# Badges`RMWC ADDON`
 
 > Badges are small status descriptors for UI elements. A badge consists of a small circle, typically containing a number or other short set of characters, that appears in proximity to another object.
 
-*   Module **@rmwc/badge**
-*   Import styles:
-    *   Using CSS Loader
-        *   import **'@rmwc/badge/styles';**
-    *   Or include stylesheets
-        *   **'@rmwc/badge/badge.css'**;
+-   Module __@rmwc/badge__
+-   Import styles:
+    -   Using CSS Loader
+        -   import __'@rmwc/badge/styles';__
+    -   Or include stylesheets
+        -   __'@rmwc/badge/badge.css'__;
 
 Basic
 
@@ -61,8 +60,7 @@ Theming
 
 ```
 
-Usage with other components
----------------------------
+## Usage with other components
 
 The badge component has been designed to play well with the majority of components in RMWC. You can place it inside of any component that accepts children and its default position will be absolute to the top end corner.
 
@@ -157,8 +155,7 @@ Because passing a Badge as a child doesn't always work (for things like `overflo
 
 ```
 
-Alignment
----------
+## Alignment
 
 Badges can be aligned to the start, end, or use inline alignment. They are also RTL aware. They default to align end.
 
@@ -187,8 +184,7 @@ Badges can be aligned to the start, end, or use inline alignment. They are also 
 
 ```
 
-Transitions
------------
+## Transitions
 
 You can transition between the standalone indicator and a badge with content. The badge will consider any `label` other than null or undefined as valid content.
 
@@ -247,8 +243,6 @@ function Example() {
 
 ```
 
-Badge
------
+## Badge
 
-BadgeAnchor
------------
+## BadgeAnchor

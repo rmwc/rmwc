@@ -1,22 +1,20 @@
-Menus
-=====
+# Menus
 
 > Menus display a list of choices on a transient sheet of material.
 
-*   Module **@rmwc/menu**
-*   Import styles:
-    *   Using CSS Loader
-        *   import **'@rmwc/menu/styles';**
-    *   Or include stylesheets
-        *   **'@material/menu/dist/mdc.menu.css'**;
-        *   **'@material/menu-surface/dist/mdc.menu-surface.css'**;
-        *   **'@material/ripple/dist/mdc.ripple.css'**;
-        *   **'@material/list/dist/mdc.list.css'**;
-        *   **'@rmwc/icon/icon.css'**;
-*   MDC Docs: [https://material.io/develop/web/components/menus/](https://material.io/develop/web/components/menus/)
+-   Module __@rmwc/menu__
+-   Import styles:
+    -   Using CSS Loader
+        -   import __'@rmwc/menu/styles';__
+    -   Or include stylesheets
+        -   __'@material/menu/dist/mdc.menu.css'__;
+        -   __'@material/menu-surface/dist/mdc.menu-surface.css'__;
+        -   __'@material/ripple/dist/mdc.ripple.css'__;
+        -   __'@material/list/dist/mdc.list.css'__;
+        -   __'@rmwc/icon/icon.css'__;
+-   MDC Docs: [https://material.io/develop/web/components/menus/](https://material.io/develop/web/components/menus/)
 
-Basic Usage
------------
+## Basic Usage
 
 You can compose a menu with the given components, and manually manage the open state. `Menu` expects MenuItems as children while `MenuSurface` is a generic container which can have anything as a child.
 
@@ -174,8 +172,7 @@ function Example() {
 
 ```
 
-Simplified usage
-----------------
+## Simplified usage
 
 RMWC provides a convenience `SimpleMenu` component that takes a handle as a prop, and manages the open state for you.
 
@@ -209,8 +206,7 @@ RMWC provides a convenience `SimpleMenu` component that takes a handle as a prop
 
 ```
 
-Anchoring
----------
+## Anchoring
 
 By default, Menus will attempt to automatically position themselves, but this behavior can be overridden by setting the `anchorCorner` prop.
 
@@ -281,8 +277,7 @@ function Example() {
 
 ```
 
-Rendering through Portals
--------------------------
+## Rendering through Portals
 
 Occasionally, you may find your menu being cut off from being inside a container that is styled to be `overflow:hidden`. RMWC provides a `renderToPortal` prop that lets you use React's portal functionality to render the menu dropdown in a different container.
 
@@ -397,20 +392,14 @@ function Example() {
 
 ```
 
-Menu
-----
+## Menu
 
-MenuItem
---------
+## MenuItem
 
-MenuSurface
------------
+## MenuSurface
 
-MenuSurfaceAnchor
------------------
+## MenuSurfaceAnchor
 
-SimpleMenu
-----------
+## SimpleMenu
 
-SimpleMenuSurface
------------------
+## SimpleMenuSurface

@@ -1,15 +1,14 @@
-Elevation
-=========
+# Elevation
 
 > Elevation is the relative distance between two surfaces along the z-axis.
 
-*   Module **@rmwc/elevation**
-*   Import styles:
-    *   Using CSS Loader
-        *   import **'@rmwc/elevation/styles';**
-    *   Or include stylesheets
-        *   **'@material/elevation/dist/mdc.elevation.css'**;
-*   MDC Docs: [https://material.io/develop/web/components/elevation/](https://material.io/develop/web/components/elevation/)
+-   Module __@rmwc/elevation__
+-   Import styles:
+    -   Using CSS Loader
+        -   import __'@rmwc/elevation/styles';__
+    -   Or include stylesheets
+        -   __'@material/elevation/dist/mdc.elevation.css'__;
+-   MDC Docs: [https://material.io/develop/web/components/elevation/](https://material.io/develop/web/components/elevation/)
 
 Elevation
 
@@ -69,8 +68,7 @@ function Example() {
 
 ```
 
-Wrapping Children
------------------
+## Wrapping Children
 
 You can avoid adding extra DOM nodes by using the `wrap` prop on elevation. This will apply the classes directly to the child component. Additionally, Elevation is simply a `className`, so you can achieve the same effect by adding `className="mdc-elevation--z15"`.
 
@@ -85,5 +83,4 @@ You can avoid adding extra DOM nodes by using the `wrap` prop on elevation. This
 
 ```
 
-Elevation
----------
+## Elevation

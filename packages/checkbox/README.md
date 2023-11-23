@@ -1,17 +1,16 @@
-Checkboxes
-==========
+# Checkboxes
 
 > Checkboxes allow the user to select multiple options from a set.
 
-*   Module **@rmwc/checkbox**
-*   Import styles:
-    *   Using CSS Loader
-        *   import **'@rmwc/checkbox/styles';**
-    *   Or include stylesheets
-        *   **'@material/checkbox/dist/mdc.checkbox.css'**;
-        *   **'@material/form-field/dist/mdc.form-field.css'**;
-        *   **'@material/ripple/dist/mdc.ripple.css'**;
-*   MDC Docs: [https://material.io/develop/web/components/input-controls/checkboxes/](https://material.io/develop/web/components/input-controls/checkboxes/)
+-   Module __@rmwc/checkbox__
+-   Import styles:
+    -   Using CSS Loader
+        -   import __'@rmwc/checkbox/styles';__
+    -   Or include stylesheets
+        -   __'@material/checkbox/dist/mdc.checkbox.css'__;
+        -   __'@material/form-field/dist/mdc.form-field.css'__;
+        -   __'@material/ripple/dist/mdc.ripple.css'__;
+-   MDC Docs: [https://material.io/develop/web/components/input-controls/checkboxes/](https://material.io/develop/web/components/input-controls/checkboxes/)
 
 Controlled
 
@@ -75,5 +74,4 @@ States
 
 ```
 
-Checkbox
---------
+## Checkbox

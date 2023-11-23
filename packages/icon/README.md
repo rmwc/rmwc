@@ -1,25 +1,22 @@
-Icons
-=====
+# Icons
 
 > Material icons use geometric shapes to visually represent core ideas, capabilities, or topics.
 
-*   Module **@rmwc/icon**
-*   Import styles:
-    *   Using CSS Loader
-        *   import **'@rmwc/icon/styles';**
-    *   Or include stylesheets
-        *   **'@rmwc/icon/icon.css'**;
-*   MDC Docs: [https://material.io/icons](https://material.io/icons)
+-   Module __@rmwc/icon__
+-   Import styles:
+    -   Using CSS Loader
+        -   import __'@rmwc/icon/styles';__
+    -   Or include stylesheets
+        -   __'@rmwc/icon/icon.css'__;
+-   MDC Docs: [https://material.io/icons](https://material.io/icons)
 
-Setup
------
+## Setup
 
 Icons are not part of the official material-components-web spec, but they are referenced many times in the documentation. RMWC provides a declarative way to use icons. Note that RMWC does not ship with any icons of its own. Make sure you include an icon set! You can use any one you want, but Google's Material Icons are available through open source. Follow Google's developer guide to get them setup with your app. [https://google.github.io/material-design-icons/](https://google.github.io/material-design-icons/)
 
 There are lots of different strategies for implementing icons on the web, and the Icon component is flexible for most of them. Use ligatures, classNames, inline SVGs, HTML, or URLs to get icons into your app. The default strategy is 'ligature' which works with the material.io font icon set.
 
-Basic Usage
------------
+## Basic Usage
 
 The Icon component, (really the icon prop itself) can accept a variety of formats. Anywhere you see a component prop like `icon` or `trailingIcon` will inherit the same behavior.
 
@@ -108,8 +105,7 @@ Passing Options
 
 ```
 
-Icon Sizing
------------
+## Icon Sizing
 
 The Material spec details multiple sizes for icons. The Icon component doesn't assign a size by default, but these are available to you to force a size. Please note, this will only work if you've included the RMWC icon css file.
 
@@ -142,8 +138,7 @@ The Material spec details multiple sizes for icons. The Icon component doesn't a
 
 ```
 
-Ligatures
----------
+## Ligatures
 
 This is for icon fonts that support ligatures like material-icons. This is the default strategy if nothing is set and doesn't require any additional setup if you are using material-icons.
 
@@ -164,8 +159,7 @@ This is for icon fonts that support ligatures like material-icons. This is the d
 
 ```
 
-URLs
-----
+## URLs
 
 This is for icons that are accessible via HTTP(S) and will be loaded directly into an `img` tag. This can be auto-detected for things that look like urls. The image will be set as a backgroundImage of the icon. Make sure you impor the RMWC icon css file for this to work properly.
 
@@ -196,8 +190,7 @@ This is for icons that are accessible via HTTP(S) and will be loaded directly in
 
 ```
 
-Components / Inline SVGs
-------------------------
+## Components / Inline SVGs
 
 This will render a child component inside of the icon. This is useful for all sorts of customization and for rendering inline SVGs. The following example shows rendering an SVG, as well as an arbitrary `div`.
 
@@ -270,8 +263,7 @@ This will render a child component inside of the icon. This is useful for all so
 
 ```
 
-Classnames
-----------
+## Classnames
 
 Some font icon sets like Ion Icons and Glyph Icons render based on a className that is set. RMWC docs doesn't include extra icon fonts so there is no example to render, but the below code should give you an approximation.
 
@@ -330,8 +322,7 @@ Some font icon sets like Ion Icons and Glyph Icons render based on a className t
 
 ```
 
-Custom Rendering
-----------------
+## Custom Rendering
 
 Sometimes, you just need to do your own thing. Maybe you have a legacy project that already has icons and you want to incorporate them with RMWC. If none of the other strategies are what you need, then you can hijack the whole thing and delegate it to your own render function.
 
@@ -430,5 +421,4 @@ A more relevant example involves an app that has a custom / existing icon compon
 
 ```
 
-Icon
-----
+## Icon

@@ -1,20 +1,18 @@
-Dialogs
-=======
+# Dialogs
 
 > Dialogs inform users about a specific task and may contain critical information, require decisions, or involve multiple tasks.
 
-*   Module **@rmwc/dialog**
-*   Import styles:
-    *   Using CSS Loader
-        *   import **'@rmwc/dialog/styles';**
-    *   Or include stylesheets
-        *   **'@material/dialog/dist/mdc.dialog.css'**;
-        *   **'@material/button/dist/mdc.button.css'**;
-        *   **'@material/ripple/dist/mdc.ripple.css'**;
-*   MDC Docs: [https://material.io/develop/web/components/dialogs/](https://material.io/develop/web/components/dialogs/)
+-   Module __@rmwc/dialog__
+-   Import styles:
+    -   Using CSS Loader
+        -   import __'@rmwc/dialog/styles';__
+    -   Or include stylesheets
+        -   __'@material/dialog/dist/mdc.dialog.css'__;
+        -   __'@material/button/dist/mdc.button.css'__;
+        -   __'@material/ripple/dist/mdc.ripple.css'__;
+-   MDC Docs: [https://material.io/develop/web/components/dialogs/](https://material.io/develop/web/components/dialogs/)
 
-Standard Usage
---------------
+## Standard Usage
 
 ```js
 
@@ -75,8 +73,7 @@ function Example() {
 
 ```
 
-Simplified Usage
-----------------
+## Simplified Usage
 
 Material Dialogs are a complex component. RMWC contains an additional `SimpleDialog` component for ease of use that internally contains the default structure already built out. Illustrated below is both the standard and simple dialog usage.
 
@@ -123,8 +120,7 @@ function Example() {
 
 ```
 
-Usage with DialogQueue
-----------------------
+## Usage with DialogQueue
 
 Some dialog interactions are complex, but a lot of the time you just need a simple alert or confirm dialog. `DialogQueue` allows you to open dialogs from anywhere in your app and emulates the browsers built in `alert`, `confirm` and `prompt` dialogs. If you've used the `SnackbarQueue`, the `DialogQueue` is very similar.
 
@@ -314,8 +310,7 @@ Inline Example
 
 ```
 
-Rendering through Portals
--------------------------
+## Rendering through Portals
 
 Occasionally, you may find your dialog being cut off from being inside a container that is styled to be `overflow:hidden`. RMWC provides a `renderToPortal` prop that lets you use React's portal functionality to render the menu dropdown in a different container.
 
@@ -444,20 +439,14 @@ function Example() {
 
 ```
 
-Dialog
-------
+## Dialog
 
-DialogTitle
------------
+## DialogTitle
 
-DialogContent
--------------
+## DialogContent
 
-DialogActions
--------------
+## DialogActions
 
-DialogButton
-------------
+## DialogButton
 
-SimpleDialog
-------------
+## SimpleDialog

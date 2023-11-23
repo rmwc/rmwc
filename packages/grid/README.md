@@ -1,15 +1,14 @@
-Layout Grid
-===========
+# Layout Grid
 
 > Material design’s responsive UI is based on a column-variate grid layout. It has 12 columns on desktop, 8 columns on tablet and 4 columns on phone.
 
-*   Module **@rmwc/grid**
-*   Import styles:
-    *   Using CSS Loader
-        *   import **'@rmwc/grid/styles';**
-    *   Or include stylesheets
-        *   **'@material/layout-grid/dist/mdc.layout-grid.css'**;
-*   MDC Docs: [https://material.io/develop/web/components/layout-grid/](https://material.io/develop/web/components/layout-grid/)
+-   Module __@rmwc/grid__
+-   Import styles:
+    -   Using CSS Loader
+        -   import __'@rmwc/grid/styles';__
+    -   Or include stylesheets
+        -   __'@material/layout-grid/dist/mdc.layout-grid.css'__;
+-   MDC Docs: [https://material.io/develop/web/components/layout-grid/](https://material.io/develop/web/components/layout-grid/)
 
 Standard Grid
 
@@ -59,14 +58,11 @@ Sub Grids
 
 ```
 
-Grid
-----
+## Grid
 
-GridCell
---------
+## GridCell
 
-GridRow
--------y\>
+## GridRowGridTilePrimary\>
 
                 <GridTilePrimaryContent
 
@@ -151,23 +147,16 @@ GridRow
 
 ```
 
-GridList
---------
+## GridList
 
-GridTile
---------
+## GridTile
 
-GridTileIcon
-------------
+## GridTileIcon
 
-GridTilePrimary
----------------
+## GridTilePrimary
 
-GridTileSecondary
------------------
+## GridTileSecondary
 
-GridTileTitleSupportText
-------------------------
+## GridTileTitleSupportText
 
-GridTileTitle
--------------
+## GridTileTitle
