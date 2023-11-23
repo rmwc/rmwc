@@ -35,16 +35,18 @@ const getMarkdown = async (packageName) => {
 
   const promises = readmeFiles.map(async (fName) => {
     const docPath = path.resolve(distPath, fName);
-    const markdownOutputName = packageName.toUpperCase() + '.md';
     const htmlOutputName = packageName + '.html';
     const { default: Component } = await import(docPath);
     const htmlContent = renderToStaticMarkup(React.createElement(Component));
     const markdown = turndownService.turndown(htmlContent);
+    const readmeOutputName = path.resolve('packages', packageName, 'README.md');
+
     return new Promise((resolve) => {
       fs.writeFile(path.resolve(distPath, htmlOutputName), htmlContent, () => {
         resolve();
       });
-      fs.writeFile(path.resolve(distPath, markdownOutputName), markdown, () => {
+      fs.writeFile(readmeOutputName, markdown, () => {
+        console.log('Writing file: ', readmeOutputName);
         resolve();
       });
     });
