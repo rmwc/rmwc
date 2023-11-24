@@ -27,6 +27,12 @@
       }
     },
     "build": {
+      "executor": "nx:noop",
+      "dependsOn": [
+        "generate-markdown"
+      ]
+    },
+    "lib": {
       "executor": "@nx/vite:build",
       "outputs": [
         "{options.outputPath}"
@@ -42,10 +48,7 @@
         "production": {
           "mode": "production"
         }
-      },
-      "dependsOn": [
-        "bootstrap"
-      ]
+      }
     },
     "test": {
       "executor": "@nx/vite:test",
@@ -78,7 +81,7 @@
         "command": "node ./scripts/docgen-markdown.mjs"
       },
       "dependsOn": [
-        "build"
+        "lib"
       ]
     }
   }
