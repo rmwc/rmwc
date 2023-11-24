@@ -2,15 +2,15 @@
 
 > Segmented buttons allow users to toggle the selected states of grouped buttons.
 
--   Module __@rmwc/segmented-button__
--   Import styles:
-    -   Using CSS Loader
-        -   import __'@rmwc/segmented-button/styles';__
-    -   Or include stylesheets
-        -   __'@material/segmented-button/dist/mdc.segmented-button.css'__;
-        -   __'@rmwc/@rmwc/icon/icon.css'__;
-        -   __'@material/ripple/dist/mdc.ripple.css'__;
--   MDC Docs: [https://material.io/develop/web/components/segmented-button/](https://material.io/develop/web/components/segmented-button/)
+- Module **@rmwc/segmented-button**
+- Import styles:
+  - Using CSS Loader
+    - import **'@rmwc/segmented-button/styles';**
+  - Or include stylesheets
+    - **'@material/segmented-button/dist/mdc.segmented-button.css'**;
+    - **'@rmwc/@rmwc/icon/icon.css'**;
+    - **'@material/ripple/dist/mdc.ripple.css'**;
+- MDC Docs: [https://material.io/develop/web/components/segmented-button/](https://material.io/develop/web/components/segmented-button/)
 
 Default Multiple Select
 

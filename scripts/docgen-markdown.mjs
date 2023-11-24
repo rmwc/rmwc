@@ -6,6 +6,7 @@ import { fileURLToPath } from 'url';
 import * as fs from 'fs';
 import getPackages from './get-packages.js';
 import { default as TurndownService } from 'turndown';
+import * as prettier from 'prettier';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, '../');
@@ -44,7 +45,12 @@ const getMarkdown = async (packageName) => {
     const htmlOutputName = packageName + '.html';
     const { default: Component } = await import(docPath);
     const htmlContent = renderToStaticMarkup(React.createElement(Component));
-    const markdown = turndownService.turndown(htmlContent);
+    const markdown = await prettier.format(
+      turndownService.turndown(htmlContent),
+      {
+        parser: 'markdown'
+      }
+    );
     const readmeOutputName = path.resolve('packages', packageName, 'README.md');
 
     return new Promise((resolve) => {

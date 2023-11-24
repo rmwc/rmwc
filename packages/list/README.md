@@ -2,13 +2,13 @@
 
 > Lists are continuous, vertical indexes of text or images.
 
--   Module __@rmwc/list__
--   Import styles:
-    -   Using CSS Loader
-        -   import __'@rmwc/list/styles';__
-    -   Or include stylesheets
-        -   __'@material/list/dist/mdc.list.css'__;
--   MDC Docs: [https://material.io/develop/web/components/lists/](https://material.io/develop/web/components/lists/)
+- Module **@rmwc/list**
+- Import styles:
+  - Using CSS Loader
+    - import **'@rmwc/list/styles';**
+  - Or include stylesheets
+    - **'@material/list/dist/mdc.list.css'**;
+- MDC Docs: [https://material.io/develop/web/components/lists/](https://material.io/develop/web/components/lists/)
 
 ## Two Line
 

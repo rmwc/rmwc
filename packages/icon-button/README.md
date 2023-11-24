@@ -2,15 +2,15 @@
 
 > Icon buttons allow users to take actions, and make choices, with a single tap.
 
--   Module __@rmwc/icon-button__
--   Import styles:
-    -   Using CSS Loader
-        -   import __'@rmwc/icon-button/styles';__
-    -   Or include stylesheets
-        -   __'@material/icon-button/dist/mdc.icon-button.css'__;
-        -   __'@rmwc/icon/icon.css'__;
-        -   __'@material/ripple/dist/mdc.ripple.css'__;
--   MDC Docs: [https://material.io/develop/web/components/buttons/icon-buttons/](https://material.io/develop/web/components/buttons/icon-buttons/)
+- Module **@rmwc/icon-button**
+- Import styles:
+  - Using CSS Loader
+    - import **'@rmwc/icon-button/styles';**
+  - Or include stylesheets
+    - **'@material/icon-button/dist/mdc.icon-button.css'**;
+    - **'@rmwc/icon/icon.css'**;
+    - **'@material/ripple/dist/mdc.ripple.css'**;
+- MDC Docs: [https://material.io/develop/web/components/buttons/icon-buttons/](https://material.io/develop/web/components/buttons/icon-buttons/)
 
 ## Basic Usage
 

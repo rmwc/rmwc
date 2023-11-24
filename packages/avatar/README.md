@@ -2,14 +2,14 @@
 
 > Avatars are virtual representations of users in a system.
 
--   Module __@rmwc/avatar__
--   Import styles:
-    -   Using CSS Loader
-        -   import __'@rmwc/avatar/styles';__
-    -   Or include stylesheets
-        -   __'@rmwc/avatar/avatar.css'__;
-        -   __'@rmwc/icon/icon.css'__;
-        -   __'@material/ripple/dist/mdc.ripple.css'__;
+- Module **@rmwc/avatar**
+- Import styles:
+  - Using CSS Loader
+    - import **'@rmwc/avatar/styles';**
+  - Or include stylesheets
+    - **'@rmwc/avatar/avatar.css'**;
+    - **'@rmwc/icon/icon.css'**;
+    - **'@material/ripple/dist/mdc.ripple.css'**;
 
 Images
 

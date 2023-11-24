@@ -2,15 +2,15 @@
 
 > Dialogs inform users about a specific task and may contain critical information, require decisions, or involve multiple tasks.
 
--   Module __@rmwc/dialog__
--   Import styles:
-    -   Using CSS Loader
-        -   import __'@rmwc/dialog/styles';__
-    -   Or include stylesheets
-        -   __'@material/dialog/dist/mdc.dialog.css'__;
-        -   __'@material/button/dist/mdc.button.css'__;
-        -   __'@material/ripple/dist/mdc.ripple.css'__;
--   MDC Docs: [https://material.io/develop/web/components/dialogs/](https://material.io/develop/web/components/dialogs/)
+- Module **@rmwc/dialog**
+- Import styles:
+  - Using CSS Loader
+    - import **'@rmwc/dialog/styles';**
+  - Or include stylesheets
+    - **'@material/dialog/dist/mdc.dialog.css'**;
+    - **'@material/button/dist/mdc.button.css'**;
+    - **'@material/ripple/dist/mdc.ripple.css'**;
+- MDC Docs: [https://material.io/develop/web/components/dialogs/](https://material.io/develop/web/components/dialogs/)
 
 ## Standard Usage
 

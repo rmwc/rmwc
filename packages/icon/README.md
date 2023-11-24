@@ -2,13 +2,13 @@
 
 > Material icons use geometric shapes to visually represent core ideas, capabilities, or topics.
 
--   Module __@rmwc/icon__
--   Import styles:
-    -   Using CSS Loader
-        -   import __'@rmwc/icon/styles';__
-    -   Or include stylesheets
-        -   __'@rmwc/icon/icon.css'__;
--   MDC Docs: [https://material.io/icons](https://material.io/icons)
+- Module **@rmwc/icon**
+- Import styles:
+  - Using CSS Loader
+    - import **'@rmwc/icon/styles';**
+  - Or include stylesheets
+    - **'@rmwc/icon/icon.css'**;
+- MDC Docs: [https://material.io/icons](https://material.io/icons)
 
 ## Setup
 

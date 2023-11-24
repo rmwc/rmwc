@@ -2,15 +2,15 @@
 
 > Snackbars provide brief feedback about an operation through a message at the bottom of the screen.
 
--   Module __@rmwc/snackbar__
--   Import styles:
-    -   Using CSS Loader
-        -   import __'@rmwc/snackbar/styles';__
-    -   Or include stylesheets
-        -   __'@material/snackbar/dist/mdc.snackbar.css'__;
-        -   __'@material/button/dist/mdc.button.css'__;
-        -   __'@material/ripple/dist/mdc.ripple.css'__;
--   MDC Docs: [https://material.io/develop/web/components/snackbars/](https://material.io/develop/web/components/snackbars/)
+- Module **@rmwc/snackbar**
+- Import styles:
+  - Using CSS Loader
+    - import **'@rmwc/snackbar/styles';**
+  - Or include stylesheets
+    - **'@material/snackbar/dist/mdc.snackbar.css'**;
+    - **'@material/button/dist/mdc.button.css'**;
+    - **'@material/ripple/dist/mdc.ripple.css'**;
+- MDC Docs: [https://material.io/develop/web/components/snackbars/](https://material.io/develop/web/components/snackbars/)
 
 ## Basic Usage
 

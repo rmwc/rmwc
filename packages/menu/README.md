@@ -2,17 +2,17 @@
 
 > Menus display a list of choices on a transient sheet of material.
 
--   Module __@rmwc/menu__
--   Import styles:
-    -   Using CSS Loader
-        -   import __'@rmwc/menu/styles';__
-    -   Or include stylesheets
-        -   __'@material/menu/dist/mdc.menu.css'__;
-        -   __'@material/menu-surface/dist/mdc.menu-surface.css'__;
-        -   __'@material/ripple/dist/mdc.ripple.css'__;
-        -   __'@material/list/dist/mdc.list.css'__;
-        -   __'@rmwc/icon/icon.css'__;
--   MDC Docs: [https://material.io/develop/web/components/menus/](https://material.io/develop/web/components/menus/)
+- Module **@rmwc/menu**
+- Import styles:
+  - Using CSS Loader
+    - import **'@rmwc/menu/styles';**
+  - Or include stylesheets
+    - **'@material/menu/dist/mdc.menu.css'**;
+    - **'@material/menu-surface/dist/mdc.menu-surface.css'**;
+    - **'@material/ripple/dist/mdc.ripple.css'**;
+    - **'@material/list/dist/mdc.list.css'**;
+    - **'@rmwc/icon/icon.css'**;
+- MDC Docs: [https://material.io/develop/web/components/menus/](https://material.io/develop/web/components/menus/)
 
 ## Basic Usage
 

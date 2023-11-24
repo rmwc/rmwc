@@ -2,21 +2,21 @@
 
 > Menus display a list of choices on a transient sheet of material.
 
--   Module __@rmwc/select__
--   Import styles:
-    -   Using CSS Loader
-        -   import __'@rmwc/select/styles';__
-    -   Or include stylesheets
-        -   __'@rmwc/select/select.css'__;
-        -   __'@material/select/dist/mdc.select.css'__;
-        -   __'@material/floating-label/dist/mdc.floating-label.css'__;
-        -   __'@material/notched-outline/dist/mdc.notched-outline.css'__;
-        -   __'@material/line-ripple/dist/mdc.line-ripple.css'__;
-        -   __'@material/list/dist/mdc.list.css'__;
-        -   __'@material/menu/dist/mdc.menu.css'__;
-        -   __'@material/menu-surface/dist/mdc.menu-surface.css'__;
-        -   __'@material/ripple/dist/mdc.ripple.css'__;
--   MDC Docs: [https://material.io/develop/web/components/input-controls/select-menus/](https://material.io/develop/web/components/input-controls/select-menus/)
+- Module **@rmwc/select**
+- Import styles:
+  - Using CSS Loader
+    - import **'@rmwc/select/styles';**
+  - Or include stylesheets
+    - **'@rmwc/select/select.css'**;
+    - **'@material/select/dist/mdc.select.css'**;
+    - **'@material/floating-label/dist/mdc.floating-label.css'**;
+    - **'@material/notched-outline/dist/mdc.notched-outline.css'**;
+    - **'@material/line-ripple/dist/mdc.line-ripple.css'**;
+    - **'@material/list/dist/mdc.list.css'**;
+    - **'@material/menu/dist/mdc.menu.css'**;
+    - **'@material/menu-surface/dist/mdc.menu-surface.css'**;
+    - **'@material/ripple/dist/mdc.ripple.css'**;
+- MDC Docs: [https://material.io/develop/web/components/input-controls/select-menus/](https://material.io/develop/web/components/input-controls/select-menus/)
 
 ## Select Styles
 

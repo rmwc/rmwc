@@ -2,15 +2,15 @@
 
 > Radio buttons allow the user to select one option from a set. Use radio buttons for exclusive selection if you think that the user needs to see all available options side-by-side.
 
--   Module __@rmwc/radio__
--   Import styles:
-    -   Using CSS Loader
-        -   import __'@rmwc/radio/styles';__
-    -   Or include stylesheets
-        -   __'@material/radio/dist/mdc.radio.css'__;
-        -   __'@material/form-field/dist/mdc.form-field.css'__;
-        -   __'@material/ripple/dist/mdc.ripple.css'__;
--   MDC Docs: [https://material.io/develop/web/components/input-controls/radio-buttons/](https://material.io/develop/web/components/input-controls/radio-buttons/)
+- Module **@rmwc/radio**
+- Import styles:
+  - Using CSS Loader
+    - import **'@rmwc/radio/styles';**
+  - Or include stylesheets
+    - **'@material/radio/dist/mdc.radio.css'**;
+    - **'@material/form-field/dist/mdc.form-field.css'**;
+    - **'@material/ripple/dist/mdc.ripple.css'**;
+- MDC Docs: [https://material.io/develop/web/components/input-controls/radio-buttons/](https://material.io/develop/web/components/input-controls/radio-buttons/)
 
 ## Controlled Usage
 

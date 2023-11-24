@@ -2,15 +2,15 @@
 
 > Cards contain content and actions about a single subject.
 
--   Module __@rmwc/card__
--   Import styles:
-    -   Using CSS Loader
-        -   import __'@rmwc/card/styles';__
-    -   Or include stylesheets
-        -   __'@material/card/dist/mdc.card.css'__;
-        -   __'@material/button/dist/mdc.button.css'__;
-        -   __'@material/icon-button/dist/mdc.icon-button.css'__;
--   MDC Docs: [https://material.io/develop/web/components/cards/](https://material.io/develop/web/components/cards/)
+- Module **@rmwc/card**
+- Import styles:
+  - Using CSS Loader
+    - import **'@rmwc/card/styles';**
+  - Or include stylesheets
+    - **'@material/card/dist/mdc.card.css'**;
+    - **'@material/button/dist/mdc.button.css'**;
+    - **'@material/icon-button/dist/mdc.icon-button.css'**;
+- MDC Docs: [https://material.io/develop/web/components/cards/](https://material.io/develop/web/components/cards/)
 
 ## Fully Featured Example
 

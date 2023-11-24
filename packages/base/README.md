@@ -2,17 +2,14 @@
 
 > The Portal component will let you render components to a portal.
 
--   Module __@rmwc/base__
+- Module **@rmwc/base**
 
 ## Portal
 
 Default
 
 ```js
-
 <Portal />
-
-
 ```
 
 ## PortalProvider (optional)
