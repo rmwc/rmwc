@@ -7,10 +7,12 @@
   "exports": {
     ".": {
       "import": "./index.mjs",
+      "types": "./index.d.ts",
       "require": "./index.js"
     },
     "./styles": {
       "import": "./styles.mjs",
+      "types": "./styles.d.ts",
       "require": "./styles.js"
     },
     "./data-table.css": "./data-table.css"
