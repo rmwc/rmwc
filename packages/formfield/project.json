@@ -22,6 +22,10 @@
     },
     "build": {
       "executor": "@nx/vite:build",
+      "dependsOn": [{
+        "projects": "readme",
+        "target": "generate-markdown"
+      }],
       "outputs": [
         "{options.outputPath}"
       ],
