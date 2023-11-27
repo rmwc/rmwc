@@ -30,7 +30,7 @@
   "bugs": {
     "url": "https://github.com/rmwc/rmwc/issues"
   },
-  "homepage": "https://github.com/rmwc/rmwc/tree/master/packages/readme/toggleable",
+  "homepage": "https://github.com/rmwc/rmwc/tree/master/packages/toggleable",
   "peerDependencies": {
     "react": ">=16.8.x",
     "react-dom": ">=16.8.x"

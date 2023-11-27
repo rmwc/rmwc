@@ -35,7 +35,7 @@
   "bugs": {
     "url": "https://github.com/rmwc/rmwc/issues"
   },
-  "homepage": "https://github.com/rmwc/rmwc/tree/master/packages/readme/card",
+  "homepage": "https://github.com/rmwc/rmwc/tree/master/packages/card",
   "peerDependencies": {
     "@material/card": "^14.0.0",
     "react": ">=16.8.x",

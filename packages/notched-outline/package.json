@@ -35,7 +35,7 @@
   "bugs": {
     "url": "https://github.com/rmwc/rmwc/issues"
   },
-  "homepage": "https://github.com/rmwc/rmwc/tree/master/packages/readme/notched-outline",
+  "homepage": "https://github.com/rmwc/rmwc/tree/master/packages/notched-outline",
   "peerDependencies": {
     "@material/notched-outline": "^14.0.0",
     "react": ">=16.8.x",

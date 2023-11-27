@@ -4,6 +4,7 @@ import react from '@vitejs/plugin-react';
 import * as path from 'path';
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
+import { viteStaticCopy } from 'vite-plugin-static-copy';
 
 export default defineConfig({
   cacheDir: '../../node_modules/.vite/avatar',
@@ -11,8 +12,15 @@ export default defineConfig({
   plugins: [
     dts({
       entryRoot: 'src',
-      tsConfigFilePath: path.join(__dirname, 'tsconfig.lib.json'),
-      skipDiagnostics: true
+      tsconfigPath: path.join(__dirname, 'tsconfig.lib.json')
+    }),
+    viteStaticCopy({
+      targets: [
+        {
+          src: 'README.md',
+          dest: '.'
+        }
+      ]
     }),
     react(),
     nxViteTsPaths()
@@ -26,6 +34,7 @@ export default defineConfig({
   // Configuration for building your library.
   // See: https://vitejs.dev/guide/build.html#library-mode
   build: {
+    assetsInlineLimit: 0,
     cssCodeSplit: true,
     lib: {
       // Could also be a dictionary or array of multiple entry points.
