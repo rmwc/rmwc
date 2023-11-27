@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [14.0.1](https://github.com/rmwc/rmwc/compare/v14.0.1-alpha.0...v14.0.1) (2023-11-27)
+
+## [14.0.1-alpha.0](https://github.com/rmwc/rmwc/compare/v14.0.0...v14.0.1-alpha.0) (2023-11-27)
+
+
+### Bug Fixes
+
+* **docgen-markdown:** updated script to work with Nx ([#1192](https://github.com/rmwc/rmwc/issues/1192)) ([c7222b7](https://github.com/rmwc/rmwc/commit/c7222b702520ac0cef952eac548896e816665cdb))
+
 ## [14.0.0](https://github.com/rmwc/rmwc/compare/v14.0.0-alpha.0...v14.0.0) (2023-11-17)
 
 ## [14.0.0-alpha.0](https://github.com/rmwc/rmwc/compare/v13.0.0...v14.0.0-alpha.0) (2023-11-17)
