@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/switch",
-  "version": "14.0.1",
+  "version": "14.0.1-alpha.0",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
