@@ -48,7 +48,10 @@
         "production": {
           "mode": "production"
         }
-      }
+      },
+      "dependsOn": [
+        "bootstrap"
+      ]
     },
     "test": {
       "executor": "@nx/vite:test",
