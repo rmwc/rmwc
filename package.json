@@ -68,7 +68,6 @@
         "build:components": "nx run-many -t build --projects=tag:publishable",
         "docgen:examples": "node scripts/docgen-examples.js",
         "docgen:props": "node scripts/docgen-props.js",
-        "docgen:markdown": "nx run readme:generate-markdown",
         "test": "nx run-many -t test",
         "release:patch": "nx version workspace --releaseAs=patch",
         "release:minor": "nx version workspace --releaseAs=minor",
