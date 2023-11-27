@@ -34,7 +34,6 @@ export default defineConfig({
   // Configuration for building your library.
   // See: https://vitejs.dev/guide/build.html#library-mode
   build: {
-    assetsInlineLimit: 0,
     cssCodeSplit: true,
     lib: {
       // Could also be a dictionary or array of multiple entry points.
