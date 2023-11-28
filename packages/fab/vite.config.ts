@@ -10,6 +10,7 @@ export default defineConfig({
 
   plugins: [
     dts({
+      pathsToAliases: false,
       entryRoot: 'src',
       tsconfigPath: path.join(__dirname, 'tsconfig.lib.json')
     }),
