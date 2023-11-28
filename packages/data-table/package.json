@@ -36,7 +36,7 @@
   "bugs": {
     "url": "https://github.com/rmwc/rmwc/issues"
   },
-  "homepage": "https://github.com/rmwc/rmwc/tree/master/packages/readme/data-table",
+  "homepage": "https://github.com/rmwc/rmwc/tree/master/packages/data-table",
   "peerDependencies": {
     "@material/data-table": "^14.0.0",
     "react": ">=16.8.x",

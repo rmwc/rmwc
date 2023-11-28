@@ -34,7 +34,7 @@
   "bugs": {
     "url": "https://github.com/rmwc/rmwc/issues"
   },
-  "homepage": "https://github.com/rmwc/rmwc/tree/master/packages/readme/icon-button",
+  "homepage": "https://github.com/rmwc/rmwc/tree/master/packages/icon-button",
   "peerDependencies": {
     "@material/icon-button": "^14.0.0",
     "react": ">=16.8.x",

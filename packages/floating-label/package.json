@@ -35,7 +35,7 @@
   "bugs": {
     "url": "https://github.com/rmwc/rmwc/issues"
   },
-  "homepage": "https://github.com/rmwc/rmwc/tree/master/packages/readme/floating-label",
+  "homepage": "https://github.com/rmwc/rmwc/tree/master/packages/floating-label",
   "peerDependencies": {
     "@material/floating-label": "^14.0.0",
     "react": ">=16.8.x",
