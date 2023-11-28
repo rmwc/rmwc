@@ -35,7 +35,7 @@
   "bugs": {
     "url": "https://github.com/rmwc/rmwc/issues"
   },
-  "homepage": "https://github.com/rmwc/rmwc/tree/master/packages/readme/circular-progress",
+  "homepage": "https://github.com/rmwc/rmwc/tree/master/packages/circular-progress",
   "peerDependencies": {
     "@material/circular-progress": "^14.0.0",
     "react": ">=16.8.x",

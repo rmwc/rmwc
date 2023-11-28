@@ -35,7 +35,7 @@
   "bugs": {
     "url": "https://github.com/rmwc/rmwc/issues"
   },
-  "homepage": "https://github.com/rmwc/rmwc/tree/master/packages/readme/menu",
+  "homepage": "https://github.com/rmwc/rmwc/tree/master/packages/menu",
   "peerDependencies": {
     "@material/animation": "^14.0.0",
     "@material/menu": "^14.0.0",

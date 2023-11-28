@@ -36,7 +36,7 @@
   "bugs": {
     "url": "https://github.com/rmwc/rmwc/issues"
   },
-  "homepage": "https://github.com/rmwc/rmwc/tree/master/packages/readme/icon",
+  "homepage": "https://github.com/rmwc/rmwc/tree/master/packages/icon",
   "peerDependencies": {
     "react": ">=16.8.x",
     "react-dom": ">=16.8.x"
