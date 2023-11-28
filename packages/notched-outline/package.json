@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/notched-outline",
-  "version": "14.0.2-alpha.0",
+  "version": "14.0.2",
   "description": "RMWC NotchedOutline component",
   "main": "./index.js",
   "types": "./index.d.ts",
