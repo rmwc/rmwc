@@ -1,18 +1,23 @@
 name: "Deploy documentation"
 
 on:
-  workflow_dispatch:
+  pull_request:
+    branches: [master]
+    types: [opened, reopened]
 
 permissions:
   contents: write
 
 jobs:
-  version:
+  docs:
     runs-on: ubuntu-latest
+    if: contains(github.head_ref, 'docs/')    
     steps:
       - uses: actions/checkout@v4
         with:
-          token: ${{ secrets.DEPENDABOT_TOKEN }}
+          ref: ${{ github.head_ref }}
+          fetch-depth: 0
+          token: ${{ secrets.VERSIONING_TOKEN }}
       - name: Setup Git
         run: |
           git config --global user.email "ci@rmwc.io"
@@ -26,4 +31,3 @@ jobs:
       - run: npm ci --ignore-scripts
       - name: 'Build Docs'
         run: npm run publish:docs
-
