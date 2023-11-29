@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          token: ${{ secrets.VERSIONING_TOKEN }}
+          token: ${{ secrets.DEPENDABOT_TOKEN }}
       - name: Setup Git
         run: |
           git config --global user.email "ci@rmwc.io"
