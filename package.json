@@ -81,7 +81,7 @@
     "publish:docs": "npm run build:docs && git add docs -f && git commit --allow-empty -m 'Deploying docs' && git push --force",
     "changelog": "changelog || echo 'No Changes'",
     "prepare": "husky install",
-    "validate:actions": "action-validator .github/workflows/automerge.yml && action-validator .github/workflows/codeql-analysis.yml && action-validator .github/workflows/publish.yml && action-validator .github/workflows/unit-test.yml && action-validator .github/workflows/version.yml"
+    "validate:actions": "node scripts/validate-actions.mjs"
   },
   "devDependencies": {
     "@action-validator/cli": "^0.5.4",
@@ -125,6 +125,7 @@
     "eslint-plugin-react": "7.33.2",
     "eslint-plugin-react-hooks": "4.6.0",
     "generate-changelog": "^1.8.0",
+    "glob": "^10.3.10",
     "husky": "^8.0.3",
     "hyperform": "^0.12.1",
     "jsdom": "~22.1.0",
