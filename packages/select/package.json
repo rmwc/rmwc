@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/select",
-  "version": "14.0.2",
+  "version": "14.0.3-alpha.0",
   "description": "RMWC Select component",
   "main": "./index.js",
   "types": "./index.d.ts",
