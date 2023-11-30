@@ -63,6 +63,7 @@ Sub Grids
 ## GridCell
 
 ## GridRow
+
 ridTilePrimary\>
 
                 <GridTilePrimaryContent
@@ -141,10 +142,9 @@ ridTilePrimary\>
 
     </\>
 
-  );
+);
 
 }
-
 
 ```
 
@@ -161,3 +161,4 @@ ridTilePrimary\>
 ## GridTileTitleSupportText
 
 ## GridTileTitle
+```

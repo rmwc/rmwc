@@ -94,7 +94,9 @@
  * DataTableSortIcon
  */
 .rmwc-data-table__sort-icon {
-  transition: opacity 0.3s, transform 0.3s;
+  transition:
+    opacity 0.3s,
+    transform 0.3s;
   opacity: 0;
   vertical-align: middle;
   width: 1.125rem;

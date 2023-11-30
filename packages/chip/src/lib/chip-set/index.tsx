@@ -26,45 +26,45 @@ export const ChipSet: RMWC.ComponentType<
   ChipSetProps,
   ChipSetHTMLProps,
   'div'
-> = createComponent<ChipSetProps, ChipSetHTMLProps>(function ChipSet(
-  props,
-  ref
-) {
-  const { rootEl, registerChip, unregisterChip } = useChipSetFoundation(props);
+> = createComponent<ChipSetProps, ChipSetHTMLProps>(
+  function ChipSet(props, ref) {
+    const { rootEl, registerChip, unregisterChip } =
+      useChipSetFoundation(props);
 
-  const { overflow, role = 'grid', ...rest } = props;
+    const { overflow, role = 'grid', ...rest } = props;
 
-  const className = useClassNames(props, [
-    'mdc-evolution-chip-set',
-    {
-      'mdc-evolution-chip-set--overlow': overflow
-    }
-  ]);
+    const className = useClassNames(props, [
+      'mdc-evolution-chip-set',
+      {
+        'mdc-evolution-chip-set--overlow': overflow
+      }
+    ]);
 
-  const otherProps = {
-    'aria-orientation': 'horizontal'
-  };
+    const otherProps = {
+      'aria-orientation': 'horizontal'
+    };
 
-  const contextApi = useRef<ChipContextT>({
-    registerChip,
-    unregisterChip
-  });
+    const contextApi = useRef<ChipContextT>({
+      registerChip,
+      unregisterChip
+    });
 
-  return (
-    <ChipContext.Provider value={contextApi.current}>
-      <Tag
-        {...rest}
-        tag="span"
-        ref={ref}
-        className={className}
-        role={role}
-        element={rootEl}
-        {...(role === 'listbox' && otherProps)}
-      >
-        <span className="mdc-evolution-chip-set__chips" role="presentation">
-          {props.children}
-        </span>
-      </Tag>
-    </ChipContext.Provider>
-  );
-});
+    return (
+      <ChipContext.Provider value={contextApi.current}>
+        <Tag
+          {...rest}
+          tag="span"
+          ref={ref}
+          className={className}
+          role={role}
+          element={rootEl}
+          {...(role === 'listbox' && otherProps)}
+        >
+          <span className="mdc-evolution-chip-set__chips" role="presentation">
+            {props.children}
+          </span>
+        </Tag>
+      </ChipContext.Provider>
+    );
+  }
+);

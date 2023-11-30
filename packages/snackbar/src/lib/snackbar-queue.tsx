@@ -51,7 +51,7 @@ export function SnackbarQueue({
     let timerId: number;
     const doChange = () => {
       if (messages.array[0] !== message) {
-        setIteration(val => val + 1);
+        setIteration((val) => val + 1);
         timerId = window.setTimeout(() => setMessage(messages.array[0]), 150);
       }
     };
@@ -108,7 +108,7 @@ export function SnackbarQueue({
           )}
         </>
       }
-      onClose={evt => {
+      onClose={(evt) => {
         onClose?.(evt);
         removeMessage(message);
       }}

@@ -1,4 +1,4 @@
-name: "Deploy documentation"
+name: 'Deploy documentation'
 
 on:
   pull_request:
@@ -11,7 +11,7 @@ permissions:
 jobs:
   docs:
     runs-on: ubuntu-latest
-    if: contains(github.head_ref, 'docs/')    
+    if: contains(github.head_ref, 'docs/')
     steps:
       - uses: actions/checkout@v4
         with:

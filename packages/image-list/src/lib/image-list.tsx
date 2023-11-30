@@ -12,20 +12,19 @@ export interface ImageListProps {
 }
 
 /** The root of the Image List. */
-export const ImageList = createComponent<ImageListProps>(function ImageList(
-  props,
-  ref
-) {
-  const { masonry, withTextProtection, ...rest } = props;
-  const className = useClassNames(props, [
-    'mdc-image-list',
-    {
-      'mdc-image-list--masonry': masonry,
-      'mdc-image-list--with-text-protection': withTextProtection
-    }
-  ]);
-  return <Tag tag="ul" {...rest} ref={ref} className={className} />;
-});
+export const ImageList = createComponent<ImageListProps>(
+  function ImageList(props, ref) {
+    const { masonry, withTextProtection, ...rest } = props;
+    const className = useClassNames(props, [
+      'mdc-image-list',
+      {
+        'mdc-image-list--masonry': masonry,
+        'mdc-image-list--with-text-protection': withTextProtection
+      }
+    ]);
+    return <Tag tag="ul" {...rest} ref={ref} className={className} />;
+  }
+);
 
 /** Indicates each item in an Image List. */
 export interface ImageListItemProps {}
@@ -42,14 +41,15 @@ export const ImageListItem = createComponent<ImageListItemProps>(
 export interface ImageListImageAspectContainerProps {}
 
 /** Optional. Parent of each item’s image element, responsible for constraining aspect ratio. This element may be omitted entirely if images are already sized to the correct aspect ratio. */
-export const ImageListImageAspectContainer = createComponent<
-  ImageListImageAspectContainerProps
->(function ImageListImageAspectContainer(props, ref) {
-  const className = useClassNames(props, [
-    'mdc-image-list__image-aspect-container'
-  ]);
-  return <Tag {...props} ref={ref} className={className} />;
-});
+export const ImageListImageAspectContainer =
+  createComponent<ImageListImageAspectContainerProps>(
+    function ImageListImageAspectContainer(props, ref) {
+      const className = useClassNames(props, [
+        'mdc-image-list__image-aspect-container'
+      ]);
+      return <Tag {...props} ref={ref} className={className} />;
+    }
+  );
 
 /** Indicates the image element in each item. */
 export interface ImageListImageProps {}
