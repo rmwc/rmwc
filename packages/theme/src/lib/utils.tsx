@@ -148,7 +148,7 @@ export const hexToRgb = (hex: string) => {
   if (hex.length === 4) {
     hex = hex + hex.slice(1);
   }
-  let result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
   return result
     ? {
         r: parseInt(result[1], 16),
@@ -185,7 +185,7 @@ export const getRgb = (color: string) => {
   return hexToRgb(color);
 };
 
-export const isDark = (color: string) => {
+export const isLight = (color: string) => {
   const { r, g, b } = getRgb(color);
   const ratio = contrast([255, 255, 255], [r, g, b]);
   return ratio > 3 ? false : true;
@@ -220,7 +220,7 @@ export const getAutoColorsForTheme = (colors: { [key: string]: string }) => {
   const autoColors = Object.keys(paletteMap).reduce(
     (acc: { [key: string]: string }, key) => {
       if (colors[key]) {
-        const palette = isDark(colors[key])
+        const palette = isLight(colors[key])
           ? lightTextPalette
           : darkTextPalette;
 

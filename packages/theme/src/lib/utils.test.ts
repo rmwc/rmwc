@@ -3,7 +3,7 @@ import {
   getAutoColorsForTheme,
   getRgb,
   hexToRgb,
-  isDark,
+  isLight,
   luminance,
   nameToHex
 } from './utils';
@@ -56,7 +56,7 @@ describe('luminance', () => {
 describe('contrast', () => {
   it('should calculate the contrast ratio between two RGB colors', () => {
     const contrastRatio = contrast([255, 255, 255], [0, 0, 0]);
-    expect(contrastRatio).toBeCloseTo(21.21);
+    expect(contrastRatio).toBeCloseTo(21);
 
     const contrastRatioDark = contrast([0, 0, 0], [255, 255, 255]);
     expect(contrastRatioDark).toBeCloseTo(0.047);
@@ -77,11 +77,11 @@ describe('getRgb', () => {
   });
 });
 
-describe('isDark', () => {
-  it('should determine whether a color is dark or not', () => {
-    expect(isDark('#ffffff')).toBe(false);
-    expect(isDark('#000000')).toBe(true);
-    expect(isDark('#808080')).toBe(true);
+describe('isLight', () => {
+  it('should determine whether a color is light or not', () => {
+    expect(isLight('#ffffff')).toBe(true);
+    expect(isLight('#000000')).toBe(false);
+    expect(isLight('#808080')).toBe(false);
   });
 });
 
