@@ -78,7 +78,7 @@
     "prerelease:major": "nx version workspace --releaseAs=premajor --preid=alpha",
     "prerelease:alpha": "nx version workspace --releaseAs=prerelease --preid=alpha",
     "publish:packages": "nx run-many -t build --projects=tag:publishable && node ./scripts/fix-dependency-versions.js && nx run-many -t npm-deploy --projects=tag:publishable",
-    "publish:docs": "npm run build:docs && git add docs -f && git commit --allow-empty -m 'Deploying docs' && git push --force",
+    "publish:docs": "npm run build:docs && git add docs -f && git commit --allow-empty -m 'Deploying docs'",
     "changelog": "changelog || echo 'No Changes'",
     "prepare": "husky install",
     "validate:actions": "node scripts/validate-actions.mjs"
