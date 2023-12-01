@@ -35,56 +35,54 @@ export interface TopAppBarProps {
 }
 
 /** A TopAppBar component */
-export const TopAppBar = createComponent<TopAppBarProps>(function TopAppBar(
-  props,
-  ref
-) {
-  return (
-    <TopAppBarBase
-      key={props.short ? 'short' : props.fixed ? 'fixed' : 'top-app-bar'}
-      {...props}
-      ref={ref}
-    />
-  );
-});
+export const TopAppBar = createComponent<TopAppBarProps>(
+  function TopAppBar(props, ref) {
+    return (
+      <TopAppBarBase
+        key={props.short ? 'short' : props.fixed ? 'fixed' : 'top-app-bar'}
+        {...props}
+        ref={ref}
+      />
+    );
+  }
+);
 
-const TopAppBarBase = createComponent<TopAppBarProps>(function TopAppBarBase(
-  props,
-  ref
-) {
-  const { rootEl } = useTopAppBarFoundation(props);
-  const {
-    onNav,
-    scrollTarget,
-    fixed,
-    prominent,
-    short,
-    shortCollapsed,
-    dense,
-    foundationRef,
-    ...rest
-  } = props;
-  const className = useClassNames(props, [
-    'mdc-top-app-bar',
-    {
-      'mdc-top-app-bar--fixed': fixed,
-      'mdc-top-app-bar--prominent': prominent,
-      'mdc-top-app-bar--short': short || shortCollapsed,
-      'mdc-top-app-bar--short-collapsed': shortCollapsed,
-      'mdc-top-app-bar--dense': dense
-    }
-  ]);
+const TopAppBarBase = createComponent<TopAppBarProps>(
+  function TopAppBarBase(props, ref) {
+    const { rootEl } = useTopAppBarFoundation(props);
+    const {
+      onNav,
+      scrollTarget,
+      fixed,
+      prominent,
+      short,
+      shortCollapsed,
+      dense,
+      foundationRef,
+      ...rest
+    } = props;
+    const className = useClassNames(props, [
+      'mdc-top-app-bar',
+      {
+        'mdc-top-app-bar--fixed': fixed,
+        'mdc-top-app-bar--prominent': prominent,
+        'mdc-top-app-bar--short': short || shortCollapsed,
+        'mdc-top-app-bar--short-collapsed': shortCollapsed,
+        'mdc-top-app-bar--dense': dense
+      }
+    ]);
 
-  return (
-    <Tag
-      tag="header"
-      {...rest}
-      element={rootEl}
-      className={className}
-      ref={ref}
-    />
-  );
-});
+    return (
+      <Tag
+        tag="header"
+        {...rest}
+        element={rootEl}
+        className={className}
+        ref={ref}
+      />
+    );
+  }
+);
 
 /** A simplified syntax for creating an AppBar. */
 export interface SimpleTopAppBarProps extends TopAppBarProps {

@@ -32,28 +32,27 @@ export interface DataTableProps {
 }
 
 /** The DataTable Component. */
-export const DataTable = createComponent<DataTableProps>(function DataTable(
-  props,
-  ref
-) {
-  const { stickyColumns, stickyRows, ...rest } = props;
-  const className = useClassNames(props, [
-    'mdc-data-table',
-    {
-      'rmwc-data-table--sticky-columns': !!stickyColumns,
-      'rmwc-data-table--sticky-columns-1': !!stickyColumns,
-      'rmwc-data-table--sticky-rows': !!stickyRows,
-      'rmwc-data-table--sticky-rows-1': !!stickyRows
-    }
-  ]);
-  return (
-    <DataTableContext.Provider value={true}>
-      <Tag {...rest} ref={ref} className={className}>
-        <div className="mdc-data-table__table-container">{rest.children}</div>
-      </Tag>
-    </DataTableContext.Provider>
-  );
-});
+export const DataTable = createComponent<DataTableProps>(
+  function DataTable(props, ref) {
+    const { stickyColumns, stickyRows, ...rest } = props;
+    const className = useClassNames(props, [
+      'mdc-data-table',
+      {
+        'rmwc-data-table--sticky-columns': !!stickyColumns,
+        'rmwc-data-table--sticky-columns-1': !!stickyColumns,
+        'rmwc-data-table--sticky-rows': !!stickyRows,
+        'rmwc-data-table--sticky-rows-1': !!stickyRows
+      }
+    ]);
+    return (
+      <DataTableContext.Provider value={true}>
+        <Tag {...rest} ref={ref} className={className}>
+          <div className="mdc-data-table__table-container">{rest.children}</div>
+        </Tag>
+      </DataTableContext.Provider>
+    );
+  }
+);
 
 /** The data table content. */
 export interface DataTableContentProps {}

@@ -131,10 +131,9 @@ const ButtonRipple = React.memo(function ButtonRipple() {
 interface ButtonIconProps extends IconProps {}
 
 /** An icon that goes inside of buttons. This is an instance of the Icon component. */
-const ButtonIcon = createMemoComponent<ButtonIconProps>(function ButtonIcon(
-  props,
-  ref
-) {
-  const className = useClassNames(props, ['mdc-button__icon']);
-  return <Icon {...props} className={className} ref={ref} />;
-});
+const ButtonIcon = createMemoComponent<ButtonIconProps>(
+  function ButtonIcon(props, ref) {
+    const className = useClassNames(props, ['mdc-button__icon']);
+    return <Icon {...props} className={className} ref={ref} />;
+  }
+);

@@ -16,7 +16,7 @@ const isScrollable = (el: HTMLElement) => {
 
 const areTopsMisaligned = (els: HTMLElement[] | null) => {
   const tops = new Set();
-  els?.forEach(el => tops.add(el.offsetTop))
+  els?.forEach((el) => tops.add(el.offsetTop));
   return tops.size > 1;
 };
 
