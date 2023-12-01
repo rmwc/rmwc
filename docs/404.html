@@ -5,12 +5,12 @@
       const parts = window.location.pathname.split('/');
       const page = parts.pop();
       const leading = parts.join('/') || '/';
-      const location = leading +
+      const newLocation = leading +
           '?p=' +
           page +
           (window.location.search ? '&' + window.location.search.slice(1) : '')
       console.log('Updating windows location', location);
-      window.location.replace(location);
+      window.location.replace(newLocation);
     </script>
   </head>
 
