@@ -76,6 +76,7 @@
             return acc;
           }, {});
         if (params.p) {
+          console.log('Replacing history', params.p);
           window.history.replaceState(null, null, params.p);
         }
       }
