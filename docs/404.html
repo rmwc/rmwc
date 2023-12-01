@@ -2,15 +2,15 @@
 <html lang="en">
   <head>
     <script type="text/javascript">
-      var parts = window.location.pathname.split('/');
-      var page = parts.pop();
-      var leading = parts.join('/') || '/';
-      window.location.replace(
-        leading +
+      const parts = window.location.pathname.split('/');
+      const page = parts.pop();
+      const leading = parts.join('/') || '/';
+      const location = leading +
           '?p=' +
           page +
           (window.location.search ? '&' + window.location.search.slice(1) : '')
-      );
+      console.log('Updating windows location', location);
+      window.location.replace(location);
     </script>
   </head>
 
