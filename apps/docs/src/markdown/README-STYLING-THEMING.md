@@ -21,7 +21,7 @@ import '@rmwc/button/dist/styles';
 import '@rmwc/avatar/dist/styles';
 ```
 
-**Warning** If you're using this method with tree shaking turned on, make sure to include css in your package.json sideEffects. `"sideEffects": [ "*.css" ]` https://github.com/jamesmfriedman/rmwc/issues/545
+**Warning** If you're using this method with tree shaking turned on, make sure to include css in your package.json sideEffects. `"sideEffects": [ "*.css" ]` https://github.com/rmwc/rmwc/issues/545
 
 ```jsx
 /** Importing individual stylesheets */

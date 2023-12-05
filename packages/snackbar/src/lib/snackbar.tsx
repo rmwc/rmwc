@@ -115,7 +115,7 @@ export const Snackbar: RMWC.ComponentType<
           <SnackbarLabel>
             {message}
             {/**
-             * Fixes bug https://github.com/jamesmfriedman/rmwc/issues/418
+             * Fixes bug https://github.com/rmwc/rmwc/issues/418
              * Wrapping the content for accessibility so it can be announced for screen readers
              */}
             <div
