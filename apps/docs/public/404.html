@@ -2,9 +2,9 @@
 <html lang="en">
   <head>
     <script type="text/javascript">
-      var parts = window.location.pathname.split('/');
-      var page = parts.pop();
-      var leading = parts.join('/') || '/';
+      const parts = window.location.pathname.split('/');
+      const page = parts.pop();
+      const leading = parts.join('/') || '/';
       window.location.replace(
         leading +
           '?p=' +
