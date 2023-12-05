@@ -29,7 +29,7 @@ const RESOURCES: ResourceT[] = [
     name: 'Visit Github',
     description: 'Browse the code, the issues, the changelog.',
     img: 'images/backgrounds/mb-bg-fb-02.png',
-    url: 'https://github.com/jamesmfriedman/rmwc',
+    url: 'https://github.com/rmwc/rmwc',
     icon: (
       <svg viewBox="0 0 24 24">
         <path
@@ -39,7 +39,7 @@ const RESOURCES: ResourceT[] = [
       </svg>
     ),
     actions: [
-      { label: 'Visit Github', url: 'https://github.com/jamesmfriedman/rmwc' }
+      { label: 'Visit Github', url: 'https://github.com/rmwc/rmwc' }
     ]
   },
   {
@@ -108,15 +108,15 @@ const RESOURCES: ResourceT[] = [
       },
       {
         label: 'Star on Github',
-        url: `https://github.com/jamesmfriedman/rmwc`
+        url: `https://github.com/rmwc/rmwc`
       }
     ]
   },
   {
     name: 'Updates',
     description:
-      'Read the change blog and also review auto generated changes between releases.',
-    url: 'https://opencollective.com/rmwc/updates',
+      'Review the auto generated changelog.',
+    url: 'https://github.com/rmwc/rmwc/blob/master/CHANGELOG.md',
     img: 'images/backgrounds/mb-bg-fb-22.png',
     icon: (
       <svg viewBox="0 0 24 24">
@@ -127,10 +127,9 @@ const RESOURCES: ResourceT[] = [
       </svg>
     ),
     actions: [
-      { label: 'Blog', url: 'https://opencollective.com/rmwc/updates' },
       {
         label: 'Changelog',
-        url: 'https://github.com/jamesmfriedman/rmwc/blob/master/CHANGELOG.md'
+        url: 'https://github.com/rmwc/rmwc/blob/master/CHANGELOG.md'
       }
     ]
   },
@@ -138,7 +137,7 @@ const RESOURCES: ResourceT[] = [
     name: 'Open an Issue',
     description:
       'Experiencing a problem or have a feature request? File an issue and let us know how we can help.',
-    url: 'https://github.com/jamesmfriedman/rmwc/issues/new',
+    url: 'https://github.com/rmwc/rmwc/issues/new',
     img: 'images/backgrounds/mb-bg-fb-27.png',
     icon: (
       <svg viewBox="0 0 24 24">
@@ -151,7 +150,7 @@ const RESOURCES: ResourceT[] = [
     actions: [
       {
         label: 'New Issue',
-        url: 'https://github.com/jamesmfriedman/rmwc/issues/new'
+        url: 'https://github.com/rmwc/rmwc/issues/new'
       }
     ]
   },
@@ -159,7 +158,7 @@ const RESOURCES: ResourceT[] = [
     name: 'Contribute',
     description:
       "This project accepts Pull Requests from the community. Don't be scared, getting started is as easy as running `npm i`.",
-    url: 'https://github.com/jamesmfriedman/rmwc/blob/master/CONTRIBUTING.md',
+    url: 'https://github.com/rmwc/rmwc/blob/master/CONTRIBUTING.md',
     img: 'images/backgrounds/mb-bg-fb-30.png',
     icon: (
       <svg viewBox="0 0 24 24">
@@ -172,7 +171,7 @@ const RESOURCES: ResourceT[] = [
     actions: [
       {
         label: 'Read Guidelines',
-        url: 'https://github.com/jamesmfriedman/rmwc/blob/master/CONTRIBUTING.md'
+        url: 'https://github.com/rmwc/rmwc/blob/master/CONTRIBUTING.md'
       }
     ]
   }
