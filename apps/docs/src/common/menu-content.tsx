@@ -12,6 +12,7 @@ import UsageMD from '../markdown/README-USAGE.md';
 import {
   avatar,
   badge,
+  base,
   button,
   card,
   checkbox,
@@ -45,6 +46,7 @@ import {
   textfield,
   theme,
   tooltip,
+  rcTooltip,
   topAppBar,
   typography
 } from '@rmwc/readme';
@@ -75,12 +77,11 @@ const Loading = () => (
   </div>
 );
 
-const Loadable = (Component: any) => () =>
-  (
-    <React.Suspense fallback={<Loading />}>
-      <Component />
-    </React.Suspense>
-  );
+const Loadable = (Component: any) => () => (
+  <React.Suspense fallback={<Loading />}>
+    <Component />
+  </React.Suspense>
+);
 
 export type MenuItemT = {
   label: string;
@@ -353,9 +354,20 @@ export const menuContent: MenuItemT[] = [
       },
       {
         label: 'Tooltips',
-        url: `/tooltips`,
-        gallery: tooltip.galleryExample,
-        component: Loadable(tooltip.default)
+        options: [
+          {
+            label: 'Tooltips',
+            url: `/tooltips`,
+            gallery: tooltip.galleryExample,
+            component: Loadable(tooltip.default)
+          },
+          {
+            label: 'RC Tooltips',
+            url: `/rc-tooltips`,
+            gallery: rcTooltip.galleryExample,
+            component: Loadable(rcTooltip.default)
+          }
+        ]
       },
       {
         label: 'Top App Bar',
@@ -383,7 +395,7 @@ export const menuContent: MenuItemT[] = [
       {
         label: 'Portal',
         url: `/portal`,
-        component: Loadable(provider.default)
+        component: Loadable(base.default)
       }
     ]
   }

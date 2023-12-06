@@ -65,15 +65,14 @@ export interface ListItemSecondaryTextProps {}
 
 /** Secondary text for the ListItem */
 export const ListItemSecondaryText =
-  createComponent<ListItemSecondaryTextProps>(function ListItemSecondaryText(
-    props,
-    ref
-  ) {
-    const className = useClassNames(props, [
-      'mdc-deprecated-list-item__secondary-text'
-    ]);
-    return <Tag tag="span" {...props} ref={ref} className={className} />;
-  });
+  createComponent<ListItemSecondaryTextProps>(
+    function ListItemSecondaryText(props, ref) {
+      const className = useClassNames(props, [
+        'mdc-deprecated-list-item__secondary-text'
+      ]);
+      return <Tag tag="span" {...props} ref={ref} className={className} />;
+    }
+  );
 
 /** A graphic / icon for the ListItem */
 export interface ListItemGraphicProps extends IconProps {}
@@ -121,13 +120,12 @@ export const ListItemMeta = createComponent<ListItemMetaProps>(
 export interface ListGroupProps {}
 
 /** A container to group ListItems */
-export const ListGroup = createComponent<ListGroupProps>(function ListGroup(
-  props,
-  ref
-) {
-  const className = useClassNames(props, ['mdc-deprecated-list-group']);
-  return <Tag {...props} ref={ref} className={className} />;
-});
+export const ListGroup = createComponent<ListGroupProps>(
+  function ListGroup(props, ref) {
+    const className = useClassNames(props, ['mdc-deprecated-list-group']);
+    return <Tag {...props} ref={ref} className={className} />;
+  }
+);
 
 /** A subheader for the ListGroup */
 export interface ListGroupSubheaderProps {}

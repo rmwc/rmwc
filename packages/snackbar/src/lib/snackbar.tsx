@@ -56,91 +56,90 @@ export const Snackbar: RMWC.ComponentType<
   SnackbarProps,
   SnackbarHTMLProps,
   'div'
-> = createComponent<SnackbarProps, SnackbarHTMLProps>(function Snackbar(
-  props,
-  ref
-) {
-  const { rootEl, surfaceEl, labelEl } = useSnackbarFoundation(props);
+> = createComponent<SnackbarProps, SnackbarHTMLProps>(
+  function Snackbar(props, ref) {
+    const { rootEl, surfaceEl, labelEl } = useSnackbarFoundation(props);
 
-  const {
-    open,
-    message,
-    timeout,
-    dismissIcon,
-    onOpen,
-    onClose,
-    children,
-    action,
-    icon,
-    leading,
-    stacked,
-    dismissesOnAction,
-    foundationRef,
-    ...rest
-  } = props;
+    const {
+      open,
+      message,
+      timeout,
+      dismissIcon,
+      onOpen,
+      onClose,
+      children,
+      action,
+      icon,
+      leading,
+      stacked,
+      dismissesOnAction,
+      foundationRef,
+      ...rest
+    } = props;
 
-  const className = useClassNames(props, [
-    'mdc-snackbar',
-    {
-      'mdc-snackbar--leading': leading,
-      'mdc-snackbar--stacked': stacked
-    }
-  ]);
+    const className = useClassNames(props, [
+      'mdc-snackbar',
+      {
+        'mdc-snackbar--leading': leading,
+        'mdc-snackbar--stacked': stacked
+      }
+    ]);
 
-  const actions: SnackbarProps['action'][] = Array.isArray(action)
-    ? action
-    : action
-    ? [action]
-    : [];
+    const actions: SnackbarProps['action'][] = Array.isArray(action)
+      ? action
+      : action
+        ? [action]
+        : [];
 
-  return (
-    <Tag
-      {...rest}
-      ref={ref}
-      element={rootEl}
-      aria-live="assertive"
-      aria-atomic
-      aria-hidden
-      className={className}
-    >
-      <div {...surfaceEl.props({})} className="mdc-snackbar__surface">
-        {!!icon && (
-          <Icon
-            style={{
-              color: 'rgba(255, 255, 255, 0.87)',
-              fill: 'currentColor',
-              marginLeft: '1rem'
-            }}
-            icon={icon}
-          />
-        )}
-        <SnackbarLabel>
-          {message}
-          {/**
-           * Fixes bug https://github.com/jamesmfriedman/rmwc/issues/418
-           * Wrapping the content for accessibility so it can be announced for screen readers
-           */}
-          <div
-            style={{ display: 'none' }}
-            ref={labelEl.reactRef as React.Ref<HTMLDivElement>}
-          />
-        </SnackbarLabel>
-
-        <SnackbarActions>
-          {actions.map((a, i) => (
-            <React.Fragment key={i}>{a}</React.Fragment>
-          ))}
-          {dismissIcon && (
-            <SnackbarDismiss
-              icon={dismissIcon === true ? 'close' : dismissIcon}
+    return (
+      <Tag
+        {...rest}
+        ref={ref}
+        element={rootEl}
+        aria-live="assertive"
+        aria-atomic
+        aria-hidden
+        className={className}
+      >
+        <div {...surfaceEl.props({})} className="mdc-snackbar__surface">
+          {!!icon && (
+            <Icon
+              style={{
+                color: 'rgba(255, 255, 255, 0.87)',
+                fill: 'currentColor',
+                marginLeft: '1rem'
+              }}
+              icon={icon}
             />
           )}
-        </SnackbarActions>
-        {children}
-      </div>
-    </Tag>
-  );
-});
+          <SnackbarLabel>
+            {message}
+            {/**
+             * Fixes bug https://github.com/rmwc/rmwc/issues/418
+             * Wrapping the content for accessibility so it can be announced for screen readers
+             */}
+            <div
+              style={{ display: 'none' }}
+              ref={labelEl.reactRef as React.Ref<HTMLDivElement>}
+            />
+          </SnackbarLabel>
+
+          <SnackbarActions>
+            {actions.map((a, i) => (
+              <React.Fragment key={i}>{a}</React.Fragment>
+            ))}
+            {dismissIcon && (
+              <SnackbarDismiss
+                icon={dismissIcon === true ? 'close' : dismissIcon}
+              />
+            )}
+          </SnackbarActions>
+          {children}
+        </div>
+      </Tag>
+    );
+  }
+);
 
 /*********************************************************************
  * Bits

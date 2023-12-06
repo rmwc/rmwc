@@ -10,7 +10,6 @@ Lists are continuous, vertical indexes of text or images.
     - **'@material/list/dist/mdc.list.css'**
     - **'@rmwc/list/collapsible-list.css'**
 
-
 Collapsible lists aren't part of the material spec, but they've been added to RMWC after continuing requests from the community. They present an accordion style navigation element to progressively reveal content. They've have been built to work with the `List` and `ListItem` components in regards to keyboard events and styling, but they technically be used with any kind of content.
 
 ```jsx
@@ -47,11 +46,7 @@ Collapsible lists aren't part of the material spec, but they've been added to RM
 
   <CollapsibleList
     handle={
-      <SimpleListItem
-        text="Icecream"
-        graphic="star"
-        metaIcon="chevron_right"
-      />
+      <SimpleListItem text="Icecream" graphic="star" metaIcon="chevron_right" />
     }
   >
     <SimpleListItem text="Vanilla" />
@@ -118,16 +113,15 @@ Collapsible lists aren't part of the material spec, but they've been added to RM
 ```
 
 ## CollapsibleList
+
 A collapsible list component.
 
 ### Props
 
-| Name | Type | Description |
-|------|------|-------------|
-| `defaultOpen` | `undefined \| false \| true` | Starts the collapsible list as open. |
-| `handle` | `ReactElement<any>` | The handle that opens and closes the collapsible section. Usually a ListItem. |
-| `onClose` | `undefined \| () => void` | Callback for when the collapsible list closes. |
-| `onOpen` | `undefined \| () => void` | Callback for when the collapsible list opens. |
-| `open` | `undefined \| false \| true` | Show the collapsible list as open. |
-
-
+| Name          | Type                         | Description                                                                   |
+| ------------- | ---------------------------- | ----------------------------------------------------------------------------- |
+| `defaultOpen` | `undefined \| false \| true` | Starts the collapsible list as open.                                          |
+| `handle`      | `ReactElement<any>`          | The handle that opens and closes the collapsible section. Usually a ListItem. |
+| `onClose`     | `undefined \| () => void`    | Callback for when the collapsible list closes.                                |
+| `onOpen`      | `undefined \| () => void`    | Callback for when the collapsible list opens.                                 |
+| `open`        | `undefined \| false \| true` | Show the collapsible list as open.                                            |

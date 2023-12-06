@@ -18,20 +18,19 @@ export interface FormFieldProps {
 }
 
 /** A FormField component. */
-export const FormField = createComponent<FormFieldProps>(function FormField(
-  props,
-  ref
-) {
-  useFormfieldFoundation(props);
+export const FormField = createComponent<FormFieldProps>(
+  function FormField(props, ref) {
+    useFormfieldFoundation(props);
 
-  const { alignEnd, foundationRef, noWrap, spaceBetween, ...rest } = props;
-  const className = useClassNames(props, [
-    'mdc-form-field',
-    {
-      'mdc-form-field--align-end': alignEnd,
-      'mdc-form-field--nowrap': noWrap,
-      'mdc-form-field--space-between': spaceBetween
-    }
-  ]);
-  return <Tag {...rest} ref={ref} className={className} />;
-});
+    const { alignEnd, foundationRef, noWrap, spaceBetween, ...rest } = props;
+    const className = useClassNames(props, [
+      'mdc-form-field',
+      {
+        'mdc-form-field--align-end': alignEnd,
+        'mdc-form-field--nowrap': noWrap,
+        'mdc-form-field--space-between': spaceBetween
+      }
+    ]);
+    return <Tag {...rest} ref={ref} className={className} />;
+  }
+);

@@ -1,16 +1,18 @@
 {
   "name": "@rmwc/menu",
-  "version": "14.0.2-alpha.1",
+  "version": "14.0.4",
   "description": "RMWC Menu component",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
     ".": {
       "import": "./index.mjs",
+      "types": "./index.d.ts",
       "require": "./index.js"
     },
     "./styles": {
       "import": "./styles.mjs",
+      "types": "./styles.d.ts",
       "require": "./styles.js"
     }
   },
@@ -33,7 +35,7 @@
   "bugs": {
     "url": "https://github.com/rmwc/rmwc/issues"
   },
-  "homepage": "https://github.com/rmwc/rmwc/tree/master/packages/readme/menu",
+  "homepage": "https://github.com/rmwc/rmwc/tree/master/packages/menu",
   "peerDependencies": {
     "@material/animation": "^14.0.0",
     "@material/menu": "^14.0.0",

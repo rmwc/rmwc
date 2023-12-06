@@ -1,18 +1,21 @@
 {
   "name": "@rmwc/avatar",
   "description": "RMWC avatar component",
-  "version": "14.0.2-alpha.1",
+  "version": "14.0.4",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
     ".": {
       "import": "./index.mjs",
+      "types": "./index.d.ts",
       "require": "./index.js"
     },
     "./styles": {
       "import": "./styles.mjs",
+      "types": "./styles.d.ts",
       "require": "./styles.js"
-    }
+    },
+    "./avatar.css": "./avatar.css"
   },
   "sideEffects": [
     "**/*.css"
@@ -33,7 +36,7 @@
   "bugs": {
     "url": "https://github.com/rmwc/rmwc/issues"
   },
-  "homepage": "https://github.com/rmwc/rmwc/tree/master/packages/readme/avatar",
+  "homepage": "https://github.com/rmwc/rmwc/tree/master/packages/avatar",
   "peerDependencies": {
     "react": ">=16.8.x",
     "react-dom": ">=16.8.x"

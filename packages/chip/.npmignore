@@ -2,8 +2,3 @@
 **/*.story.*
 **/*.tsx
 *.tsx
-readme.tsx
-generated-examples.json
-generated-props.json
-node_modules/
-package-lock.json

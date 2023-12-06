@@ -30,22 +30,21 @@ const slidableDrawerFactory = (
     | typeof useDismissableDrawerFoundation
     | typeof useModalDrawerFoundation
 ) => {
-  const DrawerInner = createComponent<DrawerProps>(function DrawerInner(
-    props,
-    ref
-  ) {
-    const { rootEl, scrimEl } = useDrawerFoundation(props);
-    const { onOpen, onClose, open, foundationRef, ...rest } = props;
-    return (
-      <>
-        <DrawerRoot
-          ref={mergeRefs(rootEl.reactRef, ref)}
-          {...rootEl.props(rest)}
-        />
-        {rest.modal && <DrawerScrim {...scrimEl.props({})} />}
-      </>
-    );
-  });
+  const DrawerInner = createComponent<DrawerProps>(
+    function DrawerInner(props, ref) {
+      const { rootEl, scrimEl } = useDrawerFoundation(props);
+      const { onOpen, onClose, open, foundationRef, ...rest } = props;
+      return (
+        <>
+          <DrawerRoot
+            ref={mergeRefs(rootEl.reactRef, ref)}
+            {...rootEl.props(rest)}
+          />
+          {rest.modal && <DrawerScrim {...scrimEl.props({})} />}
+        </>
+      );
+    }
+  );
 
   return DrawerInner;
 };
@@ -53,21 +52,20 @@ const slidableDrawerFactory = (
 const ModalDrawer = slidableDrawerFactory(useModalDrawerFoundation);
 const DismissibleDrawer = slidableDrawerFactory(useDismissableDrawerFoundation);
 
-const DrawerRoot = createComponent<DrawerProps>(function DrawerRoot(
-  props,
-  ref
-) {
-  const { dismissible, modal, foundationRef, ...rest } = props;
-  const className = useClassNames(props, [
-    'mdc-drawer',
-    {
-      'mdc-drawer--dismissible': dismissible,
-      'mdc-drawer--modal': modal
-    }
-  ]);
+const DrawerRoot = createComponent<DrawerProps>(
+  function DrawerRoot(props, ref) {
+    const { dismissible, modal, foundationRef, ...rest } = props;
+    const className = useClassNames(props, [
+      'mdc-drawer',
+      {
+        'mdc-drawer--dismissible': dismissible,
+        'mdc-drawer--modal': modal
+      }
+    ]);
 
-  return <Tag tag="aside" {...rest} ref={ref} className={className} />;
-});
+    return <Tag tag="aside" {...rest} ref={ref} className={className} />;
+  }
+);
 
 /***************************************************************************************
  * Bits

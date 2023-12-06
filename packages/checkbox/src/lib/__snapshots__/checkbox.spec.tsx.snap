@@ -3,35 +3,45 @@
 exports[`Checkbox > renders 1`] = `
 <DocumentFragment>
   <div
-    class="mdc-ripple-upgraded--unbounded mdc-checkbox--upgraded mdc-checkbox"
-    data-mdc-ripple-is-unbounded="true"
+    class="mdc-form-field"
   >
-    <input
-      class="mdc-checkbox__native-control"
-      id="toggle--test"
-      type="checkbox"
-    />
     <div
-      class="mdc-checkbox__background"
+      class="mdc-ripple-upgraded--unbounded mdc-checkbox--upgraded mdc-checkbox"
+      data-mdc-ripple-is-unbounded="true"
     >
-      <svg
-        class="mdc-checkbox__checkmark"
-        viewBox="0 0 24 24"
-      >
-        <path
-          class="mdc-checkbox__checkmark-path"
-          d="M1.73,12.91 8.1,19.28 22.79,4.59"
-          fill="none"
-          stroke="white"
-        />
-      </svg>
+      <input
+        class="mdc-checkbox__native-control"
+        id="toggle--test"
+        type="checkbox"
+      />
       <div
-        class="mdc-checkbox__mixedmark"
+        class="mdc-checkbox__background"
+      >
+        <svg
+          class="mdc-checkbox__checkmark"
+          viewBox="0 0 24 24"
+        >
+          <path
+            class="mdc-checkbox__checkmark-path"
+            d="M1.73,12.91 8.1,19.28 22.79,4.59"
+            fill="none"
+            stroke="white"
+          />
+        </svg>
+        <div
+          class="mdc-checkbox__mixedmark"
+        />
+      </div>
+      <div
+        class="mdc-checkbox__ripple"
       />
     </div>
-    <div
-      class="mdc-checkbox__ripple"
-    />
+    <label
+      for="toggle--test"
+      id="toggle--testlabel"
+    >
+      test
+    </label>
   </div>
 </DocumentFragment>
 `;

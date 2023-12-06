@@ -40,7 +40,7 @@ export function DialogQueue({
   );
 
   useEffect(() => {
-    const forceUpdate = () => setIteration(val => val + 1);
+    const forceUpdate = () => setIteration((val) => val + 1);
     dialogs.on('change', forceUpdate);
     return () => {
       dialogs.off('change', forceUpdate);
@@ -74,7 +74,7 @@ export function DialogQueue({
 
   return (
     <>
-      {dialogs.array.map(dialog => {
+      {dialogs.array.map((dialog) => {
         const { resolve, reject, id, inputProps, ...rest } = dialog;
 
         const rendered = (
@@ -83,7 +83,7 @@ export function DialogQueue({
             {...rest}
             key={id}
             open={!closingDialogs[id] && !foundOpen}
-            onClose={evt => {
+            onClose={(evt) => {
               removeDialog(evt, dialog);
               dialog.onClose && dialog.onClose(evt);
             }}
@@ -104,15 +104,17 @@ export function DialogQueue({
  * A base dialog factory that handle setting up the promise
  * With some consistent behavior
  */
-const dialogFactory = (
-  factory: (dialog: DialogQueueSpec) => DialogQueueSpec,
-  queue: ArrayEmitter<DialogQueueSpec>
-) => (dialog: DialogQueueInput) => {
-  return new Promise((resolve, reject) => {
-    const d = factory({ id: randomId(), ...dialog, resolve, reject });
-    queue.push(d);
-  });
-};
+const dialogFactory =
+  (
+    factory: (dialog: DialogQueueSpec) => DialogQueueSpec,
+    queue: ArrayEmitter<DialogQueueSpec>
+  ) =>
+  (dialog: DialogQueueInput) => {
+    return new Promise((resolve, reject) => {
+      const d = factory({ id: randomId(), ...dialog, resolve, reject });
+      queue.push(d);
+    });
+  };
 
 /**
  * Handle prompt dialogs
@@ -141,7 +143,7 @@ function PromptBody({
         autoFocus
         {...inputProps}
         value={value}
-        onChange={evt => {
+        onChange={(evt) => {
           setValue(evt.currentTarget.value);
         }}
       />
@@ -156,7 +158,7 @@ const promptFactory = (dialog: DialogQueueSpec): DialogQueueSpec => {
     <PromptBody
       body={dialog.body}
       inputProps={dialog.inputProps}
-      apiRef={_getValue => (getValue = _getValue)}
+      apiRef={(_getValue) => (getValue = _getValue)}
     />
   );
 
