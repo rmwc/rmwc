@@ -152,27 +152,47 @@ export default function Readme() {
         Notice the `readOnly` prop is also set on the individual form elements.
       </DocsP>
 
-      <DocsExample label="Checkboxes">
-        {/* @ts-ignore */}
+      <DocsExample label="singleSelection">
         {function Example() {
-          const [checked, setChecked] = React.useState<any>({
-            Cookies: false,
-            Pizza: false,
-            Icecream: false
-          });
+          const [selectedIndex, setSelectedIndex] = React.useState(-1);
 
           return (
-            <List>
-              {['Cookies', 'Pizza', 'Icecream'].map((key) => (
-                <ListItem
-                  key={key}
-                  onClick={() =>
-                    setChecked({ ...checked, [key]: !checked[key] })
-                  }
-                >
+            <List
+              selectedIndex={selectedIndex}
+              onAction={(evt) => setSelectedIndex(evt.detail.index)}
+            >
+              <ListItem>Cookies</ListItem>
+              <ListItem>Pizza</ListItem>
+              <ListItem>Cake</ListItem>
+            </List>
+          );
+        }}
+      </DocsExample>
+
+      <DocsExample label="Checkboxes">
+        {function Example() {
+          const shoppingList = ['Cookies', 'Pizza', 'Icecream'];
+          const [selectedIndex, setSelectedIndex] = React.useState<number[]>([]);
+
+          //@ts-ignore
+          const handleSelect = (evt) => {
+            setSelectedIndex((indices) => 
+              indices.includes(evt.detail.index)
+                ? indices.filter((_) => _ !== evt.detail.index)
+                : [...indices, evt.detail.index]            
+            )};
+
+          return (
+            <List
+              aria-label="Shopping List"
+              selectedIndex={selectedIndex}
+              onAction={handleSelect}
+            >
+              {shoppingList.map((key) => (
+                <ListItem key={key}>
                   {key}
                   <ListItemMeta>
-                    <Checkbox checked={checked[key]} readOnly />
+                    <Checkbox readOnly />
                   </ListItemMeta>
                 </ListItem>
               ))}
@@ -182,13 +202,12 @@ export default function Readme() {
       </DocsExample>
 
       <DocsExample label="Switches">
-        {/* @ts-ignore */}
         {function Example() {
-          const [checked, setChecked] = React.useState<any>({
-            Cookies: false,
-            Pizza: false,
-            Icecream: false
-          });
+          const [checked, setChecked] = React.useState(new Map<string, boolean>([
+            ["Cookies", false],
+            ["Pizza", false],
+            ["Icecream", false],
+          ]));
 
           return (
             <List>
@@ -196,12 +215,12 @@ export default function Readme() {
                 <ListItem
                   key={key}
                   onClick={() =>
-                    setChecked({ ...checked, [key]: !checked[key] })
+                    setChecked((prev)  => new Map(prev).set(key, !prev.get(key)))
                   }
                 >
-                  {key}
+                  {key}&nbsp;
                   <ListItemMeta>
-                    <Switch checked={checked[key]} readOnly />
+                    <Switch checked={checked.get(key)}/>
                   </ListItemMeta>
                 </ListItem>
               ))}
@@ -211,17 +230,24 @@ export default function Readme() {
       </DocsExample>
 
       <DocsExample label="Radios">
-        {/* @ts-ignore */}
         {function Example() {
-          const [checked, setChecked] = React.useState('Cookies');
+          const mealchoices = ['Beef', 'Chicken', 'Vegetable Lasagna'];
+          const [selectedIndex, setSelectedIndex] = React.useState(0);
+
+          //@ts-ignore
+          const handleSelect = (evt) => setSelectedIndex(evt.detail.index);
 
           return (
-            <List>
-              {['Cookies', 'Pizza', 'Icecream'].map((key) => (
-                <ListItem key={key} onClick={() => setChecked(key)}>
+            <List
+              aria-label="Please Pick a Meal"
+              selectedIndex={selectedIndex}
+              onAction={handleSelect}
+            >
+              {mealchoices.map((key) => (
+                <ListItem key={key}>
                   {key}
                   <ListItemMeta>
-                    <Radio checked={checked === key} readOnly />
+                    <Radio readOnly name="meal-choices-group" />
                   </ListItemMeta>
                 </ListItem>
               ))}

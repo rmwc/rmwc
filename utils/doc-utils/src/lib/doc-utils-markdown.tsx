@@ -1,6 +1,5 @@
 /* istanbul ignore file */
-import React, { useContext, useEffect, useState } from 'react';
-import * as rmwc from 'rmwc';
+import React, { useContext, useState } from 'react';
 
 interface DocumentComponentProps {
   docs: { [key: string]: any };
@@ -9,7 +8,6 @@ interface DocumentComponentProps {
 
 class DocumentComponent extends React.Component<DocumentComponentProps> {
   getComponentDef(displayName: string) {
-    const componentDef = this.props.docs[displayName];
     const propsDef: any = this.props.docs[displayName + 'Props'];
 
     const def: {
@@ -23,11 +21,7 @@ class DocumentComponent extends React.Component<DocumentComponentProps> {
       }>;
     } = {
       name: displayName,
-      description:
-        (propsDef &&
-          propsDef.documentation &&
-          propsDef.documentation.contentsRaw) ||
-        '',
+      description: propsDef?.documentation?.contentsRaw || '',
       props: []
     };
 
@@ -135,7 +129,7 @@ export function Docs({
   docsLink,
   examples,
   addon
-}: {
+}: Readonly<{
   children: React.ReactNode;
   title: string;
   lead: string;
@@ -144,7 +138,7 @@ export function Docs({
   docsLink?: string;
   examples: string[];
   addon?: boolean;
-}) {
+}>) {
   let index = -1;
   return (
     <DocsContext.Provider value={{ scope: {}, examples }}>
@@ -181,11 +175,11 @@ function DocsSetup({
   module,
   styles,
   docsLink
-}: {
+}: Readonly<{
   module: string;
   styles: string[];
   docsLink?: string;
-}) {
+}>) {
   return (
     <>
       - Module **{module}**
@@ -219,7 +213,7 @@ function DocsSetup({
   );
 }
 
-function DocsTitle({ children }: { children: React.ReactNode }) {
+function DocsTitle({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <>
       # {children}
@@ -233,7 +227,7 @@ function Br() {
   return <>{'\n'}</>;
 }
 
-export function DocsSubtitle({ children }: { children: React.ReactNode }) {
+export function DocsSubtitle({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <>
       ## {children}
@@ -243,7 +237,7 @@ export function DocsSubtitle({ children }: { children: React.ReactNode }) {
   );
 }
 
-function DocsLead({ children }: { children: React.ReactNode }) {
+function DocsLead({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <>
       {children}
@@ -253,7 +247,7 @@ function DocsLead({ children }: { children: React.ReactNode }) {
   );
 }
 
-export function DocsP({ children }: { children: React.ReactNode }) {
+export function DocsP({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <>
       {children}
@@ -266,13 +260,13 @@ export function DocsP({ children }: { children: React.ReactNode }) {
 export function DocsExample({
   index = 0,
   ...rest
-}: {
-  children: React.ReactNode;
+}: Readonly<{
+  children: React.ReactNode | (() => React.ReactNode);
   index?: number;
   label?: string;
   codeOnly?: boolean;
   iframe?: boolean;
-}) {
+}>) {
   const { examples } = useContext(DocsContext);
   const [code] = useState(examples[index]);
 
@@ -281,13 +275,13 @@ export function DocsExample({
 
 function DocsExampleBase({
   code
-}: {
+}: Readonly<{
   code: string;
   codeOnly?: boolean;
   iframe?: boolean;
   label?: string;
-  children?: React.ReactNode;
-}) {
+  children?: React.ReactNode | (() => React.ReactNode);
+}>) {
   return (
     <>
       ```jsx

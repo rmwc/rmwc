@@ -1,15 +1,17 @@
+import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import React from 'react';
-import { CollapsibleList } from './collapsible-list';
-import { List } from './list';
 import {
   ListItem,
+  ListItemPrimaryText,
   ListItemGraphic,
   ListItemMeta,
-  ListItemPrimaryText,
   SimpleListItem
 } from './list-item';
+import { Checkbox } from '@rmwc/checkbox';
+import { Radio } from '@rmwc/radio';
+import { List } from './list';
+import { CollapsibleList } from './collapsible-list';
 
 describe('List', () => {
   it('renders', () => {
@@ -99,6 +101,64 @@ describe('List', () => {
       </List>
     );
     expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('has right role when having selectedIndex', () => {
+    render(
+      <List selectedIndex={1}>
+        <ListItem>Pizza</ListItem>
+        <ListItem>Cookies</ListItem>
+        <ListItem>IceCream</ListItem>
+      </List>
+    );
+
+    expect(screen.getByRole('listbox')).toBeInTheDocument();
+  });
+
+  it('role set by user is not overwritten', () => {
+    render(
+      <List role="menu" selectedIndex={1}>
+        <ListItem>Pizza</ListItem>
+        <ListItem>Cookies</ListItem>
+        <ListItem>IceCream</ListItem>
+      </List>
+    );
+
+    expect(screen.getByRole('menu')).toBeInTheDocument();
+  });
+
+  it('has the right role when ListItem has checkboxs', () => {
+    render(
+      <List>
+        {['Cookies', 'Pizza', 'Icecream'].map((key) => (
+          <ListItem key={key}>
+            {key}
+            <ListItemMeta>
+              <Checkbox readOnly />
+            </ListItemMeta>
+          </ListItem>
+        ))}
+      </List>
+    );
+
+    expect(screen.getByRole('group')).toBeInTheDocument();
+  });
+
+  it('has the right role when ListItem has radios', () => {
+    render(
+      <List>
+        {['Cookies', 'Pizza', 'Icecream'].map((key) => (
+          <ListItem key={key}>
+            {key}
+            <ListItemMeta>
+              <Radio readOnly />
+            </ListItemMeta>
+          </ListItem>
+        ))}
+      </List>
+    );
+
+    expect(screen.getByRole('radiogroup')).toBeInTheDocument();
   });
 
   it('can have custom classnames', () => {
@@ -218,5 +278,67 @@ describe('Collapsible List', () => {
 
     userEvent.type(screen.getByText('One'), '{enter}');
     expect(screen.getByText('Handle')).toBeInTheDocument();
+  });
+});
+
+describe('ListItem', () => {
+  it('has the right role when containing selectedIndex', () => {
+    render(
+      <List selectedIndex={1}>
+        <ListItem>Pizza</ListItem>
+        <ListItem>Cookies</ListItem>
+        <ListItem>IceCream</ListItem>
+      </List>
+    );
+
+    expect(screen.getByText('Pizza').getAttribute('role')).toEqual('option');
+  });
+
+  it('role set by user is not overwritten', () => {
+    render(
+      <List selectedIndex={1}>
+        <ListItem role="menuitem">Pizza</ListItem>
+        <ListItem>Cookies</ListItem>
+        <ListItem>IceCream</ListItem>
+      </List>
+    );
+
+    expect(screen.getByText('Pizza').getAttribute('role')).toEqual('menuitem');
+  });
+
+  it('has the right role when ListItem has checkboxs', () => {
+    render(
+      <List>
+        {['Cookies', 'Pizza', 'Icecream'].map((key) => (
+          <ListItem key={key}>
+            {key}
+            <ListItemMeta>
+              <Checkbox readOnly />
+            </ListItemMeta>
+          </ListItem>
+        ))}
+      </List>
+    );
+
+    expect(screen.getByText('Cookies').getAttribute('role')).toEqual(
+      'checkbox'
+    );
+  });
+
+  it('has the right role when ListItem has radios', () => {
+    render(
+      <List>
+        {['Cookies', 'Pizza', 'Icecream'].map((key) => (
+          <ListItem key={key}>
+            {key}
+            <ListItemMeta>
+              <Radio readOnly />
+            </ListItemMeta>
+          </ListItem>
+        ))}
+      </List>
+    );
+
+    expect(screen.getByText('Cookies').getAttribute('role')).toEqual('radio');
   });
 });
