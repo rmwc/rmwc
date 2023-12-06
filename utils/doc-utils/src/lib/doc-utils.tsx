@@ -28,12 +28,7 @@ class DocumentComponent extends React.Component<DocumentComponentProps> {
       }>;
     } = {
       name: displayName,
-      description:
-        (propsDef &&
-          propsDef.documentation &&
-          propsDef.documentation.contentsRaw) ||
-        '',
-      props: []
+      description: (propsDef?.documentation?.contentsRaw) || '', props: []
     };
 
     def.props = propsDef
@@ -149,7 +144,7 @@ export function Docs({
   docsLink,
   examples,
   addon
-}: {
+}: Readonly<{
   children: React.ReactNode;
   title: string;
   lead: string;
@@ -158,7 +153,7 @@ export function Docs({
   docsLink?: string;
   examples: string[];
   addon?: boolean;
-}) {
+}>) {
   let index = -1;
   return (
     <DocsContext.Provider value={{ scope: rmwc, examples }}>
@@ -197,11 +192,11 @@ function DocsSetup({
   module,
   styles,
   docsLink
-}: {
+}: Readonly<{
   module: string;
   styles: string[];
   docsLink?: string;
-}) {
+}>) {
   return (
     <ul className="docs-setup">
       <li>
@@ -241,15 +236,15 @@ function DocsSetup({
   );
 }
 
-function DocsTitle({ children }: { children: React.ReactNode }) {
+function DocsTitle({ children }: Readonly<{ children: React.ReactNode }>) {
   return <h1>{children}</h1>;
 }
 
-export function DocsSubtitle({ children }: { children: React.ReactNode }) {
+export function DocsSubtitle({ children }: Readonly<{ children: React.ReactNode }>) {
   return <h2>{children}</h2>;
 }
 
-function DocsLead({ children }: { children: React.ReactNode }) {
+function DocsLead({ children }: Readonly<{ children: React.ReactNode }>) {
   return <blockquote>{children}</blockquote>;
 }
 
@@ -269,7 +264,7 @@ const createTextLinks = (text: string) => {
 const createTextCode = (text: string) =>
   String(text).replace(/`(.+?)`/g, '<code>$1</code>');
 
-export function DocsP({ children }: { children: React.ReactNode }) {
+export function DocsP({ children }: Readonly<{ children: React.ReactNode }>) {
   const __html = createTextLinks(createTextCode(children as string));
   return <p className="docs-p" dangerouslySetInnerHTML={{ __html }} />;
 }
@@ -284,15 +279,9 @@ const IFrame = ({
   const [contentRef, setContentRef] = useState<HTMLIFrameElement | null>(null);
   const [canMount, setCanMount] = React.useState(false);
 
-  const mountNode =
-    contentRef &&
-    contentRef.contentWindow &&
-    contentRef.contentWindow.document.body;
+  const mountNode = contentRef?.contentWindow?.document?.body;
 
-  const headNode =
-    contentRef &&
-    contentRef.contentWindow &&
-    contentRef.contentWindow.document.head;
+  const headNode = contentRef?.contentWindow?.document?.head;
 
   useEffect(() => {
     if (headNode) {
@@ -333,16 +322,16 @@ const IFrame = ({
 export function DocsExample({
   index = 0,
   ...rest
-}: {
-  children: React.ReactNode;
+}: Readonly<{
+  children: React.ReactNode | (() => React.ReactNode);
   index?: number;
   label?: string;
   codeOnly?: boolean;
   iframe?: boolean;
   center?: boolean;
-}) {
+}>) {
   const { examples } = useContext(DocsContext);
-  const [code] = useState(() => {
+  const [code, ]= useState(() => {
     const cleaned = examples[index].trim();
     if (cleaned.startsWith('`') && cleaned.endsWith('`')) {
       return cleaned.slice(1, cleaned.length - 1);
@@ -361,16 +350,17 @@ function DocsExampleBase({
   label,
   children,
   center
-}: {
+}: Readonly<{
   code: string;
   codeOnly?: boolean;
   iframe?: boolean;
   label?: string;
-  children?: React.ReactNode;
+  children?: React.ReactNode | (() => React.ReactNode);
   center?: boolean;
-}) {
+}>) {
   return (
     <LiveProvider
+      enableTypeScript={true}
       code={code}
       scope={rmwc}
       noInline={!!codeOnly}
