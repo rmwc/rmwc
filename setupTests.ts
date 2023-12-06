@@ -3,12 +3,6 @@ import '@testing-library/jest-dom';
 import { beforeAll, vi } from 'vitest';
 import rmwcTestPolyfill from './packages/base/src/lib/test-polyfill';
 
-Object.defineProperty(global, 'crypto', {
-  value: {
-    randomUUID: () => 123456
-  }
-});
-
 rmwcTestPolyfill();
 
 const consoleError = console.error;

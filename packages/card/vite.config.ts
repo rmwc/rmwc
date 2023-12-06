@@ -4,15 +4,24 @@ import react from '@vitejs/plugin-react';
 import * as path from 'path';
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
+import { viteStaticCopy } from 'vite-plugin-static-copy';
 
 export default defineConfig({
   cacheDir: '../../node_modules/.vite/card',
 
   plugins: [
     dts({
+      pathsToAliases: false,
       entryRoot: 'src',
-      tsConfigFilePath: path.join(__dirname, 'tsconfig.lib.json'),
-      skipDiagnostics: true
+      tsconfigPath: path.join(__dirname, 'tsconfig.lib.json')
+    }),
+    viteStaticCopy({
+      targets: [
+        {
+          src: 'README.md',
+          dest: '.'
+        }
+      ]
     }),
     react(),
     nxViteTsPaths()

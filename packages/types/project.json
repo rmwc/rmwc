@@ -3,27 +3,24 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "packages/types/src",
   "projectType": "library",
-  "tags": [
-    "publishable",
-    "type:ui-component"
-  ],
+  "tags": ["publishable", "type:ui-component"],
   "targets": {
     "lint": {
       "executor": "@nx/linter:eslint",
-      "outputs": [
-        "{options.outputFile}"
-      ],
+      "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": [
-          "packages/types/**/*.{ts,tsx,js,jsx}"
-        ]
+        "lintFilePatterns": ["packages/types/**/*.{ts,tsx,js,jsx}"]
       }
     },
     "build": {
       "executor": "@nx/vite:build",
-      "outputs": [
-        "{options.outputPath}"
+      "dependsOn": [
+        {
+          "projects": "readme",
+          "target": "generate-markdown"
+        }
       ],
+      "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
         "outputPath": "dist/packages/types"
@@ -39,9 +36,7 @@
     },
     "test": {
       "executor": "@nx/vite:test",
-      "outputs": [
-        "{options.reportsDirectory}"
-      ],
+      "outputs": ["{options.reportsDirectory}"],
       "options": {
         "passWithNoTests": true,
         "reportsDirectory": "../../coverage/packages/types"

@@ -40,7 +40,7 @@ function MutatingSelect(props: any) {
   );
 }
 
-// This story describes the bug in issue https://github.com/jamesmfriedman/rmwc/issues/686
+// This story describes the bug in issue https://github.com/rmwc/rmwc/issues/686
 // Selecting the first element of the first select will cause the bug
 const DependentSelects = () => {
   const [first, setFist] = React.useState(3);

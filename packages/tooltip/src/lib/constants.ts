@@ -1,4 +1,4 @@
-import { TooltipAlignT } from './types';
+import { TooltipAlignT } from '@rmwc/provider';
 
 export const ALIGN_MAP: Record<
   TooltipAlignT,
@@ -16,3 +16,17 @@ export const ALIGN_MAP: Record<
   endAbove: { xPos: 3, yPos: 1 },
   endBelow: { xPos: 3, yPos: 2 }
 };
+
+export const TOOLTIP_ALIGN_VALUES = [
+  'start',
+  'center',
+  'end',
+  'above',
+  'below',
+  'startAbove',
+  'startBelow',
+  'centerAbove',
+  'centerBelow',
+  'endAbove',
+  'endBelow'
+];

@@ -1,12 +1,12 @@
 import { RMWCProvider } from '@rmwc/provider';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { Tooltip } from './tooltip';
+import { SimpleRichTooltip, Tooltip } from './tooltip';
 
 describe('Tooltip', () => {
   it('renders', async () => {
     const { asFragment } = render(
-      <Tooltip overlay="tooltip" open>
+      <Tooltip label="test" overlay="tooltip" open>
         <span>test</span>
       </Tooltip>
     );
@@ -61,7 +61,7 @@ describe('Tooltip', () => {
     const { asFragment } = render(
       <RMWCProvider tooltip={{}}>
         {
-          <Tooltip overlay={<div>tooltip</div>}>
+          <Tooltip label="test" overlay={<div>tooltip</div>}>
             <span>test</span>
           </Tooltip>
         }
@@ -75,9 +75,9 @@ describe('Tooltip', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('can be rich with default rich styling disabled', () => {
+  it('can have ReactNode as overlay with rich styling disabled', () => {
     const { asFragment } = render(
-      <Tooltip overlay={<div>tooltip</div>} disableRichStyling>
+      <Tooltip label="test" overlay={<div>tooltip</div>} rich={false}>
         <span>test</span>
       </Tooltip>
     );
@@ -89,7 +89,7 @@ describe('Tooltip', () => {
     const { asFragment } = render(
       <RMWCProvider tooltip={{}}>
         {
-          <Tooltip overlay={<div>tooltip</div>} isPersistent>
+          <Tooltip label="test" overlay={<div>tooltip</div>} isPersistent>
             <span>test</span>
           </Tooltip>
         }
@@ -97,5 +97,49 @@ describe('Tooltip', () => {
     );
 
     expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('can use SimpleRichTooltip', () => {
+    const { asFragment } = render(
+      <Tooltip
+        label="test"
+        overlay={
+          <SimpleRichTooltip title="My title" body="This is my content" />
+        }
+        isPersistent
+      >
+        <span>test</span>
+      </Tooltip>
+    );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('accepts allowed align value from provider context', () => {
+    vi.spyOn(console, 'warn');
+    render(
+      <RMWCProvider tooltip={{ align: 'start' }}>
+        {
+          <Tooltip label="test">
+            <span>test</span>
+          </Tooltip>
+        }
+      </RMWCProvider>
+    );
+    expect(console.warn).not.toBeCalled();
+  });
+
+  it('warn against wrong align value from provider context', () => {
+    vi.spyOn(console, 'warn');
+    render(
+      <RMWCProvider tooltip={{ align: 'bottom' }}>
+        {
+          <Tooltip label="test">
+            <span>test</span>
+          </Tooltip>
+        }
+      </RMWCProvider>
+    );
+    expect(console.warn).toBeCalled();
   });
 });

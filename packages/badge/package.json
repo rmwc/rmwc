@@ -1,17 +1,20 @@
 {
   "name": "@rmwc/badge",
-  "version": "14.0.2-alpha.1",
+  "version": "14.0.4",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
     ".": {
       "import": "./index.mjs",
+      "types": "./index.d.ts",
       "require": "./index.js"
     },
     "./styles": {
       "import": "./styles.mjs",
+      "types": "./styles.d.ts",
       "require": "./styles.js"
-    }
+    },
+    "./badge.css": "./badge.css"
   },
   "sideEffects": [
     "**/*.css"
@@ -32,7 +35,7 @@
   "bugs": {
     "url": "https://github.com/rmwc/rmwc/issues"
   },
-  "homepage": "https://github.com/rmwc/rmwc/tree/master/packages/readme/badge",
+  "homepage": "https://github.com/rmwc/rmwc/tree/master/packages/badge",
   "peerDependencies": {
     "react": ">=16.8.x",
     "react-dom": ">=16.8.x"

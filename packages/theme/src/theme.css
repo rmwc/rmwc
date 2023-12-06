@@ -78,7 +78,9 @@ body .mdc-deprecated-list-divider {
  ****************************************************************/
 /** Correct color of focused label */
 body
-  .mdc-select:not(.mdc-select--disabled):not(.mdc-select--invalid).mdc-select--focused
+  .mdc-select:not(.mdc-select--disabled):not(
+    .mdc-select--invalid
+  ).mdc-select--focused
   .mdc-floating-label {
   color: var(--mdc-theme-primary);
 }
@@ -88,7 +90,9 @@ body
  ****************************************************************/
 /** Correct color of focused label */
 body
-  .mdc-text-field:not(.mdc-text-field--disabled):not(.mdc-text-field--invalid).mdc-text-field--focused
+  .mdc-text-field:not(.mdc-text-field--disabled):not(
+    .mdc-text-field--invalid
+  ).mdc-text-field--focused
   .mdc-floating-label {
   color: var(--mdc-theme-primary);
 }
@@ -106,7 +110,7 @@ body .mdc-chip__text__primary-action:focus {
  ****************************************************************/
 /**
   * Corrects an issue where anything other than text-align left breaks layout
-  * https://github.com/jamesmfriedman/rmwc/issues/590
+  * https://github.com/rmwc/rmwc/issues/590
   */
 .mdc-linear-progress {
   text-align: left;

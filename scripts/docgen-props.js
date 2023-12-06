@@ -5,7 +5,7 @@ const fs = require('fs');
 
 try {
   getPackages(['readme']).forEach((d) => {
-    console.log(`Building Docs For: ${d}`);
+    console.log(`Building Docs props for: ${d}`);
     fs.mkdirSync(path.resolve('utils', 'readme', 'src', 'generated-props'), {
       recursive: true
     });
@@ -18,7 +18,12 @@ try {
     });
 
     proc.stderr.on('data', (data) => {
-      console.log('Error: Command "' + proc.spawnargs + '" failed with:  ' + data.toString());
+      console.log(
+        'Error: Command "' +
+          proc.spawnargs +
+          '" failed with:  ' +
+          data.toString()
+      );
     });
 
     proc.on('exit', (code) => {});

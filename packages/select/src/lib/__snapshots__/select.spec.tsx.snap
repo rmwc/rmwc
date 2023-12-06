@@ -3,7 +3,7 @@
 exports[`Select > can accept formatted options array 1`] = `
 <DocumentFragment>
   <div
-    class="mdc-select mdc-select--filled mdc-select--no-label"
+    class="mdc-select mdc-select--filled"
   >
     <div
       aria-disabled="false"
@@ -17,9 +17,11 @@ exports[`Select > can accept formatted options array 1`] = `
         style="transform-origin: 0px center;"
       />
       <span
-        class="mdc-floating-label"
+        class="mdc-floating-label mdc-floating-label--float-above"
         for="select-test"
-      />
+      >
+        test
+      </span>
       <span
         class="mdc-select__selected-text-container"
       >
@@ -80,7 +82,7 @@ exports[`Select > can accept formatted options array 1`] = `
 exports[`Select > can accept options array 1`] = `
 <DocumentFragment>
   <div
-    class="mdc-select mdc-select--filled mdc-select--no-label"
+    class="mdc-select mdc-select--filled"
   >
     <div
       aria-disabled="false"
@@ -94,9 +96,11 @@ exports[`Select > can accept options array 1`] = `
         style="transform-origin: 0px center;"
       />
       <span
-        class="mdc-floating-label"
+        class="mdc-floating-label mdc-floating-label--float-above"
         for="select-test"
-      />
+      >
+        test
+      </span>
       <span
         class="mdc-select__selected-text-container"
       >
@@ -155,7 +159,7 @@ exports[`Select > can accept options array 1`] = `
 exports[`Select > can have custom rootProps 1`] = `
 <DocumentFragment>
   <div
-    class="mdc-select mdc-select--filled mdc-select--no-label"
+    class="mdc-select mdc-select--filled"
     name="test"
   >
     <div
@@ -172,7 +176,9 @@ exports[`Select > can have custom rootProps 1`] = `
       <span
         class="mdc-floating-label"
         for="select-test"
-      />
+      >
+        test
+      </span>
       <span
         class="mdc-select__selected-text-container"
       >
@@ -212,7 +218,7 @@ exports[`Select > can have custom rootProps 1`] = `
 exports[`Select > renders 1`] = `
 <DocumentFragment>
   <div
-    class="mdc-select mdc-select--filled mdc-select--no-label"
+    class="mdc-select mdc-select--filled"
   >
     <div
       aria-disabled="false"
@@ -226,9 +232,11 @@ exports[`Select > renders 1`] = `
         style="transform-origin: 0px center;"
       />
       <span
-        class="mdc-floating-label"
+        class="mdc-floating-label mdc-floating-label--float-above"
         for="select-test"
-      />
+      >
+        test
+      </span>
       <span
         class="mdc-select__selected-text-container"
       >
@@ -290,7 +298,7 @@ exports[`Select: Lifecycle > Select matches snapshot when enhanced and renderToP
     class="mdc-menu-surface--anchor"
   >
     <div
-      class="mdc-select mdc-select--filled mdc-select--no-label"
+      class="mdc-select mdc-select--filled"
     >
       <div
         aria-disabled="false"
@@ -306,7 +314,9 @@ exports[`Select: Lifecycle > Select matches snapshot when enhanced and renderToP
         <span
           class="mdc-floating-label"
           for="select-test"
-        />
+        >
+          test
+        </span>
         <span
           class="mdc-select__selected-text-container"
         >

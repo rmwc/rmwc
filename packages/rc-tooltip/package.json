@@ -1,0 +1,52 @@
+{
+  "name": "@rmwc/rc-tooltip",
+  "version": "14.0.4",
+  "description": "RMWC legacy tooltip component",
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "types": "./index.d.ts",
+      "require": "./index.js"
+    },
+    "./styles": {
+      "import": "./styles.mjs",
+      "types": "./styles.d.ts",
+      "require": "./styles.js"
+    },
+    "./tooltip.css": "./rc-tooltip.css"
+  },
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rmwc/rmwc.git"
+  },
+  "keywords": [
+    "rmwc"
+  ],
+  "author": "rmwc",
+  "private": false,
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rmwc/rmwc/issues"
+  },
+  "homepage": "https://github.com/rmwc/rmwc/tree/master/packages/rc-tooltip",
+  "peerDependencies": {
+    "react": ">=16.8.x",
+    "react-dom": ">=16.8.x"
+  },
+  "dependencies": {
+    "@rmwc/base": "workspace:*",
+    "@rmwc/provider": "workspace:*",
+    "rc-tooltip": "6.1.2"
+  },
+  "devDependencies": {
+    "@types/rc-tooltip": "3.7.10"
+  }
+}

@@ -53,25 +53,23 @@ export type MenuHTMLProps = RMWC.HTMLProps<
 export interface MenuItemsProps extends ListProps {}
 
 /** A wrapper for menu items */
-export const MenuItems = createComponent<MenuItemsProps>(function MenuItems(
-  props,
-  ref
-) {
-  const className = useClassNames(props, ['mdc-list mdc-menu__items']);
-  return <List role="menu" {...props} className={className} ref={ref} />;
-});
+export const MenuItems = createComponent<MenuItemsProps>(
+  function MenuItems(props, ref) {
+    const className = useClassNames(props, ['mdc-list mdc-menu__items']);
+    return <List role="menu" {...props} className={className} ref={ref} />;
+  }
+);
 MenuItems.displayName = 'MenuItems';
 
 /** This is just the ListItem component exported from the Menu module for convenience. You can use `ListItem` or `SimpleListItem` components from the List section as long as you add `role="menuitem"` and `tabIndex="0"` to the components for accessibility. */
 export interface MenuItemProps extends ListItemProps {}
 
 /** This is just the ListItem component exported from the Menu module for convenience. You can use `ListItem` or `SimpleListItem` components from the List section as long as you add `role="menuitem"` and `tabIndex="0"` to the components for accessibility. */
-export const MenuItem = createComponent<MenuItemProps>(function MenuItem(
-  props,
-  ref
-) {
-  return <ListItem role="menuitem" tabIndex={0} {...props} ref={ref} />;
-});
+export const MenuItem = createComponent<MenuItemProps>(
+  function MenuItem(props, ref) {
+    return <ListItem role="menuitem" tabIndex={0} {...props} ref={ref} />;
+  }
+);
 
 const isMenuItems = (child: React.ReactNode) =>
   getDisplayName(child) === 'MenuItems';

@@ -24,37 +24,36 @@ export interface GridListProps {
 }
 
 /** Grid List Component */
-export const GridList = createComponent<GridListProps>(function GridList(
-  props,
-  ref
-) {
-  const {
-    tileGutter1,
-    headerCaption,
-    twolineCaption,
-    withIconAlignStart,
-    tileAspect = '1x1',
-    children,
-    ...rest
-  } = props;
+export const GridList = createComponent<GridListProps>(
+  function GridList(props, ref) {
+    const {
+      tileGutter1,
+      headerCaption,
+      twolineCaption,
+      withIconAlignStart,
+      tileAspect = '1x1',
+      children,
+      ...rest
+    } = props;
 
-  const className = useClassNames(props, [
-    'mdc-grid-list',
-    {
-      'mdc-grid-list--tile-gutter-1': tileGutter1,
-      'mdc-grid-list--header-caption': headerCaption,
-      'mdc-grid-list--twoline-caption': twolineCaption,
-      'mdc-grid-list--with-icon-align-start': withIconAlignStart,
-      [`mdc-grid-list--tile-aspect-${tileAspect || ''}`]: tileAspect
-    }
-  ]);
+    const className = useClassNames(props, [
+      'mdc-grid-list',
+      {
+        'mdc-grid-list--tile-gutter-1': tileGutter1,
+        'mdc-grid-list--header-caption': headerCaption,
+        'mdc-grid-list--twoline-caption': twolineCaption,
+        'mdc-grid-list--with-icon-align-start': withIconAlignStart,
+        [`mdc-grid-list--tile-aspect-${tileAspect || ''}`]: tileAspect
+      }
+    ]);
 
-  return (
-    <Tag {...rest} ref={ref} className={className}>
-      <ul className="mdc-grid-list__tiles">{children}</ul>
-    </Tag>
-  );
-});
+    return (
+      <Tag {...rest} ref={ref} className={className}>
+        <ul className="mdc-grid-list__tiles">{children}</ul>
+      </Tag>
+    );
+  }
+);
 
 /** The primary content for a Grid tile */
 export interface GridTilePrimaryProps {}
@@ -71,24 +70,26 @@ export const GridTilePrimary = createComponent<GridTilePrimaryProps>(
 export interface GridTilePrimaryContentProps {}
 
 /** The inner primary content for a Grid tile */
-export const GridTilePrimaryContent = createComponent<
-  GridTilePrimaryContentProps
->(function GridTilePrimaryContent(props, ref) {
-  const className = useClassNames(props, ['mdc-grid-tile__primary-content']);
-  return <Tag tag="img" {...props} ref={ref} className={className} />;
-});
+export const GridTilePrimaryContent =
+  createComponent<GridTilePrimaryContentProps>(
+    function GridTilePrimaryContent(props, ref) {
+      const className = useClassNames(props, [
+        'mdc-grid-tile__primary-content'
+      ]);
+      return <Tag tag="img" {...props} ref={ref} className={className} />;
+    }
+  );
 
 /** A grid tile */
 export interface GridTileProps {}
 
 /** A grid tile */
-export const GridTile = createComponent<GridTileProps>(function GridTile(
-  props,
-  ref
-) {
-  const className = useClassNames(props, ['mdc-grid-tile']);
-  return <Tag tag="li" {...props} ref={ref} className={className} />;
-});
+export const GridTile = createComponent<GridTileProps>(
+  function GridTile(props, ref) {
+    const className = useClassNames(props, ['mdc-grid-tile']);
+    return <Tag tag="li" {...props} ref={ref} className={className} />;
+  }
+);
 
 /** The secondary content for a Grid tile */
 export interface GridTileSecondaryProps {}
@@ -127,9 +128,10 @@ export const GridTileTitle = createComponent<GridTileTitleProps>(
 export interface GridTileTitleSupportTextProps {}
 
 /** Supporting Text for the Grid Tile */
-export const GridTileTitleSupportText = createComponent<
-  GridTileTitleSupportTextProps
->(function GridTileTitleSupportText(props, ref) {
-  const className = useClassNames(props, ['mdc-grid-tile__support-text']);
-  return <Tag tag="span" {...props} ref={ref} className={className} />;
-});
+export const GridTileTitleSupportText =
+  createComponent<GridTileTitleSupportTextProps>(
+    function GridTileTitleSupportText(props, ref) {
+      const className = useClassNames(props, ['mdc-grid-tile__support-text']);
+      return <Tag tag="span" {...props} ref={ref} className={className} />;
+    }
+  );

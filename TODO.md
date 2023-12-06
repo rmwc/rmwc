@@ -6,7 +6,8 @@ Below you will find a to-do list of what remains to be done.
 
 ## Build system
 
-- Support README.md in each package (fix docgen-markdown.js)
+- Move docgen-markdown script to readme packages
+  - Setup caching
 - Move docgen-props script to readme packages
   - Setup caching
 - Move docgen-examples script to readme package

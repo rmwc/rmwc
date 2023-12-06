@@ -86,7 +86,9 @@ const renderComponent = ({
 };
 
 const iconRenderMap: {
-  [key: string]: ((content: any, ...rest: any) => Exclude<React.ReactNode, "ReactText">) | undefined;
+  [key: string]:
+    | ((content: any, ...rest: any) => Exclude<React.ReactNode, 'ReactText'>)
+    | undefined;
 } = {
   ligature: renderLigature,
   className: renderClassName,
