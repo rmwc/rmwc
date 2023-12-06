@@ -175,20 +175,20 @@ export class CollapsibleList extends React.Component<
     const { handle } = this.props;
     handle.props.onKeyDown && handle.props.onKeyDown(evt);
 
-    switch (evt.which) {
-      case 13:
+    switch (evt.key) {
+      case 'Enter':
         this.toggleOpen(!this.state.open);
         return;
-      case 39:
+      case 'ArrowRight':
         this.toggleOpen(true);
         return;
-      case 38:
-      case 40:
-      case 9:
-        const isBack = evt.shiftKey || evt.which === 38;
+      case 'ArrowUp':
+      case 'ArrowDown':
+      case 'Tab':
+        const isBack = evt.shiftKey || evt.key === 'ArrowUp';
         this.correctFocus(isBack);
         return;
-      case 37:
+      case 'ArrowLeft':
         this.toggleOpen(false);
         return;
       default:

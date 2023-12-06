@@ -4,11 +4,7 @@
     "default": {
       "runner": "nx/tasks-runners/default",
       "options": {
-        "cacheableOperations": [
-          "build",
-          "lint",
-          "test"
-        ]
+        "cacheableOperations": ["build", "lint", "test"]
       }
     }
   },
@@ -18,27 +14,14 @@
   },
   "targetDefaults": {
     "build": {
-      "dependsOn": [
-        "^bootstrap",
-        "^build",
-        "bootstrap"
-      ],
-      "inputs": [
-        "production",
-        "^production"
-      ]
+      "dependsOn": ["^bootstrap", "^build", "bootstrap"],
+      "inputs": ["production", "^production"]
     },
     "serve": {
-      "dependsOn": [
-        "^bootstrap",
-        "bootstrap"
-      ]
+      "dependsOn": ["^bootstrap", "bootstrap"]
     },
     "test": {
-      "inputs": [
-        "default",
-        "^production"
-      ]
+      "inputs": ["default", "^production"]
     },
     "lint": {
       "inputs": [
@@ -55,10 +38,7 @@
     }
   },
   "namedInputs": {
-    "default": [
-      "{projectRoot}/**/*",
-      "sharedGlobals"
-    ],
+    "default": ["{projectRoot}/**/*", "sharedGlobals"],
     "production": [
       "default",
       "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",

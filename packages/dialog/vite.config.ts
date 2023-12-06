@@ -4,15 +4,24 @@ import react from '@vitejs/plugin-react';
 import * as path from 'path';
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
+import { viteStaticCopy } from 'vite-plugin-static-copy';
 
 export default defineConfig({
   cacheDir: '../../node_modules/.vite/dialog',
 
   plugins: [
     dts({
+      pathsToAliases: false,
       entryRoot: 'src',
-      tsConfigFilePath: path.join(__dirname, 'tsconfig.lib.json'),
-      skipDiagnostics: true
+      tsconfigPath: path.join(__dirname, 'tsconfig.lib.json')
+    }),
+    viteStaticCopy({
+      targets: [
+        {
+          src: 'README.md',
+          dest: '.'
+        }
+      ]
     }),
     react(),
     nxViteTsPaths()
@@ -28,9 +37,10 @@ export default defineConfig({
   build: {
     lib: {
       // Could also be a dictionary or array of multiple entry points.
-      entry: 'src/index.ts',
-      name: 'dialog',
-      fileName: 'index',
+      entry: {
+        index: 'src/index.ts',
+        styles: 'src/styles.ts'
+      },
       // Change this to the formats you want to support.
       // Don't forget to update your package.json as well.
       formats: ['es', 'cjs']

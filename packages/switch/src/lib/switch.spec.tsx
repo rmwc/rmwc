@@ -5,7 +5,7 @@ import { Switch } from './switch';
 
 describe('Switch', () => {
   test('renders', () => {
-    const { asFragment } = render(<Switch />);
+    const { asFragment } = render(<Switch label="test" />);
     expect(asFragment()).toMatchSnapshot();
   });
 

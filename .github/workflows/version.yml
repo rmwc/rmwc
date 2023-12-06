@@ -23,7 +23,7 @@ jobs:
           git config --global user.email "ci@rmwc.io"
           git config --global user.name "RMWC CI"
       - name: Use Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: '18.x'
           registry-url: 'https://registry.npmjs.org'
@@ -53,7 +53,7 @@ jobs:
       - name: 'Aplpha Prerelease'
         run: npm run -- prerelease:alpha
         if: contains(github.head_ref, '/alpha') && github.base_ref == 'next'
+      - name: 'Publish Docs'
+        run: npm run publish:docs
       - name: 'Push'
         run: git push --follow-tags
-      - name: 'Build Docs'
-        run: npm run build:docs

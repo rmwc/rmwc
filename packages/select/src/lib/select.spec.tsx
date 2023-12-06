@@ -16,6 +16,7 @@ describe('Select', () => {
   it('renders', () => {
     const { asFragment } = render(
       <Select
+        label="test"
         placeholder="Select a food"
         options={{ 1: 'Cookies', 2: 'Pizza', 3: 'Icecream' }}
       />
@@ -78,7 +79,11 @@ describe('Select', () => {
 
   it('can accept options array', () => {
     const { asFragment } = render(
-      <Select placeholder="Select a food" options={['1', '2', '3']} />
+      <Select
+        label="test"
+        placeholder="Select a food"
+        options={['1', '2', '3']}
+      />
     );
     expect(asFragment()).toMatchSnapshot();
   });
@@ -106,6 +111,7 @@ describe('Select', () => {
   it('can accept formatted options array', () => {
     const { asFragment } = render(
       <Select
+        label="test"
         placeholder="Select a food"
         options={[
           {
@@ -138,7 +144,9 @@ describe('Select', () => {
   });
 
   it('can have custom rootProps', () => {
-    const { asFragment } = render(<Select rootProps={{ name: 'test' }} />);
+    const { asFragment } = render(
+      <Select label="test" rootProps={{ name: 'test' }} />
+    );
     expect(asFragment()).toMatchSnapshot();
   });
 
@@ -269,6 +277,7 @@ describe('Select: Lifecycle', () => {
   it('Select matches snapshot when enhanced and renderToPortal', () => {
     const { asFragment } = render(
       <Select
+        label="test"
         enhanced={{ renderToPortal: true }}
         options={['Cookies', 'Pizza', 'Icecream']}
         defaultValue="Cookies"

@@ -34,6 +34,7 @@ export * as tabs from './readmes/tabs';
 export * as textfield from './readmes/textfield';
 export * as theme from './readmes/theme';
 export * as tooltip from './readmes/tooltip';
+export * as rcTooltip from './readmes/rc-tooltip';
 export * as topAppBar from './readmes/top-app-bar';
 export * as touchTarget from './readmes/touch-target';
 export * as typography from './readmes/typography';

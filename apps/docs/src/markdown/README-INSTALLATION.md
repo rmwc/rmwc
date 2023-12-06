@@ -123,11 +123,9 @@ module.exports = {
 };
 ```
 
-## Typescript and Flow Setup
+## Typescript
 
-There are no additional steps to get Typescript working for your project. RMWC ships with declarations right alongside the components, so there is no need to install anything from `definitely-typed`.
-
-Flow types were previously available in versions 4.x.x and below. Some work has been done to convert to Typescript to FlowTypes, but it has been tabled due to the complexities of building and maintaining an automated conversion. If you're intersted in restoring Flow support, please see issue [#407: Support Flow Types](https://github.com/jamesmfriedman/rmwc/issues/407)
+There are no additional steps to get Typescript working for your project. RMWC ships with declarations right alongside the components, so there is no need to install anything from `definitely-typed`. Flow types were previously available in versions 4.x.x and below.
 
 ## Testing with RMWC
 

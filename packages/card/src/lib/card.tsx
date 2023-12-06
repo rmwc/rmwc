@@ -34,20 +34,19 @@ export interface CardMediaProps {
 }
 
 /** Media area that displays a custom background-image with background-size: cover */
-export const CardMedia = createComponent<CardMediaProps>(function CardMedia(
-  props,
-  ref
-) {
-  const { square, sixteenByNine, ...rest } = props;
-  const className = useClassNames(props, [
-    'mdc-card__media',
-    {
-      'mdc-card__media--square': square,
-      'mdc-card__media--16-9': sixteenByNine
-    }
-  ]);
-  return <Tag tag="section" {...rest} ref={ref} className={className} />;
-});
+export const CardMedia = createComponent<CardMediaProps>(
+  function CardMedia(props, ref) {
+    const { square, sixteenByNine, ...rest } = props;
+    const className = useClassNames(props, [
+      'mdc-card__media',
+      {
+        'mdc-card__media--square': square,
+        'mdc-card__media--16-9': sixteenByNine
+      }
+    ]);
+    return <Tag tag="section" {...rest} ref={ref} className={className} />;
+  }
+);
 
 /** An absolutely-positioned box the same size as the media area, for displaying a title or icon on top of the background-image */
 export interface CardMediaContentProps {}
@@ -67,19 +66,18 @@ export interface CardPrimaryActionProps {}
 export const CardPrimaryAction = withRipple({
   surface: false
 })(
-  createComponent<CardMediaContentProps>(function CardPrimaryAction(
-    props,
-    ref
-  ) {
-    const className = useClassNames(props, ['mdc-card__primary-action']);
-    const { children, ...rest } = props;
-    return (
-      <Tag {...rest} ref={ref} className={className}>
-        {children}
-        <div className="mdc-card__ripple"></div>
-      </Tag>
-    );
-  })
+  createComponent<CardMediaContentProps>(
+    function CardPrimaryAction(props, ref) {
+      const className = useClassNames(props, ['mdc-card__primary-action']);
+      const { children, ...rest } = props;
+      return (
+        <Tag {...rest} ref={ref} className={className}>
+          {children}
+          <div className="mdc-card__ripple"></div>
+        </Tag>
+      );
+    }
+  )
 );
 
 /** Row containing action buttons and/or icons */

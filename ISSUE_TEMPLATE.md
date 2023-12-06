@@ -1,4 +1,4 @@
-<!--- 
+<!---
 ** PLEASE READ THIS BEFORE FILING AN ISSUE **
 
 ## RMWC or MDC?

@@ -17,6 +17,27 @@
         "lintFilePatterns": ["utils/readme/**/*.{ts,tsx,js,jsx}"]
       }
     },
+    "build": {
+      "executor": "nx:noop",
+      "dependsOn": ["generate-markdown"]
+    },
+    "lib": {
+      "executor": "@nx/vite:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/readmes"
+      },
+      "configurations": {
+        "development": {
+          "mode": "development"
+        },
+        "production": {
+          "mode": "production"
+        }
+      },
+      "dependsOn": ["bootstrap"]
+    },
     "test": {
       "executor": "@nx/vite:test",
       "outputs": ["{options.reportsDirectory}"],
@@ -38,6 +59,14 @@
       "options": {
         "command": "node ./scripts/docgen-examples.js"
       }
+    },
+    "generate-markdown": {
+      "executor": "nx:run-commands",
+      "outputs": [],
+      "options": {
+        "command": "node ./scripts/docgen-markdown.mjs"
+      },
+      "dependsOn": ["lib"]
     }
   }
 }
