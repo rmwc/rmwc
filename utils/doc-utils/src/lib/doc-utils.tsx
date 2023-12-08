@@ -28,7 +28,8 @@ class DocumentComponent extends React.Component<DocumentComponentProps> {
       }>;
     } = {
       name: displayName,
-      description: (propsDef?.documentation?.contentsRaw) || '', props: []
+      description: propsDef?.documentation?.contentsRaw || '',
+      props: []
     };
 
     def.props = propsDef
@@ -240,7 +241,9 @@ function DocsTitle({ children }: Readonly<{ children: React.ReactNode }>) {
   return <h1>{children}</h1>;
 }
 
-export function DocsSubtitle({ children }: Readonly<{ children: React.ReactNode }>) {
+export function DocsSubtitle({
+  children
+}: Readonly<{ children: React.ReactNode }>) {
   return <h2>{children}</h2>;
 }
 
@@ -331,7 +334,7 @@ export function DocsExample({
   center?: boolean;
 }>) {
   const { examples } = useContext(DocsContext);
-  const [code, ]= useState(() => {
+  const [code] = useState(() => {
     const cleaned = examples[index].trim();
     if (cleaned.startsWith('`') && cleaned.endsWith('`')) {
       return cleaned.slice(1, cleaned.length - 1);
