@@ -172,15 +172,18 @@ export default function Readme() {
       <DocsExample label="Checkboxes">
         {function Example() {
           const shoppingList = ['Cookies', 'Pizza', 'Icecream'];
-          const [selectedIndex, setSelectedIndex] = React.useState<number[]>([]);
+          const [selectedIndex, setSelectedIndex] = React.useState<number[]>(
+            []
+          );
 
           //@ts-ignore
           const handleSelect = (evt) => {
-            setSelectedIndex((indices) => 
+            setSelectedIndex((indices) =>
               indices.includes(evt.detail.index)
                 ? indices.filter((_) => _ !== evt.detail.index)
-                : [...indices, evt.detail.index]            
-            )};
+                : [...indices, evt.detail.index]
+            );
+          };
 
           return (
             <List
@@ -203,11 +206,13 @@ export default function Readme() {
 
       <DocsExample label="Switches">
         {function Example() {
-          const [checked, setChecked] = React.useState(new Map<string, boolean>([
-            ["Cookies", false],
-            ["Pizza", false],
-            ["Icecream", false],
-          ]));
+          const [checked, setChecked] = React.useState(
+            new Map<string, boolean>([
+              ['Cookies', false],
+              ['Pizza', false],
+              ['Icecream', false]
+            ])
+          );
 
           return (
             <List>
@@ -215,12 +220,12 @@ export default function Readme() {
                 <ListItem
                   key={key}
                   onClick={() =>
-                    setChecked((prev)  => new Map(prev).set(key, !prev.get(key)))
+                    setChecked((prev) => new Map(prev).set(key, !prev.get(key)))
                   }
                 >
                   {key}&nbsp;
                   <ListItemMeta>
-                    <Switch checked={checked.get(key)}/>
+                    <Switch checked={checked.get(key)} />
                   </ListItemMeta>
                 </ListItem>
               ))}

@@ -227,7 +227,9 @@ function Br() {
   return <>{'\n'}</>;
 }
 
-export function DocsSubtitle({ children }: Readonly<{ children: React.ReactNode }>) {
+export function DocsSubtitle({
+  children
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <>
       ## {children}
