@@ -18,7 +18,6 @@ const useDrawerFoundationFactory = (
 ) =>
   function useDrawerFoundation(props: DrawerProps & React.HTMLProps<any>) {
     const focusTrapRef = useRef<FocusTrap>();
-
     const { foundation, ...elements } = useFoundation({
       props,
       elements: {
@@ -28,8 +27,10 @@ const useDrawerFoundationFactory = (
       foundation: ({ rootEl, emit, getProps }) => {
         let previousFocusEl: HTMLElement;
 
-        const f = new MDCConstructor({
-          addClass: (className: string) => rootEl.addClass(className),
+        return new MDCConstructor({
+          //This delayes adding the class until next animation frame, fixes issue with draw getting stuck in open state
+          addClass: (className: string) =>
+            window.requestAnimationFrame(() => rootEl.addClass(className)),
           removeClass: (className: string) => rootEl.removeClass(className),
           hasClass: (className: string) => rootEl.hasClass(className),
           elementHasClass: (element: HTMLElement, className: string) =>
@@ -39,8 +40,7 @@ const useDrawerFoundationFactory = (
           },
           restoreFocus: () => {
             if (
-              rootEl.ref &&
-              rootEl.ref.contains(document.activeElement) &&
+              rootEl?.ref?.contains(document.activeElement) &&
               previousFocusEl
             ) {
               previousFocusEl.focus();
@@ -55,7 +55,7 @@ const useDrawerFoundationFactory = (
             }
           },
           notifyClose: () => {
-            //emit('onClose', {}, true /* shouldBubble */);
+            emit('onClose', {}, true /* shouldBubble */);
           },
           notifyOpen: () => {
             emit('onOpen', {}, true /* shouldBubble */);
@@ -72,21 +72,22 @@ const useDrawerFoundationFactory = (
           }
         });
 
+        // THIS SEEMS NOT TO BE NEEDED ANYMORE
         // Fixes a very annoying issue where the menu isn't stateful
         // this allows us to keep the menu open based on its controlled prop.
-        const existingClose = f.close.bind(f);
-        const newClose = () => {
-          emit('onClose', {});
+        // const existingClose = f.close.bind(f);
+        // const newClose = () => {
+        //   emit('onClose', {});
 
-          setTimeout(() => {
-            if (!getProps().open) {
-              existingClose();
-            }
-          });
-        };
-        f.close = newClose;
+        //   setTimeout(() => {
+        //     if (!getProps().open) {
+        //       existingClose();
+        //     }
+        //   });
+        // };
+        // f.close = newClose;
 
-        return f;
+        // return f;
       }
     });
 
