@@ -6,10 +6,9 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 
 ## [14.0.4-alpha.0](https://github.com/rmwc/rmwc/compare/v14.0.3...v14.0.4-alpha.0) (2023-12-05)
 
-
 ### Bug Fixes
 
-* fixed missing css export and updated docsite ([1bd6179](https://github.com/rmwc/rmwc/commit/1bd6179e7c97edf85c7ede43f7b30b5ac96d6122))
+- fixed missing css export and updated docsite ([1bd6179](https://github.com/rmwc/rmwc/commit/1bd6179e7c97edf85c7ede43f7b30b5ac96d6122))
 
 ## [14.0.3](https://github.com/rmwc/rmwc/compare/v14.0.3-alpha.0...v14.0.3) (2023-11-30)
 

@@ -5,6 +5,7 @@ import { createPortal } from 'react-dom';
 import { LiveEditor, LiveError, LivePreview, LiveProvider } from 'react-live';
 import ReactMarkdown from 'react-markdown';
 import * as rmwc from 'rmwc';
+import { themes } from 'prism-react-renderer';
 
 interface DocumentComponentProps {
   docs: { [key: string]: any };
@@ -371,6 +372,7 @@ function DocsExampleBase({
 }) {
   return (
     <LiveProvider
+      theme={themes.vsLight}
       code={code}
       scope={rmwc}
       noInline={!!codeOnly}
