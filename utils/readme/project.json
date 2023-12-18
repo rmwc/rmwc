@@ -50,7 +50,7 @@
       "executor": "nx:run-commands",
       "outputs": [],
       "options": {
-        "command": "node ./scripts/docgen-props.js"
+        "command": "node --max-old-space-size=16384 ./scripts/docgen-props.mjs"
       }
     },
     "generate-examples": {
