@@ -111,7 +111,7 @@ export class FoundationElement<Props extends {}, ElementType = HTMLElement> {
     );
 
     // handle className
-    const mergedClasses = classNames(className, [...this._classes]); 
+    const mergedClasses = classNames(className, [...this._classes]);
 
     // handle styles
     const mergedStyles = {
@@ -237,13 +237,14 @@ export const useFoundation = <
   elements: Elements;
   api?: Api;
 }) => {
-  const [, refresh] = useReducer(x => x + 1, 0);
+  const [, refresh] = useReducer((x) => x + 1, 0);
 
   const props = useRef(inputProps);
   props.current = inputProps;
 
   const elements = useMemo(
-    () => Object.keys(elementsInput).reduce<{
+    () =>
+      Object.keys(elementsInput).reduce<{
         [key in keyof Elements]: FoundationElement<any, HTMLElement>;
       }>((acc, key: keyof Elements) => {
         acc[key] = new FoundationElement<Props, HTMLElement>(() => {

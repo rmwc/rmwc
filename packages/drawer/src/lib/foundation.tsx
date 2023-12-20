@@ -71,7 +71,6 @@ const useDrawerFoundationFactory = (
             } catch (err) {}
           }
         });
-
       }
     });
 
