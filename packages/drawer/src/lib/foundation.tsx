@@ -72,22 +72,6 @@ const useDrawerFoundationFactory = (
           }
         });
 
-        // THIS SEEMS NOT TO BE NEEDED ANYMORE
-        // Fixes a very annoying issue where the menu isn't stateful
-        // this allows us to keep the menu open based on its controlled prop.
-        // const existingClose = f.close.bind(f);
-        // const newClose = () => {
-        //   emit('onClose', {});
-
-        //   setTimeout(() => {
-        //     if (!getProps().open) {
-        //       existingClose();
-        //     }
-        //   });
-        // };
-        // f.close = newClose;
-
-        // return f;
       }
     });
 
