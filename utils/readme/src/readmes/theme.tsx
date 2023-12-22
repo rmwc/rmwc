@@ -107,7 +107,7 @@ export default function Readme() {
       <DocsP>
         Theming in `material-components-web` isn't perfect, but a few basic
         options will get you most of the way. Try using the ThemePicker at the
-        top and selecting "Shrine". You'll see that most things are colored
+        top and selecting "Miami". You'll see that most things are colored
         appropriately, but the defaults provided for things like Buttons and
         tabs still have to have their colors overridden.
       </DocsP>
