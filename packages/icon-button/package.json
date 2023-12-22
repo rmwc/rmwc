@@ -36,11 +36,11 @@
   },
   "homepage": "https://github.com/rmwc/rmwc/tree/master/packages/icon-button",
   "peerDependencies": {
-    "@material/icon-button": "^14.0.0",
     "react": ">=16.8.x",
     "react-dom": ">=16.8.x"
   },
   "dependencies": {
+    "@material/icon-button": "^14.0.0",    
     "@rmwc/base": "workspace:*",
     "@rmwc/icon": "workspace:*",
     "@rmwc/ripple": "workspace:*",

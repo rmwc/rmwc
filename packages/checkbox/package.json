@@ -37,12 +37,12 @@
   },
   "homepage": "https://github.com/rmwc/rmwc/tree/master/packages/checkbox",
   "peerDependencies": {
-    "@material/checkbox": "^14.0.0",
-    "@material/form-field": "^14.0.0",
     "react": ">=16.8.x",
     "react-dom": ">=16.8.x"
   },
   "dependencies": {
+    "@material/checkbox": "^14.0.0",
+    "@material/form-field": "^14.0.0",    
     "@rmwc/base": "workspace:*",
     "@rmwc/formfield": "workspace:*",
     "@rmwc/ripple": "workspace:*",

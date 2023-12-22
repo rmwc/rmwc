@@ -37,11 +37,11 @@
   },
   "homepage": "https://github.com/rmwc/rmwc/tree/master/packages/grid-list",
   "peerDependencies": {
-    "@material/grid-list": "^4.0.0",
     "react": ">=16.8.x",
     "react-dom": ">=16.8.x"
   },
   "dependencies": {
+    "@material/grid-list": "^4.0.0",    
     "@rmwc/base": "workspace:*",
     "@rmwc/icon": "workspace:*",
     "@rmwc/types": "workspace:*"
