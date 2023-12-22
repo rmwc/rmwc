@@ -90,7 +90,7 @@
     "@babel/preset-react": "^7.14.5",
     "@commitlint/cli": "^18.4.0",
     "@commitlint/config-conventional": "^18.1.0",
-    "@jscutlery/semver": "^3.1.0",
+    "@jscutlery/semver": "^4.2.0",
     "@nx/eslint-plugin": "17.0.3",
     "@nx/js": "17.0.3",
     "@nx/linter": "17.0.3",
