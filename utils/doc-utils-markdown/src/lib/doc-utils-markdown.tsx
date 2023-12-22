@@ -25,23 +25,19 @@ class DocumentComponent extends React.Component<DocumentComponentProps> {
       props: []
     };
 
-    def.props = propsDef
-      ? propsDef.properties
-          .map((p: any) => {
-            const description = p.documentation
-              ? p.documentation.contentsRaw
-              : '';
-            return description.includes('DEPRECATED')
-              ? null
-              : {
-                  name: p.name,
-                  description,
-                  required: !p.flags.isOptional,
-                  type: p.type
-                };
-          })
-          .filter(Boolean)
-      : [];
+    def.props = (propsDef?.properties || [])
+      .map((p: any) => {
+        const description = p.documentation ? p.documentation.contentsRaw : '';
+        return description.includes('DEPRECATED')
+          ? null
+          : {
+              name: p.name,
+              description,
+              required: !p.flags.isOptional,
+              type: p.type
+            };
+      })
+      .filter(Boolean);
 
     return def;
   }

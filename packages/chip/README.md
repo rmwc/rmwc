@@ -1,103 +1,57 @@
 # Chips
 
-> Chips represent complex entities in small blocks, such as a contact.
+Chips represent complex entities in small blocks, such as a contact.
 
 - Module **@rmwc/chip**
 - Import styles:
   - Using CSS Loader
-    - import **'@rmwc/chip/styles';**
+    - import '@rmwc/chip/styles';
   - Or include stylesheets
-    - **'@material/chips/dist/mdc.chips.css'**;
-    - **'@rmwc/icon/icon.css'**;
-    - **'@material/ripple/dist/mdc.ripple.css'**;
+    - **'@material/chips/dist/mdc.chips.css'**
+    - **'@rmwc/icon/icon.css'**
+    - **'@material/ripple/dist/mdc.ripple.css'**
 - MDC Docs: [https://material.io/develop/web/components/chips/](https://material.io/develop/web/components/chips/)
 
-Default
-
-```js
-
-<ChipSet\>
-
-  <Chip selected label\="Cookies" />
-
-  <Chip label\="Pizza" />
-
-  <Chip label\="Icecream" />
-
-</ChipSet\>
-
-
+```jsx
+<ChipSet>
+  <Chip selected label="Cookies" />
+  <Chip label="Pizza" />
+  <Chip label="Icecream" />
+</ChipSet>
 ```
 
-With Icons
-
-```js
-
-<ChipSet\>
-
-  <Chip icon\="favorite" label\="Cookies" trailingIcon\="close" />
-
-</ChipSet\>
-
-
+```jsx
+<ChipSet>
+  <Chip icon="favorite" label="Cookies" trailingIcon="close" />
+</ChipSet>
 ```
 
-Event Handling
-
-```js
-
+```jsx
 function Example() {
-
-  const \[selected, setSelected\] \= React.useState(false);
-
+  const [selected, setSelected] = React.useState(false);
   return (
-
-    <ChipSet\>
-
+    <ChipSet>
       <Chip
-
-        key\="my-chip"
-
-        label\="Click Me"
-
+        key="my-chip"
+        label="Click Me"
         checkmark
-
-        selected\={selected}
-
-        onRemove\={(evt) \=> console.log('onRemove', evt.detail)}
-
-        onInteraction\={(evt) \=> {
-
+        selected={selected}
+        onRemove={(evt) => console.log('onRemove', evt.detail)}
+        onInteraction={(evt) => {
           console.log('onInteraction', evt.detail);
-
           setSelected(!selected);
-
         }}
-
-        trailingIcon\="close"
-
+        trailingIcon="close"
       />
-
-    </ChipSet\>
-
+    </ChipSet>
   );
-
 }
-
-
 ```
 
-Disabled
-
-```js
-
-<ChipSet\>
-
-  <Chip label\="Cookies" disabled />
-
-</ChipSet\>
-
-
+```jsx
+<ChipSet>
+  <Chip label="Cookies" disabled />
+</ChipSet>
 ```
 
 ## Layout grid chip sets / Listbox chip sets
@@ -108,158 +62,110 @@ Layout grid chip sets follow the layout grid interaction pattern. They contain e
 
 Listbox chip sets follow the follow the listbox interaction pattern They contain filter chips chips.
 
-Grid
-
-```js
-
+```jsx
 function Example() {
-
-  const \[selected, setSelected\] \= React.useState({
-
+  const [selected, setSelected] = React.useState({
     cookies: false,
-
     pizza: false,
-
     icecream: false
-
   });
-
-  const toggleSelected \= (key) \=>
-
+  const toggleSelected = (key) =>
     setSelected({
-
       ...selected,
-
-      \[key\]: !selected\[key\]
-
+      [key]: !selected[key]
     });
 
   return (
-
-    <ChipSet role\="grid"\>
-
+    <ChipSet role="grid">
       <Chip
-
-        selected\={selected.cookies}
-
+        selected={selected.cookies}
         checkmark
-
-        onInteraction\={() \=> toggleSelected('cookies')}
-
-        label\="Cookies"
-
+        onInteraction={() => toggleSelected('cookies')}
+        label="Cookies"
       />
-
       <Chip
-
-        selected\={selected.pizza}
-
+        selected={selected.pizza}
         checkmark
-
-        onInteraction\={() \=> toggleSelected('pizza')}
-
-        icon\="local\_pizza"
-
-        label\="Pizza"
-
+        onInteraction={() => toggleSelected('pizza')}
+        icon="local_pizza"
+        label="Pizza"
       />
-
       <Chip
-
-        selected\={selected.icecream}
-
+        selected={selected.icecream}
         checkmark
-
-        onInteraction\={() \=> toggleSelected('icecream')}
-
-        icon\="favorite\_border"
-
-        label\="Icecream"
-
+        onInteraction={() => toggleSelected('icecream')}
+        icon="favorite_border"
+        label="Icecream"
       />
-
-    </ChipSet\>
-
+    </ChipSet>
   );
-
 }
-
-
 ```
 
-Listbox
-
-```js
-
+```jsx
 function Example() {
-
-  const \[selected, setSelected\] \= React.useState({
-
+  const [selected, setSelected] = React.useState({
     cookies: false,
-
     pizza: false,
-
     icecream: false
-
   });
-
-  const toggleSelected \= (key) \=>
-
+  const toggleSelected = (key) =>
     setSelected({
-
       ...selected,
-
-      \[key\]: !selected\[key\]
-
+      [key]: !selected[key]
     });
 
   return (
-
-    <ChipSet role\="listbox"\>
-
+    <ChipSet role="listbox">
       <Chip
-
-        selected\={selected.cookies}
-
-        onInteraction\={() \=> toggleSelected('cookies')}
-
-        label\="Cookies"
-
+        selected={selected.cookies}
+        onInteraction={() => toggleSelected('cookies')}
+        label="Cookies"
       />
-
       <Chip
-
-        selected\={selected.pizza}
-
-        onInteraction\={() \=> toggleSelected('pizza')}
-
-        icon\="local\_pizza"
-
-        label\="Pizza"
-
+        selected={selected.pizza}
+        onInteraction={() => toggleSelected('pizza')}
+        icon="local_pizza"
+        label="Pizza"
       />
-
       <Chip
-
-        selected\={selected.icecream}
-
-        onInteraction\={() \=> toggleSelected('icecream')}
-
-        icon\="favorite\_border"
-
-        label\="Icecream"
-
+        selected={selected.icecream}
+        onInteraction={() => toggleSelected('icecream')}
+        icon="favorite_border"
+        label="Icecream"
       />
-
-    </ChipSet\>
-
+    </ChipSet>
   );
-
 }
-
-
 ```
 
 ## Chip
 
+A Chip component.
+
+### Props
+
+| Name                      | Type                                     | Description                                                                                                                                  |
+| ------------------------- | ---------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| `checkmark`               | `boolean`                                | Includes an optional checkmark for the chips selected state.                                                                                 |
+| `children`                | `ReactNode`                              | Additional children will be rendered in the text area.                                                                                       |
+| `foundationRef`           | `Ref<MDCChipFoundation<>>`               | Advanced: A reference to the MDCFoundation.                                                                                                  |
+| `icon`                    | `ReactNode`                              | Instance of an Icon Component.                                                                                                               |
+| `id`                      | `string`                                 | An optional chip ID that will be included in callback evt.detail. If this is not passed, RMWC will attempt to use the "key" prop if present. |
+| `label`                   | `string`                                 | Text for your Chip.                                                                                                                          |
+| `onInteraction`           | `(evt: ChipOnInteractionEventT) => void` | A callback for click or enter key. This should be used over onClick for accessibility reasons.                                               |
+| `onRemove`                | `(evt: ChipOnRemoveEventT) => void`      | A callback that is fired once the chip is in an exited state from removing it.                                                               |
+| `selected`                | `boolean`                                | Makes the Chip appear selected.                                                                                                              |
+| `trailingIcon`            | `ReactNode`                              | Instance of an Icon Component.                                                                                                               |
+| `trailingIconRemovesChip` | `boolean`                                | Defaults to true. Set this to false if your trailing icon is something other than a remove button.                                           |
+
 ## ChipSet
+
+A container for multiple chips.
+
+### Props
+
+| Name       | Type                  | Description                                                           |
+| ---------- | --------------------- | --------------------------------------------------------------------- |
+| `overflow` | `boolean`             | Causes the chis to overflow instead of wrap (their default behavior). |
+| `role`     | `"grid" \| "listbox"` |                                                                       |

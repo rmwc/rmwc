@@ -1,73 +1,56 @@
 # Fabs
 
-> A floating action button (FAB) represents the primary action of a screen.
+A floating action button (FAB) represents the primary action of a screen.
 
 - Module **@rmwc/fab**
 - Import styles:
   - Using CSS Loader
-    - import **'@rmwc/fab/styles';**
+    - import '@rmwc/fab/styles';
   - Or include stylesheets
-    - **'@material/fab/dist/mdc.fab.css'**;
-    - **'@rmwc/icon/icon.css'**;
-    - **'@material/ripple/dist/mdc.ripple.css'**;
+    - **'@material/fab/dist/mdc.fab.css'**
+    - **'@rmwc/icon/icon.css'**
+    - **'@material/ripple/dist/mdc.ripple.css'**
 - MDC Docs: [https://material.io/develop/web/components/buttons/floating-action-buttons/](https://material.io/develop/web/components/buttons/floating-action-buttons/)
 
-Default
-
-```js
-
-<Fab icon\="favorite" />
-
-
+```jsx
+<Fab icon="favorite" />
 ```
 
-Mini
-
-```js
-
-<Fab icon\="favorite" mini />
-
-
+```jsx
+<Fab icon="favorite" mini />
 ```
 
-Extended
-
-```js
-
-<\>
-
-  <Fab icon\="add" label\="Create" />
-
-  <Fab trailingIcon\="add" label\="Create" />
-
-  <Fab label\="Label only" />
-
-</\>
-
-
+```jsx
+<>
+  <Fab icon="add" label="Create" />
+  <Fab trailingIcon="add" label="Create" />
+  <Fab label="Label only" />
+</>
 ```
 
-Theming
-
-```js
-
-<\>
-
-  <Fab icon\="favorite\_outline" theme\={\['primaryBg', 'onPrimary'\]} />
-
+```jsx
+<>
+  <Fab icon="favorite_outline" theme={['primaryBg', 'onPrimary']} />
   <Fab
-
-    icon\="delete"
-
-    style\={{ backgroundColor: 'var(--mdc-theme-error)' }}
-
-    theme\={\['onError'\]}
-
+    icon="delete"
+    style={{ backgroundColor: 'var(--mdc-theme-error)' }}
+    theme={['onError']}
   />
-
-</\>
-
-
+</>
 ```
 
 ## Fab
+
+A floating action button component
+
+### Props
+
+| Name           | Type          | Description                                                                            |
+| -------------- | ------------- | -------------------------------------------------------------------------------------- |
+| `children`     | `ReactNode`   | Content specified as children.                                                         |
+| `exited`       | `boolean`     | Animates the FAB out of view. When this class is removed, the FAB will return to view. |
+| `icon`         | `IconPropT`   | The icon for the FAB                                                                   |
+| `label`        | `any`         | Make the Fab extended with a label.                                                    |
+| `mini`         | `boolean`     | Make the Fab smaller.                                                                  |
+| `ripple`       | `RipplePropT` | Adds a ripple effect to the component                                                  |
+| `trailingIcon` | `IconPropT`   | A trialing icon for the FAB                                                            |

@@ -38,6 +38,7 @@
       "@rmwc/dialog": ["packages/dialog/src/index.ts"],
       "@rmwc/dialog/styles": ["packages/dialog/src/styles.ts"],
       "@rmwc/doc-utils": ["utils/doc-utils/src/index.ts"],
+      "@rmwc/doc-utils-markdown": ["utils/doc-utils-markdown/src/index.ts"],
       "@rmwc/drawer": ["packages/drawer/src/index.ts"],
       "@rmwc/drawer/styles": ["packages/drawer/src/styles.ts"],
       "@rmwc/elevation": ["packages/elevation/src/index.ts"],

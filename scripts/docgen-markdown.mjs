@@ -5,26 +5,10 @@ import { dirname } from 'path';
 import { fileURLToPath } from 'url';
 import * as fs from 'fs';
 import getPackages from './get-packages.js';
-import { default as TurndownService } from 'turndown';
-import * as prettier from 'prettier';
+import * as moduleAlias from 'module-alias';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, '../');
-
-const turndownService = TurndownService({
-  headingStyle: 'atx',
-  bulletListMarker: '-',
-  preformattedCode: true,
-  strongDelimiter: '__',
-  codeBlockStyle: 'fenced'
-});
-
-turndownService.addRule('code', {
-  filter: ['pre'],
-  replacement: function (content) {
-    return '```js' + content + '```';
-  }
-});
 
 const distPath = path.resolve(
   'dist',
@@ -42,22 +26,17 @@ const getMarkdown = async (packageName) => {
 
   const promises = readmeFiles.map(async (fName) => {
     const docPath = path.resolve(distPath, fName);
-    const htmlOutputName = packageName + '.html';
     const { default: Component } = await import(docPath);
-    const htmlContent = renderToStaticMarkup(React.createElement(Component));
-    const markdown = await prettier.format(
-      turndownService.turndown(htmlContent),
-      {
-        parser: 'markdown'
-      }
-    );
+    const content = renderToStaticMarkup(React.createElement(Component))
+      .replace(/&gt;/g, '>')
+      .replace(/&lt;/g, '<')
+      .replace(/&#x27;/g, "'")
+      .replace(/&quot;/g, '"');
+
     const readmeOutputName = path.resolve('packages', packageName, 'README.md');
 
     return new Promise((resolve) => {
-      fs.writeFile(path.resolve(distPath, htmlOutputName), htmlContent, () => {
-        resolve();
-      });
-      fs.writeFile(readmeOutputName, markdown, () => {
+      fs.writeFile(readmeOutputName, content, () => {
         console.log('Writing file: ', readmeOutputName);
         resolve();
       });
