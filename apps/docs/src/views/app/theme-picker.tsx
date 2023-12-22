@@ -60,9 +60,9 @@ const THEMES: { [key: string]: { [key: string]: string } } = {
     '--mdc-theme-primary': '#303030',
     '--mdc-theme-secondary': '#661fff'
   },
-  Shrine: {
-    '--mdc-theme-primary': '#ffdbcf',
-    '--mdc-theme-secondary': '#feeae6'
+  Miami: {
+    '--mdc-theme-primary': '#fc318c',
+    '--mdc-theme-secondary': '#31fcee'
   },
   Dark: {
     '--mdc-theme-background': '#212121',
