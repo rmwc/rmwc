@@ -37,11 +37,11 @@
   },
   "homepage": "https://github.com/rmwc/rmwc/tree/master/packages/image-list",
   "peerDependencies": {
-    "@material/image-list": "^14.0.0",
     "react": ">=16.8.x",
     "react-dom": ">=16.8.x"
   },
   "dependencies": {
+    "@material/image-list": "^14.0.0",    
     "@rmwc/base": "workspace:*",
     "@rmwc/types": "workspace:*"
   }

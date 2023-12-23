@@ -23,7 +23,7 @@ export default function Readme() {
       title="RC Tooltips"
       lead="Tooltips display informative text when users hover over, focus on, or tap an element."
       module="@rmwc/rc-tooltip"
-      styles={['@rmwc/rc-tooltip/tooltip.css']}
+      styles={['@rmwc/rc-tooltip/rc-tooltip.css']}
       examples={examples}
       addon
     >

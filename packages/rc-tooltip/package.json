@@ -15,7 +15,7 @@
       "types": "./styles.d.ts",
       "require": "./styles.js"
     },
-    "./tooltip.css": "./rc-tooltip.css"
+    "./rc-tooltip.css": "./rc-tooltip.css"
   },
   "sideEffects": [
     "**/*.css"

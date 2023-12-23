@@ -36,14 +36,14 @@
   },
   "homepage": "https://github.com/rmwc/rmwc/tree/master/packages/tabs",
   "peerDependencies": {
-    "@material/tab": "^14.0.0",
-    "@material/tab-bar": "^14.0.0",
-    "@material/tab-indicator": "^14.0.0",
-    "@material/tab-scroller": "^14.0.0",
     "react": ">=16.8.x",
     "react-dom": ">=16.8.x"
   },
   "dependencies": {
+    "@material/tab": "^14.0.0",
+    "@material/tab-bar": "^14.0.0",
+    "@material/tab-indicator": "^14.0.0",
+    "@material/tab-scroller": "^14.0.0",    
     "@rmwc/base": "workspace:*",
     "@rmwc/icon": "workspace:*",
     "@rmwc/ripple": "workspace:*",
