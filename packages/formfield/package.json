@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/formfield",
-  "version": "14.0.5-alpha.0",
+  "version": "14.0.5",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
