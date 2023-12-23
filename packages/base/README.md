@@ -1,14 +1,12 @@
 # Portal
 
-> The Portal component will let you render components to a portal.
+The Portal component will let you render components to a portal.
 
 - Module **@rmwc/base**
 
 ## Portal
 
-Default
-
-```js
+```jsx
 <Portal />
 ```
 
@@ -18,31 +16,17 @@ The PortalProvider component is an optional component that provides a global con
 
 The PortalProvider component is used by importing it into your project and wrapping it around your application or component tree similar to TypographyProvider.
 
-Default
-
-```js
-
+```jsx
 function App() {
-
   return (
-
-    <PortalProvider\>
-
-      <div\>
-
-        {/\* Other components here \*/}
-
+    <PortalProvider>
+      <div>
+        {/* Other components here */}
         <Portal />
-
-      </div\>
-
-    </PortalProvider\>
-
+      </div>
+    </PortalProvider>
   );
-
 }
-
-
 ```
 
 In this example, the PortalProvider component is used to wrap the Portal component. Elements rendered to the portal will now render directly to the portalElement stored in the portal context instead of retrieving the Portal element using `document.getElementById()`.

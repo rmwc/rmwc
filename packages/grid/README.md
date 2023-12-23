@@ -1,164 +1,123 @@
-# Layout Grid
+# Grid Lists
 
-> Material design’s responsive UI is based on a column-variate grid layout. It has 12 columns on desktop, 8 columns on tablet and 4 columns on phone.
+Grid lists are an alternative to standard list views. Note that as of Material Components Web 6.0.0, this component is deprecated.
 
-- Module **@rmwc/grid**
+- Module **@rmwc/grid-list**
 - Import styles:
   - Using CSS Loader
-    - import **'@rmwc/grid/styles';**
+    - import '@rmwc/grid-list/styles';
   - Or include stylesheets
-    - **'@material/layout-grid/dist/mdc.layout-grid.css'**;
-- MDC Docs: [https://material.io/develop/web/components/layout-grid/](https://material.io/develop/web/components/layout-grid/)
+    - **'@material/grid-list/dist/mdc.grid-list.css'**
+- MDC Docs: [https://material.io/components/web/catalog/grid-lists/](https://material.io/components/web/catalog/grid-lists/)
 
-Standard Grid
+```jsx
+function Example() {
+  const [state, setState] = React.useState({
+    tileGutter1: false,
+    headerCaption: false,
+    twolineCaption: false,
+    withIconAlignStart: false,
+    tileAspect: '1x1'
+  });
 
-```js
-
-<Grid\>
-
-  <GridCell span\={4}\>1</GridCell\>
-
-  <GridCell span\={4}\>2</GridCell\>
-
-  <GridCell span\={4}\>3</GridCell\>
-
-</Grid\>
-
-
-```
-
-Sub Grids
-
-```js
-
-<Grid\>
-
-  {/\* If you need additional control over height of your grid, or need to add SubGrids, you can add your own GridRow components. \*/}
-
-  <GridRow\>
-
-    <GridCell span\={6}\>1</GridCell\>
-
-    <GridCell span\={6}\>
-
-      <GridRow\>
-
-        <GridCell span\={6}\>a</GridCell\>
-
-        <GridCell span\={6}\>b</GridCell\>
-
-      </GridRow\>
-
-    </GridCell\>
-
-  </GridRow\>
-
-</Grid\>
-
-
-```
-
-## Grid
-
-## GridCell
-
-## GridRow
-
-ridTilePrimary\>
-
+  return (
+    <>
+      <GridList
+        tileGutter1={state.tileGutter1}
+        headerCaption={state.headerCaption}
+        twolineCaption={state.twolineCaption}
+        withIconAlignStart={state.withIconAlignStart}
+        tileAspect={state.tileAspect}
+      >
+        {Array(8)
+          .fill(undefined)
+          .map((val, i) => (
+            <GridTile key={i}>
+              <GridTilePrimary>
                 <GridTilePrimaryContent
-
-                  src\="images/backgrounds/mb-bg-fb-06.png"
-
-                  alt\="test"
-
+                  src="images/backgrounds/mb-bg-fb-06.png"
+                  alt="test"
                 />
-
-              </GridTilePrimary\>
-
-              <GridTileSecondary\>
-
-                <GridTileIcon icon\="info" />
-
-                <GridTileTitle\>Tile {i + 1}</GridTileTitle\>
-
-              </GridTileSecondary\>
-
-            </GridTile\>
-
+              </GridTilePrimary>
+              <GridTileSecondary>
+                <GridTileIcon icon="info" />
+                <GridTileTitle>Tile {i + 1}</GridTileTitle>
+              </GridTileSecondary>
+            </GridTile>
           ))}
+      </GridList>
 
-      </GridList\>
-
-      {\[
-
+      {[
         'tileGutter1',
-
         'headerCaption',
-
         'twoLineCaption',
-
         'withIconAlignStart'
-
-      \].map((key) \=> (
-
+      ].map((key) => (
         <Checkbox
-
-          key\={key}
-
-          label\={key}
-
-          onChange\={(evt) \=>
-
-            setState({ ...state, \[key\]: evt.currentTarget.checked })
-
+          key={key}
+          label={key}
+          onChange={(evt) =>
+            setState({ ...state, [key]: evt.currentTarget.checked })
           }
-
         />
-
       ))}
 
       <Select
-
-        value\={state.tileAspect}
-
-        onChange\={(evt) \=>
-
+        value={state.tileAspect}
+        onChange={(evt) =>
           setState({
-
             ...state,
-
             tileAspect: String(evt.currentTarget.value)
-
           })
-
         }
-
-        label\="tileAspect"
-
-        options\={\['1x1', '16x9', '2x3', '3x2', '4x3', '3x4'\]}
-
+        label="tileAspect"
+        options={['1x1', '16x9', '2x3', '3x2', '4x3', '3x4']}
       />
-
-    </\>
-
-);
-
+    </>
+  );
 }
-
 ```
 
 ## GridList
 
+Grid List Component
+
+### Props
+
+| Name                 | Type                                                  | Description                                                 |
+| -------------------- | ----------------------------------------------------- | ----------------------------------------------------------- |
+| `headerCaption`      | `boolean`                                             | Move the caption to the top of the card.                    |
+| `tileAspect`         | `"1x1" \| "16x9" \| "2x3" \| "3x2" \| "4x3" \| "3x4"` | One of the following values: 1x1, 16x9, 2x3, 3x2, 4x3, 3x4. |
+| `tileGutter1`        | `boolean`                                             | Use a 1px gutter.                                           |
+| `twolineCaption`     | `boolean`                                             | Make the caption two lines.                                 |
+| `withIconAlignStart` | `boolean`                                             | Leaves space for a start aligned icon.                      |
+
 ## GridTile
+
+A grid tile
 
 ## GridTileIcon
 
+The icon for a Grid tile. This is an instance of Icon component.
+
+### Props
+
+| Name   | Type        | Description                                                                                            |
+| ------ | ----------- | ------------------------------------------------------------------------------------------------------ |
+| `icon` | `IconPropT` | The icon to use. This can be a string for a font icon, a url, or whatever the selected strategy needs. |
+
 ## GridTilePrimary
+
+The primary content for a Grid tile
 
 ## GridTileSecondary
 
+The secondary content for a Grid tile
+
 ## GridTileTitleSupportText
 
+Supporting Text for the Grid Tile
+
 ## GridTileTitle
-```
+
+The title for a Grid tile

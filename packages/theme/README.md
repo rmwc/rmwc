@@ -1,14 +1,14 @@
 # Theming
 
-> MDC Theme is a foundational module that themes MDC Web components.
+MDC Theme is a foundational module that themes MDC Web components.
 
 - Module **@rmwc/theme**
 - Import styles:
   - Using CSS Loader
-    - import **'@rmwc/theme/styles';**
+    - import '@rmwc/theme/styles';
   - Or include stylesheets
-    - **'@material/theme/dist/mdc.theme.css'**;
-    - **'@rmwc/theme/theme.css'**;
+    - **'@material/theme/dist/mdc.theme.css'**
+    - **'@rmwc/theme/theme.css'**
 - MDC Docs: [https://material.io/develop/web/components/theme/](https://material.io/develop/web/components/theme/)
 
 ## Theme Options
@@ -17,97 +17,52 @@ The Theme module fully embraces using CSS variables for runtime theming. This al
 
 Support for theming inside of `material-components-web` is not without issue, so RMWC maintains a theme fixes file to correct any anomalies for you. Please make sure you include both!
 
-\*\*Important\*\* You should include the theme style sheets BEFORE any of your other styles.
+**Important** You should include the theme style sheets BEFORE any of your other styles.
 
-```js
-
-<\>
-
-  <div style\={{ backgroundColor: '#ddd' }}\>
-
-    {\[
-
+```jsx
+<>
+  <div style={{ backgroundColor: '#ddd' }}>
+    {[
       'primary',
-
       'secondary',
-
       'error',
-
       'background',
-
       'surface',
-
       'primaryBg',
-
       'secondaryBg',
-
       'textPrimaryOnBackground',
-
       'textSecondaryOnBackground',
-
       'textHintOnBackground',
-
       'textDisabledOnBackground',
-
       'textIconOnBackground',
-
       'textPrimaryOnLight',
-
       'textSecondaryOnLight',
-
       'textHintOnLight',
-
       'textDisabledOnLight',
-
       'textIconOnLight'
-
-    \].map((theme, i) \=> (
-
-      <Theme use\={theme} key\={i}\>
-
+    ].map((theme, i) => (
+      <Theme use={theme} key={i}>
         {theme}
-
-      </Theme\>
-
+      </Theme>
     ))}
-
-  </div\>
-
-  <div style\={{ backgroundColor: '#333' }}\>
-
-    {\[
-
+  </div>
+  <div style={{ backgroundColor: '#333' }}>
+    {[
       'onPrimary',
-
       'onSecondary',
-
       'onError',
-
       'textPrimaryOnDark',
-
       'textSecondaryOnDark',
-
       'textHintOnDark',
-
       'textDisabledOnDark',
-
       'textIconOnDark'
-
-    \].map((theme, i) \=> (
-
-      <Theme use\={theme} key\={i}\>
-
+    ].map((theme, i) => (
+      <Theme use={theme} key={i}>
         {theme}
-
-      </Theme\>
-
+      </Theme>
     ))}
-
-  </div\>
-
-</\>
-
-
+  </div>
+</>
 ```
 
 ## ThemeProvider
@@ -116,148 +71,98 @@ The `ThemeProvider` is an optional component that allows you to specify theme co
 
 You don't have to pass in all options. The `ThemeProvider` will automatically adjust some of the values like `onSurface` white or black text depending on colors contrast ratio.
 
-Theming in `material-components-web` isn't perfect, but a few basic options will get you most of the way. Try using the ThemePicker at the top and selecting "Shrine". You'll see that most things are colored appropriately, but the defaults provided for things like Buttons and tabs still have to have their colors overridden.
+Theming in `material-components-web` isn't perfect, but a few basic options will get you most of the way. Try using the ThemePicker at the top and selecting "Miami". You'll see that most things are colored appropriately, but the defaults provided for things like Buttons and tabs still have to have their colors overridden.
 
-Defaults
-
-```js
-
-<\>
-
-  <Button raised\>Cookies</Button\>
-
-  <Checkbox label\="Pizza" defaultChecked />
-
-  <Radio label\="Icecream" defaultChecked />
-
-</\>
-
-
+```jsx
+<>
+  <Button raised>Cookies</Button>
+  <Checkbox label="Pizza" defaultChecked />
+  <Radio label="Icecream" defaultChecked />
+</>
 ```
 
-With Provider
-
-```js
-
+```jsx
 <ThemeProvider
-
-  options\={{
-
+  options={{
     primary: 'red',
-
     secondary: 'blue'
-
   }}
-
-\>
-
-  <Button raised\>Cookies</Button\>
-
-  <Checkbox label\="Pizza" defaultChecked />
-
-  <Radio label\="Icecream" defaultChecked />
-
-</ThemeProvider\>
-
-
+>
+  <Button raised>Cookies</Button>
+  <Checkbox label="Pizza" defaultChecked />
+  <Radio label="Icecream" defaultChecked />
+</ThemeProvider>
 ```
 
-More Options
-
-```js
-
+```jsx
 <ThemeProvider
-
-  options\={{
-
+  options={{
     primary: 'lightpink',
-
     secondary: 'black',
-
     onPrimary: '#000',
-
     textPrimaryOnBackground: 'black'
-
   }}
-
-\>
-
-  <Button raised\>Cookies</Button\>
-
-  <Checkbox label\="Pizza" defaultChecked />
-
-  <Radio label\="Icecream" defaultChecked />
-
-</ThemeProvider\>
-
-
+>
+  <Button raised>Cookies</Button>
+  <Checkbox label="Pizza" defaultChecked />
+  <Radio label="Icecream" defaultChecked />
+</ThemeProvider>
 ```
 
 ## Theme Component
 
 The Theme component allows you to apply theme colors to RMWC components, or components of your own. Almost every component in RMWC has a `theme` prop that you can use that takes the same options as the `Theme` component's `use` prop.
 
-Custom
-
-```js
-
-<Theme use\={\['primaryBg', 'onPrimary'\]} wrap\>
-
-  {/\* Add Theme colors to your own components. \*/}
-
-  <div style\={{ width: '4rem', height: '4rem', padding: '1rem' }}\>
-
-    Cookies
-
-  </div\>
-
-</Theme\>
-
-
+```jsx
+<Theme use={['primaryBg', 'onPrimary']} wrap>
+  {/* Add Theme colors to your own components. */}
+  <div style={{ width: '4rem', height: '4rem', padding: '1rem' }}>Cookies</div>
+</Theme>
 ```
 
-Theme Prop
+```jsx
+<>
+  {/* These two examples are roughly equivalent. */}
+  <Theme use={['secondaryBg', 'onSecondary']} wrap>
+    <Button>Pizza</Button>
+  </Theme>
 
-```js
-
-<\>
-
-  {/\* These two examples are roughly equivalent. \*/}
-
-  <Theme use\={\['secondaryBg', 'onSecondary'\]} wrap\>
-
-    <Button\>Pizza</Button\>
-
-  </Theme\>
-
-  <Button theme\={\['secondaryBg', 'onSecondary'\]}\>Pizza</Button\>
-
-</\>
-
-
+  <Button theme={['secondaryBg', 'onSecondary']}>Pizza</Button>
+</>
 ```
 
-Typography
-
-```js
-
-<\>
-
-  {/\* Text is one of the cases where \`wrap\` is not required. By default \`Theme\` will insert \`span\` tags. \*/}
-
-  <h3\>
-
-    I <Theme use\="primary"\>Want</Theme\>{' '}
-
-    <Theme use\="secondary"\>Icecream</Theme\>
-
-  </h3\>
-
-</\>
-
-
+```jsx
+<>
+  {/* Text is one of the cases where `wrap` is not required. By default `Theme` will insert `span` tags. */}
+  <h3>
+    I <Theme use="primary">Want</Theme> <Theme use="secondary">Icecream</Theme>
+  </h3>
+</>
 ```
 
 ## ThemeProvider
 
+A ThemeProvider. This sets theme colors for its child tree.
+
+### Props
+
+| Name       | Type                        | Description                                                                                                                                          |
+| ---------- | --------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `children` | `ReactNode`                 | Children to render                                                                                                                                   |
+| `options`  | `{ [key: string]: string }` | Any theme option pointing to a valid CSS value.                                                                                                      |
+| `style`    | `Object`                    | Additional standard inline styles that will be merged into the style tag.                                                                            |
+| `wrap`     | `boolean`                   | Instead of injecting a div tag, wrap a child component by merging the theme styles directly onto it. Useful when you don't want to mess with layout. |
+
 ## Theme
+
+A Theme Component.
+
+### Props
+
+| Name   | Type         | Description                                                                                                   |
+| ------ | ------------ | ------------------------------------------------------------------------------------------------------------- |
+| `use`  | `ThemePropT` | A theme option as a string, a space separated string for multiple values, or an array of valid theme options. |
+| `wrap` | `boolean`    | Collapse the styles directly onto the child component. This eliminates the need for a wrapping                |
+
+`span`
+element and may be required for applying things like background-colors. |

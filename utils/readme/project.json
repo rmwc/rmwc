@@ -47,26 +47,32 @@
       }
     },
     "generate-props": {
-      "executor": "nx:run-commands",
+      "executor": "nx:run-script",
       "outputs": [],
       "options": {
-        "command": "node --max-old-space-size=16384 ./scripts/docgen-props.mjs"
+        "script": "docgen:props"
       }
     },
     "generate-examples": {
-      "executor": "nx:run-commands",
+      "executor": "nx:run-script",
       "outputs": [],
       "options": {
-        "command": "node ./scripts/docgen-examples.js"
+        "script": "docgen:examples"
       }
     },
     "generate-markdown": {
-      "executor": "nx:run-commands",
+      "executor": "nx:run-script",
       "outputs": [],
       "options": {
-        "command": "node ./scripts/docgen-markdown.mjs"
+        "script": "docgen:markdown"
       },
-      "dependsOn": ["lib"]
+      "dependsOn": [
+        "lib",
+        {
+          "projects": "doc-utils-markdown",
+          "target": "build"
+        }
+      ]
     }
   }
 }

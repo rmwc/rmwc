@@ -12,12 +12,6 @@ coverage:
 
 ignore:
   - 'node_modules/'
-  - 'src/base/utils/document-component.tsx'
-  - 'src/base/test-polyfill.js'
-  - 'src/index.tsx.js'
-  - 'src/setupTests.js'
-  - 'src/rmwc/**/*'
-  - 'src/**/*.story.*'
-  - 'src/**/*.spec.*'
-  - 'src/**/readme*'
-  - 'src/doc-utils*'
+  - 'utils/'
+  - 'packages/**/*.story.*'
+  - 'packages/**/*.spec.*'

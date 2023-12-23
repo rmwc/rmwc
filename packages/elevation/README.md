@@ -1,86 +1,62 @@
 # Elevation
 
-> Elevation is the relative distance between two surfaces along the z-axis.
+Elevation is the relative distance between two surfaces along the z-axis.
 
 - Module **@rmwc/elevation**
 - Import styles:
   - Using CSS Loader
-    - import **'@rmwc/elevation/styles';**
+    - import '@rmwc/elevation/styles';
   - Or include stylesheets
-    - **'@material/elevation/dist/mdc.elevation.css'**;
+    - **'@material/elevation/dist/mdc.elevation.css'**
 - MDC Docs: [https://material.io/develop/web/components/elevation/](https://material.io/develop/web/components/elevation/)
 
-Elevation
-
-```js
-
-<\>
-
+```jsx
+<>
   {Array(25)
-
     .fill(undefined)
-
-    .map((val, i) \=> (
-
-      <Elevation z\={i} key\={i}\>
-
+    .map((val, i) => (
+      <Elevation z={i} key={i}>
         {i}dp
-
-      </Elevation\>
-
+      </Elevation>
     ))}
-
-</\>
-
-
+</>
 ```
 
-Transition
-
-```js
-
+```jsx
 function Example() {
-
-  const \[elevation, setElevation\] \= React.useState(0);
+  const [elevation, setElevation] = React.useState(0);
 
   return (
-
     <Elevation
-
-      z\={elevation}
-
+      z={elevation}
       transition
-
-      onMouseOver\={() \=> setElevation(24)}
-
-      onMouseOut\={() \=> setElevation(0)}
-
-    \>
-
+      onMouseOver={() => setElevation(24)}
+      onMouseOut={() => setElevation(0)}
+    >
       Hover Me {elevation}dp
-
-    </Elevation\>
-
+    </Elevation>
   );
-
 }
-
-
 ```
 
 ## Wrapping Children
 
 You can avoid adding extra DOM nodes by using the `wrap` prop on elevation. This will apply the classes directly to the child component. Additionally, Elevation is simply a `className`, so you can achieve the same effect by adding `className="mdc-elevation--z15"`.
 
-```js
-
-<Elevation z\={21} wrap\>
-
-  <span\>Wrapped!</span\>
-
-</Elevation\>
-
-
+```jsx
+<Elevation z={21} wrap>
+  <span>Wrapped!</span>
+</Elevation>
 ```
 
 ## Elevation
+
+The Elevation Component
+
+### Props
+
+| Name         | Type               | Description                                                                                             |
+| ------------ | ------------------ | ------------------------------------------------------------------------------------------------------- |
+| `transition` | `boolean`          | Allows for smooth transitions between elevations when the z value changes.                              |
+| `wrap`       | `boolean`          | Allows the elevation classes to be merged onto the child component instead of creating an new DOM node. |
+| `z`          | `string \| number` | A number from 0 - 24 for different levels of elevation                                                  |
