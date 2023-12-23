@@ -5,7 +5,6 @@ import { dirname } from 'path';
 import { fileURLToPath } from 'url';
 import * as fs from 'fs';
 import getPackages from './get-packages.js';
-import * as moduleAlias from 'module-alias';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, '../');
