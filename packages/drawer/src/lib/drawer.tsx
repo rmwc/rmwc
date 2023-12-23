@@ -62,7 +62,6 @@ const DrawerRoot = createComponent<DrawerProps>(
         'mdc-drawer--modal': modal
       }
     ]);
-
     return <Tag tag="aside" {...rest} ref={ref} className={className} />;
   }
 );

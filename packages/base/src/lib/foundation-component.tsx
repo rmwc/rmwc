@@ -2,7 +2,7 @@
 import { MDCFoundation } from '@material/base';
 import { SpecificEventListener } from '@material/base/types';
 import classNames from 'classnames';
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useReducer } from 'react';
 import { handleRef } from './component';
 import { eventsMap } from './utils/events-map';
 import { toCamel } from './utils/strings';
@@ -98,7 +98,7 @@ export class FoundationElement<Props extends {}, ElementType = HTMLElement> {
           typeof possibleCallback === 'function' &&
           typeof existingCallback === 'function'
         ) {
-          const wrappedCallback = (evt: any) => {
+          const wrappedCallback = (evt: Event) => {
             existingCallback(evt);
             return possibleCallback(evt);
           };
@@ -237,7 +237,7 @@ export const useFoundation = <
   elements: Elements;
   api?: Api;
 }) => {
-  const [, setIteration] = useState(0);
+  const [, refresh] = useReducer((x) => x + 1, 0);
 
   const props = useRef(inputProps);
   props.current = inputProps;
@@ -248,7 +248,7 @@ export const useFoundation = <
         [key in keyof Elements]: FoundationElement<any, HTMLElement>;
       }>((acc, key: keyof Elements) => {
         acc[key] = new FoundationElement<Props, HTMLElement>(() => {
-          setIteration((val) => val + 1);
+          refresh();
         });
         return acc;
       }, {} as any),
