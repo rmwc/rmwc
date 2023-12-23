@@ -37,11 +37,11 @@
   },
   "homepage": "https://github.com/rmwc/rmwc/tree/master/packages/line-ripple",
   "peerDependencies": {
-    "@material/line-ripple": "^14.0.0",
     "react": ">=16.8.x",
     "react-dom": ">=16.8.x"
   },
   "dependencies": {
+    "@material/line-ripple": "^14.0.0",    
     "@rmwc/base": "workspace:*",
     "@rmwc/types": "workspace:*"
   }

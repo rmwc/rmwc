@@ -37,13 +37,13 @@
   },
   "homepage": "https://github.com/rmwc/rmwc/tree/master/packages/menu",
   "peerDependencies": {
-    "@material/animation": "^14.0.0",
-    "@material/menu": "^14.0.0",
-    "@material/menu-surface": "^14.0.0",
     "react": ">=16.8.x",
     "react-dom": ">=16.8.x"
   },
   "dependencies": {
+    "@material/animation": "^14.0.0",
+    "@material/menu": "^14.0.0",
+    "@material/menu-surface": "^14.0.0",    
     "@rmwc/base": "workspace:*",
     "@rmwc/list": "workspace:*",
     "@rmwc/types": "workspace:*"

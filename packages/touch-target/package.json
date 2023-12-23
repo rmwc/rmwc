@@ -36,11 +36,11 @@
   },
   "homepage": "https://github.com/rmwc/rmwc/tree/master/packages/touch-target",
   "peerDependencies": {
-    "@material/touch-target": "^14.0.0",
     "react": ">=16.8.x",
     "react-dom": ">=16.8.x"
   },
   "dependencies": {
+    "@material/touch-target": "^14.0.0",    
     "@rmwc/base": "workspace:*"
   }
 }

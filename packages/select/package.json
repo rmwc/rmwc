@@ -38,11 +38,11 @@
   },
   "homepage": "https://github.com/rmwc/rmwc/tree/master/packages/select",
   "peerDependencies": {
-    "@material/select": "^14.0.0",
     "react": ">=16.8.x",
     "react-dom": ">=16.8.x"
   },
   "dependencies": {
+    "@material/select": "^14.0.0",    
     "@rmwc/base": "workspace:*",
     "@rmwc/floating-label": "workspace:*",
     "@rmwc/icon": "workspace:*",
