@@ -10,6 +10,13 @@ import {
 } from './drawer';
 
 describe('Drawer', () => {
+  beforeEach(() => {
+    vi.spyOn(window, 'requestAnimationFrame').mockImplementation((cb) => {
+      cb(0);
+      return 0;
+    });
+  });
+
   it('Drawer renders', () => {
     const { asFragment } = render(
       <Drawer>
