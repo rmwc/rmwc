@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/switch",
-  "version": "14.0.4",
+  "version": "14.0.5-alpha.0",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
@@ -40,7 +40,7 @@
     "react-dom": ">=16.8.x"
   },
   "dependencies": {
-    "@material/switch": "^14.0.0",    
+    "@material/switch": "^14.0.0",
     "@rmwc/base": "workspace:*",
     "@rmwc/formfield": "workspace:*",
     "@rmwc/ripple": "workspace:*",

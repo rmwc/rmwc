@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/tooltip",
-  "version": "14.0.4",
+  "version": "14.0.5-alpha.0",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
@@ -41,7 +41,7 @@
     "react-dom": ">=16.8.x"
   },
   "dependencies": {
-    "@material/tooltip": "^14.0.0",    
+    "@material/tooltip": "^14.0.0",
     "@rmwc/base": "workspace:*",
     "@rmwc/provider": "workspace:*"
   }

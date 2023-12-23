@@ -1,7 +1,7 @@
 {
   "name": "@rmwc/source",
   "author": "rmwc",
-  "version": "14.0.4",
+  "version": "14.0.5-alpha.0",
   "private": true,
   "homepage": "https://rmwc.io",
   "description": "RMWC is a React UI Kit built on Google's official Material Components Web library.",

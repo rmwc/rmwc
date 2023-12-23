@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/textfield",
-  "version": "14.0.4",
+  "version": "14.0.5-alpha.0",
   "description": "RMWC TextField component",
   "main": "./index.js",
   "types": "./index.d.ts",
@@ -42,7 +42,7 @@
     "react-dom": ">=16.8.x"
   },
   "dependencies": {
-    "@material/textfield": "^14.0.0",    
+    "@material/textfield": "^14.0.0",
     "@rmwc/base": "workspace:*",
     "@rmwc/floating-label": "workspace:*",
     "@rmwc/icon": "workspace:*",

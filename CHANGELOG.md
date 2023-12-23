@@ -2,6 +2,21 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [14.0.5-alpha.0](https://github.com/rmwc/rmwc/compare/v14.0.4...v14.0.5-alpha.0) (2023-12-23)
+
+
+### Features
+
+* **List:** selectedIndex && a11y enhancements ([2001413](https://github.com/rmwc/rmwc/commit/2001413cb3945c440324e1684f6414a4db1ca17f))
+
+
+### Bug Fixes
+
+* **drawer:** fixes drawer getting stuck in open state ([989e442](https://github.com/rmwc/rmwc/commit/989e442b13189a485ae7a1f9df10612e4dfd577c))
+* **mdc:** Correct missing range slider input background bar ([d8d8f43](https://github.com/rmwc/rmwc/commit/d8d8f43bf86a05a028a56d8e04775f9366206a5d))
+* **rc-tooltip:** fixed css exports ([a985b48](https://github.com/rmwc/rmwc/commit/a985b484a7e711a68ef9de3ce008dac0540ce0bc))
+* **themes:** make Shrine theme text accessible ([5fb8cac](https://github.com/rmwc/rmwc/commit/5fb8cac6e68e92cf5f832f20e0e003fa2014bdaf))
+
 ## [14.0.4](https://github.com/rmwc/rmwc/compare/v14.0.4-alpha.0...v14.0.4) (2023-12-05)
 
 ## [14.0.4-alpha.0](https://github.com/rmwc/rmwc/compare/v14.0.3...v14.0.4-alpha.0) (2023-12-05)

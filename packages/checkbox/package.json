@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/checkbox",
-  "version": "14.0.4",
+  "version": "14.0.5-alpha.0",
   "description": "RMWC Checkbox component",
   "main": "./index.js",
   "types": "./index.d.ts",
@@ -42,7 +42,7 @@
   },
   "dependencies": {
     "@material/checkbox": "^14.0.0",
-    "@material/form-field": "^14.0.0",    
+    "@material/form-field": "^14.0.0",
     "@rmwc/base": "workspace:*",
     "@rmwc/formfield": "workspace:*",
     "@rmwc/ripple": "workspace:*",
