@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/segmented-button",
-  "version": "14.0.4",
+  "version": "14.0.5",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
@@ -40,7 +40,7 @@
     "react-dom": ">=16.8.x"
   },
   "dependencies": {
-    "@material/segmented-button": "^14.0.0",    
+    "@material/segmented-button": "^14.0.0",
     "@rmwc/base": "^14.0.2-alpha.0",
     "@rmwc/icon": "^14.0.2-alpha.0",
     "@rmwc/provider": "^14.0.2-alpha.0",

@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/data-table",
-  "version": "14.0.4",
+  "version": "14.0.5",
   "description": "RMWC Data Table Component",
   "main": "./index.js",
   "types": "./index.d.ts",
@@ -42,7 +42,7 @@
     "react-dom": ">=16.8.x"
   },
   "dependencies": {
-    "@material/data-table": "^14.0.0",    
+    "@material/data-table": "^14.0.0",
     "@rmwc/base": "workspace:*",
     "@rmwc/checkbox": "workspace:*",
     "@rmwc/icon": "workspace:*",

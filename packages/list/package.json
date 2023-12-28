@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/list",
-  "version": "14.0.4",
+  "version": "14.0.5",
   "description": "RMWC List component",
   "main": "./index.js",
   "types": "./index.d.ts",
@@ -47,7 +47,7 @@
     "react-dom": ">=16.8.x"
   },
   "dependencies": {
-    "@material/list": "^14.0.0",    
+    "@material/list": "^14.0.0",
     "@rmwc/base": "workspace:*",
     "@rmwc/icon": "workspace:*",
     "@rmwc/provider": "workspace:*",

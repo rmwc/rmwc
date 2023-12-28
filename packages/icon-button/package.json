@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/icon-button",
-  "version": "14.0.4",
+  "version": "14.0.5",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
@@ -40,7 +40,7 @@
     "react-dom": ">=16.8.x"
   },
   "dependencies": {
-    "@material/icon-button": "^14.0.0",    
+    "@material/icon-button": "^14.0.0",
     "@rmwc/base": "workspace:*",
     "@rmwc/icon": "workspace:*",
     "@rmwc/ripple": "workspace:*",
