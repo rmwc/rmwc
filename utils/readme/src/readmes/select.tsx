@@ -12,6 +12,8 @@ import propsSrc from '../generated-props/select.json';
 
 import { Select } from '@rmwc/select';
 
+import './readmes.css';
+
 export default function Readme() {
   return (
     <Docs
@@ -34,7 +36,8 @@ export default function Readme() {
     >
       <DocsSubtitle>Select Styles</DocsSubtitle>
       <DocsP>
-        Selects come in three different styles: standard,outlined, and enhanced.
+        Selects come in three different styles: standard, outlined, and
+        enhanced.
       </DocsP>
 
       <DocsExample label="Standard">
@@ -72,6 +75,21 @@ export default function Readme() {
           helpText="Choose your favorite snack..."
           icon="favorite"
           options={['Cookies', 'Pizza', 'Icecream']}
+        />
+      </DocsExample>
+
+      <DocsP>
+        Select v14 from material-components-web has no width by default. The
+        RMWC team has taken an active choice of giving Select a default width of
+        200px to stay true to the RMWC principle of introducing no breaking
+        changes.
+      </DocsP>
+
+      <DocsExample label="With overwritten width">
+        <Select
+          label="Overwritten width"
+          options={['Cookies', 'Pizza', 'Icecream']}
+          className="rmwc-select-readme-example"
         />
       </DocsExample>
 

@@ -366,6 +366,7 @@ export const Select: RMWC.ComponentType<
 
   const className = useClassNames(props, [
     'mdc-select',
+    'rmwc-select__default-width',
     {
       'mdc-select--outlined': !!outlined,
       'mdc-select--filled': !outlined,

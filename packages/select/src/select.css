@@ -14,3 +14,7 @@
   opacity: 0;
   z-index: 1;
 }
+
+.rmwc-select__default-width {
+  width: 200px;
+}
