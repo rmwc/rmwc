@@ -2,6 +2,14 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [14.0.6-alpha.0](https://github.com/rmwc/rmwc/compare/v14.0.5...v14.0.6-alpha.0) (2024-01-09)
+
+
+### Bug Fixes
+
+* add default width to select ([a06761a](https://github.com/rmwc/rmwc/commit/a06761a5e4055615c2d7f0a82386b7068c22cf1b))
+* **select:** fixed syntax error in readme ([7cd55c0](https://github.com/rmwc/rmwc/commit/7cd55c034ce1f325c66871518271d9cfac235b73))
+
 ## [14.0.5](https://github.com/rmwc/rmwc/compare/v14.0.5-alpha.0...v14.0.5) (2023-12-23)
 
 ## [14.0.5-alpha.0](https://github.com/rmwc/rmwc/compare/v14.0.4...v14.0.5-alpha.0) (2023-12-23)
