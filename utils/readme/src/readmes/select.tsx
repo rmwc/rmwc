@@ -122,8 +122,7 @@ export default function Readme() {
         be both controlled and uncontrolled.
       </DocsP>
       <DocsExample label="Controlled">
-        {/* @ts-ignore */}
-        {function () {
+        {function Example() {
           const [value, setValue] = React.useState('Cookies');
           return (
             <Select
@@ -154,7 +153,6 @@ export default function Readme() {
       </DocsP>
 
       <DocsExample label="Formatted Options">
-        {/* @ts-ignore */}
         {function Example() {
           // A controlled select Using a formatted array of options
           const options = [
