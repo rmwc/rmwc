@@ -3,7 +3,7 @@
 exports[`Select > can accept formatted options array 1`] = `
 <DocumentFragment>
   <div
-    class="mdc-select mdc-select--filled"
+    class="mdc-select rmwc-select__default-width mdc-select--filled"
   >
     <div
       aria-disabled="false"
@@ -82,7 +82,7 @@ exports[`Select > can accept formatted options array 1`] = `
 exports[`Select > can accept options array 1`] = `
 <DocumentFragment>
   <div
-    class="mdc-select mdc-select--filled"
+    class="mdc-select rmwc-select__default-width mdc-select--filled"
   >
     <div
       aria-disabled="false"
@@ -159,7 +159,7 @@ exports[`Select > can accept options array 1`] = `
 exports[`Select > can have custom rootProps 1`] = `
 <DocumentFragment>
   <div
-    class="mdc-select mdc-select--filled"
+    class="mdc-select rmwc-select__default-width mdc-select--filled"
     name="test"
   >
     <div
@@ -218,7 +218,7 @@ exports[`Select > can have custom rootProps 1`] = `
 exports[`Select > renders 1`] = `
 <DocumentFragment>
   <div
-    class="mdc-select mdc-select--filled"
+    class="mdc-select rmwc-select__default-width mdc-select--filled"
   >
     <div
       aria-disabled="false"
@@ -298,7 +298,7 @@ exports[`Select: Lifecycle > Select matches snapshot when enhanced and renderToP
     class="mdc-menu-surface--anchor"
   >
     <div
-      class="mdc-select mdc-select--filled"
+      class="mdc-select rmwc-select__default-width mdc-select--filled"
     >
       <div
         aria-disabled="false"
