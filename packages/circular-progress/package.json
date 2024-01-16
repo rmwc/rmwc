@@ -16,9 +16,6 @@
     },
     "./circular-progress.css": "./circular-progress.css"
   },
-  "sideEffects": [
-    "**/*.css"
-  ],
   "publishConfig": {
     "access": "public"
   },

@@ -17,9 +17,6 @@
     },
     "./theme.css": "./theme.css"
   },
-  "sideEffects": [
-    "**/*.css"
-  ],
   "publishConfig": {
     "access": "public"
   },

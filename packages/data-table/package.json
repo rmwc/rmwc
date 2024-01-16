@@ -17,9 +17,6 @@
     },
     "./data-table.css": "./data-table.css"
   },
-  "sideEffects": [
-    "**/*.css"
-  ],
   "publishConfig": {
     "access": "public"
   },

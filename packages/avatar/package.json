@@ -17,9 +17,6 @@
     },
     "./avatar.css": "./avatar.css"
   },
-  "sideEffects": [
-    "**/*.css"
-  ],
   "publishConfig": {
     "access": "public"
   },

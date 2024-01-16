@@ -17,9 +17,6 @@
     },
     "./rc-tooltip.css": "./rc-tooltip.css"
   },
-  "sideEffects": [
-    "**/*.css"
-  ],
   "publishConfig": {
     "access": "public"
   },

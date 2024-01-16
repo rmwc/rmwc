@@ -17,9 +17,6 @@
     },
     "./textfield.css": "./textfield.css"
   },
-  "sideEffects": [
-    "**/*.css"
-  ],
   "publishConfig": {
     "access": "public"
   },
