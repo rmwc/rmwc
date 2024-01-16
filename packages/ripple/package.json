@@ -17,9 +17,6 @@
     },
     "./ripple.css": "./ripple.css"
   },
-  "sideEffects": [
-    "**/*.css"
-  ],
   "publishConfig": {
     "access": "public"
   },

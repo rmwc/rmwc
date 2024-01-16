@@ -17,9 +17,6 @@
     },
     "./chip.css": "./chip.css"
   },
-  "sideEffects": [
-    "**/*.css"
-  ],
   "publishConfig": {
     "access": "public"
   },

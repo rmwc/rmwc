@@ -17,9 +17,6 @@
     },
     "./icon.css": "./icon.css"
   },
-  "sideEffects": [
-    "**/*.css"
-  ],
   "publishConfig": {
     "access": "public"
   },

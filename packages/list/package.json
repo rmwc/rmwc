@@ -22,9 +22,6 @@
     "./collapsible-list.css": "./collapsible-list.css",
     "./list-item.css": "./list-item.css"
   },
-  "sideEffects": [
-    "**/*.css"
-  ],
   "publishConfig": {
     "access": "public"
   },

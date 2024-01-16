@@ -16,9 +16,6 @@
     },
     "./badge.css": "./badge.css"
   },
-  "sideEffects": [
-    "**/*.css"
-  ],
   "publishConfig": {
     "access": "public"
   },

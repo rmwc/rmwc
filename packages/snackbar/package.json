@@ -17,9 +17,6 @@
     },
     "./snackbar.css": "./snackbar.css"
   },
-  "sideEffects": [
-    "**/*.css"
-  ],
   "publishConfig": {
     "access": "public"
   },

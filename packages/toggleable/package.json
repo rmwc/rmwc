@@ -11,9 +11,6 @@
       "require": "./index.js"
     }
   },
-  "sideEffects": [
-    "**/*.css"
-  ],
   "publishConfig": {
     "access": "public"
   },

@@ -16,9 +16,6 @@
       "require": "./styles.js"
     }
   },
-  "sideEffects": [
-    "**/*.css"
-  ],
   "publishConfig": {
     "access": "public"
   },

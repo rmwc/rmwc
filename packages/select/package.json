@@ -17,9 +17,6 @@
     },
     "./select.css": "./select.css"
   },
-  "sideEffects": [
-    "**/*.css"
-  ],
   "publishConfig": {
     "access": "public"
   },
