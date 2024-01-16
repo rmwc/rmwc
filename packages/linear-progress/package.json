@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/linear-progress",
-  "version": "14.0.7-alpha.0",
+  "version": "14.0.7",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {

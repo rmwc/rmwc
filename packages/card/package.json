@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/card",
-  "version": "14.0.7-alpha.0",
+  "version": "14.0.7",
   "description": "RMWC Card component",
   "main": "./index.js",
   "types": "./index.d.ts",
