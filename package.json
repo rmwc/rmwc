@@ -111,7 +111,7 @@
     "@types/node": "^20.10.0",
     "@types/rc-tooltip": "3.7.10",
     "@types/react": "^18.2.38",
-    "@types/react-dom": "^18.2.17",
+    "@types/react-dom": "^18.2.18",
     "@typescript-eslint/eslint-plugin": "^6.13.2",
     "@typescript-eslint/parser": "^6.12.0",
     "@vitejs/plugin-react": "~4.2.0",
