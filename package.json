@@ -97,7 +97,7 @@
     "@jscutlery/semver": "^4.1.0",
     "@nx/eslint-plugin": "17.1.3",
     "@nx/js": "17.1.3",
-    "@nx/linter": "17.1.3",
+    "@nx/linter": "17.2.8",
     "@nx/react": "17.2.8",
     "@nx/storybook": "17.2.8",
     "@nx/vite": "17.1.3",
