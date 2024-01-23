@@ -173,9 +173,8 @@ describe('Select', () => {
         options={{ 1: 'Cookies', 2: 'Pizza', 3: 'Icecream' }}
       />
     );
-    expect(container.getElementsByClassName('mdc-select')[0]).toHaveClass(
-      'my-custom-classname'
-    );
+    const classes = container.getElementsByClassName('mdc-select')[0].classList;
+    expect(classes[classes.length - 1]).toEqual('my-custom-classname');
   });
 
   it('can autofocus', () => {

@@ -7,10 +7,10 @@ exports[`Menu > Menu Item can be nested 1`] = `
   >
     <div
       aria-hidden="false"
-      class="mdc-menu mdc-menu-surface mdc-menu-surface--animating-open"
+      class="mdc-menu-surface mdc-menu mdc-menu-surface--animating-open"
     >
       <ul
-        class="mdc-list mdc-menu__items mdc-deprecated-list"
+        class="mdc-deprecated-list mdc-list mdc-menu__items"
         role="menu"
       >
         <li
@@ -111,11 +111,11 @@ exports[`Menu > SimpleMenu renders 1`] = `
   >
     <div
       aria-hidden="false"
-      class="mdc-menu mdc-menu-surface mdc-menu-surface--animating-open mdc-menu-surface--is-open-below mdc-menu-surface--open"
+      class="mdc-menu-surface mdc-menu mdc-menu-surface--animating-open mdc-menu-surface--is-open-below mdc-menu-surface--open"
       style="transform-origin: left top; left: 0px; top: 0px; max-height: 736px;"
     >
       <ul
-        class="mdc-list mdc-menu__items mdc-deprecated-list"
+        class="mdc-deprecated-list mdc-list mdc-menu__items"
         role="menu"
       >
         <li
@@ -181,10 +181,10 @@ exports[`Menu > renders 1`] = `
 <DocumentFragment>
   <div
     aria-hidden="false"
-    class="mdc-menu mdc-menu-surface mdc-menu-surface--animating-open"
+    class="mdc-menu-surface mdc-menu mdc-menu-surface--animating-open"
   >
     <ul
-      class="mdc-list mdc-menu__items mdc-deprecated-list"
+      class="mdc-deprecated-list mdc-list mdc-menu__items"
       role="menu"
     >
       <li
