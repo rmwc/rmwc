@@ -6,7 +6,7 @@ exports[`Checkbox > renders 1`] = `
     class="mdc-form-field"
   >
     <div
-      class="mdc-checkbox mdc-ripple-upgraded--unbounded mdc-checkbox--upgraded"
+      class="mdc-ripple-upgraded--unbounded mdc-checkbox--upgraded mdc-checkbox"
       data-mdc-ripple-is-unbounded="true"
     >
       <input
