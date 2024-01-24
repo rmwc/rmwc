@@ -7,6 +7,7 @@ import dts from 'vite-plugin-dts';
 import { viteStaticCopy } from 'vite-plugin-static-copy';
 
 export default defineConfig({
+  root: __dirname,
   cacheDir: '../../node_modules/.vite/provider',
 
   plugins: [
@@ -67,6 +68,7 @@ export default defineConfig({
     },
     environment: 'jsdom',
     include: ['src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
-    setupFiles: ['../../setupTests.ts']
+    setupFiles: ['./setupTests.ts'],
+    reporters: ['default']
   }
 });

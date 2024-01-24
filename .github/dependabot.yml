@@ -5,6 +5,7 @@ updates:
     schedule:
       interval: 'daily'
     ignore:
+      - dependency-name: '@nx/*'
       - dependency-name: '@material/*'
       - dependency-name: 'material-components-web'
     target-branch: 'next'
@@ -13,6 +14,7 @@ updates:
     schedule:
       interval: 'daily'
     ignore:
+      - dependency-name: '@nx/*'    
       - dependency-name: '@material/*'
       - dependency-name: 'material-components-web'
   - package-ecosystem: github-actions
