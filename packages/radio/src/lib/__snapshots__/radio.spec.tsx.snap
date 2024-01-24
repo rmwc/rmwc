@@ -6,7 +6,7 @@ exports[`Radio > renders 1`] = `
     class="mdc-form-field"
   >
     <div
-      class="mdc-ripple-upgraded--unbounded mdc-radio"
+      class="mdc-radio mdc-ripple-upgraded--unbounded"
       data-mdc-ripple-is-unbounded="true"
     >
       <input

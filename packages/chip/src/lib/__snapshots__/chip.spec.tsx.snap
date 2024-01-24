@@ -11,7 +11,7 @@ exports[`Chip > renders 1`] = `
       role="presentation"
     >
       <span
-        class="mdc-ripple-surface mdc-evolution-chip rmwc-chip"
+        class="mdc-evolution-chip rmwc-chip mdc-ripple-surface"
         role="row"
       >
         <span
