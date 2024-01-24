@@ -36,7 +36,7 @@ exports[`Card > renders 1`] = `
         class="mdc-card__action-buttons"
       >
         <button
-          class="mdc-card__action mdc-card__action--button mdc-button"
+          class="mdc-button mdc-card__action mdc-card__action--button"
         >
           <div
             class="mdc-button__ripple"
@@ -54,7 +54,7 @@ exports[`Card > renders 1`] = `
           </span>
         </button>
         <button
-          class="mdc-card__action mdc-card__action--button mdc-button"
+          class="mdc-button mdc-card__action mdc-card__action--button"
         >
           <div
             class="mdc-button__ripple"
@@ -72,7 +72,7 @@ exports[`Card > renders 1`] = `
           </span>
         </button>
         <button
-          class="mdc-card__action mdc-card__action--button mdc-button"
+          class="mdc-button mdc-card__action mdc-card__action--button"
         >
           <div
             class="mdc-button__ripple"
@@ -94,7 +94,7 @@ exports[`Card > renders 1`] = `
         class="mdc-card__action-icons"
       >
         <button
-          class="mdc-ripple-upgraded--unbounded mdc-card__action mdc-card__action--icon mdc-icon-button--display-flex mdc-icon-button"
+          class="mdc-icon-button mdc-ripple-upgraded--unbounded mdc-card__action mdc-card__action--icon mdc-icon-button--display-flex"
           data-mdc-ripple-is-unbounded="true"
           role="button"
           tabindex="0"
@@ -111,7 +111,7 @@ exports[`Card > renders 1`] = `
         </button>
         <button
           aria-pressed="false"
-          class="mdc-ripple-upgraded--unbounded mdc-card__action mdc-card__action--icon mdc-icon-button--display-flex mdc-icon-button"
+          class="mdc-icon-button mdc-ripple-upgraded--unbounded mdc-card__action mdc-card__action--icon mdc-icon-button--display-flex"
           data-mdc-ripple-is-unbounded="true"
           role="button"
           tabindex="0"
@@ -131,7 +131,7 @@ exports[`Card > renders 1`] = `
           </i>
         </button>
         <button
-          class="mdc-ripple-upgraded--unbounded mdc-card__action mdc-card__action--icon mdc-icon-button--display-flex mdc-icon-button"
+          class="mdc-icon-button mdc-ripple-upgraded--unbounded mdc-card__action mdc-card__action--icon mdc-icon-button--display-flex"
           data-mdc-ripple-is-unbounded="true"
           role="button"
           tabindex="0"
@@ -147,7 +147,7 @@ exports[`Card > renders 1`] = `
           </i>
         </button>
         <button
-          class="mdc-ripple-upgraded--unbounded mdc-card__action mdc-card__action--icon mdc-icon-button--display-flex mdc-icon-button"
+          class="mdc-icon-button mdc-ripple-upgraded--unbounded mdc-card__action mdc-card__action--icon mdc-icon-button--display-flex"
           data-mdc-ripple-is-unbounded="true"
           role="button"
           tabindex="0"
