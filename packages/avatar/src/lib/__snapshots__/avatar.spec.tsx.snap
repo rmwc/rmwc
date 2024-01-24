@@ -3,7 +3,7 @@
 exports[`Avatar > can be interactive 1`] = `
 <DocumentFragment>
   <span
-    class="rmwc-icon rmwc-icon--component material-icons rmwc-avatar rmwc-avatar--interactive rmwc-avatar--has-image mdc-ripple-surface"
+    class="rmwc-icon rmwc-icon--component material-icons mdc-ripple-surface rmwc-avatar rmwc-avatar--interactive rmwc-avatar--has-image"
     title=""
   >
     <div

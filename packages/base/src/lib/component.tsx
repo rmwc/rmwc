@@ -39,10 +39,10 @@ export const useClassNames = <Props extends { [key: string]: any }>(
   classNames: ClassNamesInputT<Props>
 ) => {
   return classNamesFunc(
+    props.className,
     ...(props.theme ? parseThemeOptions(props.theme) : []),
     // @ts-ignore
-    ...(typeof classNames === 'function' ? classNames(props) : classNames),
-    props.className
+    ...(typeof classNames === 'function' ? classNames(props) : classNames)
   );
 };
 
