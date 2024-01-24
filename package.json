@@ -92,7 +92,7 @@
     "@babel/core": "^7.23.3",
     "@babel/preset-react": "^7.23.3",
     "@commitlint/cli": "^18.4.3",
-    "@commitlint/config-conventional": "^18.4.3",
+    "@commitlint/config-conventional": "^18.5.0",
     "@documentalist/compiler": "^5.0.0",
     "@jscutlery/semver": "^4.1.0",
     "@nx/eslint-plugin": "17.1.3",
