@@ -12,7 +12,7 @@ exports[`TopAppBar > renders 1`] = `
         class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start"
       >
         <button
-          class="mdc-ripple-upgraded--unbounded mdc-top-app-bar__navigation-icon mdc-icon-button"
+          class="mdc-icon-button mdc-ripple-upgraded--unbounded mdc-top-app-bar__navigation-icon"
           data-mdc-ripple-is-unbounded="true"
           role="button"
           tabindex="0"
@@ -39,7 +39,7 @@ exports[`TopAppBar > renders 1`] = `
         <button
           alt="Download"
           aria-label="Download"
-          class="mdc-ripple-upgraded--unbounded mdc-top-app-bar__action-item mdc-icon-button"
+          class="mdc-icon-button mdc-ripple-upgraded--unbounded mdc-top-app-bar__action-item"
           data-mdc-ripple-is-unbounded="true"
           role="button"
           tabindex="0"

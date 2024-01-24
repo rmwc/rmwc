@@ -27,7 +27,7 @@ exports[`Dialog > simple Dialog renders 1`] = `
           class="mdc-dialog__actions"
         >
           <button
-            class="mdc-dialog__button mdc-button"
+            class="mdc-button mdc-dialog__button"
             data-mdc-dialog-action="close"
           >
             <div
@@ -46,7 +46,7 @@ exports[`Dialog > simple Dialog renders 1`] = `
             </span>
           </button>
           <button
-            class="mdc-dialog__button mdc-button"
+            class="mdc-button mdc-dialog__button"
             data-mdc-dialog-action="accept"
             data-mdc-dialog-button-default="true"
           >
@@ -102,7 +102,7 @@ exports[`Dialog > simple Dialog renders with children 1`] = `
           class="mdc-dialog__actions"
         >
           <button
-            class="mdc-dialog__button mdc-button"
+            class="mdc-button mdc-dialog__button"
             data-mdc-dialog-action="close"
           >
             <div
@@ -121,7 +121,7 @@ exports[`Dialog > simple Dialog renders with children 1`] = `
             </span>
           </button>
           <button
-            class="mdc-dialog__button mdc-button"
+            class="mdc-button mdc-dialog__button"
             data-mdc-dialog-action="accept"
             data-mdc-dialog-button-default="true"
           >
@@ -172,7 +172,7 @@ exports[`Dialog > simple Dialog renders with no children 1`] = `
           class="mdc-dialog__actions"
         >
           <button
-            class="mdc-dialog__button mdc-button"
+            class="mdc-button mdc-dialog__button"
             data-mdc-dialog-action="close"
           >
             <div
@@ -191,7 +191,7 @@ exports[`Dialog > simple Dialog renders with no children 1`] = `
             </span>
           </button>
           <button
-            class="mdc-dialog__button mdc-button"
+            class="mdc-button mdc-dialog__button"
             data-mdc-dialog-action="accept"
             data-mdc-dialog-button-default="true"
           >
