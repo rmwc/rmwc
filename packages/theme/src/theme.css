@@ -123,3 +123,29 @@ body .mdc-chip__text__primary-action:focus {
 input[type='range'] {
   appearance: auto;
 }
+
+/****************************************************************
+ * Switch
+ ****************************************************************/
+/* track: Corrects missing primary color for background */
+body .mdc-switch:enabled .mdc-switch__track::after,
+body
+  .mdc-switch:enabled:hover:not(:focus):not(:active)
+  .mdc-switch__track::after,
+body .mdc-switch:enabled:focus:not(:active) .mdc-switch__track::after,
+body .mdc-switch:enabled:active .mdc-switch__track::after {
+  background: color-mix(in srgb, var(--mdc-theme-primary), white 60%);
+}
+
+/* handle: Corrects missing primary color for background  */
+body
+  .mdc-switch.mdc-switch--selected:enabled:hover:not(:focus):not(:active)
+  .mdc-switch__handle::after,
+body
+  .mdc-switch.mdc-switch--selected:enabled:focus:not(:active)
+  .mdc-switch__handle::after,
+body
+  .mdc-switch.mdc-switch--selected:enabled:active
+  .mdc-switch__handle::after {
+  background: color-mix(in srgb, var(--mdc-theme-primary), black 20%);
+}
