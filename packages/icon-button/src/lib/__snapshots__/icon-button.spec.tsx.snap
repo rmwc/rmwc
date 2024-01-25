@@ -4,7 +4,7 @@ exports[`renders as toggle 1`] = `
 <DocumentFragment>
   <button
     aria-pressed="false"
-    class="mdc-icon-button mdc-ripple-upgraded--unbounded"
+    class="mdc-ripple-upgraded--unbounded mdc-icon-button"
     data-mdc-ripple-is-unbounded="true"
     role="button"
     tabindex="0"
@@ -30,7 +30,7 @@ exports[`renders controlled 1`] = `
 <DocumentFragment>
   <button
     aria-pressed="true"
-    class="mdc-icon-button mdc-icon-button--on mdc-ripple-upgraded--unbounded mdc-icon-button--on"
+    class="mdc-ripple-upgraded--unbounded mdc-icon-button--on mdc-icon-button mdc-icon-button--on"
     data-mdc-ripple-is-unbounded="true"
     role="button"
     tabindex="0"
@@ -56,7 +56,7 @@ exports[`renders with icon as JSX 1`] = `
 <DocumentFragment>
   <button
     aria-label="Tweet it!"
-    class="mdc-icon-button mdc-ripple-upgraded--unbounded"
+    class="mdc-ripple-upgraded--unbounded mdc-icon-button"
     data-mdc-ripple-is-unbounded="true"
     role="button"
     tabindex="0"
@@ -77,7 +77,7 @@ exports[`renders with icon as JSX 1`] = `
 exports[`renders with icon as path 1`] = `
 <DocumentFragment>
   <button
-    class="mdc-icon-button mdc-ripple-upgraded--unbounded"
+    class="mdc-ripple-upgraded--unbounded mdc-icon-button"
     data-mdc-ripple-is-unbounded="true"
     role="button"
     tabindex="0"
@@ -98,7 +98,7 @@ exports[`renders with icon as string 1`] = `
 <DocumentFragment>
   <button
     aria-label="Rate this!"
-    class="mdc-icon-button mdc-ripple-upgraded--unbounded"
+    class="mdc-ripple-upgraded--unbounded mdc-icon-button"
     data-mdc-ripple-is-unbounded="true"
     role="button"
     tabindex="0"

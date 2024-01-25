@@ -10,25 +10,28 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 
 ## [14.0.6-alpha.0](https://github.com/rmwc/rmwc/compare/v14.0.5...v14.0.6-alpha.0) (2024-01-09)
 
+
 ### Bug Fixes
 
-- add default width to select ([a06761a](https://github.com/rmwc/rmwc/commit/a06761a5e4055615c2d7f0a82386b7068c22cf1b))
-- **select:** fixed syntax error in readme ([7cd55c0](https://github.com/rmwc/rmwc/commit/7cd55c034ce1f325c66871518271d9cfac235b73))
+* add default width to select ([a06761a](https://github.com/rmwc/rmwc/commit/a06761a5e4055615c2d7f0a82386b7068c22cf1b))
+* **select:** fixed syntax error in readme ([7cd55c0](https://github.com/rmwc/rmwc/commit/7cd55c034ce1f325c66871518271d9cfac235b73))
 
 ## [14.0.5](https://github.com/rmwc/rmwc/compare/v14.0.5-alpha.0...v14.0.5) (2023-12-23)
 
 ## [14.0.5-alpha.0](https://github.com/rmwc/rmwc/compare/v14.0.4...v14.0.5-alpha.0) (2023-12-23)
 
+
 ### Features
 
-- **List:** selectedIndex && a11y enhancements ([2001413](https://github.com/rmwc/rmwc/commit/2001413cb3945c440324e1684f6414a4db1ca17f))
+* **List:** selectedIndex && a11y enhancements ([2001413](https://github.com/rmwc/rmwc/commit/2001413cb3945c440324e1684f6414a4db1ca17f))
+
 
 ### Bug Fixes
 
-- **drawer:** fixes drawer getting stuck in open state ([989e442](https://github.com/rmwc/rmwc/commit/989e442b13189a485ae7a1f9df10612e4dfd577c))
-- **mdc:** Correct missing range slider input background bar ([d8d8f43](https://github.com/rmwc/rmwc/commit/d8d8f43bf86a05a028a56d8e04775f9366206a5d))
-- **rc-tooltip:** fixed css exports ([a985b48](https://github.com/rmwc/rmwc/commit/a985b484a7e711a68ef9de3ce008dac0540ce0bc))
-- **themes:** make Shrine theme text accessible ([5fb8cac](https://github.com/rmwc/rmwc/commit/5fb8cac6e68e92cf5f832f20e0e003fa2014bdaf))
+* **drawer:** fixes drawer getting stuck in open state ([989e442](https://github.com/rmwc/rmwc/commit/989e442b13189a485ae7a1f9df10612e4dfd577c))
+* **mdc:** Correct missing range slider input background bar ([d8d8f43](https://github.com/rmwc/rmwc/commit/d8d8f43bf86a05a028a56d8e04775f9366206a5d))
+* **rc-tooltip:** fixed css exports ([a985b48](https://github.com/rmwc/rmwc/commit/a985b484a7e711a68ef9de3ce008dac0540ce0bc))
+* **themes:** make Shrine theme text accessible ([5fb8cac](https://github.com/rmwc/rmwc/commit/5fb8cac6e68e92cf5f832f20e0e003fa2014bdaf))
 
 ## [14.0.4](https://github.com/rmwc/rmwc/compare/v14.0.4-alpha.0...v14.0.4) (2023-12-05)
 
