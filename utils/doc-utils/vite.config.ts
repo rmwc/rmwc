@@ -4,6 +4,7 @@ import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
+  root: __dirname,
   cacheDir: '../../node_modules/.vite/doc-utils',
 
   plugins: [react(), nxViteTsPaths()],

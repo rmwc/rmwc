@@ -1,3 +1,4 @@
 package.json
 docs
 apps/docs/public
+/.nx/cache

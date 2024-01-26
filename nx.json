@@ -1,13 +1,5 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
-  "tasksRunnerOptions": {
-    "default": {
-      "runner": "nx/tasks-runners/default",
-      "options": {
-        "cacheableOperations": ["build", "lint", "test"]
-      }
-    }
-  },
   "workspaceLayout": {
     "appsDir": "apps",
     "libsDir": "packages"
@@ -15,13 +7,15 @@
   "targetDefaults": {
     "build": {
       "dependsOn": ["^bootstrap", "^build", "bootstrap"],
-      "inputs": ["production", "^production"]
+      "inputs": ["production", "^production"],
+      "cache": true
     },
     "serve": {
       "dependsOn": ["^bootstrap", "bootstrap"]
     },
     "test": {
-      "inputs": ["default", "^production"]
+      "inputs": ["default", "^production"],
+      "cache": true
     },
     "lint": {
       "inputs": [
@@ -29,12 +23,17 @@
         "{workspaceRoot}/.eslintrc.json",
         "{workspaceRoot}/.eslintignore",
         "{workspaceRoot}/eslint.config.js"
-      ]
+      ],
+      "cache": true
     },
     "npm-deploy": {
       "options": {
         "noBuild": true
       }
+    },
+    "@nx/vite:test": {
+      "inputs": ["default", "^production"],
+      "cache": true
     }
   },
   "namedInputs": {
