@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/toggleable",
-  "version": "14.0.8",
+  "version": "14.0.9",
   "description": "RMWC toggle module",
   "main": "./index.js",
   "types": "./index.d.ts",
