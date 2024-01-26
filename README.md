@@ -32,13 +32,14 @@ Check out his other work at https://github.com/jamesmfriedman.
 
 ## Recent updates
 
-v14.0.6 is here! This release includes:
+v14.0.8 is here! This release includes:
 
 - support for material-components-web v14
 - support for react 18
 - a new and improved tooltip adhering to the Material Design principles (the old tooltip is renamed to rc-tooltip in favor for the new)
 - a new segmented button component
 - migrated from Lerna to Nx and Vite ⚡
+- various bugfixes introduced in v14.0.0
 
 View the changelog for detailed updates: [https://github.com/rmwc/rmwc/blob/master/CHANGELOG.md](https://github.com/rmwc/rmwc/blob/master/CHANGELOG.md)
 

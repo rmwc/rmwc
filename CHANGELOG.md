@@ -2,6 +2,23 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [14.0.8](https://github.com/rmwc/rmwc/compare/v14.0.8-alpha.0...v14.0.8) (2024-01-26)
+
+## [14.0.8-alpha.0](https://github.com/rmwc/rmwc/compare/v14.0.7...v14.0.8-alpha.0) (2024-01-26)
+
+
+### Bug Fixes
+
+* pass refs to inputs ([532c994](https://github.com/rmwc/rmwc/commit/532c9944f4c7eb533079f19f7b0bc2f39c301cd0))
+* **select:** fixed ordering in class names ([bec195b](https://github.com/rmwc/rmwc/commit/bec195b795b519b4f9e66f69b0a7f71f27bb49b6))
+* **switch:** corrects usage of primary color ([b7503ae](https://github.com/rmwc/rmwc/commit/b7503ae5c76c44248297af534c695a99fc34bce1))
+
+
+### Reverts
+
+* reverts "fixed ordering in class names" as this has no effect on CSS specificity ([75c8a4e](https://github.com/rmwc/rmwc/commit/75c8a4e7bb7d25badf05f1ed51e1aa75cb751b02))
+* reverts "fixed ordering in class names" as this has no effect on CSS specificity ([fee8fd0](https://github.com/rmwc/rmwc/commit/fee8fd0039b206c9b5ff002a8b9f3423f3d07a13))
+
 ## [14.0.7](https://github.com/rmwc/rmwc/compare/v14.0.7-alpha.0...v14.0.7) (2024-01-16)
 
 ## [14.0.7-alpha.0](https://github.com/rmwc/rmwc/compare/v14.0.6...v14.0.7-alpha.0) (2024-01-16)

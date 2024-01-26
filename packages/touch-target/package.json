@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/touch-target",
-  "version": "14.0.7",
+  "version": "14.0.8",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
