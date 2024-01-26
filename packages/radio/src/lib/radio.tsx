@@ -43,7 +43,7 @@ export const Radio: RMWC.ComponentType<RadioProps, RadioHTMLProps, 'input'> =
           className="mdc-radio__native-control"
           type="radio"
           id={id}
-          ref={inputRef}
+          ref={mergeRefs(ref, inputRef)}
         />
         <RadioBackground />
         <RadioRipple />

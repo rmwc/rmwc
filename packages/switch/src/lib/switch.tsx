@@ -47,6 +47,7 @@ export const Switch: RMWC.ComponentType<SwitchProps, SwitchHTMLProps, 'input'> =
         role="switch"
         aria-checked={selected ?? rest['aria-checked']}
         id={id}
+        element={rootEl}
         {...rest}
       >
         <SwitchTrack />

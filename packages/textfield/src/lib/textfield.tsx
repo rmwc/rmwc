@@ -6,7 +6,13 @@ import { IconProps } from '@rmwc/icon';
 import * as RMWC from '@rmwc/types';
 import React from 'react';
 
-import { Tag, createComponent, useClassNames, useId } from '@rmwc/base';
+import {
+  Tag,
+  createComponent,
+  mergeRefs,
+  useClassNames,
+  useId
+} from '@rmwc/base';
 import { FloatingLabel } from '@rmwc/floating-label';
 import { Icon } from '@rmwc/icon';
 import { LineRipple } from '@rmwc/line-ripple';
@@ -197,24 +203,24 @@ export const TextField: RMWC.ComponentType<
     const renderTextarea = resizeable ? (
       <span className="mdc-text-field__resizer">
         <Tag
-          {...rest}
           element={inputEl}
           className="mdc-text-field__input"
           disabled={disabled}
           tag="textarea"
-          ref={inputRef}
+          {...rest}
+          ref={mergeRefs(ref, inputRef)}
         />
         {renderedCharacterCounter}
       </span>
     ) : (
       <>
         <Tag
-          {...rest}
           element={inputEl}
           className="mdc-text-field__input"
           disabled={disabled}
           tag="textarea"
-          ref={inputRef}
+          {...rest}
+          ref={mergeRefs(ref, inputRef)}
         />
         {renderedCharacterCounter}
       </>
@@ -238,12 +244,12 @@ export const TextField: RMWC.ComponentType<
             renderTextarea
           ) : (
             <Tag
-              {...rest}
               element={inputEl}
               className="mdc-text-field__input"
               disabled={disabled}
               tag="input"
-              ref={inputRef}
+              {...rest}
+              ref={mergeRefs(ref, inputRef)}
             />
           )}
           {!!suffix && !textarea && <TextFieldSuffix suffix={suffix} />}
@@ -327,7 +333,7 @@ export const TextFieldHelperText = createComponent<TextFieldHelperTextProps>(
       }
     ]);
 
-    return <Tag tag="div" {...rest} className={className} ref={ref} />;
+    return <Tag tag="div" className={className} {...rest} ref={ref} />;
   }
 );
 

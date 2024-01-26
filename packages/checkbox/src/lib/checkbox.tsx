@@ -76,7 +76,7 @@ export const Checkbox: RMWC.ComponentType<
             className: 'mdc-checkbox__native-control'
           })}
           type="checkbox"
-          ref={mergeRefs(checkboxEl.reactRef, inputRef)}
+          ref={mergeRefs(checkboxEl.reactRef, inputRef, ref)}
           id={id}
         />
         <CheckboxBackground />
