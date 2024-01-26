@@ -203,11 +203,11 @@ export const TextField: RMWC.ComponentType<
     const renderTextarea = resizeable ? (
       <span className="mdc-text-field__resizer">
         <Tag
+          {...rest}
           element={inputEl}
           className="mdc-text-field__input"
           disabled={disabled}
           tag="textarea"
-          {...rest}
           ref={mergeRefs(ref, inputRef)}
         />
         {renderedCharacterCounter}
@@ -215,11 +215,11 @@ export const TextField: RMWC.ComponentType<
     ) : (
       <>
         <Tag
+          {...rest}
           element={inputEl}
           className="mdc-text-field__input"
           disabled={disabled}
           tag="textarea"
-          {...rest}
           ref={mergeRefs(ref, inputRef)}
         />
         {renderedCharacterCounter}
@@ -244,11 +244,11 @@ export const TextField: RMWC.ComponentType<
             renderTextarea
           ) : (
             <Tag
+              {...rest}
               element={inputEl}
               className="mdc-text-field__input"
               disabled={disabled}
               tag="input"
-              {...rest}
               ref={mergeRefs(ref, inputRef)}
             />
           )}
@@ -333,7 +333,7 @@ export const TextFieldHelperText = createComponent<TextFieldHelperTextProps>(
       }
     ]);
 
-    return <Tag tag="div" className={className} {...rest} ref={ref} />;
+    return <Tag tag="div" {...rest} className={className} ref={ref} />;
   }
 );
 
