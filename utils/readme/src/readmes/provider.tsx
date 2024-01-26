@@ -6,6 +6,7 @@ import examples from '../generated-examples/provider.json';
 import propsSrc from '../generated-props/provider.json';
 
 import { RMWCProvider } from '@rmwc/provider';
+import { Button } from '@rmwc/button';
 
 export default function Readme() {
   return (
@@ -59,6 +60,18 @@ export default function Readme() {
           );
         `
         }
+      </DocsExample>
+
+      <DocsExample label="With ripple false">
+        <RMWCProvider ripple={false}>
+          <Button>Click me</Button>
+        </RMWCProvider>
+      </DocsExample>
+
+      <DocsExample label="With ripple true">
+        <RMWCProvider ripple={true}>
+          <Button>Click me</Button>
+        </RMWCProvider>
       </DocsExample>
 
       <DocProps
