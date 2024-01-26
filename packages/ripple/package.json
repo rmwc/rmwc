@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/ripple",
-  "version": "14.0.7",
+  "version": "14.0.8-alpha.0",
   "description": "RMWC Ripple component",
   "main": "./index.js",
   "types": "./index.d.ts",
