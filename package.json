@@ -69,7 +69,7 @@
     "build:components": "nx run-many -t build --projects=tag:publishable",
     "docgen:markdown": "node --loader=./scripts/docgen-markdown-loader.mjs scripts/docgen-markdown.mjs",
     "docgen:examples": "node scripts/docgen-examples.js",
-    "docgen:props": "node --max-old-space-size=16384 scripts/docgen-props.mjs",
+    "docgen:props": "node scripts/docgen-props.mjs",
     "test": "nx run-many -t test",
     "release:patch": "nx version workspace --releaseAs=patch",
     "release:minor": "nx version workspace --releaseAs=minor",
