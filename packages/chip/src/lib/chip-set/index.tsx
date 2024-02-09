@@ -12,8 +12,14 @@ import { ChipContext, ChipContextT } from '../chip-context';
 export interface ChipSetProps {
   /** Causes the chis to overflow instead of wrap (their default behavior). */
   overflow?: boolean;
-  /** */
-  role?: 'grid' | 'listbox';
+  /** Creates a action chipset. */
+  action?: boolean;
+  /** Creates a input chipset. */
+  input?: boolean;
+  /** Creates a filter chipset. */
+  filter?: boolean;
+  /** Determines whether chipset should be multiple-select or single-select. This is only supported for filter chips. */
+  multipleSelect?: boolean;
 }
 
 export type ChipSetHTMLProps = RMWC.HTMLProps<
@@ -31,7 +37,14 @@ export const ChipSet: RMWC.ComponentType<
     const { rootEl, registerChip, unregisterChip } =
       useChipSetFoundation(props);
 
-    const { overflow, role = 'grid', ...rest } = props;
+    const {
+      overflow,
+      action = true,
+      input,
+      filter,
+      multipleSelect,
+      ...rest
+    } = props;
 
     const className = useClassNames(props, [
       'mdc-evolution-chip-set',
@@ -41,24 +54,28 @@ export const ChipSet: RMWC.ComponentType<
     ]);
 
     const otherProps = {
-      'aria-orientation': 'horizontal'
+      'aria-orientation': 'horizontal',
+      'aria-multiselectable': multipleSelect
     };
 
     const contextApi = useRef<ChipContextT>({
       registerChip,
-      unregisterChip
+      unregisterChip,
+      action,
+      input,
+      filter
     });
 
     return (
       <ChipContext.Provider value={contextApi.current}>
         <Tag
-          {...rest}
-          tag="span"
-          ref={ref}
           className={className}
-          role={role}
+          tag="span"
+          role={filter ? 'listbox' : 'grid'}
           element={rootEl}
-          {...(role === 'listbox' && otherProps)}
+          {...(filter && otherProps)}
+          {...rest}
+          ref={ref}
         >
           <span className="mdc-evolution-chip-set__chips" role="presentation">
             {props.children}
