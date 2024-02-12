@@ -2,6 +2,18 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [14.0.10-alpha.0](https://github.com/rmwc/rmwc/compare/v14.0.9...v14.0.10-alpha.0) (2024-02-12)
+
+
+### Features
+
+* make typography accessibel by default ([0092d8f](https://github.com/rmwc/rmwc/commit/0092d8f017bb3c444286f97678408bb1236bc90f))
+
+
+### Bug Fixes
+
+* **rc-tooltip:** import styles correctly ([2bb45a5](https://github.com/rmwc/rmwc/commit/2bb45a5cd9fa88c789015cf15c50511dc545b441))
+
 ## [14.0.9](https://github.com/rmwc/rmwc/compare/v14.0.9-alpha.0...v14.0.9) (2024-01-26)
 
 ## [14.0.9-alpha.0](https://github.com/rmwc/rmwc/compare/v14.0.8...v14.0.9-alpha.0) (2024-01-26)
