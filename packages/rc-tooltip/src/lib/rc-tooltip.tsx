@@ -7,8 +7,6 @@ import {
   RCTooltipAlignT
 } from '@rmwc/provider';
 
-import '../rc-tooltip.css';
-
 const TOOLTIP_ALIGN_VALUES = [
   'left',
   'right',
