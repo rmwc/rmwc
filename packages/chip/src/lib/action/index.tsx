@@ -81,7 +81,7 @@ export const PrimaryAction = createComponent<
       element={rootEl}
       className={className}
       ref={ref}
-      role={filter ? 'option' : 'gridcell'}
+      {...(filter && { role: 'option' })}
       {...(props.href && { href: props.href })}
       {...(!props.href && { type: 'button' })}
       {...(selectable && { 'aria-selected': 'false' })}

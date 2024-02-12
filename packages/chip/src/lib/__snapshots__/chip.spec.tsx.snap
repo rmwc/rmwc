@@ -23,7 +23,6 @@ exports[`Chip > renders 1`] = `
             class="mdc-evolution-chip__action mdc-evolution-chip__action--primary"
             icon="favorite"
             label="test-label"
-            role="gridcell"
             type="button"
           >
             <span
@@ -64,16 +63,16 @@ exports[`Chip > renders as filter chips 1`] = `
     >
       <span
         class="mdc-ripple-surface mdc-evolution-chip mdc-evolution-chip--filter"
-        id="chip-:r2:"
+        id="chip-test-label"
         role="presentation"
       >
         <span
           class="mdc-evolution-chip__cell mdc-evolution-chip__cell--primary"
-          role="gridcell"
         >
           <button
             class="mdc-evolution-chip__action mdc-evolution-chip__action--primary"
             icon="favorite"
+            label="test-label"
             role="option"
             type="button"
           >
@@ -114,7 +113,7 @@ exports[`Chip > renders as input chips 1`] = `
     >
       <span
         class="mdc-ripple-surface mdc-evolution-chip rmwc-chip"
-        id="chip-:r3:"
+        id="chip-test-label"
         role="row"
       >
         <span
@@ -124,7 +123,7 @@ exports[`Chip > renders as input chips 1`] = `
           <button
             class="mdc-evolution-chip__action mdc-evolution-chip__action--primary"
             icon="favorite"
-            role="gridcell"
+            label="test-label"
             type="button"
           >
             <span

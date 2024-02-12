@@ -134,7 +134,7 @@ export const Chip: RMWC.ComponentType<ChipProps, ChipHTMLProps, 'div'> =
           >
             <span
               className="mdc-evolution-chip__cell mdc-evolution-chip__cell--primary"
-              role="gridcell"
+              {...(!filter && { role: 'gridcell' })}
             >
               <PrimaryAction label={label} icon={icon} selected={selected}>
                 {children}

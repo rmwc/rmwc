@@ -8,7 +8,7 @@ describe('Chip', () => {
   it('renders', () => {
     const { asFragment } = render(
       <ChipSet>
-        <Chip icon="favorite" trailingIcon="close" label="test-label" />
+        <Chip icon="favorite" label="test-label" />
       </ChipSet>
     );
 
@@ -20,9 +20,7 @@ describe('Chip', () => {
   it('renders with children', () => {
     render(
       <ChipSet>
-        <Chip icon="favorite" trailingIcon="close">
-          test-label
-        </Chip>
+        <Chip icon="favorite" label="test-label" />
       </ChipSet>
     );
 
@@ -32,11 +30,11 @@ describe('Chip', () => {
   it('renders as filter chips', () => {
     const { asFragment } = render(
       <ChipSet filter>
-        <Chip icon="favorite" trailingIcon="close">
-          test-label
-        </Chip>
+        <Chip icon="favorite" label="test-label" />
       </ChipSet>
     );
+
+    expect(screen.getByText('test-label')).toBeInTheDocument();
 
     expect(asFragment()).toMatchSnapshot();
   });
@@ -44,11 +42,11 @@ describe('Chip', () => {
   it('renders as input chips', () => {
     const { asFragment } = render(
       <ChipSet input>
-        <Chip icon="favorite" trailingIcon="close">
-          test-label
-        </Chip>
+        <Chip icon="favorite" label="test-label" />
       </ChipSet>
     );
+
+    expect(screen.getByText('test-label')).toBeInTheDocument();
 
     expect(asFragment()).toMatchSnapshot();
   });

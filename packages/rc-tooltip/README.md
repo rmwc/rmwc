@@ -7,7 +7,7 @@ Tooltips display informative text when users hover over, focus on, or tap an ele
   - Using CSS Loader
     - import '@rmwc/rc-tooltip/styles';
   - Or include stylesheets
-    - **'@rmwc/rc-tooltip/tooltip.css'**
+    - **'@rmwc/rc-tooltip/rc-tooltip.css'**
 
 ## Basic Usage
 
