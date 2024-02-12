@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/button",
-  "version": "14.0.10-alpha.0",
+  "version": "14.0.10",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
