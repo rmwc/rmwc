@@ -170,7 +170,7 @@ export interface ListGroupProps {}
 export const ListGroup = createComponent<ListGroupProps>(
   function ListGroup(props, ref) {
     const className = useClassNames(props, ['mdc-deprecated-list-group']);
-    return <Tag {...props} ref={ref} className={className} />;
+    return <Tag {...props} ref={ref} className={className} role="group" />;
   }
 );
 

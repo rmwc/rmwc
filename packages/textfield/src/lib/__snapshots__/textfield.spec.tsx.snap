@@ -13,12 +13,12 @@ exports[`TextField > can be disabled 1`] = `
       class="mdc-text-field__input"
       disabled=""
     />
-    <span
+    <label
       class="mdc-floating-label"
       id="textfield-test-label"
     >
       test
-    </span>
+    </label>
     <span
       class="mdc-line-ripple mdc-line-ripple--deactivating"
       style="transform-origin: 0px center;"
@@ -44,12 +44,12 @@ exports[`TextField > can be have icon 1`] = `
     <input
       class="mdc-text-field__input"
     />
-    <span
+    <label
       class="mdc-floating-label"
       id="textfield-test-label"
     >
       test
-    </span>
+    </label>
     <span
       class="mdc-line-ripple mdc-line-ripple--deactivating"
       style="transform-origin: 0px center;"
@@ -70,12 +70,12 @@ exports[`TextField > can be have trailingIcon 1`] = `
     <input
       class="mdc-text-field__input"
     />
-    <span
+    <label
       class="mdc-floating-label"
       id="textfield-test-label"
     >
       test
-    </span>
+    </label>
     <i
       class="rmwc-icon rmwc-icon--ligature material-icons mdc-text-field__icon mdc-text-field__icon--trailing"
       tabindex="0"
@@ -102,12 +102,12 @@ exports[`TextField > can be invalid 1`] = `
     <input
       class="mdc-text-field__input"
     />
-    <span
+    <label
       class="mdc-floating-label"
       id="textfield-test-label"
     >
       test
-    </span>
+    </label>
     <span
       class="mdc-line-ripple mdc-line-ripple--deactivating"
       style="transform-origin: 0px center;"
@@ -137,13 +137,13 @@ exports[`TextField > can be outlined 1`] = `
       <div
         class="mdc-notched-outline__notch"
       >
-        <span
+        <label
           class="mdc-floating-label"
           id="textfield-test-label"
           style="transition-duration: 0s;"
         >
           test
-        </span>
+        </label>
       </div>
       <div
         class="mdc-notched-outline__trailing"
@@ -169,12 +169,12 @@ exports[`TextField > can be textarea 1`] = `
     >
       hello world
     </textarea>
-    <span
+    <label
       class="mdc-floating-label mdc-floating-label--float-above"
       id="textfield-test-label"
     >
       test
-    </span>
+    </label>
     <span
       class="mdc-line-ripple mdc-line-ripple--deactivating"
       style="transform-origin: 0px center;"
@@ -199,12 +199,12 @@ exports[`TextField > can have children 1`] = `
       class="mdc-text-field__input"
       placeholder="test"
     />
-    <span
+    <label
       class="mdc-floating-label"
       id="textfield-test-label"
     >
       test
-    </span>
+    </label>
     <span
       class="mdc-line-ripple mdc-line-ripple--deactivating"
       style="transform-origin: 0px center;"
@@ -226,12 +226,12 @@ exports[`TextField > renders 1`] = `
       class="mdc-text-field__input"
       placeholder="test"
     />
-    <span
+    <label
       class="mdc-floating-label"
       id="textfield-test-label"
     >
       test
-    </span>
+    </label>
     <span
       class="mdc-line-ripple mdc-line-ripple--deactivating"
       style="transform-origin: 0px center;"

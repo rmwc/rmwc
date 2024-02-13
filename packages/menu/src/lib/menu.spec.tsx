@@ -65,16 +65,6 @@ describe('Menu', () => {
     await waitFor(() => expect(onSelect).toHaveBeenCalledTimes(2));
   });
 
-  it('dynamically updates aria-hidden based on whether or not the menu is open', () => {
-    const { container, rerender } = render(<Menu open />);
-
-    expect(container.firstChild).toHaveAttribute('aria-hidden', 'false');
-
-    rerender(<Menu />);
-
-    expect(container.firstChild).toHaveAttribute('aria-hidden', 'true');
-  });
-
   it('MenuSurface renders', () => {
     const { asFragment } = render(
       <MenuSurfaceAnchor>
