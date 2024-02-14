@@ -129,6 +129,7 @@ function NativeMenu(
     children,
     elementRef,
     open,
+    label,
     ...rest
   } = props;
 
@@ -155,7 +156,9 @@ function NativeMenu(
       tabIndex={0}
       {...rest}
       ref={elementRef}
-      className={`rmwc-select__native-control ${rest.className || ''}`}
+      className={`rmwc-select__native-control${
+        rest.className ? ` ${rest.className}` : ''
+      }`}
     >
       {(props.placeholder !== undefined || isEmptyValue) && (
         <option value="" disabled={isEmptyValue}>
@@ -439,6 +442,7 @@ export const Select: RMWC.ComponentType<
           {!enhanced && (
             <NativeMenu
               {...rest}
+              id={id}
               value={value}
               children={children}
               defaultValue={defaultValue}

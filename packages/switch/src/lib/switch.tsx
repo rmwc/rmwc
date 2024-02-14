@@ -24,7 +24,7 @@ export const Switch: RMWC.ComponentType<SwitchProps, SwitchHTMLProps, 'input'> =
     const { renderToggle, id, toggleRootProps, rootEl, selected } =
       useSwitchFoundation(props);
 
-    const { children, className, disabled, ...rest } = props;
+    const { children, className, disabled, label, ...rest } = props;
 
     const rootClassName = useClassNames(toggleRootProps, [
       'mdc-switch',
@@ -46,6 +46,7 @@ export const Switch: RMWC.ComponentType<SwitchProps, SwitchHTMLProps, 'input'> =
         type="button"
         role="switch"
         aria-checked={selected ?? rest['aria-checked']}
+        aria-label={label}
         id={id}
         element={rootEl}
         {...rest}

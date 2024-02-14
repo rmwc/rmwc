@@ -208,7 +208,7 @@ export function SiteSearch() {
           )}
 
           {!abortControllerRef.current && !results.length && (
-            <SimpleListItem text="No results found" />
+            <SimpleListItem text="No results found" role="menuitem" />
           )}
         </MenuItems>
       </Menu>

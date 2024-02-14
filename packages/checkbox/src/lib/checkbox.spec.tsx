@@ -52,14 +52,14 @@ describe('Checkbox', () => {
 
   test('can have custom classnames on input', () => {
     const { container } = render(
-      <Checkbox className={'my-custom-classname'} />
+      <Checkbox label="checkbox" className={'my-custom-classname'} />
     );
     expect(container.firstChild).toHaveClass('my-custom-classname');
   });
 
   it('supports inputRef as an object reference', () => {
     const inputObjectRef: any = { current: null };
-    render(<Checkbox inputRef={inputObjectRef} />);
+    render(<Checkbox label="checkbox" inputRef={inputObjectRef} />);
     expect(inputObjectRef.current instanceof HTMLInputElement).toBeTruthy();
   });
 
@@ -68,7 +68,7 @@ describe('Checkbox', () => {
     const objectRefFunc: any = (el: HTMLInputElement) => {
       inputObjectRef = el;
     };
-    render(<Checkbox inputRef={objectRefFunc} />);
+    render(<Checkbox label="checkbox" inputRef={objectRefFunc} />);
     expect(inputObjectRef instanceof HTMLInputElement).toBeTruthy();
   });
 });
