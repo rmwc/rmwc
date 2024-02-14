@@ -98,7 +98,6 @@ export const Snackbar: RMWC.ComponentType<
         element={rootEl}
         aria-live="assertive"
         aria-atomic
-        aria-hidden
         className={className}
       >
         <div {...surfaceEl.props({})} className="mdc-snackbar__surface">

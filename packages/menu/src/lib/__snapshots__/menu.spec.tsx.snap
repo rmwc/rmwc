@@ -6,7 +6,6 @@ exports[`Menu > Menu Item can be nested 1`] = `
     class="mdc-menu-surface--anchor"
   >
     <div
-      aria-hidden="false"
       class="mdc-menu mdc-menu-surface mdc-menu-surface--animating-open"
     >
       <ul
@@ -110,7 +109,6 @@ exports[`Menu > SimpleMenu renders 1`] = `
     class="mdc-menu-surface--anchor"
   >
     <div
-      aria-hidden="false"
       class="mdc-menu mdc-menu-surface mdc-menu-surface--animating-open mdc-menu-surface--is-open-below mdc-menu-surface--open"
       style="transform-origin: left top; left: 0px; top: 0px; max-height: 736px;"
     >
@@ -180,7 +178,6 @@ exports[`Menu > SimpleMenuSurface renders 1`] = `
 exports[`Menu > renders 1`] = `
 <DocumentFragment>
   <div
-    aria-hidden="false"
     class="mdc-menu mdc-menu-surface mdc-menu-surface--animating-open"
   >
     <ul

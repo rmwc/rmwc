@@ -16,12 +16,12 @@ exports[`Select > can accept formatted options array 1`] = `
         class="mdc-line-ripple mdc-line-ripple--deactivating"
         style="transform-origin: 0px center;"
       />
-      <span
+      <label
         class="mdc-floating-label mdc-floating-label--float-above"
         for="select-test"
       >
         test
-      </span>
+      </label>
       <span
         class="mdc-select__selected-text-container"
       >
@@ -46,7 +46,8 @@ exports[`Select > can accept formatted options array 1`] = `
         </i>
       </span>
       <select
-        class="rmwc-select__native-control "
+        class="rmwc-select__native-control"
+        id="select-test"
         tabindex="0"
       >
         <option
@@ -95,12 +96,12 @@ exports[`Select > can accept options array 1`] = `
         class="mdc-line-ripple mdc-line-ripple--deactivating"
         style="transform-origin: 0px center;"
       />
-      <span
+      <label
         class="mdc-floating-label mdc-floating-label--float-above"
         for="select-test"
       >
         test
-      </span>
+      </label>
       <span
         class="mdc-select__selected-text-container"
       >
@@ -125,7 +126,8 @@ exports[`Select > can accept options array 1`] = `
         </i>
       </span>
       <select
-        class="rmwc-select__native-control "
+        class="rmwc-select__native-control"
+        id="select-test"
         tabindex="0"
       >
         <option
@@ -173,12 +175,12 @@ exports[`Select > can have custom rootProps 1`] = `
         class="mdc-line-ripple mdc-line-ripple--deactivating"
         style="transform-origin: 0px center;"
       />
-      <span
+      <label
         class="mdc-floating-label"
         for="select-test"
       >
         test
-      </span>
+      </label>
       <span
         class="mdc-select__selected-text-container"
       >
@@ -201,7 +203,8 @@ exports[`Select > can have custom rootProps 1`] = `
         </i>
       </span>
       <select
-        class="rmwc-select__native-control "
+        class="rmwc-select__native-control"
+        id="select-test"
         tabindex="0"
       >
         <option
@@ -231,12 +234,12 @@ exports[`Select > renders 1`] = `
         class="mdc-line-ripple mdc-line-ripple--deactivating"
         style="transform-origin: 0px center;"
       />
-      <span
+      <label
         class="mdc-floating-label mdc-floating-label--float-above"
         for="select-test"
       >
         test
-      </span>
+      </label>
       <span
         class="mdc-select__selected-text-container"
       >
@@ -261,7 +264,8 @@ exports[`Select > renders 1`] = `
         </i>
       </span>
       <select
-        class="rmwc-select__native-control "
+        class="rmwc-select__native-control"
+        id="select-test"
         tabindex="0"
       >
         <option
@@ -311,12 +315,12 @@ exports[`Select: Lifecycle > Select matches snapshot when enhanced and renderToP
           class="mdc-line-ripple mdc-line-ripple--deactivating"
           style="transform-origin: 0px center;"
         />
-        <span
+        <label
           class="mdc-floating-label"
           for="select-test"
         >
           test
-        </span>
+        </label>
         <span
           class="mdc-select__selected-text-container"
         >

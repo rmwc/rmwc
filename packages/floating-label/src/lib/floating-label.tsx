@@ -20,7 +20,7 @@ export const FloatingLabel = createComponent<
   const { rootEl } = useFloatingLabelFoundation(props);
   const { shake, float, apiRef, ...rest } = props;
   return (
-    <span
+    <label
       {...rootEl.props({ ...rest, className: 'mdc-floating-label' })}
       ref={mergeRefs(rootEl.reactRef, ref)}
     />
