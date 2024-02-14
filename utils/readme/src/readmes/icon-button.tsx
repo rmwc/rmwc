@@ -58,8 +58,17 @@ export default function Readme() {
 
       <DocsExample label="Uncontrolled">
         <>
-          <IconButton icon="favorite_border" onIcon="favorite" />
-          <IconButton icon="favorite" onIcon="favorite" disabled />
+          <IconButton
+            aria-label="favorite"
+            icon="favorite_border"
+            onIcon="favorite"
+          />
+          <IconButton
+            aria-label="favorite"
+            icon="favorite"
+            onIcon="favorite"
+            disabled
+          />
         </>
       </DocsExample>
 
@@ -70,6 +79,7 @@ export default function Readme() {
           return (
             <>
               <IconButton
+                aria-label="start"
                 checked={isChecked}
                 onClick={() => setIsChecked(!isChecked)}
                 onIcon="star"
@@ -77,6 +87,7 @@ export default function Readme() {
               />
 
               <IconButton
+                aria-label="social media"
                 checked={isChecked}
                 onClick={() => setIsChecked(!isChecked)}
                 onIcon="images/icons/twitter.png"
@@ -89,6 +100,7 @@ export default function Readme() {
 
       <DocsExample label="Component as Icon">
         <IconButton
+          aria-label="red and green"
           onIcon={
             <div
               style={{

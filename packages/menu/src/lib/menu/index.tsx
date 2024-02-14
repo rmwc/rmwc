@@ -91,7 +91,6 @@ export const Menu: RMWC.ComponentType<MenuProps, MenuHTMLProps, 'div'> =
     return (
       <MenuSurface
         {...rootEl.props(rest)}
-        aria-hidden={!rest.open}
         className={classNames('mdc-menu', rest.className)}
         apiRef={setMenuSurfaceApi}
         ref={ref}

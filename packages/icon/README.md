@@ -109,8 +109,8 @@ An IconButton component that can also be used as a toggle.
 | `onIcon`        | `IconPropT`                               | If specified, renders a toggle with this icon as the on state.                    |
 | `ripple`        | `RipplePropT`                             | Adds a ripple effect to the component                                             |
 
-icon="favorite*outline" />
-{/* Example showing how to set the strategy explicitly \_/}
+icon="favorite_outline" />
+{/_ Example showing how to set the strategy explicitly _/}
 <Icon icon={{ icon: 'star', strategy: 'ligature' }} />
 </>
 

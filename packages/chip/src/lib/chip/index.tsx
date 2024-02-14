@@ -8,9 +8,10 @@ import {
 } from '@material/chips';
 import { withRipple } from '@rmwc/ripple';
 import { useChipFoundation } from './foundation';
-import { Tag, useClassNames, createComponent } from '@rmwc/base';
+import { Tag, useClassNames, createComponent, useId } from '@rmwc/base';
 import { PrimaryAction, TrailingAction } from '../action';
 import { ActionContext, ActionContextT } from '../action-context';
+import { useChipContext } from '../chip-context';
 
 /*********************************************************************
  * Events
@@ -38,8 +39,6 @@ export interface ChipProps {
   trailingIcon?: React.ReactNode;
   /** Defaults to true. Set this to false if your trailing icon is something other than a remove button. */
   trailingIconRemovesChip?: boolean;
-  /** An optional chip ID that will be included in callback evt.detail. If this is not passed, RMWC will attempt to use the "key" prop if present.  */
-  id?: string;
   /** Includes an optional checkmark for the chips selected state. */
   checkmark?: boolean;
   /** Additional children will be rendered in the text area. */
@@ -102,12 +101,15 @@ export const Chip: RMWC.ComponentType<ChipProps, ChipHTMLProps, 'div'> =
         setTrailingAction
       } = useChipFoundation(props);
 
+      const { action, input, filter } = useChipContext();
+
       const className = useClassNames(props, [
         'mdc-evolution-chip',
         {
           'mdc-evolution-chip--selected': selected,
           'mdc-evolution-chip--disabled': disabled,
-          'rmwc-chip': !!trailingIcon
+          'mdc-evolution-chip--filter': filter,
+          'rmwc-chip': input
         }
       ]);
 
@@ -116,32 +118,35 @@ export const Chip: RMWC.ComponentType<ChipProps, ChipHTMLProps, 'div'> =
         unregisterAction
       });
 
+      const uniqueId = useId('chip', props);
+
       return (
         <ActionContext.Provider value={contextApi.current}>
           <Tag
-            {...rest}
+            aria-disabled={disabled}
             tag="span"
-            role="row"
+            role={filter ? 'presentation' : 'row'}
             element={rootEl}
+            id={uniqueId}
+            {...rest}
             className={className}
-            id={props.id}
             ref={ref}
           >
             <span
               className="mdc-evolution-chip__cell mdc-evolution-chip__cell--primary"
-              role="gridcell"
+              {...(!filter && { role: 'gridcell' })}
             >
-              <PrimaryAction label={label} icon={icon} selectable={selected}>
+              <PrimaryAction label={label} icon={icon} selected={selected}>
                 {children}
               </PrimaryAction>
             </span>
-            {!!trailingIcon && (
+            {input && (
               <span
                 className="mdc-evolution-chip__cell mdc-evolution-chip__cell--trailing"
                 role="gridcell"
               >
                 <TrailingAction
-                  icon={trailingIcon}
+                  icon={trailingIcon ?? 'close'}
                   apiRef={setTrailingAction}
                   {...trailingActionEl.props({})}
                 />

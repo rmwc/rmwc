@@ -11,7 +11,7 @@ exports[`Checkbox > renders 1`] = `
     >
       <input
         class="mdc-checkbox__native-control"
-        id="toggle--test"
+        id="checkbox-test"
         type="checkbox"
       />
       <div
@@ -37,8 +37,8 @@ exports[`Checkbox > renders 1`] = `
       />
     </div>
     <label
-      for="toggle--test"
-      id="toggle--testlabel"
+      for="checkbox-test"
+      id="checkbox-testlabel"
     >
       test
     </label>

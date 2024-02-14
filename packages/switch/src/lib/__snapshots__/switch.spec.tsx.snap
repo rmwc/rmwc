@@ -7,9 +7,9 @@ exports[`Switch > renders 1`] = `
   >
     <button
       aria-checked="false"
+      aria-label="test"
       class="mdc-switch mdc-switch--unselected"
       id="toggle--test"
-      label="test"
       role="switch"
       type="button"
     >

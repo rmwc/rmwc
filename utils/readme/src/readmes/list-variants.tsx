@@ -195,7 +195,7 @@ export default function Readme() {
                 <ListItem key={key}>
                   {key}
                   <ListItemMeta>
-                    <Checkbox readOnly />
+                    <Checkbox readOnly label={key} />
                   </ListItemMeta>
                 </ListItem>
               ))}
@@ -225,7 +225,7 @@ export default function Readme() {
                 >
                   {key}&nbsp;
                   <ListItemMeta>
-                    <Switch checked={checked.get(key)} />
+                    <Switch label={key} checked={checked.get(key)} />
                   </ListItemMeta>
                 </ListItem>
               ))}
@@ -252,7 +252,7 @@ export default function Readme() {
                 <ListItem key={key}>
                   {key}
                   <ListItemMeta>
-                    <Radio readOnly name="meal-choices-group" />
+                    <Radio readOnly name="meal-choices-group" label={key} />
                   </ListItemMeta>
                 </ListItem>
               ))}
