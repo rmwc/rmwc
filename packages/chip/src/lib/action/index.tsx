@@ -1,6 +1,7 @@
 import React from 'react';
+import classNames from 'classnames';
 import * as RMWC from '@rmwc/types';
-import { createComponent, Tag } from '@rmwc/base';
+import { createComponent, Tag, useClassNames } from '@rmwc/base';
 import {
   MDCChipActionFocusBehavior,
   MDCChipActionType,
@@ -10,6 +11,7 @@ import {
 import { usePrimaryActionFoundation } from './foundation';
 import { ChipOnInteractionEventT } from '../chip';
 import { Icon } from '@rmwc/icon';
+import { useChipContext } from '../chip-context';
 
 /*********************************************************************
  * Primary Action
@@ -26,11 +28,10 @@ export interface PrimaryActionApi {
 
 export interface PrimaryActionProps {
   apiRef?: (api: PrimaryActionApi | null) => void;
-  deletable?: boolean;
   href?: string;
   icon?: React.ReactNode;
   label?: string;
-  selectable?: boolean;
+  selected?: boolean;
   onInteraction?: (evt: ChipOnInteractionEventT) => void;
   children?: React.ReactNode;
 }
@@ -54,30 +55,42 @@ export const PrimaryAction = createComponent<
 >(function PrimaryAction(props, ref) {
   const { rootEl } = usePrimaryActionFoundation(props, 'primary');
 
-  const shouldShowGraphic = !!props.icon || !!props.selectable;
+  const { filter } = useChipContext();
+
+  const selectable = filter && props.selected;
+
+  const shouldShowGraphic = !!props.icon || selectable;
+
+  const className = useClassNames(props, [
+    'mdc-evolution-chip__action',
+    'mdc-evolution-chip__action--primary'
+  ]);
+
+  const iconClassName = classNames(
+    'mdc-evolution-chip__icon',
+    'mdc-evolution-chip__icon--primary',
+    {
+      'rmwc-chip--action-input': !filter
+    }
+  );
 
   return (
     <Tag
       {...props}
       tag={props.href ? 'a' : 'button'}
-      className="mdc-evolution-chip__action mdc-evolution-chip__action--primary"
       element={rootEl}
+      className={className}
       ref={ref}
-      data-mdc-deletable={props.deletable ? props.deletable.toString() : false}
+      {...(filter && { role: 'option' })}
       {...(props.href && { href: props.href })}
       {...(!props.href && { type: 'button' })}
-      {...(props.selectable && { role: 'option', 'aria-selected': 'false' })}
+      {...(selectable && { 'aria-selected': 'false' })}
     >
       <span className="mdc-evolution-chip__ripple mdc-evolution-chip__ripple--primary"></span>
       {shouldShowGraphic && (
         <span className="mdc-evolution-chip__graphic">
-          {!!props.icon && (
-            <Icon
-              className="mdc-evolution-chip__icon mdc-evolution-chip__icon--primary"
-              icon={props.icon}
-            />
-          )}
-          {props.selectable && (
+          {!!props.icon && <Icon className={iconClassName} icon={props.icon} />}
+          {selectable && (
             <span className="mdc-evolution-chip__checkmark">
               <svg
                 className="mdc-evolution-chip__checkmark-svg"
@@ -125,13 +138,13 @@ export const TrailingAction = createComponent<
   const { rootEl } = usePrimaryActionFoundation(props, 'trailing');
   return (
     <Tag
-      {...props}
       tag="button"
-      className="mdc-evolution-chip__action mdc-evolution-chip__action--trailing"
       element={rootEl}
-      ref={ref}
       data-mdc-deletable="true"
       type="button"
+      {...props}
+      ref={ref}
+      className="mdc-evolution-chip__action mdc-evolution-chip__action--trailing"
     >
       <span className="mdc-evolution-chip__ripple mdc-evolution-chip__ripple--trailing"></span>
       <Icon

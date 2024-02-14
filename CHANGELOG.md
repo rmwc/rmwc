@@ -24,18 +24,16 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 
 ## [14.0.8-alpha.0](https://github.com/rmwc/rmwc/compare/v14.0.7...v14.0.8-alpha.0) (2024-01-26)
 
-
 ### Bug Fixes
 
-* pass refs to inputs ([532c994](https://github.com/rmwc/rmwc/commit/532c9944f4c7eb533079f19f7b0bc2f39c301cd0))
-* **select:** fixed ordering in class names ([bec195b](https://github.com/rmwc/rmwc/commit/bec195b795b519b4f9e66f69b0a7f71f27bb49b6))
-* **switch:** corrects usage of primary color ([b7503ae](https://github.com/rmwc/rmwc/commit/b7503ae5c76c44248297af534c695a99fc34bce1))
-
+- pass refs to inputs ([532c994](https://github.com/rmwc/rmwc/commit/532c9944f4c7eb533079f19f7b0bc2f39c301cd0))
+- **select:** fixed ordering in class names ([bec195b](https://github.com/rmwc/rmwc/commit/bec195b795b519b4f9e66f69b0a7f71f27bb49b6))
+- **switch:** corrects usage of primary color ([b7503ae](https://github.com/rmwc/rmwc/commit/b7503ae5c76c44248297af534c695a99fc34bce1))
 
 ### Reverts
 
-* reverts "fixed ordering in class names" as this has no effect on CSS specificity ([75c8a4e](https://github.com/rmwc/rmwc/commit/75c8a4e7bb7d25badf05f1ed51e1aa75cb751b02))
-* reverts "fixed ordering in class names" as this has no effect on CSS specificity ([fee8fd0](https://github.com/rmwc/rmwc/commit/fee8fd0039b206c9b5ff002a8b9f3423f3d07a13))
+- reverts "fixed ordering in class names" as this has no effect on CSS specificity ([75c8a4e](https://github.com/rmwc/rmwc/commit/75c8a4e7bb7d25badf05f1ed51e1aa75cb751b02))
+- reverts "fixed ordering in class names" as this has no effect on CSS specificity ([fee8fd0](https://github.com/rmwc/rmwc/commit/fee8fd0039b206c9b5ff002a8b9f3423f3d07a13))
 
 ## [14.0.7](https://github.com/rmwc/rmwc/compare/v14.0.7-alpha.0...v14.0.7) (2024-01-16)
 
@@ -45,28 +43,25 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 
 ## [14.0.6-alpha.0](https://github.com/rmwc/rmwc/compare/v14.0.5...v14.0.6-alpha.0) (2024-01-09)
 
-
 ### Bug Fixes
 
-* add default width to select ([a06761a](https://github.com/rmwc/rmwc/commit/a06761a5e4055615c2d7f0a82386b7068c22cf1b))
-* **select:** fixed syntax error in readme ([7cd55c0](https://github.com/rmwc/rmwc/commit/7cd55c034ce1f325c66871518271d9cfac235b73))
+- add default width to select ([a06761a](https://github.com/rmwc/rmwc/commit/a06761a5e4055615c2d7f0a82386b7068c22cf1b))
+- **select:** fixed syntax error in readme ([7cd55c0](https://github.com/rmwc/rmwc/commit/7cd55c034ce1f325c66871518271d9cfac235b73))
 
 ## [14.0.5](https://github.com/rmwc/rmwc/compare/v14.0.5-alpha.0...v14.0.5) (2023-12-23)
 
 ## [14.0.5-alpha.0](https://github.com/rmwc/rmwc/compare/v14.0.4...v14.0.5-alpha.0) (2023-12-23)
 
-
 ### Features
 
-* **List:** selectedIndex && a11y enhancements ([2001413](https://github.com/rmwc/rmwc/commit/2001413cb3945c440324e1684f6414a4db1ca17f))
-
+- **List:** selectedIndex && a11y enhancements ([2001413](https://github.com/rmwc/rmwc/commit/2001413cb3945c440324e1684f6414a4db1ca17f))
 
 ### Bug Fixes
 
-* **drawer:** fixes drawer getting stuck in open state ([989e442](https://github.com/rmwc/rmwc/commit/989e442b13189a485ae7a1f9df10612e4dfd577c))
-* **mdc:** Correct missing range slider input background bar ([d8d8f43](https://github.com/rmwc/rmwc/commit/d8d8f43bf86a05a028a56d8e04775f9366206a5d))
-* **rc-tooltip:** fixed css exports ([a985b48](https://github.com/rmwc/rmwc/commit/a985b484a7e711a68ef9de3ce008dac0540ce0bc))
-* **themes:** make Shrine theme text accessible ([5fb8cac](https://github.com/rmwc/rmwc/commit/5fb8cac6e68e92cf5f832f20e0e003fa2014bdaf))
+- **drawer:** fixes drawer getting stuck in open state ([989e442](https://github.com/rmwc/rmwc/commit/989e442b13189a485ae7a1f9df10612e4dfd577c))
+- **mdc:** Correct missing range slider input background bar ([d8d8f43](https://github.com/rmwc/rmwc/commit/d8d8f43bf86a05a028a56d8e04775f9366206a5d))
+- **rc-tooltip:** fixed css exports ([a985b48](https://github.com/rmwc/rmwc/commit/a985b484a7e711a68ef9de3ce008dac0540ce0bc))
+- **themes:** make Shrine theme text accessible ([5fb8cac](https://github.com/rmwc/rmwc/commit/5fb8cac6e68e92cf5f832f20e0e003fa2014bdaf))
 
 ## [14.0.4](https://github.com/rmwc/rmwc/compare/v14.0.4-alpha.0...v14.0.4) (2023-12-05)
 
