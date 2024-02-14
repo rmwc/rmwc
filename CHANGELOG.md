@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [14.0.11-alpha.0](https://github.com/rmwc/rmwc/compare/v14.0.10...v14.0.11-alpha.0) (2024-02-14)
+
+
+### Bug Fixes
+
+* **chips:** rewrite chip api ([7ab15e3](https://github.com/rmwc/rmwc/commit/7ab15e3d0fa60caeb38d5ebf315b16009540c2d8))
+* make components and docssite more accessible ([54998ee](https://github.com/rmwc/rmwc/commit/54998ee576749e63559994a7b7182db770844717))
+* segmented-button dependencies ([2cc24d9](https://github.com/rmwc/rmwc/commit/2cc24d95e05b407d25618be787563d62d7d5111e))
+
 ## [14.0.10](https://github.com/rmwc/rmwc/compare/v14.0.10-alpha.0...v14.0.10) (2024-02-12)
 
 ## [14.0.10-alpha.0](https://github.com/rmwc/rmwc/compare/v14.0.9...v14.0.10-alpha.0) (2024-02-12)
