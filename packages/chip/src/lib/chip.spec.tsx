@@ -8,7 +8,7 @@ describe('Chip', () => {
   it('renders', () => {
     const { asFragment } = render(
       <ChipSet>
-        <Chip icon="favorite" trailingIcon="close" label="test-label" />
+        <Chip icon="favorite" label="test-label" />
       </ChipSet>
     );
 
@@ -20,13 +20,35 @@ describe('Chip', () => {
   it('renders with children', () => {
     render(
       <ChipSet>
-        <Chip icon="favorite" trailingIcon="close">
-          test-label
-        </Chip>
+        <Chip icon="favorite" label="test-label" />
       </ChipSet>
     );
 
     expect(screen.getByText('test-label')).toBeInTheDocument();
+  });
+
+  it('renders as filter chips', () => {
+    const { asFragment } = render(
+      <ChipSet filter>
+        <Chip icon="favorite" label="test-label" />
+      </ChipSet>
+    );
+
+    expect(screen.getByText('test-label')).toBeInTheDocument();
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('renders as input chips', () => {
+    const { asFragment } = render(
+      <ChipSet input>
+        <Chip icon="favorite" label="test-label" />
+      </ChipSet>
+    );
+
+    expect(screen.getByText('test-label')).toBeInTheDocument();
+
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('handles selected', () => {
@@ -56,13 +78,8 @@ describe('Chip', () => {
   it('handles onRemove', async () => {
     const onRemove = vi.fn();
     render(
-      <ChipSet>
-        <Chip
-          label="my label"
-          onRemove={onRemove}
-          id="1"
-          trailingIcon="close"
-        />
+      <ChipSet input>
+        <Chip label="my label" onRemove={onRemove} trailingIcon="close" />
       </ChipSet>
     );
 
@@ -75,7 +92,7 @@ describe('Chip', () => {
     const onInteraction = vi.fn();
     render(
       <ChipSet>
-        <Chip label="my label" onInteraction={onInteraction} id="1" />
+        <Chip label="my label" onInteraction={onInteraction} />
       </ChipSet>
     );
 
@@ -103,7 +120,7 @@ describe('Chip', () => {
   it('can be overlow', () => {
     const { container } = render(
       <ChipSet overflow>
-        <Chip label="Cookie" id="1" />
+        <Chip label="Cookie" />
       </ChipSet>
     );
     expect(container.firstChild).toHaveClass('mdc-evolution-chip-set--overlow');
@@ -111,8 +128,8 @@ describe('Chip', () => {
 
   it('can be role grid', () => {
     const { container } = render(
-      <ChipSet role="grid">
-        <Chip label="Cookie" id="1" />
+      <ChipSet action>
+        <Chip label="Cookie" />
       </ChipSet>
     );
     expect(container.firstChild).toHaveAttribute('role', 'grid');
@@ -120,8 +137,8 @@ describe('Chip', () => {
 
   it('can be role listbox and receive prop aria-orientation', () => {
     const { container } = render(
-      <ChipSet role="listbox">
-        <Chip label="Cookie" id="1" />
+      <ChipSet filter>
+        <Chip label="Cookie" />
       </ChipSet>
     );
     expect(container.firstChild).toHaveAttribute('role', 'listbox');
