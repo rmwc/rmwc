@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/theme",
-  "version": "14.0.10",
+  "version": "14.0.11",
   "description": "RMWC Theme component",
   "main": "./index.js",
   "types": "./index.d.ts",
