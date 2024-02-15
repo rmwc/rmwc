@@ -134,7 +134,7 @@
     "husky": "^8.0.3",
     "hyperform": "^0.12.1",
     "jsdom": "~24.0.0",
-    "ngx-deploy-npm": "^7.1.0",
+    "ngx-deploy-npm": "^8.0.1",
     "nx": "17.2.8",
     "prettier": "3.2.5",
     "sass": "^1.70.0",
