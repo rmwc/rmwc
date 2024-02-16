@@ -1,6 +1,5 @@
 import React from 'react';
 import '../src/rmwc/styles';
-import { withKnobs } from '@storybook/addon-knobs';
 import { Portal } from '@rmwc/base';
 
 export const parameters = {
@@ -32,4 +31,4 @@ const PortalDecorator = (storyFn) => (
   </>
 );
 
-export const decorators = [withKnobs, StylesDecorator, PortalDecorator];
+export const decorators = [StylesDecorator, PortalDecorator];
