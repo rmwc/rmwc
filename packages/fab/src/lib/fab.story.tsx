@@ -1,22 +1,25 @@
 import React from 'react';
+import { Fab } from './fab'; // replace with your actual component import
+import { Meta, StoryObj } from '@storybook/react';
 
-import { action } from '@storybook/addon-actions';
-import { boolean } from '@storybook/addon-knobs';
-import { storiesOf } from '@storybook/react';
-import { Fab } from './fab';
+export default {
+  title: 'Buttons/Fab',
+  component: Fab
+} as Meta;
 
-storiesOf('Buttons', module)
-  .add('Fab', () => (
-    <Fab
-      mini={boolean('mini', false)}
-      ripple={boolean('ripple', true)}
-      onClick={action('onClick')}
-    >
-      favorite
-    </Fab>
-  ))
-  .add('cssOnly Fab', () => (
-    <Fab mini={boolean('mini', false)} onClick={action('onClick')}>
-      favorite
-    </Fab>
-  ));
+type Story = StoryObj<typeof Fab>;
+
+export const FabStory: Story = {
+  render: (args) => <Fab {...args}>favorite</Fab>,
+  args: {
+    mini: false,
+    ripple: true
+  }
+};
+
+export const CssOnlyFabStory: Story = {
+  render: (args) => <Fab {...args}>favorite</Fab>,
+  args: {
+    mini: false
+  }
+};

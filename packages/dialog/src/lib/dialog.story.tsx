@@ -1,121 +1,137 @@
 import React, { useState } from 'react';
-
-import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
-
 import {
   Dialog,
   DialogTitle,
   DialogContent,
   DialogActions,
   DialogButton,
-  SimpleDialog,
-  createDialogQueue,
-  DialogQueue
-} from './';
-import { useKnob } from '@rmwc/base/utils/use-knob';
+  SimpleDialog
+} from './dialog';
+import { createDialogQueue, DialogQueue } from './dialog-queue';
+import { Meta, StoryObj } from '@storybook/react';
 import { Button } from '@rmwc/button';
 
-const DialogStory = function () {
-  let [open, setOpen] = useKnob('boolean', 'open', true);
+export default {
+  title: 'Dialog',
+  component: Dialog
+} as Meta;
 
-  return (
-    <Dialog
-      open={open}
-      foundationRef={console.log}
-      onClose={(evt) => {
-        console.log(evt.detail.action);
-        setOpen(false);
-      }}
-    >
-      <DialogTitle>Dialog Title</DialogTitle>
-      <DialogContent>This is a standard dialog.</DialogContent>
-      <DialogActions>
-        <DialogButton action="close">Cancel</DialogButton>
-        <DialogButton action="accept" isDefaultAction>
-          Sweet!
-        </DialogButton>
-      </DialogActions>
-    </Dialog>
-  );
+type Story = StoryObj<typeof Dialog>;
+
+export const DialogStory: Story = {
+  render: (args) => {
+    return (
+      <Dialog {...args}>
+        <DialogTitle>Dialog Title</DialogTitle>
+        <DialogContent>This is a dialog</DialogContent>
+        <DialogActions>
+          <DialogButton action="dismiss">Dismiss</DialogButton>
+          <DialogButton action="confirm">Confirm</DialogButton>
+        </DialogActions>
+      </Dialog>
+    );
+  },
+  args: {
+    open: true
+  }
 };
 
-function SimpleDialogStory() {
-  const [open, setOpen] = useKnob('boolean', 'open', true);
-  const [title] = useKnob('text', 'title', 'This is a simple dialog');
-  const [body] = useKnob(
-    'text',
-    'body',
-    'You can pass the body prop, or anything you want as children.'
-  );
-  const [acceptLabel] = useKnob('text', 'acceptLabel', 'Accept');
-  const [cancelLabel] = useKnob('text', 'cancelLabel', 'Cancel');
+export const SimpleDialogStory: Story = {
+  render: (args) => {
+    return (
+      <SimpleDialog
+        {...args}
+        onClose={(evt) => {
+          console.log(evt.detail.action);
+        }}
+        title="This is a simple dialog"
+        body="You can pass the body prop, or anything you want as children."
+        acceptLabel="Sweet!"
+      />
+    );
+  },
+  args: {
+    open: true
+  }
+};
 
-  return (
-    <SimpleDialog
-      title={title}
-      body={body}
-      open={open}
-      onClose={(evt) => {
-        setOpen(false);
-        action('onClose')();
-      }}
-      acceptLabel={acceptLabel}
-      cancelLabel={cancelLabel}
-    />
-  );
-}
+export const SimpleDialogQueueStory: StoryObj<typeof DialogQueue> = {
+  render: (args) => {
+    const dialogQueue = createDialogQueue();
+
+    return (
+      <>
+        <Button
+          onClick={() => {
+            dialogQueue.alert({
+              title: 'Hello!',
+              body: 'You have been alerted!',
+              acceptLabel: 'OK'
+            });
+          }}
+        >
+          Alert
+        </Button>
+        <DialogQueue dialogs={dialogQueue.dialogs} />
+      </>
+    );
+  }
+};
 
 const { dialogs, alert, confirm, prompt } = createDialogQueue();
 
-storiesOf('Dialogs', module)
-  .add('Dialog', () => <DialogStory />)
-  .add('SimpleDialog', () => <SimpleDialogStory />)
-  .add('Prevent Outside Dismiss Bug', function Sandbox() {
-    const [open, setOpen] = useState(false);
-    const [preventOutsideDismiss, setPreventOutsideDismiss] = useState(false);
-    return (
-      <React.Fragment>
-        To see the bug in action:
-        <br />
-        <ol>
-          <li>Open the dialog using the button below.</li>
-          <li>
-            Observe that `preventOutsideDismiss` is `false` and is working as
-            expected
-          </li>
-          <li>Click the "TOGGLE" button</li>
-          <li>
-            Observe that the dialog is CORRECTLY NOT DISMISSED when clicking
-            outside
-          </li>
-          <li>
-            Observe that the dialog is INCORRECTLY DISMISSED when using the
-            escape key
-          </li>
-        </ol>
-        <br />
-        <Button raised icon="bug_report" onClick={() => setOpen(true)}>
-          Open Dialog
-        </Button>
-        <Dialog
-          open={open}
-          preventOutsideDismiss={preventOutsideDismiss}
-          onClosed={() => setOpen(false)}
-        >
-          <DialogTitle>Prevent Dismiss Demo</DialogTitle>
-          <DialogContent>
-            Prevent outside dismiss is currently:{' '}
-            {preventOutsideDismiss.toString()}
-          </DialogContent>
-          <Button onClick={() => setPreventOutsideDismiss((p) => !p)}>
-            Toggle
+export const PreventOutsideDismissBugStory: Story = {
+  render: (args) => {
+    const Component = () => {
+      const [open, setOpen] = useState(false);
+      const [preventOutsideDismiss, setPreventOutsideDismiss] = useState(false);
+      return (
+        <React.Fragment>
+          To see the bug in action:
+          <br />
+          <ol>
+            <li>Open the dialog using the button below.</li>
+            <li>
+              Observe that `preventOutsideDismiss` is `false` and is working as
+              expected
+            </li>
+            <li>Click the "TOGGLE" button</li>
+            <li>
+              Observe that the dialog is CORRECTLY NOT DISMISSED when clicking
+              outside
+            </li>
+            <li>
+              Observe that the dialog is INCORRECTLY DISMISSED when using the
+              escape key
+            </li>
+          </ol>
+          <br />
+          <Button raised icon="bug_report" onClick={() => setOpen(true)}>
+            Open Dialog
           </Button>
-        </Dialog>
-      </React.Fragment>
-    );
-  })
-  .add('DialogQueue', () => {
+          <Dialog
+            open={open}
+            preventOutsideDismiss={preventOutsideDismiss}
+            onClosed={() => setOpen(false)}
+          >
+            <DialogTitle>Prevent Dismiss Demo</DialogTitle>
+            <DialogContent>
+              Prevent outside dismiss is currently:{' '}
+              {preventOutsideDismiss.toString()}
+            </DialogContent>
+            <Button onClick={() => setPreventOutsideDismiss((p) => !p)}>
+              Toggle
+            </Button>
+          </Dialog>
+        </React.Fragment>
+      );
+    };
+    return <Component />;
+  }
+};
+
+export const DialogQueueStory: Story = {
+  render: (args) => {
     const fireAlert = () => alert({}).then((res) => console.log(res));
     const fireConfirm = () => confirm({}).then((res) => console.log(res));
     const firePrompt = () =>
@@ -139,4 +155,5 @@ storiesOf('Dialogs', module)
         <DialogQueue dialogs={dialogs} />
       </>
     );
-  });
+  }
+};

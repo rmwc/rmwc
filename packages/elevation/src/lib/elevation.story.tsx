@@ -1,7 +1,14 @@
-import { storiesOf } from '@storybook/react';
-import React from 'react';
-import { BrowserRouter, Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Meta, StoryObj } from '@storybook/react';
 import { Elevation } from './elevation';
+import { BrowserRouter, Link } from 'react-router-dom';
+
+export default {
+  title: 'Elevation',
+  component: Elevation
+} as Meta;
+
+type Story = StoryObj<typeof Elevation>;
 
 const elevationStyle = {
   padding: '16px',
@@ -12,41 +19,43 @@ const elevationStyle = {
   verticalAlign: 'top'
 };
 
-class HoverElevation extends React.Component {
-  state = {
-    elevation: 0
-  };
+const HoverElevation = (args) => {
+  const [elevation, setElevation] = useState(0);
 
-  render() {
+  return (
+    <Elevation
+      {...args}
+      style={elevationStyle}
+      z={elevation}
+      transition
+      onMouseOver={() => setElevation(24)}
+      onMouseOut={() => setElevation(0)}
+    >
+      Hover Me {elevation}dp
+    </Elevation>
+  );
+};
+
+export const HoverElevationStory: Story = {
+  render: (args) => {
     return (
-      <Elevation
-        style={elevationStyle}
-        z={this.state.elevation}
-        transition
-        onMouseOver={() => this.setState({ elevation: 24 })}
-        onMouseOut={() => this.setState({ elevation: 0 })}
-      >
-        Hover Me {this.state.elevation}dp
-      </Elevation>
+      <div>
+        <HoverElevation />
+
+        {Array(25)
+          .fill(undefined)
+          .map((val, i) => (
+            <Elevation z={i} key={i} style={elevationStyle}>
+              {i}dp
+            </Elevation>
+          ))}
+      </div>
     );
   }
-}
+};
 
-storiesOf('Elevation', module)
-  .add('Elevation', () => (
-    <div>
-      <HoverElevation />
-
-      {Array(25)
-        .fill(undefined)
-        .map((val, i) => (
-          <Elevation z={i} key={i} style={elevationStyle}>
-            {i}dp
-          </Elevation>
-        ))}
-    </div>
-  ))
-  .add('Component Test', () => {
+export const ComponentTestStory: Story = {
+  render: (args) => {
     return (
       <>
         <Elevation z={10} style={elevationStyle}>
@@ -68,4 +77,5 @@ storiesOf('Elevation', module)
         </BrowserRouter>
       </>
     );
-  });
+  }
+};

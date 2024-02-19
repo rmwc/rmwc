@@ -8,7 +8,9 @@ const config: StorybookConfig = {
   addons: ['@storybook/addon-essentials', '@storybook/addon-interactions'],
   framework: {
     name: '@storybook/react-vite',
-    options: {}
+    options: {
+      strictMode: false
+    }
   },
 
   viteFinal: async (config) =>

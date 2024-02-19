@@ -86,7 +86,7 @@
     "changelog": "changelog || echo 'No Changes'",
     "prepare": "husky install",
     "validate:actions": "node scripts/validate-actions.mjs",
-    "storybook ": "nx run storybook" 
+    "storybook ": "nx run storybook"
   },
   "devDependencies": {
     "@action-validator/cli": "^0.5.4",
@@ -105,15 +105,12 @@
     "@nx/vite": "17.2.8",
     "@nx/web": "17.2.8",
     "@nx/workspace": "17.2.8",
+    "@storybook/addon-controls": "7.6.16",
     "@storybook/addon-essentials": "7.6.16",
     "@storybook/addon-interactions": "^7.5.3",
-    "@storybook/core-server": "7.6.16",
-    "@storybook/jest": "^0.2.3",
-    "@storybook/react-vite": "7.6.16",
-    "@storybook/test-runner": "^0.13.0",
-    "@storybook/testing-library": "^0.2.2",
-    "@storybook/addon-controls": "7.6.16",
     "@storybook/addon-links": "7.6.16",
+    "@storybook/core-server": "7.6.16",
+    "@storybook/react-vite": "7.6.16",
     "@swc-node/register": "~1.6.7",
     "@swc/cli": "~0.3.0",
     "@swc/core": "1.3.105",

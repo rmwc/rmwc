@@ -1,27 +1,27 @@
 import React from 'react';
-
+import { Select } from './select'; // replace with your actual component import
+import { Meta, StoryObj } from '@storybook/react';
 import { Portal } from '@rmwc/base';
-import { useKnob } from '@rmwc/base/utils/use-knob';
 import { MenuItem, MenuItems } from '@rmwc/menu';
 import { action } from '@storybook/addon-actions';
-import { array, object, text } from '@storybook/addon-knobs';
-import { storiesOf } from '@storybook/react';
-import { Select } from './select';
 
-function MutatingSelect(props: any) {
-  const [value, setValue] = useKnob('text', 'value', 'Cookies');
-  const [label] = useKnob('text', 'label', 'Label');
-  const [enhanced] = useKnob('boolean', 'enhanced', false);
-  const [disabled] = useKnob('boolean', 'disabled', false);
-  const [options] = useKnob('array', 'options', [
-    'Cookies',
-    'Pizza',
-    'Icecream'
-  ]);
+export default {
+  title: 'Inputs and Controls/Select',
+  component: Select
+} as Meta;
 
+type Story = StoryObj<typeof Select>;
+
+function MutatingSelect(props: {
+  value?: string;
+  label?: string;
+  enhanced?: boolean;
+  disabled?: boolean;
+  options?: string[];
+}) {
+  const { value, label, enhanced, disabled, options } = props;
   return (
     <Select
-      {...props}
       disabled={disabled}
       foundationRef={console.log}
       label={label}
@@ -33,7 +33,6 @@ function MutatingSelect(props: any) {
       onKeyDown={action('onKeyDown')}
       onFocus={action('onFocus')}
       onChange={(evt) => {
-        setValue(evt.currentTarget.value);
         action('onChange: ' + evt.currentTarget.value)();
       }}
     />
@@ -277,8 +276,8 @@ function ControlledSelect() {
   );
 }
 
-function EnhancedSelectWithPortal(props: any) {
-  const [value, setValue] = useKnob('text', 'value', 'Cookies');
+function EnhancedSelectWithPortal(props: { value?: string }) {
+  const { value } = props;
 
   return (
     <>
@@ -290,9 +289,7 @@ function EnhancedSelectWithPortal(props: any) {
         }}
         value={value}
         onChange={(evt) => {
-          const value = evt.currentTarget.value;
-          console.log('onChange', value);
-          setValue(value === undefined ? 'undefined' : value);
+          action('onChange: ' + evt.currentTarget.value)();
         }}
         options={['Cookies', 'Pizza', 'Icecream']}
       />
@@ -300,24 +297,34 @@ function EnhancedSelectWithPortal(props: any) {
   );
 }
 
-storiesOf('Select', module)
-  .add('Select with object', () => (
-    <Select
-      label={text('label', 'Foods')}
-      placeholder={text('placeholder', 'Select a Food')}
-      options={object('options', { 1: 'Cookies', 2: 'Pizza', 3: 'Icecream' })}
-    />
-  ))
-  .add('Select with array', () => (
-    <Select
-      label={text('label', 'Foods')}
-      placeholder={text('placeholder', 'Select a Food')}
-      options={array('options', ['Cookies', 'Pizza', 'Icecream'])}
-    />
-  ))
+export const SelectWithObjectStory: Story = {
+  render: (args) => {
+    const { label, placeholder, options } = args;
+    return <Select label={label} placeholder={placeholder} options={options} />;
+  },
+  args: {
+    label: 'Foods',
+    placeholder: 'Select a Food',
+    options: { 1: 'Cookies', 2: 'Pizza', 3: 'Icecream' }
+  }
+};
 
-  .add('Select All', () => <EnhancedSelect />)
-  .add('Select Enhanced', () => (
+export const SelectWithArrayStory: Story = {
+  render: (args) => {
+    const { label, placeholder, options } = args;
+    return <Select label={label} placeholder={placeholder} options={options} />;
+  },
+  args: {
+    label: 'Foods',
+    placeholder: 'Select a Food',
+    options: ['Cookies', 'Pizza', 'Icecream']
+  }
+};
+
+export const SelectAllStory: Story = { render: (args) => <EnhancedSelect /> };
+
+export const SelectEnhancedStory: Story = {
+  render: () => (
     <div>
       <Select
         label={'Manual Enhanced'}
@@ -335,23 +342,32 @@ storiesOf('Select', module)
         </MenuItems>
       </Select>
     </div>
-  ))
-  .add('Select Enhanced with Portal', () => <EnhancedSelectWithPortal />)
-  .add('Select without placeholder', () => (
+  )
+};
+
+export const SelectEnhancedWithPortalStory: Story = {
+  render: () => <EnhancedSelectWithPortal />
+};
+
+export const SelectWithoutPlaceholderStory: Story = {
+  render: () => (
+    <Select label={'Foods'} options={['Cookies', 'Pizza', 'Icecream']} />
+  )
+};
+
+export const SelectWithInitialValueStory: Story = {
+  render: () => (
     <Select
-      label={text('label', 'Foods')}
-      options={array('options', ['Cookies', 'Pizza', 'Icecream'])}
-    />
-  ))
-  .add('Select with initial value', () => (
-    <Select
-      label={text('label', 'Foods')}
-      value={text('value', 'Cookies')}
-      options={array('options', ['Cookies', 'Pizza', 'Icecream'])}
+      label={'Foods'}
+      value={'Cookies'}
+      options={['Cookies', 'Pizza', 'Icecream']}
       onChange={(evt) => action('onChange: ' + evt.currentTarget.value)()}
     />
-  ))
-  .add('Select with many values', () => (
+  )
+};
+
+export const SelectWithManyValuesStory: Story = {
+  render: () => (
     <>
       <Select options={[...Array(100)].map(() => Math.random().toString(16))} />
       <Select
@@ -359,65 +375,81 @@ storiesOf('Select', module)
         options={[...Array(100)].map(() => Math.random().toString(16))}
       />
     </>
-  ))
-  .add('Select with children', () => (
+  )
+};
+
+export const SelectWithChildrenStory: Story = {
+  render: () => (
     <Select>
       <option value="Cookies">Cookies</option>
       <option value="Pizza">Pizza</option>
       <option value="Icecream">Icecream</option>
     </Select>
-  ))
-  .add('Select with children', () => (
-    <Select>
-      <option value="Cookies">Cookies</option>
-      <option value="Pizza">Pizza</option>
-      <option value="Icecream">Icecream</option>
-    </Select>
-  ))
-  .add('Controlled Select', () => {
-    return <ControlledSelect />;
-  })
-  .add('Mutating Select', () => <MutatingSelect />)
-  .add('autoFocus', () => (
+  )
+};
+
+export const ControlledSelectStory: Story = {
+  render: () => <ControlledSelect />
+};
+
+export const MutatingSelectStory: Story = {
+  render: () => <MutatingSelect />
+};
+
+export const AutofocusSelectStory: Story = {
+  render: () => (
     <Select
       label="Autofocus"
       autoFocus
       value="one"
       options={['one', 'two', 'three']}
     />
-  ))
-  .add('Controlled Single', () => (
+  )
+};
+
+export const ControlledSingleSelectStory: Story = {
+  render: () => (
     <Select
-      label="Controlled"
+      label="Controlled Single"
       value="one"
       outlined
       enhanced
       options={['one', 'two', 'three']}
       onChange={(evt) => {
-        console.log('onChange', evt.currentTarget.value);
+        action('onChange', evt.currentTarget.value);
       }}
     />
-  ))
-  .add('Changing', function () {
-    const [value, setValue] = React.useState('');
+  )
+};
 
-    React.useEffect(() => {
-      setInterval(() => {
-        setValue((val) => (val === '' ? 'one' : ''));
-      }, 2000);
-    }, []);
+export const ChangingSelectStory: Story = {
+  render: () => {
+    const Component = () => {
+      const [value, setValue] = React.useState('');
 
-    return (
-      <Select
-        label="Controlled"
-        value={value}
-        outlined
-        enhanced
-        options={['one', 'two', 'three']}
-        onChange={(evt) => {
-          console.log('onChange', evt.currentTarget.value);
-        }}
-      />
-    );
-  })
-  .add('Interdepndent Selects', DependentSelects);
+      React.useEffect(() => {
+        setInterval(() => {
+          setValue((val) => (val === '' ? 'one' : ''));
+        }, 2000);
+      }, []);
+
+      return (
+        <Select
+          label="Controlled"
+          value={value}
+          outlined
+          enhanced
+          options={['one', 'two', 'three']}
+          onChange={(evt) => {
+            console.log('onChange', evt.currentTarget.value);
+          }}
+        />
+      );
+    };
+    return <Component />;
+  }
+};
+
+export const DependentSelectsStory: Story = {
+  render: () => <DependentSelects />
+};
