@@ -8,6 +8,7 @@ exports[`Select > can accept formatted options array 1`] = `
     <div
       aria-disabled="false"
       aria-haspopup="listbox"
+      aria-labelledby="select-test-label"
       class="mdc-select__anchor"
       role="button"
       tabindex="-1"
@@ -16,12 +17,13 @@ exports[`Select > can accept formatted options array 1`] = `
         class="mdc-line-ripple mdc-line-ripple--deactivating"
         style="transform-origin: 0px center;"
       />
-      <label
+      <span
         class="mdc-floating-label mdc-floating-label--float-above"
         for="select-test"
+        id="select-test-label"
       >
         test
-      </label>
+      </span>
       <span
         class="mdc-select__selected-text-container"
       >
@@ -88,6 +90,7 @@ exports[`Select > can accept options array 1`] = `
     <div
       aria-disabled="false"
       aria-haspopup="listbox"
+      aria-labelledby="select-test-label"
       class="mdc-select__anchor"
       role="button"
       tabindex="-1"
@@ -96,12 +99,13 @@ exports[`Select > can accept options array 1`] = `
         class="mdc-line-ripple mdc-line-ripple--deactivating"
         style="transform-origin: 0px center;"
       />
-      <label
+      <span
         class="mdc-floating-label mdc-floating-label--float-above"
         for="select-test"
+        id="select-test-label"
       >
         test
-      </label>
+      </span>
       <span
         class="mdc-select__selected-text-container"
       >
@@ -167,6 +171,7 @@ exports[`Select > can have custom rootProps 1`] = `
     <div
       aria-disabled="false"
       aria-haspopup="listbox"
+      aria-labelledby="select-test-label"
       class="mdc-select__anchor"
       role="button"
       tabindex="-1"
@@ -175,12 +180,13 @@ exports[`Select > can have custom rootProps 1`] = `
         class="mdc-line-ripple mdc-line-ripple--deactivating"
         style="transform-origin: 0px center;"
       />
-      <label
+      <span
         class="mdc-floating-label"
         for="select-test"
+        id="select-test-label"
       >
         test
-      </label>
+      </span>
       <span
         class="mdc-select__selected-text-container"
       >
@@ -226,6 +232,7 @@ exports[`Select > renders 1`] = `
     <div
       aria-disabled="false"
       aria-haspopup="listbox"
+      aria-labelledby="select-test-label"
       class="mdc-select__anchor"
       role="button"
       tabindex="-1"
@@ -234,12 +241,13 @@ exports[`Select > renders 1`] = `
         class="mdc-line-ripple mdc-line-ripple--deactivating"
         style="transform-origin: 0px center;"
       />
-      <label
+      <span
         class="mdc-floating-label mdc-floating-label--float-above"
         for="select-test"
+        id="select-test-label"
       >
         test
-      </label>
+      </span>
       <span
         class="mdc-select__selected-text-container"
       >
@@ -307,6 +315,7 @@ exports[`Select: Lifecycle > Select matches snapshot when enhanced and renderToP
       <div
         aria-disabled="false"
         aria-haspopup="listbox"
+        aria-labelledby="select-test-label"
         class="mdc-select__anchor"
         role="button"
         tabindex="0"
@@ -315,12 +324,13 @@ exports[`Select: Lifecycle > Select matches snapshot when enhanced and renderToP
           class="mdc-line-ripple mdc-line-ripple--deactivating"
           style="transform-origin: 0px center;"
         />
-        <label
+        <span
           class="mdc-floating-label"
           for="select-test"
+          id="select-test-label"
         >
           test
-        </label>
+        </span>
         <span
           class="mdc-select__selected-text-container"
         >

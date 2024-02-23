@@ -2,7 +2,7 @@
 
 exports[`FloatingLabel > renders 1`] = `
 <DocumentFragment>
-  <label
+  <span
     class="mdc-floating-label"
   />
 </DocumentFragment>
@@ -10,7 +10,7 @@ exports[`FloatingLabel > renders 1`] = `
 
 exports[`FloatingLabel > renders with float 1`] = `
 <DocumentFragment>
-  <label
+  <span
     class="mdc-floating-label mdc-floating-label--float-above"
   />
 </DocumentFragment>

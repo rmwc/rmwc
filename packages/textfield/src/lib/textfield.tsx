@@ -234,7 +234,6 @@ export const TextField: RMWC.ComponentType<
           style={style}
           className={className}
           ref={ref}
-          aria-labelledby={labelId}
         >
           {!!icon && renderIcon(icon, 'leading')}
           {children}
@@ -245,6 +244,7 @@ export const TextField: RMWC.ComponentType<
           ) : (
             <Tag
               {...rest}
+              aria-labelledby={labelId}
               element={inputEl}
               className="mdc-text-field__input"
               disabled={disabled}

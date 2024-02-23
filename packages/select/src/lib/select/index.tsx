@@ -366,6 +366,7 @@ export const Select: RMWC.ComponentType<
   } = useSelectFoundation(props);
 
   const id = useId('select', props);
+  const labelId = id + '-label';
 
   const className = useClassNames(props, [
     'mdc-select',
@@ -386,7 +387,12 @@ export const Select: RMWC.ComponentType<
     value !== undefined ? undefined : props.defaultValue || '';
 
   const renderedLabel = (
-    <FloatingLabel float={floatLabel} apiRef={setFloatingLabel} htmlFor={id}>
+    <FloatingLabel
+      float={floatLabel}
+      apiRef={setFloatingLabel}
+      htmlFor={id}
+      id={labelId}
+    >
       {label}
     </FloatingLabel>
   );
@@ -415,6 +421,7 @@ export const Select: RMWC.ComponentType<
           className="mdc-select__anchor"
           role="button"
           aria-haspopup="listbox"
+          aria-labelledby={labelId}
           element={anchorEl}
           onFocus={handleFocus}
           onBlur={handleBlur}
