@@ -1,0 +1,20 @@
+name: NX Migrate Latest
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  nx_migrate:
+    name: NX Migrate
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: NX Migrate
+      uses: timonmasberg/nx-migration-gh-action@v1.1.12
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
