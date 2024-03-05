@@ -140,7 +140,7 @@
     "esm-module-alias": "^2.1.0",
     "generate-changelog": "^1.8.0",
     "glob": "^10.3.10",
-    "husky": "^8.0.3",
+    "husky": "^9.0.11",
     "hyperform": "^0.12.1",
     "jsdom": "~24.0.0",
     "ngx-deploy-npm": "^7.1.0",
