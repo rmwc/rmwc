@@ -1,117 +1,88 @@
-import React from 'react';
-
+import React, { useState } from 'react';
 import { Button } from '@rmwc/button';
-import { select } from '@storybook/addon-knobs';
-import { storiesOf } from '@storybook/react';
-import { useKnob } from '../base/utils/use-knob';
-import { Menu, MenuItem, MenuSurface, MenuSurfaceAnchor, SimpleMenu } from './';
+import { Menu, MenuItem, SimpleMenu } from './menu'; // replace with your actual component import
+import { MenuSurface, MenuSurfaceAnchor } from './menu-surface';
+import { Meta, StoryObj } from '@storybook/react';
 
-class MenuStory extends React.Component {
-  state = {
-    open: false
-  };
-  render() {
+export default {
+  title: 'Menus',
+  component: Menu,
+  argTypes: {
+    anchorCorner: {
+      control: {
+        type: 'select'
+      },
+      options: [
+        'bottomEnd',
+        'bottomLeft',
+        'bottomRight',
+        'bottomStart',
+        'topEnd',
+        'topLeft',
+        'topRight',
+        'topStart'
+      ]
+    }
+  }
+} as Meta;
+
+type Story = StoryObj<typeof Menu>;
+
+export const MenuStory: Story = {
+  render: (args) => {
     return (
       <MenuSurfaceAnchor
         style={{ position: 'absolute', top: '24px', left: '24px' }}
       >
-        <Button
-          raised
-          onClick={(evt) => {
-            this.setState({ open: !this.state.open });
-          }}
-        >
-          Open Menu
-        </Button>
-
-        <Menu
-          open={this.state.open}
-          foundationRef={console.log}
-          anchorCorner={
-            select(
-              'anchorCorner',
-              [
-                'bottomEnd',
-                'bottomLeft',
-                'bottomRight',
-                'bottomStart',
-                'topEnd',
-                'topLeft',
-                'topRight',
-                'topStart'
-              ],
-              'topStart'
-            ) as any
-          }
-          onClose={(evt) => {
-            this.setState({ open: false });
-          }}
-        >
+        <Menu {...args} foundationRef={console.log}>
           <MenuItem>Cookies</MenuItem>
           <MenuItem>Pizza</MenuItem>
           <MenuItem>Icecream</MenuItem>
         </Menu>
       </MenuSurfaceAnchor>
     );
+  },
+  args: {
+    open: true
   }
-}
+};
 
-class MenuSurfaceStory extends React.Component {
-  state = {
-    open: false
-  };
-  render() {
+export const MenuSurfaceStory: Story = {
+  render: (args) => {
     return (
-      <MenuSurfaceAnchor>
-        <Button
-          raised
-          onClick={(evt) => {
-            this.setState({ open: !this.state.open });
-          }}
-        >
-          Open Menu
-        </Button>
-
-        <MenuSurface
-          open={this.state.open}
-          foundationRef={console.log}
-          anchorCorner={
-            select(
-              'anchorCorner',
-              [
-                'bottomEnd',
-                'bottomLeft',
-                'bottomRight',
-                'bottomStart',
-                'topEnd',
-                'topLeft',
-                'topRight',
-                'topStart'
-              ],
-              'topStart'
-            ) as any
-          }
-          onOpen={(evt) => {}}
-          onClose={(evt) => {
-            this.setState({ open: false });
-          }}
-        >
-          This is the new menu surface component
+      <MenuSurfaceAnchor
+        style={{ position: 'absolute', top: '24px', left: '24px' }}
+      >
+        <MenuSurface {...args} foundationRef={console.log}>
+          <MenuItem>Cookies</MenuItem>
+          <MenuItem>Pizza</MenuItem>
+          <MenuItem>Icecream</MenuItem>
         </MenuSurface>
       </MenuSurfaceAnchor>
     );
+  },
+  args: {
+    open: true
   }
-}
+};
 
-function MenuHoist() {
-  const [selected, setSelected] = useKnob('number', 'Last selected index', -1);
-  const [hoisted] = useKnob('boolean', 'hoisted', true);
+export const SimpleMenuStory: Story = {
+  render: (args) => {
+    return (
+      <SimpleMenu handle={<Button raised>Open Simple Menu</Button>}>
+        <MenuItem>Cookies</MenuItem>
+        <MenuItem>Pizza</MenuItem>
+        <MenuItem>Icecream</MenuItem>
+      </SimpleMenu>
+    );
+  }
+};
+
+function MenuHoist(args: { hoisted: boolean }) {
+  const { hoisted } = args;
+  const [selected, setSelected] = useState(-1);
   const [open, setOpen] = React.useState(true);
-  const [options] = useKnob('array', 'options', [
-    'Cookies',
-    'Pizza',
-    'Icecream'
-  ]);
+  const options = ['Cookies', 'Pizza', 'Icecream'];
 
   return (
     <div style={{ margin: '200px', height: '56px', overflow: 'hidden' }}>
@@ -141,29 +112,17 @@ function MenuHoist() {
   );
 }
 
-storiesOf('Menus', module)
-  .add('Menu', () => <MenuStory />)
-  .add('MenuSurface', () => <MenuSurfaceStory />)
-  .add('Menu: Always Open', () => {
-    const [open] = useKnob('boolean', 'open', true);
+export const MenuHoistToBodyStory: StoryObj<typeof MenuHoist> = {
+  render: (args) => {
+    const { hoisted } = args;
     return (
-      <Menu open={open}>
-        <MenuItem>Cookies</MenuItem>
-        <MenuItem>Pizza</MenuItem>
-        <MenuItem>Icecream</MenuItem>
-      </Menu>
+      <>
+        <MenuHoist hoisted={hoisted} />
+        <MenuHoist hoisted={hoisted} />
+      </>
     );
-  })
-  .add('Menu: hoistToBody', () => (
-    <>
-      <MenuHoist />
-      <MenuHoist />
-    </>
-  ))
-  .add('SimpleMenu', () => (
-    <SimpleMenu handle={<Button raised>Open Simple Menu</Button>}>
-      <MenuItem>Cookies</MenuItem>
-      <MenuItem>Pizza</MenuItem>
-      <MenuItem>Icecream</MenuItem>
-    </SimpleMenu>
-  ));
+  },
+  args: {
+    hoisted: true
+  }
+};

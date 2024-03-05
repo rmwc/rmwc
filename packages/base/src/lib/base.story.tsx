@@ -1,14 +1,25 @@
 import React from 'react';
+import { ListItem, ListItemGraphic } from '@rmwc/list';
+import type { Meta, StoryObj } from '@storybook/react';
 
-import { storiesOf } from '@storybook/react';
-import { ListItem, ListItemGraphic } from '../list';
+export default {
+  title: 'Base',
+  component: ListItem
+} as Meta;
 
-storiesOf('Base', module).add('simpleTag elementRef', () => {
-  const Link = ({ to, ...rest }: any) => <a href="#" {...rest} />;
-  return (
-    <ListItem tag={Link} {...{ to: '/' }}>
-      <ListItemGraphic icon="home" />
-      Home
-    </ListItem>
-  );
-});
+type Story = StoryObj<typeof ListItem>;
+
+export const BaseStory: Story = {
+  render: (args) => {
+    const Link = ({ to, ...rest }) => <a href="#" {...rest} />;
+    return (
+      <ListItem tag={Link} {...args}>
+        <ListItemGraphic icon="home" />
+        Home
+      </ListItem>
+    );
+  },
+  args: {
+    to: '/'
+  }
+};
