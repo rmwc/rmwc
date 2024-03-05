@@ -32,7 +32,7 @@ Check out his other work at https://github.com/jamesmfriedman.
 
 ## Recent updates
 
-v14.0.11 is here! This release includes:
+v14.0.12 is here! This release includes:
 
 - support for material-components-web v14
 - support for react 18
@@ -40,7 +40,6 @@ v14.0.11 is here! This release includes:
 - a new segmented button component
 - migrated from Lerna to Nx and Vite ⚡
 - various bugfixes introduced in v14.0.0
-- accessibility improvements
 
 View the changelog for detailed updates: [https://github.com/rmwc/rmwc/blob/master/CHANGELOG.md](https://github.com/rmwc/rmwc/blob/master/CHANGELOG.md)
 
