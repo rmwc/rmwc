@@ -2,6 +2,18 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [14.1.0-alpha.0](https://github.com/rmwc/rmwc/compare/v14.0.12...v14.1.0-alpha.0) (2024-03-05)
+
+
+### Features
+
+* make typography accessible by default ([1ad013a](https://github.com/rmwc/rmwc/commit/1ad013ab9b08efe392219b74477cc27abaff6141))
+
+
+### Bug Fixes
+
+* **floating-label:** use correct tags ([2cf4595](https://github.com/rmwc/rmwc/commit/2cf459540f6127447c8564a62769bec322ef8443))
+
 ## [14.0.12](https://github.com/rmwc/rmwc/compare/v14.0.12-alpha.0...v14.0.12) (2024-03-05)
 
 ## [14.0.12-alpha.0](https://github.com/rmwc/rmwc/compare/v14.0.11...v14.0.12-alpha.0) (2024-03-05)
