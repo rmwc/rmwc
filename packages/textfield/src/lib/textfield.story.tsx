@@ -1,35 +1,34 @@
 import React from 'react';
+import { Meta, StoryObj } from '@storybook/react';
+import { TextField } from './textfield'; // replace with your actual component import
 
-import { boolean, number, text } from '@storybook/addon-knobs';
-import { storiesOf } from '@storybook/react';
-import { TextField } from './textfield';
+export default {
+  title: 'Inputs and Controls/TextField',
+  component: TextField
+} as Meta;
 
-function TextFieldStory() {
-  const [value, setValue] = React.useState('');
+type Story = StoryObj<Parameters<typeof TextField>[0]>;
 
-  return (
-    <TextField
-      pattern="[A-Za-z]{3}"
-      label={text('label', 'Hello world')}
-      value={text('value', value)}
-      disabled={boolean('disabled', false)}
-      required={boolean('required', false)}
-      outlined={boolean('outlined', false)}
-      invalid={boolean('invalid', false)}
-      onChange={(evt) => setValue(evt.currentTarget.value)}
-      rows={number('rows', 8)}
-      cols={number('cols', 0)}
-      icon={text('withLeadingIcon', '')}
-      trailingIcon={text('withTrailingIcon', '')}
-      textarea={boolean('textarea', false)}
-      prefix={text('prefix', '')}
-      suffix={text('suffix', '')}
-      foundationRef={console.log}
-    />
-  );
-}
+export const TextFieldStory: Story = {
+  render: (args) => <TextField {...args} />,
+  args: {
+    label: 'Hello world',
+    value: '',
+    disabled: false,
+    required: false,
+    outlined: false,
+    invalid: false,
+    rows: 8,
+    cols: 0,
+    withLeadingIcon: '',
+    withTrailingIcon: '',
+    textarea: false,
+    prefix: '',
+    suffix: ''
+  }
+};
 
-class TextFieldUncontrolledStory extends React.Component {
+class TextFieldUncontrolled extends React.Component {
   state = {
     counter: 0
   };
@@ -47,11 +46,16 @@ class TextFieldUncontrolledStory extends React.Component {
   }
 }
 
-storiesOf('TextField', module)
-  .add('TextField (Controlled)', () => <TextFieldStory />)
-  .add('TextField (Uncontrolled)', () => <TextFieldUncontrolledStory />)
-  .add('autoFocus', () => <TextField label="Hello" autoFocus />)
-  .add('Character Count', () => (
+export const TextFieldUncontrolledStory: Story = {
+  render: () => <TextFieldUncontrolled />
+};
+
+export const TextFieldAutofocusStory: Story = {
+  render: () => <TextField label="Hello" autoFocus />
+};
+
+export const TextFieldCharacterCountStory: Story = {
+  render: () => (
     <>
       <TextField
         textarea
@@ -69,22 +73,29 @@ storiesOf('TextField', module)
 
       <TextField label="Textfield" rows={8} maxLength={20} characterCount />
     </>
-  ))
-  .add('Changing', function () {
-    const [value, setValue] = React.useState('');
+  )
+};
 
-    React.useEffect(() => {
-      setInterval(() => {
-        setValue((val) => (val === '' ? 'Hello World' : ''));
-      }, 2000);
-    }, []);
+export const TextFieldChangingStory: Story = {
+  render: () => {
+    const Component = () => {
+      const [value, setValue] = React.useState('');
 
-    return (
-      <TextField
-        label="Controlled"
-        value={value}
-        outlined
-        onChange={() => {}}
-      />
-    );
-  });
+      React.useEffect(() => {
+        setInterval(() => {
+          setValue((val) => (val === '' ? 'Hello World' : ''));
+        }, 2000);
+      }, []);
+
+      return (
+        <TextField
+          label="Controlled"
+          value={value}
+          outlined
+          onChange={() => {}}
+        />
+      );
+    };
+    return <Component />;
+  }
+};

@@ -1,11 +1,24 @@
 import React from 'react';
+import { Segment } from './segment'; // replace with your actual component import
+import { SegmentedButton } from './segmented-button'; // replace with your actual component import
+import { Meta, StoryObj } from '@storybook/react';
 
-import { storiesOf } from '@storybook/react';
-import { Segment } from './segment';
-import { SegmentedButton } from './segmented-button';
+export default {
+  title: 'Buttons/Segmented-Button',
+  component: SegmentedButton
+} as Meta;
 
-storiesOf('Segmented-Button', module).add('Segmented-Button', () => (
-  <SegmentedButton>
-    <Segment label="Cookies" />
-  </SegmentedButton>
-));
+type Story = StoryObj<typeof SegmentedButton>;
+
+export const SegmentedButtonStory: Story = {
+  render: (args) => (
+    <SegmentedButton {...args}>
+      <Segment label="Cookies" />
+      <Segment label="Pizza" />
+      <Segment label="Icecream" />
+    </SegmentedButton>
+  ),
+  args: {
+    touch: false
+  }
+};

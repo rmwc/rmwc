@@ -1,7 +1,13 @@
 import React from 'react';
-
-import { storiesOf } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import { Typography } from './typography';
+
+export default {
+  title: 'Typography',
+  component: Typography
+} as Meta;
+
+type Story = StoryObj<Parameters<typeof Typography>[0]>;
 
 function TypographyRef() {
   const ref1 = React.useRef(null);
@@ -25,8 +31,8 @@ function TypographyRef() {
   );
 }
 
-storiesOf('Typography', module)
-  .add('Typography', () => (
+export const TypographyStory: Story = {
+  render: (args) => (
     <div>
       <Typography tag="div" style={{ margin: '16px 0' }} use="headline1">
         display4
@@ -65,7 +71,9 @@ storiesOf('Typography', module)
         button
       </Typography>
     </div>
-  ))
-  .add('Typography REF', () => {
-    return <TypographyRef />;
-  });
+  )
+};
+
+export const TypographyREFStory: Story = {
+  render: (args) => <TypographyRef />
+};
