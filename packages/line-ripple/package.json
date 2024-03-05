@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/line-ripple",
-  "version": "14.0.11",
+  "version": "14.0.12",
   "description": "RMWC LineRipple component",
   "main": "./index.js",
   "types": "./index.d.ts",

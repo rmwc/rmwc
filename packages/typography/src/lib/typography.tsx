@@ -28,16 +28,16 @@ export interface TypographyProps {
 export type TypographyHTMLProps = RMWC.HTMLProps<HTMLElement>;
 
 const TAG_MAP: Record<TypographyT, string> = {
-  headline1: 'h1',
-  headline2: 'h2',
-  headline3: 'h3',
-  headline4: 'h4',
-  headline5: 'h5',
-  headline6: 'h6',
-  subtitle1: 'h6',
-  subtitle2: 'h6',
-  body1: 'p',
-  body2: 'p',
+  headline1: 'span',
+  headline2: 'span',
+  headline3: 'span',
+  headline4: 'span',
+  headline5: 'span',
+  headline6: 'span',
+  subtitle1: 'span',
+  subtitle2: 'span',
+  body1: 'span',
+  body2: 'span',
   caption: 'span',
   button: 'span',
   overline: 'span'
