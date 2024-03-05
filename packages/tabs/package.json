@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/tabs",
-  "version": "14.1.0-alpha.0",
+  "version": "14.1.0",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
