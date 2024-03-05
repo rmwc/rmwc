@@ -2,7 +2,7 @@
 
 exports[`Typography > renders 1`] = `
 <DocumentFragment>
-  <p
+  <span
     class="mdc-typography--body1"
   />
 </DocumentFragment>
@@ -10,34 +10,34 @@ exports[`Typography > renders 1`] = `
 
 exports[`Typography > renders with each type 1`] = `
 <DocumentFragment>
-  <h1
+  <span
     class="mdc-typography--headline1"
   />
-  <h2
+  <span
     class="mdc-typography--headline2"
   />
-  <h3
+  <span
     class="mdc-typography--headline3"
   />
-  <h4
+  <span
     class="mdc-typography--headline4"
   />
-  <h5
+  <span
     class="mdc-typography--headline5"
   />
-  <h6
+  <span
     class="mdc-typography--headline6"
   />
-  <h6
+  <span
     class="mdc-typography--subtitle1"
   />
-  <h6
+  <span
     class="mdc-typography--subtitle2"
   />
-  <p
+  <span
     class="mdc-typography--body1"
   />
-  <p
+  <span
     class="mdc-typography--body2"
   />
   <span
