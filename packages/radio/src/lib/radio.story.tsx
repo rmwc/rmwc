@@ -1,31 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Radio } from './radio'; // replace with your actual component import
+import { Meta, StoryObj } from '@storybook/react';
 
-import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
-import { Radio } from './radio';
-import { useKnob } from '@rmwc/base/utils/use-knob';
+export default {
+  title: 'Inputs and Controls/Radio',
+  component: Radio
+} as Meta;
 
-function RadioStory() {
-  const [checked, setChecked] = useKnob('boolean', 'checked', false);
-  const [disabled] = useKnob('boolean', 'disabled', false);
-  const [value] = useKnob('text', 'value', 'myValue');
-  const [label] = useKnob('text', 'label', 'Hello World');
+type Story = StoryObj<typeof Radio>;
 
-  return (
-    <Radio
-      disabled={disabled}
-      checked={checked}
-      value={value}
-      foundationRef={console.log}
-      onChange={(evt) => {
-        setChecked(evt.currentTarget.checked);
-        action(
-          `onChange: ${evt.currentTarget.value} ${evt.currentTarget.checked}`
-        )();
-      }}
-      label={label}
-    />
-  );
-}
+export const RadioStory: Story = {
+  render: (args) => {
+    const Component = () => {
+      const [checked, setChecked] = useState(false);
 
-storiesOf('Inputs and Controls', module).add('Radio', () => <RadioStory />);
+      return (
+        <Radio
+          {...args}
+          checked={checked}
+          foundationRef={console.log}
+          onChange={(evt) => {
+            setChecked(evt.currentTarget.checked);
+          }}
+        />
+      );
+    };
+    return <Component />;
+  },
+  args: {
+    disabled: false,
+    value: 'myValue',
+    label: 'Hello World'
+  }
+};

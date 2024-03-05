@@ -1,18 +1,23 @@
 import React from 'react';
-
+import { Meta, StoryObj } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { storiesOf } from '@storybook/react';
-
 import {
-  SimpleTopAppBar,
   TopAppBar,
   TopAppBarActionItem,
   TopAppBarNavigationIcon,
-  TopAppBarProps,
   TopAppBarRow,
   TopAppBarSection,
-  TopAppBarTitle
-} from './top-app-bar';
+  TopAppBarTitle,
+  TopAppBarProps,
+  SimpleTopAppBar
+} from '..';
+
+export default {
+  title: 'TopAppBar',
+  component: TopAppBar
+} as Meta;
+
+type Story = StoryObj<Parameters<typeof TopAppBar>[0]>;
 
 const TopAppBarStory = (props: TopAppBarProps) => (
   <div style={{ margin: '-24px', boxSizing: 'border-box' }}>
@@ -64,8 +69,8 @@ function NestedTopAppBar() {
   );
 }
 
-storiesOf('TopAppBar', module)
-  .add('standard', () => (
+export const TopAppBarStandardStory: Story = {
+  render: () => (
     <div style={{ margin: '-24px' }}>
       <TopAppBar>
         <TopAppBarRow>
@@ -76,14 +81,35 @@ storiesOf('TopAppBar', module)
       </TopAppBar>
       <div style={{ height: '300vh' }} />
     </div>
-  ))
-  .add('fixed', () => <TopAppBarStory fixed />)
-  .add('dense', () => <TopAppBarStory dense />)
-  .add('short', () => <TopAppBarStory short />)
-  .add('shortCollapsed', () => <TopAppBarStory shortCollapsed />)
-  .add('prominent', () => <TopAppBarStory prominent />)
-  .add('nested', () => <NestedTopAppBar />)
-  .add('SimpleTopAppBar', () => (
+  )
+};
+
+export const TopAppBarFixedStory: Story = {
+  render: () => <TopAppBarStory fixed />
+};
+
+export const TopAppBarDenseStory: Story = {
+  render: () => <TopAppBarStory dense />
+};
+
+export const TopAppBarShortStory: Story = {
+  render: () => <TopAppBarStory short />
+};
+
+export const TopAppBarShortCollapsedStory: Story = {
+  render: () => <TopAppBarStory shortCollapsed />
+};
+
+export const TopAppBarProminentStory: Story = {
+  render: () => <TopAppBarStory prominent />
+};
+
+export const TopBarNestedStory: Story = {
+  render: () => <NestedTopAppBar />
+};
+
+export const SimpleTopAppBarStory = {
+  render: () => (
     <div style={{ margin: '-24px' }}>
       <SimpleTopAppBar
         title="test"
@@ -95,4 +121,5 @@ storiesOf('TopAppBar', module)
         ]}
       />
     </div>
-  ));
+  )
+};

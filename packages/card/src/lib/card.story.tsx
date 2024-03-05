@@ -1,6 +1,4 @@
 import React from 'react';
-
-import { storiesOf } from '@storybook/react';
 import {
   Card,
   CardActionButton,
@@ -11,14 +9,21 @@ import {
   CardMedia,
   CardMediaContent,
   CardPrimaryAction
-} from './card';
-
+} from './card'; // replace with your actual component import
+import type { Meta, StoryObj } from '@storybook/react';
 import { Icon } from '@rmwc/icon';
 import { ListDivider } from '@rmwc/list';
 import { Typography } from '@rmwc/typography';
 
-storiesOf('Cards', module)
-  .add('Full Featured', () => (
+export default {
+  title: 'Cards',
+  component: Card // replace with your actual component
+} as Meta;
+
+type Story = StoryObj<typeof Card>; // replace with your actual component
+
+export const FullFeatureCardStory: Story = {
+  render: (args) => (
     <Card style={{ width: '21rem' }}>
       <CardPrimaryAction>
         <CardMedia
@@ -58,8 +63,11 @@ storiesOf('Cards', module)
         </CardActionIcons>
       </CardActions>
     </Card>
-  ))
-  .add('Article', () => (
+  )
+};
+
+export const ArticleStory: Story = {
+  render: (args) => (
     <Card outlined style={{ width: '21rem' }}>
       <Typography
         use="subtitle1"
@@ -119,8 +127,11 @@ storiesOf('Cards', module)
         </CardActionButton>
       </CardActions>
     </Card>
-  ))
-  .add('Mini', () => (
+  )
+};
+
+export const MiniStory: Story = {
+  render: (args) => (
     <Card style={{ width: '12.5rem' }}>
       <CardPrimaryAction>
         <CardMedia
@@ -158,4 +169,5 @@ storiesOf('Cards', module)
         </CardActionIcons>
       </CardActions>
     </Card>
-  ));
+  )
+};

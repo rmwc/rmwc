@@ -1,18 +1,30 @@
 import React from 'react';
-
-import { storiesOf } from '@storybook/react';
-import { Avatar } from '../avatar';
+import { Meta, StoryObj } from '@storybook/react';
+import { Avatar } from '@rmwc/avatar';
 import { Tooltip } from './tooltip';
 
-storiesOf('Tooltips', module)
-  .add('Tooltip', () => (
-    <Tooltip overlay="Test Tooltip">
+export default {
+  title: 'Tooltips/Tooltip',
+  component: Tooltip
+} as Meta;
+
+type Story = StoryObj<Parameters<typeof Tooltip>[0]>;
+
+export const TooltipStory: Story = {
+  render: (args) => (
+    <Tooltip {...args}>
       <a href="#" style={{ margin: '4rem', display: 'inline-block' }}>
         hover
       </a>
     </Tooltip>
-  ))
-  .add('Tooltip with rich content', () => (
+  ),
+  args: {
+    overlay: 'Test Tooltip'
+  }
+};
+
+export const TooltipWithRichContentStory: Story = {
+  render: (args) => (
     <Tooltip
       overlay={
         <div>
@@ -24,4 +36,5 @@ storiesOf('Tooltips', module)
         Rich Content
       </a>
     </Tooltip>
-  ));
+  )
+};

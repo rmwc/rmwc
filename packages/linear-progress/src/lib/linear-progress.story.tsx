@@ -1,15 +1,20 @@
 import React from 'react';
+import { LinearProgress } from './linear-progress'; // replace with your actual component import
+import { Meta, StoryObj } from '@storybook/react';
 
-import { boolean, number } from '@storybook/addon-knobs';
-import { storiesOf } from '@storybook/react';
-import { LinearProgress } from './linear-progress';
+export default {
+  title: 'LinearProgress',
+  component: LinearProgress
+} as Meta;
 
-storiesOf('Progress', module).add('LinearProgress', () => (
-  <LinearProgress
-    progress={number('progress', 0.5)}
-    buffer={number('buffer', 0)}
-    reversed={boolean('reversed', false)}
-    closed={boolean('closed', false)}
-    foundationRef={console.log}
-  />
-));
+type Story = StoryObj<typeof LinearProgress>;
+
+export const LinearProgressStory: Story = {
+  render: (args) => <LinearProgress {...args} foundationRef={console.log} />,
+  args: {
+    progress: 0.5,
+    buffer: 0,
+    reversed: false,
+    closed: false
+  }
+};

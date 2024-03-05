@@ -1,9 +1,5 @@
-import React from 'react';
-
+import React, { useState } from 'react';
 import { Checkbox } from '@rmwc/checkbox';
-import { Select } from '@rmwc/select';
-import { Switch } from '@rmwc/switch';
-import { storiesOf } from '@storybook/react';
 import {
   DataTable,
   DataTableBody,
@@ -14,111 +10,128 @@ import {
   DataTableRow,
   SimpleDataTable
 } from './data-table';
+import { Meta, StoryObj } from '@storybook/react';
+import { Switch } from '@rmwc/switch';
+import { Select } from '@rmwc/select';
 
-function FormControllsDataTaTable() {
-  const [checked, setChecked] = React.useState<{ [index: number]: boolean }>(
-    {}
-  );
-  const sampleRows = new Array(5).fill(undefined);
+export default {
+  title: 'Data Table',
+  component: DataTable
+} as Meta;
 
-  return (
-    <DataTable>
-      <DataTableContent>
-        <DataTableHead>
-          <DataTableRow>
-            <DataTableHeadCell hasFormControl>
-              <Checkbox />
-            </DataTableHeadCell>
-            <DataTableHeadCell>Label</DataTableHeadCell>
-            <DataTableHeadCell>Header</DataTableHeadCell>
-            <DataTableHeadCell>Header</DataTableHeadCell>
-            <DataTableHeadCell>Toggle</DataTableHeadCell>
-          </DataTableRow>
-        </DataTableHead>
-        <DataTableBody>
-          {sampleRows.map((v, i) => (
-            <DataTableRow key={i} selected={checked[i]}>
-              <DataTableCell hasFormControl>
-                <Checkbox
-                  checked={checked[i]}
-                  onChange={(evt) => {
-                    checked[i] = evt.currentTarget.checked;
-                    setChecked({ ...checked });
+type Story = StoryObj<typeof DataTable>;
+
+export const FormControllsDataTableStory: Story = {
+  render: (args) => {
+    const Component = () => {
+      const [checked, setChecked] = useState<{ [index: number]: boolean }>({});
+      const sampleRows = new Array(5).fill(undefined);
+
+      return (
+        <DataTable {...args}>
+          <DataTableContent>
+            <DataTableHead>
+              <DataTableRow>
+                <DataTableHeadCell hasFormControl>
+                  <Checkbox />
+                </DataTableHeadCell>
+                <DataTableHeadCell>Label</DataTableHeadCell>
+                <DataTableHeadCell>Header</DataTableHeadCell>
+                <DataTableHeadCell>Header</DataTableHeadCell>
+                <DataTableHeadCell>Toggle</DataTableHeadCell>
+              </DataTableRow>
+            </DataTableHead>
+            <DataTableBody>
+              {sampleRows.map((v, i) => (
+                <DataTableRow key={i} selected={checked[i]}>
+                  <DataTableCell hasFormControl>
+                    <Checkbox
+                      checked={checked[i]}
+                      onChange={(evt) => {
+                        checked[i] = evt.currentTarget.checked;
+                        setChecked({ ...checked });
+                      }}
+                    />
+                  </DataTableCell>
+                  <DataTableCell>Label</DataTableCell>
+                  <DataTableCell>
+                    <Select
+                      placeholder="--Select--"
+                      options={['Cookies', 'Pizza', 'Icecream']}
+                    />
+                  </DataTableCell>
+                  <DataTableCell>R{i} C3</DataTableCell>
+                  <DataTableCell>
+                    <Switch />
+                  </DataTableCell>
+                </DataTableRow>
+              ))}
+            </DataTableBody>
+          </DataTableContent>
+        </DataTable>
+      );
+    };
+    return <Component />;
+  }
+};
+
+export const ControlledSortedDataTable: Story = {
+  render: (args) => {
+    const Component = () => {
+      const [sortDir, setSortDir] = React.useState<null | number>(null);
+      return (
+        <DataTable>
+          <DataTableContent>
+            <DataTableHead>
+              <DataTableRow>
+                <DataTableHeadCell>Item</DataTableHeadCell>
+                <DataTableHeadCell
+                  alignEnd
+                  sort={sortDir}
+                  onClick={() => {
+                    if (sortDir === 1) {
+                      setSortDir(-1);
+                    }
+                    if (sortDir === -1) {
+                      setSortDir(null);
+                    }
+                    if (sortDir === null) {
+                      setSortDir(1);
+                    }
                   }}
-                />
-              </DataTableCell>
-              <DataTableCell>Label</DataTableCell>
-              <DataTableCell>
-                <Select
-                  placeholder="--Select--"
-                  options={['Cookies', 'Pizza', 'Icecream']}
-                />
-              </DataTableCell>
-              <DataTableCell>R{i} C3</DataTableCell>
-              <DataTableCell>
-                <Switch />
-              </DataTableCell>
-            </DataTableRow>
-          ))}
-        </DataTableBody>
-      </DataTableContent>
-    </DataTable>
-  );
-}
-function ControlledSortedDataTable() {
-  const [sortDir, setSortDir] = React.useState<null | number>(null);
-  return (
-    <>
-      <DataTable>
-        <DataTableContent>
-          <DataTableHead>
-            <DataTableRow>
-              <DataTableHeadCell>Item</DataTableHeadCell>
-              <DataTableHeadCell
-                alignEnd
-                sort={sortDir}
-                onClick={() => {
-                  if (sortDir === 1) {
-                    setSortDir(-1);
-                  }
-                  if (sortDir === -1) {
-                    setSortDir(null);
-                  }
-                  if (sortDir === null) {
-                    setSortDir(1);
-                  }
-                }}
-              >
-                Quantity (Click Me)
-              </DataTableHeadCell>
-              <DataTableHeadCell alignEnd>Unit price</DataTableHeadCell>
-            </DataTableRow>
-          </DataTableHead>
-          <DataTableBody>
-            <DataTableRow>
-              <DataTableCell>Cookies</DataTableCell>
-              <DataTableCell alignEnd>25</DataTableCell>
-              <DataTableCell alignEnd>$2.90</DataTableCell>
-            </DataTableRow>
-            <DataTableRow selected>
-              <DataTableCell>Pizza</DataTableCell>
-              <DataTableCell alignEnd>50</DataTableCell>
-              <DataTableCell alignEnd>$1.25</DataTableCell>
-            </DataTableRow>
-            <DataTableRow>
-              <DataTableCell>Icecream</DataTableCell>
-              <DataTableCell alignEnd>10</DataTableCell>
-              <DataTableCell alignEnd>$2.35</DataTableCell>
-            </DataTableRow>
-          </DataTableBody>
-        </DataTableContent>
-      </DataTable>
-    </>
-  );
-}
+                >
+                  Quantity (Click Me)
+                </DataTableHeadCell>
+                <DataTableHeadCell alignEnd>Unit price</DataTableHeadCell>
+              </DataTableRow>
+            </DataTableHead>
+            <DataTableBody>
+              <DataTableRow>
+                <DataTableCell>Cookies</DataTableCell>
+                <DataTableCell alignEnd>25</DataTableCell>
+                <DataTableCell alignEnd>$2.90</DataTableCell>
+              </DataTableRow>
+              <DataTableRow selected>
+                <DataTableCell>Pizza</DataTableCell>
+                <DataTableCell alignEnd>50</DataTableCell>
+                <DataTableCell alignEnd>$1.25</DataTableCell>
+              </DataTableRow>
+              <DataTableRow>
+                <DataTableCell>Icecream</DataTableCell>
+                <DataTableCell alignEnd>10</DataTableCell>
+                <DataTableCell alignEnd>$2.35</DataTableCell>
+              </DataTableRow>
+            </DataTableBody>
+          </DataTableContent>
+        </DataTable>
+      );
+    };
+    return <Component />;
+  }
+};
 
-storiesOf('DataTable', module)
-  .add('Simple table', () => (
+export const SimpleTableStory: Story = {
+  render: (args) => (
     <DataTable>
       <DataTableContent>
         <DataTableHead>
@@ -139,12 +152,11 @@ storiesOf('DataTable', module)
         </DataTableBody>
       </DataTableContent>
     </DataTable>
-  ))
-  .add('Controlled prop mutating sort', () => <ControlledSortedDataTable />)
-  .add('With Form Controls', () => (
-    <FormControllsDataTaTable></FormControllsDataTaTable>
-  ))
-  .add('Simplified Usage', () => (
+  )
+};
+
+export const SimplifiedUsageStory: Story = {
+  render: (args) => (
     <SimpleDataTable
       getRowProps={(row) => {
         return row[1] > 100 ? { activated: true } : {};
@@ -166,4 +178,5 @@ storiesOf('DataTable', module)
         ['Muffins', 3, '$5.97']
       ]}
     />
-  ));
+  )
+};
