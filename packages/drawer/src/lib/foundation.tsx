@@ -29,8 +29,7 @@ const useDrawerFoundationFactory = (
 
         return new MDCConstructor({
           //This delayes adding the class until next animation frame, fixes issue with draw getting stuck in open state
-          addClass: (className: string) =>
-            window.requestAnimationFrame(() => rootEl.addClass(className)),
+          addClass: (className: string) => rootEl.addClass(className),
           removeClass: (className: string) => rootEl.removeClass(className),
           hasClass: (className: string) => rootEl.hasClass(className),
           elementHasClass: (element: HTMLElement, className: string) =>
