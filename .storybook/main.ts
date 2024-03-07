@@ -9,7 +9,7 @@ const config: StorybookConfig = {
   framework: {
     name: '@storybook/react-vite',
     options: {
-      strictMode: false
+      strictMode: true
     }
   },
 
