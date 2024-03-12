@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/elevation",
-  "version": "14.1.0",
+  "version": "14.1.1",
   "description": "RMWC Elevation component",
   "main": "./index.js",
   "types": "./index.d.ts",

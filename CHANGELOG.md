@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [14.1.1](https://github.com/rmwc/rmwc/compare/v14.1.1-alpha.0...v14.1.1) (2024-03-12)
+
+## [14.1.1-alpha.0](https://github.com/rmwc/rmwc/compare/v14.1.0...v14.1.1-alpha.0) (2024-03-12)
+
+
+### Bug Fixes
+
+* **dialog:** apply default action ([1a9354b](https://github.com/rmwc/rmwc/commit/1a9354b49851a987790b9d4161776841c7689eae))
+
 ## [14.1.0](https://github.com/rmwc/rmwc/compare/v14.1.0-alpha.0...v14.1.0) (2024-03-05)
 
 ## [14.1.0-alpha.0](https://github.com/rmwc/rmwc/compare/v14.0.12...v14.1.0-alpha.0) (2024-03-05)
