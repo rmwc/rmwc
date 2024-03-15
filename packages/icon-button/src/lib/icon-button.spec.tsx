@@ -2,6 +2,7 @@ import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import React from 'react';
 import { IconButton } from './icon-button';
+import { RMWCProvider } from '@rmwc/provider';
 
 describe('', () => {
   it('renders with icon as string', () => {
@@ -64,5 +65,25 @@ describe('', () => {
       <IconButton icon="star" className={'my-custom-classname'} />
     );
     expect(container.firstChild).toHaveClass('my-custom-classname');
+  });
+
+  it('adheres to ripple from provider', () => {
+    const { rerender } = render(
+      <RMWCProvider ripple={true}>
+        <IconButton icon="star" label="Rate this!" />
+      </RMWCProvider>
+    );
+    expect(screen.getByRole('button')).toHaveClass(
+      'mdc-ripple-upgraded--unbounded'
+    );
+
+    rerender(
+      <RMWCProvider ripple={false}>
+        <IconButton icon="star" label="Rate this!" />
+      </RMWCProvider>
+    );
+    expect(screen.getByRole('button')).not.toHaveClass(
+      'mdc-ripple-upgraded--unbounded'
+    );
   });
 });

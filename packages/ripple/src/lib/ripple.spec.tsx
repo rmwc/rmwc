@@ -1,6 +1,7 @@
 import { render } from '@testing-library/react';
 import React from 'react';
 import { Ripple } from './ripple';
+import { RMWCProvider } from '@rmwc/provider';
 
 describe('Ripple', () => {
   it('renders', () => {
@@ -54,5 +55,38 @@ describe('Ripple', () => {
       </Ripple>
     );
     expect(container.firstChild).toHaveClass('mdc-ripple-upgraded--unbounded');
+  });
+
+  it('matches snapshot for ripple set to false', () => {
+    const { asFragment } = render(
+      <RMWCProvider ripple={false}>
+        <Ripple unbounded>
+          <div />
+        </Ripple>
+      </RMWCProvider>
+    );
+    expect(asFragment()).toMatchInlineSnapshot(`
+      <DocumentFragment>
+        <div />
+      </DocumentFragment>
+    `);
+  });
+
+  it('matches snapshot for ripple set to true', () => {
+    const { asFragment } = render(
+      <RMWCProvider ripple={true}>
+        <Ripple unbounded>
+          <div />
+        </Ripple>
+      </RMWCProvider>
+    );
+    expect(asFragment()).toMatchInlineSnapshot(`
+      <DocumentFragment>
+        <div
+          class="mdc-ripple-upgraded--unbounded mdc-ripple-surface"
+          data-mdc-ripple-is-unbounded="true"
+        />
+      </DocumentFragment>
+    `);
   });
 });
