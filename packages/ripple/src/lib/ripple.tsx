@@ -49,7 +49,7 @@ export function Ripple(props: RippleProps & RMWC.HTMLProps) {
   const child = React.Children.only(children);
 
   if (!providerContext.ripple) {
-    return child;
+    return <>{children}</>;
   }
 
   if (!React.isValidElement<React.HTMLProps<any>>(child)) {
