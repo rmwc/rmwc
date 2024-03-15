@@ -1,7 +1,7 @@
 {
   "name": "@rmwc/avatar",
   "description": "RMWC avatar component",
-  "version": "14.1.1",
+  "version": "14.1.2-alpha.0",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {

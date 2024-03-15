@@ -2,6 +2,14 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [14.1.2-alpha.0](https://github.com/rmwc/rmwc/compare/v14.1.1...v14.1.2-alpha.0) (2024-03-15)
+
+
+### Bug Fixes
+
+* **ripple:** have ripple adhere to provider ([83de8f8](https://github.com/rmwc/rmwc/commit/83de8f82bad28409434fd9fa401ed3398319de17))
+* **ripple:** return children properly ([245582c](https://github.com/rmwc/rmwc/commit/245582c6a8f9eaca72aa2be01bad4fdfffa5a8f3))
+
 ## [14.1.1](https://github.com/rmwc/rmwc/compare/v14.1.1-alpha.0...v14.1.1) (2024-03-12)
 
 ## [14.1.1-alpha.0](https://github.com/rmwc/rmwc/compare/v14.1.0...v14.1.1-alpha.0) (2024-03-12)
