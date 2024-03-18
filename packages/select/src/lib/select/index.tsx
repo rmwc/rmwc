@@ -194,9 +194,11 @@ function NativeMenu(
   );
 }
 
-const AnchorEl = withRipple({ surface: false })(function (props: any) {
-  return <Tag {...props} />;
-});
+const AnchorEl = withRipple({ surface: false })(
+  React.forwardRef(function (props: any, ref: any) {
+    return <Tag {...props} ref={ref} />;
+  })
+);
 
 interface EnhancedMenuProps extends MenuProps {
   selectOptions: FormattedOption[];
