@@ -60,6 +60,16 @@ describe('', () => {
     await waitFor(() => expect(value).toEqual(1));
   });
 
+  it('forwards props only once', async () => {
+    render(
+      <IconButton
+        icon="favorite_border"
+        data-testid="forwarded-props"
+      />
+    );
+    expect(screen.getAllByTestId("forwarded-props").length).toEqual(1)
+  });
+
   it('can have custom classnames', () => {
     const { container } = render(
       <IconButton icon="star" className={'my-custom-classname'} />
