@@ -11,7 +11,9 @@ type Story = StoryObj<typeof ListItem>;
 
 export const BaseStory: Story = {
   render: (args) => {
-    const Link = ({ to, ...rest }) => <a href="#" {...rest} />;
+    const Link = React.forwardRef(({ to, ...rest }, ref) => (
+      <a href="#" {...rest} ref={ref} />
+    ));
     return (
       <ListItem tag={Link} {...args}>
         <ListItemGraphic icon="home" />
