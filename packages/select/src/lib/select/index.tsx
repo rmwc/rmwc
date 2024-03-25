@@ -16,7 +16,6 @@ import {
   MenuSurfaceAnchor
 } from '@rmwc/menu';
 import { ListGroup, ListGroupSubheader, ListDivider } from '@rmwc/list';
-import { withRipple } from '@rmwc/ripple';
 
 import { useSelectFoundation } from './foundation';
 import { SelectIcon } from '../select-icon';
@@ -194,9 +193,9 @@ function NativeMenu(
   );
 }
 
-const AnchorEl = withRipple({ surface: false })(function (props: any) {
+const AnchorEl = function (props: any) {
   return <Tag {...props} />;
-});
+};
 
 interface EnhancedMenuProps extends MenuProps {
   selectOptions: FormattedOption[];
