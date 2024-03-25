@@ -2,6 +2,14 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [14.1.3-alpha.0](https://github.com/rmwc/rmwc/compare/v14.1.2...v14.1.3-alpha.0) (2024-03-25)
+
+
+### Bug Fixes
+
+* **select:** fix index bug ([50866b6](https://github.com/rmwc/rmwc/commit/50866b6e1a843890119af340c38e68560798cd41))
+* **select:** fix ref warning ([f7e123a](https://github.com/rmwc/rmwc/commit/f7e123a135247537c70e2fa962b5663290a0cc6f))
+
 ## [14.1.2](https://github.com/rmwc/rmwc/compare/v14.1.2-alpha.0...v14.1.2) (2024-03-15)
 
 ## [14.1.2-alpha.0](https://github.com/rmwc/rmwc/compare/v14.1.1...v14.1.2-alpha.0) (2024-03-15)
