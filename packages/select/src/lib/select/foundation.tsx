@@ -22,6 +22,9 @@ export const useSelectFoundation = (
   const [selectedTextContent, setSelectedTextContent] = useState('');
 
   const selectedIndex = useRef(-1);
+  const setSelectedIndex = (index: number) => {
+    selectedIndex.current = index;
+  };
 
   const floatingLabel = useRef<FloatingLabelApi | null>();
   const setFloatingLabel = (api: FloatingLabelApi | null) => {
@@ -124,13 +127,10 @@ export const useSelectFoundation = (
               ?.classList.remove(className);
           },
           getSelectedIndex: () => {
-            if (isNative() && nativeControl.current !== undefined) {
-              return nativeControl.current.selectedOptions[0].index;
-            }
             return selectedIndex.current;
           },
           setSelectedIndex: (index: number) => {
-            return selectedIndex;
+            return setSelectedIndex(index);
           }
         };
       };
