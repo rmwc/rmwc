@@ -65,8 +65,7 @@ exports[`renders with icon as JSX 1`] = `
       class="mdc-icon-button__ripple"
     />
     <i
-      class="rmwc-icon rmwc-icon--component material-icons mdc-ripple-upgraded--unbounded"
-      data-mdc-ripple-is-unbounded="true"
+      class="rmwc-icon rmwc-icon--component material-icons"
     >
       <div />
     </i>
@@ -86,8 +85,7 @@ exports[`renders with icon as path 1`] = `
       class="mdc-icon-button__ripple"
     />
     <i
-      class="rmwc-icon rmwc-icon--url material-icons mdc-ripple-upgraded--unbounded"
-      data-mdc-ripple-is-unbounded="true"
+      class="rmwc-icon rmwc-icon--url material-icons"
       style="background-image: url(images/icons/twitter.png);"
     />
   </button>
@@ -107,8 +105,7 @@ exports[`renders with icon as string 1`] = `
       class="mdc-icon-button__ripple"
     />
     <i
-      class="rmwc-icon rmwc-icon--ligature material-icons mdc-ripple-upgraded--unbounded"
-      data-mdc-ripple-is-unbounded="true"
+      class="rmwc-icon rmwc-icon--ligature material-icons"
     >
       star
     </i>

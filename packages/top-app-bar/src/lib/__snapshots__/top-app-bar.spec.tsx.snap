@@ -21,8 +21,7 @@ exports[`TopAppBar > renders 1`] = `
             class="mdc-icon-button__ripple"
           />
           <i
-            class="rmwc-icon rmwc-icon--ligature material-icons mdc-ripple-upgraded--unbounded mdc-top-app-bar__navigation-icon"
-            data-mdc-ripple-is-unbounded="true"
+            class="rmwc-icon rmwc-icon--ligature material-icons"
           >
             menu
           </i>
@@ -48,10 +47,7 @@ exports[`TopAppBar > renders 1`] = `
             class="mdc-icon-button__ripple"
           />
           <i
-            alt="Download"
-            aria-label="Download"
-            class="rmwc-icon rmwc-icon--ligature material-icons mdc-ripple-upgraded--unbounded mdc-top-app-bar__action-item"
-            data-mdc-ripple-is-unbounded="true"
+            class="rmwc-icon rmwc-icon--ligature material-icons"
           >
             file_download
           </i>

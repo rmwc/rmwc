@@ -103,8 +103,7 @@ exports[`Card > renders 1`] = `
             class="mdc-icon-button__ripple"
           />
           <i
-            class="rmwc-icon rmwc-icon--ligature material-icons mdc-ripple-upgraded--unbounded mdc-card__action mdc-card__action--icon mdc-icon-button--display-flex"
-            data-mdc-ripple-is-unbounded="true"
+            class="rmwc-icon rmwc-icon--ligature material-icons"
           >
             favorite_border
           </i>
@@ -140,8 +139,7 @@ exports[`Card > renders 1`] = `
             class="mdc-icon-button__ripple"
           />
           <i
-            class="rmwc-icon rmwc-icon--ligature material-icons mdc-ripple-upgraded--unbounded mdc-card__action mdc-card__action--icon mdc-icon-button--display-flex"
-            data-mdc-ripple-is-unbounded="true"
+            class="rmwc-icon rmwc-icon--ligature material-icons"
           >
             share
           </i>
@@ -156,8 +154,7 @@ exports[`Card > renders 1`] = `
             class="mdc-icon-button__ripple"
           />
           <i
-            class="rmwc-icon rmwc-icon--ligature material-icons mdc-ripple-upgraded--unbounded mdc-card__action mdc-card__action--icon mdc-icon-button--display-flex"
-            data-mdc-ripple-is-unbounded="true"
+            class="rmwc-icon rmwc-icon--ligature material-icons"
           >
             more_vert
           </i>

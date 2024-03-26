@@ -19,3 +19,14 @@ export const IconButtonStory: Story = {
     />
   )
 };
+
+export const IconButtonNoToggleStory: Story = {
+  render: () => (
+    <IconButton
+      icon="star"
+      label="Rate this!"
+      onClick={() => console.log("click")}
+      foundationRef={console.log}
+    />
+  )
+}
