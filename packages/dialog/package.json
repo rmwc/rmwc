@@ -38,7 +38,7 @@
     "react-dom": ">=16.8.x"
   },
   "dependencies": {
-    "@material/dialog": "^14.0.0",
+    "@material/dialog": "15.0.0-canary.7f224ddd4.0",
     "@rmwc/base": "workspace:*",
     "@rmwc/button": "workspace:*",
     "@rmwc/textfield": "workspace:*",

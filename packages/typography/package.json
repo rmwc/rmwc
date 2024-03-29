@@ -37,7 +37,7 @@
     "react-dom": ">=16.8.x"
   },
   "dependencies": {
-    "@material/typography": "^14.0.0",
+    "@material/typography": "15.0.0-canary.7f224ddd4.0",
     "@rmwc/base": "workspace:*",
     "@rmwc/provider": "workspace:*",
     "@rmwc/types": "workspace:*"

@@ -37,10 +37,10 @@
     "react-dom": ">=16.8.x"
   },
   "dependencies": {
-    "@material/tab": "^14.0.0",
-    "@material/tab-bar": "^14.0.0",
-    "@material/tab-indicator": "^14.0.0",
-    "@material/tab-scroller": "^14.0.0",
+    "@material/tab": "15.0.0-canary.7f224ddd4.0",
+    "@material/tab-bar": "15.0.0-canary.7f224ddd4.0",
+    "@material/tab-indicator": "15.0.0-canary.7f224ddd4.0",
+    "@material/tab-scroller": "15.0.0-canary.7f224ddd4.0",
     "@rmwc/base": "workspace:*",
     "@rmwc/icon": "workspace:*",
     "@rmwc/ripple": "workspace:*",

@@ -86,6 +86,6 @@
     "@rmwc/top-app-bar": "workspace:*",
     "@rmwc/types": "workspace:*",
     "@rmwc/typography": "workspace:*",
-    "material-components-web": "^14.0.0"
+    "material-components-web": "15.0.0-canary.7f224ddd4.0"
   }
 }

@@ -38,8 +38,8 @@
     "react-dom": ">=16.8.x"
   },
   "dependencies": {
-    "@material/checkbox": "^14.0.0",
-    "@material/form-field": "^14.0.0",
+    "@material/checkbox": "15.0.0-canary.7f224ddd4.0",
+    "@material/form-field": "15.0.0-canary.7f224ddd4.0",
     "@rmwc/base": "workspace:*",
     "@rmwc/formfield": "workspace:*",
     "@rmwc/ripple": "workspace:*",

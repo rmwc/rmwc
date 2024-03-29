@@ -110,7 +110,7 @@ exports[`Menu > SimpleMenu renders 1`] = `
   >
     <div
       class="mdc-menu mdc-menu-surface mdc-menu-surface--animating-open mdc-menu-surface--is-open-below mdc-menu-surface--open"
-      style="transform-origin: left top; left: 0px; top: 0px; max-height: 736px;"
+      style="transform-origin: right top; right: 0px; top: 0px; max-height: -32px;"
     >
       <ul
         class="mdc-list mdc-menu__items mdc-deprecated-list"
@@ -162,7 +162,7 @@ exports[`Menu > SimpleMenuSurface renders 1`] = `
   >
     <div
       class="mdc-menu-surface mdc-menu-surface--animating-open mdc-menu-surface--is-open-below mdc-menu-surface--open"
-      style="transform-origin: left top; left: 0px; top: 0px; max-height: 736px;"
+      style="transform-origin: right top; right: 0px; top: 0px; max-height: -32px;"
     >
       <div>
         Hello
