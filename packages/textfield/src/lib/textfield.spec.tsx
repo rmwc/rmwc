@@ -7,22 +7,22 @@ import { TextField, TextFieldHelperText } from './textfield';
 describe('TextField', () => {
   it('renders', () => {
     const { asFragment } = render(
-      <TextField label="test" placeholder="test" />
+      <TextField label="hello label" placeholder="test" />
     );
-    expect(screen.getByText('test')).toBeInTheDocument();
+    expect(screen.getByText('hello label')).toBeInTheDocument();
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('can autoFocus', () => {
     const { container } = render(
-      <TextField label="test" placeholder="test" autoFocus />
+      <TextField label="hello label" placeholder="test" autoFocus />
     );
     expect(document.activeElement).toBe(container.querySelector('input'));
   });
 
   it('can have children', () => {
     const { asFragment } = render(
-      <TextField label="test" placeholder="test">
+      <TextField label="hello label" placeholder="test">
         <div>Child</div>
       </TextField>
     );
@@ -81,7 +81,7 @@ describe('TextField', () => {
   it('can be textarea', () => {
     const { asFragment } = render(
       <TextField
-        label="test"
+        label="hello label"
         placeholder="test"
         value="hello world"
         textarea
@@ -100,17 +100,17 @@ describe('TextField', () => {
   });
 
   it('can be invalid', () => {
-    const { asFragment } = render(<TextField label="test" invalid />);
+    const { asFragment } = render(<TextField label="hello label" invalid />);
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('can be outlined', () => {
-    const { asFragment } = render(<TextField label="test" outlined />);
+    const { asFragment } = render(<TextField label="hello label" outlined />);
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('can be disabled', () => {
-    const { asFragment } = render(<TextField label="test" disabled />);
+    const { asFragment } = render(<TextField label="hello label" disabled />);
     expect(asFragment()).toMatchSnapshot();
   });
 
@@ -132,14 +132,16 @@ describe('TextField', () => {
   });
 
   it('can be have icon', () => {
-    const { asFragment } = render(<TextField label="test" icon="favorite" />);
+    const { asFragment } = render(
+      <TextField label="hello label" icon="favorite" />
+    );
     expect(screen.getByText('favorite')).toBeInTheDocument();
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('can be have trailingIcon', () => {
     const { asFragment } = render(
-      <TextField label="test" trailingIcon="favorite" />
+      <TextField label="hello label" trailingIcon="favorite" />
     );
     expect(screen.getByText('favorite')).toBeInTheDocument();
     expect(asFragment()).toMatchSnapshot();
@@ -166,7 +168,7 @@ describe('TextField', () => {
 
   it('label floats on dynamic change', async () => {
     const { container } = render(
-      <TextField label="test" value="" onChange={() => {}} />
+      <TextField label="hello label" value="" onChange={() => {}} />
     );
     await waitFor(() =>
       expect(

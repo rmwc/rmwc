@@ -9,15 +9,15 @@ exports[`TextField > can be disabled 1`] = `
       class="mdc-text-field__ripple"
     />
     <input
-      aria-labelledby="textfield-test-label"
+      aria-labelledby="textfield-hello___label-label"
       class="mdc-text-field__input"
       disabled=""
     />
     <span
       class="mdc-floating-label"
-      id="textfield-test-label"
+      id="textfield-hello___label-label"
     >
-      test
+      hello label
     </span>
     <span
       class="mdc-line-ripple mdc-line-ripple--deactivating"
@@ -41,14 +41,14 @@ exports[`TextField > can be have icon 1`] = `
       class="mdc-text-field__ripple"
     />
     <input
-      aria-labelledby="textfield-test-label"
+      aria-labelledby="textfield-hello___label-label"
       class="mdc-text-field__input"
     />
     <span
       class="mdc-floating-label"
-      id="textfield-test-label"
+      id="textfield-hello___label-label"
     >
-      test
+      hello label
     </span>
     <span
       class="mdc-line-ripple mdc-line-ripple--deactivating"
@@ -67,14 +67,14 @@ exports[`TextField > can be have trailingIcon 1`] = `
       class="mdc-text-field__ripple"
     />
     <input
-      aria-labelledby="textfield-test-label"
+      aria-labelledby="textfield-hello___label-label"
       class="mdc-text-field__input"
     />
     <span
       class="mdc-floating-label"
-      id="textfield-test-label"
+      id="textfield-hello___label-label"
     >
-      test
+      hello label
     </span>
     <i
       class="rmwc-icon rmwc-icon--ligature material-icons mdc-text-field__icon mdc-text-field__icon--trailing"
@@ -99,14 +99,14 @@ exports[`TextField > can be invalid 1`] = `
       class="mdc-text-field__ripple"
     />
     <input
-      aria-labelledby="textfield-test-label"
+      aria-labelledby="textfield-hello___label-label"
       class="mdc-text-field__input"
     />
     <span
       class="mdc-floating-label"
-      id="textfield-test-label"
+      id="textfield-hello___label-label"
     >
-      test
+      hello label
     </span>
     <span
       class="mdc-line-ripple mdc-line-ripple--deactivating"
@@ -125,7 +125,7 @@ exports[`TextField > can be outlined 1`] = `
       class="mdc-text-field__ripple"
     />
     <input
-      aria-labelledby="textfield-test-label"
+      aria-labelledby="textfield-hello___label-label"
       class="mdc-text-field__input"
     />
     <div
@@ -139,10 +139,10 @@ exports[`TextField > can be outlined 1`] = `
       >
         <span
           class="mdc-floating-label"
-          id="textfield-test-label"
+          id="textfield-hello___label-label"
           style="transition-duration: 0s;"
         >
-          test
+          hello label
         </span>
       </div>
       <div
@@ -170,9 +170,9 @@ exports[`TextField > can be textarea 1`] = `
     </textarea>
     <span
       class="mdc-floating-label mdc-floating-label--float-above"
-      id="textfield-test-label"
+      id="textfield-hello___label-label"
     >
-      test
+      hello label
     </span>
     <span
       class="mdc-line-ripple mdc-line-ripple--deactivating"
@@ -194,15 +194,15 @@ exports[`TextField > can have children 1`] = `
       class="mdc-text-field__ripple"
     />
     <input
-      aria-labelledby="textfield-test-label"
+      aria-labelledby="textfield-hello___label-label"
       class="mdc-text-field__input"
       placeholder="test"
     />
     <span
       class="mdc-floating-label"
-      id="textfield-test-label"
+      id="textfield-hello___label-label"
     >
-      test
+      hello label
     </span>
     <span
       class="mdc-line-ripple mdc-line-ripple--deactivating"
@@ -221,15 +221,15 @@ exports[`TextField > renders 1`] = `
       class="mdc-text-field__ripple"
     />
     <input
-      aria-labelledby="textfield-test-label"
+      aria-labelledby="textfield-hello___label-label"
       class="mdc-text-field__input"
       placeholder="test"
     />
     <span
       class="mdc-floating-label"
-      id="textfield-test-label"
+      id="textfield-hello___label-label"
     >
-      test
+      hello label
     </span>
     <span
       class="mdc-line-ripple mdc-line-ripple--deactivating"
