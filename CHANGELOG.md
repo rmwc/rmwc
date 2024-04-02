@@ -2,6 +2,14 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [14.1.4-alpha.0](https://github.com/rmwc/rmwc/compare/v14.1.3...v14.1.4-alpha.0) (2024-04-02)
+
+
+### Bug Fixes
+
+* generate id with no white spaces ([5bb569a](https://github.com/rmwc/rmwc/commit/5bb569abd601b0b502f9705afca823d5fa248fe4))
+* **icon-button:** forward props only once ([f7d7c26](https://github.com/rmwc/rmwc/commit/f7d7c26f307aec8b376cdbe38ab422e95926b019))
+
 ## [14.1.3](https://github.com/rmwc/rmwc/compare/v14.1.3-alpha.0...v14.1.3) (2024-03-25)
 
 ## [14.1.3-alpha.0](https://github.com/rmwc/rmwc/compare/v14.1.2...v14.1.3-alpha.0) (2024-03-25)

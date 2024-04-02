@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/dialog",
-  "version": "14.1.3",
+  "version": "14.1.4-alpha.0",
   "description": "RMWC Dialog component",
   "main": "./index.js",
   "types": "./index.d.ts",
