@@ -16,7 +16,10 @@ export default function Readme() {
       title="Circular Progress"
       lead="Circular progress indicators display progress by animating an indicator along an invisible circular track in a clockwise direction. They can be applied directly to a surface, such as a button or card."
       module="@rmwc/circular-progress"
-      styles={['@rmwc/circular-progress/circular-progress.css']}
+      styles={[
+        '@material/circular-progress/dist/mdc.circular-progress.css',
+        '@rmwc/circular-progress/circular-progress.css'
+      ]}
       examples={examples}
     >
       <DocsSubtitle>Basic Usage</DocsSubtitle>

@@ -16,7 +16,8 @@ export default function Readme() {
       module="@rmwc/button"
       styles={[
         '@material/button/dist/mdc.button.css',
-        '@rmwc/@rmwc/icon/icon.css',
+        '@rmwc/icon/icon.css',
+        '@rmwc/ripple/ripple.css',
         '@material/ripple/dist/mdc.ripple.css'
       ]}
       docsLink="https://material.io/develop/web/components/buttons/"

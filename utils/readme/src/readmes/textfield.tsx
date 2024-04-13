@@ -21,10 +21,12 @@ export default function Readme() {
       styles={[
         '@material/textfield/dist/mdc.textfield.css',
         '@material/floating-label/dist/mdc.floating-label.css',
-        '@material/notched-outline/dist/mdc.notched-outline.css',
+        '@rmwc/icon/icon.css',
         '@material/line-ripple/dist/mdc.line-ripple.css',
+        '@material/notched-outline/dist/mdc.notched-outline.css',
         '@material/ripple/dist/mdc.ripple.css',
-        '@rmwc/icon/icon.css'
+        '@rmwc/ripple/ripple.css',
+        '@rmwc/textfield/textfield.css'
       ]}
       docsLink="https://material.io/develop/web/components/input-controls/text-field/"
       examples={examples}
