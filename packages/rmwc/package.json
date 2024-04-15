@@ -51,6 +51,7 @@
     "@rmwc/card": "workspace:*",
     "@rmwc/checkbox": "workspace:*",
     "@rmwc/chip": "workspace:*",
+    "@rmwc/chip-evolution": "workspace:*",
     "@rmwc/circular-progress": "workspace:*",
     "@rmwc/data-table": "workspace:*",
     "@rmwc/dialog": "workspace:*",

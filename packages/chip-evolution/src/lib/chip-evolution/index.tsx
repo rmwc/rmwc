@@ -7,28 +7,30 @@ import {
   MDCChipFoundation
 } from '@material/chips';
 import { withRipple } from '@rmwc/ripple';
-import { useChipFoundation } from './foundation';
+import { useChipEvolutionFoundation } from './foundation';
 import { Tag, useClassNames, createComponent, useId } from '@rmwc/base';
 import { PrimaryAction, TrailingAction } from '../action';
 import { ActionContext, ActionContextT } from '../action-context';
-import { useChipContext } from '../chip-context';
+import { useChipEvolutionContext } from '../chip-evolution-context';
 
 /*********************************************************************
  * Events
  *********************************************************************/
 
-export type ChipOnInteractionEventT = RMWC.CustomEventT<{ chipId: string }>;
-export type ChipOnTrailingIconInteractionEventT = RMWC.CustomEventT<{
-  chipId: string;
+export type ChipEvolutionOnInteractionEventT = RMWC.CustomEventT<{
+  chipID: string;
 }>;
-export type ChipOnRemoveEventT = RMWC.CustomEventT<{ chipId: string }>;
+export type ChipEvolutionOnTrailingIconInteractionEventT = RMWC.CustomEventT<{
+  chipID: string;
+}>;
+export type ChipEvolutionOnRemoveEventT = RMWC.CustomEventT<{ chipID: string }>;
 
 /*********************************************************************
  * Chips
  *********************************************************************/
 
 /** A Chip component. */
-export interface ChipProps {
+export interface ChipEvolutionProps {
   /** Text for your Chip. */
   label?: string;
   /** Makes the Chip appear selected. */
@@ -44,14 +46,14 @@ export interface ChipProps {
   /** Additional children will be rendered in the text area. */
   children?: React.ReactNode;
   /** A callback for click or enter key. This should be used over onClick for accessibility reasons.  */
-  onInteraction?: (evt: ChipOnInteractionEventT) => void;
+  onInteraction?: (evt: ChipEvolutionOnInteractionEventT) => void;
   /** A callback that is fired once the chip is in an exited state from removing it. */
-  onRemove?: (evt: ChipOnRemoveEventT) => void;
+  onRemove?: (evt: ChipEvolutionOnRemoveEventT) => void;
   /** Advanced: A reference to the MDCFoundation. */
   foundationRef?: React.Ref<MDCChipFoundation>;
 }
 
-export type ChipApi = {
+export type ChipEvolutionApi = {
   getIndex: () => number;
   getActions: () => MDCChipActionType[];
   getElementID: () => string;
@@ -68,15 +70,19 @@ export type ChipApi = {
   startAnimation: (animation: MDCChipAnimation) => void;
 };
 
-export type ChipHTMLProps = RMWC.HTMLProps<
+export type ChipEvolutionHTMLProps = RMWC.HTMLProps<
   HTMLDivElement,
   Omit<React.AllHTMLAttributes<HTMLDivElement>, 'label'>
 >;
 
 /** A Chip component. */
-export const Chip: RMWC.ComponentType<ChipProps, ChipHTMLProps, 'div'> =
-  withRipple()(
-    createComponent<ChipProps, ChipHTMLProps>(function Chip(props, ref) {
+export const ChipEvolution: RMWC.ComponentType<
+  ChipEvolutionProps,
+  ChipEvolutionHTMLProps,
+  'div'
+> = withRipple()(
+  createComponent<ChipEvolutionProps, ChipEvolutionHTMLProps>(
+    function Chip(props, ref) {
       const {
         disabled,
         onInteraction,
@@ -99,9 +105,9 @@ export const Chip: RMWC.ComponentType<ChipProps, ChipHTMLProps, 'div'> =
         registerAction,
         unregisterAction,
         setTrailingAction
-      } = useChipFoundation(props);
+      } = useChipEvolutionFoundation(props);
 
-      const { action, input, filter } = useChipContext();
+      const { action, input, filter } = useChipEvolutionContext();
 
       const className = useClassNames(props, [
         'mdc-evolution-chip',
@@ -109,7 +115,7 @@ export const Chip: RMWC.ComponentType<ChipProps, ChipHTMLProps, 'div'> =
           'mdc-evolution-chip--selected': selected,
           'mdc-evolution-chip--disabled': disabled,
           'mdc-evolution-chip--filter': filter,
-          'rmwc-chip': input
+          'rmwc-chip-evolution': input
         }
       ]);
 
@@ -118,7 +124,7 @@ export const Chip: RMWC.ComponentType<ChipProps, ChipHTMLProps, 'div'> =
         unregisterAction
       });
 
-      const uniqueId = useId('chip', props);
+      const uniqueId = useId('chip-evolution', props);
 
       return (
         <ActionContext.Provider value={contextApi.current}>
@@ -155,5 +161,6 @@ export const Chip: RMWC.ComponentType<ChipProps, ChipHTMLProps, 'div'> =
           </Tag>
         </ActionContext.Provider>
       );
-    })
-  );
+    }
+  )
+);

@@ -7,6 +7,7 @@ import '@rmwc/badge/styles';
 import '@rmwc/card/styles';
 import '@rmwc/checkbox/styles';
 import '@rmwc/chip/styles';
+import '@rmwc/chip-evolution/styles';
 import '@rmwc/circular-progress/styles';
 import '@rmwc/data-table/styles';
 import '@rmwc/dialog/styles';

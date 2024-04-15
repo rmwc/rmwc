@@ -1,6 +1,11 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import * as RMWC from '@rmwc/types';
-import { ChipProps, ChipHTMLProps, ChipOnInteractionEventT, ChipApi } from './';
+import {
+  ChipEvolutionProps,
+  ChipEvolutionHTMLProps,
+  ChipEvolutionOnInteractionEventT,
+  ChipEvolutionApi
+} from './';
 import { useFoundation } from '@rmwc/base';
 import {
   MDCChipFoundation,
@@ -12,9 +17,11 @@ import {
 } from '@material/chips';
 import React, { useCallback, useEffect, useMemo, useRef } from 'react';
 import { ActionApi } from '../action';
-import { useChipContext } from '../chip-context';
+import { useChipEvolutionContext } from '../chip-evolution-context';
 
-export const useChipFoundation = (props: ChipProps & ChipHTMLProps) => {
+export const useChipEvolutionFoundation = (
+  props: ChipEvolutionProps & ChipEvolutionHTMLProps
+) => {
   const trailingAction = useRef<MDCChipAction | null>(null);
   const setTrailingAction = (api: MDCChipAction | null) => {
     trailingAction.current = api;
@@ -29,7 +36,7 @@ export const useChipFoundation = (props: ChipProps & ChipHTMLProps) => {
   const actionsRef =
     useRef<Map<MDCChipActionType, MDCChipAction | null>>(actions);
 
-  const chipContextApi = useChipContext();
+  const chipContextApi = useChipEvolutionContext();
 
   const foundationWithElements = useFoundation({
     props,
@@ -162,7 +169,7 @@ export const useChipFoundation = (props: ChipProps & ChipHTMLProps) => {
     actionsRef.current.delete(action.actionType);
   };
 
-  const chipApi = useMemo<ChipApi>(() => {
+  const chipApi = useMemo<ChipEvolutionApi>(() => {
     return {
       getIndex: () =>
         rootEl.ref?.parentElement
@@ -208,7 +215,7 @@ export const useChipFoundation = (props: ChipProps & ChipHTMLProps) => {
         React.KeyboardEvent &
         MouseEvent &
         KeyboardEvent &
-        ChipOnInteractionEventT
+        ChipEvolutionOnInteractionEventT
     ) => {
       evt.type === 'click' && onClick?.(evt as any);
       evt.type === 'keydown' && onKeyDown?.(evt as any);
@@ -224,8 +231,8 @@ export const useChipFoundation = (props: ChipProps & ChipHTMLProps) => {
   const remove = (evt: any) => {
     props.onRemove?.(evt);
     const parent = rootEl.ref?.parentNode;
-    if (parent !== null || parent !== undefined) {
-      rootEl.ref && parent?.removeChild(rootEl.ref);
+    if (parent !== null && parent !== undefined) {
+      rootEl.ref && parent.removeChild(rootEl.ref);
     }
   };
 

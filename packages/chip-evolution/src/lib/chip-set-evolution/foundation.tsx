@@ -1,4 +1,4 @@
-import { ChipSetHTMLProps, ChipSetProps } from './';
+import { ChipSetEvolutionHTMLProps, ChipSetEvolutionProps } from './';
 import { useFoundation } from '@rmwc/base';
 import {
   MDCChipSetAdapter,
@@ -9,12 +9,12 @@ import {
   MDCChipEvents
 } from '@material/chips';
 import { useRef } from 'react';
-import { ChipApi } from '../chip';
+import { ChipEvolutionApi } from '../chip-evolution';
 
-export const useChipSetFoundation = (
-  props: ChipSetProps & ChipSetHTMLProps
+export const useChipSetEvolutionFoundation = (
+  props: ChipSetEvolutionProps & ChipSetEvolutionHTMLProps
 ) => {
-  const chipsRef = useRef<ChipApi[]>([]);
+  const chipsRef = useRef<ChipEvolutionApi[]>([]);
 
   const foundationWithElements = useFoundation({
     props,
@@ -83,12 +83,12 @@ export const useChipSetFoundation = (
 
   const { foundation, rootEl } = foundationWithElements;
 
-  const registerChip = (chip: ChipApi) => {
+  const registerChip = (chip: ChipEvolutionApi) => {
     chipsRef.current.push(chip);
     chipsRef.current.sort((a, b) => a.getIndex() - b.getIndex());
   };
 
-  const unregisterChip = (chip: ChipApi) => {
+  const unregisterChip = (chip: ChipEvolutionApi) => {
     chipsRef.current.splice(chipsRef.current.indexOf(chip), 1);
     chipsRef.current.sort((a, b) => a.getIndex() - b.getIndex());
   };
