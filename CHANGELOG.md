@@ -2,6 +2,16 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [14.1.5](https://github.com/rmwc/rmwc/compare/v14.1.5-alpha.0...v14.1.5) (2024-04-16)
+
+## [14.1.5-alpha.0](https://github.com/rmwc/rmwc/compare/v14.1.4...v14.1.5-alpha.0) (2024-04-16)
+
+
+### Bug Fixes
+
+* **collapsible-list:** include styles in list styles ([952a3ba](https://github.com/rmwc/rmwc/commit/952a3baacd037c946e01904314d3b48822f99c2b))
+* **linear-progress:** prevent fast-unmount error ([3f3cfe1](https://github.com/rmwc/rmwc/commit/3f3cfe15e78a61518e37c3dc6b9494af7383e88f))
+
 ## [14.1.4](https://github.com/rmwc/rmwc/compare/v14.1.4-alpha.0...v14.1.4) (2024-04-04)
 
 ## [14.1.4-alpha.0](https://github.com/rmwc/rmwc/compare/v14.1.3...v14.1.4-alpha.0) (2024-04-04)
