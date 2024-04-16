@@ -1,11 +1,11 @@
-# Evolution Chips
+# Chips
 
-Evolution Chips represent complex entities in small blocks, such as a contact. Evolution Chips are utilizing the new chip api from material version 14.
+Chips represent complex entities in small blocks, such as a contact.
 
-- Module **@rmwc/chip-evolution**
+- Module **@rmwc/chip**
 - Import styles:
   - Using CSS Loader
-    - import '@rmwc/chip-evolution/styles';
+    - import '@rmwc/chip/styles';
   - Or include stylesheets
     - **'@material/chips/dist/mdc.chips.css'**
     - **'@rmwc/icon/icon.css'**
@@ -13,67 +13,25 @@ Evolution Chips represent complex entities in small blocks, such as a contact. E
 - MDC Docs: [https://material.io/develop/web/components/chips/](https://material.io/develop/web/components/chips/)
 
 ```jsx
-function Example() {
-  const [selectedOptions, setSelectedOptions] = React.useState<
-    string[]
-  >(['foo', 'bar', 'baz']);
-  const options = [
-    { label: 'Foo', value: 'foo' },
-    { label: 'Bar', value: 'bar' },
-    { label: 'Baz', value: 'baz' }
-  ];
-
-  const onRemoveItem = (selectedOption: string) => {
-    const index = selectedOptions.indexOf(selectedOption);
-    if (index === -1) {
-      return;
-    }
-
-    const modifiedArray = selectedOptions
-      .slice(0, index)
-      .concat(selectedOptions.slice(index + 1));
-
-    setSelectedOptions(modifiedArray);
-  };
-
-  return (
-    <div>
-      <ChipSetEvolution input>
-        {selectedOptions.map((selectedOption) => (
-          <ChipEvolution
-            id={selectedOption}
-            key={selectedOption}
-            label={selectedOption}
-            onRemove={() => onRemoveItem(selectedOption)}
-            trailingIcon="close"
-          />
-        ))}
-      </ChipSetEvolution>
-    </div>
-  );
-}
+<ChipSet>
+  <Chip selected label="Cookies" />
+  <Chip label="Pizza" />
+  <Chip label="Icecream" />
+</ChipSet>
 ```
 
 ```jsx
-<ChipSetEvolution>
-  <ChipEvolution selected label="Cookies" />
-  <ChipEvolution label="Pizza" />
-  <ChipEvolution label="Icecream" />
-</ChipSetEvolution>
-```
-
-```jsx
-<ChipSetEvolution>
-  <ChipEvolution icon="favorite" label="Cookies" trailingIcon="close" />
-</ChipSetEvolution>
+<ChipSet>
+  <Chip icon="favorite" label="Cookies" trailingIcon="close" />
+</ChipSet>
 ```
 
 ```jsx
 function Example() {
   const [selected, setSelected] = React.useState(false);
   return (
-    <ChipSetEvolution input>
-      <ChipEvolution
+    <ChipSet>
+      <Chip
         key="my-chip"
         label="Click Me"
         checkmark
@@ -83,28 +41,21 @@ function Example() {
           console.log('onInteraction', evt.detail);
           setSelected(!selected);
         }}
+        onTrailingIconInteraction={(evt) =>
+          console.log('onTrailingIconIteraction', evt.detail)
+        }
         trailingIcon="close"
       />
-    </ChipSetEvolution>
+    </ChipSet>
   );
 }
 ```
 
-```jsx
-<ChipSetEvolution>
-  <ChipEvolution label="Cookies" disabled />
-</ChipSetEvolution>
-```
+## Filter and Choice Chipsets
 
-## Chipset variation
+You can specify a `ChipSet` as either a `filter` of `choice` which slightly changes the visual styling of selected chips. While `material-components-web` has some built in functionality for chip sets, it doesn't fit well with React's unidirectional data flow. It is recommended you use standard React patterns to store selected chips in your state and render them accordingly.
 
-Chipsets can consist of action chips, input chips or filter chips.
-
-Action chips follows the layout grid interaction pattern. Action chips have a single mandatory primary action.
-
-Input chips follows the layout grid interaction pattern. Input chips have a mandatory primary and trailing action.
-
-Filter chips follows the listbox interaction pattern.
+Clicking on the trailing close icon will trigger a close animation and put the chip in an exited state, but it is up to you to remove component out from rendering. The you use the `onRemove` prop implement this behavior.
 
 ```jsx
 function Example() {
@@ -120,25 +71,28 @@ function Example() {
     });
 
   return (
-    <ChipSetEvolution action>
-      <ChipEvolution
+    <ChipSet filter>
+      <Chip
         selected={selected.cookies}
+        checkmark
         onInteraction={() => toggleSelected('cookies')}
         label="Cookies"
       />
-      <ChipEvolution
+      <Chip
         selected={selected.pizza}
+        checkmark
         onInteraction={() => toggleSelected('pizza')}
         icon="local_pizza"
         label="Pizza"
       />
-      <ChipEvolution
+      <Chip
         selected={selected.icecream}
+        checkmark
         onInteraction={() => toggleSelected('icecream')}
         icon="favorite_border"
         label="Icecream"
       />
-    </ChipSetEvolution>
+    </ChipSet>
   );
 }
 ```
@@ -157,97 +111,57 @@ function Example() {
     });
 
   return (
-    <ChipSetEvolution input>
-      <ChipEvolution
+    <ChipSet choice>
+      <Chip
         selected={selected.cookies}
         onInteraction={() => toggleSelected('cookies')}
-        icon="cookie"
         label="Cookies"
       />
-      <ChipEvolution
+      <Chip
         selected={selected.pizza}
         onInteraction={() => toggleSelected('pizza')}
         icon="local_pizza"
         label="Pizza"
       />
-      <ChipEvolution
+      <Chip
         selected={selected.icecream}
         onInteraction={() => toggleSelected('icecream')}
         icon="favorite_border"
         label="Icecream"
       />
-    </ChipSetEvolution>
+    </ChipSet>
   );
 }
 ```
 
-```jsx
-function Example() {
-  const [selected, setSelected] = React.useState({
-    cookies: true,
-    pizza: false,
-    icecream: false
-  });
-  const toggleSelected = (key) =>
-    setSelected({
-      ...selected,
-      [key]: !selected[key]
-    });
-
-  return (
-    <ChipSetEvolution filter>
-      <ChipEvolution
-        selected={selected.cookies}
-        onInteraction={() => toggleSelected('cookies')}
-        icon="cookie"
-        label="Cookies"
-      />
-      <ChipEvolution
-        selected={selected.pizza}
-        onInteraction={() => toggleSelected('pizza')}
-        icon="local_pizza"
-        label="Pizza"
-      />
-      <ChipEvolution
-        selected={selected.icecream}
-        onInteraction={() => toggleSelected('icecream')}
-        icon="favorite_border"
-        label="Icecream"
-      />
-    </ChipSetEvolution>
-  );
-}
-```
-
-## ChipEvolution
+## Chip
 
 A Chip component.
 
 ### Props
 
-| Name                      | Type                                              | Description                                                                                        |
-| ------------------------- | ------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| `checkmark`               | `boolean`                                         | Includes an optional checkmark for the chips selected state.                                       |
-| `children`                | `ReactNode`                                       | Additional children will be rendered in the text area.                                             |
-| `foundationRef`           | `Ref<MDCChipFoundation<>>`                        | Advanced: A reference to the MDCFoundation.                                                        |
-| `icon`                    | `ReactNode`                                       | Instance of an Icon Component.                                                                     |
-| `label`                   | `string`                                          | Text for your Chip.                                                                                |
-| `onInteraction`           | `(evt: ChipEvolutionOnInteractionEventT) => void` | A callback for click or enter key. This should be used over onClick for accessibility reasons.     |
-| `onRemove`                | `(evt: ChipEvolutionOnRemoveEventT) => void`      | A callback that is fired once the chip is in an exited state from removing it.                     |
-| `selected`                | `boolean`                                         | Makes the Chip appear selected.                                                                    |
-| `trailingIcon`            | `ReactNode`                                       | Instance of an Icon Component.                                                                     |
-| `trailingIconRemovesChip` | `boolean`                                         | Defaults to true. Set this to false if your trailing icon is something other than a remove button. |
+| Name                        | Type                                                 | Description                                                                                                                                                          |
+| --------------------------- | ---------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `checkmark`                 | `boolean`                                            | Includes an optional checkmark for the chips selected state.                                                                                                         |
+| `children`                  | `ReactNode`                                          | Additional children will be rendered in the text area.                                                                                                               |
+| `foundationRef`             | `Ref<MDCChipFoundation<>>`                           | Advanced: A reference to the MDCFoundation.                                                                                                                          |
+| `icon`                      | `IconPropT`                                          | Instance of an Icon Component.                                                                                                                                       |
+| `id`                        | `string`                                             | An optional chip ID that will be included in callback evt.detail. If this is not passed, RMWC will attempt to use the "key" prop if present.                         |
+| `label`                     | `ReactNode`                                          | Text for your Chip.                                                                                                                                                  |
+| `onInteraction`             | `(evt: ChipOnInteractionEventT) => void`             | A callback for click or enter key. This should be used over onClick for accessibility reasons. evt.detail = { chipId: string }                                       |
+| `onRemove`                  | `(evt: ChipOnRemoveEventT) => void`                  | A callback that is fired once the chip is in an exited state from removing it. evt.detail = { chipId: string }                                                       |
+| `onTrailingIconInteraction` | `(evt: ChipOnTrailingIconInteractionEventT) => void` | A callback for click or enter key for the trailing icon. material-components-web always treats this as an intent to remove the chip. evt.detail = { chipId: string } |
+| `selected`                  | `boolean`                                            | makes the Chip appear selected.                                                                                                                                      |
+| `trailingIcon`              | `IconPropT`                                          | Instance of an Icon Component.                                                                                                                                       |
+| `trailingIconRemovesChip`   | `boolean`                                            | Defaults to true. Set this to false if your trailing icon is something other than a remove button.                                                                   |
 
-## ChipSetEvolution
+## ChipSet
 
 A container for multiple chips.
 
 ### Props
 
-| Name             | Type      | Description                                                                                                     |
-| ---------------- | --------- | --------------------------------------------------------------------------------------------------------------- |
-| `action`         | `boolean` | Creates a action chipset.                                                                                       |
-| `filter`         | `boolean` | Creates a filter chipset.                                                                                       |
-| `input`          | `boolean` | Creates a input chipset.                                                                                        |
-| `multipleSelect` | `boolean` | Determines whether chipset should be multiple-select or single-select. This is only supported for filter chips. |
-| `overflow`       | `boolean` | Causes the chis to overflow instead of wrap (their default behavior).                                           |
+| Name     | Type      | Description              |
+| -------- | --------- | ------------------------ |
+| `choice` | `boolean` | Creates a choice chipset |
+| `filter` | `boolean` | Creates a filter chipset |

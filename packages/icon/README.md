@@ -1,120 +1,98 @@
-# Icon Buttons
+# Icons
 
-Icon buttons allow users to take actions, and make choices, with a single tap.
+Material icons use geometric shapes to visually represent core ideas, capabilities, or topics.
 
-- Module **@rmwc/icon-button**
+- Module **@rmwc/icon**
 - Import styles:
   - Using CSS Loader
-    - import '@rmwc/icon-button/styles';
+    - import '@rmwc/icon/styles';
   - Or include stylesheets
-    - **'@material/icon-button/dist/mdc.icon-button.css'**
     - **'@rmwc/icon/icon.css'**
-    - **'@material/ripple/dist/mdc.ripple.css'**
-- MDC Docs: [https://material.io/develop/web/components/buttons/icon-buttons/](https://material.io/develop/web/components/buttons/icon-buttons/)
+- MDC Docs: [https://material.io/icons](https://material.io/icons)
+
+## Setup
+
+Icons are not part of the official material-components-web spec, but they are referenced many times in the documentation. RMWC provides a declarative way to use icons. Note that RMWC does not ship with any icons of its own. Make sure you include an icon set! You can use any one you want, but Google's Material Icons are available through open source. Follow Google's developer guide to get them setup with your app. https://google.github.io/material-design-icons/
+
+There are lots of different strategies for implementing icons on the web, and the Icon component is flexible for most of them. Use ligatures, classNames, inline SVGs, HTML, or URLs to get icons into your app. The default strategy is 'ligature' which works with the material.io font icon set.
 
 ## Basic Usage
 
-`IconButton` inherits from the `Icon` component and can be passed icons in the same way.
+The Icon component, (really the icon prop itself) can accept a variety of formats. Anywhere you see a component prop like `icon` or `trailingIcon` will inherit the same behavior.
 
 ```jsx
-<>
-  <IconButton icon="star" label="Rate this!" />
-
-  <IconButton icon="favorite" label="Favorite" disabled />
-
-  <IconButton
-    icon="images/icons/twitter.png"
-    aria-label="Tweet it!"
-    tag="a"
-    target="_blank"
-    href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(
-      'You should definitely be using RMWC for your next project! https://rmwc.io'
-    )}`}
-  />
-</>
-```
-
-## Usage as a Toggle
-
-To use as a toggle, specify an additional toggled on state using 'onIcon'.
-
-```jsx
-<>
-  <IconButton icon="favorite_border" onIcon="favorite" />
-  <IconButton icon="favorite" onIcon="favorite" disabled />
-</>
+<Icon icon="favorite" />
 ```
 
 ```jsx
-function Controlled() {
-  const [isChecked, setIsChecked] = React.useState(false);
-  return (
-    <>
-      <IconButton
-        checked={isChecked}
-        onClick={() => setIsChecked(!isChecked)}
-        onIcon="star"
-        icon="star_border"
-      />
-
-      <IconButton
-        checked={isChecked}
-        onClick={() => setIsChecked(!isChecked)}
-        onIcon="images/icons/twitter.png"
-        icon="images/icons/facebook.png"
-      />
-    </>
-  );
-}
-```
-
-```jsx
-<IconButton
-  onIcon={
-    <div
-      style={{
-        background: 'red',
-        width: '24px',
-        height: '24px'
-      }}
-    />
-  }
+<Icon
   icon={
     <div
       style={{
         background: 'green',
         width: '24px',
         height: '24px',
-        borderRadius: '50%'
+        borderRadius: '100px'
       }}
     />
   }
 />
 ```
 
-## IconButton
+```jsx
+<>
+  {/**
+    If you have additional options,
+    you can pass an object of options to the icon prop.
+  */}
+  <Icon icon={{ icon: 'star', strategy: 'ligature' }} />
 
-An IconButton component that can also be used as a toggle.
-
-### Props
-
-| Name            | Type                                      | Description                                                                       |
-| --------------- | ----------------------------------------- | --------------------------------------------------------------------------------- |
-| `checked`       | `boolean`                                 | Controls the on / off state of the a toggleable button.                           |
-| `disabled`      | `boolean`                                 | Makes the button disabled                                                         |
-| `foundationRef` | `Ref<MDCIconButtonToggleFoundation<>>`    | Advanced: A reference to the MDCFoundation. Only for Toggleable buttons.          |
-| `icon`          | `IconPropT`                               | Icon for the button                                                               |
-| `label`         | `string`                                  | Apply an aria label.                                                              |
-| `onChange`      | `(evt: IconButtonOnChangeEventT) => void` | An onChange callback that receives a custom event. evt.detail = { isOn: boolean } |
-| `onIcon`        | `IconPropT`                               | If specified, renders a toggle with this icon as the on state.                    |
-| `ripple`        | `RipplePropT`                             | Adds a ripple effect to the component                                             |
-
-icon="favorite*outline" />
-{/* Example showing how to set the strategy explicitly \_/}
-<Icon icon={{ icon: 'star', strategy: 'ligature' }} />
+  {/**
+    Passing additional props is especially helpful when the entire icon
+    component isn't exposed. In this example we pass the additional
+    onMouseOver prop directly to the icon
+  */}
+  <Button
+    label="Hello!"
+    icon={{
+      icon: 'add',
+      onMouseOver: () => console.log('OVER')
+    }}
+  />
 </>
+```
 
-````
+## Icon Sizing
+
+The Material spec details multiple sizes for icons. The Icon component doesn't assign a size by default, but these are available to you to force a size. Please note, this will only work if you've included the RMWC icon css file.
+
+```jsx
+<>
+  {/* 18px */}
+  <Icon icon={{ icon: 'favorite', size: 'xsmall' }} />
+  {/* 20px */}
+  <Icon icon={{ icon: 'favorite', size: 'small' }} />
+  {/* 24px */}
+  <Icon icon={{ icon: 'favorite', size: 'medium' }} />
+  {/* 36px */}
+  <Icon icon={{ icon: 'favorite', size: 'large' }} />
+  {/* 48px */}
+  <Icon icon={{ icon: 'favorite', size: 'xlarge' }} />
+</>
+```
+
+## Ligatures
+
+This is for icon fonts that support ligatures like material-icons. This is the default strategy if nothing is set and doesn't require any additional setup if you are using material-icons.
+
+```jsx
+<>
+  <Icon icon="favorite" />
+  <Icon icon="favorite_outline" />
+  {/* Example showing how to set the strategy explicitly */}
+  <Icon icon={{ icon: 'star', strategy: 'ligature' }} />
+</>
+```
 
 ## URLs
 
@@ -132,7 +110,7 @@ This is for icons that are accessible via HTTP(S) and will be loaded directly in
     }}
   />
 </>
-````
+```
 
 ## Components / Inline SVGs
 
