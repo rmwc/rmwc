@@ -129,9 +129,11 @@ export default function Readme() {
             pizza: false,
             icecream: false
           });
+          //@ts-ignore
           const toggleSelected = (key) =>
             setSelected({
               ...selected,
+              //@ts-ignore
               [key]: !selected[key]
             });
 
@@ -166,6 +168,7 @@ export default function Readme() {
             pizza: false,
             icecream: false
           });
+          //@ts-ignore
           const toggleSelected = (key) =>
             setSelected({
               ...selected,
@@ -205,6 +208,7 @@ export default function Readme() {
             pizza: false,
             icecream: false
           });
+          //@ts-ignore
           const toggleSelected = (key) =>
             setSelected({
               ...selected,
