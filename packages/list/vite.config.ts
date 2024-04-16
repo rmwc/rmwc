@@ -41,8 +41,7 @@ export default defineConfig({
       // Could also be a dictionary or array of multiple entry points.
       entry: {
         index: 'src/index.ts',
-        styles: 'src/styles.ts',
-        'collapsible-list': 'src/collapsible-list.ts'
+        styles: 'src/styles.ts'
       },
       // Change this to the formats you want to support.
       // Don't forget to update your package.json as well.
