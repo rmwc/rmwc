@@ -61,13 +61,8 @@ describe('', () => {
   });
 
   it('forwards props only once', async () => {
-    render(
-      <IconButton
-        icon="favorite_border"
-        data-testid="forwarded-props"
-      />
-    );
-    expect(screen.getAllByTestId("forwarded-props").length).toEqual(1)
+    render(<IconButton icon="favorite_border" data-testid="forwarded-props" />);
+    expect(screen.getAllByTestId('forwarded-props').length).toEqual(1);
   });
 
   it('can have custom classnames', () => {

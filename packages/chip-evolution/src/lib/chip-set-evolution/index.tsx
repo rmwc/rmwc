@@ -1,15 +1,18 @@
 import React, { useRef } from 'react';
 import * as RMWC from '@rmwc/types';
 import { createComponent, Tag, useClassNames } from '@rmwc/base';
-import { useChipSetFoundation } from './foundation';
-import { ChipContext, ChipContextT } from '../chip-context';
+import { useChipSetEvolutionFoundation } from './foundation';
+import {
+  ChipEvolutionContext,
+  ChipEvolutionContextT
+} from '../chip-evolution-context';
 
 /*********************************************************************
- * Chip Set
+ * Evolution Chip Set
  *********************************************************************/
 
 /** A container for multiple chips. */
-export interface ChipSetProps {
+export interface ChipSetEvolutionProps {
   /** Causes the chis to overflow instead of wrap (their default behavior). */
   overflow?: boolean;
   /** Creates a action chipset. */
@@ -22,20 +25,20 @@ export interface ChipSetProps {
   multipleSelect?: boolean;
 }
 
-export type ChipSetHTMLProps = RMWC.HTMLProps<
+export type ChipSetEvolutionHTMLProps = RMWC.HTMLProps<
   HTMLDivElement,
   Omit<React.AllHTMLAttributes<HTMLDivElement>, 'label'>
 >;
 
 /** A container for multiple chips. */
-export const ChipSet: RMWC.ComponentType<
-  ChipSetProps,
-  ChipSetHTMLProps,
+export const ChipSetEvolution: RMWC.ComponentType<
+  ChipSetEvolutionProps,
+  ChipSetEvolutionHTMLProps,
   'div'
-> = createComponent<ChipSetProps, ChipSetHTMLProps>(
-  function ChipSet(props, ref) {
+> = createComponent<ChipSetEvolutionProps, ChipSetEvolutionHTMLProps>(
+  function ChipSetEvolution(props, ref) {
     const { rootEl, registerChip, unregisterChip } =
-      useChipSetFoundation(props);
+      useChipSetEvolutionFoundation(props);
 
     const {
       overflow,
@@ -58,7 +61,7 @@ export const ChipSet: RMWC.ComponentType<
       'aria-multiselectable': multipleSelect
     };
 
-    const contextApi = useRef<ChipContextT>({
+    const contextApi = useRef<ChipEvolutionContextT>({
       registerChip,
       unregisterChip,
       action,
@@ -67,7 +70,7 @@ export const ChipSet: RMWC.ComponentType<
     });
 
     return (
-      <ChipContext.Provider value={contextApi.current}>
+      <ChipEvolutionContext.Provider value={contextApi.current}>
         <Tag
           className={className}
           tag="span"
@@ -81,7 +84,7 @@ export const ChipSet: RMWC.ComponentType<
             {props.children}
           </span>
         </Tag>
-      </ChipContext.Provider>
+      </ChipEvolutionContext.Provider>
     );
   }
 );

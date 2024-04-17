@@ -17,6 +17,7 @@ import {
   card,
   checkbox,
   chip,
+  chipEvolution,
   circularProgress,
   dataTable,
   dialog,
@@ -184,9 +185,20 @@ export const menuContent: MenuItemT[] = [
       },
       {
         label: 'Chips',
-        url: `/chips`,
-        gallery: chip.galleryExample,
-        component: Loadable(chip.default)
+        options: [
+          {
+            label: 'Chips',
+            url: `/chips`,
+            gallery: chip.galleryExample,
+            component: Loadable(chip.default)
+          },
+          {
+            label: 'Evolution Chips (experimental)',
+            url: `/evolution-chips`,
+            gallery: chipEvolution.galleryExample,
+            component: Loadable(chipEvolution.default)
+          }
+        ]
       },
       {
         label: 'Data Tables',

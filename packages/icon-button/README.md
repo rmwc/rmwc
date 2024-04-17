@@ -40,8 +40,13 @@ To use as a toggle, specify an additional toggled on state using 'onIcon'.
 
 ```jsx
 <>
-  <IconButton icon="favorite_border" onIcon="favorite" />
-  <IconButton icon="favorite" onIcon="favorite" disabled />
+  <IconButton aria-label="favorite" icon="favorite_border" onIcon="favorite" />
+  <IconButton
+    aria-label="favorite"
+    icon="favorite"
+    onIcon="favorite"
+    disabled
+  />
 </>
 ```
 
@@ -51,6 +56,7 @@ function Controlled() {
   return (
     <>
       <IconButton
+        aria-label="start"
         checked={isChecked}
         onClick={() => setIsChecked(!isChecked)}
         onIcon="star"
@@ -58,6 +64,7 @@ function Controlled() {
       />
 
       <IconButton
+        aria-label="social media"
         checked={isChecked}
         onClick={() => setIsChecked(!isChecked)}
         onIcon="images/icons/twitter.png"
@@ -70,6 +77,7 @@ function Controlled() {
 
 ```jsx
 <IconButton
+  aria-label="red and green"
   onIcon={
     <div
       style={{

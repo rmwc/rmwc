@@ -53,7 +53,8 @@ export function useSnackbarFoundation(
     if (evt.target instanceof Element) {
       let el = evt.target;
 
-      const button = closest(el, '.mdc-button') ?? closest(el, '.mdc-icon-button');
+      const button =
+        closest(el, '.mdc-button') ?? closest(el, '.mdc-icon-button');
       if (button) {
         el = button;
       }

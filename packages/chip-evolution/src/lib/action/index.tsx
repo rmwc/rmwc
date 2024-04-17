@@ -9,9 +9,9 @@ import {
   MDCChipTrailingActionFoundation
 } from '@material/chips';
 import { usePrimaryActionFoundation } from './foundation';
-import { ChipOnInteractionEventT } from '../chip';
+import { ChipEvolutionOnInteractionEventT } from '../chip-evolution';
 import { Icon } from '@rmwc/icon';
-import { useChipContext } from '../chip-context';
+import { useChipEvolutionContext } from '../chip-evolution-context';
 
 /*********************************************************************
  * Primary Action
@@ -32,7 +32,7 @@ export interface PrimaryActionProps {
   icon?: React.ReactNode;
   label?: string;
   selected?: boolean;
-  onInteraction?: (evt: ChipOnInteractionEventT) => void;
+  onInteraction?: (evt: ChipEvolutionOnInteractionEventT) => void;
   children?: React.ReactNode;
 }
 
@@ -55,7 +55,7 @@ export const PrimaryAction = createComponent<
 >(function PrimaryAction(props, ref) {
   const { rootEl } = usePrimaryActionFoundation(props, 'primary');
 
-  const { filter } = useChipContext();
+  const { filter } = useChipEvolutionContext();
 
   const selectable = filter && props.selected;
 
@@ -127,7 +127,7 @@ export interface TrailingActionProps {
   apiRef?: (api: TrailingActionApi | null) => void;
   icon?: React.ReactNode;
   remove?: () => void;
-  onInteraction?: (evt: ChipOnInteractionEventT) => void;
+  onInteraction?: (evt: ChipEvolutionOnInteractionEventT) => void;
 }
 
 export const TrailingAction = createComponent<

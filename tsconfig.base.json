@@ -28,6 +28,8 @@
       "@rmwc/checkbox": ["packages/checkbox/src/index.ts"],
       "@rmwc/checkbox/styles": ["packages/checkbox/src/styles.ts"],
       "@rmwc/chip": ["packages/chip/src/index.ts"],
+      "@rmwc/chip-evolution": ["packages/chip-evolution/src/index.ts"],
+      "@rmwc/chip-evolution/styles": ["packages/chip-evolution/src/styles.ts"],
       "@rmwc/chip/styles": ["packages/chip/src/styles.ts"],
       "@rmwc/circular-progress": ["packages/circular-progress/src/index.ts"],
       "@rmwc/circular-progress/styles": [

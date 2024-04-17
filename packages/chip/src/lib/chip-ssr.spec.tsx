@@ -1,9 +1,10 @@
-// @vitest-environment node
+/**
+ * @jest-environment node
+ */
 
 import React from 'react';
 import { renderToString as mount } from 'react-dom/server';
-import { Chip } from './chip';
-import { ChipSet } from './chip-set';
+import { Chip, ChipSet } from './';
 
 describe('Chip', () => {
   it('renders', () => {
