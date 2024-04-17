@@ -55,21 +55,7 @@ export default defineConfig({
         'react/jsx-runtime',
         /@rmwc\/.*/,
         /@material\/.*/
-      ],
-      output: {
-        outro: (chunk) => {
-          if (chunk.isEntry && chunk.name === 'styles') {
-            return "import './chip.css'";
-          }
-          return '';
-        },
-        assetFileNames: (chunk) => {
-          if (chunk.name === 'styles.css') {
-            return 'chip.css';
-          }
-          return '[name].[ext]';
-        }
-      }
+      ]
     }
   },
 
