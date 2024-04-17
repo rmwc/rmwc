@@ -93,7 +93,7 @@
     "@action-validator/core": "^0.6.0",
     "@babel/core": "^7.24.0",
     "@babel/preset-react": "^7.23.3",
-    "@commitlint/cli": "^18.6.1",
+    "@commitlint/cli": "^19.2.2",
     "@commitlint/config-conventional": "^19.0.3",
     "@documentalist/compiler": "^5.0.0",
     "@jscutlery/semver": "^4.1.0",
