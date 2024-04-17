@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [14.2.1](https://github.com/rmwc/rmwc/compare/v14.2.1-alpha.0...v14.2.1) (2024-04-17)
+
+## [14.2.1-alpha.0](https://github.com/rmwc/rmwc/compare/v14.2.0...v14.2.1-alpha.0) (2024-04-17)
+
+
+### Bug Fixes
+
+* **chip:** correct config to not handle non-existing css file ([041d281](https://github.com/rmwc/rmwc/commit/041d2817fa422f68142abccc7b31b48b2d0485fd))
+
 ## [14.2.0](https://github.com/rmwc/rmwc/compare/v14.2.0-alpha.0...v14.2.0) (2024-04-17)
 
 ## [14.2.0-alpha.0](https://github.com/rmwc/rmwc/compare/v14.1.5...v14.2.0-alpha.0) (2024-04-17)
