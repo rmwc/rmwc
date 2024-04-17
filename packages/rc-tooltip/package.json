@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/rc-tooltip",
-  "version": "14.1.5",
+  "version": "14.2.0-alpha.0",
   "description": "RMWC legacy tooltip component",
   "main": "./index.js",
   "types": "./index.d.ts",

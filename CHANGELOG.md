@@ -2,6 +2,19 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [14.2.0-alpha.0](https://github.com/rmwc/rmwc/compare/v14.1.5...v14.2.0-alpha.0) (2024-04-17)
+
+
+### Features
+
+* **chip:** added chip storybook ([1724af0](https://github.com/rmwc/rmwc/commit/1724af0462871b2527af1153e52c6129a2ff80f5))
+* **chip:** reintroduce old chip ([60fc1db](https://github.com/rmwc/rmwc/commit/60fc1db43ea41b0588f531c0e93a3669dafecb5c))
+
+
+### Bug Fixes
+
+* **docgen:** script now checks for unique names ([897fe88](https://github.com/rmwc/rmwc/commit/897fe883939965c98793b86061be811545e4668c))
+
 ## [14.1.5](https://github.com/rmwc/rmwc/compare/v14.1.5-alpha.0...v14.1.5) (2024-04-16)
 
 ## [14.1.5-alpha.0](https://github.com/rmwc/rmwc/compare/v14.1.4...v14.1.5-alpha.0) (2024-04-16)
