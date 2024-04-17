@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/top-app-bar",
-  "version": "14.1.5",
+  "version": "14.2.0",
   "description": "RMWC TopAppBar component",
   "main": "./index.js",
   "types": "./index.d.ts",
