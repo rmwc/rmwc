@@ -2,6 +2,8 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [14.2.1](https://github.com/rmwc/rmwc/compare/v14.2.1-alpha.0...v14.2.1) (2024-04-17)
+
 ## [14.2.1-alpha.0](https://github.com/rmwc/rmwc/compare/v14.2.0...v14.2.1-alpha.0) (2024-04-17)
 
 
