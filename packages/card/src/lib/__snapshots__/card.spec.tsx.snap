@@ -164,3 +164,74 @@ exports[`Card > renders 1`] = `
   </div>
 </DocumentFragment>
 `;
+
+exports[`Card > respects RMWCProvider ripple 1`] = `
+<DocumentFragment>
+  <div
+    class="mdc-card"
+  >
+    <div
+      class="mdc-card__actions"
+    >
+      <div
+        class="mdc-card__action-buttons"
+      >
+        <button
+          class="mdc-card__action mdc-card__action--button mdc-button"
+        >
+          <div
+            class="mdc-button__ripple"
+          />
+          <div
+            class="mdc-button__touch"
+          />
+          <div
+            class="mdc-button__focus-ring"
+          />
+          <span
+            class="mdc-button__label"
+          >
+            Read
+          </span>
+        </button>
+        <button
+          class="mdc-card__action mdc-card__action--button mdc-button"
+        >
+          <div
+            class="mdc-button__ripple"
+          />
+          <div
+            class="mdc-button__touch"
+          />
+          <div
+            class="mdc-button__focus-ring"
+          />
+          <span
+            class="mdc-button__label"
+          >
+            Bookmark
+          </span>
+        </button>
+        <button
+          class="mdc-card__action mdc-card__action--button mdc-button"
+        >
+          <div
+            class="mdc-button__ripple"
+          />
+          <div
+            class="mdc-button__touch"
+          />
+          <div
+            class="mdc-button__focus-ring"
+          />
+          <span
+            class="mdc-button__label"
+          >
+            Foo
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
