@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/chip",
-  "version": "14.2.1",
+  "version": "14.2.2",
   "description": "RMWC Chip component",
   "main": "./index.js",
   "types": "./index.d.ts",

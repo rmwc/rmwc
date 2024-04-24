@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/drawer",
-  "version": "14.2.1",
+  "version": "14.2.2",
   "description": "RMWC Drawer component",
   "main": "./index.js",
   "types": "./index.d.ts",

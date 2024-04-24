@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [14.2.2](https://github.com/rmwc/rmwc/compare/v14.2.2-alpha.0...v14.2.2) (2024-04-24)
+
+## [14.2.2-alpha.0](https://github.com/rmwc/rmwc/compare/v14.2.1...v14.2.2-alpha.0) (2024-04-24)
+
+
+### Bug Fixes
+
+* **chip:** properly import deprecated chip ([92add59](https://github.com/rmwc/rmwc/commit/92add594dc60bda1de0bc0af0434a10af5716f31))
+
 ## [14.2.1](https://github.com/rmwc/rmwc/compare/v14.2.1-alpha.0...v14.2.1) (2024-04-17)
 
 ## [14.2.1-alpha.0](https://github.com/rmwc/rmwc/compare/v14.2.0...v14.2.1-alpha.0) (2024-04-17)
