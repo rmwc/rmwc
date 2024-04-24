@@ -90,6 +90,11 @@ const providerDefaults: RMWCProviderProps = {
   }
 };
 
+/** Backwards compatible defaults to Typography. */
+export const typographyDefaults = {
+  defaultTag: 'span'
+};
+
 export const ProviderContext = React.createContext(providerDefaults);
 
 export const useProviderContext = () => React.useContext(ProviderContext);

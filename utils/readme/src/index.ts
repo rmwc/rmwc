@@ -5,6 +5,7 @@ export * as button from './readmes/button';
 export * as card from './readmes/card';
 export * as checkbox from './readmes/checkbox';
 export * as chip from './readmes/chip';
+export * as chipEvolution from './readmes/chip-evolution';
 export * as circularProgress from './readmes/circular-progress';
 export * as dataTable from './readmes/data-table';
 export * as dialog from './readmes/dialog';

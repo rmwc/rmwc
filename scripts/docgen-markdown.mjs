@@ -19,9 +19,10 @@ const distPath = path.resolve(
 );
 
 const getMarkdown = async (packageName) => {
-  const readmeFiles = fs
-    .readdirSync(distPath)
-    .filter((fName) => fName.startsWith(packageName) && fName.endsWith('.mjs'));
+  const readmeFiles = fs.readdirSync(distPath).filter((fName) => {
+    const packageNameWithoutExt = fName.slice(0, fName.lastIndexOf('.mjs'));
+    return packageNameWithoutExt === packageName && fName.endsWith('.mjs');
+  });
 
   const promises = readmeFiles.map(async (fName) => {
     const docPath = path.resolve(distPath, fName);

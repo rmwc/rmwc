@@ -51,3 +51,23 @@ exports[`Typography > renders with each type 1`] = `
   />
 </DocumentFragment>
 `;
+
+exports[`Typography > works with RMWCProvider and typographyDefaults 1`] = `
+<DocumentFragment>
+  <span
+    class="mdc-typography--headline6"
+  >
+    Rendered default \`span\`
+  </span>
+  <span
+    class="mdc-typography--headline5"
+  >
+    Rendered with \`span\`
+  </span>
+  <span
+    class="mdc-typography--body2"
+  >
+    Rendered with \`span\`
+  </span>
+</DocumentFragment>
+`;

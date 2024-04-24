@@ -1,4 +1,4 @@
-import { RMWCProvider } from '@rmwc/provider';
+import { RMWCProvider, typographyDefaults } from '@rmwc/provider';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
 import { Typography } from './typography';
@@ -82,5 +82,16 @@ describe('Typography', () => {
     expect(screen.getByText('Rendered default `div`')).toBeInTheDocument();
     expect(screen.getByText('Rendered with `p`')).toBeInTheDocument();
     expect(screen.getByText('Rendered default `div` 2')).toBeInTheDocument();
+  });
+
+  it('works with RMWCProvider and typographyDefaults', () => {
+    const { asFragment } = render(
+      <RMWCProvider typography={typographyDefaults}>
+        <Typography use="headline6">Rendered default `span`</Typography>
+        <Typography use="headline5">Rendered with `span`</Typography>
+        <Typography use="body2">Rendered with `span`</Typography>
+      </RMWCProvider>
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

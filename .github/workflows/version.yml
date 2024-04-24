@@ -25,7 +25,7 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18.x'
+          node-version-file: .node-version
           registry-url: 'https://registry.npmjs.org'
           cache: 'npm'
       - run: npm ci --ignore-scripts
@@ -38,7 +38,7 @@ jobs:
       - name: 'Major Release'
         run: npm run -- release:major
         if: contains(github.head_ref, '/major') && github.base_ref == 'master'
-      - name: 'Aplpha Release'
+      - name: 'Alpha Release'
         run: npm run -- release:alpha
         if: contains(github.head_ref, '/alpha') && github.base_ref == 'master'
       - name: 'Patch Prerelease'
@@ -50,7 +50,7 @@ jobs:
       - name: 'Major Prerelease'
         run: npm run -- prerelease:major
         if: contains(github.head_ref, '/major') && github.base_ref == 'next'
-      - name: 'Aplpha Prerelease'
+      - name: 'Alpha Prerelease'
         run: npm run -- prerelease:alpha
         if: contains(github.head_ref, '/alpha') && github.base_ref == 'next'
       - name: 'Publish Docs'

@@ -1,8 +1,0 @@
-.rmwc-chip {
-  padding-right: 8px;
-}
-
-.mdc-evolution-chip--selected
-  .mdc-evolution-chip__icon--primary.rmwc-chip--action-input {
-  opacity: 1;
-}

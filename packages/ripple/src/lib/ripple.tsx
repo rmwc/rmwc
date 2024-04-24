@@ -44,7 +44,13 @@ export function Ripple(props: RippleProps & RMWC.HTMLProps) {
 
   const { rootEl, surfaceEl } = useRippleFoundation(props);
 
+  const providerContext = useProviderContext();
+
   const child = React.Children.only(children);
+
+  if (!providerContext.ripple) {
+    return <>{children}</>;
+  }
 
   if (!React.isValidElement<React.HTMLProps<any>>(child)) {
     return null;

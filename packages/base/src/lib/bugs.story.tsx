@@ -1,40 +1,17 @@
 import React from 'react';
-
-import { BrowserRouter, Link } from 'react-router-dom';
-
-import { storiesOf } from '@storybook/react';
 import {
   Button,
-  Checkbox,
-  CollapsibleList,
   Dialog,
   DialogContent,
   DialogTitle,
-  Icon,
-  IconButton,
-  List,
-  ListItem,
-  ListItemGraphic,
-  ListItemMeta,
-  ListItemText,
-  Menu,
-  MenuItem,
-  MenuSurfaceAnchor,
-  Radio,
   Select,
-  SimpleDialog,
-  SimpleListItem,
   Slider,
   SnackbarQueue,
-  Switch,
-  Tab,
-  TabBar,
-  TextField,
-  Theme,
   ThemeProvider,
   Typography,
   createSnackbarQueue
-} from '../rmwc';
+} from 'rmwc';
+import { Meta, StoryObj } from '@storybook/react';
 
 function Bug538() {
   const [open, setOpen] = React.useState(false);
@@ -169,10 +146,32 @@ function Hz8pr() {
   );
 }
 
-storiesOf('Bugs', module)
-  .add('#538', Bug538)
-  .add('#515', Bug515)
-  .add('#560', Bug560)
-  .add('#567', Bug567)
-  .add('#594', Bug594)
-  .add('Hz8pr', Hz8pr);
+export default {
+  title: 'Bugs'
+} as Meta;
+
+type Story = StoryObj<object>;
+
+export const Bug538Story: Story = {
+  render: () => <Bug538 />
+};
+
+export const Bug515Story: Story = {
+  render: () => <Bug515 />
+};
+
+export const Bug560Story: Story = {
+  render: () => <Bug560 />
+};
+
+export const Bug567Story: Story = {
+  render: () => <Bug567 />
+};
+
+export const Bug594Story: Story = {
+  render: () => <Bug594 />
+};
+
+export const Hz8prStory: Story = {
+  render: () => <Hz8pr />
+};

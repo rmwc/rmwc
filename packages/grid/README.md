@@ -1,123 +1,65 @@
-# Grid Lists
+# Layout Grid
 
-Grid lists are an alternative to standard list views. Note that as of Material Components Web 6.0.0, this component is deprecated.
+Material design’s responsive UI is based on a column-variate grid layout. It has 12 columns on desktop, 8 columns on tablet and 4 columns on phone.
 
-- Module **@rmwc/grid-list**
+- Module **@rmwc/grid**
 - Import styles:
   - Using CSS Loader
-    - import '@rmwc/grid-list/styles';
+    - import '@rmwc/grid/styles';
   - Or include stylesheets
-    - **'@material/grid-list/dist/mdc.grid-list.css'**
-- MDC Docs: [https://material.io/components/web/catalog/grid-lists/](https://material.io/components/web/catalog/grid-lists/)
+    - **'@material/layout-grid/dist/mdc.layout-grid.css'**
+- MDC Docs: [https://material.io/develop/web/components/layout-grid/](https://material.io/develop/web/components/layout-grid/)
 
 ```jsx
-function Example() {
-  const [state, setState] = React.useState({
-    tileGutter1: false,
-    headerCaption: false,
-    twolineCaption: false,
-    withIconAlignStart: false,
-    tileAspect: '1x1'
-  });
-
-  return (
-    <>
-      <GridList
-        tileGutter1={state.tileGutter1}
-        headerCaption={state.headerCaption}
-        twolineCaption={state.twolineCaption}
-        withIconAlignStart={state.withIconAlignStart}
-        tileAspect={state.tileAspect}
-      >
-        {Array(8)
-          .fill(undefined)
-          .map((val, i) => (
-            <GridTile key={i}>
-              <GridTilePrimary>
-                <GridTilePrimaryContent
-                  src="images/backgrounds/mb-bg-fb-06.png"
-                  alt="test"
-                />
-              </GridTilePrimary>
-              <GridTileSecondary>
-                <GridTileIcon icon="info" />
-                <GridTileTitle>Tile {i + 1}</GridTileTitle>
-              </GridTileSecondary>
-            </GridTile>
-          ))}
-      </GridList>
-
-      {[
-        'tileGutter1',
-        'headerCaption',
-        'twoLineCaption',
-        'withIconAlignStart'
-      ].map((key) => (
-        <Checkbox
-          key={key}
-          label={key}
-          onChange={(evt) =>
-            setState({ ...state, [key]: evt.currentTarget.checked })
-          }
-        />
-      ))}
-
-      <Select
-        value={state.tileAspect}
-        onChange={(evt) =>
-          setState({
-            ...state,
-            tileAspect: String(evt.currentTarget.value)
-          })
-        }
-        label="tileAspect"
-        options={['1x1', '16x9', '2x3', '3x2', '4x3', '3x4']}
-      />
-    </>
-  );
-}
+<Grid>
+  <GridCell span={4}>1</GridCell>
+  <GridCell span={4}>2</GridCell>
+  <GridCell span={4}>3</GridCell>
+</Grid>
 ```
 
-## GridList
+```jsx
+<Grid>
+  {/* If you need additional control over height of your grid, or need to add SubGrids, you can add your own GridRow components. */}
+  <GridRow>
+    <GridCell span={6}>1</GridCell>
+    <GridCell span={6}>
+      <GridRow>
+        <GridCell span={6}>a</GridCell>
+        <GridCell span={6}>b</GridCell>
+      </GridRow>
+    </GridCell>
+  </GridRow>
+</Grid>
+```
 
-Grid List Component
+## Grid
 
-### Props
-
-| Name                 | Type                                                  | Description                                                 |
-| -------------------- | ----------------------------------------------------- | ----------------------------------------------------------- |
-| `headerCaption`      | `boolean`                                             | Move the caption to the top of the card.                    |
-| `tileAspect`         | `"1x1" \| "16x9" \| "2x3" \| "3x2" \| "4x3" \| "3x4"` | One of the following values: 1x1, 16x9, 2x3, 3x2, 4x3, 3x4. |
-| `tileGutter1`        | `boolean`                                             | Use a 1px gutter.                                           |
-| `twolineCaption`     | `boolean`                                             | Make the caption two lines.                                 |
-| `withIconAlignStart` | `boolean`                                             | Leaves space for a start aligned icon.                      |
-
-## GridTile
-
-A grid tile
-
-## GridTileIcon
-
-The icon for a Grid tile. This is an instance of Icon component.
+A Grid component
 
 ### Props
 
-| Name   | Type        | Description                                                                                            |
-| ------ | ----------- | ------------------------------------------------------------------------------------------------------ |
-| `icon` | `IconPropT` | The icon to use. This can be a string for a font icon, a url, or whatever the selected strategy needs. |
+| Name               | Type                | Description                                        |
+| ------------------ | ------------------- | -------------------------------------------------- |
+| `align`            | `"left" \| "right"` | Specifies the alignment of the whole grid.         |
+| `children`         | `ReactNode`         | Children for the Grid                              |
+| `fixedColumnWidth` | `boolean`           | Specifies the grid should have fixed column width. |
 
-## GridTilePrimary
+## GridCell
 
-The primary content for a Grid tile
+A Grid cell
 
-## GridTileSecondary
+### Props
 
-The secondary content for a Grid tile
+| Name      | Type                            | Description                             |
+| --------- | ------------------------------- | --------------------------------------- |
+| `align`   | `"middle" \| "top" \| "bottom"` | Specifies the alignment of cell         |
+| `desktop` | `number`                        | Number of columns to span on a desktop. |
+| `order`   | `number`                        | Specifies the order of the cell.        |
+| `phone`   | `number`                        | Number of columns to span on a phone.   |
+| `span`    | `number`                        | Default number of columns to span.      |
+| `tablet`  | `number`                        | Number of columns to span on a tablet.  |
 
-## GridTileTitleSupportText
+## GridRow
 
-Supporting Text for the Grid Tile
-
-## GridTileTitle
-
-The title for a Grid tile
+By default, an inner grid component is included inside of <Grid>. Use GridRow when doing nested Grids.

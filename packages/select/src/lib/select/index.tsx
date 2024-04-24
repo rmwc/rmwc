@@ -16,7 +16,6 @@ import {
   MenuSurfaceAnchor
 } from '@rmwc/menu';
 import { ListGroup, ListGroupSubheader, ListDivider } from '@rmwc/list';
-import { withRipple } from '@rmwc/ripple';
 
 import { useSelectFoundation } from './foundation';
 import { SelectIcon } from '../select-icon';
@@ -194,9 +193,9 @@ function NativeMenu(
   );
 }
 
-const AnchorEl = withRipple({ surface: false })(function (props: any) {
+const AnchorEl = function (props: any) {
   return <Tag {...props} />;
-});
+};
 
 interface EnhancedMenuProps extends MenuProps {
   selectOptions: FormattedOption[];
@@ -366,6 +365,7 @@ export const Select: RMWC.ComponentType<
   } = useSelectFoundation(props);
 
   const id = useId('select', props);
+  const labelId = id + '-label';
 
   const className = useClassNames(props, [
     'mdc-select',
@@ -386,7 +386,12 @@ export const Select: RMWC.ComponentType<
     value !== undefined ? undefined : props.defaultValue || '';
 
   const renderedLabel = (
-    <FloatingLabel float={floatLabel} apiRef={setFloatingLabel} htmlFor={id}>
+    <FloatingLabel
+      float={floatLabel}
+      apiRef={setFloatingLabel}
+      htmlFor={id}
+      id={labelId}
+    >
       {label}
     </FloatingLabel>
   );
@@ -415,6 +420,7 @@ export const Select: RMWC.ComponentType<
           className="mdc-select__anchor"
           role="button"
           aria-haspopup="listbox"
+          aria-labelledby={labelId}
           element={anchorEl}
           onFocus={handleFocus}
           onBlur={handleBlur}

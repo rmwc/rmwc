@@ -8,222 +8,75 @@ Lists are continuous, vertical indexes of text or images.
     - import '@rmwc/list/styles';
   - Or include stylesheets
     - **'@material/list/dist/mdc.list.css'**
+    - **'@material/ripple/dist/mdc.ripple.css'**
+    - **'@rmwc/icon/icon.css'**
 - MDC Docs: [https://material.io/develop/web/components/lists/](https://material.io/develop/web/components/lists/)
 
-## Two Line
+## Basic Usage
 
-When using the `twoLine` prop, you have to wrap the contents of the `ListItem` in `ListItemText`.
+```jsx
+<List>
+  <ListItem>Cookies</ListItem>
+  <ListItem>Pizza</ListItem>
+  <ListItem>Icecream</ListItem>
+</List>
+```
 
 ```jsx
 <List twoLine>
   <ListItem>
+    <ListItemGraphic icon="star_border" />
     <ListItemText>
       <ListItemPrimaryText>Cookies</ListItemPrimaryText>
       <ListItemSecondaryText>$4.99 a dozen</ListItemSecondaryText>
     </ListItemText>
+    <ListItemMeta icon="info" />
   </ListItem>
   <ListItem>
+    <ListItemGraphic icon="local_pizza" />
     <ListItemText>
       <ListItemPrimaryText>Pizza</ListItemPrimaryText>
       <ListItemSecondaryText>$1.99 a slice</ListItemSecondaryText>
     </ListItemText>
+    <ListItemMeta icon="info" />
   </ListItem>
-  <ListItem>
+  <ListItem activated>
+    <ListItemGraphic icon="mood" />
     <ListItemText>
       <ListItemPrimaryText>Icecream</ListItemPrimaryText>
       <ListItemSecondaryText>$0.99 a scoop</ListItemSecondaryText>
     </ListItemText>
+    <ListItemMeta>Winner!</ListItemMeta>
   </ListItem>
 </List>
 ```
 
-## Leading and Trailing Icons
+## Simplified Usage
+
+While there are siutations where you would need / want to compose the entire list yourself, it can be quite verbose. `SimpleListItem` provides a compact syntax that allows you to pass all options as props. The following example is roughly equivalent to the one above.
 
 ```jsx
-<List>
-  <ListItem>
-    <ListItemGraphic icon="favorite" />
-    Leading
-  </ListItem>
-  <ListItem>
-    Trailing
-    <ListItemMeta icon="star" />
-  </ListItem>
-  <ListItem>
-    <ListItemGraphic icon="wifi" />
-    Leading and Trailing
-    <ListItemMeta icon="info" />
-  </ListItem>
-  <ListItem>
-    <ListItemGraphic icon="wifi" />
-    Leading with Trailing Text
-    <ListItemMeta>HELLO!</ListItemMeta>
-  </ListItem>
+<List twoLine>
+  <SimpleListItem
+    graphic="star_border"
+    text="Cookies"
+    secondaryText="Chocolate chip"
+    metaIcon="info"
+  />
+  <SimpleListItem
+    graphic="local_pizza"
+    text="Pizza"
+    secondaryText="Pepperoni"
+    metaIcon="info"
+  />
+  <SimpleListItem
+    activated
+    graphic="mood"
+    text="Icecream"
+    secondaryText="Chocolate cookie dough"
+    meta="Winner!"
+  />
 </List>
-```
-
-## Avatar List with Dividers
-
-```jsx
-<List twoLine avatarList>
-  <ListGroup>
-    <ListItem>
-      <ListItemGraphic
-        icon={
-          <Avatar
-            src="images/avatars/blackwidow.png"
-            size="xsmall"
-            name="Natalia Alianovna Romanova"
-          />
-        }
-      />
-      Natalia Alianovna Romanova
-      <ListItemMeta icon="info" />
-    </ListItem>
-    <ListItem>
-      <ListItemGraphic
-        icon={
-          <Avatar
-            src="images/avatars/hulk.png"
-            size="small"
-            name="Bruce Banner"
-          />
-        }
-      />
-      Bruce Banner
-      <ListItemMeta icon="info" />
-    </ListItem>
-  </ListGroup>
-  <ListDivider />
-  <ListGroup>
-    <ListItem>
-      <ListItemGraphic
-        icon={
-          <Avatar
-            src="images/avatars/thor.png"
-            size="medium"
-            name="Thor Odinson"
-          />
-        }
-      />
-      Thor Odinson
-      <ListItemMeta icon="info" />
-    </ListItem>
-  </ListGroup>
-</List>
-```
-
-## Selectable
-
-Checkboxes and Radios can be included as part of `ListItemMeta`. It is recommended when using these that you are using controlled components, and that you put your interaction handler on the `ListItem` itself. Notice the `readOnly` prop is also set on the individual form elements.
-
-```jsx
-function Example() {
-  const [selectedIndex, setSelectedIndex] = React.useState(-1);
-
-  return (
-    <List
-      selectedIndex={selectedIndex}
-      onAction={(evt) => setSelectedIndex(evt.detail.index)}
-    >
-      <ListItem>Cookies</ListItem>
-      <ListItem>Pizza</ListItem>
-      <ListItem>Cake</ListItem>
-    </List>
-  );
-}
-```
-
-```jsx
-function Example() {
-  const shoppingList = ['Cookies', 'Pizza', 'Icecream'];
-  const [selectedIndex, setSelectedIndex] = React.useState<number[]>(
-    []
-  );
-
-  const handleSelect = (evt) => {
-    setSelectedIndex((indices) =>
-      indices.includes(evt.detail.index)
-        ? indices.filter((_) => _ !== evt.detail.index)
-        : [...indices, evt.detail.index]
-    );
-  };
-
-  return (
-    <List
-      aria-label="Shopping List"
-      selectedIndex={selectedIndex}
-      onAction={handleSelect}
-    >
-      {shoppingList.map((key) => (
-        <ListItem key={key}>
-          {key}
-          <ListItemMeta>
-            <Checkbox readOnly />
-          </ListItemMeta>
-        </ListItem>
-      ))}
-    </List>
-  );
-}
-```
-
-```jsx
-function Example() {
-  const [checked, setChecked] = React.useState(
-    new Map() < string,
-    boolean >
-      [
-        ['Cookies', false],
-        ['Pizza', false],
-        ['Icecream', false]
-      ]
-  );
-
-  return (
-    <List>
-      {['Cookies', 'Pizza', 'Icecream'].map((key) => (
-        <ListItem
-          key={key}
-          onClick={() =>
-            setChecked((prev) => new Map(prev).set(key, !prev.get(key)))
-          }
-        >
-          {key}&amp;nbsp;
-          <ListItemMeta>
-            <Switch checked={checked.get(key)} />
-          </ListItemMeta>
-        </ListItem>
-      ))}
-    </List>
-  );
-}
-```
-
-```jsx
-function Example() {
-  const mealchoices = ['Beef', 'Chicken', 'Vegetable Lasagna'];
-  const [selectedIndex, setSelectedIndex] = React.useState(0);
-
-  const handleSelect = (evt) => setSelectedIndex(evt.detail.index);
-
-  return (
-    <List
-      aria-label="Please Pick a Meal"
-      selectedIndex={selectedIndex}
-      onAction={handleSelect}
-    >
-      {mealchoices.map((key) => (
-        <ListItem key={key}>
-          {key}
-          <ListItemMeta>
-            <Radio readOnly name="meal-choices-group" />
-          </ListItemMeta>
-        </ListItem>
-      ))}
-    </List>
-  );
-}
 ```
 
 ## List
