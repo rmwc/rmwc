@@ -3,10 +3,12 @@ import * as RMWC from '@rmwc/types';
 import { ChipProps, ChipHTMLProps } from './';
 import { useId, emptyClientRect } from '@rmwc/base';
 import { useFoundation } from '@rmwc/base';
-import { MDCChipFoundation, MDCChipAdapter } from '@material/chips/deprecated';
-import { EventSource } from '@material/chips/deprecated/chip/constants';
 import React, { useEffect, useCallback, useRef } from 'react';
 import { TrailingActionApi } from './trailing-action';
+// @ts-ignore
+import { deprecated } from '@material/chips/dist/mdc.chips.js';
+
+const { MDCChipFoundation, MDCChipAdapter, EventSource } = deprecated;
 
 export const useChipFoundation = (props: ChipProps & ChipHTMLProps) => {
   const chipId = useId('chip', props);
@@ -26,25 +28,25 @@ export const useChipFoundation = (props: ChipProps & ChipHTMLProps) => {
     },
     foundation: ({ rootEl, checkmarkEl, emit, getProps, trailingActionEl }) =>
       new MDCChipFoundation({
-        addClass: (className) => {
+        addClass: (className: string) => {
           rootEl.addClass(className);
         },
-        removeClass: (className) => rootEl.removeClass(className),
-        hasClass: (className) => rootEl.hasClass(className),
-        addClassToLeadingIcon: (className) => {
+        removeClass: (className: string) => rootEl.removeClass(className),
+        hasClass: (className: string) => rootEl.hasClass(className),
+        addClassToLeadingIcon: (className: string) => {
           // handled by props
         },
-        removeClassFromLeadingIcon: (className) => {
+        removeClassFromLeadingIcon: (className: string) => {
           // handled by props
         },
-        eventTargetHasClass: (target: HTMLElement, className) => {
+        eventTargetHasClass: (target: HTMLElement, className: string) => {
           return (
             rootEl.hasClass(className) || target.classList.contains(className)
           );
         },
         notifyInteraction: () =>
           emit('onInteraction', { chipId }, true /* shouldBubble */),
-        notifySelection: (selected) =>
+        notifySelection: (selected: any) =>
           emit(
             'onSelect',
             { chipId, selected: selected },
@@ -65,14 +67,17 @@ export const useChipFoundation = (props: ChipProps & ChipHTMLProps) => {
         notifyNavigation: (key: string, source: EventSource) => {
           //TODO, but probably not needed in case of React
         },
-        getComputedStyleValue: (propertyName) =>
+        getComputedStyleValue: (propertyName: string) =>
           rootEl.ref
             ? window.getComputedStyle(rootEl.ref).getPropertyValue(propertyName)
             : '',
-        setStyleProperty: (propertyName, value) => {
+        setStyleProperty: (
+          propertyName: string,
+          value: string | number | null
+        ) => {
           rootEl.setStyle(propertyName, value);
         },
-        getAttribute: (attrName) => rootEl.ref?.getAttribute(attrName),
+        getAttribute: (attrName: string) => rootEl.ref?.getAttribute(attrName),
         hasLeadingIcon: () => !!props.icon,
         getRootBoundingClientRect: () =>
           rootEl.ref?.getBoundingClientRect() || emptyClientRect,
@@ -111,7 +116,7 @@ export const useChipFoundation = (props: ChipProps & ChipHTMLProps) => {
         notifyEditStart: () => {
           // NOT IMPLEMENTED IN MATERIAL 7
         }
-      } as MDCChipAdapter)
+      } as typeof MDCChipAdapter)
   });
 
   const { rootEl, trailingIconEl, foundation } = foundationWithElements;
