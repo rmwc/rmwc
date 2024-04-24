@@ -35,10 +35,10 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 18.x
+          node-version-file: .node-version
           registry-url: 'https://registry.npmjs.org'
           cache: 'npm'
-      - run: npm i react-live@${{ matrix.reactLive }} react@${{ matrix.react }} react-dom@${{ matrix.react }} @testing-library/react@${{ matrix.reactTestingLibrary }}
+      - run: npm i --ignore-scripts react-live@${{ matrix.reactLive }} react@${{ matrix.react }} react-dom@${{ matrix.react }} @testing-library/react@${{ matrix.reactTestingLibrary }}
       - run: npm test --coverage=${{ matrix.coverage || false }}
         env:
           CI: true
