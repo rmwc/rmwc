@@ -110,7 +110,7 @@
     "@storybook/addon-interactions": "^7.5.3",
     "@storybook/addon-links": "7.6.16",
     "@storybook/core-server": "7.6.16",
-    "@storybook/react-vite": "7.6.16",
+    "@storybook/react-vite": "8.0.9",
     "@swc-node/register": "~1.6.7",
     "@swc/cli": "~0.3.0",
     "@swc/core": "1.3.105",
