@@ -1,4 +1,4 @@
-import { glob } from 'glob';
+import glob from 'glob';
 import { validateWorkflow } from '@action-validator/core';
 import { readFileSync } from 'fs';
 import * as path from 'path';
@@ -10,7 +10,7 @@ const root = path.resolve(__dirname, '../');
 
 let exitCode = 0;
 
-const files = await glob(`${root}/.github/workflows/*.yml`);
+const files = glob.sync(`${root}/.github/workflows/*.yml`);
 
 files.forEach((file) => {
   const actionSource = readFileSync(file, 'utf8');
