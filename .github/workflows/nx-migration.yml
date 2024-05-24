@@ -22,5 +22,5 @@ jobs:
       - name: NX Migrate
         uses: timonmasberg/nx-migration-gh-action@v1.1.12
         with:
-          repoToken: ${{ secrets.GITHUB_TOKEN }}
+          repoToken: ${{ secrets.DEPENDABOT_TOKEN }}
           base: 'master'
