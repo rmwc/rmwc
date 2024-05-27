@@ -96,7 +96,7 @@
     "@commitlint/cli": "^19.2.2",
     "@commitlint/config-conventional": "^19.0.3",
     "@documentalist/compiler": "^5.0.0",
-    "@jscutlery/semver": "^4.1.0",
+    "@jscutlery/semver": "^5.2.2",
     "@nx/eslint": "18.3.5",
     "@nx/eslint-plugin": "18.3.5",
     "@nx/js": "18.3.5",
