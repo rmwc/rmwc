@@ -6,15 +6,28 @@
   },
   "targetDefaults": {
     "build": {
-      "dependsOn": ["^bootstrap", "^build", "bootstrap"],
-      "inputs": ["production", "^production"],
+      "dependsOn": [
+        "^bootstrap",
+        "^build",
+        "bootstrap"
+      ],
+      "inputs": [
+        "production",
+        "^production"
+      ],
       "cache": true
     },
     "serve": {
-      "dependsOn": ["^bootstrap", "bootstrap"]
+      "dependsOn": [
+        "^bootstrap",
+        "bootstrap"
+      ]
     },
     "test": {
-      "inputs": ["default", "^production"],
+      "inputs": [
+        "default",
+        "^production"
+      ],
       "cache": true
     },
     "npm-deploy": {
@@ -23,7 +36,10 @@
       }
     },
     "@nx/vite:test": {
-      "inputs": ["default", "^production"],
+      "inputs": [
+        "default",
+        "^production"
+      ],
       "cache": true
     },
     "build-storybook": {
@@ -46,7 +62,10 @@
     }
   },
   "namedInputs": {
-    "default": ["{projectRoot}/**/*", "sharedGlobals"],
+    "default": [
+      "{projectRoot}/**/*",
+      "sharedGlobals"
+    ],
     "production": [
       "default",
       "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
@@ -82,8 +101,11 @@
   "tasksRunnerOptions": {
     "default": {
       "options": {
-        "cacheableOperations": ["build-storybook"]
+        "cacheableOperations": [
+          "build-storybook"
+        ]
       }
     }
-  }
+  },
+  "nxCloudAccessToken": "NTg3MDMwNWUtYzQ4OS00YzNkLWI0MzktMjJhYjQzNTM0MDQxfHJlYWQtd3JpdGU="
 }
