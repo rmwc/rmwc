@@ -62,6 +62,7 @@ export default function Readme() {
 
       <DocsExample label="Enhanced renderToPortal">
         <Select
+          defaultValue="Cookies"
           label="Enhanced"
           enhanced={{ renderToPortal: true, anchorCorner: 'topLeft' }}
           options={['Cookies', 'Pizza', 'Icecream']}

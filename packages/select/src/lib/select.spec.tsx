@@ -2,6 +2,7 @@ import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Select } from './select';
+import { Portal } from '@rmwc/base';
 
 const ConditionallyRenderedSelect = ({
   onChange
@@ -320,14 +321,20 @@ describe('Select: Lifecycle', () => {
     );
   });
 
-  it('Select matches snapshot when enhanced and renderToPortal', () => {
+  it('Select matches snapshot when enhanced, has defaultValue and renderToPortal', () => {
     const { asFragment } = render(
-      <Select
-        label="test"
-        enhanced={{ renderToPortal: true }}
-        options={['Cookies', 'Pizza', 'Icecream']}
-        defaultValue="Cookies"
-      />
+      <>
+        <Portal />
+        <Select
+          label="test"
+          enhanced={{ renderToPortal: true }}
+          options={['Cookies', 'Pizza', 'Icecream']}
+          defaultValue="Cookies"
+        />
+      </>
+    );
+    expect(screen.getAllByText('Cookies')[1]).toHaveClass(
+      'mdc-select__selected-text'
     );
     expect(asFragment()).toMatchSnapshot();
   });

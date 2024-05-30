@@ -125,7 +125,6 @@ describe('Dialog', () => {
                 <Content value={counter} inc={() => setCounter((c) => c + 1)} />
               </DialogContent>
             </Dialog>
-            )
           </>
         );
       };
