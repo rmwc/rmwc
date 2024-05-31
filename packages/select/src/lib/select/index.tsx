@@ -205,6 +205,7 @@ interface EnhancedMenuProps extends MenuProps {
   value?: string;
   defaultValue?: any;
   children?: React.ReactNode;
+  renderToPortal?: boolean;
 }
 
 const EnhancedMenu = React.forwardRef(
@@ -216,6 +217,7 @@ const EnhancedMenu = React.forwardRef(
       placeholder,
       children,
       selectedIndex,
+      renderToPortal,
       ...rest
     } = props;
 
@@ -255,6 +257,7 @@ const EnhancedMenu = React.forwardRef(
         apiRef={menuApiRef}
         className={className}
         focusOnOpen
+        renderToPortal={renderToPortal}
       >
         {!!props.placeholder && (
           <MenuItem
@@ -475,7 +478,7 @@ export const Select: RMWC.ComponentType<
             {...rest}
             {...enhancedMenuProps}
             ref={ref}
-            anchorCorner="bottomStart"
+            anchorCorner={enhancedMenuProps.anchorCorner ?? 'bottomStart'}
             defaultValue={defaultValue}
             placeholder={placeholder}
             open={menuOpen}
