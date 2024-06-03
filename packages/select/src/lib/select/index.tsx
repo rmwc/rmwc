@@ -1,7 +1,13 @@
 import * as RMWC from '@rmwc/types';
 import React from 'react';
 import { MDCSelectFoundation } from '@material/select';
-import { useClassNames, useId, Tag, createComponent } from '@rmwc/base';
+import {
+  useClassNames,
+  useId,
+  Tag,
+  createComponent,
+  PortalPropT
+} from '@rmwc/base';
 import { FloatingLabel } from '@rmwc/floating-label';
 import { LineRipple } from '@rmwc/line-ripple';
 
@@ -205,7 +211,7 @@ interface EnhancedMenuProps extends MenuProps {
   value?: string;
   defaultValue?: any;
   children?: React.ReactNode;
-  renderToPortal?: boolean;
+  renderToPortal?: PortalPropT;
 }
 
 const EnhancedMenu = React.forwardRef(
