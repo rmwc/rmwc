@@ -2,6 +2,14 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [14.2.3-alpha.0](https://github.com/rmwc/rmwc/compare/v14.2.2...v14.2.3-alpha.0) (2024-06-04)
+
+
+### Bug Fixes
+
+* **select:** enhanced select that renders to portal can have default value ([7cc8e58](https://github.com/rmwc/rmwc/commit/7cc8e5876ec22a580d4d84dca5b9fd37bd6276a5))
+* **select:** use correct type for renderToPortal ([b58280f](https://github.com/rmwc/rmwc/commit/b58280f7b5c12abd43b94def3d1c6a63fa4696e4))
+
 ## [14.2.2](https://github.com/rmwc/rmwc/compare/v14.2.2-alpha.0...v14.2.2) (2024-04-24)
 
 ## [14.2.2-alpha.0](https://github.com/rmwc/rmwc/compare/v14.2.1...v14.2.2-alpha.0) (2024-04-24)
