@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/provider",
-  "version": "14.2.2",
+  "version": "14.2.3",
   "description": "RMWC Provider component",
   "main": "./index.js",
   "types": "./index.d.ts",

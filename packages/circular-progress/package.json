@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/circular-progress",
-  "version": "14.2.2",
+  "version": "14.2.3",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
