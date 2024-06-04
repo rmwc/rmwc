@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/radio",
-  "version": "14.2.3-alpha.0",
+  "version": "14.2.3",
   "description": "RMWC Radio component",
   "main": "./index.js",
   "types": "./index.d.ts",
