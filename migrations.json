@@ -1,0 +1,12 @@
+{
+  "migrations": [
+    {
+      "cli": "nx",
+      "version": "19.2.0-beta.2",
+      "description": "Updates the default workspace data directory to .nx/workspace-data",
+      "implementation": "./src/migrations/update-19-2-0/move-workspace-data-directory",
+      "package": "nx",
+      "name": "19-2-0-move-graph-cache-directory"
+    }
+  ]
+}

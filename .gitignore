@@ -34,6 +34,7 @@ yarn-error.log*
 
 # Nx
 .nx/cache
+.nx/workspace-data
 
 report.*.json
 /rmwc
