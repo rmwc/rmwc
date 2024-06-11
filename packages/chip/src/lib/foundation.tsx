@@ -140,8 +140,12 @@ export const useChipFoundation = (props: ChipProps & ChipHTMLProps) => {
     [foundation]
   );
 
-  const handleTrailingActionInteraction = useCallback(() => {
-    return foundation.handleTrailingActionInteraction();
+  const handleTrailingActionInteraction = useCallback((event: React.MouseEvent & React.KeyboardEvent & MouseEvent & KeyboardEvent) => {
+    const shouldInteractOnKeyDown = event.type === 'keydown' && (event.key === 'Enter' || event.key === ' ')
+    
+    if (event.type === 'click' || shouldInteractOnKeyDown) {
+      return foundation.handleTrailingActionInteraction();
+    }
   }, [foundation]);
 
   // Allow customizing the behavior of the trailing icon
