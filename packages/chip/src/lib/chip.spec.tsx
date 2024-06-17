@@ -1,4 +1,3 @@
-import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Chip, ChipSet } from './';
@@ -71,5 +70,62 @@ describe('Chip', () => {
     await waitFor(() => {
       expect(onInteraction).toHaveBeenCalledTimes(1);
     });
+  });
+
+  it('handles onTrailingIconInteraction onKeyDown (Enter button)', async () => {
+    let onInteraction = vi.fn();
+    let onRemove = vi.fn();
+
+    render(
+      <Chip
+        trailingIcon="close"
+        onTrailingIconInteraction={onInteraction}
+        onRemove={onRemove}
+      />
+    );
+
+    screen.getByText('close').focus();
+
+    await userEvent.keyboard('{Enter}');
+
+    expect(onInteraction).toHaveBeenCalledTimes(1);
+  });
+
+  it('handles onTrailingIconInteraction onKeyDown (Space button)', async () => {
+    let onInteraction = vi.fn();
+    let onRemove = vi.fn();
+
+    render(
+      <Chip
+        trailingIcon="close"
+        onTrailingIconInteraction={onInteraction}
+        onRemove={onRemove}
+      />
+    );
+
+    screen.getByText('close').focus();
+
+    await userEvent.keyboard('{ }');
+
+    expect(onInteraction).toHaveBeenCalledTimes(1);
+  });
+
+  it('does not call onTrailingIconInteraction onKeyDown (Tab button)', async () => {
+    let onInteraction = vi.fn();
+    let onRemove = vi.fn();
+
+    render(
+      <Chip
+        trailingIcon="close"
+        onTrailingIconInteraction={onInteraction}
+        onRemove={onRemove}
+      />
+    );
+
+    screen.getByText('close').focus();
+    
+    await userEvent.tab();
+
+    expect(onInteraction).not.toHaveBeenCalled();
   });
 });
