@@ -330,6 +330,7 @@ export const Select: RMWC.ComponentType<
   const {
     placeholder,
     children,
+    disabled,
     value,
     outlined,
     label = '',
@@ -431,7 +432,7 @@ export const Select: RMWC.ComponentType<
           aria-haspopup="listbox"
           aria-labelledby={labelId}
           element={anchorEl}
-          onFocus={handleFocus}
+          onFocus={!disabled && handleFocus}
           onBlur={handleBlur}
           onClick={handleClick}
           onKeyDown={handleKeydown}
