@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [14.2.4](https://github.com/rmwc/rmwc/compare/v14.2.4-alpha.0...v14.2.4) (2024-06-26)
+
+## [14.2.4-alpha.0](https://github.com/rmwc/rmwc/compare/v14.2.3...v14.2.4-alpha.0) (2024-06-26)
+
+
+### Bug Fixes
+
+* **select:** should not be focusable when disabled ([157a3bf](https://github.com/rmwc/rmwc/commit/157a3bf80379e8601c83dbd6c7758bc1ac40aa76))
+
 ## [14.2.3](https://github.com/rmwc/rmwc/compare/v14.2.3-alpha.0...v14.2.3) (2024-06-04)
 
 ## [14.2.3-alpha.0](https://github.com/rmwc/rmwc/compare/v14.2.2...v14.2.3-alpha.0) (2024-06-04)
