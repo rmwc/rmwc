@@ -123,7 +123,7 @@ describe('Chip', () => {
     );
 
     screen.getByText('close').focus();
-    
+
     await userEvent.tab();
 
     expect(onInteraction).not.toHaveBeenCalled();
