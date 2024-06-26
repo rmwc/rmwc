@@ -12,11 +12,7 @@ Below you will find a to-do list of what remains to be done.
   - Setup caching
 - Move docgen-examples script to readme package
   - Setup caching
-- Reintroduce Storybook
-- Integrate with Nx cloud
 - Make Github Actions use nx affected
-- Add Prettier with Husky
-- Add readme to RMWC package
 - Improve documentation site's version handeling
 - Run github-release task on publish
 

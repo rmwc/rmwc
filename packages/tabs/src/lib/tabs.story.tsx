@@ -1,12 +1,18 @@
 import React from 'react';
-
+import { Meta, StoryObj } from '@storybook/react';
+import { Tab, TabBar } from './'; // replace with your actual component import
+import { Button } from '@rmwc/button';
 import { Link, BrowserRouter as Router } from 'react-router-dom';
-import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { Tab, TabBar } from './';
-import { Button } from '../button';
 
-class TabBarStory extends React.Component {
+export default {
+  title: 'Tabs',
+  component: TabBar
+} as Meta;
+
+type Story = StoryObj<Parameters<typeof TabBar>[0]>;
+
+class MyTabBar extends React.Component {
   state = {
     withScroller: false,
     activeTabIndex: 0,
@@ -126,33 +132,40 @@ class TabBarStory extends React.Component {
   }
 }
 
-storiesOf('Tabs', module)
-  .add('TabBar', () => <TabBarStory />)
-  .add('TabBar Scrolls', () => {
-    const [tabIndex, setTabIndex] = React.useState(0);
+export const TabBarStory: Story = {
+  render: () => <MyTabBar />
+};
 
-    return (
-      <TabBar
-        activeTabIndex={tabIndex}
-        onActivate={(evt) => setTabIndex(evt.detail.index)}
-      >
-        {/* Tabs automatically scroll with lots of content. */}
-        <Tab>Cookies</Tab>
-        <Tab>Pizza</Tab>
-        <Tab>Icecream</Tab>
-        <Tab>Chocolate</Tab>
-        <Tab>Fishsticks</Tab>
-        <Tab>Ratatouille</Tab>
-        <Tab>Bread</Tab>
-        <Tab>Rolls</Tab>
-        <Tab>Sushi</Tab>
-        <Tab>Cupcake</Tab>
-        <Tab>Cheesecake</Tab>
-      </TabBar>
-    );
-  })
-  .add('TabBar', () => <TabBarStory />)
-  .add('TabBar Icon Indicators', () => (
+export const TabBarScrollsStory: Story = {
+  render: () => {
+    const Component = () => {
+      const [tabIndex, setTabIndex] = React.useState(0);
+      return (
+        <TabBar
+          activeTabIndex={tabIndex}
+          onActivate={(evt) => setTabIndex(evt.detail.index)}
+        >
+          {/* Tabs automatically scroll with lots of content. */}
+          <Tab>Cookies</Tab>
+          <Tab>Pizza</Tab>
+          <Tab>Icecream</Tab>
+          <Tab>Chocolate</Tab>
+          <Tab>Fishsticks</Tab>
+          <Tab>Ratatouille</Tab>
+          <Tab>Bread</Tab>
+          <Tab>Rolls</Tab>
+          <Tab>Sushi</Tab>
+          <Tab>Cupcake</Tab>
+          <Tab>Cheesecake</Tab>
+        </TabBar>
+      );
+    };
+    return <Component />;
+  }
+};
+
+export const TabBarIconsIndicatorsStory: Story = {
+  render: () => (
     <TabBar>
       <Tab
         label="Cookies"
@@ -185,13 +198,17 @@ storiesOf('Tabs', module)
         }}
       />
     </TabBar>
-  ))
-  .add('TabBar Links', () => (
+  )
+};
+
+export const TabBarLinksStory: Story = {
+  render: () => (
     <Router>
       <TabBar>
-        <Tab icon="stars" tag={Link} {...{ to: '' }} />
-        <Tab icon="groups" tag={Link} {...{ to: '' }} />
-        <Tab icon="settings" tag={Link} {...{ to: '' }} />
+        <Tab icon="stars" tag={Link} to="" />
+        <Tab icon="groups" tag={Link} to="" />
+        <Tab icon="settings" tag={Link} to="" />
       </TabBar>
     </Router>
-  ));
+  )
+};

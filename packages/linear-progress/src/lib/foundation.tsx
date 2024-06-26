@@ -54,7 +54,9 @@ export const useLinearProgressFoundation = (props: LinearProgressProps) => {
           const RO = (window as unknown as WithMDCResizeObserver)
             .ResizeObserver;
           if (RO) {
-            const ro = new RO(callback);
+            const ro = new RO(
+              (entries, observer) => rootEl.ref && callback(entries, observer)
+            );
             ro.observe(rootEl.ref as Element);
             return ro;
           }

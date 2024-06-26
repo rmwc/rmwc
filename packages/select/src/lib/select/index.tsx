@@ -1,7 +1,13 @@
 import * as RMWC from '@rmwc/types';
 import React from 'react';
 import { MDCSelectFoundation } from '@material/select';
-import { useClassNames, useId, Tag, createComponent } from '@rmwc/base';
+import {
+  useClassNames,
+  useId,
+  Tag,
+  createComponent,
+  PortalPropT
+} from '@rmwc/base';
 import { FloatingLabel } from '@rmwc/floating-label';
 import { LineRipple } from '@rmwc/line-ripple';
 
@@ -16,7 +22,6 @@ import {
   MenuSurfaceAnchor
 } from '@rmwc/menu';
 import { ListGroup, ListGroupSubheader, ListDivider } from '@rmwc/list';
-import { withRipple } from '@rmwc/ripple';
 
 import { useSelectFoundation } from './foundation';
 import { SelectIcon } from '../select-icon';
@@ -129,6 +134,7 @@ function NativeMenu(
     children,
     elementRef,
     open,
+    label,
     ...rest
   } = props;
 
@@ -155,7 +161,9 @@ function NativeMenu(
       tabIndex={0}
       {...rest}
       ref={elementRef}
-      className={`rmwc-select__native-control ${rest.className || ''}`}
+      className={`rmwc-select__native-control${
+        rest.className ? ` ${rest.className}` : ''
+      }`}
     >
       {(props.placeholder !== undefined || isEmptyValue) && (
         <option value="" disabled={isEmptyValue}>
@@ -191,9 +199,9 @@ function NativeMenu(
   );
 }
 
-const AnchorEl = withRipple({ surface: false })(function (props: any) {
+const AnchorEl = function (props: any) {
   return <Tag {...props} />;
-});
+};
 
 interface EnhancedMenuProps extends MenuProps {
   selectOptions: FormattedOption[];
@@ -203,6 +211,7 @@ interface EnhancedMenuProps extends MenuProps {
   value?: string;
   defaultValue?: any;
   children?: React.ReactNode;
+  renderToPortal?: PortalPropT;
 }
 
 const EnhancedMenu = React.forwardRef(
@@ -214,6 +223,7 @@ const EnhancedMenu = React.forwardRef(
       placeholder,
       children,
       selectedIndex,
+      renderToPortal,
       ...rest
     } = props;
 
@@ -253,6 +263,7 @@ const EnhancedMenu = React.forwardRef(
         apiRef={menuApiRef}
         className={className}
         focusOnOpen
+        renderToPortal={renderToPortal}
       >
         {!!props.placeholder && (
           <MenuItem
@@ -319,6 +330,7 @@ export const Select: RMWC.ComponentType<
   const {
     placeholder,
     children,
+    disabled,
     value,
     outlined,
     label = '',
@@ -363,6 +375,7 @@ export const Select: RMWC.ComponentType<
   } = useSelectFoundation(props);
 
   const id = useId('select', props);
+  const labelId = id + '-label';
 
   const className = useClassNames(props, [
     'mdc-select',
@@ -383,7 +396,12 @@ export const Select: RMWC.ComponentType<
     value !== undefined ? undefined : props.defaultValue || '';
 
   const renderedLabel = (
-    <FloatingLabel float={floatLabel} apiRef={setFloatingLabel} htmlFor={id}>
+    <FloatingLabel
+      float={floatLabel}
+      apiRef={setFloatingLabel}
+      htmlFor={id}
+      id={labelId}
+    >
       {label}
     </FloatingLabel>
   );
@@ -412,8 +430,9 @@ export const Select: RMWC.ComponentType<
           className="mdc-select__anchor"
           role="button"
           aria-haspopup="listbox"
+          aria-labelledby={labelId}
           element={anchorEl}
-          onFocus={handleFocus}
+          onFocus={!disabled && handleFocus}
           onBlur={handleBlur}
           onClick={handleClick}
           onKeyDown={handleKeydown}
@@ -439,6 +458,7 @@ export const Select: RMWC.ComponentType<
           {!enhanced && (
             <NativeMenu
               {...rest}
+              id={id}
               value={value}
               children={children}
               defaultValue={defaultValue}
@@ -465,7 +485,7 @@ export const Select: RMWC.ComponentType<
             {...rest}
             {...enhancedMenuProps}
             ref={ref}
-            anchorCorner="bottomStart"
+            anchorCorner={enhancedMenuProps.anchorCorner ?? 'bottomStart'}
             defaultValue={defaultValue}
             placeholder={placeholder}
             open={menuOpen}

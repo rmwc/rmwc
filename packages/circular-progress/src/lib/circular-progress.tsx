@@ -24,6 +24,8 @@ export interface CircularProgressProps {
   progress?: number;
   /** The size of the loader you would like to render. */
   size?: Size | number;
+  /** The label which will set an aria-label. */
+  label?: string;
 }
 
 export const CircularProgress = createComponent<CircularProgressProps>(
@@ -34,6 +36,7 @@ export const CircularProgress = createComponent<CircularProgressProps>(
       max = 1,
       min = 0,
       progress,
+      label,
       ...rest
     } = props;
 
@@ -97,6 +100,7 @@ export const CircularProgress = createComponent<CircularProgressProps>(
         aria-valuenow={progress}
         aria-valuemin={min}
         aria-valuemax={max}
+        aria-label={label}
         {...rest}
         style={style}
         className={className}

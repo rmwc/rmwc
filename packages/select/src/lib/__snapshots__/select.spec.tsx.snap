@@ -8,6 +8,7 @@ exports[`Select > can accept formatted options array 1`] = `
     <div
       aria-disabled="false"
       aria-haspopup="listbox"
+      aria-labelledby="select-test-label"
       class="mdc-select__anchor"
       role="button"
       tabindex="-1"
@@ -19,6 +20,7 @@ exports[`Select > can accept formatted options array 1`] = `
       <span
         class="mdc-floating-label mdc-floating-label--float-above"
         for="select-test"
+        id="select-test-label"
       >
         test
       </span>
@@ -46,7 +48,8 @@ exports[`Select > can accept formatted options array 1`] = `
         </i>
       </span>
       <select
-        class="rmwc-select__native-control "
+        class="rmwc-select__native-control"
+        id="select-test"
         tabindex="0"
       >
         <option
@@ -87,6 +90,7 @@ exports[`Select > can accept options array 1`] = `
     <div
       aria-disabled="false"
       aria-haspopup="listbox"
+      aria-labelledby="select-test-label"
       class="mdc-select__anchor"
       role="button"
       tabindex="-1"
@@ -98,6 +102,7 @@ exports[`Select > can accept options array 1`] = `
       <span
         class="mdc-floating-label mdc-floating-label--float-above"
         for="select-test"
+        id="select-test-label"
       >
         test
       </span>
@@ -125,7 +130,8 @@ exports[`Select > can accept options array 1`] = `
         </i>
       </span>
       <select
-        class="rmwc-select__native-control "
+        class="rmwc-select__native-control"
+        id="select-test"
         tabindex="0"
       >
         <option
@@ -165,6 +171,7 @@ exports[`Select > can have custom rootProps 1`] = `
     <div
       aria-disabled="false"
       aria-haspopup="listbox"
+      aria-labelledby="select-test-label"
       class="mdc-select__anchor"
       role="button"
       tabindex="-1"
@@ -176,6 +183,7 @@ exports[`Select > can have custom rootProps 1`] = `
       <span
         class="mdc-floating-label"
         for="select-test"
+        id="select-test-label"
       >
         test
       </span>
@@ -201,7 +209,8 @@ exports[`Select > can have custom rootProps 1`] = `
         </i>
       </span>
       <select
-        class="rmwc-select__native-control "
+        class="rmwc-select__native-control"
+        id="select-test"
         tabindex="0"
       >
         <option
@@ -223,6 +232,7 @@ exports[`Select > renders 1`] = `
     <div
       aria-disabled="false"
       aria-haspopup="listbox"
+      aria-labelledby="select-test-label"
       class="mdc-select__anchor"
       role="button"
       tabindex="-1"
@@ -234,6 +244,7 @@ exports[`Select > renders 1`] = `
       <span
         class="mdc-floating-label mdc-floating-label--float-above"
         for="select-test"
+        id="select-test-label"
       >
         test
       </span>
@@ -261,7 +272,8 @@ exports[`Select > renders 1`] = `
         </i>
       </span>
       <select
-        class="rmwc-select__native-control "
+        class="rmwc-select__native-control"
+        id="select-test"
         tabindex="0"
       >
         <option
@@ -292,8 +304,70 @@ exports[`Select > renders 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Select: Lifecycle > Select matches snapshot when enhanced and renderToPortal 1`] = `
+exports[`Select: Lifecycle > Select matches snapshot when enhanced, has defaultValue and renderToPortal 1`] = `
 <DocumentFragment>
+  <div
+    id="rmwcPortal"
+  >
+    <div
+      class="mdc-menu mdc-select__menu mdc-menu-surface mdc-menu-surface--is-open-below"
+      style="transform-origin: left top; left: 0px; top: 0px; max-height: 736px;"
+    >
+      <ul
+        class="mdc-list mdc-menu__items mdc-deprecated-list"
+        role="menu"
+      >
+        <li
+          class="mdc-deprecated-list-item"
+          data-value="Cookies"
+          role="menuitem"
+          tabindex="0"
+          value="Cookies"
+        >
+          <div
+            class="mdc-deprecated-list-item__ripple "
+          />
+          <span
+            class="mdc-deprecated-list-item__text"
+          >
+            Cookies
+          </span>
+        </li>
+        <li
+          class="mdc-deprecated-list-item"
+          data-value="Pizza"
+          role="menuitem"
+          tabindex="0"
+          value="Pizza"
+        >
+          <div
+            class="mdc-deprecated-list-item__ripple "
+          />
+          <span
+            class="mdc-deprecated-list-item__text"
+          >
+            Pizza
+          </span>
+        </li>
+        <li
+          class="mdc-deprecated-list-item"
+          data-value="Icecream"
+          role="menuitem"
+          tabindex="0"
+          value="Icecream"
+        >
+          <div
+            class="mdc-deprecated-list-item__ripple "
+          />
+          <span
+            class="mdc-deprecated-list-item__text"
+          >
+            Icecream
+          </span>
+        </li>
+      </ul>
+    </div>
+  </div>
   <div
     class="mdc-menu-surface--anchor"
   >
@@ -303,6 +377,7 @@ exports[`Select: Lifecycle > Select matches snapshot when enhanced and renderToP
       <div
         aria-disabled="false"
         aria-haspopup="listbox"
+        aria-labelledby="select-test-label"
         class="mdc-select__anchor"
         role="button"
         tabindex="0"
@@ -312,8 +387,9 @@ exports[`Select: Lifecycle > Select matches snapshot when enhanced and renderToP
           style="transform-origin: 0px center;"
         />
         <span
-          class="mdc-floating-label"
+          class="mdc-floating-label mdc-floating-label--float-above"
           for="select-test"
+          id="select-test-label"
         >
           test
         </span>
@@ -322,7 +398,9 @@ exports[`Select: Lifecycle > Select matches snapshot when enhanced and renderToP
         >
           <span
             class="mdc-select__selected-text"
-          />
+          >
+            Cookies
+          </span>
         </span>
         <span
           class="mdc-select__dropdown-icon"
@@ -339,6 +417,7 @@ exports[`Select: Lifecycle > Select matches snapshot when enhanced and renderToP
           </i>
         </span>
       </div>
+      <div />
     </div>
   </div>
 </DocumentFragment>

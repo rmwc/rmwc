@@ -20,7 +20,7 @@ Menus display a list of choices on a transient sheet of material.
 
 ## Select Styles
 
-Selects come in three different styles: standard,outlined, and enhanced.
+Selects come in three different styles: standard, outlined, and enhanced.
 
 ```jsx
 <Select label="Standard" options={['Cookies', 'Pizza', 'Icecream']} />
@@ -52,6 +52,16 @@ Selects come in three different styles: standard,outlined, and enhanced.
 />
 ```
 
+Select v14 from material-components-web has no width by default. The RMWC team has taken an active choice of giving Select a default width of 200px to stay true to the RMWC principle of introducing no breaking changes.
+
+```jsx
+<Select
+  label="Overwritten width"
+  options={['Cookies', 'Pizza', 'Icecream']}
+  className="rmwc-select-readme-example"
+/>
+```
+
 ## Validation
 
 ```jsx
@@ -71,7 +81,7 @@ Selects come in three different styles: standard,outlined, and enhanced.
 The Select component has the same behaviors as a native HTML select and be both controlled and uncontrolled.
 
 ```jsx
-function () {
+function Example() {
   const [value, setValue] = React.useState('Cookies');
   return (
     <Select

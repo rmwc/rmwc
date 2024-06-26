@@ -35,13 +35,16 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 18.x
+          node-version-file: .node-version
           registry-url: 'https://registry.npmjs.org'
           cache: 'npm'
-      - run: npm i react-live@${{ matrix.reactLive }} react@${{ matrix.react }} react-dom@${{ matrix.react }} @testing-library/react@${{ matrix.reactTestingLibrary }}
+      - run: npm i --ignore-scripts react-live@${{ matrix.reactLive }} react@${{ matrix.react }} react-dom@${{ matrix.react }} @testing-library/react@${{ matrix.reactTestingLibrary }}
       - run: npm test --coverage=${{ matrix.coverage || false }}
         env:
           CI: true
+          NX_CLOUD_ACCESS_TOKEN: ${{secrets.NX_CLOUD_ACCESS_TOKEN}}
       - if: ${{ matrix.coverage }}
         name: Codecov
-        uses: codecov/codecov-action@v3
+        uses: codecov/codecov-action@v4
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}

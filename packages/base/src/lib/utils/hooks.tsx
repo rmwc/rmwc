@@ -26,7 +26,8 @@ export const useId = (
   prefix: string,
   props: { [key: string]: any }
 ): string => {
-  const internalId = useInternalId(props.label);
+  const idByLabel = props.label?.replace(/\s/g, '___');
+  const internalId = useInternalId(idByLabel);
   if (props.id) {
     return props.id;
   }

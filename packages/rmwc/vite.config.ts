@@ -7,6 +7,7 @@ import dts from 'vite-plugin-dts';
 import { viteStaticCopy } from 'vite-plugin-static-copy';
 
 export default defineConfig({
+  root: __dirname,
   cacheDir: '../../node_modules/.vite/rmwc',
 
   plugins: [
@@ -58,6 +59,7 @@ export default defineConfig({
   },
 
   test: {
+    reporters: ['default'],
     globals: true,
     cache: {
       dir: '../../node_modules/.vitest'

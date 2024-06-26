@@ -64,6 +64,16 @@ You can globally map specify type classes to HTML tags for semantics, or specify
 </RMWCProvider>
 ```
 
+For backwards compatible typography tags, you can import and use `typographyDefaults` from `@rmwc/provider`.
+
+```jsx
+<RMWCProvider typography={typographyDefaults}>
+  <Typography use="headline6">Rendered default `span`</Typography>
+  <Typography use="headline5">Rendered with `span`</Typography>
+  <Typography use="body2">Rendered with `span`</Typography>
+</RMWCProvider>
+```
+
 ## Typography
 
 The Typography Component

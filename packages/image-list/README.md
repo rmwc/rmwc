@@ -17,30 +17,30 @@ Image Lists will give you basic layout, but you will have to use inline styling 
 ```jsx
 <ImageList>
   {[
-    'images/photos/3x2-1.jpg',
-    'images/photos/2x3-1.jpg',
-    'images/photos/3x2-4.jpg',
-    'images/photos/3x2-5.jpg',
-    'images/photos/3x2-6.jpg',
-    'images/photos/2x3-2.jpg',
-    'images/photos/3x2-8.jpg',
-    'images/photos/3x2-11.jpg',
-    'images/photos/2x3-5.jpg',
-    'images/photos/3x2-13.jpg',
-    'images/photos/3x2-14.jpg',
-    'images/photos/2x3-6.jpg',
-    'images/photos/3x2-15.jpg',
-    'images/photos/3x2-16.jpg',
-    'images/photos/2x3-7.jpg'
-  ].map((src) => (
+    { src: 'images/photos/3x2-1.jpg', alt: 'image of building' },
+    { src: 'images/photos/2x3-1.jpg', alt: 'image of wall' },
+    { src: 'images/photos/3x2-4.jpg', alt: 'image of building' },
+    { src: 'images/photos/3x2-5.jpg', alt: 'image of dog' },
+    { src: 'images/photos/3x2-6.jpg', alt: 'image of roses' },
+    { src: 'images/photos/2x3-2.jpg', alt: 'image of landscape' },
+    { src: 'images/photos/3x2-8.jpg', alt: 'image of cafe' },
+    { src: 'images/photos/3x2-11.jpg', alt: 'image of city' },
+    { src: 'images/photos/2x3-5.jpg', alt: 'image of swing' },
+    { src: 'images/photos/3x2-13.jpg', alt: 'image of oranges' },
+    { src: 'images/photos/3x2-14.jpg', alt: 'image of dog' },
+    { src: 'images/photos/2x3-6.jpg', alt: 'image of road' },
+    { src: 'images/photos/3x2-15.jpg', alt: 'image of bus' },
+    { src: 'images/photos/3x2-16.jpg', alt: 'image of cafe' },
+    { src: 'images/photos/2x3-7.jpg', alt: 'image of basketball' }
+  ].map((img) => (
     <ImageListItem
-      key={src}
+      key={img.src}
       style={{ margin: '2px', width: 'calc(100% / 5 - 4.2px)' }}
     >
       <ImageListImageAspectContainer
         style={{ paddingBottom: 'calc(100% / 1.5)' }}
       >
-        <ImageListImage src={src} />
+        <ImageListImage src={img.src} alt={img.alt} />
       </ImageListImageAspectContainer>
       <ImageListSupporting>
         <ImageListLabel>Text label</ImageListLabel>
@@ -63,24 +63,24 @@ Image Lists will give you basic layout, but you will have to use inline styling 
   }}
 >
   {[
-    'images/photos/3x2-1.jpg',
-    'images/photos/2x3-1.jpg',
-    'images/photos/3x2-4.jpg',
-    'images/photos/3x2-5.jpg',
-    'images/photos/2x3-5.jpg',
-    'images/photos/3x2-6.jpg',
-    'images/photos/2x3-2.jpg',
-    'images/photos/3x2-8.jpg',
-    'images/photos/3x2-11.jpg',
-    'images/photos/3x2-13.jpg',
-    'images/photos/3x2-14.jpg',
-    'images/photos/2x3-6.jpg',
-    'images/photos/3x2-15.jpg',
-    'images/photos/2x3-7.jpg',
-    'images/photos/3x2-16.jpg'
-  ].map((src) => (
-    <ImageListItem key={src} style={{ marginBottom: '16px' }}>
-      <ImageListImage src={src} />
+    { src: 'images/photos/3x2-1.jpg', alt: 'image of building' },
+    { src: 'images/photos/2x3-1.jpg', alt: 'image of wall' },
+    { src: 'images/photos/3x2-4.jpg', alt: 'image of building' },
+    { src: 'images/photos/3x2-5.jpg', alt: 'image of dog' },
+    { src: 'images/photos/2x3-5.jpg', alt: 'image of swing' },
+    { src: 'images/photos/3x2-6.jpg', alt: 'image of roses' },
+    { src: 'images/photos/2x3-2.jpg', alt: 'image of landscape' },
+    { src: 'images/photos/3x2-8.jpg', alt: 'image of cafe' },
+    { src: 'images/photos/3x2-11.jpg', alt: 'image of city' },
+    { src: 'images/photos/3x2-13.jpg', alt: 'image of oranges' },
+    { src: 'images/photos/3x2-14.jpg', alt: 'image of dog' },
+    { src: 'images/photos/2x3-6.jpg', alt: 'image of road' },
+    { src: 'images/photos/3x2-15.jpg', alt: 'image of bus' },
+    { src: 'images/photos/2x3-7.jpg', alt: 'image of basketball' },
+    { src: 'images/photos/3x2-16.jpg', alt: 'image of cafe' }
+  ].map((img) => (
+    <ImageListItem key={img.src} style={{ marginBottom: '16px' }}>
+      <ImageListImage src={img.src} alt={img.alt} />
       <ImageListSupporting>
         <ImageListLabel>Text label</ImageListLabel>
       </ImageListSupporting>

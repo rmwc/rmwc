@@ -1,8 +1,6 @@
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import React from 'react';
-import { Chip } from './chip';
-import { ChipSet } from './chip-set';
+import { Chip, ChipSet } from './';
 
 describe('Chip', () => {
   it('renders', () => {
@@ -36,48 +34,13 @@ describe('Chip', () => {
         <Chip checkmark selected icon="favorite" label="test-label" />
       </ChipSet>
     );
-    expect(screen.getAllByRole('row')[0]).toHaveClass(
-      'mdc-evolution-chip--selected'
-    );
-    expect(screen.getAllByRole('row')[1]).toHaveClass(
-      'mdc-evolution-chip--selected'
-    );
+    expect(screen.getAllByRole('row')[0]).toHaveClass('mdc-chip--selected');
+    expect(screen.getAllByRole('row')[1]).toHaveClass('mdc-chip--selected');
   });
 
   it('handles onInteraction', async () => {
     const onInteraction = vi.fn();
     render(<Chip label="my label" onInteraction={onInteraction} />);
-
-    userEvent.click(screen.getByText('my label'));
-
-    await waitFor(() => expect(onInteraction).toHaveBeenCalledTimes(1));
-  });
-
-  it('handles onRemove', async () => {
-    const onRemove = vi.fn();
-    render(
-      <ChipSet>
-        <Chip
-          label="my label"
-          onRemove={onRemove}
-          id="1"
-          trailingIcon="close"
-        />
-      </ChipSet>
-    );
-
-    userEvent.click(screen.getByText('close'));
-
-    await waitFor(() => expect(onRemove).toHaveBeenCalledTimes(1));
-  });
-
-  it('handles onInteraction', async () => {
-    const onInteraction = vi.fn();
-    render(
-      <ChipSet>
-        <Chip label="my label" onInteraction={onInteraction} id="1" />
-      </ChipSet>
-    );
 
     userEvent.click(screen.getByText('my label'));
 
@@ -90,44 +53,79 @@ describe('Chip', () => {
     expect(screen.getByText('favorite')).toBeInTheDocument();
   });
 
-  it('should not trigger events when disabled', () => {
-    const onClick = vi.fn();
+  it('handles onTrailingIconInteraction', async () => {
+    let onInteraction = vi.fn();
+    let onRemove = vi.fn();
 
-    render(<Chip disabled label="Cookie" onClick={onClick} />);
+    render(
+      <Chip
+        trailingIcon="close"
+        onTrailingIconInteraction={onInteraction}
+        onRemove={onRemove}
+      />
+    );
 
-    userEvent.click(screen.getByText('Cookie'));
+    userEvent.click(screen.getByText('close'));
 
-    expect(onClick).not.toHaveBeenCalled();
+    await waitFor(() => {
+      expect(onInteraction).toHaveBeenCalledTimes(1);
+    });
   });
 
-  it('can be overlow', () => {
-    const { container } = render(
-      <ChipSet overflow>
-        <Chip label="Cookie" id="1" />
-      </ChipSet>
+  it('handles onTrailingIconInteraction onKeyDown (Enter button)', async () => {
+    let onInteraction = vi.fn();
+    let onRemove = vi.fn();
+
+    render(
+      <Chip
+        trailingIcon="close"
+        onTrailingIconInteraction={onInteraction}
+        onRemove={onRemove}
+      />
     );
-    expect(container.firstChild).toHaveClass('mdc-evolution-chip-set--overlow');
+
+    screen.getByText('close').focus();
+
+    await userEvent.keyboard('{Enter}');
+
+    expect(onInteraction).toHaveBeenCalledTimes(1);
   });
 
-  it('can be role grid', () => {
-    const { container } = render(
-      <ChipSet role="grid">
-        <Chip label="Cookie" id="1" />
-      </ChipSet>
+  it('handles onTrailingIconInteraction onKeyDown (Space button)', async () => {
+    let onInteraction = vi.fn();
+    let onRemove = vi.fn();
+
+    render(
+      <Chip
+        trailingIcon="close"
+        onTrailingIconInteraction={onInteraction}
+        onRemove={onRemove}
+      />
     );
-    expect(container.firstChild).toHaveAttribute('role', 'grid');
+
+    screen.getByText('close').focus();
+
+    await userEvent.keyboard('{ }');
+
+    expect(onInteraction).toHaveBeenCalledTimes(1);
   });
 
-  it('can be role listbox and receive prop aria-orientation', () => {
-    const { container } = render(
-      <ChipSet role="listbox">
-        <Chip label="Cookie" id="1" />
-      </ChipSet>
+  it('does not call onTrailingIconInteraction onKeyDown (Tab button)', async () => {
+    let onInteraction = vi.fn();
+    let onRemove = vi.fn();
+
+    render(
+      <Chip
+        trailingIcon="close"
+        onTrailingIconInteraction={onInteraction}
+        onRemove={onRemove}
+      />
     );
-    expect(container.firstChild).toHaveAttribute('role', 'listbox');
-    expect(container.firstChild).toHaveAttribute(
-      'aria-orientation',
-      'horizontal'
-    );
+
+    screen.getByText('close').focus();
+    
+    await userEvent.tab();
+
+    expect(onInteraction).not.toHaveBeenCalled();
   });
 });

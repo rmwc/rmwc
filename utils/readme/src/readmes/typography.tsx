@@ -10,7 +10,7 @@ import {
 import examples from '../generated-examples/typography.json';
 import propsSrc from '../generated-props/typography.json';
 
-import { RMWCProvider } from '@rmwc/provider';
+import { RMWCProvider, typographyDefaults } from '@rmwc/provider';
 import { Typography } from '@rmwc/typography';
 
 export default function Readme() {
@@ -75,6 +75,18 @@ export default function Readme() {
           <Typography use="headline5">Rendered with `h5`</Typography>
           <Typography use="body2">Rendered with `p`</Typography>
           <Typography use="body1">Custom rendering</Typography>
+        </RMWCProvider>
+      </DocsExample>
+
+      <DocsP>
+        For backwards compatible typography tags, you can import and use
+        `typographyDefaults` from `@rmwc/provider`.
+      </DocsP>
+      <DocsExample label="Backwards compatible tags">
+        <RMWCProvider typography={typographyDefaults}>
+          <Typography use="headline6">Rendered default `span`</Typography>
+          <Typography use="headline5">Rendered with `span`</Typography>
+          <Typography use="body2">Rendered with `span`</Typography>
         </RMWCProvider>
       </DocsExample>
 

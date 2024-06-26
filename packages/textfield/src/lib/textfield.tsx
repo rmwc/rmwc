@@ -6,7 +6,13 @@ import { IconProps } from '@rmwc/icon';
 import * as RMWC from '@rmwc/types';
 import React from 'react';
 
-import { Tag, createComponent, useClassNames, useId } from '@rmwc/base';
+import {
+  Tag,
+  createComponent,
+  mergeRefs,
+  useClassNames,
+  useId
+} from '@rmwc/base';
 import { FloatingLabel } from '@rmwc/floating-label';
 import { Icon } from '@rmwc/icon';
 import { LineRipple } from '@rmwc/line-ripple';
@@ -202,7 +208,7 @@ export const TextField: RMWC.ComponentType<
           className="mdc-text-field__input"
           disabled={disabled}
           tag="textarea"
-          ref={inputRef}
+          ref={mergeRefs(ref, inputRef)}
         />
         {renderedCharacterCounter}
       </span>
@@ -214,7 +220,7 @@ export const TextField: RMWC.ComponentType<
           className="mdc-text-field__input"
           disabled={disabled}
           tag="textarea"
-          ref={inputRef}
+          ref={mergeRefs(ref, inputRef)}
         />
         {renderedCharacterCounter}
       </>
@@ -228,7 +234,6 @@ export const TextField: RMWC.ComponentType<
           style={style}
           className={className}
           ref={ref}
-          aria-labelledby={labelId}
         >
           {!!icon && renderIcon(icon, 'leading')}
           {children}
@@ -239,11 +244,12 @@ export const TextField: RMWC.ComponentType<
           ) : (
             <Tag
               {...rest}
+              aria-labelledby={labelId}
               element={inputEl}
               className="mdc-text-field__input"
               disabled={disabled}
               tag="input"
-              ref={inputRef}
+              ref={mergeRefs(ref, inputRef)}
             />
           )}
           {!!suffix && !textarea && <TextFieldSuffix suffix={suffix} />}

@@ -2,6 +2,170 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [14.2.4](https://github.com/rmwc/rmwc/compare/v14.2.4-alpha.0...v14.2.4) (2024-06-26)
+
+## [14.2.4-alpha.0](https://github.com/rmwc/rmwc/compare/v14.2.3...v14.2.4-alpha.0) (2024-06-26)
+
+
+### Bug Fixes
+
+* **select:** should not be focusable when disabled ([157a3bf](https://github.com/rmwc/rmwc/commit/157a3bf80379e8601c83dbd6c7758bc1ac40aa76))
+
+## [14.2.3](https://github.com/rmwc/rmwc/compare/v14.2.3-alpha.0...v14.2.3) (2024-06-04)
+
+## [14.2.3-alpha.0](https://github.com/rmwc/rmwc/compare/v14.2.2...v14.2.3-alpha.0) (2024-06-04)
+
+
+### Bug Fixes
+
+* **select:** enhanced select that renders to portal can have default value ([7cc8e58](https://github.com/rmwc/rmwc/commit/7cc8e5876ec22a580d4d84dca5b9fd37bd6276a5))
+* **select:** use correct type for renderToPortal ([b58280f](https://github.com/rmwc/rmwc/commit/b58280f7b5c12abd43b94def3d1c6a63fa4696e4))
+
+## [14.2.2](https://github.com/rmwc/rmwc/compare/v14.2.2-alpha.0...v14.2.2) (2024-04-24)
+
+## [14.2.2-alpha.0](https://github.com/rmwc/rmwc/compare/v14.2.1...v14.2.2-alpha.0) (2024-04-24)
+
+
+### Bug Fixes
+
+* **chip:** properly import deprecated chip ([92add59](https://github.com/rmwc/rmwc/commit/92add594dc60bda1de0bc0af0434a10af5716f31))
+
+## [14.2.1](https://github.com/rmwc/rmwc/compare/v14.2.1-alpha.0...v14.2.1) (2024-04-17)
+
+## [14.2.1-alpha.0](https://github.com/rmwc/rmwc/compare/v14.2.0...v14.2.1-alpha.0) (2024-04-17)
+
+
+### Bug Fixes
+
+* **chip:** correct config to not handle non-existing css file ([041d281](https://github.com/rmwc/rmwc/commit/041d2817fa422f68142abccc7b31b48b2d0485fd))
+
+## [14.2.0](https://github.com/rmwc/rmwc/compare/v14.2.0-alpha.0...v14.2.0) (2024-04-17)
+
+## [14.2.0-alpha.0](https://github.com/rmwc/rmwc/compare/v14.1.5...v14.2.0-alpha.0) (2024-04-17)
+
+
+### Features
+
+* **chip:** added chip storybook ([1724af0](https://github.com/rmwc/rmwc/commit/1724af0462871b2527af1153e52c6129a2ff80f5))
+* **chip:** reintroduce old chip ([60fc1db](https://github.com/rmwc/rmwc/commit/60fc1db43ea41b0588f531c0e93a3669dafecb5c))
+
+
+### Bug Fixes
+
+* **docgen:** script now checks for unique names ([897fe88](https://github.com/rmwc/rmwc/commit/897fe883939965c98793b86061be811545e4668c))
+
+## [14.1.5](https://github.com/rmwc/rmwc/compare/v14.1.5-alpha.0...v14.1.5) (2024-04-16)
+
+## [14.1.5-alpha.0](https://github.com/rmwc/rmwc/compare/v14.1.4...v14.1.5-alpha.0) (2024-04-16)
+
+
+### Bug Fixes
+
+* **collapsible-list:** include styles in list styles ([952a3ba](https://github.com/rmwc/rmwc/commit/952a3baacd037c946e01904314d3b48822f99c2b))
+* **linear-progress:** prevent fast-unmount error ([3f3cfe1](https://github.com/rmwc/rmwc/commit/3f3cfe15e78a61518e37c3dc6b9494af7383e88f))
+
+## [14.1.4](https://github.com/rmwc/rmwc/compare/v14.1.4-alpha.0...v14.1.4) (2024-04-04)
+
+## [14.1.4-alpha.0](https://github.com/rmwc/rmwc/compare/v14.1.3...v14.1.4-alpha.0) (2024-04-04)
+
+
+### Bug Fixes
+
+* generate id with no white spaces ([5bb569a](https://github.com/rmwc/rmwc/commit/5bb569abd601b0b502f9705afca823d5fa248fe4))
+* **icon-button:** forward props only once ([f7d7c26](https://github.com/rmwc/rmwc/commit/f7d7c26f307aec8b376cdbe38ab422e95926b019))
+* **select:** issue with value being undefined ([63dc5b8](https://github.com/rmwc/rmwc/commit/63dc5b8d182ffa78db25aa56197421c27b552081))
+
+## [14.1.3](https://github.com/rmwc/rmwc/compare/v14.1.3-alpha.0...v14.1.3) (2024-03-25)
+
+## [14.1.3-alpha.0](https://github.com/rmwc/rmwc/compare/v14.1.2...v14.1.3-alpha.0) (2024-03-25)
+
+
+### Bug Fixes
+
+* **select:** fix index bug ([50866b6](https://github.com/rmwc/rmwc/commit/50866b6e1a843890119af340c38e68560798cd41))
+* **select:** fix ref warning ([f7e123a](https://github.com/rmwc/rmwc/commit/f7e123a135247537c70e2fa962b5663290a0cc6f))
+
+## [14.1.2](https://github.com/rmwc/rmwc/compare/v14.1.2-alpha.0...v14.1.2) (2024-03-15)
+
+## [14.1.2-alpha.0](https://github.com/rmwc/rmwc/compare/v14.1.1...v14.1.2-alpha.0) (2024-03-15)
+
+
+### Bug Fixes
+
+* **ripple:** have ripple adhere to provider ([83de8f8](https://github.com/rmwc/rmwc/commit/83de8f82bad28409434fd9fa401ed3398319de17))
+* **ripple:** return children properly ([245582c](https://github.com/rmwc/rmwc/commit/245582c6a8f9eaca72aa2be01bad4fdfffa5a8f3))
+
+## [14.1.1](https://github.com/rmwc/rmwc/compare/v14.1.1-alpha.0...v14.1.1) (2024-03-12)
+
+## [14.1.1-alpha.0](https://github.com/rmwc/rmwc/compare/v14.1.0...v14.1.1-alpha.0) (2024-03-12)
+
+
+### Bug Fixes
+
+* **dialog:** apply default action ([1a9354b](https://github.com/rmwc/rmwc/commit/1a9354b49851a987790b9d4161776841c7689eae))
+
+## [14.1.0](https://github.com/rmwc/rmwc/compare/v14.1.0-alpha.0...v14.1.0) (2024-03-05)
+
+## [14.1.0-alpha.0](https://github.com/rmwc/rmwc/compare/v14.0.12...v14.1.0-alpha.0) (2024-03-05)
+
+
+### Features
+
+* make typography accessible by default ([1ad013a](https://github.com/rmwc/rmwc/commit/1ad013ab9b08efe392219b74477cc27abaff6141))
+
+
+### Bug Fixes
+
+* **floating-label:** use correct tags ([2cf4595](https://github.com/rmwc/rmwc/commit/2cf459540f6127447c8564a62769bec322ef8443))
+
+## [14.0.12](https://github.com/rmwc/rmwc/compare/v14.0.12-alpha.0...v14.0.12) (2024-03-05)
+
+## [14.0.12-alpha.0](https://github.com/rmwc/rmwc/compare/v14.0.11...v14.0.12-alpha.0) (2024-03-05)
+
+## [14.0.11](https://github.com/rmwc/rmwc/compare/v14.0.11-alpha.0...v14.0.11) (2024-02-14)
+
+## [14.0.11-alpha.0](https://github.com/rmwc/rmwc/compare/v14.0.10...v14.0.11-alpha.0) (2024-02-14)
+
+
+### Bug Fixes
+
+* **chips:** rewrite chip api ([7ab15e3](https://github.com/rmwc/rmwc/commit/7ab15e3d0fa60caeb38d5ebf315b16009540c2d8))
+* make components and docssite more accessible ([54998ee](https://github.com/rmwc/rmwc/commit/54998ee576749e63559994a7b7182db770844717))
+* segmented-button dependencies ([2cc24d9](https://github.com/rmwc/rmwc/commit/2cc24d95e05b407d25618be787563d62d7d5111e))
+
+## [14.0.10](https://github.com/rmwc/rmwc/compare/v14.0.10-alpha.0...v14.0.10) (2024-02-12)
+
+## [14.0.10-alpha.0](https://github.com/rmwc/rmwc/compare/v14.0.9...v14.0.10-alpha.0) (2024-02-12)
+
+
+### Features
+
+* make typography accessibel by default ([0092d8f](https://github.com/rmwc/rmwc/commit/0092d8f017bb3c444286f97678408bb1236bc90f))
+
+
+### Bug Fixes
+
+* **rc-tooltip:** import styles correctly ([2bb45a5](https://github.com/rmwc/rmwc/commit/2bb45a5cd9fa88c789015cf15c50511dc545b441))
+
+## [14.0.9](https://github.com/rmwc/rmwc/compare/v14.0.9-alpha.0...v14.0.9) (2024-01-26)
+
+## [14.0.9-alpha.0](https://github.com/rmwc/rmwc/compare/v14.0.8...v14.0.9-alpha.0) (2024-01-26)
+
+## [14.0.8](https://github.com/rmwc/rmwc/compare/v14.0.8-alpha.0...v14.0.8) (2024-01-26)
+
+## [14.0.8-alpha.0](https://github.com/rmwc/rmwc/compare/v14.0.7...v14.0.8-alpha.0) (2024-01-26)
+
+### Bug Fixes
+
+- pass refs to inputs ([532c994](https://github.com/rmwc/rmwc/commit/532c9944f4c7eb533079f19f7b0bc2f39c301cd0))
+- **select:** fixed ordering in class names ([bec195b](https://github.com/rmwc/rmwc/commit/bec195b795b519b4f9e66f69b0a7f71f27bb49b6))
+- **switch:** corrects usage of primary color ([b7503ae](https://github.com/rmwc/rmwc/commit/b7503ae5c76c44248297af534c695a99fc34bce1))
+
+### Reverts
+
+- reverts "fixed ordering in class names" as this has no effect on CSS specificity ([75c8a4e](https://github.com/rmwc/rmwc/commit/75c8a4e7bb7d25badf05f1ed51e1aa75cb751b02))
+- reverts "fixed ordering in class names" as this has no effect on CSS specificity ([fee8fd0](https://github.com/rmwc/rmwc/commit/fee8fd0039b206c9b5ff002a8b9f3423f3d07a13))
+
 ## [14.0.7](https://github.com/rmwc/rmwc/compare/v14.0.7-alpha.0...v14.0.7) (2024-01-16)
 
 ## [14.0.7-alpha.0](https://github.com/rmwc/rmwc/compare/v14.0.6...v14.0.7-alpha.0) (2024-01-16)
@@ -10,28 +174,25 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 
 ## [14.0.6-alpha.0](https://github.com/rmwc/rmwc/compare/v14.0.5...v14.0.6-alpha.0) (2024-01-09)
 
-
 ### Bug Fixes
 
-* add default width to select ([a06761a](https://github.com/rmwc/rmwc/commit/a06761a5e4055615c2d7f0a82386b7068c22cf1b))
-* **select:** fixed syntax error in readme ([7cd55c0](https://github.com/rmwc/rmwc/commit/7cd55c034ce1f325c66871518271d9cfac235b73))
+- add default width to select ([a06761a](https://github.com/rmwc/rmwc/commit/a06761a5e4055615c2d7f0a82386b7068c22cf1b))
+- **select:** fixed syntax error in readme ([7cd55c0](https://github.com/rmwc/rmwc/commit/7cd55c034ce1f325c66871518271d9cfac235b73))
 
 ## [14.0.5](https://github.com/rmwc/rmwc/compare/v14.0.5-alpha.0...v14.0.5) (2023-12-23)
 
 ## [14.0.5-alpha.0](https://github.com/rmwc/rmwc/compare/v14.0.4...v14.0.5-alpha.0) (2023-12-23)
 
-
 ### Features
 
-* **List:** selectedIndex && a11y enhancements ([2001413](https://github.com/rmwc/rmwc/commit/2001413cb3945c440324e1684f6414a4db1ca17f))
-
+- **List:** selectedIndex && a11y enhancements ([2001413](https://github.com/rmwc/rmwc/commit/2001413cb3945c440324e1684f6414a4db1ca17f))
 
 ### Bug Fixes
 
-* **drawer:** fixes drawer getting stuck in open state ([989e442](https://github.com/rmwc/rmwc/commit/989e442b13189a485ae7a1f9df10612e4dfd577c))
-* **mdc:** Correct missing range slider input background bar ([d8d8f43](https://github.com/rmwc/rmwc/commit/d8d8f43bf86a05a028a56d8e04775f9366206a5d))
-* **rc-tooltip:** fixed css exports ([a985b48](https://github.com/rmwc/rmwc/commit/a985b484a7e711a68ef9de3ce008dac0540ce0bc))
-* **themes:** make Shrine theme text accessible ([5fb8cac](https://github.com/rmwc/rmwc/commit/5fb8cac6e68e92cf5f832f20e0e003fa2014bdaf))
+- **drawer:** fixes drawer getting stuck in open state ([989e442](https://github.com/rmwc/rmwc/commit/989e442b13189a485ae7a1f9df10612e4dfd577c))
+- **mdc:** Correct missing range slider input background bar ([d8d8f43](https://github.com/rmwc/rmwc/commit/d8d8f43bf86a05a028a56d8e04775f9366206a5d))
+- **rc-tooltip:** fixed css exports ([a985b48](https://github.com/rmwc/rmwc/commit/a985b484a7e711a68ef9de3ce008dac0540ce0bc))
+- **themes:** make Shrine theme text accessible ([5fb8cac](https://github.com/rmwc/rmwc/commit/5fb8cac6e68e92cf5f832f20e0e003fa2014bdaf))
 
 ## [14.0.4](https://github.com/rmwc/rmwc/compare/v14.0.4-alpha.0...v14.0.4) (2023-12-05)
 

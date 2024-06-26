@@ -1,3 +1,6 @@
 package.json
 docs
 apps/docs/public
+/.nx/cache
+CHANGELOG.md
+/.nx/workspace-data

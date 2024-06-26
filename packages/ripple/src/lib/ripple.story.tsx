@@ -1,25 +1,33 @@
 import React from 'react';
+import { Ripple } from './ripple'; // replace with your actual component import
+import { Meta, StoryObj } from '@storybook/react';
 
-import { boolean } from '@storybook/addon-knobs';
-import { storiesOf } from '@storybook/react';
-import { Ripple } from './ripple';
+export default {
+  title: 'Ripple',
+  component: Ripple
+} as Meta;
 
-const rippleStyle = {
-  width: '240px',
-  height: '240px',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center'
+type Story = StoryObj<typeof Ripple>;
+
+export const RippleStory: Story = {
+  render: (args) => {
+    const rippleStyle = {
+      width: '240px',
+      height: '240px',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center'
+    };
+
+    return (
+      <Ripple {...args} style={rippleStyle} foundationRef={console.log}>
+        <div style={rippleStyle}>Click Me</div>
+      </Ripple>
+    );
+  },
+  args: {
+    primary: false,
+    accent: false,
+    unbounded: false
+  }
 };
-
-storiesOf('Ripples', module).add('Ripple', () => (
-  <Ripple
-    style={rippleStyle}
-    primary={boolean('primary', false)}
-    accent={boolean('accent', false)}
-    unbounded={boolean('unbounded', false)}
-    foundationRef={console.log}
-  >
-    <div style={rippleStyle}>Click Me</div>
-  </Ripple>
-));

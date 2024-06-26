@@ -3,6 +3,7 @@ import * as RMWC from '@rmwc/types';
 import React from 'react';
 
 import {
+  List,
   ListGroupSubheader,
   ListItem,
   ListItemGraphic,
@@ -104,13 +105,13 @@ export class ThemePicker extends React.Component<{
           }}
         >
           <ListGroupSubheader>Themes</ListGroupSubheader>
+          <List>
           {Object.keys(THEMES).map((themeName) => {
             const theme: { [key: string]: string } = getTheme(themeName);
             return (
               <ListItem
                 style={{ cursor: 'pointer' }}
                 key={themeName}
-                role="menuitem"
                 tabIndex={0}
                 onClick={(evt: React.MouseEvent<HTMLDivElement>) => {
                   evt.stopPropagation();
@@ -139,6 +140,7 @@ export class ThemePicker extends React.Component<{
               </ListItem>
             );
           })}
+          </List>
           <TabBar
             onClick={() => this.setState({ open: true })}
             style={{ margin: '1rem auto -1rem auto' }}

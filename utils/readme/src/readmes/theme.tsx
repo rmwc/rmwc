@@ -128,8 +128,8 @@ export default function Readme() {
           }}
         >
           <Button raised>Cookies</Button>
-          <Checkbox label="Pizza" defaultChecked />
-          <Radio label="Icecream" defaultChecked />
+          <Checkbox label="Burger" defaultChecked />
+          <Radio label="Pancakes" defaultChecked />
         </ThemeProvider>
       </DocsExample>
 
@@ -143,8 +143,8 @@ export default function Readme() {
           }}
         >
           <Button raised>Cookies</Button>
-          <Checkbox label="Pizza" defaultChecked />
-          <Radio label="Icecream" defaultChecked />
+          <Checkbox label="Fries" defaultChecked />
+          <Radio label="Cheese" defaultChecked />
         </ThemeProvider>
       </DocsExample>
 

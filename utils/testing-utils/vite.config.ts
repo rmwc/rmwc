@@ -4,6 +4,7 @@ import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
+  root: __dirname,
   cacheDir: '../../node_modules/.vite/testing-utils',
 
   plugins: [react(), nxViteTsPaths()],
@@ -14,6 +15,7 @@ export default defineConfig({
   // },
 
   test: {
+    reporters: ['default'],
     globals: true,
     cache: {
       dir: '../../node_modules/.vitest'

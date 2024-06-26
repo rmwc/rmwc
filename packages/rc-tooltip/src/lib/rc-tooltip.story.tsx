@@ -1,27 +1,41 @@
 import React from 'react';
+import { Avatar } from '@rmwc/avatar';
+import { RCTooltip } from './rc-tooltip'; // replace with your actual component import
+import { Meta, StoryObj } from '@storybook/react';
 
-import { storiesOf } from '@storybook/react';
-import { Avatar } from '../avatar';
-import { RCTooltip } from './rc-tooltip';
+export default {
+  title: 'Tooltips/RCTooltips',
+  component: RCTooltip
+} as Meta;
 
-storiesOf('RCTooltips', module)
-  .add('RCTooltip', () => (
-    <RCTooltip content="Test Tooltip">
+type Story = StoryObj<typeof RCTooltip>;
+
+export const RCTooltipStory: Story = {
+  render: (args) => (
+    <RCTooltip {...args}>
       <a href="#" style={{ margin: '4rem', display: 'inline-block' }}>
         hover
       </a>
     </RCTooltip>
-  ))
-  .add('RCTooltip with rich content', () => (
-    <RCTooltip
-      content={
-        <div>
-          <Avatar size="xsmall" name="James Friedman" /> James Friedman
-        </div>
-      }
-    >
+  ),
+  args: {
+    content: 'Test Tooltip'
+  }
+};
+
+export const RCTooltipRichContentStory: Story = {
+  render: (args) => (
+    <RCTooltip {...args}>
       <a href="#" style={{ margin: '4rem', display: 'inline-block' }}>
         Rich Content
       </a>
     </RCTooltip>
-  ));
+  ),
+  args: {
+    content: (
+      <div>
+        <Avatar size="xsmall" name="James Friedman" /> James Friedman
+      </div>
+    )
+  }
+};

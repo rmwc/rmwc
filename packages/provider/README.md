@@ -44,6 +44,18 @@ You can wrap your top level App component with RMWC provider to set global confi
 `;
 ```
 
+```jsx
+<RMWCProvider ripple={false}>
+  <Button>Click me</Button>
+</RMWCProvider>
+```
+
+```jsx
+<RMWCProvider ripple={true}>
+  <Button>Click me</Button>
+</RMWCProvider>
+```
+
 ## RMWCProvider
 
 A provider for setting global options in RMWC.

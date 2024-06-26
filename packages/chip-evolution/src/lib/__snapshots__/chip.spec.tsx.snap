@@ -1,0 +1,172 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Chip > renders 1`] = `
+<DocumentFragment>
+  <span
+    class="mdc-evolution-chip-set"
+    role="grid"
+  >
+    <span
+      class="mdc-evolution-chip-set__chips"
+      role="presentation"
+    >
+      <span
+        class="mdc-ripple-surface mdc-evolution-chip"
+        id="chip-test-label"
+        role="row"
+      >
+        <span
+          class="mdc-evolution-chip__cell mdc-evolution-chip__cell--primary"
+          role="gridcell"
+        >
+          <button
+            class="mdc-evolution-chip__action mdc-evolution-chip__action--primary"
+            icon="favorite"
+            label="test-label"
+            type="button"
+          >
+            <span
+              class="mdc-evolution-chip__ripple mdc-evolution-chip__ripple--primary"
+            />
+            <span
+              class="mdc-evolution-chip__graphic"
+            >
+              <i
+                class="rmwc-icon rmwc-icon--ligature material-icons mdc-evolution-chip__icon mdc-evolution-chip__icon--primary rmwc-chip--action-input"
+              >
+                favorite
+              </i>
+            </span>
+            <span
+              class="mdc-evolution-chip__text-label"
+            >
+              test-label
+            </span>
+          </button>
+        </span>
+      </span>
+    </span>
+  </span>
+</DocumentFragment>
+`;
+
+exports[`Chip > renders as filter chips 1`] = `
+<DocumentFragment>
+  <span
+    aria-orientation="horizontal"
+    class="mdc-evolution-chip-set"
+    role="listbox"
+  >
+    <span
+      class="mdc-evolution-chip-set__chips"
+      role="presentation"
+    >
+      <span
+        class="mdc-ripple-surface mdc-evolution-chip mdc-evolution-chip--filter"
+        id="chip-test-label"
+        role="presentation"
+      >
+        <span
+          class="mdc-evolution-chip__cell mdc-evolution-chip__cell--primary"
+        >
+          <button
+            class="mdc-evolution-chip__action mdc-evolution-chip__action--primary"
+            icon="favorite"
+            label="test-label"
+            role="option"
+            type="button"
+          >
+            <span
+              class="mdc-evolution-chip__ripple mdc-evolution-chip__ripple--primary"
+            />
+            <span
+              class="mdc-evolution-chip__graphic"
+            >
+              <i
+                class="rmwc-icon rmwc-icon--ligature material-icons mdc-evolution-chip__icon mdc-evolution-chip__icon--primary"
+              >
+                favorite
+              </i>
+            </span>
+            <span
+              class="mdc-evolution-chip__text-label"
+            >
+              test-label
+            </span>
+          </button>
+        </span>
+      </span>
+    </span>
+  </span>
+</DocumentFragment>
+`;
+
+exports[`Chip > renders as input chips 1`] = `
+<DocumentFragment>
+  <span
+    class="mdc-evolution-chip-set"
+    role="grid"
+  >
+    <span
+      class="mdc-evolution-chip-set__chips"
+      role="presentation"
+    >
+      <span
+        class="mdc-ripple-surface mdc-evolution-chip rmwc-chip"
+        id="chip-test-label"
+        role="row"
+      >
+        <span
+          class="mdc-evolution-chip__cell mdc-evolution-chip__cell--primary"
+          role="gridcell"
+        >
+          <button
+            class="mdc-evolution-chip__action mdc-evolution-chip__action--primary"
+            icon="favorite"
+            label="test-label"
+            type="button"
+          >
+            <span
+              class="mdc-evolution-chip__ripple mdc-evolution-chip__ripple--primary"
+            />
+            <span
+              class="mdc-evolution-chip__graphic"
+            >
+              <i
+                class="rmwc-icon rmwc-icon--ligature material-icons mdc-evolution-chip__icon mdc-evolution-chip__icon--primary rmwc-chip--action-input"
+              >
+                favorite
+              </i>
+            </span>
+            <span
+              class="mdc-evolution-chip__text-label"
+            >
+              test-label
+            </span>
+          </button>
+        </span>
+        <span
+          class="mdc-evolution-chip__cell mdc-evolution-chip__cell--trailing"
+          role="gridcell"
+        >
+          <button
+            class="mdc-evolution-chip__action mdc-evolution-chip__action--trailing"
+            data-mdc-deletable="true"
+            icon="close"
+            type="button"
+          >
+            <span
+              class="mdc-evolution-chip__ripple mdc-evolution-chip__ripple--trailing"
+            />
+            <i
+              class="rmwc-icon rmwc-icon--ligature material-icons mdc-evolution-chip__icon mdc-evolution-chip__icon--trailing"
+            >
+              close
+            </i>
+          </button>
+        </span>
+      </span>
+    </span>
+  </span>
+</DocumentFragment>
+`;

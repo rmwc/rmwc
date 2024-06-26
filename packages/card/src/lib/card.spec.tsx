@@ -11,6 +11,7 @@ import {
   CardMediaContent,
   CardPrimaryAction
 } from './card';
+import { RMWCProvider } from '@rmwc/provider';
 
 describe('Card', () => {
   it('renders', () => {
@@ -62,5 +63,22 @@ describe('Card', () => {
       );
       expect(container.firstChild).toHaveClass('my-custom-classname');
     });
+  });
+
+  it('respects RMWCProvider ripple', () => {
+    const { asFragment } = render(
+      <RMWCProvider ripple={false}>
+        <Card>
+          <CardActions>
+            <CardActionButtons>
+              <CardActionButton>Read</CardActionButton>
+              <CardActionButton>Bookmark</CardActionButton>
+              <CardActionButton>Foo</CardActionButton>
+            </CardActionButtons>
+          </CardActions>
+        </Card>
+      </RMWCProvider>
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

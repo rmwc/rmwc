@@ -22,6 +22,9 @@ export const useSelectFoundation = (
   const [selectedTextContent, setSelectedTextContent] = useState('');
 
   const selectedIndex = useRef(-1);
+  const setSelectedIndex = (index: number) => {
+    selectedIndex.current = index;
+  };
 
   const floatingLabel = useRef<FloatingLabelApi | null>();
   const setFloatingLabel = (api: FloatingLabelApi | null) => {
@@ -124,13 +127,10 @@ export const useSelectFoundation = (
               ?.classList.remove(className);
           },
           getSelectedIndex: () => {
-            if (isNative() && nativeControl.current !== undefined) {
-              return nativeControl.current.selectedOptions[0].index;
-            }
             return selectedIndex.current;
           },
           setSelectedIndex: (index: number) => {
-            return selectedIndex;
+            return setSelectedIndex(index);
           }
         };
       };
@@ -223,15 +223,17 @@ export const useSelectFoundation = (
           const value = f.getValue();
 
           if (adapter.hasLabel()) {
+            const optionHasDefaultValue = defaultValue !== undefined;
             // This is the line we have to override to work with placeholders
             // we need to consider haveing a placeholder as a valid value
             const optionHasValue =
               !!getProps().placeholder ||
-              value.length > 0 ||
+              value?.length > 0 ||
               // As of MCW 8, we need to check for selectedIndex, else the label won't float when unfocused
               selectedIndex.current > -1;
             const isFocused = adapter.hasClass(cssClasses.FOCUSED);
-            const shouldFloatAndNotch = optionHasValue || isFocused;
+            const shouldFloatAndNotch =
+              optionHasValue || optionHasDefaultValue || isFocused;
             const isRequired = adapter.hasClass(cssClasses.REQUIRED);
 
             f.notchOutline(shouldFloatAndNotch);
@@ -408,6 +410,14 @@ export const useSelectFoundation = (
   useEffect(() => {
     rootEl.ref && menu.current?.setAnchorElement(rootEl.ref);
   }, [rootEl.ref]);
+
+  const { defaultValue } = props;
+  // Default value
+  useEffect(() => {
+    if (defaultValue) {
+      setSelectedTextContent(defaultValue.toString());
+    }
+  }, []);
 
   return {
     notchWidth,

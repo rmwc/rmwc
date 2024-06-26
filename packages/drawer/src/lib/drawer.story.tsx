@@ -1,10 +1,6 @@
 import React from 'react';
-
-import { useKnob } from '@rmwc/base/utils/use-knob';
-import { action } from '@storybook/addon-actions';
-import { boolean } from '@storybook/addon-knobs';
-import { storiesOf } from '@storybook/react';
-import { List, ListItem, ListItemGraphic } from '../list';
+import { List, ListItem, ListItemGraphic } from '@rmwc/list';
+import type { Meta, StoryObj } from '@storybook/react';
 import {
   Drawer,
   DrawerContent,
@@ -31,30 +27,33 @@ const ListItems = (props: any) => (
   </>
 );
 
-storiesOf('Drawers', module).add('Drawer', function () {
-  const [open, setOpen] = useKnob('boolean', 'open', true);
-  return (
-    <div style={{ margin: '-24px' }}>
-      <Drawer
-        modal={boolean('modal', false)}
-        dismissible={boolean('dismissible', false)}
-        open={open}
-        onClose={() => {
-          action('onClose')();
-          setOpen(false);
-        }}
-        foundationRef={console.log}
-      >
-        <DrawerHeader style={{ backgroundColor: '#f6f6f6' }}>
-          <DrawerTitle>DrawerTitle</DrawerTitle>
-          <DrawerSubtitle>DrawerSubtitle</DrawerSubtitle>
-        </DrawerHeader>
-        <DrawerContent>
-          <List>
-            <ListItems onItemClick={action('onClick')} />
-          </List>
-        </DrawerContent>
-      </Drawer>
-    </div>
-  );
-});
+export default {
+  title: 'Drawers',
+  component: Drawer
+} as Meta;
+
+type Story = StoryObj<typeof Drawer>;
+
+export const DrawerStory: Story = {
+  render: (args) => {
+    const { modal, open, dismissible } = args;
+    return (
+      <div style={{ margin: '-24px' }}>
+        <Drawer modal={modal} dismissible={dismissible} open={open}>
+          <DrawerHeader style={{ backgroundColor: '#f6f6f6' }}>
+            <DrawerTitle>DrawerTitle</DrawerTitle>
+            <DrawerSubtitle>DrawerSubtitle</DrawerSubtitle>
+          </DrawerHeader>
+          <DrawerContent>
+            <List>
+              <ListItems onItemClick={console.log} />
+            </List>
+          </DrawerContent>
+        </Drawer>
+      </div>
+    );
+  },
+  args: {
+    open: true
+  }
+};

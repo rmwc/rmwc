@@ -102,7 +102,7 @@ const IconButtonRoot = withRipple({
         ref={ref}
       >
         <div className="mdc-icon-button__ripple"></div>
-        <Icon icon={icon} {...rest} tag="i" />
+        <Icon icon={icon} tag="i" />
       </Tag>
     );
   })

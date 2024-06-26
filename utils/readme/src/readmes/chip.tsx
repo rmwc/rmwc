@@ -39,7 +39,6 @@ export default function Readme() {
         </ChipSet>
       </DocsExample>
       <DocsExample label="Event Handling">
-        {/* @ts-ignore */}
         {function Example() {
           const [selected, setSelected] = React.useState(false);
           return (
@@ -54,34 +53,33 @@ export default function Readme() {
                   console.log('onInteraction', evt.detail);
                   setSelected(!selected);
                 }}
+                onTrailingIconInteraction={(evt) =>
+                  console.log('onTrailingIconIteraction', evt.detail)
+                }
                 trailingIcon="close"
               />
             </ChipSet>
           );
         }}
       </DocsExample>
-      <DocsExample label="Disabled">
-        <ChipSet>
-          <Chip label="Cookies" disabled />
-        </ChipSet>
-      </DocsExample>
 
-      <DocsSubtitle>Layout grid chip sets / Listbox chip sets</DocsSubtitle>
+      <DocsSubtitle>Filter and Choice Chipsets</DocsSubtitle>
       <DocsP>
-        Chip sets have two varieties: layout grid chip sets and listbox chip
-        sets.
+        You can specify a `ChipSet` as either a `filter` of `choice` which
+        slightly changes the visual styling of selected chips. While
+        `material-components-web` has some built in functionality for chip sets,
+        it doesn't fit well with React's unidirectional data flow. It is
+        recommended you use standard React patterns to store selected chips in
+        your state and render them accordingly.
       </DocsP>
       <DocsP>
-        Layout grid chip sets follow the layout grid interaction pattern. They
-        contain either action chips or input chips.
-      </DocsP>
-      <DocsP>
-        Listbox chip sets follow the follow the listbox interaction pattern They
-        contain filter chips chips.
+        Clicking on the trailing close icon will trigger a close animation and
+        put the chip in an exited state, but it is up to you to remove component
+        out from rendering. The you use the `onRemove` prop implement this
+        behavior.
       </DocsP>
 
-      <DocsExample label="Grid">
-        {/* @ts-ignore */}
+      <DocsExample label="Filter">
         {function Example() {
           const [selected, setSelected] = React.useState({
             cookies: false,
@@ -97,7 +95,7 @@ export default function Readme() {
             });
 
           return (
-            <ChipSet role="grid">
+            <ChipSet filter>
               <Chip
                 selected={selected.cookies}
                 checkmark
@@ -123,8 +121,7 @@ export default function Readme() {
         }}
       </DocsExample>
 
-      <DocsExample label="Listbox">
-        {/* @ts-ignore */}
+      <DocsExample label="Choice">
         {function Example() {
           const [selected, setSelected] = React.useState({
             cookies: false,
@@ -140,7 +137,7 @@ export default function Readme() {
             });
 
           return (
-            <ChipSet role="listbox">
+            <ChipSet choice>
               <Chip
                 selected={selected.cookies}
                 onInteraction={() => toggleSelected('cookies')}

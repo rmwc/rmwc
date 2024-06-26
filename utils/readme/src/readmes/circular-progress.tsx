@@ -7,7 +7,7 @@ import propsSrc from '../generated-props/circular-progress.json';
 import { CircularProgress } from '@rmwc/circular-progress';
 
 import { Button } from '@rmwc/button';
-import { Chip } from '@rmwc/chip';
+import { Chip, ChipSet } from '@rmwc/chip';
 import { List, SimpleListItem } from '@rmwc/list';
 
 export default function Readme() {
@@ -22,14 +22,14 @@ export default function Readme() {
       <DocsSubtitle>Basic Usage</DocsSubtitle>
 
       <DocsExample label="Indeterminate">
-        <CircularProgress />
+        <CircularProgress label="progress" />
       </DocsExample>
       <DocsExample label="Determinate">
         <>
-          <CircularProgress progress={0.3} />
-          <CircularProgress progress={0.6} />
-          <CircularProgress progress={0.9} />
-          <CircularProgress progress={1} />
+          <CircularProgress label="progress" progress={0.3} />
+          <CircularProgress label="progress" progress={0.6} />
+          <CircularProgress label="progress" progress={0.9} />
+          <CircularProgress label="progress" progress={1} />
         </>
       </DocsExample>
 
@@ -37,12 +37,12 @@ export default function Readme() {
 
       <DocsExample label="Sizes">
         <>
-          <CircularProgress size="xsmall" />
-          <CircularProgress size="small" />
-          <CircularProgress size="medium" />
-          <CircularProgress size="large" />
-          <CircularProgress size="xlarge" />
-          <CircularProgress size={72} />
+          <CircularProgress label="xsmall progress" size="xsmall" />
+          <CircularProgress label="small progress" size="small" />
+          <CircularProgress label="medium progress" size="medium" />
+          <CircularProgress label="large progress" size="large" />
+          <CircularProgress label="xlarge progress" size="xlarge" />
+          <CircularProgress label="progress" size={72} />
         </>
       </DocsExample>
 
@@ -51,16 +51,24 @@ export default function Readme() {
       <DocsExample>
         <>
           <Button
-            icon={<CircularProgress theme="secondary" />}
+            icon={<CircularProgress label="progress" theme="secondary" />}
             label="Cookies"
           />
 
           <List>
-            <SimpleListItem graphic={<CircularProgress />} text="Pizza" />
+            <SimpleListItem
+              graphic={<CircularProgress label="progress" />}
+              text="Pizza"
+            />
             <SimpleListItem graphic="favorite" text="Icecream" />
           </List>
 
-          <Chip icon={<CircularProgress size="xsmall" />} label="Donuts" />
+          <ChipSet>
+            <Chip
+              icon={<CircularProgress label="progress" size="xsmall" />}
+              label="Donuts"
+            />
+          </ChipSet>
         </>
       </DocsExample>
 
@@ -78,6 +86,7 @@ export const galleryExample = (
   <>
     {[0.3, 0.6, 0.9].map((num) => (
       <CircularProgress
+        label="progress"
         key={num}
         style={{ margin: '0.4rem' }}
         progress={num}

@@ -1,6 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { MDCCheckboxFoundation } from '@material/checkbox';
-import { useFoundation } from '@rmwc/base';
+import { useFoundation, useId } from '@rmwc/base';
 import { useToggleFoundation } from '@rmwc/toggleable';
 import React, { useCallback, useEffect } from 'react';
 import { CheckboxHTMLProps, CheckboxProps } from './checkbox';
@@ -8,8 +8,10 @@ import { CheckboxHTMLProps, CheckboxProps } from './checkbox';
 export const useCheckboxFoundation = (
   props: CheckboxProps & CheckboxHTMLProps
 ) => {
+  const uniqueId = useId('checkbox', props);
+
   const { renderToggle, toggleRootProps, id } =
-    useToggleFoundation<MDCCheckboxFoundation>(props);
+    useToggleFoundation<MDCCheckboxFoundation>({ ...props, id: uniqueId });
 
   const { foundation, ...elements } = useFoundation({
     props,

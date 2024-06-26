@@ -1,6 +1,35 @@
-import { render, screen } from '@testing-library/react';
+import React from 'react';
+import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Select } from './select';
+import { Portal } from '@rmwc/base';
+
+const ConditionallyRenderedSelect = ({
+  onChange
+}: {
+  onChange: () => void;
+}) => {
+  const [displaySelect, setDisplaySelect] = React.useState('');
+  return (
+    <>
+      <Select
+        data-testid="display-selection"
+        label="Display"
+        onChange={(e) => setDisplaySelect(e.currentTarget.value)}
+        value={displaySelect}
+        options={['cookie', 'pizza', 'Icecream']}
+      />
+      {displaySelect && (
+        <Select
+          data-testid="next-selection"
+          label="Next"
+          options={['cookie', 'pizza']}
+          onChange={onChange}
+        />
+      )}
+    </>
+  );
+};
 
 test('renders learn react link', async () => {
   const onChange = vi.fn();
@@ -184,6 +213,24 @@ describe('Select', () => {
     );
     expect(document.activeElement).toBe(container.querySelector('select'));
   });
+
+  it('can be conditionally rendered without breaking', async () => {
+    const onChange = vi.fn();
+    render(<ConditionallyRenderedSelect onChange={onChange} />);
+
+    await userEvent.selectOptions(
+      screen.getByTestId('display-selection'),
+      'Icecream'
+    );
+
+    await userEvent.click(screen.getByText(/next/i));
+    await userEvent.selectOptions(
+      screen.getByTestId('next-selection'),
+      'pizza'
+    );
+
+    await waitFor(() => expect(onChange).toHaveBeenCalled());
+  });
 });
 
 describe('Select: Lifecycle', () => {
@@ -274,14 +321,20 @@ describe('Select: Lifecycle', () => {
     );
   });
 
-  it('Select matches snapshot when enhanced and renderToPortal', () => {
+  it('Select matches snapshot when enhanced, has defaultValue and renderToPortal', () => {
     const { asFragment } = render(
-      <Select
-        label="test"
-        enhanced={{ renderToPortal: true }}
-        options={['Cookies', 'Pizza', 'Icecream']}
-        defaultValue="Cookies"
-      />
+      <>
+        <Portal />
+        <Select
+          label="test"
+          enhanced={{ renderToPortal: true }}
+          options={['Cookies', 'Pizza', 'Icecream']}
+          defaultValue="Cookies"
+        />
+      </>
+    );
+    expect(screen.getAllByText('Cookies')[1]).toHaveClass(
+      'mdc-select__selected-text'
     );
     expect(asFragment()).toMatchSnapshot();
   });

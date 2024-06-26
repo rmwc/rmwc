@@ -89,8 +89,8 @@ Theming in `material-components-web` isn't perfect, but a few basic options will
   }}
 >
   <Button raised>Cookies</Button>
-  <Checkbox label="Pizza" defaultChecked />
-  <Radio label="Icecream" defaultChecked />
+  <Checkbox label="Burger" defaultChecked />
+  <Radio label="Pancakes" defaultChecked />
 </ThemeProvider>
 ```
 
@@ -104,8 +104,8 @@ Theming in `material-components-web` isn't perfect, but a few basic options will
   }}
 >
   <Button raised>Cookies</Button>
-  <Checkbox label="Pizza" defaultChecked />
-  <Radio label="Icecream" defaultChecked />
+  <Checkbox label="Fries" defaultChecked />
+  <Radio label="Cheese" defaultChecked />
 </ThemeProvider>
 ```
 

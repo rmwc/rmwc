@@ -7,6 +7,7 @@ import dts from 'vite-plugin-dts';
 import { viteStaticCopy } from 'vite-plugin-static-copy';
 
 export default defineConfig({
+  root: __dirname,
   cacheDir: '../../node_modules/.vite/list',
 
   plugins: [
@@ -40,8 +41,7 @@ export default defineConfig({
       // Could also be a dictionary or array of multiple entry points.
       entry: {
         index: 'src/index.ts',
-        styles: 'src/styles.ts',
-        'collapsible-list': 'src/collapsible-list.ts'
+        styles: 'src/styles.ts'
       },
       // Change this to the formats you want to support.
       // Don't forget to update your package.json as well.
@@ -78,6 +78,7 @@ export default defineConfig({
     },
     environment: 'jsdom',
     include: ['src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
-    setupFiles: ['../../setupTests.ts']
+    setupFiles: ['./setupTests.ts'],
+    reporters: ['default']
   }
 });

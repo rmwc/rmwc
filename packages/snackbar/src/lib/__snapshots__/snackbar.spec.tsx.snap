@@ -4,7 +4,6 @@ exports[`Snackbar > renders 1`] = `
 <DocumentFragment>
   <div
     aria-atomic="true"
-    aria-hidden="true"
     aria-live="assertive"
     class="mdc-snackbar mdc-snackbar--opening"
   >
