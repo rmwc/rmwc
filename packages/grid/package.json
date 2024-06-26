@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/grid",
-  "version": "14.2.4-alpha.0",
+  "version": "14.2.4",
   "description": "RMWC Grid component",
   "main": "./index.js",
   "types": "./index.d.ts",
