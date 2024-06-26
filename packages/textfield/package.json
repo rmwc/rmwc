@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/textfield",
-  "version": "14.2.4",
+  "version": "14.2.5-alpha.0",
   "description": "RMWC TextField component",
   "main": "./index.js",
   "types": "./index.d.ts",
