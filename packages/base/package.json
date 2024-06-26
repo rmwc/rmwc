@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/base",
-  "version": "14.2.3",
+  "version": "14.2.4-alpha.0",
   "description": "RMWC base module",
   "main": "./index.js",
   "types": "./index.d.ts",
