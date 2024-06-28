@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/tooltip",
-  "version": "14.2.5",
+  "version": "14.2.6-alpha.0",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
