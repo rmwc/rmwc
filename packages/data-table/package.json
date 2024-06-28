@@ -40,11 +40,11 @@
   },
   "dependencies": {
     "@material/data-table": "^14.0.0",
-    "@rmwc/base": "workspace:*",
-    "@rmwc/checkbox": "workspace:*",
-    "@rmwc/icon": "workspace:*",
-    "@rmwc/select": "workspace:*",
-    "@rmwc/switch": "workspace:*",
-    "@rmwc/types": "workspace:*"
+    "@rmwc/base": "14.2.6",
+    "@rmwc/checkbox": "14.2.6",
+    "@rmwc/icon": "14.2.6",
+    "@rmwc/select": "14.2.6",
+    "@rmwc/switch": "14.2.6",
+    "@rmwc/types": "14.2.6"
   }
 }

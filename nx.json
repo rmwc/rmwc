@@ -4,6 +4,10 @@
     "appsDir": "apps",
     "libsDir": "packages"
   },
+  "release": {
+    "projects": ["tag:publishable"],
+    "releaseTagPattern": "v{version}"
+  },
   "targetDefaults": {
     "build": {
       "dependsOn": ["^bootstrap", "^build", "bootstrap"],

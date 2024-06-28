@@ -39,9 +39,9 @@
   },
   "dependencies": {
     "@material/dialog": "^14.0.0",
-    "@rmwc/base": "workspace:*",
-    "@rmwc/button": "workspace:*",
-    "@rmwc/textfield": "workspace:*",
-    "@rmwc/types": "workspace:*"
+    "@rmwc/base": "14.2.6",
+    "@rmwc/button": "14.2.6",
+    "@rmwc/textfield": "14.2.6",
+    "@rmwc/types": "14.2.6"
   }
 }

@@ -39,7 +39,7 @@
   },
   "dependencies": {
     "@material/tooltip": "^14.0.0",
-    "@rmwc/base": "workspace:*",
-    "@rmwc/provider": "workspace:*"
+    "@rmwc/base": "14.2.6",
+    "@rmwc/provider": "14.2.6"
   }
 }

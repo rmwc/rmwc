@@ -40,8 +40,8 @@
   },
   "dependencies": {
     "@material/ripple": "^14.0.0",
-    "@rmwc/base": "workspace:*",
-    "@rmwc/provider": "workspace:*",
-    "@rmwc/types": "workspace:*"
+    "@rmwc/base": "14.2.6",
+    "@rmwc/provider": "14.2.6",
+    "@rmwc/types": "14.2.6"
   }
 }

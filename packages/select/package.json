@@ -40,14 +40,14 @@
   },
   "dependencies": {
     "@material/select": "^14.0.0",
-    "@rmwc/base": "workspace:*",
-    "@rmwc/floating-label": "workspace:*",
-    "@rmwc/icon": "workspace:*",
-    "@rmwc/line-ripple": "workspace:*",
-    "@rmwc/list": "workspace:*",
-    "@rmwc/menu": "workspace:*",
-    "@rmwc/notched-outline": "workspace:*",
-    "@rmwc/ripple": "workspace:*",
-    "@rmwc/types": "workspace:*"
+    "@rmwc/base": "14.2.6",
+    "@rmwc/floating-label": "14.2.6",
+    "@rmwc/icon": "14.2.6",
+    "@rmwc/line-ripple": "14.2.6",
+    "@rmwc/list": "14.2.6",
+    "@rmwc/menu": "14.2.6",
+    "@rmwc/notched-outline": "14.2.6",
+    "@rmwc/ripple": "14.2.6",
+    "@rmwc/types": "14.2.6"
   }
 }
