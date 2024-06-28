@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/checkbox",
-  "version": "14.2.6-alpha.0",
+  "version": "14.2.6",
   "description": "RMWC Checkbox component",
   "main": "./index.js",
   "types": "./index.d.ts",
