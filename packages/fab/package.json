@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/fab",
-  "version": "14.2.6-alpha.0",
+  "version": "14.2.6",
   "description": "RMWC Floating Action Button component",
   "main": "./index.js",
   "types": "./index.d.ts",
