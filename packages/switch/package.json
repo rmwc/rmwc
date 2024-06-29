@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/switch",
-  "version": "14.2.6",
+  "version": "14.2.7",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
@@ -38,10 +38,10 @@
   },
   "dependencies": {
     "@material/switch": "^14.0.0",
-    "@rmwc/base": "14.2.6",
-    "@rmwc/formfield": "14.2.6",
-    "@rmwc/ripple": "14.2.6",
-    "@rmwc/toggleable": "14.2.6",
-    "@rmwc/types": "14.2.6"
+    "@rmwc/base": "14.2.7",
+    "@rmwc/formfield": "14.2.7",
+    "@rmwc/ripple": "14.2.7",
+    "@rmwc/toggleable": "14.2.7",
+    "@rmwc/types": "14.2.7"
   }
 }
