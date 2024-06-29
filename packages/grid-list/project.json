@@ -38,20 +38,6 @@
         "passWithNoTests": true,
         "reportsDirectory": "../../coverage/packages/grid-list"
       }
-    },
-    "npm-deploy": {
-      "executor": "ngx-deploy-npm:deploy",
-      "options": {
-        "access": "public",
-        "distFolderPath": "dist/packages/grid-list"
-      },
-      "dependsOn": ["pre-npm-deploy-build-production"]
-    },
-    "pre-npm-deploy-build-production": {
-      "executor": "nx:run-commands",
-      "options": {
-        "command": "nx run grid-list:build:production"
-      }
     }
   }
 }

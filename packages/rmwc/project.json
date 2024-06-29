@@ -38,20 +38,6 @@
         "passWithNoTests": true,
         "reportsDirectory": "../../coverage/packages/rmwc"
       }
-    },
-    "npm-deploy": {
-      "executor": "ngx-deploy-npm:deploy",
-      "options": {
-        "access": "public",
-        "distFolderPath": "dist/packages/rmwc"
-      },
-      "dependsOn": ["pre-npm-deploy-build-production"]
-    },
-    "pre-npm-deploy-build-production": {
-      "executor": "nx:run-commands",
-      "options": {
-        "command": "nx run rmwc:build:production"
-      }
     }
   }
 }

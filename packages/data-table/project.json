@@ -38,20 +38,6 @@
         "passWithNoTests": true,
         "reportsDirectory": "../../coverage/packages/data-table"
       }
-    },
-    "npm-deploy": {
-      "executor": "ngx-deploy-npm:deploy",
-      "options": {
-        "access": "public",
-        "distFolderPath": "dist/packages/data-table"
-      },
-      "dependsOn": ["pre-npm-deploy-build-production"]
-    },
-    "pre-npm-deploy-build-production": {
-      "executor": "nx:run-commands",
-      "options": {
-        "command": "nx run data-table:build:production"
-      }
     }
   }
 }

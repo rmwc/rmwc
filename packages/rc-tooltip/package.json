@@ -39,8 +39,8 @@
     "react-dom": ">=16.8.x"
   },
   "dependencies": {
-    "@rmwc/base": "workspace:*",
-    "@rmwc/provider": "workspace:*",
+    "@rmwc/base": "14.2.6",
+    "@rmwc/provider": "14.2.6",
     "rc-tooltip": "6.1.2"
   },
   "devDependencies": {

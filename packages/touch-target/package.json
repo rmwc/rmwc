@@ -38,6 +38,6 @@
   },
   "dependencies": {
     "@material/touch-target": "^14.0.0",
-    "@rmwc/base": "workspace:*"
+    "@rmwc/base": "14.2.6"
   }
 }

@@ -39,7 +39,7 @@
   },
   "dependencies": {
     "@material/drawer": "^14.0.0",
-    "@rmwc/base": "workspace:*",
-    "@rmwc/types": "workspace:*"
+    "@rmwc/base": "14.2.6",
+    "@rmwc/types": "14.2.6"
   }
 }
