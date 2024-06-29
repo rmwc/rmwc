@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/segmented-button",
-  "version": "14.2.6",
+  "version": "14.2.7",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
@@ -38,11 +38,11 @@
   },
   "dependencies": {
     "@material/segmented-button": "^14.0.0",
-    "@rmwc/base": "14.2.6",
-    "@rmwc/icon": "14.2.6",
-    "@rmwc/provider": "14.2.6",
-    "@rmwc/ripple": "14.2.6",
-    "@rmwc/touch-target": "14.2.6",
-    "@rmwc/types": "14.2.6"
+    "@rmwc/base": "14.2.7",
+    "@rmwc/icon": "14.2.7",
+    "@rmwc/provider": "14.2.7",
+    "@rmwc/ripple": "14.2.7",
+    "@rmwc/touch-target": "14.2.7",
+    "@rmwc/types": "14.2.7"
   }
 }
