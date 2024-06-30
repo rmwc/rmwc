@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/card",
-  "version": "14.2.6",
+  "version": "14.2.7",
   "description": "RMWC Card component",
   "main": "./index.js",
   "types": "./index.d.ts",
@@ -39,10 +39,10 @@
   },
   "dependencies": {
     "@material/card": "^14.0.0",
-    "@rmwc/base": "14.2.6",
-    "@rmwc/button": "14.2.6",
-    "@rmwc/icon-button": "14.2.6",
-    "@rmwc/ripple": "14.2.6",
-    "@rmwc/types": "14.2.6"
+    "@rmwc/base": "14.2.7",
+    "@rmwc/button": "14.2.7",
+    "@rmwc/icon-button": "14.2.7",
+    "@rmwc/ripple": "14.2.7",
+    "@rmwc/types": "14.2.7"
   }
 }

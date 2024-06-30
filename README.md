@@ -32,7 +32,7 @@ Check out his other work at https://github.com/jamesmfriedman.
 
 ## Recent updates
 
-v14.2.6 is here! This release includes:
+v14.2.7 is here! This release includes:
 
 - support for material-components-web v14
 - support for react 18
