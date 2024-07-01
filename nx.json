@@ -6,7 +6,12 @@
   },
   "release": {
     "projects": ["tag:publishable"],
-    "releaseTagPattern": "v{version}"
+    "releaseTagPattern": "v{version}",
+    "changelog": {
+      "workspaceChangelog": {
+        "createRelease": "github"
+      }
+    }
   },
   "targetDefaults": {
     "build": {

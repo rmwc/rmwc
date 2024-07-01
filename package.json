@@ -82,7 +82,6 @@
     "prettier:check": "nx format:check",
     "publish:packages": "nx release publish",
     "publish:docs": "npm run build:docs && git add docs -f && git commit --allow-empty -m 'Deploying docs'",
-    "changelog": "changelog || echo 'No Changes'",
     "prepare": "husky install",
     "validate:actions": "node scripts/validate-actions.mjs",
     "storybook ": "nx run storybook"
@@ -132,7 +131,6 @@
     "eslint-plugin-jsx-a11y": "6.8.0",
     "eslint-plugin-react-hooks": "4.6.2",
     "esm-module-alias": "^2.1.0",
-    "generate-changelog": "^1.8.0",
     "glob": "^7.2.0",
     "husky": "^9.0.11",
     "hyperform": "^0.12.1",

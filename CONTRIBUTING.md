@@ -114,7 +114,7 @@ Our entire coding style is enforced automatically through the use of eslint and 
 
 When submitting PRs, make sure you're following our commit message conventions.
 
-RMWC uses [generate-changelog](https://www.npmjs.com/package/generate-changelog) to build the CHANGELOG.md file. All commits should only complete a single task and be formatted like the following. Use the most relevant label from generate-changelog, i.e. fix, breaking, docs, chore, etc.
+RMWC uses NX and [Conventional Commits](https://www.conventionalcommits.org/) to build the CHANGELOG.md file. All commits should only complete a single task and be formatted like the following. Use the most relevant label from Conventional Commits, i.e. fix, breaking, docs, chore, etc.
 
 ```
 type(category): description [flags]
