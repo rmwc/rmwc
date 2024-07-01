@@ -38,21 +38,18 @@ jobs:
       - name: 'Major Release'
         run: npm run -- release:major
         if: contains(github.head_ref, '/major') && github.base_ref == 'master'
-      - name: 'Alpha Release'
-        run: npm run -- release:alpha
-        if: contains(github.head_ref, '/alpha') && github.base_ref == 'master'
+      - name: 'Prerelease'
+        run: npm run -- release:pre
+        if: contains(github.head_ref, '/pre') && github.base_ref == 'master'
       - name: 'Patch Prerelease'
-        run: npm run -- prerelease:patch
+        run: npm run -- release:prepatch
         if: contains(github.head_ref, '/patch') && github.base_ref == 'next'
       - name: 'Minor Prerelease'
-        run: npm run -- prerelease:minor
+        run: npm run -- release:preminor
         if: contains(github.head_ref, '/minor') && github.base_ref == 'next'
       - name: 'Major Prerelease'
-        run: npm run -- prerelease:major
+        run: npm run -- release:premajor
         if: contains(github.head_ref, '/major') && github.base_ref == 'next'
-      - name: 'Alpha Prerelease'
-        run: npm run -- prerelease:alpha
-        if: contains(github.head_ref, '/alpha') && github.base_ref == 'next'
       - name: 'Publish Docs'
         run: npm run publish:docs
       - name: 'Push'
