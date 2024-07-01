@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/circular-progress",
-  "version": "14.2.7",
+  "version": "14.2.8",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
@@ -39,7 +39,7 @@
   },
   "dependencies": {
     "@material/circular-progress": "^14.0.0",
-    "@rmwc/base": "14.2.7",
-    "@rmwc/types": "14.2.7"
+    "@rmwc/base": "14.2.8",
+    "@rmwc/types": "14.2.8"
   }
 }
