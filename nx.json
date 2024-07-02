@@ -6,10 +6,7 @@
   },
   "release": {
     "projects": ["tag:publishable"],
-    "releaseTagPattern": "v{version}",
-    "version": {
-      "preVersionCommand": "npm run build:components"
-    }
+    "releaseTagPattern": "v{version}"
   },
   "targetDefaults": {
     "build": {
