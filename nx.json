@@ -6,7 +6,10 @@
   },
   "release": {
     "projects": ["tag:publishable"],
-    "releaseTagPattern": "v{version}"
+    "releaseTagPattern": "v{version}",
+    "version": {
+      "preVersionCommand": "npm run build:components"
+    }
   },
   "targetDefaults": {
     "build": {
@@ -21,9 +24,9 @@
       "inputs": ["default", "^production"],
       "cache": true
     },
-    "npm-deploy": {
+    "nx-release-publish": {
       "options": {
-        "noBuild": true
+        "packageRoot": "{workspaceRoot}/dist/packages/{projectName}"
       }
     },
     "@nx/vite:test": {
