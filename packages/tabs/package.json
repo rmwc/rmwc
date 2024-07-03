@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/tabs",
-  "version": "14.2.8",
+  "version": "14.2.9",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
@@ -41,9 +41,9 @@
     "@material/tab-bar": "^14.0.0",
     "@material/tab-indicator": "^14.0.0",
     "@material/tab-scroller": "^14.0.0",
-    "@rmwc/base": "14.2.8",
-    "@rmwc/icon": "14.2.8",
-    "@rmwc/ripple": "14.2.8",
-    "@rmwc/types": "14.2.8"
+    "@rmwc/base": "14.2.9",
+    "@rmwc/icon": "14.2.9",
+    "@rmwc/ripple": "14.2.9",
+    "@rmwc/types": "14.2.9"
   }
 }
