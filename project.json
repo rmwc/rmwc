@@ -2,6 +2,32 @@
   "name": "workspace",
   "$schema": "node_modules/nx/schemas/project-schema.json",
   "targets": {
+    "release-publish": {
+      "dependsOn": ["release-build"],
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "nx release publish"
+      }
+    },
+    "release-version": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "nx release version {args.semver} --git-commit=true --git-tag=true",
+          {
+            "command": "git describe --tags --abbrev=0 | xargs nx release changelog --git-commit=true",
+            "forwardAllArgs": false
+          }
+        ],
+        "parallel": false
+      }
+    },
+    "release-build": {
+      "executor": "nx:run-script",
+      "options": {
+        "script": "build:components"
+      }
+    },
     "test": {
       "executor": "nx:noop"
     },

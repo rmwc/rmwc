@@ -21,9 +21,9 @@
       "inputs": ["default", "^production"],
       "cache": true
     },
-    "npm-deploy": {
+    "nx-release-publish": {
       "options": {
-        "noBuild": true
+        "packageRoot": "{workspaceRoot}/dist/packages/{projectName}"
       }
     },
     "@nx/vite:test": {
