@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/top-app-bar",
-  "version": "14.2.8",
+  "version": "14.2.9",
   "description": "RMWC TopAppBar component",
   "main": "./index.js",
   "types": "./index.d.ts",
@@ -39,9 +39,9 @@
   },
   "dependencies": {
     "@material/top-app-bar": "^14.0.0",
-    "@rmwc/base": "14.2.8",
-    "@rmwc/icon-button": "14.2.8",
-    "@rmwc/ripple": "14.2.8",
-    "@rmwc/types": "14.2.8"
+    "@rmwc/base": "14.2.9",
+    "@rmwc/icon-button": "14.2.9",
+    "@rmwc/ripple": "14.2.9",
+    "@rmwc/types": "14.2.9"
   }
 }
