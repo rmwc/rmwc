@@ -122,7 +122,7 @@
     "@types/react-dom": "18.3.0",
     "@vitejs/plugin-react": "4.3.1",
     "@vitest/coverage-v8": "1.6.0",
-    "@vitest/ui": "1.6.0",
+    "@vitest/ui": "2.0.1",
     "colors": "^1.4.0",
     "copyfiles": "^2.4.1",
     "cross-env": "^7.0.3",
