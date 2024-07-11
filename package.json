@@ -108,7 +108,7 @@
     "@storybook/addon-links": "8.1.5",
     "@storybook/core-server": "8.1.5",
     "@storybook/react-vite": "8.1.5",
-    "@stylistic/eslint-plugin": "^2.1.0",
+    "@stylistic/eslint-plugin": "^2.3.0",
     "@swc-node/register": "1.9.1",
     "@swc/cli": "0.3.12",
     "@swc/core": "1.5.7",
