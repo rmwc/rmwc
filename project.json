@@ -13,11 +13,9 @@
       "executor": "nx:run-commands",
       "options": {
         "commands": [
-          "nx release version {args.semver} --git-commit=true --git-tag=true",
-          {
-            "command": "git describe --tags --abbrev=0 | xargs nx release changelog --git-commit=true",
-            "forwardAllArgs": false
-          }
+          "npm version {args.semver} --commit-hooks=false --no-git-tag-version",
+          "git commit -m 'chore(release): bumping root version to {args.semver}' .",
+          "nx release {args.semver} --skip-publish"
         ],
         "parallel": false
       }
