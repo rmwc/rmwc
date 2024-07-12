@@ -104,7 +104,7 @@
     "@nx/workspace": "19.3.2",
     "@storybook/addon-controls": "8.1.11",
     "@storybook/addon-essentials": "8.1.10",
-    "@storybook/addon-interactions": "^8.2.1",
+    "@storybook/addon-interactions": "8.1.11",
     "@storybook/addon-links": "8.1.5",
     "@storybook/core-server": "8.1.5",
     "@storybook/react-vite": "8.1.5",
