@@ -1,49 +1,55 @@
 import { RMWCProvider } from '@rmwc/provider';
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { SimpleRichTooltip, Tooltip } from './tooltip';
+import { RichTooltip, RichTooltipLink, Tooltip } from './tooltip';
+import { Button } from '@rmwc/button';
+import { Portal } from '@rmwc/base';
 
 describe('Tooltip', () => {
-  it('renders', async () => {
+  it('renders', () => {
     const { asFragment } = render(
-      <Tooltip label="test" overlay="tooltip" open>
-        <span>test</span>
-      </Tooltip>
+      <>
+        <Tooltip overlay="tooltip" label="test">
+          <span>test</span>
+        </Tooltip>
+        <Portal />
+      </>
     );
     userEvent.hover(screen.getByText('test'));
     expect(screen.getByText('tooltip')).toBeInTheDocument();
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('activateOn', () => {
-    render(
-      <Tooltip overlay="tooltip" activateOn="click">
-        <span>test</span>
-      </Tooltip>
-    );
-  });
-
   it('className', () => {
     render(
-      <Tooltip overlay="tooltip" className="my-custom-classname">
-        <span>test</span>
-      </Tooltip>
+      <>
+        <Tooltip overlay="tooltip" className="my-custom-classname">
+          <span>test</span>
+        </Tooltip>
+        <Portal />
+      </>
     );
   });
 
   it('enterDelay', () => {
     render(
-      <Tooltip overlay="tooltip" enterDelay={1000}>
-        <span>test</span>
-      </Tooltip>
+      <>
+        <Tooltip overlay="tooltip" enterDelay={1000}>
+          <span>test</span>
+        </Tooltip>
+        <Portal />
+      </>
     );
   });
 
   it('leaveDelay', () => {
     render(
-      <Tooltip overlay="tooltip" leaveDelay={1000}>
-        <span>test</span>
-      </Tooltip>
+      <>
+        <Tooltip overlay="tooltip" leaveDelay={1000}>
+          <span>test</span>
+        </Tooltip>
+        <Portal />
+      </>
     );
   });
 
@@ -53,77 +59,19 @@ describe('Tooltip', () => {
         <Tooltip overlay="tooltip">
           <span>test</span>
         </Tooltip>
+        <Portal />
       </RMWCProvider>
     );
-  });
-
-  it('can be rich', () => {
-    const { asFragment } = render(
-      <RMWCProvider tooltip={{}}>
-        {
-          <Tooltip label="test" overlay={<div>tooltip</div>}>
-            <span>test</span>
-          </Tooltip>
-        }
-      </RMWCProvider>
-    );
-
-    expect(screen.getByText('test').parentElement).toHaveClass(
-      'mdc-tooltip-wrapper--rich'
-    );
-
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  it('can have ReactNode as overlay with rich styling disabled', () => {
-    const { asFragment } = render(
-      <Tooltip label="test" overlay={<div>tooltip</div>} rich={false}>
-        <span>test</span>
-      </Tooltip>
-    );
-
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  it('can be rich and persistent', () => {
-    const { asFragment } = render(
-      <RMWCProvider tooltip={{}}>
-        {
-          <Tooltip label="test" overlay={<div>tooltip</div>} isPersistent>
-            <span>test</span>
-          </Tooltip>
-        }
-      </RMWCProvider>
-    );
-
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  it('can use SimpleRichTooltip', () => {
-    const { asFragment } = render(
-      <Tooltip
-        label="test"
-        overlay={
-          <SimpleRichTooltip title="My title" body="This is my content" />
-        }
-        isPersistent
-      >
-        <span>test</span>
-      </Tooltip>
-    );
-
-    expect(asFragment()).toMatchSnapshot();
   });
 
   it('accepts allowed align value from provider context', () => {
     vi.spyOn(console, 'warn');
     render(
       <RMWCProvider tooltip={{ align: 'start' }}>
-        {
-          <Tooltip label="test">
-            <span>test</span>
-          </Tooltip>
-        }
+        <Tooltip label="test">
+          <span>test</span>
+        </Tooltip>
+        <Portal />
       </RMWCProvider>
     );
     expect(console.warn).not.toBeCalled();
@@ -133,13 +81,61 @@ describe('Tooltip', () => {
     vi.spyOn(console, 'warn');
     render(
       <RMWCProvider tooltip={{ align: 'bottom' }}>
-        {
-          <Tooltip label="test">
-            <span>test</span>
-          </Tooltip>
-        }
+        <Tooltip label="test">
+          <span>test</span>
+        </Tooltip>
+        <Portal />
       </RMWCProvider>
     );
     expect(console.warn).toBeCalled();
+  });
+});
+
+describe('RichTooltip', () => {
+  it('renders', () => {
+    const { asFragment } = render(
+      <RichTooltip title="Title" body="This is content" label="test">
+        <span>test</span>
+      </RichTooltip>
+    );
+    userEvent.hover(screen.getByText('test'));
+    expect(asFragment()).toMatchSnapshot();
+  });
+  it('can have interactive content', async () => {
+    const onClick = vi.fn();
+
+    render(
+      <RichTooltip
+        title="Title"
+        body="This is content"
+        actions={<Button onClick={onClick}>Click me</Button>}
+      >
+        <span>test</span>
+      </RichTooltip>
+    );
+
+    expect(onClick).not.toHaveBeenCalled();
+
+    userEvent.hover(screen.getByText('test'));
+    userEvent.click(screen.getByText('Click me'));
+
+    await waitFor(() => expect(onClick).toHaveBeenCalled());
+  });
+  it('can have a link', () => {
+    const { asFragment } = render(
+      <RichTooltip
+        title="Title"
+        link={
+          <RichTooltipLink href="/" target="_blank">
+            Link
+          </RichTooltipLink>
+        }
+        label="test"
+      >
+        <span>test</span>
+      </RichTooltip>
+    );
+    userEvent.hover(screen.getByText('test'));
+    expect(asFragment()).toMatchSnapshot();
   });
 });
