@@ -375,6 +375,9 @@ export const useSelectFoundation = (
     ? props.options.length
     : Object.values(props.options || {}).length;
 
+  // @ts-ignore unsafe private variable access
+  const menuItemValues = foundation.menuItemValues;
+
   // MDC Select is a bit of a mess here...
   // - We have to set our value
   // - In the event of a controlled value change, we don't want to fire a change event
@@ -383,14 +386,12 @@ export const useSelectFoundation = (
     silenceChange.current = true;
 
     if (value !== undefined && value !== foundationValue) {
-      // @ts-ignore unsafe private variable access
-      const index = foundation.menuItemValues.indexOf(value);
+      const index = menuItemValues.indexOf(value);
       selectedIndex.current = index;
       foundation.setValue(value || '');
 
       // We need to call setSelectedTextContent to set the default value/the controlled value.
-      // @ts-ignore unsafe private variable access
-      if (foundation.menuItemValues.includes(value)) {
+      if (menuItemValues.includes(value)) {
         // @ts-ignore unsafe private variable access
         const textContent = foundation.adapter.getMenuItemTextAtIndex(index);
         setSelectedTextContent(textContent);
@@ -399,7 +400,7 @@ export const useSelectFoundation = (
     raf(() => {
       silenceChange.current = false;
     });
-  }, [value, foundationValue, optionsLength, foundation]);
+  }, [value, foundationValue, optionsLength, foundation, menuItemValues]);
 
   // Disabled
   useEffect(() => {
@@ -416,6 +417,14 @@ export const useSelectFoundation = (
   useEffect(() => {
     if (defaultValue) {
       setSelectedTextContent(defaultValue.toString());
+    }
+  }, []);
+
+  // open
+  useEffect(() => {
+    if (props.open) {
+      setMenuOpen(true);
+      foundation.handleMenuOpened();
     }
   }, []);
 

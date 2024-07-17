@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Select } from './select'; // replace with your actual component import
 import { Meta, StoryObj } from '@storybook/react';
 import { Portal } from '@rmwc/base';
@@ -300,7 +300,14 @@ function EnhancedSelectWithPortal(props: { value?: string }) {
 export const SelectWithObjectStory: Story = {
   render: (args) => {
     const { label, placeholder, options } = args;
-    return <Select label={label} placeholder={placeholder} options={options} />;
+    return (
+      <Select
+        label={label}
+        placeholder={placeholder}
+        options={options}
+        onChange={() => console.count('select')}
+      />
+    );
   },
   args: {
     label: 'Foods',
@@ -452,4 +459,28 @@ export const ChangingSelectStory: Story = {
 
 export const DependentSelectsStory: Story = {
   render: () => <DependentSelects />
+};
+
+export const ConditionallyRenderedSelect: Story = {
+  render: () => {
+    const [displaySelect, setDisplaySelect] = React.useState('');
+    return (
+      <>
+        <Select
+          data-testid="display-selection"
+          label="Display"
+          onChange={(e) => setDisplaySelect(e.currentTarget.value)}
+          value={displaySelect}
+          options={['cookie', 'pizza', 'Icecream']}
+        />
+        {displaySelect && (
+          <Select
+            data-testid="next-selection"
+            label="Next"
+            options={['cookie', 'pizza']}
+          />
+        )}
+      </>
+    );
+  }
 };

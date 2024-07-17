@@ -318,7 +318,7 @@ exports[`Select: Lifecycle > Select matches snapshot when enhanced, has defaultV
         role="menu"
       >
         <li
-          class="mdc-deprecated-list-item"
+          class="mdc-deprecated-list-item mdc-deprecated-list-item--activated"
           data-value="Cookies"
           role="menuitem"
           tabindex="0"

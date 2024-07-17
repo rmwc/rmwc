@@ -222,6 +222,10 @@ describe('Select', () => {
       screen.getByTestId('display-selection'),
       'Icecream'
     );
+    await userEvent.selectOptions(
+      screen.getByTestId('display-selection'),
+      'Icecream'
+    );
 
     await userEvent.click(screen.getByText(/next/i));
     await userEvent.selectOptions(
