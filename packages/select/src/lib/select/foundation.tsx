@@ -220,7 +220,7 @@ export const useSelectFoundation = (
 
       f.layout = () => {
         const doWork = () => {
-          const value = f.getValue();
+          const value = f.getValue() || props.value || '';
 
           if (adapter.hasLabel()) {
             const optionHasDefaultValue = defaultValue !== undefined;
@@ -416,6 +416,13 @@ export const useSelectFoundation = (
   useEffect(() => {
     if (defaultValue) {
       setSelectedTextContent(defaultValue.toString());
+    }
+  }, []);
+
+  // Value
+  useEffect(() => {
+    if (value) {
+      setSelectedTextContent(value);
     }
   }, []);
 
