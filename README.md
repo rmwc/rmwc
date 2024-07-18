@@ -32,7 +32,7 @@ Check out his other work at https://github.com/jamesmfriedman.
 
 ## Recent updates
 
-v14.2.9 is here! This release includes:
+v14.3.0 is here! This release includes:
 
 - support for material-components-web v14
 - support for react 18
@@ -42,6 +42,7 @@ v14.2.9 is here! This release includes:
 - various bugfixes introduced in v14.0.0
 - accessibility improvements
 - the old chip as we know it + the new chip from material v 14.0.0 (currently experimental)
+- an improved API for the MDC Tooltip that stays true to the documentation from material-components-web. This also meant removing backwards compatibility to the "old" tooltip that is now known as RCToolip from the RMWC package. This change was for the better, as the Tooltip was buggy due to trying to make two entirely different components compatible. 
 
 View the changelog for detailed updates: [https://github.com/rmwc/rmwc/blob/master/CHANGELOG.md](https://github.com/rmwc/rmwc/blob/master/CHANGELOG.md)
 
