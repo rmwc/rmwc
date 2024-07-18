@@ -10,18 +10,12 @@ import {
 import examples from '../generated-examples/tooltip.json';
 import propsSrc from '../generated-props/tooltip.json';
 
-import { Avatar } from '@rmwc/avatar';
 import { Button } from '@rmwc/button';
 import { IconButton } from '@rmwc/icon-button';
 import { RMWCProvider } from '@rmwc/provider';
-import {
-  RichTooltipActions,
-  RichTooltipContent,
-  RichTooltipLink,
-  RichTooltipTitle,
-  SimpleRichTooltip,
-  Tooltip
-} from '@rmwc/tooltip';
+import { RichTooltip, RichTooltipLink, Tooltip } from '@rmwc/tooltip';
+import { Icon } from '@rmwc/icon';
+import { CollapsibleList, SimpleListItem } from '@rmwc/list';
 
 export default function Readme() {
   return (
@@ -49,7 +43,7 @@ export default function Readme() {
       <DocsExample label="Default">
         <>
           <Tooltip overlay="Cookies">
-            <IconButton icon="star_border" aria-describedby="tooltip-id" />
+            <IconButton icon="star_border" />
           </Tooltip>
 
           <Tooltip overlay="Pizza">
@@ -62,85 +56,45 @@ export default function Readme() {
         </>
       </DocsExample>
 
-      <DocsSubtitle>Variants</DocsSubtitle>
-      <DocsExample label="Controlled / Always open">
-        <Tooltip overlay="Hello" open={true}>
-          <IconButton icon="mood" />
-        </Tooltip>
-      </DocsExample>
-
+      <DocsSubtitle>Rich</DocsSubtitle>
+      <DocsP>
+        Default rich tooltips are shown when users hover over or focus on their
+        anchor element and remain open on focus/hover. The tooltip will become
+        hidden when focus/hover is removed and/or content has been clicked.
+      </DocsP>
+      <DocsP>Persistent rich tooltips' visibility is toggled by clicks.</DocsP>
       <DocsExample label="Rich overlay with clickable content">
-        <Tooltip
-          overlay={
-            <>
-              <RichTooltipTitle>Hello</RichTooltipTitle>
-              <RichTooltipContent>
-                I am the content of the interactive rich tooltip
-              </RichTooltipContent>
-              <RichTooltipActions>
-                <Button>Click me</Button>
-              </RichTooltipActions>
-            </>
-          }
+        <RichTooltip
+          title="Hello"
+          body="I am the content of the interactive rich tooltip"
+          actions={<Button>Click me</Button>}
         >
-          <span role="button">
-            Popover with clickable content that stays open on hover
-          </span>
-        </Tooltip>
-      </DocsExample>
-
-      <DocsExample label="SimpleRichTooltip">
-        <Tooltip
-          overlay={
-            <SimpleRichTooltip
-              title="My title"
-              body="I am the content"
-              actions={<Button>Click me</Button>}
-            />
-          }
-        >
-          <span role="button">Usage of SimpleRichTooltip</span>
-        </Tooltip>
+          <IconButton icon="star_border" />
+        </RichTooltip>
       </DocsExample>
 
       <DocsExample label="With links">
-        <Tooltip
-          overlay={
-            <SimpleRichTooltip
-              title="My title"
-              body={
-                <RichTooltipLink href="/" target="_blank">
-                  Link
-                </RichTooltipLink>
-              }
-            />
+        <RichTooltip
+          title="My title"
+          link={
+            <RichTooltipLink href="/" target="_blank">
+              Link
+            </RichTooltipLink>
           }
         >
           <span role="button">With links</span>
-        </Tooltip>
+        </RichTooltip>
       </DocsExample>
 
       <DocsExample label="Persistent">
-        <Tooltip
-          overlay={<RichTooltipContent>I am persistent</RichTooltipContent>}
-          isPersistent
-        >
-          <span role="button">Popover when I am clicked</span>
-        </Tooltip>
+        <RichTooltip body="I am persistent" isPersistent>
+          <button>Popover when I am clicked</button>
+        </RichTooltip>
       </DocsExample>
 
-      <DocsExample label="Disable staying open on hover">
-        <Tooltip
-          overlay={<RichTooltipContent>I don't stay open</RichTooltipContent>}
-          stayOpenOnHover={false}
-        >
-          <span role="button">I don't stay open</span>
-        </Tooltip>
-      </DocsExample>
-
+      <DocsSubtitle>Variants</DocsSubtitle>
       <DocsExample label="Styled Content">
         <Tooltip
-          rich={false}
           overlay={
             <div
               style={{
@@ -148,7 +102,7 @@ export default function Readme() {
                 alignItems: 'center',
                 justifyContent: 'center',
                 background: 'white',
-                width: '20rem',
+                width: '5rem',
                 height: '8rem',
                 color: 'black',
                 borderRadius: '3px',
@@ -199,29 +153,6 @@ export default function Readme() {
         </>
       </DocsExample>
 
-      <DocsSubtitle>Activation</DocsSubtitle>
-      <DocsP>
-        By default, tooltips will activate on hover and focus. You can change
-        this behavior by passing one or more options to the `activateOn` prop.
-      </DocsP>
-
-      <DocsExample label="Default">
-        <>
-          <Tooltip overlay="Cookies" activateOn="hover">
-            <Button label="Hover" />
-          </Tooltip>
-          <Tooltip overlay="Pizza" activateOn="click" isPersistent>
-            <Button label="Click" />
-          </Tooltip>
-          <Tooltip overlay="Icecream" activateOn="focus">
-            <Button label="Focus" />
-          </Tooltip>
-          <Tooltip overlay="Cake" activateOn={['hover', 'focus']}>
-            <Button label="Multiple" />
-          </Tooltip>
-        </>
-      </DocsExample>
-
       <DocsSubtitle>Usage with RMWCProvider</DocsSubtitle>
       <DocsP>
         The RMWCProvider allows you to specify global defaults for your
@@ -232,7 +163,6 @@ export default function Readme() {
         <RMWCProvider
           tooltip={{
             align: 'right',
-            activateOn: 'hover',
             leaveDelay: 500,
             enterDelay: 0
           }}
@@ -241,6 +171,50 @@ export default function Readme() {
             <Button label="With Provider" />
           </Tooltip>
         </RMWCProvider>
+      </DocsExample>
+
+      <DocsSubtitle>Portal</DocsSubtitle>
+      <DocsP>
+        Tooltips are rendered to portal. Below is an example that verifies that
+        Tooltip is correctly rendered in a portal, where it would otherwise have
+        been hidden.
+      </DocsP>
+
+      <DocsExample label="Render to portal">
+        <CollapsibleList
+          handle={
+            <SimpleListItem
+              text={
+                <>
+                  This is a list item
+                  <Tooltip overlay={<div>hello world</div>}>
+                    <Icon icon="help" />
+                  </Tooltip>
+                </>
+              }
+            />
+          }
+        />
+      </DocsExample>
+
+      <DocsExample label="Does not render to portal">
+        <CollapsibleList
+          handle={
+            <SimpleListItem
+              text={
+                <>
+                  This is a list item
+                  <Tooltip
+                    overlay={<div>hello world</div>}
+                    renderToPortal={false}
+                  >
+                    <Icon icon="help" />
+                  </Tooltip>
+                </>
+              }
+            />
+          }
+        />
       </DocsExample>
 
       <DocProps

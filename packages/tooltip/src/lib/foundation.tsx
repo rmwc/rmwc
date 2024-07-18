@@ -62,8 +62,9 @@ export const useToolTipFoundation = (
         getAnchorAttribute: (attr) => {
           return anchorEl.ref?.getAttribute(attr) ?? null;
         },
-        setAnchorAttribute: (attr, value) =>
-          anchorEl?.setProp(attr as any, value),
+        setAnchorAttribute: (attr, value) => {
+          return anchorEl.ref?.setAttribute(attr as any, value);
+        },
         isRTL: () =>
           !!rootEl.ref && getComputedStyle(rootEl.ref).direction === 'rtl',
         anchorContainsElement: (element) => {
@@ -92,10 +93,6 @@ export const useToolTipFoundation = (
           anchorEl.removeEventListener(evt, handler);
         },
         registerDocumentEventHandler: (evt, handler) => {
-          if (props.open) {
-            // to support open we need to disable event listeners for document
-            return;
-          }
           document.body.addEventListener(evt, handler);
         },
         deregisterDocumentEventHandler: (evt, handler) => {
@@ -165,19 +162,10 @@ export const useToolTipFoundation = (
     tooltip.align = undefined;
   }
 
-  const {
-    anchorBoundaryType,
-    align,
-    activateOn = ['hover', 'focus'],
-    enterDelay,
-    leaveDelay,
-    open
-  } = {
+  const { anchorBoundaryType, align, enterDelay, leaveDelay } = {
     ...providerContext.tooltip,
     ...props
   };
-
-  const { anchorEl, rootEl } = elements;
 
   const isShown = foundation.isShown();
 
@@ -188,8 +176,7 @@ export const useToolTipFoundation = (
     onMouseLeave,
     onTouchEnd,
     onTouchStart,
-    onTransitionEnd,
-    stayOpenOnHover = true
+    onTransitionEnd
   } = props;
 
   const handleMouseEnter = useCallback(
@@ -248,43 +235,6 @@ export const useToolTipFoundation = (
     [foundation, onTouchEnd]
   );
 
-  useEffect(() => {
-    const calculateActivationType = (type: TooltipActivationT) =>
-      Array.isArray(activateOn)
-        ? activateOn.includes(type)
-        : activateOn === type;
-
-    if (foundation.isPersistent()) {
-      anchorEl.addEventListener('click', handleClick);
-    } else {
-      calculateActivationType('click') &&
-        anchorEl.addEventListener('click', handleClick);
-      calculateActivationType('hover') &&
-        anchorEl.addEventListener('mouseenter', handleMouseEnter);
-      calculateActivationType('focus') &&
-        anchorEl.addEventListener('focus', handleFocus);
-      calculateActivationType('hover') &&
-        !open &&
-        anchorEl.addEventListener('mouseleave', handleMouseLeave);
-      anchorEl.addEventListener('onTouchStart', handleTouchstart);
-      anchorEl.addEventListener('onTouchEnd', handleTouchend);
-      rootEl.addEventListener('transitionend', handleTransitionEnd);
-    }
-  }, [
-    activateOn,
-    anchorEl,
-    foundation,
-    handleMouseEnter,
-    handleMouseLeave,
-    handleFocus,
-    handleTransitionEnd,
-    handleClick,
-    handleTouchstart,
-    handleTouchend,
-    open,
-    rootEl
-  ]);
-
   // handle align
   useEffect(() => {
     if (!align) {
@@ -311,27 +261,14 @@ export const useToolTipFoundation = (
     leaveDelay && foundation.setHideDelay(leaveDelay);
   }, [foundation, leaveDelay]);
 
-  // handle hide
-  useEffect(() => {
-    if (!open) {
-      foundation.hide();
-    }
-  }, [foundation, open, anchorEl, handleMouseEnter, handleMouseLeave]);
-
-  // handle open
-  useEffect(() => {
-    open && foundation.show();
-  }, [foundation, open]);
-
-  // handle persistance of interactive rich tooltip
-  useEffect(() => {
-    stayOpenOnHover &&
-      rootEl.addEventListener('mouseover', () => foundation.show());
-    stayOpenOnHover &&
-      rootEl.addEventListener('mouseleave', () => foundation.hide());
-  }, [stayOpenOnHover, foundation, rootEl]);
-
   return {
+    handleMouseEnter,
+    handleMouseLeave,
+    handleFocus,
+    handleTransitionEnd,
+    handleClick,
+    handleTouchstart,
+    handleTouchend,
     foundation,
     isShown,
     ...elements

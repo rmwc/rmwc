@@ -178,6 +178,7 @@ export function Docs({
           return child;
         })}
       </div>
+      <rmwc.Portal />
     </DocsContext.Provider>
   );
 }

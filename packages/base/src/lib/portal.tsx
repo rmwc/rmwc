@@ -78,11 +78,14 @@ export function PortalChild({
   // when children is rendered in the portal
   if (renderTo) {
     if (portalEl) {
-      return (
-        <div ref={menuSurfaceDomPositionRef}>
-          {createPortal(children, portalEl)}
-        </div>
-      );
+      if (menuSurfaceDomPositionRef) {
+        return (
+          <div ref={menuSurfaceDomPositionRef}>
+            {createPortal(children, portalEl)}
+          </div>
+        );
+      }
+      return createPortal(children, portalEl);
     } else {
       return null;
     }

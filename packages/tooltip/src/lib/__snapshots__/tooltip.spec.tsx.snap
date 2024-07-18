@@ -1,12 +1,13 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Tooltip > can be rich 1`] = `
+exports[`RichTooltip > can have a link 1`] = `
 <DocumentFragment>
   <div
     class="mdc-tooltip-wrapper--rich"
   >
     <span
       aria-describedby="tooltip-test"
+      aria-haspopup="dialog"
       class=""
       data-tooltip-id="tooltip-test"
       element="[object Object]"
@@ -17,100 +18,7 @@ exports[`Tooltip > can be rich 1`] = `
       aria-hidden="false"
       class="mdc-tooltip mdc-tooltip--rich"
       id="tooltip-test"
-      role="dialog"
-    >
-      <div
-        class="mdc-tooltip__surface mdc-tooltip__surface-animation"
-      >
-        <div>
-          tooltip
-        </div>
-      </div>
-    </div>
-  </div>
-</DocumentFragment>
-`;
-
-exports[`Tooltip > can be rich and persistent 1`] = `
-<DocumentFragment>
-  <div
-    class="mdc-tooltip-wrapper--rich"
-  >
-    <span
-      aria-describedby="tooltip-test"
-      class=""
-      data-tooltip-id="tooltip-test"
-      element="[object Object]"
-    >
-      test
-    </span>
-    <div
-      aria-hidden="false"
-      class="mdc-tooltip mdc-tooltip--rich"
-      data-mdc-tooltip-persistent="true"
-      id="tooltip-test"
-      role="dialog"
-      tabindex="-1"
-    >
-      <div
-        class="mdc-tooltip__surface mdc-tooltip__surface-animation"
-      >
-        <div>
-          tooltip
-        </div>
-      </div>
-    </div>
-  </div>
-</DocumentFragment>
-`;
-
-exports[`Tooltip > can have ReactNode as overlay with rich styling disabled 1`] = `
-<DocumentFragment>
-  <span
-    aria-describedby="tooltip-test"
-    class=""
-    data-tooltip-id="tooltip-test"
-    element="[object Object]"
-  >
-    test
-  </span>
-  <div
-    aria-hidden="false"
-    class="mdc-tooltip rmwc-tooltip"
-    id="tooltip-test"
-    role="tooltip"
-  >
-    <div
-      class="mdc-tooltip__surface mdc-tooltip__surface-animation"
-    >
-      <div>
-        tooltip
-      </div>
-    </div>
-  </div>
-</DocumentFragment>
-`;
-
-exports[`Tooltip > can use SimpleRichTooltip 1`] = `
-<DocumentFragment>
-  <div
-    class="mdc-tooltip-wrapper--rich"
-  >
-    <span
-      aria-describedby="tooltip-test"
-      class=""
-      data-tooltip-id="tooltip-test"
-      element="[object Object]"
-    >
-      test
-    </span>
-    <div
-      aria-hidden="false"
-      class="mdc-tooltip mdc-tooltip--rich"
-      data-mdc-tooltip-persistent="true"
-      id="tooltip-test"
-      role="dialog"
-      tabindex="-1"
+      role="tooltip"
     >
       <div
         class="mdc-tooltip__surface mdc-tooltip__surface-animation"
@@ -118,12 +26,57 @@ exports[`Tooltip > can use SimpleRichTooltip 1`] = `
         <h2
           class="mdc-tooltip__title"
         >
-          My title
+          Title
         </h2>
         <p
           class="mdc-tooltip__content"
         >
-          This is my content
+          <a
+            class="mdc-tooltip__content-link"
+            href="/"
+            target="_blank"
+          >
+            Link
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`RichTooltip > renders 1`] = `
+<DocumentFragment>
+  <div
+    class="mdc-tooltip-wrapper--rich"
+  >
+    <span
+      aria-describedby="tooltip-test"
+      aria-haspopup="dialog"
+      class=""
+      data-tooltip-id="tooltip-test"
+      element="[object Object]"
+    >
+      test
+    </span>
+    <div
+      aria-hidden="false"
+      class="mdc-tooltip mdc-tooltip--rich"
+      id="tooltip-test"
+      role="tooltip"
+    >
+      <div
+        class="mdc-tooltip__surface mdc-tooltip__surface-animation"
+      >
+        <h2
+          class="mdc-tooltip__title"
+        >
+          Title
+        </h2>
+        <p
+          class="mdc-tooltip__content"
+        >
+          This is content
         </p>
       </div>
     </div>
@@ -142,18 +95,19 @@ exports[`Tooltip > renders 1`] = `
     test
   </span>
   <div
-    aria-hidden="true"
-    class="mdc-tooltip mdc-tooltip--showing"
-    data-mdc-tooltip-persistent="true"
-    id="tooltip-test"
-    role="tooltip"
-    style="top: 4px; left: 0px;"
+    id="rmwcPortal"
   >
     <div
-      class="mdc-tooltip__surface mdc-tooltip__surface-animation"
-      style="transform-origin: center top;"
+      aria-hidden="false"
+      class="mdc-tooltip"
+      id="tooltip-test"
+      role="tooltip"
     >
-      tooltip
+      <div
+        class="mdc-tooltip__surface mdc-tooltip__surface-animation"
+      >
+        tooltip
+      </div>
     </div>
   </div>
 </DocumentFragment>
