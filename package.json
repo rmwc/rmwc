@@ -102,7 +102,7 @@
     "@nx/vite": "19.3.2",
     "@nx/web": "19.3.2",
     "@nx/workspace": "19.3.2",
-    "@storybook/addon-controls": "8.1.11",
+    "@storybook/addon-controls": "8.2.4",
     "@storybook/addon-essentials": "8.1.10",
     "@storybook/addon-interactions": "8.1.11",
     "@storybook/addon-links": "8.2.4",
