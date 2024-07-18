@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/tooltip",
-  "version": "14.2.9",
+  "version": "14.3.0",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
@@ -39,7 +39,7 @@
   },
   "dependencies": {
     "@material/tooltip": "^14.0.0",
-    "@rmwc/base": "14.2.9",
-    "@rmwc/provider": "14.2.9"
+    "@rmwc/base": "14.3.0",
+    "@rmwc/provider": "14.3.0"
   }
 }

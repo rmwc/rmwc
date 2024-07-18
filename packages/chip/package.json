@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/chip",
-  "version": "14.2.9",
+  "version": "14.3.0",
   "description": "RMWC Chip component",
   "main": "./index.js",
   "types": "./index.d.ts",
@@ -39,9 +39,9 @@
   },
   "dependencies": {
     "@material/chips": "^14.0.0",
-    "@rmwc/base": "14.2.9",
-    "@rmwc/icon": "14.2.9",
-    "@rmwc/ripple": "14.2.9",
-    "@rmwc/types": "14.2.9"
+    "@rmwc/base": "14.3.0",
+    "@rmwc/icon": "14.3.0",
+    "@rmwc/ripple": "14.3.0",
+    "@rmwc/types": "14.3.0"
   }
 }

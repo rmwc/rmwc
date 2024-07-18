@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/elevation",
-  "version": "14.2.9",
+  "version": "14.3.0",
   "description": "RMWC Elevation component",
   "main": "./index.js",
   "types": "./index.d.ts",
@@ -39,7 +39,7 @@
   },
   "dependencies": {
     "@material/elevation": "^14.0.0",
-    "@rmwc/base": "14.2.9",
-    "@rmwc/types": "14.2.9"
+    "@rmwc/base": "14.3.0",
+    "@rmwc/types": "14.3.0"
   }
 }

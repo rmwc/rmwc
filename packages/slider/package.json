@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/slider",
-  "version": "14.2.9",
+  "version": "14.3.0",
   "description": "RMWC Slider component",
   "main": "./index.js",
   "types": "./index.d.ts",
@@ -39,7 +39,7 @@
   },
   "dependencies": {
     "@material/slider": "^14.0.0",
-    "@rmwc/base": "14.2.9",
-    "@rmwc/types": "14.2.9"
+    "@rmwc/base": "14.3.0",
+    "@rmwc/types": "14.3.0"
   }
 }
