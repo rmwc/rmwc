@@ -1,3 +1,14 @@
+## 14.3.0 (2024-07-18)
+
+
+### 🚀 Features
+
+- **tooltip:** maturate rich tooltip api ([fa5f7296](https://github.com/rmwc/rmwc/commit/fa5f7296))
+
+### ❤️  Thank You
+
+- Emilie
+
 ## v14.2.9 (2024-07-03)
 
 This was a version bump only, there were no code changes.
