@@ -21,14 +21,15 @@ describe('Tooltip', () => {
   });
 
   it('className', () => {
-    render(
+    const { asFragment } = render(
       <>
-        <Tooltip overlay="tooltip" className="my-custom-classname">
+        <Tooltip overlay="tooltip" className="my-custom-classname" label="test">
           <span>test</span>
         </Tooltip>
         <Portal />
       </>
     );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('enterDelay', () => {
@@ -136,6 +137,19 @@ describe('RichTooltip', () => {
       </RichTooltip>
     );
     userEvent.hover(screen.getByText('test'));
+    expect(asFragment()).toMatchSnapshot();
+  });
+  it('className', () => {
+    const { asFragment } = render(
+      <RichTooltip
+        className="my-custom-classname"
+        title="Title"
+        body="This is content"
+        label="test"
+      >
+        <span>test</span>
+      </RichTooltip>
+    );
     expect(asFragment()).toMatchSnapshot();
   });
 });

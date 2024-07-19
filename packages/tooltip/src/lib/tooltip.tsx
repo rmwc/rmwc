@@ -60,7 +60,7 @@ export const Tooltip: RMWC.ComponentType<
 
     const uniqueId = useId('tooltip', props);
 
-    const className = classNames('mdc-tooltip');
+    const className = classNames(props.className, 'mdc-tooltip');
 
     const child = React.Children.only(props.children);
 
@@ -197,7 +197,11 @@ export const RichTooltip: RMWC.ComponentType<
 
     const uniqueId = useId('tooltip', props);
 
-    const className = classNames('mdc-tooltip', 'mdc-tooltip--rich');
+    const className = classNames(
+      props.className,
+      'mdc-tooltip',
+      'mdc-tooltip--rich'
+    );
 
     const eventHandlers = isPersistent
       ? { onClick: handleClick }
