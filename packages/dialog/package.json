@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/dialog",
-  "version": "14.3.0",
+  "version": "14.3.1",
   "description": "RMWC Dialog component",
   "main": "./index.js",
   "types": "./index.d.ts",
@@ -39,9 +39,9 @@
   },
   "dependencies": {
     "@material/dialog": "^14.0.0",
-    "@rmwc/base": "14.3.0",
-    "@rmwc/button": "14.3.0",
-    "@rmwc/textfield": "14.3.0",
-    "@rmwc/types": "14.3.0"
+    "@rmwc/base": "14.3.1",
+    "@rmwc/button": "14.3.1",
+    "@rmwc/textfield": "14.3.1",
+    "@rmwc/types": "14.3.1"
   }
 }
