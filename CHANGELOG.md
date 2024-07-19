@@ -1,3 +1,14 @@
+## 14.3.1 (2024-07-19)
+
+
+### 🩹 Fixes
+
+- **tooltip:** possible to add classname ([50063a12](https://github.com/rmwc/rmwc/commit/50063a12))
+
+### ❤️  Thank You
+
+- Emilie
+
 ## 14.3.0 (2024-07-18)
 
 

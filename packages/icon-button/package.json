@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/icon-button",
-  "version": "14.3.0",
+  "version": "14.3.1",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
@@ -38,9 +38,9 @@
   },
   "dependencies": {
     "@material/icon-button": "^14.0.0",
-    "@rmwc/base": "14.3.0",
-    "@rmwc/icon": "14.3.0",
-    "@rmwc/ripple": "14.3.0",
-    "@rmwc/types": "14.3.0"
+    "@rmwc/base": "14.3.1",
+    "@rmwc/icon": "14.3.1",
+    "@rmwc/ripple": "14.3.1",
+    "@rmwc/types": "14.3.1"
   }
 }

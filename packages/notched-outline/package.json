@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/notched-outline",
-  "version": "14.3.0",
+  "version": "14.3.1",
   "description": "RMWC NotchedOutline component",
   "main": "./index.js",
   "types": "./index.d.ts",
@@ -39,7 +39,7 @@
   },
   "dependencies": {
     "@material/notched-outline": "^14.0.0",
-    "@rmwc/base": "14.3.0",
-    "@rmwc/types": "14.3.0"
+    "@rmwc/base": "14.3.1",
+    "@rmwc/types": "14.3.1"
   }
 }
