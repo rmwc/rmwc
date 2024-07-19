@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Select } from './select'; // replace with your actual component import
 import { Meta, StoryObj } from '@storybook/react';
 import { Portal } from '@rmwc/base';
@@ -324,25 +324,33 @@ export const SelectWithArrayStory: Story = {
 export const SelectAllStory: Story = { render: (args) => <EnhancedSelect /> };
 
 export const SelectEnhancedStory: Story = {
-  render: () => (
-    <div>
-      <Select
-        label={'Manual Enhanced'}
-        enhanced={{
-          anchorCorner: 'bottomStart'
-        }}
-        onChange={(evt) => {
-          console.log('onChange', evt.currentTarget.value);
-        }}
-      >
-        <MenuItems twoLine style={{ width: '400px' }}>
-          <MenuItem data-value="cookies">Cookies</MenuItem>
-          <MenuItem data-value="pizza">Pizza</MenuItem>
-          <MenuItem data-value="icecream">Icecream</MenuItem>
-        </MenuItems>
-      </Select>
-    </div>
-  )
+  render: () => {
+    const [value, setValue] = useState('2');
+    const DEFAULT_OPTIONS = [
+      { label: 'One', value: '1' },
+      { label: 'Two', value: '2' },
+      { label: 'Three', value: '3' }
+    ];
+    console.log('story value: ', value);
+    return (
+      <div>
+        <Select
+          defaultValue="2"
+          label={'Manual Enhanced'}
+          // enhanced={{
+          //   renderToPortal: true
+          // }}
+          enhanced={true}
+          renderToPortal
+          onChange={(evt) => {
+            setValue(evt.currentTarget.value);
+          }}
+          options={DEFAULT_OPTIONS}
+          value={value}
+        />
+      </div>
+    );
+  }
 };
 
 export const SelectEnhancedWithPortalStory: Story = {
