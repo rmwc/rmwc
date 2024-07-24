@@ -106,7 +106,7 @@
     "@storybook/addon-essentials": "8.1.10",
     "@storybook/addon-interactions": "8.1.11",
     "@storybook/addon-links": "8.2.4",
-    "@storybook/core-server": "8.1.5",
+    "@storybook/core-server": "8.2.6",
     "@storybook/react-vite": "8.2.2",
     "@stylistic/eslint-plugin": "^2.3.0",
     "@swc-node/register": "1.9.1",
