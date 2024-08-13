@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Select } from './select'; // replace with your actual component import
 import { Meta, StoryObj } from '@storybook/react';
 import { Portal } from '@rmwc/base';
@@ -459,28 +459,4 @@ export const ChangingSelectStory: Story = {
 
 export const DependentSelectsStory: Story = {
   render: () => <DependentSelects />
-};
-
-export const ConditionallyRenderedSelect: Story = {
-  render: () => {
-    const [displaySelect, setDisplaySelect] = React.useState('');
-    return (
-      <>
-        <Select
-          data-testid="display-selection"
-          label="Display"
-          onChange={(e) => setDisplaySelect(e.currentTarget.value)}
-          value={displaySelect}
-          options={['cookie', 'pizza', 'Icecream']}
-        />
-        {displaySelect && (
-          <Select
-            data-testid="next-selection"
-            label="Next"
-            options={['cookie', 'pizza']}
-          />
-        )}
-      </>
-    );
-  }
 };

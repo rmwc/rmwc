@@ -157,7 +157,7 @@ export const useSelectFoundation = (
           notifyChange: (value: any) => {
             if (!silenceChange.current) {
               emit(
-                'onChange',
+                props.enhanced ? 'onChange' : 'MDCSelect:change',
                 {
                   index: selectedIndex.current,
                   value
@@ -442,8 +442,8 @@ export const useSelectFoundation = (
     setNativeControl,
     handleFocus,
     handleBlur,
-    handleClick,
     handleChange,
+    handleClick,
     handleKeydown,
     handleMenuClosed,
     handleMenuOpened,

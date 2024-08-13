@@ -31,16 +31,6 @@ const ConditionallyRenderedSelect = ({
   );
 };
 
-test('renders learn react link', async () => {
-  const onChange = vi.fn();
-  render(
-    <Select label="myLabel" onChange={onChange} options={['cookie', 'pizza']} />
-  );
-
-  await userEvent.selectOptions(screen.getByRole('combobox'), 'pizza');
-  expect(onChange).toHaveBeenCalled();
-});
-
 describe('Select', () => {
   it('renders', () => {
     const { asFragment } = render(
@@ -51,6 +41,41 @@ describe('Select', () => {
       />
     );
     expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('calls onChange', async () => {
+    const onChange = vi.fn();
+    render(
+      <Select
+        label="myLabel"
+        onChange={onChange}
+        options={['cookie', 'pizza']}
+      />
+    );
+
+    expect(onChange).not.toHaveBeenCalled();
+
+    await userEvent.selectOptions(screen.getByRole('combobox'), 'pizza');
+
+    expect(onChange).toHaveBeenCalled();
+  });
+
+  test('calls onChange enhanced', async () => {
+    const onChange = vi.fn();
+    render(
+      <Select
+        label="myLabel"
+        onChange={onChange}
+        options={['cookie', 'pizza']}
+        enhanced
+      />
+    );
+
+    expect(onChange).not.toHaveBeenCalled();
+
+    await userEvent.click(screen.getByRole('menuitem', { name: 'pizza' }));
+
+    expect(onChange).toHaveBeenCalled();
   });
 
   it('helpText', () => {
