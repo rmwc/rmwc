@@ -300,7 +300,14 @@ function EnhancedSelectWithPortal(props: { value?: string }) {
 export const SelectWithObjectStory: Story = {
   render: (args) => {
     const { label, placeholder, options } = args;
-    return <Select label={label} placeholder={placeholder} options={options} />;
+    return (
+      <Select
+        label={label}
+        placeholder={placeholder}
+        options={options}
+        onChange={() => console.count('select')}
+      />
+    );
   },
   args: {
     label: 'Foods',

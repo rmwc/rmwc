@@ -31,16 +31,6 @@ const ConditionallyRenderedSelect = ({
   );
 };
 
-test('renders learn react link', async () => {
-  const onChange = vi.fn();
-  render(
-    <Select label="myLabel" onChange={onChange} options={['cookie', 'pizza']} />
-  );
-
-  await userEvent.selectOptions(screen.getByRole('combobox'), 'pizza');
-  expect(onChange).toHaveBeenCalled();
-});
-
 describe('Select', () => {
   it('renders', () => {
     const { asFragment } = render(
@@ -51,6 +41,41 @@ describe('Select', () => {
       />
     );
     expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('calls onChange', async () => {
+    const onChange = vi.fn();
+    render(
+      <Select
+        label="myLabel"
+        onChange={onChange}
+        options={['cookie', 'pizza']}
+      />
+    );
+
+    expect(onChange).not.toHaveBeenCalled();
+
+    await userEvent.selectOptions(screen.getByRole('combobox'), 'pizza');
+
+    expect(onChange).toHaveBeenCalled();
+  });
+
+  it('calls onChange enhanced', async () => {
+    const onChange = vi.fn();
+    render(
+      <Select
+        label="myLabel"
+        onChange={onChange}
+        options={['cookie', 'pizza']}
+        enhanced
+      />
+    );
+
+    expect(onChange).not.toHaveBeenCalled();
+
+    await userEvent.click(screen.getByRole('menuitem', { name: 'pizza' }));
+
+    expect(onChange).toHaveBeenCalled();
   });
 
   it('helpText', () => {
@@ -181,14 +206,18 @@ describe('Select', () => {
 
   it('can be disabled', () => {
     const selectInput = render(
-      <Select disabled={false} options={['1', '2', '3']} />
+      <Select label="myLabel" disabled={false} options={['1', '2', '3']} />
     );
+
+    expect(screen.getByRole('combobox')).not.toBeDisabled();
 
     expect(
       selectInput.container.getElementsByClassName('mdc-select--disabled')
     ).toHaveLength(0);
 
     selectInput.rerender(<Select disabled={true} options={['1', '2', '3']} />);
+
+    expect(screen.getByRole('combobox')).toBeDisabled();
 
     expect(
       selectInput.container.getElementsByClassName('mdc-select--disabled')
@@ -218,6 +247,10 @@ describe('Select', () => {
     const onChange = vi.fn();
     render(<ConditionallyRenderedSelect onChange={onChange} />);
 
+    await userEvent.selectOptions(
+      screen.getByTestId('display-selection'),
+      'Icecream'
+    );
     await userEvent.selectOptions(
       screen.getByTestId('display-selection'),
       'Icecream'
