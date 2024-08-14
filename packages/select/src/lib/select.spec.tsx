@@ -43,7 +43,7 @@ describe('Select', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  test('calls onChange', async () => {
+  it('calls onChange', async () => {
     const onChange = vi.fn();
     render(
       <Select
@@ -60,7 +60,7 @@ describe('Select', () => {
     expect(onChange).toHaveBeenCalled();
   });
 
-  test('calls onChange enhanced', async () => {
+  it('calls onChange enhanced', async () => {
     const onChange = vi.fn();
     render(
       <Select
@@ -206,14 +206,18 @@ describe('Select', () => {
 
   it('can be disabled', () => {
     const selectInput = render(
-      <Select disabled={false} options={['1', '2', '3']} />
+      <Select label="myLabel" disabled={false} options={['1', '2', '3']} />
     );
+
+    expect(screen.getByRole('combobox')).not.toBeDisabled();
 
     expect(
       selectInput.container.getElementsByClassName('mdc-select--disabled')
     ).toHaveLength(0);
 
     selectInput.rerender(<Select disabled={true} options={['1', '2', '3']} />);
+
+    expect(screen.getByRole('combobox')).toBeDisabled();
 
     expect(
       selectInput.container.getElementsByClassName('mdc-select--disabled')

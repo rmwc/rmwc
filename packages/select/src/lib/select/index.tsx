@@ -476,6 +476,7 @@ export const Select: RMWC.ComponentType<
                 handleChange(evt);
                 handleMenuSelected(evt.currentTarget.selectedIndex);
               }}
+              disabled={disabled}
             />
           )}
         </AnchorEl>
@@ -487,6 +488,7 @@ export const Select: RMWC.ComponentType<
             ref={ref}
             anchorCorner={enhancedMenuProps.anchorCorner ?? 'bottomStart'}
             defaultValue={defaultValue}
+            disabled={disabled}
             placeholder={placeholder}
             open={menuOpen}
             onClose={handleMenuClosed}
