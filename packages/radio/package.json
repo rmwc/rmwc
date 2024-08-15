@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/radio",
-  "version": "14.3.1",
+  "version": "14.3.2",
   "description": "RMWC Radio component",
   "main": "./index.js",
   "types": "./index.d.ts",
@@ -39,10 +39,10 @@
   },
   "dependencies": {
     "@material/radio": "^14.0.0",
-    "@rmwc/base": "14.3.1",
-    "@rmwc/formfield": "14.3.1",
-    "@rmwc/ripple": "14.3.1",
-    "@rmwc/toggleable": "14.3.1",
-    "@rmwc/types": "14.3.1"
+    "@rmwc/base": "14.3.2",
+    "@rmwc/formfield": "14.3.2",
+    "@rmwc/ripple": "14.3.2",
+    "@rmwc/toggleable": "14.3.2",
+    "@rmwc/types": "14.3.2"
   }
 }

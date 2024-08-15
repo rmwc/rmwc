@@ -1,3 +1,16 @@
+## 14.3.2 (2024-08-15)
+
+
+### 🩹 Fixes
+
+- **select:** defaultvalue sets correct textcontent ([debb20b5](https://github.com/rmwc/rmwc/commit/debb20b5))
+- **select:** correctly emit onChange events ([1dea9a06](https://github.com/rmwc/rmwc/commit/1dea9a06))
+- **select:** pass disabled prop properly ([86e7d477](https://github.com/rmwc/rmwc/commit/86e7d477))
+
+### ❤️  Thank You
+
+- Emilie
+
 ## 14.3.1 (2024-07-19)
 
 
