@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/image-list",
-  "version": "14.3.1",
+  "version": "14.3.2",
   "description": "RMWC ImageList component",
   "main": "./index.js",
   "types": "./index.d.ts",
@@ -39,7 +39,7 @@
   },
   "dependencies": {
     "@material/image-list": "^14.0.0",
-    "@rmwc/base": "14.3.1",
-    "@rmwc/types": "14.3.1"
+    "@rmwc/base": "14.3.2",
+    "@rmwc/types": "14.3.2"
   }
 }

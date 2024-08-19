@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/typography",
-  "version": "14.3.1",
+  "version": "14.3.2",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
@@ -38,8 +38,8 @@
   },
   "dependencies": {
     "@material/typography": "^14.0.0",
-    "@rmwc/base": "14.3.1",
-    "@rmwc/provider": "14.3.1",
-    "@rmwc/types": "14.3.1"
+    "@rmwc/base": "14.3.2",
+    "@rmwc/provider": "14.3.2",
+    "@rmwc/types": "14.3.2"
   }
 }
