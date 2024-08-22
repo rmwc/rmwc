@@ -1,0 +1,43 @@
+{
+  "migrations": [
+    {
+      "cli": "nx",
+      "version": "19.6.0-beta.4",
+      "description": "Ensure Module Federation DTS is turned off by default.",
+      "factory": "./src/migrations/update-19-6-0/turn-off-dts-by-default",
+      "package": "@nx/react",
+      "name": "update-19-6-0-turn-module-federation-dts-off"
+    },
+    {
+      "cli": "nx",
+      "version": "19.6.0-beta.4",
+      "description": "Update the server file for Module Federation SSR port value to be the same as the 'serve' target port value.",
+      "factory": "./src/migrations/update-19-6-0/update-ssr-server-port",
+      "package": "@nx/react",
+      "name": "update-module-federation-ssr-server-file"
+    },
+    {
+      "cli": "nx",
+      "version": "19.6.1-beta.0",
+      "description": "Ensure Target Defaults are set correctly for Module Federation.",
+      "factory": "./src/migrations/update-19-6-1/ensure-depends-on-for-mf",
+      "package": "@nx/react",
+      "name": "update-19-6-1-ensure-module-federation-target-defaults"
+    },
+    {
+      "version": "19.6.0-beta.0",
+      "description": "Add dependsOn: [build] to preview targets using preview-server",
+      "implementation": "./src/migrations/update-19-6-0/add-depends-on-for-preview",
+      "package": "@nx/vite",
+      "name": "update-19-6-0-add-depends-on-for-preview-server"
+    },
+    {
+      "cli": "nx",
+      "version": "19.6.0-beta.0",
+      "description": "Update workspace to use Storybook v8",
+      "implementation": "./src/migrations/update-19-6-0/update-sb-8",
+      "package": "@nx/storybook",
+      "name": "update-19-6-0-add-nx-packages"
+    }
+  ]
+}
