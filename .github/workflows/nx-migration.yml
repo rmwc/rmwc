@@ -20,7 +20,7 @@ jobs:
           cache: 'npm'
       - run: npm ci --ignore-scripts
       - name: NX Migrate
-        uses: timonmasberg/nx-migration-gh-action@v1.1.12
+        uses: timonmasberg/nx-migration-gh-action@v1.1.13
         with:
           repoToken: ${{ secrets.DEPENDABOT_TOKEN }}
           base: 'master'
