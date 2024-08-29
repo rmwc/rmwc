@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Select } from './select'; // replace with your actual component import
 import { Meta, StoryObj } from '@storybook/react';
 import { Portal } from '@rmwc/base';
@@ -459,4 +459,30 @@ export const ChangingSelectStory: Story = {
 
 export const DependentSelectsStory: Story = {
   render: () => <DependentSelects />
+};
+
+export const SelectThatSetsValue: Story = {
+  render: (args) => {
+    const { label, options } = args;
+    const [value, setValue] = useState('');
+
+    useEffect(() => {
+      setValue('1');
+    }, []);
+
+    return (
+      <Select
+        value={value}
+        label={label}
+        options={options}
+        onChange={() => console.count('select')}
+        enhanced
+      />
+    );
+  },
+  args: {
+    label: 'Foods',
+    placeholder: 'Select a Food',
+    options: { 1: 'Cookies', 2: 'Pizza', 3: 'Icecream' }
+  }
 };
