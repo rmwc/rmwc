@@ -6,7 +6,9 @@ updates:
       interval: 'daily'
     ignore:
       - dependency-name: '@nx/*'
+      - dependency-name: 'nx'
       - dependency-name: '@swc/*'
+      - dependency-name: '@storybook/*'
       - dependency-name: 'vite*'
       - dependency-name: '@material/*'
       - dependency-name: 'material-components-web'
