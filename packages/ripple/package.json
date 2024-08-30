@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/ripple",
-  "version": "14.3.2",
+  "version": "14.3.3",
   "description": "RMWC Ripple component",
   "main": "./index.js",
   "types": "./index.d.ts",
@@ -40,8 +40,8 @@
   },
   "dependencies": {
     "@material/ripple": "^14.0.0",
-    "@rmwc/base": "14.3.2",
-    "@rmwc/provider": "14.3.2",
-    "@rmwc/types": "14.3.2"
+    "@rmwc/base": "14.3.3",
+    "@rmwc/provider": "14.3.3",
+    "@rmwc/types": "14.3.3"
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/chip-evolution",
-  "version": "14.3.2",
+  "version": "14.3.3",
   "description": "RMWC Chip Evolution component",
   "main": "./index.js",
   "types": "./index.d.ts",
@@ -40,9 +40,9 @@
   },
   "dependencies": {
     "@material/chips": "^14.0.0",
-    "@rmwc/base": "14.3.2",
-    "@rmwc/icon": "14.3.2",
-    "@rmwc/ripple": "14.3.2",
-    "@rmwc/types": "14.3.2"
+    "@rmwc/base": "14.3.3",
+    "@rmwc/icon": "14.3.3",
+    "@rmwc/ripple": "14.3.3",
+    "@rmwc/types": "14.3.3"
   }
 }
