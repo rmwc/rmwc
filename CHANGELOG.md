@@ -1,3 +1,15 @@
+## 14.3.3 (2024-08-30)
+
+
+### 🩹 Fixes
+
+- depndabot script + downgrade nx and storybook ([eb9a063a](https://github.com/rmwc/rmwc/commit/eb9a063a))
+- **select:** set correct value and float label ([09433682](https://github.com/rmwc/rmwc/commit/09433682))
+
+### ❤️  Thank You
+
+- Emilie @EmiBemi
+
 ## 14.3.2 (2024-08-15)
 
 
