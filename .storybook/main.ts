@@ -5,7 +5,12 @@ import { mergeConfig } from 'vite';
 
 const config: StorybookConfig = {
   stories: ['../packages/**/src/lib/**/*.story.@(js|jsx|ts|tsx|mdx)'],
-  addons: ['@storybook/addon-essentials', '@storybook/addon-interactions'],
+  addons: [
+    '@storybook/addon-essentials',
+    '@storybook/addon-interactions',
+    '@chromatic-com/storybook'
+  ],
+
   framework: {
     name: '@storybook/react-vite',
     options: {
@@ -16,7 +21,13 @@ const config: StorybookConfig = {
   viteFinal: async (config) =>
     mergeConfig(config, {
       plugins: [nxViteTsPaths()]
-    })
+    }),
+
+  docs: {},
+
+  typescript: {
+    reactDocgen: 'react-docgen-typescript'
+  }
 };
 
 export default config;
