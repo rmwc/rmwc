@@ -27,7 +27,8 @@ export default function Readme() {
       styles={[
         '@material/snackbar/dist/mdc.snackbar.css',
         '@material/button/dist/mdc.button.css',
-        '@material/ripple/dist/mdc.ripple.css'
+        '@material/ripple/dist/mdc.ripple.css',
+        '@rmwc/snackbar/snackbar.css'
       ]}
       docsLink="https://material.io/develop/web/components/snackbars/"
       examples={examples}
