@@ -1,3 +1,14 @@
+## 14.3.4 (2024-09-23)
+
+
+### 🩹 Fixes
+
+- **dialog:** remove scroll lock class from body when dialog is closed ([c5f75842](https://github.com/rmwc/rmwc/commit/c5f75842))
+
+### ❤️  Thank You
+
+- Emilie
+
 ## 14.3.3 (2024-08-30)
 
 
