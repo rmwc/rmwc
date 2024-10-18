@@ -38,6 +38,11 @@ export type EnhancedType =
   | boolean
   | (MenuProps & { ref?: React.Ref<HTMLElement> });
 
+export type OptionsType =
+  | FormattedOption[]
+  | string[]
+  | { [value: string]: string };
+
 /** A Select Component */
 export interface SelectProps {
   /** The value for a controlled select. */
@@ -45,7 +50,7 @@ export interface SelectProps {
   /** Adds help text to the field */
   helpText?: React.ReactNode | SelectHelperTextProps;
   /** Options accepts flat arrays, value => label maps, and more. See examples for details. */
-  options?: FormattedOption[] | string[] | { [value: string]: string };
+  options?: OptionsType;
   /** A label for the form control. */
   label?: string;
   /** Placeholder text for the form control. Set to a blank string to create a non-floating placeholder label. */
