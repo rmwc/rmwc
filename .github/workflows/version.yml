@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     if: contains(github.head_ref, 'release/')
     steps:
-      - uses: actions/checkout@v4.2.1
+      - uses: actions/checkout@v4.2.2
         with:
           ref: ${{ github.head_ref }}
           fetch-depth: 0
