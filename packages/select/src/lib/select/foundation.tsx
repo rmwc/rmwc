@@ -10,6 +10,7 @@ import { MenuApi } from '@rmwc/menu';
 import { Corner } from '@material/menu-surface';
 import { SelectIconApi } from '../select-icon';
 import { SelectProps } from './';
+import { getDisplayValue } from '../getDisplayValue';
 
 export const useSelectFoundation = (
   props: SelectProps & React.HTMLProps<any>
@@ -383,10 +384,12 @@ export const useSelectFoundation = (
     silenceChange.current = true;
 
     if (value !== undefined && value !== foundationValue) {
+      foundation.setValue(value || '');
+      setSelectedTextContent(getDisplayValue(props.options, value));
+
       // @ts-ignore unsafe private variable access
       const index = foundation.menuItemValues.indexOf(value);
       selectedIndex.current = index;
-      foundation.setValue(value || '');
 
       // We need to call setSelectedTextContent to set the default value/the controlled value.
       // @ts-ignore unsafe private variable access
@@ -400,8 +403,14 @@ export const useSelectFoundation = (
     raf(() => {
       silenceChange.current = false;
     });
+  }, [
+    value,
+    foundationValue,
+    optionsLength,
+    foundation,
     // @ts-ignore unsafe private variable access
-  }, [value, foundationValue, optionsLength, foundation, foundation.menuItemValues]);
+    foundation.menuItemValues
+  ]);
 
   // Disabled
   useEffect(() => {
@@ -417,7 +426,8 @@ export const useSelectFoundation = (
   // Default value
   useEffect(() => {
     if (defaultValue) {
-      setSelectedTextContent(defaultValue.toString());
+      const defaultDisplayValue = getDisplayValue(props.options, defaultValue);
+      setSelectedTextContent(defaultDisplayValue.toString());
     }
   }, []);
 
