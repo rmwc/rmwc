@@ -432,7 +432,7 @@ export const Select: RMWC.ComponentType<
           aria-haspopup="listbox"
           aria-labelledby={labelId}
           element={anchorEl}
-          onFocus={!disabled && handleFocus}
+          onFocus={!disabled ? handleFocus : undefined}
           onBlur={handleBlur}
           onClick={handleClick}
           onKeyDown={handleKeydown}
