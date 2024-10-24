@@ -164,6 +164,7 @@ export const useDialogFoundation = (
     }
     return () => {
       document.removeEventListener('keydown', handleDocumentKeydown);
+      foundation.close();
     };
   }, [props.open, foundation, handleDocumentKeydown]);
 

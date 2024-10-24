@@ -92,16 +92,12 @@ A List Component
 | `children`       | `ReactNode`                        | Children to render                                              |
 | `dense`          | `boolean`                          | Reduces the padding on List items.                              |
 | `foundationRef`  | `Ref<null \| MDCListFoundation<>>` | Advanced: A reference to the MDCFoundation.                     |
-| `nonInteractive` | `boolean`                          | Makes the list non interactive. In addition, you'll have to set |
-
-`ripple={false}`
-on the individual ListItems. |
-| `onAction` | `(evt: ListOnActionEventT) => void` | A callback for when a list item is interacted with. evt.detail = number |
-| `selectedIndex` | `number \| number[]` | Sets the selectedIndex for singleSelection, radiogroup, or checkboxlist variants. Only supply number[] to checkboxlists |
+| `nonInteractive` | `boolean`                          | Makes the list non interactive. In addition, you'll have to set `ripple={false}` on the individual ListItems. |
+| `onAction` | `(evt: ListOnActionEventT) => void` | A callback for when a list item is interacted with. `evt.detail = number` |
+| `selectedIndex` | `number \| number[]` | Sets the selectedIndex for singleSelection, radiogroup, or checkboxlist variants. Only supply `number[]` to checkboxlists |
 | `twoLine` | `boolean` | Gives more space for dual lined list items. |
 | `vertical` | `boolean` | Sets the lists vertical orientation. Defaults to true |
-| `wrapFocus` | `boolean` | Sets the list to allow the up arrow on the first element to focus the
-last element of the list and vice versa. Defaults to true |
+| `wrapFocus` | `boolean` | Sets the list to allow the up arrow on the first element to focus the last element of the list and vice versa. Defaults to `true` |
 
 ## ListItem
 

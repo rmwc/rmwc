@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/types",
-  "version": "14.3.3",
+  "version": "14.3.4",
   "description": "RMWC Shared Typescript Types",
   "main": "./index.js",
   "types": "./index.d.ts",

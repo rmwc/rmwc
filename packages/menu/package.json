@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/menu",
-  "version": "14.3.3",
+  "version": "14.3.4",
   "description": "RMWC Menu component",
   "main": "./index.js",
   "types": "./index.d.ts",
@@ -41,8 +41,8 @@
     "@material/animation": "^14.0.0",
     "@material/menu": "^14.0.0",
     "@material/menu-surface": "^14.0.0",
-    "@rmwc/base": "14.3.3",
-    "@rmwc/list": "14.3.3",
-    "@rmwc/types": "14.3.3"
+    "@rmwc/base": "14.3.4",
+    "@rmwc/list": "14.3.4",
+    "@rmwc/types": "14.3.4"
   }
 }

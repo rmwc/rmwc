@@ -225,7 +225,7 @@ export interface DialogButtonProps extends ButtonProps {
 export const DialogButton = createComponent<DialogButtonProps>(
   function DialogButton(props, ref) {
     const className = useClassNames(props, ['mdc-dialog__button']);
-    const { action = 'accept', isDefaultAction, ...rest } = props;
+    const { action = '', isDefaultAction, ...rest } = props;
     const defaultProp = !!isDefaultAction
       ? { [MDCDialogFoundation.strings.BUTTON_DEFAULT_ATTRIBUTE]: true }
       : {};
