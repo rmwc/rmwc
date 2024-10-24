@@ -1,3 +1,16 @@
+## 14.3.5 (2024-10-24)
+
+
+### 🩹 Fixes
+
+- **List:** improve documentation's rendering of prop table ([df0d6fcb](https://github.com/rmwc/rmwc/commit/df0d6fcb))
+- **select:** get display value ([33a9d667](https://github.com/rmwc/rmwc/commit/33a9d667))
+
+### ❤️  Thank You
+
+- Emilie
+- Matt @mgr34
+
 ## 14.3.4 (2024-09-23)
 
 
