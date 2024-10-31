@@ -39,3 +39,5 @@ yarn-error.log*
 report.*.json
 /rmwc
 generated-*
+
+**/vite.config.{js,ts,mjs,mts,cjs,cts}.timestamp*
