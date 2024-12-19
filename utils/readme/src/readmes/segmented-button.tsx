@@ -16,8 +16,9 @@ export default function Readme() {
       module="@rmwc/segmented-button"
       styles={[
         '@material/segmented-button/dist/mdc.segmented-button.css',
-        '@rmwc/@rmwc/icon/icon.css',
-        '@material/ripple/dist/mdc.ripple.css'
+        '@rmwc/icon/icon.css',
+        '@material/ripple/dist/mdc.ripple.css',
+        '@rmwc/ripple/ripple.css'
       ]}
       docsLink="https://material.io/develop/web/components/segmented-button/"
       examples={examples}
