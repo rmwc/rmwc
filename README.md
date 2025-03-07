@@ -13,7 +13,7 @@
 > It has been a pleasure working on this great open-source project, and we want to extend a big thank you to [James Friedman](https://github.com/jamesmfriedman) for creating this fantastic library and allowing us to help maintain it.  
 >  
 > ❤️ The RMWC Development Team  
-> [Emily](https://github.com/EmiBemi), [Bret](https://github.com/b-d-m-p), and [Jens](https://github.com/jensborch)
+> [Emily](https://github.com/EmiBemi), [Brett](https://github.com/b-d-m-p), and [Jens](https://github.com/jensborch)
 
 # RMWC - React Material Web Components
 
