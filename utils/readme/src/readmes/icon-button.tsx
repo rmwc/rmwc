@@ -21,7 +21,8 @@ export default function Readme() {
       styles={[
         '@material/icon-button/dist/mdc.icon-button.css',
         '@rmwc/icon/icon.css',
-        '@material/ripple/dist/mdc.ripple.css'
+        '@material/ripple/dist/mdc.ripple.css',
+        '@rmwc/ripple/ripple.css'
       ]}
       docsLink="https://material.io/develop/web/components/buttons/icon-buttons/"
       examples={examples}

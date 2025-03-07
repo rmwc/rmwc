@@ -29,9 +29,16 @@ export default function Readme() {
       module="@rmwc/top-app-bar"
       styles={[
         '@material/top-app-bar/dist/mdc.top-app-bar.css',
+
         '@material/icon-button/dist/mdc.icon-button.css',
+        '@rmwc/icon/icon.css',
         '@material/ripple/dist/mdc.ripple.css',
-        '@rmwc/icon/icon.css'
+        '@rmwc/ripple/ripple.css'
+
+        // '@rmwc/icon/icon.css',
+
+        // '@material/ripple/dist/mdc.ripple.css',
+        // '@rmwc/ripple/ripple.css',
       ]}
       docsLink="https://material.io/develop/web/components/top-app-bar/"
       examples={examples}
