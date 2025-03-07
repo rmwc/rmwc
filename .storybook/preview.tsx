@@ -26,6 +26,7 @@ const preview: Preview = {
       </>
     )
   ],
+
   parameters: {
     actions: { argTypesRegex: '^on[A-Z].*' },
     controls: {
@@ -34,7 +35,9 @@ const preview: Preview = {
         date: /Date$/
       }
     }
-  }
+  },
+
+  tags: ['autodocs', 'autodocs']
 };
 
 export default preview;
