@@ -5,6 +5,16 @@
 [![npm](https://img.shields.io/npm/l/rmwc.svg)](https://github.com/rmwc/rmwc/blob/master/LICENSE)
 [![Chat](https://img.shields.io/discord/490680848979591168.svg)](https://discord.gg/4BSUxCW)
 
+> [!WARNING]  
+> RMWC is based on [Google Material Components for the web](https://github.com/material-components/material-components-web), which has now been archived and will no longer receive updates. As a result, there will be no major updates to RMWC either.  
+>  
+> We are still using RMWC in several applications we work on, but we have started migrating these to other solutions. We may still fix critical bugs in RMWC if necessary, but we will only perform essential maintenance going forward. Pull requests are always welcome, but please be aware that we might not have the capacity to prioritize them.  
+>  
+> It has been a pleasure working on this great open-source project, and we want to extend a big thank you to [James Friedman](https://github.com/jamesmfriedman) for creating this fantastic library and allowing us to help maintain it.  
+>  
+> ❤️ The RMWC Development Team  
+> [Emily](https://github.com/EmiBemi), [Bret](https://github.com/b-d-m-p), and [Jens](https://github.com/jensborch)
+
 # RMWC - React Material Web Components
 
 RMWC is a React UI Kit built on Google's official Material Components Web library v14.x.x
