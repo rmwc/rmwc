@@ -34,9 +34,13 @@ export default function Readme() {
       styles={[
         '@material/menu/dist/mdc.menu.css',
         '@material/menu-surface/dist/mdc.menu-surface.css',
-        '@material/ripple/dist/mdc.ripple.css',
+
         '@material/list/dist/mdc.list.css',
-        '@rmwc/icon/icon.css'
+        '@rmwc/icon/icon.css',
+        '@material/ripple/dist/mdc.ripple.css',
+        '@rmwc/ripple/ripple.css',
+        '@rmwc/list/collapsible-list.css',
+        '@rmwc/list/list-item.css'
       ]}
       docsLink="https://material.io/develop/web/components/menus/"
       examples={examples}
