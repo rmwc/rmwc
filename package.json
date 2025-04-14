@@ -131,7 +131,7 @@
     "eslint-plugin-jsx-a11y": "6.9.0",
     "eslint-plugin-react-hooks": "4.6.2",
     "esm-module-alias": "^2.2.0",
-    "glob": "^7.2.0",
+    "glob": "^11.0.1",
     "husky": "^9.0.11",
     "hyperform": "^0.12.1",
     "jsdom": "~24.1.0",
