@@ -20,8 +20,11 @@ export default function Readme() {
       module="@rmwc/chip"
       styles={[
         '@material/chips/dist/mdc.chips.css',
+        '@material/chips/styles.scss',
         '@rmwc/icon/icon.css',
-        '@material/ripple/dist/mdc.ripple.css'
+        '@material/ripple/dist/mdc.ripple.css',
+        '@rmwc/ripple/ripple.css',
+        '@rmwc/chip/chip.css'
       ]}
       docsLink="https://material.io/develop/web/components/chips/"
       examples={examples}
