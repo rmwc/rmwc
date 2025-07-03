@@ -28,6 +28,9 @@ export default function Readme() {
       styles={[
         '@material/card/dist/mdc.card.css',
         '@material/button/dist/mdc.button.css',
+        '@rmwc/icon/icon.css',
+        '@material/ripple/dist/mdc.ripple.css',
+        '@rmwc/ripple/ripple.css',
         '@material/icon-button/dist/mdc.icon-button.css'
       ]}
       docsLink="https://material.io/develop/web/components/cards/"
