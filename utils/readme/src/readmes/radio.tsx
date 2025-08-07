@@ -21,7 +21,8 @@ export default function Readme() {
       styles={[
         '@material/radio/dist/mdc.radio.css',
         '@material/form-field/dist/mdc.form-field.css',
-        '@material/ripple/dist/mdc.ripple.css'
+        '@material/ripple/dist/mdc.ripple.css',
+        '@rmwc/ripple/ripple.css'
       ]}
       docsLink="https://material.io/develop/web/components/input-controls/radio-buttons/"
       examples={examples}

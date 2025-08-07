@@ -15,7 +15,8 @@ export default function Readme() {
       styles={[
         '@material/fab/dist/mdc.fab.css',
         '@rmwc/icon/icon.css',
-        '@material/ripple/dist/mdc.ripple.css'
+        '@material/ripple/dist/mdc.ripple.css',
+        '@rmwc/ripple/ripple.css'
       ]}
       docsLink="https://material.io/develop/web/components/buttons/floating-action-buttons/"
       examples={examples}
