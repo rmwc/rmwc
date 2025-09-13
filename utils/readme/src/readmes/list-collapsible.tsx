@@ -21,7 +21,11 @@ export default function Readme() {
       module="@rmwc/list"
       styles={[
         '@material/list/dist/mdc.list.css',
-        '@rmwc/list/collapsible-list.css'
+        '@rmwc/icon/icon.css',
+        '@material/ripple/dist/mdc.ripple.css',
+        '@rmwc/ripple/ripple.css',
+        '@rmwc/list/collapsible-list.css',
+        '@rmwc/list/list-item.css'
       ]}
       examples={examples}
       addon

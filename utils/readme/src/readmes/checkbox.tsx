@@ -15,7 +15,8 @@ export default function Readme() {
       styles={[
         '@material/checkbox/dist/mdc.checkbox.css',
         '@material/form-field/dist/mdc.form-field.css',
-        '@material/ripple/dist/mdc.ripple.css'
+        '@material/ripple/dist/mdc.ripple.css',
+        '@rmwc/ripple/ripple.css'
       ]}
       docsLink="https://material.io/develop/web/components/input-controls/checkboxes/"
       examples={examples}

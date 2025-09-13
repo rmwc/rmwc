@@ -24,6 +24,7 @@ export default function Readme() {
       styles={[
         '@rmwc/avatar/avatar.css',
         '@rmwc/icon/icon.css',
+        '@rmwc/ripple/ripple.css',
         '@material/ripple/dist/mdc.ripple.css'
       ]}
       examples={examples}

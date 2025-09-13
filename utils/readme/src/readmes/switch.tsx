@@ -15,7 +15,8 @@ export default function Readme() {
       styles={[
         '@material/switch/dist/mdc.switch.css',
         '@material/form-field/dist/mdc.form-field.css',
-        '@material/ripple/dist/mdc.ripple.css'
+        '@material/ripple/dist/mdc.ripple.css',
+        '@rmwc/ripple/ripple.css'
       ]}
       docsLink="https://material.io/develop/web/components/input-controls/switches/"
       examples={examples}

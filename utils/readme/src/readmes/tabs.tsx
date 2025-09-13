@@ -24,6 +24,7 @@ export default function Readme() {
         '@material/tab-scroller/dist/mdc.tab-scroller.css',
         '@material/tab-indicator/dist/mdc.tab-indicator.css',
         '@material/ripple/dist/mdc.ripple.css',
+        '@rmwc/ripple/ripple.css',
         '@rmwc/icon/icon.css'
       ]}
       docsLink="https://material.io/develop/web/components/tabs/tab-bar/"

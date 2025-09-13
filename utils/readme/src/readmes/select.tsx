@@ -21,15 +21,34 @@ export default function Readme() {
       lead="Menus display a list of choices on a transient sheet of material."
       module="@rmwc/select"
       styles={[
-        '@rmwc/select/select.css',
         '@material/select/dist/mdc.select.css',
+
         '@material/floating-label/dist/mdc.floating-label.css',
-        '@material/notched-outline/dist/mdc.notched-outline.css',
+
         '@material/line-ripple/dist/mdc.line-ripple.css',
+
         '@material/list/dist/mdc.list.css',
+        '@rmwc/icon/icon.css',
+        '@material/ripple/dist/mdc.ripple.css',
+        '@rmwc/ripple/ripple.css',
+        '@rmwc/list/collapsible-list.css',
+        '@rmwc/list/list-item.css',
+
         '@material/menu/dist/mdc.menu.css',
         '@material/menu-surface/dist/mdc.menu-surface.css',
-        '@material/ripple/dist/mdc.ripple.css'
+        // '@material/list/dist/mdc.list.css',
+        // '@rmwc/icon/icon.css',
+        // '@material/ripple/dist/mdc.ripple.css',
+        // '@rmwc/ripple/ripple.css',
+        // '@rmwc/list/collapsible-list.css',
+        // '@rmwc/list/list-item.css',
+
+        '@material/notched-outline/dist/mdc.notched-outline.css',
+
+        // '@material/ripple/dist/mdc.ripple.css',
+        // '@rmwc/ripple/ripple.css',
+
+        '@rmwc/select/select.css'
       ]}
       docsLink="https://material.io/develop/web/components/input-controls/select-menus/"
       examples={examples}
