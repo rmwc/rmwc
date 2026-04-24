@@ -14,17 +14,17 @@ export const useTabIndicatorFoundation = (props: TabIndicatorProps) => {
     foundation: ({ rootEl, contentEl }) => {
       const adapter: MDCTabIndicatorAdapter = {
         addClass: (className: string) => {
-          rootEl.addClass(className);
+          rootEl.ref?.classList.add(className);
         },
         removeClass: (className: string) => {
-          rootEl.removeClass(className);
+          rootEl.ref?.classList.remove(className);
         },
         computeContentClientRect: () =>
           contentEl.ref
             ? contentEl.ref.getBoundingClientRect()
             : emptyClientRect,
         setContentStyleProperty: (prop: string, value: string) => {
-          contentEl.setStyle(prop, value);
+          contentEl.ref?.style.setProperty(prop, value);
         }
       };
 
