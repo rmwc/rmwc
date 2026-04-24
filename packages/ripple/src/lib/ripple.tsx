@@ -1,7 +1,7 @@
 import * as RMWC from '@rmwc/types';
 import React from 'react';
 import { MDCRippleFoundation } from '@material/ripple';
-import { classNames } from '@rmwc/base';
+import { classNames, mergeRefs } from '@rmwc/base';
 import { useProviderContext } from '@rmwc/provider';
 import { useRippleFoundation } from './foundation';
 
@@ -96,7 +96,7 @@ export function Ripple(props: RippleProps & RMWC.HTMLProps) {
 
   // do some crazy props merging...
   const content = React.cloneElement(child, {
-    ref: rootEl.reactRef,
+    ref: mergeRefs(rootEl.reactRef, (child as any).ref),
     ...child.props,
     ...unboundedProp,
     ...rootEl.props({
