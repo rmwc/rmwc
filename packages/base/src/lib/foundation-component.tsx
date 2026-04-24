@@ -17,8 +17,7 @@ export class FoundationElement<Props extends {}, ElementType = HTMLElement> {
   private _props: Partial<Props> = {};
   _onChange: (() => void) | null = null;
 
-  constructor(onChange: () => void) {
-    this._onChange = onChange;
+  constructor() {
     this.onChange = this.onChange.bind(this);
     this.addClass = this.addClass.bind(this);
     this.removeClass = this.removeClass.bind(this);
@@ -33,6 +32,10 @@ export class FoundationElement<Props extends {}, ElementType = HTMLElement> {
 
   onChange() {
     this._onChange && this._onChange();
+  }
+
+  init(onChange: () => void) {
+    this.onChange = onChange;
   }
 
   destroy() {
@@ -247,9 +250,7 @@ export const useFoundation = <
       Object.keys(elementsInput).reduce<{
         [key in keyof Elements]: FoundationElement<any, HTMLElement>;
       }>((acc, key: keyof Elements) => {
-        acc[key] = new FoundationElement<Props, HTMLElement>(() => {
-          refresh();
-        });
+        acc[key] = new FoundationElement<Props, HTMLElement>();
         return acc;
       }, {} as any),
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -272,6 +273,8 @@ export const useFoundation = <
   }, []);
 
   useEffect(() => {
+    props.current = inputProps;
+    Object.values(elements).map((element) => element.init(refresh));
     const f = foundation;
     f.init();
     api && handleRef(props.current.apiRef, api({ foundation: f, ...elements }));

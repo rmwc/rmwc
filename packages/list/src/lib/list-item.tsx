@@ -242,7 +242,6 @@ export const SimpleListItem = createComponent<SimpleListItemProps>(
 
     return (
       <ListItem {...rest} ref={ref}>
-        <RippleSurface className="mdc-deprecated-list-item__ripple" />
         {graphic !== undefined && <ListItemGraphic icon={graphic} />}
         {secondaryTextToRender !== null ? (
           <ListItemText>
